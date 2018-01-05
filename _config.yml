@@ -1,0 +1,7 @@
+title         : "hey kibi howsit ??"
+author        : "kibi!"
+lang          : "en"
+timezone      : "US/Pacific"
+markdown      : "kramdown"
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
