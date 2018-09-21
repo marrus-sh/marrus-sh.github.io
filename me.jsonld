@@ -10,7 +10,7 @@
 	],
 	"id": "https://go.KIBI.family/me.jsonld",
 	"name": "KIBI Gô",
-	"icon": "https://go.KIBI.family/Images/kirbi.jsonld",
+	"icon": "https://go.KIBI.family/kirbi.png",
 	"preferredUsername": "me",
 	"summaryMap": {
 		"en": "Current Plan: https://go.KIBI.family/.plan\n\n(I will not receive ActivityPub messages addressed to this account; please message @kibi@glitch.social instead.)"
