@@ -1,29 +1,29 @@
 {
 	"@context": "https://www.w3.org/ns/activitystreams",
 	"type": "OrderedCollectionPage",
-	"id": "https://go.KIBI.family/current",
-	"first": "https://go.KIBI.family/current",
-	"last": "https://go.KIBI.family/Jun/2018/",
-	"next": "https://go.KIBI.family/Aug/2018/",
-	"partOf": "https://go.KIBI.family/.outbox",
+	"id": "https://go.KIBI.family/current.jsonld",
+	"first": "https://go.KIBI.family/current.jsonld",
+	"last": "https://go.KIBI.family/Jun/2018/index.jsonld",
+	"next": "https://go.KIBI.family/Aug/2018/index.jsonld",
+	"partOf": "https://go.KIBI.family/outbox.jsonld",
 	"url": {
 		"type": "Link",
 		"rel": "alternate",
 		"mediaType": "application/atom+xml",
-		"href": "https://go.KIBI.family/current/index.atom"
+		"href": "https://go.KIBI.family/current.atom"
 	},
 	"orderedItems": [
 		{
 			"type": "Create",
-			"id": "https://go.KIBI.family/Sep/2018/#create.fringe-beginnings",
-			"actor": "https://go.KIBI.family/#me",
+			"id": "https://go.KIBI.family/Sep/2018/index.jsonld#create.fringe-beginnings",
+			"actor": "https://go.KIBI.family/me.jsonld",
 			"published": "2018-09-09T14:47:55-07:00",
 			"to": "Public",
 			"object": {
 				"type": "Note",
-				"id": "https://go.KIBI.family/Sep/2018/#fringe-beginnings",
+				"id": "https://go.KIBI.family/Sep/2018/index.jsonld#fringe-beginnings",
 				"published": "2018-09-09T14:47:55-07:00",
-				"attributedTo": "https://go.KIBI.family/#me",
+				"attributedTo": "https://go.KIBI.family/me.jsonld",
 				"to": "Public",
 				"content": "<p>Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!</p><p>New blogpost: Fringe Mastodev – Part I: The Beginnings</p><p><a href='https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml'>https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml</a>",
 				"mediaType": "text/plain",
@@ -33,7 +33,7 @@
 					"id": "https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml",
 					"name": "Fringe Mastodev – I: The Beginnings",
 					"published": "2018-09-09T14:47:55-07:00",
-					"attributedTo": "https://go.KIBI.family/#me",
+					"attributedTo": "https://go.KIBI.family/me.jsonld",
 					"summary": "Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!",
 					"url": {
 						"type": "Link",

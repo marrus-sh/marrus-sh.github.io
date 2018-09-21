@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>KIBI Gô's Blog</title>
-	<link rel="self" href="https://go.KIBI.family/current/index.atom"
-		/>
+	<link rel="self" href="https://go.KIBI.family/current.atom" />
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
-	<updated>2018-09-20T19:04:02-07:00</updated>
+	<updated>2018-09-20T21:27:03-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
-		<uri>https://go.KIBI.family/#me</uri>
+		<uri>https://go.KIBI.family/me.jsonld</uri>
 	</author>
-	<id>https://go.KIBI.family/.outbox</id>
+	<id>https://go.KIBI.family/outbox.jsonld</id>
 	<entry>
 		<subtitle>A History</subtitle>
 		<title>Fringe Mastodev – I: The Beginnings</title>

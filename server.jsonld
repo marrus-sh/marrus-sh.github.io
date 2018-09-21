@@ -4,9 +4,9 @@
 		"https://vocab.KIBI.network/press"
 	],
 	"type": "Server",
-	"id": "https://go.KIBI.family/instance.jsonld#Server",
+	"id": "https://go.KIBI.family/server.jsonld",
 	"name": "KIBI Gô's Website",
-	"icon": "https://go.KIBI.family/Images/server",
+	"icon": "https://go.KIBI.family/Images/server.jsonld",
 	"url": {
 			"type": "Link",
 			"mediaType": "text/html",

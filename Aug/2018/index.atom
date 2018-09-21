@@ -8,13 +8,13 @@
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Jul/2018/index.atom" />
 	<link rel="current"
-		href="https://go.KIBI.family/current/index.atom" />
-	<updated>2018-09-20T18:55:06-07:00</updated>
+		href="https://go.KIBI.family/current.atom" />
+	<updated>2018-09-20T21:24:07-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
-		<uri>https://go.KIBI.family/#me</uri>
+		<uri>https://go.KIBI.family/me.jsonld</uri>
 	</author>
-	<id>https://go.KIBI.family/.outbox</id>
+	<id>https://go.KIBI.family/outbox.jsonld</id>
 	<entry>
 		<title>That One “Striaght Girlfriends” Article</title>
 		<link rel="alternate" type="application/xhtml+xml"

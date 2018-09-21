@@ -1,12 +1,12 @@
 {
 	"@context": "https://www.w3.org/ns/activitystreams",
 	"type": "OrderedCollectionPage",
-	"id": "https://go.KIBI.family/Jul/2018/",
-	"first": "https://go.KIBI.family/current",
-	"last": "https://go.KIBI.family/Jun/2018/",
-	"prev": "https://go.KIBI.family/Aug/2018/",
-	"next": "https://go.KIBI.family/Jun/2018/",
-	"partOf": "https://go.KIBI.family/.outbox",
+	"id": "https://go.KIBI.family/Jul/2018/index.jsonld",
+	"first": "https://go.KIBI.family/current.jsonld",
+	"last": "https://go.KIBI.family/Jun/2018/index.jsonld",
+	"prev": "https://go.KIBI.family/Aug/2018/index.jsonld",
+	"next": "https://go.KIBI.family/Jun/2018/index.jsonld",
+	"partOf": "https://go.KIBI.family/outbox.jsonld",
 	"url": {
 		"type": "Link",
 		"rel": "alternate",
@@ -16,15 +16,15 @@
 	"orderedItems": [
 		{
 			"type": "Create",
-			"id": "https://go.KIBI.family/Jul/2018/#create.clacks-overhead",
-			"actor": "https://go.KIBI.family/#me",
+			"id": "https://go.KIBI.family/Jul/2018/index.jsonld#create.clacks-overhead",
+			"actor": "https://go.KIBI.family/me.jsonld",
 			"published": "2018-07-31T15:54:31-07:00",
 			"to": "Public",
 			"object": {
 				"type": "Note",
-				"id": "https://go.KIBI.family/Jul/2018/#clacks-overhead",
+				"id": "https://go.KIBI.family/Jul/2018/index.jsonld#clacks-overhead",
 				"published": "2018-07-31T15:54:31-07:00",
-				"attributedTo": "https://go.KIBI.family/#me",
+				"attributedTo": "https://go.KIBI.family/me.jsonld",
 				"to": "Public",
 				"summary": "Natalie; Clacks Overheads",
 				"content": "<p>I wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.</p><p><a href='https://go.kibi.family/Jul/2018/clacks-overhead.xhtml'>https://go.kibi.family/Jul/2018/clacks-overhead.xhtml</a></p><p>🕯<br />miss you</p>",
@@ -35,7 +35,7 @@
 					"id": "https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml",
 					"name": "Clacks Overhead",
 					"published": "2018-07-31T15:54:31-07:00",
-					"attributedTo": "https://go.KIBI.family/#me",
+					"attributedTo": "https://go.KIBI.family/me.jsonld",
 					"summary": "Subject: Natalie; Clacks Overheads.\n\nI wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.\n\n🕯\nmiss you",
 					"url": {
 						"type": "Link",

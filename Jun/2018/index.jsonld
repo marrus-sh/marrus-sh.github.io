@@ -2,10 +2,10 @@
 	"@context": "https://www.w3.org/ns/activitystreams",
 	"type": "OrderedCollectionPage",
 	"id": "https://go.KIBI.family/Jun/2018/",
-	"first": "https://go.KIBI.family/current",
-	"last": "https://go.KIBI.family/Jun/2018/",
-	"prev": "https://go.KIBI.family/Jul/2018/",
-	"partOf": "https://go.KIBI.family/.outbox",
+	"first": "https://go.KIBI.family/current.jsonld",
+	"last": "https://go.KIBI.family/Jun/2018/index.jsonld",
+	"prev": "https://go.KIBI.family/Jul/2018/index.jsonld",
+	"partOf": "https://go.KIBI.family/outbox.jsonld",
 	"url": {
 		"type": "Link",
 		"rel": "alternate",
@@ -15,15 +15,15 @@
 	"orderedItems": [
 		{
 			"type": "Create",
-			"id": "https://go.KIBI.family/Jun/2018/#create.mermaid",
-			"actor": "https://go.KIBI.family/#me",
+			"id": "https://go.KIBI.family/Jun/2018/index.jsonld#create.mermaid",
+			"actor": "https://go.KIBI.family/me.jsonld",
 			"published": "2018-06-29T23:28:13-07:00",
 			"to": "Public",
 			"object": {
 				"type": "Note",
-				"id": "https://go.KIBI.family/Jun/2018/#mermaid",
+				"id": "https://go.KIBI.family/Jun/2018/index.jsonld#mermaid",
 				"published": "2018-06-29T23:28:13-07:00",
-				"attributedTo": "https://go.KIBI.family/#me",
+				"attributedTo": "https://go.KIBI.family/me.jsonld",
 				"to": "Public",
 				"content": "<p>current work: <a href='https://go.kibi.family/Jun/2018/mermaid.xhtml'>https://go.kibi.family/Jun/2018/mermaid.xhtml</a></p><p>(mostly me just rambling about web technologies though)</p>",
 				"mediaType": "text/plain",
@@ -33,7 +33,7 @@
 					"id": "https://go.KIBI.family/Jun/2018/mermaid.xhtml",
 					"name": "ｍｅｒｍａｉｄ",
 					"published": "2018-06-29T23:28:13-07:00",
-					"attributedTo": "https://go.KIBI.family/#me",
+					"attributedTo": "https://go.KIBI.family/me.jsonld",
 					"summary": "current work\n\n(mostly me just rambling about web technologies though)",
 					"url": {
 						"type": "Link",

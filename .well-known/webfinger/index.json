@@ -1,9 +1,9 @@
 {
-	"subject": "acct:Kyebego@go.KIBI.family",
+	"subject": "acct:me@go.KIBI.family",
 	"links": [
 		{
 			"rel": "self",
-			"type": "application/activity+json",
+			"type": "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\"",
 			"href": "https://go.KIBI.family/#me"
 		}
 	]
