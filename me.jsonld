@@ -20,7 +20,7 @@
 	"url": [
 		{
 			"type": "Link",
-			"mediaType": "text/html",
+			"mediaType": "text/xhtml+xml",
 			"rel": "alternate",
 			"href": "https://go.KIBI.family/"
 		},

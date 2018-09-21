@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <entry xmlns="http://www.w3.org/2005/Atom" xmlns:activity="http://activitystrea.ms/spec/1.0/" xmlns:poco="http://portablecontacts.net/spec/1.0" xmlns:mastodon="http://mastodon.social/schema/1.0">
-	<id>https://go.KIBI.family/Jun/2018/mermaid.atom</id>
-	<published>2018-06-29T23:28:13-07:00</published>
-	<title>ｍｅｒｍａｉｄ</title>
+	<id>https://go.KIBI.family/Jul/2018/clacks-overhead.atom</id>
+	<published>2018-07-31T15:54:31-07:00</published>
+	<title>Clacks Overhead</title>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/me.jsonld</uri>
@@ -17,9 +17,10 @@
 	</author>
 	<activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
 	<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
-	<content type="html" xml:lang="en">&lt;p&gt;current work: &lt;a href="https://go.kibi.family/Jun/2018/mermaid.xhtml"&gt;https://go.kibi.family/Jun/2018/mermaid.xhtml&lt;/a&gt;&lt;/p&gt;&lt;p&gt;(mostly me just rambling about web technologies though)&lt;/p&gt;</content>
+	<summary>Natalie; Clacks Overheads</summary>
+	<content type="html" xml:lang="en">&lt;p&gt;I wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.&lt;/p&gt;&lt;p&gt;&lt;a href="https://go.kibi.family/Jul/2018/clacks-overhead.xhtml"&gt;https://go.kibi.family/Jul/2018/clacks-overhead.xhtml&lt;/a&gt;&lt;/p&gt;&lt;p&gt;🕯&lt;br /&gt;miss you&lt;/p&gt;</content>
 	<link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
 	<mastodon:scope>public</mastodon:scope>
-	<link rel="alternate" type="application/xhtml+xml" href="https://go.KIBI.family/Jun/2018/mermaid.xhtml"/>
-	<link rel="self" type="application/atom+xml" href="https://go.KIBI.family/Jun/2018/mermaid.atom"/>
+	<link rel="alternate" type="application/xhtml+xml" href="https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml"/>
+	<link rel="self" type="application/atom+xml" href="https://go.KIBI.family/Jul/2018/clacks-overhead.atom"/>
 </entry>

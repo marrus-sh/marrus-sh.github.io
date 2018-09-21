@@ -22,14 +22,22 @@
 			"to": "Public",
 			"object": {
 				"type": "Note",
-				"id": "https://go.KIBI.family/Jul/2018/index.jsonld#clacks-overhead",
+				"id": "https://go.KIBI.family/Jul/2018/clacks-overhead.atom",
 				"published": "2018-07-31T15:54:31-07:00",
 				"attributedTo": "https://go.KIBI.family/me.jsonld",
 				"to": "Public",
 				"summary": "Natalie; Clacks Overheads",
-				"content": "<p>I wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.</p><p><a href='https://go.kibi.family/Jul/2018/clacks-overhead.xhtml'>https://go.kibi.family/Jul/2018/clacks-overhead.xhtml</a></p><p>🕯<br />miss you</p>",
+				"contentMap": {
+					"en": "<p>I wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.</p><p><a href='https://go.kibi.family/Jul/2018/clacks-overhead.xhtml'>https://go.kibi.family/Jul/2018/clacks-overhead.xhtml</a></p><p>🕯<br />miss you</p>"
+				},
 				"mediaType": "text/plain",
 				"tag": "Public",
+				"url": {
+					"type": "Link",
+					"mediaType": "application/atom+xml",
+					"rel": "alternate",
+					"href": "https://go.KIBI.family/Jul/2018/clacks-overhead.atom"
+				},
 				"attachment": {
 					"type": "Page",
 					"id": "https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml",
