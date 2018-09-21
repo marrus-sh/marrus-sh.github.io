@@ -21,13 +21,21 @@
 			"to": "Public",
 			"object": {
 				"type": "Note",
-				"id": "https://go.KIBI.family/Jun/2018/index.jsonld#mermaid",
+				"id": "https://go.KIBI.family/Jun/2018/mermaid.atom",
 				"published": "2018-06-29T23:28:13-07:00",
 				"attributedTo": "https://go.KIBI.family/me.jsonld",
 				"to": "Public",
-				"content": "<p>current work: <a href='https://go.kibi.family/Jun/2018/mermaid.xhtml'>https://go.kibi.family/Jun/2018/mermaid.xhtml</a></p><p>(mostly me just rambling about web technologies though)</p>",
+				"contentMap": {
+					"en": "<p>current work: <a href='https://go.kibi.family/Jun/2018/mermaid.xhtml'>https://go.kibi.family/Jun/2018/mermaid.xhtml</a></p><p>(mostly me just rambling about web technologies though)</p>"
+				},
 				"mediaType": "text/plain",
 				"tag": "Public",
+				"url": {
+					"type": "Link",
+					"mediaType": "application/atom+xml",
+					"rel": "alternate",
+					"href": "https://go.KIBI.family/Jun/2018/mermaid.atom"
+				},
 				"attachment": {
 					"type": "Page",
 					"id": "https://go.KIBI.family/Jun/2018/mermaid.xhtml",
