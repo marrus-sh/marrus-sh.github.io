@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>KIBI Gô's Blog</title>
+	<link rel="self" href="https://go.KIBI.family/current/index.atom"
+		/>
+	<link rel="prev-archive"
+		href="https://go.KIBI.family/Aug/2018/index.atom" />
+	<updated>2018-09-20T19:04:02-07:00</updated>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/#me</uri>
+	</author>
+	<id>https://go.KIBI.family/.outbox</id>
+	<entry>
+		<subtitle>A History</subtitle>
+		<title>Fringe Mastodev – I: The Beginnings</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml" />
+		<id>
+			https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml
+		</id>
+		<updated>2018-09-09T14:47:55-07:00</updated>
+		<summary type="xhtml"
+			xmlns:HTML="http://www.w3.org/1999/xhtml">
+			<HTML:p>
+				Hot off the presses:
+				Learn about the early history of Content Warnings,
+					the First Ever Mastodon Fork, and the sitewide
+					drama which preëmpted it!!
+			</HTML:p>
+		</summary>
+	</entry>
+	<entry>
+		<subtitle>A History</subtitle>
+		<title>Fringe Mastodev – II: Enter Allie Hart</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Sep/2018/fringe-allie.xhtml" />
+		<id>
+			https://go.KIBI.family/Sep/2018/fringe-allie.xhtml
+		</id>
+		<updated>2018-09-16T17:07:04-07:00</updated>
+		<summary type="xhtml"
+			xmlns:HTML="http://www.w3.org/1999/xhtml">
+			<HTML:p>
+				A challenger approaches!!
+				Learn the backstory behind The Most Controversial
+					Article Ever About Mastodon (at least until
+					this blogseries finishes #yolo) and everyone's
+					fav trashgirl who wrote it.
+			</HTML:p>
+		</summary>
+	</entry>
+</feed>

@@ -1,0 +1,50 @@
+{
+	"@context": "https://www.w3.org/ns/activitystreams",
+	"type": "OrderedCollectionPage",
+	"id": "https://go.KIBI.family/Aug/2018/",
+	"first": "https://go.KIBI.family/current",
+	"last": "https://go.KIBI.family/Jun/2018/",
+	"prev": "https://go.KIBI.family/current",
+	"next": "https://go.KIBI.family/Jul/2018/",
+	"partOf": "https://go.KIBI.family/.outbox",
+	"url": {
+		"type": "Link",
+		"rel": "alternate",
+		"mediaType": "application/atom+xml",
+		"href": "https://go.KIBI.family/Aug/2018/index.atom"
+	},
+	"orderedItems": [
+		{
+			"type": "Create",
+			"id": "https://go.KIBI.family/Aug/2018/#create.girlfriends",
+			"actor": "https://go.KIBI.family/#me",
+			"published": "2018-08-11T17:03:08-07:00",
+			"to": "Public",
+			"object": {
+				"type": "Note",
+				"id": "https://go.KIBI.family/Jul/2018/#girlfriends",
+				"published": "2018-08-11T17:03:08-07:00",
+				"attributedTo": "https://go.KIBI.family/#me",
+				"to": "Public",
+				"summary": "that one “straight girlfriends” article",
+				"content": "<p>I've seen it around a couple of times and so I wrote up my thoughts!! As an actual blogpost instead of just spamming the FTL!!</p><p><a href='https://go.kibi.family/Aug/2018/girlfriends.xhtml'>https://go.kibi.family/Aug/2018/girlfriends.xhtml</a></p><p>If you read the article, you might find it interesting. (If you didn't, there's a link at the top~)</p>",
+				"mediaType": "text/plain",
+				"tag": "Public",
+				"attachment": {
+					"type": "Page",
+					"id": "https://go.KIBI.family/Aug/2018/girlfriends.xhtml",
+					"name": "That One “Striaght Girlfriends” Article",
+					"published": "2018-08-11T17:03:08-07:00",
+					"attributedTo": "https://go.KIBI.family/#me",
+					"summary": "Subject: that one “straight girlfriends” article.\n\nI've seen it around a couple of times and so I wrote up my thoughts!! As an actual blogpost instead of just spamming the FTL!!\n\nIf you read the article, you might find it interesting. (If you didn't, there's a link at the top~)",
+					"url": {
+						"type": "Link",
+						"mediaType": "application/xhtml+xml",
+						"rel": "alternate",
+						"href": "https://go.KIBI.family/Aug/2018/girlfriends.xhtml"
+					}
+				}
+			}
+		}
+	]
+}

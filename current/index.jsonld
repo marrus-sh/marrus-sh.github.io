@@ -1,0 +1,79 @@
+{
+	"@context": "https://www.w3.org/ns/activitystreams",
+	"type": "OrderedCollectionPage",
+	"id": "https://go.KIBI.family/current",
+	"first": "https://go.KIBI.family/current",
+	"last": "https://go.KIBI.family/Jun/2018/",
+	"next": "https://go.KIBI.family/Aug/2018/",
+	"partOf": "https://go.KIBI.family/.outbox",
+	"url": {
+		"type": "Link",
+		"rel": "alternate",
+		"mediaType": "application/atom+xml",
+		"href": "https://go.KIBI.family/current/index.atom"
+	},
+	"orderedItems": [
+		{
+			"type": "Create",
+			"id": "https://go.KIBI.family/Sep/2018/#create.fringe-beginnings",
+			"actor": "https://go.KIBI.family/#me",
+			"published": "2018-09-09T14:47:55-07:00",
+			"to": "Public",
+			"object": {
+				"type": "Note",
+				"id": "https://go.KIBI.family/Sep/2018/#fringe-beginnings",
+				"published": "2018-09-09T14:47:55-07:00",
+				"attributedTo": "https://go.KIBI.family/#me",
+				"to": "Public",
+				"content": "<p>Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!</p><p>New blogpost: Fringe Mastodev – Part I: The Beginnings</p><p><a href='https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml'>https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml</a>",
+				"mediaType": "text/plain",
+				"tag": "Public",
+				"attachment": {
+					"type": "Page",
+					"id": "https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml",
+					"name": "Fringe Mastodev – I: The Beginnings",
+					"published": "2018-09-09T14:47:55-07:00",
+					"attributedTo": "https://go.KIBI.family/#me",
+					"summary": "Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!",
+					"url": {
+						"type": "Link",
+						"mediaType": "application/xhtml+xml",
+						"rel": "alternate",
+						"href": "https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml"
+					}
+				}
+			}
+		},
+		{
+			"type": "Create",
+			"id": "https://go.KIBI.family/Sep/2018/#create.fringe-allie",
+			"actor": "https://go.KIBI.family/#me",
+			"published": "2018-09-16T17:07:04-07:00",
+			"to": "Public",
+			"object": {
+				"type": "Note",
+				"id": "https://go.KIBI.family/Sep/2018/#fringe-allie",
+				"published": "2018-09-16T17:07:04-07:00",
+				"attributedTo": "https://go.KIBI.family/#me",
+				"to": "Public",
+				"content": "<p>A challenger approaches!! Learn the backstory behind The Most Controversial Article Ever About Mastodon (at least until this blogseries finishes #yolo) and everyone's fav trashgirl who wrote it.</p><p>New blogpost:<br />Fringe Mastodev – Part II: Enter Allie Hart</p><p><a href='https://go.KIBI.family/Sep/2018/fringe-allie.xhtml'>https://go.KIBI.family/Sep/2018/fringe-allie.xhtml</a>",
+				"mediaType": "text/plain",
+				"tag": "Public",
+				"attachment": {
+					"type": "Page",
+					"id": "https://go.KIBI.family/Sep/2018/fringe-allie.xhtml",
+					"name": "Fringe Mastodev – II: Enter Allie Hart",
+					"published": "2018-09-16T17:07:04-07:00",
+					"attributedTo": "https://go.KIBI.family/#me",
+					"summary": "A challenger approaches!! Learn the backstory behind The Most Controversial Article Ever About Mastodon (at least until this blogseries finishes #yolo) and everyone's fav trashgirl who wrote it.",
+					"url": {
+						"type": "Link",
+						"mediaType": "application/xhtml+xml",
+						"rel": "alternate",
+						"href": "https://go.KIBI.family/Sep/2018/fringe-allie.xhtml"
+					}
+				}
+			}
+		}
+	]
+}

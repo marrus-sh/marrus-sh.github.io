@@ -1,0 +1,10 @@
+{
+	"subject": "acct:Kyebego@go.KIBI.family",
+	"links": [
+		{
+			"rel": "self",
+			"type": "application/activity+json",
+			"href": "https://go.KIBI.family/#me"
+		}
+	]
+}

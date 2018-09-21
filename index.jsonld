@@ -1,0 +1,48 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://w3id.org/security/v1",
+		"https://vocab.KIBI.network/press"
+	],
+	"type": [
+		"Person",
+		"Author"
+	],
+	"id": "https://go.KIBI.family/#me",
+	"name": "KIBI Gô",
+	"icon": "https://go.KIBI.family/Images/kirbi",
+	"preferredUsername": "Kyebego",
+	"summaryMap": {
+		"en": "Current Plan: https://go.KIBI.family/.plan"
+	},
+	"inbox": "https://go.KIBI.family/.inbox",
+	"outbox": "https://go.KIBI.family/.outbox",
+	"url": [
+		{
+			"type": "Link",
+			"mediaType": "text/html",
+			"rel": "alternate",
+			"href": "https://go.KIBI.family/"
+		},
+		{
+			"type": "Link",
+			"mediaType": "application/atom+xml",
+			"rel": "alternate",
+			"href": "https://go.KIBI.family/feed.atom"
+		},
+		{
+			"type": "Link",
+			"mediaType": "text/html",
+			"rel": "payment",
+			"href": "https://patreon.com/kibigo"
+		}
+	],
+	"publicKey": {
+		"id": "https://go.KIBI.family/#publicKey",
+		"owner": "https://go.KIBI.family/#me",
+		"publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt5iUAjcMHk8rJNvvfC/6\n5iVdcM81RwQHy3TIesCUufr77JPkrTCyI6GzARhJwTbUMdNMlxK7N4fvN6K99w+U\nQuidOjSkLC1c8nGQ8h3SmovPFCBCx5Y33sROQ5bVC9epwhXrsHFSd5RPA9ZukoYm\nfcLnFbfjtCpvsK6ECGJ1/d97l82Zdd0gNS0/iD5kPycp4d2r3olNIvfYotA6xz1D\nsC9ODIcxi/Omb0Tf1+ARvXkxLi4BErmokla/DyurDUErN8Nbq70GKeSbN+88W+DT\n3U8M0y0e7+wOum15cZAgltvnlKeQ8tIoFEGToVm/5rj+sh0KxfdVS9f6xuvKpy3z\nmQIDAQAB\n-----END PUBLIC KEY-----"
+	},
+	"anthologies": "https://go.KIBI.family/Collected/",
+	"publications": "https://go.KIBI.family/Works/",
+	"serverInfo": "https://go.KIBI.family/instance.jsonld#Server"
+}

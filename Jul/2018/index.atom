@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+	xmlns:fh="http://purl.org/syndication/history/1.0" xml:lang="en">
+	<fh:archive />
+	<title>KIBI Gô's Blog</title>
+	<link rel="self"
+		href="https://go.KIBI.family/Jul/2018/index.atom" />
+	<link rel="prev-archive"
+		href="https://go.KIBI.family/Jun/2018/index.atom" />
+	<link rel="next-archive"
+		href="https://go.KIBI.family/Aug/2018/index.atom" />
+	<link rel="current"
+		href="https://go.KIBI.family/current/index.atom" />
+	<updated>2018-09-20T18:54:07-07:00</updated>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/#me</uri>
+	</author>
+	<id>https://go.KIBI.family/.outbox</id>
+	<entry>
+		<title>Clacks Overhead</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml" />
+		<id>
+			https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml
+		</id>
+		<updated>2018-07-31T15:54:31-07:00</updated>
+		<summary type="xhtml"
+			xmlns:HTML="http://www.w3.org/1999/xhtml">
+			<HTML:p>
+				Subject: Natalie; Clacks Overheads.
+			</HTML:p>
+			<HTML:p>
+				I wrote a brief thing on supporting them in
+					ActivityPub.
+				Apologies if this has been done before, but I
+					couldn't find anything and I think it might be
+					important.
+			</HTML:p>
+			<HTML:p>
+				🕯<HTML:br />miss you
+			</HTML:p>
+		</summary>
+	</entry>
+</feed>
