@@ -13,7 +13,7 @@
 	"icon": "https://go.KIBI.family/kirbi.png",
 	"preferredUsername": "me",
 	"summaryMap": {
-		"en": "Current Plan: https://go.KIBI.family/.plan\n\n(I will not receive ActivityPub messages addressed to this account; please message @kibi@glitch.social instead.)"
+		"en": "Current Plan: https://go.KIBI.family/.plan.txt\n\n(I will not receive ActivityPub messages addressed to this account; please message @kibi@glitch.social instead.)"
 	},
 	"inbox": "https://go.KIBI.family/.inbox",
 	"outbox": "https://go.KIBI.family/outbox.jsonld",

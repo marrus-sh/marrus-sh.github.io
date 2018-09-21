@@ -6,12 +6,12 @@
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/me.jsonld</uri>
-		<summary type="html">&lt;p&gt;Current Plan: &lt;a href="https://go.KIBI.family/.plan"&gt;https://go.KIBI.family/.plan&lt;/a&gt;&lt;/p&gt;&lt;p&gt;(I will not receive ActivityPub messages addressed to this account; please message &lt;a href="https://glitch.social/@kibi"&gt;@kibi@glitch.social&lt;/a&gt; instead.)&lt;/p&gt;</summary>
+		<summary type="html">&lt;p&gt;Current Plan: &lt;a href="https://go.KIBI.family/.plan.txt"&gt;https://go.KIBI.family/.plan.txt&lt;/a&gt;&lt;/p&gt;&lt;p&gt;(I will not receive ActivityPub messages addressed to this account; please message &lt;a href="https://glitch.social/@kibi"&gt;@kibi@glitch.social&lt;/a&gt; instead.)&lt;/p&gt;</summary>
 		<link rel="avatar" type="image/png" href="https://go.KIBI.family/kirbi.png" />
 		<link rel="alternate" type="text/xhtml+xml" href="https://glitch.social/@kibi"/>
 		<poco:preferredUsername>me</poco:preferredUsername>
 		<poco:displayName>KIBI Gô</poco:displayName>
-		<poco:note>Current Plan: https://go.KIBI.family/.plan&#x0A;&#x0A;(I will not receive ActivityPub messages addressed to this account; please message @kibi@glitch.social instead.)</poco:note>
+		<poco:note>Current Plan: https://go.KIBI.family/.plan.txt&#x0A;&#x0A;(I will not receive ActivityPub messages addressed to this account; please message @kibi@glitch.social instead.)</poco:note>
 		<mastodon:scope>public</mastodon:scope>
 	</author>
 	<activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>

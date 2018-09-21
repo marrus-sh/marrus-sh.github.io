@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <entry xmlns="http://www.w3.org/2005/Atom" xmlns:activity="http://activitystrea.ms/spec/1.0/" xmlns:poco="http://portablecontacts.net/spec/1.0" xmlns:mastodon="http://mastodon.social/schema/1.0">
-	<id>https://go.KIBI.family/Aug/2018/girlfriends.atom</id>
-	<published>2018-08-11T17:03:08-07:00</published>
-	<title>That One “Striaght Girlfriends” Article</title>
+	<id>https://go.KIBI.family/Sep/2018/fringe-beginnings.atom</id>
+	<published>2018-09-09T14:47:55-07:00</published>
+	<title>Fringe Mastodev – I: The Beginnings</title>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/me.jsonld</uri>
@@ -16,10 +16,9 @@
 	</author>
 	<activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
 	<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
-	<summary>that one “straight girlfriends” article</summary>
-	<content type="html" xml:lang="en">&lt;p&gt;I've seen it around a couple of times and so I wrote up my thoughts!! As an actual blogpost instead of just spamming the FTL!!&lt;/p&gt;&lt;p&gt;&lt;a href="https://go.kibi.family/Aug/2018/girlfriends.xhtml"&gt;https://go.kibi.family/Aug/2018/girlfriends.xhtml&lt;/a&gt;&lt;/p&gt;&lt;p&gt;If you read the article, you might find it interesting. (If you didn't, there's a link at the top~)&lt;/p&gt;</content>
+	<content type="html" xml:lang="en">&lt;p&gt;Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!&lt;/p&gt;&lt;p&gt;New blogpost: Fringe Mastodev – Part I: The Beginnings&lt;/p&gt;&lt;p&gt;&lt;a href="https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml"&gt;https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml&lt;/a&gt;&lt;p&gt;</content>
 	<link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
 	<mastodon:scope>public</mastodon:scope>
-	<link rel="alternate" type="application/xhtml+xml" href="https://go.KIBI.family/Aug/2018/girlfriends.xhtml"/>
-	<link rel="self" type="application/atom+xml" href="https://go.KIBI.family/Aug/2018/girlfriends.atom"/>
+	<link rel="alternate" type="application/xhtml+xml" href="https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml"/>
+	<link rel="self" type="application/atom+xml" href="https://go.KIBI.family/Sep/2018/fringe-beginnings.atom"/>
 </entry>
