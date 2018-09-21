@@ -44,5 +44,5 @@
 	},
 	"anthologies": "https://go.KIBI.family/Collected/",
 	"publications": "https://go.KIBI.family/Works/",
-	"serverInfo": "https://go.KIBI.family/instance.jsonld#Server"
+	"serverInfo": "https://go.KIBI.family/instance"
 }

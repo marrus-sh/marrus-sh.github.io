@@ -1,18 +1,13 @@
 {
-	"@context": [
-		"https://www.w3.org/ns/activitystreams",
-		"https://vocab.KIBI.network/press"
-	],
+	"@context": "https://www.w3.org/ns/activitystreams",
 	"type": "Image",
 	"id": "https://go.KIBI.family/Images/kirbi",
 	"name": "Kirbi",
 	"summary": "A cute hand‐drawn black-and-white Kirby with a star.",
-	"url": [
-		{
-			"type": "Link",
-			"mediaType": "image/png",
-			"rel": "alternate",
-			"href": "https://go.KIBI.family/Images/kirbi/media.png"
-		}
-	]
+	"url": {
+		"type": "Link",
+		"mediaType": "image/png",
+		"rel": "alternate",
+		"href": "https://go.KIBI.family/Images/kirbi/media.png"
+	}
 }
