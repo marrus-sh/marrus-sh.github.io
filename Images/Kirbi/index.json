@@ -1,0 +1,16 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"type": "Image",
+	"id": "go:Images/Kirbi/",
+	"name": "Kirbi",
+	"summary": "A cute black-and-white doodle of Kirby with a star on a transparent background",
+	"url": {
+		"type": "Link",
+		"rel": "alternate",
+		"mediaType": "image/png",
+		"href": "go:Images/Kirbi/media.png"
+	}
+}

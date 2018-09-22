@@ -4,20 +4,17 @@
 	<link rel="self" href="https://go.KIBI.family/current.atom" />
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
-	<updated>2018-09-20T21:27:03-07:00</updated>
+	<updated>2018-09-22T02:16:06-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
-		<uri>https://go.KIBI.family/me.jsonld</uri>
+		<uri>https://go.KIBI.family/#me</uri>
 	</author>
-	<id>https://go.KIBI.family/outbox.jsonld</id>
+	<id>https://go.KIBI.family/Posts/</id>
 	<entry>
-		<subtitle>A History</subtitle>
 		<title>Fringe Mastodev – I: The Beginnings</title>
 		<link rel="alternate" type="application/xhtml+xml" href="
 https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml" />
-		<id>
-			https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml
-		</id>
+		<id>https://go.KIBI.family/Sep/2018/#fringe-beginnings</id>
 		<updated>2018-09-09T14:47:55-07:00</updated>
 		<summary type="xhtml"
 			xmlns:HTML="http://www.w3.org/1999/xhtml">
@@ -30,13 +27,10 @@ https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml" />
 		</summary>
 	</entry>
 	<entry>
-		<subtitle>A History</subtitle>
 		<title>Fringe Mastodev – II: Enter Allie Hart</title>
 		<link rel="alternate" type="application/xhtml+xml" href="
 https://go.KIBI.family/Sep/2018/fringe-allie.xhtml" />
-		<id>
-			https://go.KIBI.family/Sep/2018/fringe-allie.xhtml
-		</id>
+		<id>https://go.KIBI.family/Sep/2018/#fringe-allie</id>
 		<updated>2018-09-16T17:07:04-07:00</updated>
 		<summary type="xhtml"
 			xmlns:HTML="http://www.w3.org/1999/xhtml">

@@ -1,0 +1,95 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://vocab.KIBI.network/press",
+		{
+			"foaf": "http://xmlns.com/foaf/0.1/",
+			"go": "https://go.KIBI.family/",
+			"xsd": "http://www.w3.org/2001/XMLSchema#",
+			"age": {
+				"@id": "foaf:age",
+				"@type": "xsd:nonNegativeInteger"
+			},
+			"img": {
+				"@id": "foaf:img",
+				"@type": "@id"
+			},
+			"myersBriggs": {
+				"@id": "foaf:myersBriggs",
+				"@type": "xsd:string"
+			}
+		}
+	],
+	"@graph": [
+		{
+			"type": [
+				"Person",
+				"Author",
+			],
+			"id": "go:#me",
+			"name": "KIBI Gô",
+			"icon": "go:Images/Kirbi/",
+			"img": "go:Images/Portrait/",
+			"age": 24,
+			"myersBriggs": "MBTI",
+			"summaryMap": {
+				"en": "Current Plan: https://go.KIBI.family/.plan.txt"
+			},
+			"url": [
+				{
+					"type": "Link",
+					"mediaType": "text/xhtml+xml",
+					"rel": "alternate",
+					"href": "go:"
+				},
+				{
+					"type": "Link",
+					"mediaType": "application/atom+xml",
+					"rel": "alternate",
+					"href": "go:current.atom"
+				},
+				{
+					"type": "Link",
+					"mediaType": "text/html",
+					"rel": "payment",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"anthologies": "go:Collected/",
+			"publications": "go:Works/",
+			"posts": "go:Posts/",
+			"serverInfo": "go:#server"
+		},
+		{
+			"type": "Server",
+			"id": "go:#server",
+			"name": "KIBI Gô's Website",
+			"icon": "go:Images/Server/",
+			"url": {
+					"type": "Link",
+					"mediaType": "text/html",
+					"rel": "payment",
+					"href": "https://patreon.com/kibigo"
+			}
+		},
+		{
+			"type": "OrderedCollectionPage",
+			"id": "go:#current",
+			"first": "go:#current",
+			"last": "go:Jun/2018/",
+			"next": "go:Aug/2018/",
+			"partOf": "go:Posts/",
+			"url": {
+				"type": "Link",
+				"rel": "alternate",
+				"mediaType": "application/atom+xml",
+				"href": "go:current.atom"
+			},
+			"orderedItems": [
+				"go:Sep/2018/#fringe-allie",
+				"go:Sep/2018/#fringe-beginnings"
+			],
+			"serverInfo": "go:#server"
+		}
+	]
+}

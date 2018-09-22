@@ -1,99 +1,507 @@
 <!DOCTYPE html>
-<html
-	xmlns="http://www.w3.org/1999/xhtml"
-	lang="en"
-	xml:lang="en"
->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
+	resource="#me" typeof="foaf:Person">
 <head>
 	<title>KIBI Gô</title>
 	<meta charset="UTF-8" />
+	<base href="https://go.KIBI.family/" />
+	<link rel="alternate" type="application/ld+json" href="/" />
+	<link property="foaf:homepage" href="/" />
+	<link property="foaf:account" rel="me"
+		href="https://mastodon.social/@marrus_sh" />
+	<link property="foaf:account" rel="me"
+		href="https://icosahedron.website/@u2764" />
+	<link class="MASTO-ACCT" property="foaf:account" rel="me"
+		href="https://glitch.social/@kibi" />
+	<link class="MASTO-ACCT" property="foaf:account" rel="me"
+		href="https://weirder.earth/@onethousandtwentyfour" />
 	<style>
-		html{ Font-Family:Serif }
-		body{ Margin:Auto ; Padding: 3EM ; Max-Width:43EM }
-		h1{ Margin:.75EM 0 .5EM ; Font-Size:XX-Large ;
-			Font-Weight:Bold ; Text-Align:Center }
+		#portrait{ Float:Left ; Margin: 0 2CH ; Width:20CH ;
+			Max-Width:20% }
+		aside.PROFILE{ Display:Block ; Align-Self:Start ;
+			Grid-Row-End:Span 2 ; Box-Sizing:Border-Box ;
+			Border-Style:Solid Double Double Solid ;
+			Border-Width:3PX ; Padding:.5EM ; Width:100% ;
+			Height:100% ; Box-Shadow:2PX 2PX Black ; Color:Black ;
+			Background:White ; Font-Size:Smaller }
+		aside.PROFILE *.invisible{ Display:None }
+		aside.PROFILE header{ Display:Grid ; Align-Items:Center ;
+			Justify-Content:Center ; Grid-Template-Rows:2.5EM 1.5EM
+			; Grid-Template-Columns:4EM Auto ; Row-Gap:0 ;
+			Column-Gap:.5EM ; Margin:0 -.5EM .5EM ;
+			Border-Bottom:Thin Solid ; Padding:0 .5EM .5EM ;
+			Height:4EM ; Font-Size:Inherit }
+		aside.PROFILE header>img{ Display:Block ; Margin:0 ;
+			Border-Radius:.5CH ; Grid-Row-Start:1 ; Grid-Row-End:3
+			; Grid-Column-Start:1 ; Grid-Column-End:2 ; Width:4EM ;
+			Height:4EM ; Font-Size:Inherit }
+		aside.PROFILE header>h2{ Display:Block ; Align-Self:End ;
+			Grid-Row-Start:1 ; Grid-Row-End:2 ; Grid-Column-Start:2
+			; Grid-Column-End:3 ; Margin:0 ; Padding:0 ;
+			Font-Size:Larger ; Font-Weight:Bold ; Text-Align:Left ;
+			Text-Decoration:Underline ; Text-Overflow:Ellipsis ;
+			White-Space:NoWrap ; Overflow:Hidden }
+		aside.PROFILE header>code{ Display:Block ; Align-Self:Start ;
+			Grid-Row-Start:2 ; Grid-Row-End:3 ; Grid-Column-Start:2
+			; Grid-Column-End:3 ; Margin:0 ; Padding:0 ;
+			Font-Size:Smaller ; Text-Align:Left ;
+			Text-Overflow:Ellipsis ; White-Space:NoWrap ;
+			Overflow:Hidden }
+		aside.PROFILE p{ Margin:1EM 0 ; Text-Align:Center ;
+			Text-Indent:0 }
+		aside.PROFILE dl{ Border-Style:None Solid Solid ;
+			Border-Width:0 Thin Thin ; Text-Align:Left ;
+			Word-Break:Break-All }
+		aside.PROFILE dt{ Margin:0 ; Border-Top:Thin Solid ;
+			Padding:.25EM 1CH ; Font-Weight:Bold }
+		aside.PROFILE dd{ Margin:0 0 0 2EM ; Padding:0 1CH .25EM 0 }
+		aside.PROFILE td, #profile th{ Border:Thin Solid ;
+			Padding:.5CH }
+		aside.PROFILE>a{ Color:Inherit ; Text-Decoration:None }
+		aside.PROFILE>img{ Display:Block ; Margin:-.5EM -.5EM .5EM ;
+			Border:None ; Padding:0 ; Width:Calc(100% + 1EM) ;
+			Height:Auto ; Font-Size:Inherit }
+		aside.PROFILE[hidden]{ Display:Block ; Visibility:Hidden }
+		blockquote{ Display:Inline ; Margin:0 ; Border:None ;
+			Padding:0 }
+		blockquote[hidden]{ Display:None }
+		blockquote.FORTUNE{ Font-Size:Large ; Font-Style:Italic }
+		blockquote.FORTUNE>a{ Color:Inherit ;
+			Text-Decoration:Underline }
+		body{ Display:Grid ; Align-Items:Center ;
+			Justify-Content:Center ; Grid-Auto-Flow:Dense ;
+			Grid-Template-Columns:Repeat(Auto-Fill,MinMax(20CH,1FR))
+			; Row-Gap:1EM ; Column-Gap:2CH ; Margin:Auto ;
+			Padding:.5EM 2CH ; Color:Black ; Background:White ;
+			Text-Align:Center }
+		body>a{ Display:Block ; Color:Black ; Background:White ;
+			Font-Size:Small ; Line-Height:1.5 ; Text-Align:Justify ;
+			Text-Decoration:None ; Hyphens:Auto ; Overflow:Hidden }
+		body>a:focus,body>a:hover{ Text-Shadow:.5PX .5PX CurrentColor }
+		body>a:focus mark,body>a:hover mark{ Box-Shadow:1PX 1PX
+			CurrentColor }
+		body>a:Not(:Nth-Of-Type(3n+1)){ Grid-Column-End:Span 2 ;
+			Columns:2 ; Column-Gap:Inherit }
+		body>a:Nth-Of-Type(3n+1){ Grid-Row-End:Span 2 }
+		body>article{ Display:Block ; Padding:1EM 2EM ;
+			Align-Self:Start ; Grid-Row-Start:2 ; Grid-Row-End:5 ;
+			Grid-Column-Start:2 ; Grid-Column-End:5;
+			Text-Align:Justify ; Hyphens:Auto ; Overflow:Auto }
+		body>div.FORTUNES{ Margin:2EM 0 }
+		body>nav{ Display:Block ; Column-Gap:Inherit ;
+			Font-Size:Small ; Overflow:Auto }
+		body>nav>ul { Columns:2 10CH ; Column-Gap:Inherit }
+		h1{ Margin:0 .5EM ; Font-Size:XX-Large ; Font-Weight:Bold ;
+			Text-Align:Center ; Text-Decoration:Underline }
+		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold ;
+			Text-Align:Center ; Text-Decoration:Underline }
+		html{ Margin:0 ; Padding:0 ; Color:Black ; Background:White ;
+			Font-Family:Serif }
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::BEFORE{ Content:Open-Quote }
+		i.SO-CALLED::AFTER{ Content:Close-Quote }
+		li{ Margin:0 }
+		mark{ Border:Thin Solid ; Margin:-.1EM -.2EM ; Padding:.1EM
+			.2EM ; Color:Inherit ; Background:Transparent ;
+			Box-Shadow:.5PX .5PX CurrentColor; Font-Style:Italic }
 		p{ Margin:0 ; Text-Align:Justify }
 		p+p{ Text-Indent:2EM }
-		u{ Text-Decoration:Wavy Underline }
-		u:Lang(en){ Font-Variant:Small-Caps ; Text-Decoration:None }
-		u.jer{ Text-Decoration:None ; Text-Transform: Uppercase }
-		#portrait{ Float:Left ; Margin: 0 1.5EM ; Width:9EM ;
-			Max-Width:20% }
+		span[aria-hidden=true]{ Margin:-.15EM 0 ; Padding:.15EM
+			.15EM ; Background:Black ; Text-Shadow:None }
+		strong{ Color:Inherit }
+		ul{ Margin:0 ; Padding:0 ; List-Style-Position:Inside }
+		@media (Max-Width:75CH) {
+			body>article{ Grid-Column-Start:1 ; Grid-Column-End:3 }
+		}
 	</style>
 </head>
 <body>
-	<h1><u><u class="jer">Kibi</u> Gô</u></h1>
-	<img
-		alt="A doodle of a cute girl, standing"
-		id="portrait"
-		src="portrait.png"
-	/>
-	<p>
-		Geez, what are you doing here?
-		Let's get you someplace cool.
-	</p>
-	<p>
-		My name is <u>Gô</u>, and I'm the founder and organizer and
-			general go&#x2010;to individual for the
-			<u class="jer" >Kibi</u> <i lang="art-Latn-x-osv"
-			xml:lang="art-Latn-x-osv">jeƣ</i>, a Sevensi community
-			organization.
-		You can learn more about Sevensi from the <cite>Primer</cite>
-			(in&#x2010;progress), available <a
-			href="http://langdev.xyz/jsv/osv/primer/index.html"
-			title="Classical Sevensi: A Primer">here</a>, and you
-			can learn more about the <i lang="art-Latn-x-osv"
-			xml:lang="art-Latn-x-osv">jeƣ</i> <a
-			href="https://www.kibi.family/">here</a>.
-	</p>
-	<p>
-		I'm the author of a number of stories, most principally
-			<cite>Vague</cite> (in progress), which you can read <a
-			href="http://marrus.xyz/vague/" title="Vague" >here</a>,
-			and a gay <cite>The Legend of
-			Zelda</cite>/<cite>Metroid</cite> crossover fic,
-			available <a
-			href="https://archiveofourown.org/works/14899557"
-			title="The Meaning of Twilight | Archive of Our Own"
-			>here</a>.
-	</p>
-	<p>
-		I'm also the author/editor of a number of not&#x2010;stories,
-			including <a href="https://cybremonday.net/"
-			><cite>CYBREMONDAY</cite></a>, a cybre&#x2010;queer
-			zine, and <a href="https://www.monstr.pub/spec/"
-			><cite>MonStrPub</cite></a>, a specification for
-			federating mon with ActivityPub.
-		I'm additionally a contributing developer on a MonStrPub
-			implementation, known as <a
-			href="https://www.monstr.pub/monsto/">Monstodon</a>.
-		In the past, I contributed a number of features to other
-			ActivityPub software projects, including <a
-			href="https://joinmastodon.org/">Mastodon</a> and <a
-			href="https://glitch-soc.github.io/docs/">GlitchSoc</a>.
-	</p>
-	<p>
-		For data&#x2010;minded folks, the adventurous, and
-			archivists/librarians, you can access a
-			catalogue of most everything I've ever published <a
-			href="https://go.kibi.family/bns/"
-			title="The BNS @ KIBI Gô">here</a>&#x2014;linked data
-			included.
-		If you're more interested in my non&#x2010;creative output,
-			you might want to browse <a
-			href="https://github.com/marrus-sh/"
-			title="marrus-sh | GitHub">my GitHub profile</a>
-			instead.
-	</p>
-	<p>
-		If you wanna hang out or chat, you can find me on ActivityPub
-			<a href="https://glitch.social/@kibi"
-			title="@kibi@glitch.social">here</a>.
-		The fediverse can be daunting at times, but I'm a friend ☺.
-		(I also operate a somewhat&#x2010;daily
-			<u>Unicode</u>&#x2010;character&#x2013;posting account
-			<a href="https://glitch.social/@a_character"
-			title="@a_character@glitch.social">here</a>.)
-	</p>
+	<article id="me">
+		<h1 property="foaf:name">KIBI Gô</h1>
+		<img
+			alt="A doodle of a cute girl, standing"
+			id="portrait"
+			src="/Images/Portrait/media.png"
+		/>
+		<p>
+			Geez, what are you doing here?
+			Let's get you someplace cool.
+		</p>
+		<p>
+			My name is <strong>Gô</strong> (style: <span
+				lang="art-Latn-x-svi" xml:lang="art-Latn-x-svi"
+				property="foaf:name">Kyɛbɛgɔ</span>), and I'm the
+				wexri of <a href="https://www.KIBI.family/">the
+				KIBI jexr</a>&#x2014;which are probably not words
+				which make sense to you.
+			Right now, my activities mostly centre around building
+				language documentation tools for <a
+				href="http://langdev.xyz/jsv/osv/primer/index.html"
+				>Sevensi</a> and publishing and cataloguïng tools
+				for the internet writ large.
+		</p>
+		<p>
+			I'm the author of a number of stories, most principally
+				<a property="foaf:made"
+				href="http://marrus.xyz/Vague/"><cite>Vague</cite
+				></a> (in progress), and a gay <cite>The Legend of
+				Zelda</cite>/<cite>Metroid</cite> crossover fic
+				titled <a property="foaf:made"
+				href="https://archiveofourown.org/series/1017876"
+				><cite>The Legend of Samus and Ilia</cite></a>.
+		</p>
+		<p>
+			I'm also the author/editor of a number of
+				not&#x2010;stories, including <a
+				property="foaf:made"
+				href="https://cybremonday.net/"><cite
+				>CYBREMONDAY</cite></a>, a cybre&#x2010;queer
+				zine, and <a property="foaf:weblog"
+				href="current.atom">my blog</a>, which you can
+				expect to contain content of all varieties.
+			In the past, I contributed a number of features to a
+				number of ActivityPub software projects, including
+				<a href="https://joinmastodon.org/">Mastodon</a>
+				and <a href="https://glitch-soc.github.io/docs/"
+				>GlitchSoc</a>, and you can read more about that
+				history <a href="/Sep/2018/fringe-allie.xhtml"
+				>here</a>.
+		</p>
+	</article>
+	<script>
+		void function ( ) {
+			var
+				acctindex = 0 ,
+				accts = document.getElementsByClassName(
+					"MASTO-ACCT" ) ,
+				remaining = accts.length ,
+				profiles = [] ,
+				thisTag = document.getElementById( "me" )
+					.nextElementSibling
+			function makeElement ( name ) {
+				return document.createElementNS(
+					"http://www.w3.org/1999/xhtml" , name ) }
+			function handleRequest ( request , number ) {
+				var
+					element , subelement , attachment ,
+					index = 0 ,
+					height = 1 ,
+					profile = makeElement( "aside" ) ,
+					response = request.response ,
+					username = "@" + response.preferredUsername
+				profile.className = "PROFILE"
+				if
+					( response.image )
+					void function ( ) {
+						element = makeElement( "img" )
+						element.src = response.image.url
+						element.alt =
+							"Background image for " +
+							username
+						profile.appendChild( element )
+						height++ }( )
+				element = makeElement( "header" )
+				if
+					( response.icon )
+					void function ( ) {
+						subelement = makeElement( "img" )
+						subelement.src = response.icon.url
+						subelement.alt = "Icon for " + username
+						element.appendChild ( subelement ) } ( )
+				subelement = makeElement( "h2" )
+				subelement.textContent = response.name
+				element.appendChild( subelement )
+				subelement = makeElement( "code" )
+				subelement.textContent = username
+				element.appendChild( subelement )
+				subelement = element
+				element = makeElement( "a" )
+				element.href = response.url
+				element.appendChild( subelement )
+				profile.appendChild( element )
+				element = makeElement( "div" )
+				element.innerHTML = response.summary
+				profile.appendChild( element )
+				element = makeElement( "dl" )
+				if
+					( attachment = response.attachment )
+					for
+						( ; attachment.length > index ; index++ )
+						if
+							( attachment[ index ].type
+								== "PropertyValue" )
+							void function ( ) {
+								var
+									property =
+										attachment[ index ]
+								subelement = makeElement(
+									"dt" )
+								subelement.innerHTML =
+									property.name
+								element.appendChild(
+									subelement )
+								subelement = makeElement(
+									"dd" )
+								subelement.innerHTML =
+									property.value
+								element.appendChild(
+									subelement )
+								if
+									( !( index % 2 ) )
+									height++ }( )
+				profile.appendChild( element )
+				profile.dataset.index = number
+				profile.setAttribute( "style" ,
+					"Grid-Row-End:Span " + ( height >>> 0 ) )
+				profiles[ number ] = profile
+				if
+					( index = 0 , !--remaining )
+					for
+						( ; profiles.length > index ; index++ )
+						if
+							( profile = profiles [ index ] )
+							document.body.insertBefore(
+								profile , thisTag ) }
+			function makeRequest ( acct , number ) {
+				var request = new XMLHttpRequest
+				function handleThisRequest ( ) {
+					this.removeEventListener(
+						"load" , handleThisRequest )
+					this.removeEventListener(
+						"abort" , handleThisFailedRequest )
+					this.removeEventListener(
+						"error" , handleThisFailedRequest )
+					handleRequest( this , number ) }
+				function handleThisFailedRequest ( ) {
+					this.removeEventListener(
+						"load" , handleThisRequest )
+					this.removeEventListener(
+						"abort" , handleThisFailedRequest )
+					this.removeEventListener(
+						"error" , handleThisFailedRequest )
+					remaining-- }
+				request.addEventListener(
+					"load", handleThisRequest )
+				request.addEventListener(
+					"abort", handleThisFailedRequest )
+				request.addEventListener(
+					"error", handleThisFailedRequest )
+				request.open( "GET" , acct.href )
+				request.responseType = "json"
+				request.setRequestHeader(
+					"Accept" , "application/activity+json" )
+				request.send( )
+			}
+			for
+				( ; accts.length > acctindex ; acctindex++ )
+				makeRequest(
+					accts.item( acctindex ) , acctindex ) }( )
+	</script>
+	<a href="/Jun/2018/mermaid.xhtml">
+		<blockquote>
+			<span aria-hidden="true">There's no reason to</span>
+				limit ourselves <span aria-hidden="true">to
+				only</span> the most <mark>polished and
+				refined</mark> of our works <span
+				aria-hidden="true">in a world where</span> sharing
+				text is <mark>as easy</mark> as uploading a file,
+				<span aria-hidden="true">and being able to</span>
+				<mark>trace</mark> a text <mark>back</mark> through
+				past forms <span aria-hidden="true">and</span>
+				iterations <span aria-hidden="true">is</span> (I
+				think) <span aria-hidden="true">really useful both
+				in terms of</span> <mark>historically
+				situating</mark> a work, <span aria-hidden="true"
+				>and from a pedagogical standpoint of</span>
+				demonstrating the <mark>act</mark> of revision and
+				contemplation <mark>by example.</mark>
+		</blockquote>
+	</a>
+	<a href="/Jul/2018/clacks-overhead.xhtml">
+		<blockquote>
+			<span aria-hidden="true">Just like with</span> <mark
+				><code>X-<wbr />Clacks-<wbr />Overhead</code
+				>,</mark> <span aria-hidden="true"><code
+				>clacks:<wbr />overhead</code> will likely be</span
+				> <mark>ignored</mark> silently <span
+				aria-hidden="true">by any unrecognizing servers or
+				clients.</span>
+			However, <span aria-hidden="true">implementations
+				which</span> <mark>recognize</mark> this property
+				<span aria-hidden="true">should</span> <mark
+				>preserve it</mark> <span aria-hidden="true">as
+				they federate our objects</span> evermore out <mark
+				>into the cybre.</mark>
+		</blockquote>
+	</a>
+	<a href="/Aug/2018/girlfriends.xhtml">
+		<blockquote>
+			<span aria-hidden="true">What</span> is <mark>the
+				word</mark> <span aria-hidden="true">for</span> the
+				person who <mark>guided you through</mark> <span
+				aria-hidden="true">the lowest points of</span>
+				<mark>your worst</mark> depression, <span
+				aria-hidden="true">who knows you in ways that</span
+				> you honestly <mark>don't know yourself,</mark>
+				<span aria-hidden="true">because</span> you <mark
+				>can't remember,</mark> <span aria-hidden="true"
+				>who was your partner and your lover and</span> who
+				has <mark>come through</mark> <span
+				aria-hidden="true">on the other side as</span>
+				<mark><i class="SO-CALLED">just friends</i>?</mark>
+			(There is no straighter concept <span aria-hidden="true"
+				>than that of <i class="SO-CALLED">just friends</i
+				>, and</span> I <mark>take it back</mark
+				>&#x2014;<span aria-hidden="true">the
+				article's</span> <mark>greatest flaw</mark> <span
+				aria-hidden="true">is the fact that</span> it even
+				<em>begins</em> <span aria-hidden="true">to frame
+				things in that</span> light.)
+		</blockquote>
+	</a>
+	<a href="/Sep/2018/fringe-beginnings.xhtml">
+		<blockquote>
+			<span aria-hidden="true">As</span> a result, <span
+				aria-hidden="true">it took me a few days</span> to
+				<mark>piece together</mark> <span
+				aria-hidden="true">what was going on, and most
+				of</span> what I learned <mark>came
+				secondhand</mark> <span aria-hidden="true">(from
+				people discussing it</span> on the <abbr
+				title="Public TimeLine">PTL</abbr>) <span
+				aria-hidden="true">or thirdhand (from</span>
+				<mark>private</mark> communications <span
+				aria-hidden="true">with friends).</span>
+			You can <strong>see the <mark>awareness
+				dawning</mark></strong> <span aria-hidden="true">if
+				you</span> <mark>look closely:</mark>
+		</blockquote>
+	</a>
+	<a href="/Sep/2018/fringe-allie.xhtml">
+		<blockquote>
+			<span aria-hidden="true">For this round,</span> I played
+				<span aria-hidden="true">a</span> <strong><mark
+				>no&#x2010;nonsense,
+				goes&#x2010;for&#x2010;the&#x2010;throat</mark>
+				wolfgirl&#x2010;<span aria-hidden="true"
+				>in&#x2010;Hart's&#x2010;clothing,</span></strong
+				><span aria-hidden="true">still </span><strong
+				><span aria-hidden="true">recovering from a</span>
+				past <mark>toxic relationship</mark></strong>,
+				<span aria-hidden="true">who </span><strong><span
+				aria-hidden="true">loved</span> the <mark>😘
+				emoji</mark></strong> <span aria-hidden="true">and
+				</span><strong><span aria-hidden="true">cheekily
+				reäppropriated</span> <cite>Metroid: Other
+				M</cite></strong> <span aria-hidden="true">with
+				her avatar and catchphrase,</span> <strong><q>any
+				objections, <mark>Adam?</mark></q>.</strong>
+			<span aria-hidden="true">This was</span>&#x2014;for the
+				record&#x2014;<span aria-hidden="true">an</span>
+				<strong>accurate <mark>self&#x2010;portrayal,</mark
+				></strong> <span aria-hidden="true">but it was in
+				</span><strong><span aria-hidden="true">stark
+				contrast with the</span> typical <mark>gay
+				softposting</mark></strong> <span
+				aria-hidden="true">I was doing on my
+				mastodon.social account, and so </span><strong
+				>nobody <mark>ever connected</mark> <span
+				aria-hidden="true">the dots</span></strong> <mark
+				>on their own.</mark>
+		</blockquote>
+	</a>
+	<nav>
+		<h2>Also On:</h2>
+		<ul>
+			<li><a property="foaf:weblog" href=".outbox">Blog</a
+				></li>
+			<li><a property="foaf:account"
+				href="https://glitch.social/@kibi">Fediverse</a
+				></li>
+			<li><a property="foaf:account"
+				href="https://github.com/marrus-sh">GitHub</a></li>
+			<li><a property="foaf:plan" href=".plan"><code
+				>.plan</code></a></li>
+		</ul>
+	</nav>
+	<div class="FORTUNES">
+		<blockquote class="FORTUNE">
+			<a href="
+https://madeinheights.bandcamp.com/track/drexler">The trust of her
+				ancient anatomy.</a>
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			Korra&#x2010;style airbending.
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			<a href="
+https://en.wikipedia.org/wiki/List_of_Chihayafuru_episodes">G O ! !
+				!</a>
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			Let's GO!
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			How Many Meme Do Teen?
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			<a href="">Click Here For Fortune.</a>
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			function (ò_óˇ) {};
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			[Clean]
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			gosh!
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			蠲淢ẩꟹ뚬괗
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			⬲䑺昸⼴偉䄳奐丸䤭
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			潇匠潨浥歡
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			<i>*blushes wildly*</i>
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			Tired of bad websites.
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			Just say <strong>NO</strong> to bad formatting!
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			Open as the web.
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			Respect.
+		</blockquote>
+		<blockquote class="FORTUNE" hidden="">
+			<a href="https://bluescholars.bandcamp.com/track/27"
+				>Expect it.</a>
+		</blockquote>
+		<script>
+			void function ( ) {
+				var
+					number = 0 ,
+					fortunes = document.querySelectorAll(
+						".FORTUNE" ) ,
+					luckyNumber = (
+						Math.random( ) * fortunes.length ) >>> 0
+				for
+					( ; fortunes.length > number ; number++ )
+					if
+						( number == luckyNumber )
+						fortunes.item( number )
+							.removeAttribute( "hidden" )
+					else
+						fortunes.item( number )
+							.setAttribute( "hidden" , "" ) }( )
+		</script>
+	</div>
 </body>
 </html>

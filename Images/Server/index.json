@@ -1,0 +1,16 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"type": "Image",
+	"id": "go:Images/Server/",
+	"name": "Server",
+	"summary": "A photo of a MacBook Pro running an Apple Hardware Test, with an appropriate image filter",
+	"url": {
+		"type": "Link",
+		"rel": "alternate",
+		"mediaType": "image/jpeg",
+		"href": "go:Images/Server/media.jpg"
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://vocab.KIBI.network/press",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"@graph": [
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Jul/2018/#clacks-overhead",
+			"name": "Clacks Overhead",
+			"attributedTo": "go:#me",
+			"published": "2018-07-31T15:54:31-07:00",
+			"summary": "Subject: Natalie; Clacks Overheads.\n\nI wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.\n\n🕯\nmiss you",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Jul/2018/clacks-overhead.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:#server"
+		},
+		{
+			"type": "OrderedCollectionPage",
+			"id": "go:Jul/2018",
+			"first": "go:#current",
+			"last": "go:Jun/2018/",
+			"prev": "go:Aug/2018/",
+			"next": "go:Jun/2018/",
+			"partOf": "go:Posts/",
+			"url": {
+				"type": "Link",
+				"rel": "alternate",
+				"mediaType": "application/atom+xml",
+				"href": "go:Jul/2018/index.atom"
+			},
+			"orderedItems": [
+				"go:Jul/2018/#clacks-overhead",
+			],
+			"serverInfo": "go:#server"
+		}
+	]
+}

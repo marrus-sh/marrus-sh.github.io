@@ -1,0 +1,17 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"type": "OrderedCollection",
+	"id": "go:Posts/",
+	"first": "go:#current",
+	"last": "go:Jun/2018/",
+	"url": {
+		"type": "Link",
+		"rel": "alternate",
+		"mediaType": "application/atom+xml",
+		"href": "go:current.atom"
+	},
+	"serverInfo": "go:#server"
+}

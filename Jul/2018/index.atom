@@ -11,19 +11,17 @@
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
 	<link rel="current"
 		href="https://go.KIBI.family/current.atom" />
-	<updated>2018-09-20T21:20:08-07:00</updated>
+	<updated>2018-09-22T02:10:09-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
-		<uri>https://go.KIBI.family/me.jsonld</uri>
+		<uri>https://go.KIBI.family/#me</uri>
 	</author>
-	<id>https://go.KIBI.family/outbox.jsonld</id>
+	<id>https://go.KIBI.family/Posts/</id>
 	<entry>
 		<title>Clacks Overhead</title>
 		<link rel="alternate" type="application/xhtml+xml" href="
 https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml" />
-		<id>
-			https://go.KIBI.family/Jul/2018/clacks-overhead.xhtml
-		</id>
+		<id>https://go.KIBI.family/Jul/2018/#clacks-overhead</id>
 		<updated>2018-07-31T15:54:31-07:00</updated>
 		<summary type="xhtml"
 			xmlns:HTML="http://www.w3.org/1999/xhtml">

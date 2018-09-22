@@ -1,0 +1,54 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://vocab.KIBI.network/press",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"@graph": [
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Jun/2018/#mermaid",
+			"name": "ｍｅｒｍａｉｄ",
+			"attributedTo": "go:#me",
+			"published": "2018-06-29T23:28:13-07:00",
+			"summary": "current work\n\n(mostly me just rambling about web technologies though)",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Jun/2018/mermaid.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:#server"
+		},
+		{
+			"type": "OrderedCollectionPage",
+			"id": "go:Jun/2018",
+			"first": "go:#current",
+			"last": "go:Jun/2018/",
+			"prev": "go:Jul/2018/",
+			"partOf": "go:Posts/",
+			"url": {
+				"type": "Link",
+				"rel": "alternate",
+				"mediaType": "application/atom+xml",
+				"href": "go:Jun/2018/index.atom"
+			},
+			"orderedItems": [
+				"go:Jun/2018/#mermaid",
+			],
+			"serverInfo": "go:#server"
+		}
+	]
+}
