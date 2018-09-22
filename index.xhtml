@@ -51,23 +51,25 @@
 			Text-Indent:0 }
 		aside.PROFILE dl{ Border-Style:None Solid Solid ;
 			Border-Width:0 Thin Thin ; Text-Align:Left ;
-			Word-Break:Break-All }
+			Overflow-Wrap:Break-Word }
 		aside.PROFILE dt{ Margin:0 ; Border-Top:Thin Solid ;
 			Padding:.25EM 1CH ; Font-Weight:Bold }
 		aside.PROFILE dd{ Margin:0 0 0 2EM ; Padding:0 1CH .25EM 0 }
-		aside.PROFILE td, #profile th{ Border:Thin Solid ;
+		aside.PROFILE td,#profile th{ Border:Thin Solid ;
 			Padding:.5CH }
+		aside.PROFILE:Nth-Of-Type(2n){ Grid-Column-End:-1 }
+		aside.PROFILE:Nth-Of-Type(2n+1){ Grid-Column-Start:1 }
 		aside.PROFILE>a{ Color:Inherit ; Text-Decoration:None }
 		aside.PROFILE>img{ Display:Block ; Margin:-.5EM -.5EM .5EM ;
 			Border:None ; Padding:0 ; Width:Calc(100% + 1EM) ;
 			Height:Auto ; Font-Size:Inherit }
-		aside.PROFILE[hidden]{ Display:Block ; Visibility:Hidden }
+		aside.PROFILE>div{ Overflow-Wrap:Break-Word }
 		blockquote{ Display:Inline ; Margin:0 ; Border:None ;
 			Padding:0 }
-		blockquote[hidden]{ Display:None }
 		blockquote.FORTUNE{ Font-Size:Large ; Font-Style:Italic }
 		blockquote.FORTUNE>a{ Color:Inherit ;
 			Text-Decoration:Underline }
+		blockquote[hidden]{ Display:None }
 		body{ Display:Grid ; Align-Items:Center ;
 			Justify-Content:Center ; Grid-Auto-Flow:Dense ;
 			Grid-Template-Columns:Repeat(Auto-Fill,MinMax(20CH,1FR))
@@ -77,8 +79,8 @@
 		body>a{ Display:Block ; Color:Black ; Background:White ;
 			Font-Size:Small ; Line-Height:1.5 ; Text-Align:Justify ;
 			Text-Decoration:None ; Hyphens:Auto ; Overflow:Hidden }
-		body>a:focus,body>a:hover{ Text-Shadow:.5PX .5PX CurrentColor }
-		body>a:focus mark,body>a:hover mark{ Box-Shadow:1PX 1PX
+		body>a:Focus,body>a:Hover{ Text-Shadow:.5PX .5PX CurrentColor }
+		body>a:Focus mark,body>a:Hover mark{ Box-Shadow:1PX 1PX
 			CurrentColor }
 		body>a:Not(:Nth-Of-Type(3n+1)){ Grid-Column-End:Span 2 ;
 			Columns:2 ; Column-Gap:Inherit }
