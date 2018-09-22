@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="en"
+	xml:lang="en"
+>
+<head>
+	<title>
+		September 2018: Site Updates &#x2013; September 2018 | KIBI
+			Gô
+	</title>
+	<meta charset="UTF-8" />
+	<link rel="alternate" type="application/atom+xml"
+		href="https://go.KIBI.family/Current/index.atom" />
+	<style>
+		body{ Margin:Auto ; Padding:3EM ; Max-Width:43EM }
+		body>article>header{ Margin-Top:1.85EM ; Padding-Top:0 }
+		figcaption{ Margin:0 1EM ; Text-Align:Center }
+		figure{ Margin:1EM 0 }
+		figure>img,figure>video{ Display:Block ; Margin:Auto ;
+			Max-Width:100% }
+		h1{ Margin:0 ; Font-Size:X-Large ; Font-Weight:Bold }
+		h2{ Margin:1EM 0 .5EM ; Font-Size:Large ; Font-Weight:Bold }
+		header{ Margin:0 0 1.23EM ; Border-Style:None None Solid ;
+			Border-Width:0 0 Thin ; Padding:.369EM 0 ;
+			Font-Size:Small ; Text-Align:Left }
+		header>p{ Margin:.369EM 0 }
+		header>p::BEFORE{ Content:None }
+		header>time{ Display:Block ; Margin:.369EM 0 ;
+			Text-Align:Right }
+		html{ Font-Family:Serif }
+		i.SO-CALLED{ Font-Style:Inherit }
+		i.SO-CALLED::BEFORE{ Content:Open-Quote }
+		i.SO-CALLED::AFTER{ Content:Close-Quote }
+		ol,ul{ Margin:1EM 0 ; Padding:0 0 0 2EM }
+		ol>li,ul>li{ Margin:1EM 0 }
+		p{ Margin:0 ; Text-Align:Justify }
+		p+p{ Text-Indent:2EM }
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<p>Bookkeeping</p>
+			<h1>Site Updates &#x2013; September 2018</h1>
+			<time datetime="2018-09">September 2018</time>
+		</header>
+		<p>
+			As you may have noticed, I recently ran a number of
+				updates to <a href="https://go.KIBI.family/"
+				>my website</a>.
+			Most noticeäble is the new front page look, which takes
+				advantage of the CSS grid to create an
+				unconventional newspaper&#x2010;clipping inspired
+				æsthetic.
+			However, there are a number of underlying structural
+				changes that I've made alongside this redesign, and
+				I thought I would take some time to get into the
+				details of those here.
+		</p>
+		<figure>
+			<img alt="
+A frame from the TV Show Elementary. A cis white techbro says: “Uh,
+grid&#x2010;based design, it's gone the way of the dinosaur."
+				src="gridbased-dinosaur.jpg" />
+			<figcaption>
+				This man is wrong (from <cite>Elementary</cite>)
+			</figcaption>
+		</figure>
+		<section id="atom">
+			<h2>Atom Blog</h2>
+			<p>
+				Of probably most note to people following this
+					blog:
+				There is now <a href="
+https://go.KIBI.family/Current/index.atom">an Atom feed</a>!
+				I have done my best to implement RFC 5005
+					subscription/archive documents,
+					but&#x2014;like everything on this
+					website&#x2014;it was all hand&#x2010;written,
+					so there's a chance I made an error.
+				<a href="https://glitch.social/@kibi">Let me
+					know</a> if something isn't working for you!
+			</p>
+			<p>
+				The Atom feed is the "official" index page for this
+					blog&#x2014;there isn't an HTML index where
+					you can browse all of my posts.
+				However, excerpts from the latest posts <em>are</em
+					> presented as links, blackout&#x2010;poëtry
+					style, on <a href="https://go.KIBI.family/"
+					>my homepage</a>.
+			</p>
+		</section>
+		<section id="static-mastodon">
+			<h2>Static Mastodon Support (Or Not)</h2>
+			<p>
+				I experimented with implementing static WebFinger +
+					ActivityStreams + OStatus support (through
+					GitHub Pages, it takes all three) such that
+					my blogposts would be legible to Mastodon
+					servers, and <a href="
+https://weirder.earth/@onethousandtwentyfour/100762584117152750"
+					>managed to actually get it working</a>.
+				If you're curious, you can <a href="
+https://github.com/marrus-sh/marrus-sh.github.io/tree/57dda1a3d70fed230708f8ed3e4c437dfab446eb
+">browse the source that make it happen</a>.
+				I'll spell out the basics here:
+			</p>
+			<ul>
+				<li>
+					<p>
+						You can follow the <a href="
+	https://blog.joinmastodon.org/2018/06/how-to-implement-a-basic-activitypub-server/
+	">Mastodon Project's guidelines for implementing a basic
+							ActivityPub server</a> when it comes
+							to setting up your user/account and
+							WebFinger resources.
+						However, note that on GitHub Pages, you
+							will need to put the WebFinger at
+							<code>.well-known/<wbr
+							/>webfinger/<wbr />index.json</code>
+							in order to get it to serve the
+							correct content type.
+						You <a href="
+https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/
+">will also need</a> to either disable Jekyll or explicitly add this
+							file to your Jekyll <code
+							>includes</code>.
+					</p>
+				</li>
+				<li>
+					<p>
+						For statuses, Mastodon only supports
+							either <code>application/<wbr
+							/>activity+<wbr />json</code> or
+							<code>application/<wbr />ld+<wbr
+							/>json; profile=<wbr
+							/>"https://<wbr />www.w3.org/<wbr
+							/>ns/<wbr />activitystreams"</code>
+							as ActivityStreams response types.
+						Neither of these can be sent by GitHub
+							Pages, as they don't have assocaited
+							file extensions.
+						(You can send JSON-LD, but not with a
+							profile.)
+						Consequently, using ActivityStreams for
+							statuses won't work.
+					</p>
+					<p>
+						Thankfully, Mastodon still supports
+							OStatus, which has a media type of
+							<code>application/atom+xml</code>
+							and can be published using a normal
+							<code>.atom</code> file.
+						I just copied the
+							Mastodon&#x2010;generated Atom code
+							for one of my own toots and took out
+							the parts I didn't need.
+					</p>
+				</li>
+			</ul>
+			<p>
+				Once you have the above implemented correctly, you
+					can simply paste the link to the Atom
+					representation of your post into Mastodon's
+					search bar and it will fetch it just fine.
+			</p>
+			<p>
+				One thing I did notice is that (potentially due to
+					a bug?) boosts of these posts don't federate
+					properly to other Mastodon instances, and will
+					fail to show up if the other instance isn't
+					already aware of the toot.
+				Since you also can't accept follows or respond to
+					notifications on a static GitHub Pages site,
+					being legible to Mastodon servers is mostly
+					not useful, and so I ripped it out.
+			</p>
+			<p>
+				Nevertheless, <code>@me@go.KIBI.family</code> is a
+					recognized account on many a Mastodon server
+					thanks to this experimentation.
+			</p>
+		</section>
+		<section id="presspost">
+			<h2>PressPost</h2>
+			<p>
+				Of more personal interest than Mastodon support,
+					my site is now a sample implementation of a
+					PressPost server.
+				Those who have been following me for some time have
+					probably heard me talking about ActivityPress,
+					which is a federated publishing protocol that
+					I'm currently in the process of building on
+					top of ActivityPub.
+				PressPost is file format that ActivityPress is
+					built upon, akin to ActivityStreams for
+					ActivityPub.
+			</p>
+			<p>
+				It will still be a while before I finalize the
+					documentation for these protocols and formats,
+					but having a sample PressPost implementation
+					means that I can start work on <em
+					>non&#x2010;</em><i class="SO-CALLED"
+					>social</i> clients and publication tools for
+					browsing and consuming PressPost content.
+				Look forward to more from me on this subject in the
+					future.
+			</p>
+			<p>
+				If you're curious what PressPost looks like right
+					now, <a href="https://go.KIBI.family/About/"
+					><code>/About/</code></a> is a good place to
+					begin.
+			</p>
+		</section>
+		<section id="github-pages">
+			<h2>Working With GitHub Pages</h2>
+			<p>
+				In implementing the design above, I've had to make
+					some compromises in order to work within the
+					capabilities of GitHub Pages.
+				For example, although GitHub Pages will correctly
+					serve <code>.jsonld</code> files as <code
+					>application/<wbr />ld+<wbr />json</code>, it
+					does not have content negotiation and will not
+					serve <code>index.jsonld</code> files when the
+					parent directory is accessed.
+				However, <code>index.json</code> <em>is</em>
+					supported for directory indices, so all
+					JSON-LD files are currently being served under
+					the plain <code>application/<wbr />json</code>
+					media type instead.
+			</p>
+			<p>
+				Because there is no content negotiation, if a
+					directory has both a <code>index.html</code>
+					and a <code>index.json</code> file, the first
+					will always be served regardless of the nature
+					of the request.
+				(The same is also true for <code>index.xhtml</code
+					>.)
+				Thankfully, my blogposts have already been using
+					extensioned, non&#x2010;directory
+					names&#x2014;like <a href="
+https://go.KIBI.family/Jun/2018/mermaid.xhtml"><code>/<wbr />Jun/<wbr
+					/>2018/<wbr />mermaid.xhtml</code></a>.
+				I've used the directory's <code>index.json</code>
+					file to provide the post metadata; for
+					example, <a href="
+https://go.KIBI.family/Jun/2018/#mermaid"><code>/<wbr />Jun/<wbr
+					/>2018/<wbr />#mermaid</code></a> provides
+					the metadata for the corresponding post.
+				The (X)HTML version of the post is then provided
+					through a <code>Link</code>.
+			</p>
+			<p>
+				This limitation is the reason why my
+					<code>Author</code> object is located at <a
+					href="https://go.KIBI.family/About/#me"
+					><code>/<wbr />About/<wbr />#me</code></a> and
+					not just <a href="https://go.KIBI.family/#me"
+					><code>/<wbr />#me</code></a>.
+			</p>
+		</section>
+		<section id="future">
+			<h2>Future Plans</h2>
+			<p>
+				Right now, everything on my website is coded by
+					hand.
+				This is doäble, since it consists of nothing more
+					than a homepage and a blog, but is lacking
+					when it comes to some of the features I would
+					like to offer.
+				For example, I would like to be able to host
+					annotated versions of my fanfics, which are
+					easily accommodated by the PressPost format
+					but difficult and time&#x2010;consuming to
+					generate by hand.
+			</p>
+			<p>
+				I've brainstormed a couple of command&#x2010;line
+					programs which will ease this process greatly.
+				The first is titled <code>TurtBurgler</code>, and
+					will scan a directory for Turtle files (with
+					optional HTML/XML imports) and compile them
+					into one massive Turtle file containing all
+					the associated relations.
+				This will be essentially just a slightly more
+					sophisticated version of the <a href="
+https://gist.github.com/marrus-sh/2ac9f5951a2fd1fe588de59d17715ae2"
+					>BNS YAML GENERATOR</a> I wrote several months
+					ago, operating in Turtle instead of YAML, and
+					allowing for any manner of directory
+					configuration.
+			</p>
+			<figure>
+				<video controls="" src="turtburgle.mp4"></video>
+				<figcaption>
+					<q>We came here to burgle your turts!</q>
+						(from <cite>Over the Garden Wall</cite>)
+				</figcaption>
+			</figure>
+			<p>
+				Once the Turtle file containing the website RDF
+					graph has been composed, the next step will be
+					to turn that graph into an actual website.
+				It is <em>easy enough</em> to determine which pages
+					to build given a base URL&#x2014;you'll need a
+					page for every resource ID which is a subpath.
+				By checking for ActivityStreams <code>Link</code>s
+					with a <code>rel</code> of
+					<code>alternate</code> and an XML or HTML
+					<code>mediaType</code>, we can generate
+					non&#x2010;RDF files too.
+				The hard part is figuring out <em>how</em> to
+					generate these files&#x2014;the
+					templating&#x2014;right now, applying XSLT to
+					the RDF/XML serialization of the appropriate
+					relationships seems like the most
+					straightforward approach, although naturally
+					a templating system which could interact with
+					the RDF graph directly would be preferable.
+			</p>
+			<p>
+				The name for this library will be <code
+					>Plastromancy</code>, and combining the two
+					will result in something like the following:
+			</p>
+			<pre>TurtBurgler | Plastromancy --template template.<!--
+-->rdf</pre>
+			<p>
+				Naturally, both of these tools will depend on the
+					completion of my XSD, and later, RDF,
+					libraries for Swift, so it will probably be a
+					few months yet before they are ready to use.
+			</p>
+		</section>
+	</article>
+</body>
+</html>
