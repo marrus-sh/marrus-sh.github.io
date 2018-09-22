@@ -30,7 +30,7 @@
 				}
 			],
 			"isFreelyAvailable": true,
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		},
 		{
 			"type": "OrderedCollectionPage",
@@ -48,7 +48,7 @@
 			"orderedItems": [
 				"go:Jun/2018/#mermaid"
 			],
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

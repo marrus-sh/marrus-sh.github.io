@@ -58,6 +58,33 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Sep/2018/#updates",
+			"name": "Site Updates – September 2018",
+			"attributedTo": "go:About/#me",
+			"published": "2018-09-22T15:06:51-07:00",
+			"summary": "New website design, discussing static ActivityStreams sites, and thinking about publishing tools for the future.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Sep/2018/updates.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

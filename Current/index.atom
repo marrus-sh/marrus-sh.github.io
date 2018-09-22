@@ -44,4 +44,19 @@ https://go.KIBI.family/Sep/2018/fringe-allie.xhtml" />
 			</HTML:p>
 		</summary>
 	</entry>
+	<entry>
+		<title>Site Updates – September 2018</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Sep/2018/updates.xhtml" />
+		<id>https://go.KIBI.family/Sep/2018/#updates</id>
+		<updated>2018-09-22T15:06:51-07:00</updated>
+		<summary type="xhtml"
+			xmlns:HTML="http://www.w3.org/1999/xhtml">
+			<HTML:p>
+				New website design, discussing static
+					ActivityStreams sites, and thinking about
+					publishing tools for the future.
+			</HTML:p>
+		</summary>
+	</entry>
 </feed>
