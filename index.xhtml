@@ -74,7 +74,7 @@
 		blockquote[hidden]{ Display:None }
 		body{ Display:Grid ; Align-Items:Center ;
 			Justify-Content:Center ; Grid-Auto-Flow:Dense ;
-			Grid-Template-Columns:Repeat(Auto-Fill,MinMax(20CH,1FR))
+			Grid-Template-Columns:repeat(Auto-Fill,MinMax(20CH,1FR))
 			; Row-Gap:1EM ; Column-Gap:2CH ; Margin:Auto ;
 			Padding:.5EM 2CH ; Color:Black ; Background:White ;
 			Text-Align:Center }
@@ -91,10 +91,10 @@
 			Align-Self:Start ; Grid-Row-Start:2 ; Grid-Row-End:5 ;
 			Grid-Column-Start:2 ; Grid-Column-End:5;
 			Text-Align:Justify ; Hyphens:Auto ; Overflow:Auto }
-		body>div.FORTUNES{ Margin:2EM 0 }
 		body>nav{ Display:Block ; Column-Gap:Inherit ;
 			Font-Size:Small ; Overflow:Auto }
 		body>nav>ul { Columns:2 10CH ; Column-Gap:Inherit }
+		div.BADGES,div.FORTUNES{ Margin:2EM 0 ; Text-Align:Center }
 		h1{ Margin:0 .5EM ; Font-Size:XX-Large ; Font-Weight:Bold ;
 			Text-Align:Center ; Text-Decoration:Underline }
 		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold ;
@@ -507,6 +507,12 @@ https://en.wikipedia.org/wiki/List_of_Chihayafuru_episodes">G O ! !
 						fortunes.item( number )
 							.setAttribute( "hidden" , "" ) }( )
 		</script>
+	</div>
+	<div class="BADGES">
+		<a href="https://validator.w3.org/check?uri=referer"><img
+			class="BADGE" alt="Valid XHTML 1.1!"
+			src="http://www.w3.org/Icons/valid-xhtml11-blue" height="31"
+			width="88" /></a>
 	</div>
 </body>
 </html>
