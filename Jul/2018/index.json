@@ -12,7 +12,7 @@
 			],
 			"id": "go:Jul/2018/#clacks-overhead",
 			"name": "Clacks Overhead",
-			"attributedTo": "go:#me",
+			"attributedTo": "go:About/#me",
 			"published": "2018-07-31T15:54:31-07:00",
 			"summary": "Subject: Natalie; Clacks Overheads.\n\nI wrote a brief thing on supporting them in ActivityPub. Apologies if this has been done before, but I couldn't find anything and I think it might be important.\n\n🕯\nmiss you",
 			"url": [
@@ -30,12 +30,12 @@
 				}
 			],
 			"isFreelyAvailable": true,
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		},
 		{
 			"type": "OrderedCollectionPage",
 			"id": "go:Jul/2018",
-			"first": "go:#current",
+			"first": "go:Current/",
 			"last": "go:Jun/2018/",
 			"prev": "go:Aug/2018/",
 			"next": "go:Jun/2018/",
@@ -47,9 +47,9 @@
 				"href": "go:Jul/2018/index.atom"
 			},
 			"orderedItems": [
-				"go:Jul/2018/#clacks-overhead",
+				"go:Jul/2018/#clacks-overhead"
 			],
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

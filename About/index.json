@@ -24,9 +24,9 @@
 		{
 			"type": [
 				"Person",
-				"Author",
+				"Author"
 			],
-			"id": "go:#me",
+			"id": "go:About/#me",
 			"name": "KIBI Gô",
 			"icon": "go:Images/Kirbi/",
 			"img": "go:Images/Portrait/",
@@ -46,7 +46,7 @@
 					"type": "Link",
 					"mediaType": "application/atom+xml",
 					"rel": "alternate",
-					"href": "go:current.atom"
+					"href": "go:Current/index.atom"
 				},
 				{
 					"type": "Link",
@@ -55,14 +55,12 @@
 					"href": "https://patreon.com/kibigo"
 				}
 			],
-			"anthologies": "go:Collected/",
-			"publications": "go:Works/",
 			"posts": "go:Posts/",
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		},
 		{
 			"type": "Server",
-			"id": "go:#server",
+			"id": "go:About/#server",
 			"name": "KIBI Gô's Website",
 			"icon": "go:Images/Server/",
 			"url": {
@@ -72,24 +70,5 @@
 					"href": "https://patreon.com/kibigo"
 			}
 		},
-		{
-			"type": "OrderedCollectionPage",
-			"id": "go:#current",
-			"first": "go:#current",
-			"last": "go:Jun/2018/",
-			"next": "go:Aug/2018/",
-			"partOf": "go:Posts/",
-			"url": {
-				"type": "Link",
-				"rel": "alternate",
-				"mediaType": "application/atom+xml",
-				"href": "go:current.atom"
-			},
-			"orderedItems": [
-				"go:Sep/2018/#fringe-allie",
-				"go:Sep/2018/#fringe-beginnings"
-			],
-			"serverInfo": "go:#server"
-		}
 	]
 }

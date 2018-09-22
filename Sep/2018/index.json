@@ -12,7 +12,7 @@
 			],
 			"id": "go:Sep/2018/#fringe-beginnings",
 			"name": "Fringe Mastodev – Part I: The Beginnings",
-			"attributedTo": "go:#me",
+			"attributedTo": "go:About/#me",
 			"published": "2018-09-09T14:47:55-07:00",
 			"summary": "Hot off the presses: Learn about the early history of Content Warnings, the First Ever Mastodon Fork, and the sitewide drama which preëmpted it!!",
 			"url": [
@@ -30,7 +30,7 @@
 				}
 			],
 			"isFreelyAvailable": true,
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		},
 		{
 			"type": [
@@ -39,7 +39,7 @@
 			],
 			"id": "go:Sep/2018/#fringe-allie",
 			"name": "Fringe Mastodev – Part II: Enter Allie Hart",
-			"attributedTo": "go:#me",
+			"attributedTo": "go:About/#me",
 			"published": "2018-09-16T17:07:04-07:00",
 			"summary": "A challenger approaches!! Learn the backstory behind The Most Controversial Article Ever About Mastodon (at least until this blogseries finishes #yolo) and everyone's fav trashgirl who wrote it.",
 			"url": [
@@ -57,7 +57,7 @@
 				}
 			],
 			"isFreelyAvailable": true,
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

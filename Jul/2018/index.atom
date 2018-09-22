@@ -10,11 +10,11 @@
 	<link rel="next-archive"
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
 	<link rel="current"
-		href="https://go.KIBI.family/current.atom" />
-	<updated>2018-09-22T02:10:09-07:00</updated>
+		href="https://go.KIBI.family/Current/index.atom" />
+	<updated>2018-09-22T03:53:10-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
-		<uri>https://go.KIBI.family/#me</uri>
+		<uri>https://go.KIBI.family/About/#me</uri>
 	</author>
 	<id>https://go.KIBI.family/Posts/</id>
 	<entry>

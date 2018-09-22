@@ -12,7 +12,7 @@
 			],
 			"id": "go:Jun/2018/#mermaid",
 			"name": "ｍｅｒｍａｉｄ",
-			"attributedTo": "go:#me",
+			"attributedTo": "go:About/#me",
 			"published": "2018-06-29T23:28:13-07:00",
 			"summary": "current work\n\n(mostly me just rambling about web technologies though)",
 			"url": [
@@ -46,7 +46,7 @@
 				"href": "go:Jun/2018/index.atom"
 			},
 			"orderedItems": [
-				"go:Jun/2018/#mermaid",
+				"go:Jun/2018/#mermaid"
 			],
 			"serverInfo": "go:#server"
 		}

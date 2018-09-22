@@ -12,7 +12,7 @@
 			],
 			"id": "go:Aug/2018/#girlfriends",
 			"name": "That One “Striaght Girlfriends” Article",
-			"attributedTo": "go:#me",
+			"attributedTo": "go:About/#me",
 			"published": "2018-08-11T17:03:08-07:00",
 			"summary": "Subject: that one “straight girlfriends” article.\n\nI've seen it around a couple of times and so I wrote up my thoughts!! As an actual blogpost instead of just spamming the FTL!!\n\nIf you read the article, you might find it interesting. (If you didn't, there's a link at the top~)",
 			"url": [
@@ -30,14 +30,14 @@
 				}
 			],
 			"isFreelyAvailable": true,
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		},
 		{
 			"type": "OrderedCollectionPage",
 			"id": "go:Aug/2018",
-			"first": "go:#current",
+			"first": "go:Current/",
 			"last": "go:Jun/2018/",
-			"prev": "go:#current",
+			"prev": "go:Current/",
 			"next": "go:Jul/2018/",
 			"partOf": "go:Posts/",
 			"url": {
@@ -47,9 +47,9 @@
 				"href": "go:Aug/2018/index.atom"
 			},
 			"orderedItems": [
-				"go:Aug/2018/#girlfriends",
+				"go:Aug/2018/#girlfriends"
 			],
-			"serverInfo": "go:#server"
+			"serverInfo": "go:About/#server"
 		}
 	]
 }
