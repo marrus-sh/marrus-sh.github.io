@@ -85,6 +85,33 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Sep/2018/#modern-7c",
+			"name": "Modern? Sevensi Serialization",
+			"attributedTo": "go:About/#me",
+			"published": "2018-09-22T18:22:02-07:00",
+			"summary": "A brief look into the evolution of the Sevensi language, featuring Latin orthographies and input methods.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Sep/2018/modern-7c.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

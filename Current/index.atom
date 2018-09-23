@@ -59,4 +59,19 @@ https://go.KIBI.family/Sep/2018/updates.xhtml" />
 			</HTML:p>
 		</summary>
 	</entry>
+	<entry>
+		<title>Modern? Sevensi Serialization</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Sep/2018/modern-7c.xhtml" />
+		<id>https://go.KIBI.family/Sep/2018/#modern-7c</id>
+		<updated>2018-09-22T18:22:02-07:00</updated>
+		<summary type="xhtml"
+			xmlns:HTML="http://www.w3.org/1999/xhtml">
+			<HTML:p>
+				A brief look into the evolution of the Sevensi
+					language, featuring Latin orthographies and
+					input methods.
+			</HTML:p>
+		</summary>
+	</entry>
 </feed>
