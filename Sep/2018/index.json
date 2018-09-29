@@ -112,6 +112,60 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Sep/2018/#mixtape39",
+			"name": "dot support – [GOMIX‐2018W39]",
+			"attributedTo": "go:About/#me",
+			"published": "2018-09-24T20:31:49-07:00",
+			"summary": "#MondayMixtape: Week 39",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Sep/2018/mixtape39.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Sep/2018/#jing",
+			"name": "Neutral Jing",
+			"attributedTo": "go:About/#me",
+			"published": "2018-09-29T14:11:43-07:00",
+			"summary": "A brief discourse/explination on jing, which underpins a significant portion of Sevensi philosophy and æsthetic understandings.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Sep/2018/jing.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

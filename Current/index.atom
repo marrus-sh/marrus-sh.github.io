@@ -5,7 +5,7 @@
 		/>
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
-	<updated>2018-09-22T03:55:08-07:00</updated>
+	<updated>2018-09-29T14:20:09-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
@@ -72,6 +72,28 @@ https://go.KIBI.family/Sep/2018/modern-7c.xhtml" />
 					language, featuring Latin orthographies and
 					input methods.
 			</HTML:p>
+		</summary>
+	</entry>
+	<entry>
+		<title>dot support – [GOMIX‐2018W39]</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Sep/2018/mixtape39.xhtml" />
+		<id>https://go.KIBI.family/Sep/2018/#mixtape39</id>
+		<updated>2018-09-24T20:31:49-07:00</updated>
+		<summary type="html">
+			&lt;p&gt;#MondayMixtape: Week 39&lt;/p&gt;
+		</summary>
+	</entry>
+	<entry>
+		<title>Neutral Jing</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Sep/2018/jing.xhtml" />
+		<id>https://go.KIBI.family/Sep/2018/#jing</id>
+		<updated>2018-09-29T14:11:43-07:00</updated>
+		<summary type="html">
+			&lt;p&gt;A brief discourse/explination on jing, which
+				underpins a significant portion of Sevensi
+				philosophy and æsthetic understandings.&lt;/p&gt;
 		</summary>
 	</entry>
 </feed>
