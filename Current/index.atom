@@ -5,7 +5,7 @@
 		/>
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Sep/2018/index.atom" />
-	<updated>2018-10-01T06:11:00-07:00</updated>
+	<updated>2018-10-01T12:59:03-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
@@ -32,6 +32,17 @@ https://go.KIBI.family/Oct/2018/mixtape40.xhtml" />
 		<updated>2018-10-01T09:10:53-07:00</updated>
 		<summary type="html">
 			&lt;p&gt;#MondayMixtape: Week 40&lt;/p&gt;
+		</summary>
+	</entry>
+	<entry>
+		<title>September Recap</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Oct/2018/recap-sep.xhtml" />
+		<id>https://go.KIBI.family/Oct/2018/#recap-sep</id>
+		<updated>2018-10-01T12:56:45-07:00</updated>
+		<summary type="html">
+			&lt;p&gt;A recap of everything I did and experienced in
+				September.&lt;/p&gt;
 		</summary>
 	</entry>
 </feed>

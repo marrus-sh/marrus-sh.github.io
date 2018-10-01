@@ -58,6 +58,33 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Oct/2018/#recap-sep",
+			"name": "September Recap",
+			"attributedTo": "go:About/#me",
+			"published": "2018-10-01T12:56:45-07:00",
+			"summary": "A recap of everything I did and experienced in September.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Oct/2018/recap-sep.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
 		}
 	]
 }
