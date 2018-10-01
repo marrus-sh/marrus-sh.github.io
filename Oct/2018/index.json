@@ -1,0 +1,36 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://vocab.KIBI.network/press",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"@graph": [
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Oct/2018/#fringe-glitch",
+			"name": "Fringe Mastodev – Part III: Joining GlitchSoc",
+			"attributedTo": "go:About/#me",
+			"published": "2018-10-01T06:01:44-07:00",
+			"summary": "Learn about the origins of the GlitchSoc fork of Mastodon, my involvement with it, and other projects I was working on in the summer months of 2017.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Oct/2018/fringe-glitch.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
+		}
+	]
+}

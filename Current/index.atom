@@ -4,96 +4,24 @@
 	<link rel="self" href="https://go.KIBI.family/Current/index.atom"
 		/>
 	<link rel="prev-archive"
-		href="https://go.KIBI.family/Aug/2018/index.atom" />
-	<updated>2018-09-29T14:20:09-07:00</updated>
+		href="https://go.KIBI.family/Sep/2018/index.atom" />
+	<updated>2018-10-01T06:11:00-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
 	</author>
 	<id>https://go.KIBI.family/Posts/</id>
 	<entry>
-		<title>Fringe Mastodev – I: The Beginnings</title>
+		<title>Fringe Mastodev – III: Joining GlitchSoc</title>
 		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Sep/2018/fringe-beginnings.xhtml" />
-		<id>https://go.KIBI.family/Sep/2018/#fringe-beginnings</id>
-		<updated>2018-09-09T14:47:55-07:00</updated>
-		<summary type="xhtml"
-			xmlns:HTML="http://www.w3.org/1999/xhtml">
-			<HTML:p>
-				Hot off the presses:
-				Learn about the early history of Content Warnings,
-					the First Ever Mastodon Fork, and the sitewide
-					drama which preëmpted it!!
-			</HTML:p>
-		</summary>
-	</entry>
-	<entry>
-		<title>Fringe Mastodev – II: Enter Allie Hart</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Sep/2018/fringe-allie.xhtml" />
-		<id>https://go.KIBI.family/Sep/2018/#fringe-allie</id>
-		<updated>2018-09-16T17:07:04-07:00</updated>
-		<summary type="xhtml"
-			xmlns:HTML="http://www.w3.org/1999/xhtml">
-			<HTML:p>
-				A challenger approaches!!
-				Learn the backstory behind The Most Controversial
-					Article Ever About Mastodon (at least until
-					this blogseries finishes #yolo) and everyone's
-					fav trashgirl who wrote it.
-			</HTML:p>
-		</summary>
-	</entry>
-	<entry>
-		<title>Site Updates – September 2018</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Sep/2018/updates.xhtml" />
-		<id>https://go.KIBI.family/Sep/2018/#updates</id>
-		<updated>2018-09-22T15:06:51-07:00</updated>
-		<summary type="xhtml"
-			xmlns:HTML="http://www.w3.org/1999/xhtml">
-			<HTML:p>
-				New website design, discussing static
-					ActivityStreams sites, and thinking about
-					publishing tools for the future.
-			</HTML:p>
-		</summary>
-	</entry>
-	<entry>
-		<title>Modern? Sevensi Serialization</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Sep/2018/modern-7c.xhtml" />
-		<id>https://go.KIBI.family/Sep/2018/#modern-7c</id>
-		<updated>2018-09-22T18:22:02-07:00</updated>
-		<summary type="xhtml"
-			xmlns:HTML="http://www.w3.org/1999/xhtml">
-			<HTML:p>
-				A brief look into the evolution of the Sevensi
-					language, featuring Latin orthographies and
-					input methods.
-			</HTML:p>
-		</summary>
-	</entry>
-	<entry>
-		<title>dot support – [GOMIX‐2018W39]</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Sep/2018/mixtape39.xhtml" />
-		<id>https://go.KIBI.family/Sep/2018/#mixtape39</id>
-		<updated>2018-09-24T20:31:49-07:00</updated>
+https://go.KIBI.family/Oct/2018/fringe-glitch.xhtml" />
+		<id>https://go.KIBI.family/Oct/2018/#fringe-glitch</id>
+		<updated>2018-10-01T06:01:44-07:00</updated>
 		<summary type="html">
-			&lt;p&gt;#MondayMixtape: Week 39&lt;/p&gt;
-		</summary>
-	</entry>
-	<entry>
-		<title>Neutral Jing</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Sep/2018/jing.xhtml" />
-		<id>https://go.KIBI.family/Sep/2018/#jing</id>
-		<updated>2018-09-29T14:11:43-07:00</updated>
-		<summary type="html">
-			&lt;p&gt;A brief discourse/explination on jing, which
-				underpins a significant portion of Sevensi
-				philosophy and æsthetic understandings.&lt;/p&gt;
+			&lt;p&gt;Learn about the origins of the GlitchSoc fork
+				of Mastodon, my involvement with it, and other
+				projects I was working on in the summer months of
+				2017.&lt;/p&gt;
 		</summary>
 	</entry>
 </feed>

@@ -7,9 +7,11 @@
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Jul/2018/index.atom" />
+	<link rel="next-archive"
+		href="https://go.KIBI.family/Sep/2018/index.atom" />
 	<link rel="current"
 		href="https://go.KIBI.family/Current/index.atom" />
-	<updated>2018-09-22T03:54:09-07:00</updated>
+	<updated>2018-10-01T06:07:10-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
