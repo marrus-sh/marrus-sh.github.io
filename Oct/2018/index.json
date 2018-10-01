@@ -31,6 +31,33 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Oct/2018/#mixtape40",
+			"name": "future bar – [GOMIX‐2018W40]",
+			"attributedTo": "go:About/#me",
+			"published": "2018-10-01T09:10:53-07:00",
+			"summary": "#MondayMixtape: Week 40",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Oct/2018/mixtape40.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
 		}
 	]
 }
