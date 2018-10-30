@@ -1,16 +1,18 @@
-._____________________________________________________________.
-|                                                             |
-|  KIBI Gô – Kyɛbɛgɔ – Allie ❤ Hart – Margaret Russel – Leaf  |
-|  =======================[https://go.kibi.family/.plan.txt]  |
-|                                                             |
-|  Current plans:                                             |
-|                                                             |
-|  + XSD library for Swift.  Will lead to RDF tools and then  |
-|    (hopefully) some useful publishing/LANGDEV programs.     |
-|  + My history of Fringe Mastodev.  I'm trying to update on  |
-|    Sundays; follow my blog to catch them (<current.atom>).  |
-|  + My gay TLoZ:TP X Metroid fanfic.  I'd like to upload it  |
-|    to my website (in addition to AO3) with Author's Notes.  |
-|                                                             |
-|            See also <https://go.kibi.family/.project.txt>.  |
-|_____________________________________________________________|
+._____________________________________________________________________.
+|                                                                     |
+|     KIBI Gô – Ꜧ̊ɛ̃ꜧꝛɩ – Ɣ̕ȝɛꞵɛɣɔ – Allie ❤ Hart – Margaret Russel     |
+|  ===============================[https://go.KIBI.family/.plan.txt]  |
+|                                                                     |
+|  Current plans:                                                     |
+|                                                                     |
+|  + XSD library for Swift (titled Nib), leading up to RDF tools and  |
+|    eventually some useful RDF‐related programs for home and office  |
+|    (TurtBurgler; Plastromancy; SlashBang and ActivityPub clients).  |
+|                                                                     |
+|  + RDF library for JavaScript (ｍｅｒｍａｉｄ), which will be used  |
+|    to create views on a number of resources (feeds, documents with  |
+|    annotations, dictionaries) for reading and browsing in clients.  |
+|                                                                     |
+|                    Full TODO at <https://go.KIBI.family/TODO.ttl>.  |
+|                    See also <https://go.KIBI.family/.project.txt>.  |
+|_____________________________________________________________________|
