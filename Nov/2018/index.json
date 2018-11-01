@@ -1,0 +1,36 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://vocab.KIBI.network/press",
+		{ "go": "https://go.KIBI.family/" }
+	],
+	"@graph": [
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Nov/2018/#recap-oct",
+			"name": "October Recap",
+			"attributedTo": "go:About/#me",
+			"published": "2018-11-01T14:55:06-07:00",
+			"summary": "A recap of everything I made and experienced in October.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Nov/2018/recap-oct.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
+		}
+	]
+}

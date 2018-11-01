@@ -7,7 +7,7 @@
 	"id": "go:Current/",
 	"first": "go:Current/",
 	"last": "go:Jun/2018/",
-	"next": "go:Sep/2018/",
+	"next": "go:Oct/2018/",
 	"partOf": "go:Posts/",
 	"url": {
 		"type": "Link",
@@ -16,9 +16,7 @@
 		"href": "go:Current/index.atom"
 	},
 	"orderedItems": [
-		"go:Oct/2018/#recap-sep",
-		"go:Oct/2018/#mixtape40",
-		"go:Oct/2018/#fringe-glitch"
+		"go:Nov/2018/#recap-oct"
 	],
 	"serverInfo": "go:About/#server"
 }

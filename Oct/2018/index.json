@@ -85,6 +85,55 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Oct/2018/#7c-text",
+			"name": "Sevensi Text",
+			"attributedTo": "go:About/#me",
+			"published": "2018-10-27T00:19:49-07:00",
+			"summary": "This blogpost outlines the new Sevensi orthography, and a number of other Sevensi‐text–related topics.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Oct/2018/7c-text.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": "OrderedCollectionPage",
+			"id": "go:Oct/2018/",
+			"first": "go:Current/",
+			"last": "go:Jun/2018/",
+			"prev": "go:Current/",
+			"next": "go:Sep/2018/",
+			"partOf": "go:Posts/",
+			"url": {
+				"type": "Link",
+				"rel": "alternate",
+				"mediaType": "application/atom+xml",
+				"href": "go:Current/index.atom"
+			},
+			"orderedItems": [
+				"go:Oct/2018/#7c-text",
+				"go:Oct/2018/#recap-sep",
+				"go:Oct/2018/#mixtape40",
+				"go:Oct/2018/#fringe-glitch"
+			],
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

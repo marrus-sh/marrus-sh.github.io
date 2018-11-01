@@ -3,13 +3,15 @@
 	xmlns:fh="http://purl.org/syndication/history/1.0" xml:lang="en">
 	<fh:archive />
 	<title>KIBI Gô's Blog</title>
-	<link rel="self" href="https://go.KIBI.family/Current/index.atom"
+	<link rel="self" href="https://go.KIBI.family/Sep/2018/index.atom"
 		/>
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Aug/2018/index.atom" />
+	<link rel="next-archive"
+		href="https://go.KIBI.family/Oct/2018/index.atom" />
 	<link rel="current"
 		href="https://go.KIBI.family/Current/index.atom" />
-	<updated>2018-10-01T06:08:10-07:00</updated>
+	<updated>2018-11-01T15:05:11-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>

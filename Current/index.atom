@@ -4,45 +4,22 @@
 	<link rel="self" href="https://go.KIBI.family/Current/index.atom"
 		/>
 	<link rel="prev-archive"
-		href="https://go.KIBI.family/Sep/2018/index.atom" />
-	<updated>2018-10-01T12:59:03-07:00</updated>
+		href="https://go.KIBI.family/Oct/2018/index.atom" />
+	<updated>2018-10-01T15:08:00-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
 	</author>
 	<id>https://go.KIBI.family/Posts/</id>
 	<entry>
-		<title>Fringe Mastodev – III: Joining GlitchSoc</title>
+		<title>October Recap</title>
 		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Oct/2018/fringe-glitch.xhtml" />
-		<id>https://go.KIBI.family/Oct/2018/#fringe-glitch</id>
-		<updated>2018-10-01T06:01:44-07:00</updated>
+https://go.KIBI.family/Nov/2018/recap-oct.xhtml" />
+		<id>https://go.KIBI.family/Nov/2018/#recap-oct</id>
+		<updated>2018-11-01T14:55:06-07:00</updated>
 		<summary type="html">
-			&lt;p&gt;Learn about the origins of the GlitchSoc fork
-				of Mastodon, my involvement with it, and other
-				projects I was working on in the summer months of
-				2017.&lt;/p&gt;
-		</summary>
-	</entry>
-	<entry>
-		<title>future bar – [GOMIX‐2018W40]</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Oct/2018/mixtape40.xhtml" />
-		<id>https://go.KIBI.family/Oct/2018/#mixtape40</id>
-		<updated>2018-10-01T09:10:53-07:00</updated>
-		<summary type="html">
-			&lt;p&gt;#MondayMixtape: Week 40&lt;/p&gt;
-		</summary>
-	</entry>
-	<entry>
-		<title>September Recap</title>
-		<link rel="alternate" type="application/xhtml+xml" href="
-https://go.KIBI.family/Oct/2018/recap-sep.xhtml" />
-		<id>https://go.KIBI.family/Oct/2018/#recap-sep</id>
-		<updated>2018-10-01T12:56:45-07:00</updated>
-		<summary type="html">
-			&lt;p&gt;A recap of everything I did and experienced in
-				September.&lt;/p&gt;
+			&lt;p&gt;A recap of everything I made and experienced in
+				October.&lt;/p&gt;
 		</summary>
 	</entry>
 </feed>
