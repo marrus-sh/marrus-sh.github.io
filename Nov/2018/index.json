@@ -31,6 +31,33 @@
 			],
 			"isFreelyAvailable": true,
 			"serverInfo": "go:About/#server"
+		},
+		{
+			"type": [
+				"Page",
+				"Post"
+			],
+			"id": "go:Nov/2018/#fringe-intermission",
+			"name": "Fringe Mastodev – Part IV: Intermission",
+			"attributedTo": "go:About/#me",
+			"published": "2018-11-06T13:27:37-08:00",
+			"summary": "Mastodon has a culture of exploitation. We need to talk about it.",
+			"url": [
+				{
+					"type": "Link",
+					"rel": "alternate",
+					"mediaType": "application/xhtml+xml",
+					"href": "go:Nov/2018/fringe-intermission.xhtml"
+				},
+				{
+					"type": "Link",
+					"rel": "payment",
+					"mediaType": "text/html",
+					"href": "https://patreon.com/kibigo"
+				}
+			],
+			"isFreelyAvailable": true,
+			"serverInfo": "go:About/#server"
 		}
 	]
 }

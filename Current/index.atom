@@ -5,7 +5,7 @@
 		/>
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Oct/2018/index.atom" />
-	<updated>2018-10-01T15:08:00-07:00</updated>
+	<updated>2018-10-06T13:31:01-08:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>
@@ -20,6 +20,17 @@ https://go.KIBI.family/Nov/2018/recap-oct.xhtml" />
 		<summary type="html">
 			&lt;p&gt;A recap of everything I made and experienced in
 				October.&lt;/p&gt;
+		</summary>
+	</entry>
+	<entry>
+		<title>Fringe Mastodev – Part IV: Intermission</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Nov/2018/fringe-intermission.xhtml" />
+		<id>https://go.KIBI.family/Nov/2018/#fringe-intermission</id>
+		<updated>2018-11-06T13:27:37-08:00</updated>
+		<summary type="html">
+			&lt;p&gt;Mastodon has a culture of exploitation.
+			We need to talk about it.&lt;/p&gt;
 		</summary>
 	</entry>
 </feed>
