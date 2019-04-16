@@ -1,74 +1,42 @@
 {
 	"@context": [
 		"https://www.w3.org/ns/activitystreams",
-		"https://vocab.KIBI.network/press",
 		{
 			"foaf": "http://xmlns.com/foaf/0.1/",
 			"go": "https://go.KIBI.family/",
 			"xsd": "http://www.w3.org/2001/XMLSchema#",
-			"age": {
-				"@id": "foaf:age",
-				"@type": "xsd:nonNegativeInteger"
-			},
 			"img": {
 				"@id": "foaf:img",
 				"@type": "@id"
-			},
-			"myersBriggs": {
-				"@id": "foaf:myersBriggs",
-				"@type": "xsd:string"
 			}
 		}
 	],
-	"@graph": [
+	"type": [
+		"Person",
+		"Author"
+	],
+	"id": "go:About/#me",
+	"name": "KIBI Gô",
+	"icon": "go:Images/Kirbi/",
+	"img": "go:Images/Portrait/",
+	"url": [
 		{
-			"type": [
-				"Person",
-				"Author"
-			],
-			"id": "go:About/#me",
-			"name": "KIBI Gô",
-			"icon": "go:Images/Kirbi/",
-			"img": "go:Images/Portrait/",
-			"age": 24,
-			"myersBriggs": "MBTI",
-			"summaryMap": {
-				"en": "Current Plan: https://go.KIBI.family/.plan.txt"
-			},
-			"url": [
-				{
-					"type": "Link",
-					"mediaType": "text/xhtml+xml",
-					"rel": "alternate",
-					"href": "go:"
-				},
-				{
-					"type": "Link",
-					"mediaType": "application/atom+xml",
-					"rel": "alternate",
-					"href": "go:Current/index.atom"
-				},
-				{
-					"type": "Link",
-					"mediaType": "text/html",
-					"rel": "payment",
-					"href": "https://patreon.com/kibigo"
-				}
-			],
-			"posts": "go:Posts/",
-			"serverInfo": "go:About/#server"
+			"type": "Link",
+			"mediaType": "text/xhtml+xml",
+			"rel": "alternate",
+			"href": "go:"
 		},
 		{
-			"type": "Server",
-			"id": "go:About/#server",
-			"name": "KIBI Gô's Website",
-			"icon": "go:Images/Server/",
-			"url": {
-					"type": "Link",
-					"mediaType": "text/html",
-					"rel": "payment",
-					"href": "https://patreon.com/kibigo"
-			}
+			"type": "Link",
+			"mediaType": "application/atom+xml",
+			"rel": "alternate",
+			"href": "go:Current/index.atom"
+		},
+		{
+			"type": "Link",
+			"mediaType": "text/html",
+			"rel": "payment",
+			"href": "https://patreon.com/kibigo"
 		}
 	]
 }

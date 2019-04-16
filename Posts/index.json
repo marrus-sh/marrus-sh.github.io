@@ -12,6 +12,5 @@
 		"rel": "alternate",
 		"mediaType": "application/atom+xml",
 		"href": "go:Current/index.atom"
-	},
-	"serverInfo": "go:About/#server"
+	}
 }

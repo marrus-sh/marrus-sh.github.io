@@ -1,639 +1,526 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
-	resource="/About/#me" typeof="foaf:Person">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+	<meta charset="utf-8"/>
 	<title>KIBI Gô</title>
-	<meta charset="UTF-8" />
-	<base href="https://go.KIBI.family/" />
-	<link rel="alternate" type="application/ld+json" href="/About/" />
-	<link rel="alternate" type="application/atom+xml"
-		href="/Current/index.atom" />
-	<link property="foaf:homepage" href="/" />
-	<link property="foaf:account" rel="me"
-		href="https://mastodon.social/@marrus_sh" />
-	<link property="foaf:account" rel="me"
-		href="https://icosahedron.website/@u2764" />
-	<link class="MASTO-ACCT" property="foaf:account" rel="me"
-		href="https://glitch.social/@kibi" />
-	<link class="MASTO-ACCT" property="foaf:account" rel="me"
-		href="https://weirder.earth/@onethousandtwentyfour" />
-	<style>*:Root { -trans-People: Are !IMPORTANT }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="referrer" content="no-referrer"/>
 	<style>
-		#portrait{ Float:Left ; Margin: 0 2CH ; Width:20CH ;
-			Max-Width:20% }
-		aside.PROFILE{ Display:Block ; Align-Self:Start ;
-			Grid-Row-End:Span 2 ; Box-Sizing:Border-Box ;
-			Border-Style:Solid Double Double Solid ;
-			Border-Width:3PX ; Padding:.5EM ; Width:100% ;
-			Height:100% ; Box-Shadow:2PX 2PX Black ; Color:Black ;
-			Background:White ; Font-Size:Smaller }
-		aside.PROFILE *.invisible{ Display:None }
-		aside.PROFILE header{ Display:Grid ; Align-Items:Center ;
-			Justify-Content:Center ; Grid-Template-Rows:2.5EM 1.5EM
-			; Grid-Template-Columns:4EM Auto ; Row-Gap:0 ;
-			Column-Gap:.5EM ; Margin:0 -.5EM .5EM ;
-			Border-Bottom:Thin Solid ; Padding:0 .5EM .5EM ;
-			Height:4EM ; Font-Size:Inherit }
-		aside.PROFILE header>img{ Display:Block ; Margin:0 ;
-			Border-Radius:.5CH ; Grid-Row-Start:1 ; Grid-Row-End:3
-			; Grid-Column-Start:1 ; Grid-Column-End:2 ; Width:4EM ;
-			Height:4EM ; Font-Size:Inherit }
-		aside.PROFILE header>h2{ Display:Block ; Align-Self:End ;
-			Grid-Row-Start:1 ; Grid-Row-End:2 ; Grid-Column-Start:2
-			; Grid-Column-End:3 ; Margin:0 ; Padding:0 ;
-			Font-Size:Larger ; Font-Weight:Bold ; Text-Align:Left ;
-			Text-Decoration:Underline ; Text-Overflow:Ellipsis ;
-			White-Space:NoWrap ; Overflow:Hidden }
-		aside.PROFILE header>code{ Display:Block ; Align-Self:Start ;
-			Grid-Row-Start:2 ; Grid-Row-End:3 ; Grid-Column-Start:2
-			; Grid-Column-End:3 ; Margin:0 ; Padding:0 ;
-			Font-Size:Smaller ; Text-Align:Left ;
-			Text-Overflow:Ellipsis ; White-Space:NoWrap ;
-			Overflow:Hidden }
-		aside.PROFILE p{ Margin:1EM 0 ; Text-Align:Center ;
-			Text-Indent:0 }
-		aside.PROFILE dl{ Border-Style:None Solid Solid ;
-			Border-Width:0 Thin Thin ; Text-Align:Left ;
-			Overflow-Wrap:Break-Word }
-		aside.PROFILE dt{ Margin:0 ; Border-Top:Thin Solid ;
-			Padding:.25EM 1CH ; Font-Weight:Bold }
-		aside.PROFILE dd{ Margin:0 0 0 2EM ; Padding:0 1CH .25EM 0 }
-		aside.PROFILE td,#profile th{ Border:Thin Solid ;
-			Padding:.5CH }
-		aside.PROFILE:Nth-Of-Type(2n){ Grid-Column-End:-1 }
-		aside.PROFILE:Nth-Of-Type(2n+1){ Grid-Column-Start:1 }
-		aside.PROFILE>a{ Color:Inherit ; Text-Decoration:None }
-		aside.PROFILE>img{ Display:Block ; Margin:-.5EM -.5EM .5EM ;
-			Border:None ; Padding:0 ; Width:Calc(100% + 1EM) ;
-			Height:Auto ; Font-Size:Inherit }
-		aside.PROFILE>div{ Overflow-Wrap:Break-Word }
-		blockquote{ Display:Inline ; Margin:0 ; Border:None ;
-			Padding:0 }
-		blockquote.FORTUNE{ Font-Size:Large ; Font-Style:Italic }
-		blockquote.FORTUNE>a{ Color:Inherit ;
-			Text-Decoration:Underline }
-		blockquote[hidden]{ Display:None }
-		body{ Display:Grid ; Align-Items:Center ;
-			Justify-Content:Center ; Grid-Auto-Flow:Dense ;
-			Grid-Template-Columns:repeat(Auto-Fill,MinMax(20CH,1FR))
-			; Row-Gap:1EM ; Column-Gap:2CH ; Margin:Auto ;
-			Padding:.5EM 2CH ; Color:Black ; Background:White ;
-			Text-Align:Center }
-		body>a{ Display:Block ; Color:Black ; Background:White ;
-			Font-Size:Small ; Line-Height:1.5 ; Text-Align:Justify ;
-			Text-Decoration:None ; Hyphens:Auto ; Overflow:Hidden }
-		body>a:Focus,body>a:Hover{ Text-Shadow:.5PX .5PX CurrentColor }
-		body>a:Focus mark,body>a:Hover mark{ Box-Shadow:1PX 1PX
-			CurrentColor }
-		body>a:Not(:Nth-Of-Type(3n+1)){ Grid-Column-End:Span 2 ;
-			Columns:2 ; Column-Gap:Inherit }
-		body>a:Nth-Of-Type(3n+1){ Grid-Row-End:Span 2 }
-		body>article{ Display:Block ; Padding:1EM 2EM ;
-			Align-Self:Start ; Grid-Row-Start:2 ; Grid-Row-End:5 ;
-			Grid-Column-Start:2 ; Grid-Column-End:5;
-			Text-Align:Justify ; Hyphens:Auto ; Overflow:Auto }
-		body>nav{ Display:Block ; Column-Gap:Inherit ;
-			Font-Size:Small ; Overflow:Auto }
-		body>nav>ul { Columns:2 10CH ; Column-Gap:Inherit }
-		div.BADGES,div.FORTUNES{ Margin:2EM 0 ; Text-Align:Center }
-		h1{ Margin:0 .5EM ; Font-Size:XX-Large ; Font-Weight:Bold ;
-			Text-Align:Center ; Text-Decoration:Underline }
-		h2{ Margin:0 0 .5EM ; Font-Size:Large ; Font-Weight:Bold ;
-			Text-Align:Center ; Text-Decoration:Underline }
-		html{ Margin:0 ; Padding:0 ; Color:Black ; Background:White ;
-			Font-Family:Serif }
-		i.SO-CALLED{ Font-Style:Inherit }
-		i.SO-CALLED::BEFORE{ Content:Open-Quote }
-		i.SO-CALLED::AFTER{ Content:Close-Quote }
-		li{ Margin:0 }
-		mark{ Border:Thin Solid ; Margin:-.1EM -.2EM ; Padding:.1EM
-			.2EM ; Color:Inherit ; Background:Transparent ;
-			Box-Shadow:.5PX .5PX CurrentColor }
-		p{ Margin:0 ; Text-Align:Justify }
-		p+p{ Text-Indent:2EM }
-		span[aria-hidden=true]{ Margin:-.15EM 0 ; Padding:.15EM 0 ;
-			Color:Transparent ; Background:Black ;
-			Text-Shadow:None }
-		strong{ Color:Inherit }
-		ul{ Margin:0 ; Padding:0 ; List-Style-Position:Inside }
-		@media(Max-Width:92CH){
-			body>article{ Grid-Column-Start:1 ;
-				Grid-Column-End:3 }
-		}
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace MATH "http://www.w3.org/1998/Math/MathML";
+
+html {
+	Margin: 0;
+	Padding: 0 4REM 0 0;
+	Font: Italic 1.125EM / 1.35 Serif;
+	Font-Variant-Numeric: Oldstyle-Nums;
+	Text-Align: Justify;
+	Color: #302F2B;
+	Background: #FAF8F7;
+}
+body {
+	Display: Grid;
+	Box-Sizing: Border-Box;
+	Position: Relative;
+	Grid-Auto-Flow: Dense Row;
+	Grid-Template-Columns:
+		MinMax(9REM, 1FR)
+		Repeat(Auto-Fill, MinMax(9REM, 1FR));
+	Align-Items: Center;
+	Align-Content: Center;
+	Justify-Content: Start;
+	Grid-Gap: 1REM;
+	Gap: 1REM;
+	Margin: 0 Auto;
+	Padding: 2REM 1REM;
+	Width: 68REM;
+	Max-Width: 100%;
+}
+@media ( Max-Width: 28.125EM ) {
+	body { Grid-Template-Columns: 1FR 1FR }
+	body>h1 { Border: None }
+	body>*:Not(h1) { Width: 100% ! IMPORTANT } /* Overrides inline styles */
+	:Root body>img { Max-Width: Calc(50VW - 3.5REM) }
+}
+body>* {
+	Color: #302F2B;
+	Background: #FAF8F7;
+}
+h1 {
+	Position: Fixed;
+	Writing-Mode: Vertical-LR;
+	Top: 0;
+	Right: 0;
+	Bottom: 0;
+	Margin: 0;
+	Border-Style: None Solid Solid None;
+	Border-Color: Transparent;
+	Border-Width: 0 Calc(50VW - 36REM) Calc(100VH - 23REM) 0;
+	Padding: 1REM;
+	Overflow: Hidden;
+	Color: #1F1A14;
+	Font: Bold Italic Small-Caps 3REM / 1 "Times New Roman", Serif; /* ‘Times New Roman’ has way better metrics than ‘Times’ */
+	White-Space: NoWrap;
+	Text-Align: Right;
+	Text-Decoration: Overline Underline;
+	Text-Orientation: Sideways; /* this is important because it affects the dominant baseline */
+	Z-Index: -1;
+}
+h1::BEFORE,
+h1::AFTER { Content: " " }
+h2 {
+	Box-Sizing: Border-Box;
+	Margin: 0 Auto Calc(.675EM - 1PX);
+	Border-Bottom: 2PX Solid;
+	Padding: 0 1REM Calc(.675EM - 1PX);
+	Width: Max-Content;
+	Max-Width: 100%;
+	Font-Size: 1.35REM;
+	Font-Style: Normal;
+	Font-Weight: Normal;
+	Font-Variant-Caps: Small-Caps;
+	Line-Height: 1;
+	Text-Align: Center;
+}
+b { Color: #1F1A14 }
+b.NUMERIC.LISTING {
+	Display: Inline-Block;
+	Margin: Calc(-.25EM - 3PX) -3PX Calc(-.1EM - 3PX);
+	Border: 3PX #B01C1C Double;
+	Border-Radius: Calc(50% * 1.1294) 50%;
+	Padding: .25EM .175EM .1EM;
+	Min-Width: 1EM;
+	Line-Height: 1;
+	Font-Variant-Numeric: Tabular-Nums Lining-Nums;
+	Text-Align: Center;
+}
+blockquote {
+	Margin: 0;
+	Padding: 0;
+	Font-Weight: Bold;
+	Text-Align: Center;
+}
+cite {
+	Font-Style: Inherit;
+	Font-Variant-Caps: Small-Caps;
+}
+div[role=note] {
+	Box-Sizing: Border-Box;
+	Grid-Column-End: Span 2;
+	Border: Thin CurrentColor Solid;
+	Padding: 1REM;
+	Box-Shadow: .125REM .125REM 0 .125REM #FAF8F7, .375REM .375REM 0 .125REM #B01C1C;
+	Max-Height: 21REM;
+	Overflow: Auto;
+}
+dl {
+	Margin: .675REM 0;
+	Padding: 0 0 0 2REM;
+}
+body>dl {
+	Box-Sizing: Border-Box;
+	Grid-Column-End: Span 2;
+	Justify-Self: Center;
+	Margin: 0;
+	Padding: 3REM 3REM 3REM 5REM;
+	Max-Height: 21REM;
+	Overflow: Auto;
+	Font-Weight: Bold;
+}
+h2+dl,
+dl:First-Child { Margin-Top: 0 }
+dl:Last-Child { Margin-Bottom: 0 }
+dt {
+	Display: Inline;
+	Margin: 0 0 0 -2REM;
+	Font-Style: Normal;
+	Font-Weight: Bold;
+}
+dt::AFTER { Content: " : " }
+dd {
+	Display: Inline;
+	Margin: 0;
+	Padding: 0;
+	Hyphens: Auto;
+}
+dd::AFTER {
+	Display: Block;
+	Content: "";
+}
+em {
+	Font-Style: Inherit;
+	Letter-Spacing: .15EM;
+}
+em::BEFORE,
+em::AFTER { Letter-Spacing: 0 }
+em::BEFORE { Content: "⸳ " }
+em::AFTER { Content: " ⸳" }
+footer {
+	Position: Absolute;
+	Bottom: 0;
+	Left: 1REM;
+	Right: 1REM;
+	Height: 1REM;
+	Font-Size: Calc(1REM / 1.35);
+	Font-Variant-Caps: Small-Caps;
+}
+img {
+	Background: White;
+	Mix-Blend-Mode: Multiply;
+	Filter: Grayscale(1) Contrast(1.2);
+}
+body>img {
+	Justify-Self: Center;
+	Max-Width: 9REM;
+	Max-Height: 9REM;
+}
+MATH|math {
+	Margin: 0 -1REM;
+	Font: Normal Medium / 1.215 Serif;
+}
+p {
+	Display: Inline;
+	Margin: 0;
+	Hyphens: Auto;
+}
+p::AFTER {
+	Display: Block;
+	Content: "";
+}
+body>p {
+	Display: Block;
+	Padding: 0 .45REM;
+	Font-Size: 1.8REM;
+	Line-Height: 1.5;
+	Text-Align: Center;
+}
+body>p.LONG { Font: Inherit }
+*:Root:Root body>p::BEFORE,
+*:Root:Root body>p::AFTER { Content: None }
+p+p::BEFORE { Content: " " }
+p:Last-Child { Background: #FAF8F7 }
+p:Last-Child::AFTER{
+	Margin: -.675EM .125EM Calc(.675EM - 1.5PX);
+	Border-Top: 1.5PX #B01C1C Dashed;
+	Z-Index: -1;
+}
+nav,
+section {
+	Box-Sizing: Border-Box;
+	Align-Self: Start;
+	Grid-Column-End: Span 2;
+	Border: Medium Double;
+	Padding: 1EM;
+	Max-Height: 21REM;
+	Overflow: Auto;
+}
+span.S {
+	Display: Inline-Block;
+	Position: Relative;
+	White-Space: NoWrap;
+	Hyphens: None;
+}
+span.S::FIRST-LETTER {
+	Color: #1F1A14;
+	Font-Size: Inherit;
+	Font-Weight: Bold;
+	Line-Height: 1;
+}
+a[href] span.S::FIRST-LETTER { Color: CurrentColor }
+span.S>u { Text-Decoration: None }
+span.S>u::AFTER{
+	Position:Absolute;
+	Left: 0;
+	Border-Bottom: 1PX Solid;
+	Padding-Bottom: 1PX;
+	Height: 1EM;
+	Content: " ";
+}
+time { Text-Transform: Uppercase }
+*:Any-Link { Color: #4B2DF7 }
+*:Any-Link:Active { Color: #B01C1C }
 	</style>
 </head>
 <body>
-	<article id="me">
-		<h1 property="foaf:name">KIBI Gô</h1>
-		<img
-			alt="A doodle of a cute girl, standing"
-			id="portrait"
-			src="/Images/Portrait/media.png"
-		/>
-		<p>
-			Geez, what are you doing here?
-			Let's get you someplace cool.
-		</p>
-		<p>
-			My name is <strong>Gô</strong> (style: <span
-				lang="art-Latn-x-svi" xml:lang="art-Latn-x-svi"
-				property="foaf:name">Kyɛbɛgɔ</span>), and I'm the
-				wexri of <a href="https://www.KIBI.family/">the
-				KIBI jexr</a>&#x2014;which are probably not words
-				which make sense to you.
-			Right now, my activities mostly centre around building
-				language documentation tools for <a
-				href="http://langdev.xyz/jsv/osv/primer/index.html"
-				>Sevensi</a> and publishing and cataloguïng tools
-				for the internet writ large.
-		</p>
-		<p>
-			I'm the author of a number of stories, most principally
-				<a property="foaf:made"
-				href="http://marrus.xyz/Vague/"><cite>Vague</cite
-				></a> (in progress), and a gay <cite>The Legend of
-				Zelda</cite>/<cite>Metroid</cite> crossover fic
-				titled <a property="foaf:made"
-				href="https://archiveofourown.org/series/1017876"
-				><cite>The Legend of Samus and Ilia</cite></a>.
-		</p>
-		<p>
-			I'm also the author/editor of a number of
-				not&#x2010;stories, including <a
-				property="foaf:made"
-				href="https://cybremonday.net/"><cite
-				>CYBREMONDAY</cite></a>, a cybre&#x2010;queer
-				zine, and <a property="foaf:weblog"
-				href="current.atom">my blog</a>, which you can
-				expect to contain content of all varieties.
-			In the past, I contributed a number of features to a
-				number of ActivityPub software projects, including
-				<a href="https://joinmastodon.org/">Mastodon</a>
-				and <a href="https://glitch-soc.github.io/docs/"
-				>GlitchSoc</a>, and you can read more about that
-				history <a href="/Sep/2018/fringe-allie.xhtml"
-				>here</a>.
-		</p>
-	</article>
-	<script>
-		void function ( ) {
-			var
-				acctindex = 0 ,
-				accts = document.getElementsByClassName(
-					"MASTO-ACCT" ) ,
-				remaining = accts.length ,
-				profiles = [] ,
-				thisTag = document.getElementById( "me" )
-					.nextElementSibling
-			function makeElement ( name ) {
-				return document.createElementNS(
-					"http://www.w3.org/1999/xhtml" , name ) }
-			function handleRequest ( request , number ) {
-				var
-					element , subelement , attachment ,
-					index = 0 ,
-					height = 1 ,
-					profile = makeElement( "aside" ) ,
-					response = request.response ,
-					username = "@" + response.preferredUsername
-				profile.className = "PROFILE"
-				if
-					( response.image )
-					void function ( ) {
-						element = makeElement( "img" )
-						element.src = response.image.url
-						element.alt =
-							"Background image for " +
-							username
-						profile.appendChild( element )
-						height++ }( )
-				element = makeElement( "header" )
-				if
-					( response.icon )
-					void function ( ) {
-						subelement = makeElement( "img" )
-						subelement.src = response.icon.url
-						subelement.alt = "Icon for " + username
-						element.appendChild ( subelement ) } ( )
-				subelement = makeElement( "h2" )
-				subelement.textContent = response.name
-				element.appendChild( subelement )
-				subelement = makeElement( "code" )
-				subelement.textContent = username
-				element.appendChild( subelement )
-				subelement = element
-				element = makeElement( "a" )
-				element.href = response.url
-				element.appendChild( subelement )
-				profile.appendChild( element )
-				element = makeElement( "div" )
-				element.innerHTML = response.summary
-				profile.appendChild( element )
-				element = makeElement( "dl" )
-				if
-					( attachment = response.attachment )
-					for
-						( ; attachment.length > index ; index++ )
-						if
-							( attachment[ index ].type
-								== "PropertyValue" )
-							void function ( ) {
-								var
-									property =
-										attachment[ index ]
-								subelement = makeElement(
-									"dt" )
-								subelement.innerHTML =
-									property.name
-								element.appendChild(
-									subelement )
-								subelement = makeElement(
-									"dd" )
-								subelement.innerHTML =
-									property.value
-								element.appendChild(
-									subelement )
-								if
-									( !( index % 2 ) )
-									height++ }( )
-				profile.appendChild( element )
-				profile.dataset.index = number
-				profile.setAttribute( "style" ,
-					"Grid-Row-End:Span " + ( height >>> 0 ) )
-				profiles[ number ] = profile
-				if
-					( index = 0 , !--remaining )
-					for
-						( ; profiles.length > index ; index++ )
-						if
-							( profile = profiles [ index ] )
-							document.body.insertBefore(
-								profile , thisTag ) }
-			function makeRequest ( acct , number ) {
-				var request = new XMLHttpRequest
-				function handleThisRequest ( ) {
-					this.removeEventListener(
-						"load" , handleThisRequest )
-					this.removeEventListener(
-						"abort" , handleThisFailedRequest )
-					this.removeEventListener(
-						"error" , handleThisFailedRequest )
-					handleRequest( this , number ) }
-				function handleThisFailedRequest ( ) {
-					this.removeEventListener(
-						"load" , handleThisRequest )
-					this.removeEventListener(
-						"abort" , handleThisFailedRequest )
-					this.removeEventListener(
-						"error" , handleThisFailedRequest )
-					remaining-- }
-				request.addEventListener(
-					"load", handleThisRequest )
-				request.addEventListener(
-					"abort", handleThisFailedRequest )
-				request.addEventListener(
-					"error", handleThisFailedRequest )
-				request.open( "GET" , acct.href )
-				request.responseType = "json"
-				request.setRequestHeader(
-					"Accept" , "application/activity+json" )
-				request.send( )
-			}
-			for
-				( ; accts.length > acctindex ; acctindex++ )
-				makeRequest(
-					accts.item( acctindex ) , acctindex ) }( )
-	</script>
-	<a href="/Jul/2018/clacks-overhead.xhtml">
-		<blockquote>
-			<span aria-hidden="true">Just like with</span> <mark
-				><code>X-<wbr />Clacks-<wbr />Overhead</code
-				>,</mark> <span aria-hidden="true"><code
-				>clacks:<wbr />overhead</code> will likely be</span
-				> <mark>ignored</mark> silently <span
-				aria-hidden="true">by any unrecognizing servers or
-				clients.</span>
-			However, <span aria-hidden="true">implementations
-				which</span> <mark>recognize</mark> this property
-				<span aria-hidden="true">should</span> <mark
-				>preserve it</mark> <span aria-hidden="true">as
-				they federate our objects</span> evermore out <mark
-				>into the cybre.</mark>
-		</blockquote>
-	</a>
-	<a href="/Aug/2018/girlfriends.xhtml">
-		<blockquote>
-			<span aria-hidden="true">What</span> is <mark>the
-				word</mark> <span aria-hidden="true">for</span> the
-				person who <mark>guided you through</mark> <span
-				aria-hidden="true">the lowest points of</span>
-				<mark>your worst</mark> depression, <span
-				aria-hidden="true">who knows you in ways that</span
-				> you honestly <mark>don't know yourself,</mark>
-				<span aria-hidden="true">because</span> you <mark
-				>can't remember,</mark> <span aria-hidden="true"
-				>who was your partner and your lover and</span> who
-				has <mark>come through</mark> <span
-				aria-hidden="true">on the other side as</span>
-				<mark><i class="SO-CALLED">just friends</i>?</mark>
-			(There is no straighter concept <span aria-hidden="true"
-				>than that of <i class="SO-CALLED">just friends</i
-				>, and</span> I <mark>take it back</mark
-				>&#x2014;<span aria-hidden="true">the
-				article's</span> <mark>greatest flaw</mark> <span
-				aria-hidden="true">is the fact that</span> it even
-				<em>begins</em> <span aria-hidden="true">to frame
-				things in that</span> light.)
-		</blockquote>
-	</a>
-	<a href="/Sep/2018/fringe-beginnings.xhtml">
-		<blockquote>
-			<span aria-hidden="true">As</span> a result, <span
-				aria-hidden="true">it took me a few days</span> to
-				<mark>piece together</mark> <span
-				aria-hidden="true">what was going on, and most
-				of</span> what I learned <mark>came
-				secondhand</mark> <span aria-hidden="true">(from
-				people discussing it</span> on the <abbr
-				title="Public TimeLine">PTL</abbr>) <span
-				aria-hidden="true">or thirdhand (from</span>
-				<mark>private</mark> communications <span
-				aria-hidden="true">with friends).</span>
-			You can <strong>see the <mark>awareness
-				dawning</mark></strong> <span aria-hidden="true">if
-				you</span> <mark>look closely:</mark>
-		</blockquote>
-	</a>
-	<a href="/Sep/2018/fringe-allie.xhtml">
-		<blockquote>
-			<span aria-hidden="true">For this round,</span> I played
-				<span aria-hidden="true">a</span> <strong><mark
-				>no&#x2010;nonsense,
-				goes&#x2010;for&#x2010;the&#x2010;throat</mark>
-				wolfgirl&#x2010;<span aria-hidden="true"
-				>in&#x2010;Hart's&#x2010;clothing,</span></strong
-				><span aria-hidden="true">still </span><strong
-				><span aria-hidden="true">recovering from a</span>
-				past <mark>toxic relationship</mark></strong>,
-				<span aria-hidden="true">who </span><strong><span
-				aria-hidden="true">loved</span> the <mark>😘
-				emoji</mark></strong> <span aria-hidden="true">and
-				</span><strong><span aria-hidden="true">cheekily
-				reäppropriated</span> <cite>Metroid: Other
-				M</cite></strong> <span aria-hidden="true">with
-				her avatar and catchphrase,</span> <strong><q>any
-				objections, <mark>Adam?</mark></q>.</strong>
-			<span aria-hidden="true">This was</span>&#x2014;for the
-				record&#x2014;<span aria-hidden="true">an</span>
-				<strong>accurate <mark>self&#x2010;portrayal,</mark
-				></strong> <span aria-hidden="true">but it was in
-				</span><strong><span aria-hidden="true">stark
-				contrast with the</span> typical <mark>gay
-				softposting</mark></strong> <span
-				aria-hidden="true">I was doing on my
-				mastodon.social account, and so </span><strong
-				>nobody <mark>ever connected</mark> <span
-				aria-hidden="true">the dots</span></strong> <mark
-				>on their own.</mark>
-		</blockquote>
-	</a>
-	<a href="/Sep/2018/updates.xhtml">
-		<blockquote>
-			As you <mark>may have noticed,</mark> <span
-				aria-hidden="true">I recently ran</span> a number
-				of updates <span aria-hidden="true">to my
-				website.</span>
-			<mark>Most noticeäble</mark> <span aria-hidden="true">is
-				the new front page look, which takes</span>
-				advantage <span aria-hidden="true">of the CSS</span
-				> grid to create <span aria-hidden="true">an</span>
-				<mark>unconventional</mark>
-				newspaper&#x2010;clipping <span aria-hidden="true"
-				>inspired</span> <mark>æsthetic.</mark>
-			<span aria-hidden="true">However, there are a</span>
-				number of underlying <mark>structural changes</mark
-				> <span aria-hidden="true">that I've made</span>
-				alongside <span aria-hidden="true">this redesign,
-				and I</span> thought I would <mark>take some
-				time</mark> <span aria-hidden="true">to get
-				into</span> the details <span aria-hidden="true">of
-				those here.</span>
-		</blockquote>
-	</a>
-	<a href="/Sep/2018/modern-7c.xhtml">
-		<blockquote>
-			These factors <span aria-hidden="true">are</span>
-				considered to <mark>take priority</mark> over <span
-				aria-hidden="true">such things as</span> input
-				method <span aria-hidden="true">or</span> font and
-				computer&#x2010;system <span aria-hidden="true"
-				>support&#x2014;after all,</span> <mark>new input
-				methods</mark> can <mark>always be designed,</mark>
-				<span aria-hidden="true">but</span> changing the
-				the orthography of a language is a <mark>difficult
-				and incredibly time&#x2010;consuming</mark> process
-				<span aria-hidden="true">for all speakers,
-				learners, and technologists.</span>
-		</blockquote>
-	</a>
-	<a href="/Sep/2018/jing.xhtml">
-		<blockquote>
-			Neutral <span aria-hidden="true">jing is the</span>
-				energy of <mark>inaction,</mark> <span
-				aria-hidden="true">of existence,</span> of
-				<mark>survival,</mark> <span aria-hidden="true"
-				>and</span> of knowledge.
-			<span aria-hidden="true">Where</span> positive
-				<span aria-hidden="true">jing</span> tends towards
-				<mark>chaos</mark> and negative <span
-				aria-hidden="true">jing</span> tends towards <mark
-				>order,</mark> neutral <span aria-hidden="true"
-				>jing</span> tends towards <mark>persistence;</mark
-				> <span aria-hidden="true">where</span> positive
-				<span aria-hidden="true">jing</span> looks to <mark
-				>the future</mark> and negative <span
-				aria-hidden="true">jing</span> looks to <mark>the
-				past,</mark> neutral <span aria-hidden="true"
-				>jing</span> exists solely <mark>in the
-				present,</mark> <span aria-hidden="true"
-				>simultaneously</span> <mark>ephemeral</mark> and
-				<mark>everlasting.</mark>
-			<span aria-hidden="true">Of the three fluids,</span> air
-				<span aria-hidden="true">best represents</span>
-				this <mark>jing.</mark>
-		</blockquote>
-	</a>
-	<a href="/Oct/2018/fringe-glitch.xhtml">
-		<blockquote>
-			<span aria-hidden="true">I </span><strong><span
-				aria-hidden="true">didn't like the way that</span>
-				the Web App <mark>was trending</mark></strong
-				>&#x2014;<span aria-hidden="true">towards </span
-				><strong><span aria-hidden="true">big, centralized
-				apps which</span> try to do <mark>everything,</mark
-				></strong> <span aria-hidden="true">as opposed
-				to</span> <strong>small, <mark>personalized,</mark>
-				<span aria-hidden="true">forkable ones</span
-				></strong><span aria-hidden="true"> that do</span>
-				One Task Only, which <span aria-hidden="true">I
-				think the Web App model is</span> <strong><mark
-				>inherently well&#x2010;suited</mark> for.</strong>
-			I <mark>wanted</mark> web apps <span aria-hidden="true"
-				>that </span><strong><span aria-hidden="true"
-				>looked and functioned</span> like <mark>DSi
-				applications,</mark></strong> <span
-				aria-hidden="true">that </span><strong><span
-				aria-hidden="true">came in multiple</span> <mark
-				>skins and colours,</mark></strong> <span
-				aria-hidden="true">that </span><strong><span
-				aria-hidden="true">could be</span> <mark
-				>saved</mark> to disk <span aria-hidden="true">and
-				run without needing a server,</span></strong><span
-				aria-hidden="true">and which were </span><strong
-				><span aria-hidden="true">written in</span>
-				human&#x2010;readable <span aria-hidden="true">HTML
-				and JavaScript</span></strong> such that <strong
-				>anyone could <span aria-hidden="true">modify them
-				and</span> make them <mark>their own.</mark
-				></strong>
-		</blockquote>
-	</a>
+	<h1>KIBI Gô</h1>
+	<div role="note">
+		<p><span class="S"><u>i</u></span> used to have a whole bunch of information about things i am working on here, but there are so many things and i bounce around amongst them so often that frankly itʼs too much work to try to keep current. <span class="S"><u>t</u>hatʼs</span> what <a href="https://weirder.earth/@onethousandtwentyfour">microblogging</a> is for anyway.</p>
+		<p><span class="S"><u>s</u>o</span>, instead iʼve decided to make this page just focus on various things which iʼve actually <em>finished</em> lol.</p>
+	</div>
+	<p id="splash" style="Font-Style: Normal">
+		<span>⬲䑺昸⼴偉䄳奐丸䤭</span>
+		<span hidden="">蠲淢ẩꟹ뚬괗</span>
+		<span hidden="">潇匠潨浥歡</span>
+		<span style="Font-Variant-Numeric: Lining-Nums Tabular-Nums" hidden="">01. GIRLS BE CRUEL ☠️💖</span>
+		<span hidden="">瀼䰍㻣羊薭賯ꝩ訡뽷</span>
+		<span hidden="">How Many Meme Do Teen ?</span>
+		<span hidden="">((ò_óˇ) => {})</span>
+		<span hidden="">too young</span>
+		<span hidden="">with no time to waste</span>
+		<span hidden="">void function</span>
+		<span hidden="">classy</span>
+		<span hidden="">poëtic</span>
+		<span hidden="">sup toops. im a Bad Girl now.</span>
+		<span hidden="">unicorn union food<br/><small><time datetime="2018-04-02">4/2/18</time> No additional text</small></span>
+	</p>
+	<dl>
+		<dt>Name</dt><!--
+			== For the Record: ==
+
+			_this is approximately ⸳every⸳ name iʼve ever gone by; which is not to say that all of these names are “current” in any practical sense.
+			_but, if you want to call me by the name of my RuneScape account in 2006—be my guest, i guess.
+
+			_the ordering here is wholly insignificant.
+			--><dd id="alias"
+			><span>KIBI Gô<!-- KIBI is the family name --></span
+			><span hidden="">Kyebego<!-- this is the sevensi spelling; i use this as a generic style --></span
+			><span hidden="">kibigo!<!-- i use this for code and usernames mostly --></span
+			><span hidden="">kibi<!-- if you capitalize this, it might be mistaken to mean the KIBI family as a whole; but people frequently call me by just « kibi » as a nickname --></span
+			><span hidden="">kibimon</span
+			><span hidden="">1024xGO<!-- this was invented for Twitter and other places with extreme username scarcity --></span
+			><span hidden="">Go<!-- a shortening of ‘Margo(t)’ --></span
+			><span hidden="">Gô<!-- the hat is preferred--></span
+			><span hidden="">Ｇｏ！！！<!-- this is a ‘Chihayafuru’ reference --></span
+			><span hidden="">Ȝo</span
+			><span hidden="">gosh!</span
+			><span hidden="">M<!-- typically used as a shorthand signature and not as an actual identifier --></span
+			><span hidden="">MRS<!-- i never use this in plaintext, but it is my monogram --></span
+			><span hidden="">Em</span
+			><span hidden="">Emmy<!-- but not emma --></span
+			><span hidden="">Em⸺<!-- this is an omission dash (two-em, per Chicago) --></span
+			><span hidden="">Margo<!-- these days i prefer the version without the ‹t› --></span
+			><span hidden="">Margot<!-- if you write this, i might pronounce it «mar GOT»; if i write this, youʼre welcome to --></span
+			><span hidden="">Margaret</span
+			><span hidden="">Mags</span
+			><span hidden="">Mogs</span
+			><span hidden="">60W<!-- this is just MOG upside-down, for clarity --></span
+			><span hidden="">Moggy</span
+			><span hidden="">Emogee<!-- say it «EM oh gee» not «emoji» --></span
+			><span hidden="">emoji girl<!-- iʼm actually the ⸳Unicode⸳ girl but nobody cares about anything but emoji these days --></span
+			><span hidden="">Wend<!-- this is a pun on ‘go’ --></span
+			><span hidden="">Wendy</span
+			><span hidden="">Wendi<!-- the sevensi spelling would use an ‹i› --></span
+			><span hidden="">Margaret Russel<!-- these are both given names; ‘Russel’ is not a family name --></span
+			><span hidden="">Marrus</span
+			><span hidden="">marrus_sh<!-- as a username, a dash can replace the underscore, but this is considered a character set limitation --></span
+			><span hidden="">marrus.sh<!-- variant of the underscore that i used initially --></span
+			><span hidden="">jellyfish_link<!-- this is a pun on «marrus» and also zelda --></span
+			><span hidden="">JʼLi<!-- this is a shortening of «jellyfish_link» --></span
+			><span hidden="">tracer mom<!-- this is a reference to Tracer from Overwatch and a fanfiction i once wrote --></span
+			><span hidden="">Leaf<!-- the default girlʼs name in Pokémon FireRed and LeafGreen versions, which i have used for every Pokémon trainer since --></span
+			><span hidden="">leaf_adventure<!-- this was the name of my website and GitHub user for a while --></span
+			><span hidden="">ᴾᴋᴹɴ Trainer Leaf</span
+			><span hidden="">ᴾᴋᴹɴ Ranger Leaf</span
+			><span hidden="">Raven BLACKHEART<!-- this was an ironic joke signature i used when i posted angsty things to the pseudonymous forum at my college --></span
+			><span hidden="">ｒａｖｅｎ</span
+			><span hidden="">\u2764<!-- the Unicode name for this character is HEAVY BLACK HEART and itʼs a reference to ‘Raven Blackheart’ above --></span
+			><span hidden="">ｕ２７６４</span
+			><span hidden="">❤</span
+			><span hidden="">Allie HART<!-- this is the less-ironic version of «Raven Blackheart» that became my alias for doïng journalism, also associated with U+2764; «Allie» is officially short for ‘Adeline’ although i may have ironically referred to myself as ‘Alice’ once or twice --></span
+			><span hidden="">Allie Fucking HART<!-- officially, this is a joke --></span
+			><span hidden="">Allie F HART<!-- officially, the ‹F› doesnʼt stand for anything--></span
+			><span hidden="">Allie</span
+			><span hidden="">Mx. Hart<!-- Allie HART is the most femme of my personæ but i hate {‘Miss’/‘Mrs’/‘Ms’} as titles so i still use ‘Mx’ --></span
+			><span hidden="">AFH</span
+			><span hidden="">Adeline<!-- this is shortened to ‘Allie’ (see above); i will not respond to ‘Aline’ even though i love that name --></span
+			><span hidden="">R*v⸺<!-- this stands in for any number of fictitious names with ‹R› as the first letter and ‹v› as the third and these are all plays on ‘Raven’ --></span
+			><span hidden="">Kirby<!-- i was literally Kirby to some of my friends for a time, zero joke --></span
+			><span hidden="">TF<!-- all of the art i made in high school was signed with this --></span
+			><span hidden="">TMF<!-- variant of TF --></span
+			><span hidden="">Tyler Fengat<!-- i wrote stories under this alias in middle school --></span
+			><span hidden="">Trevor<!-- iʼm not explaining this one --></span
+			><span hidden="">BeʼJamin</span
+			><span hidden="">benjam!<!-- this is what my thesis advisors in college knew me as --></span
+			><span hidden="">BJMNS<!-- this has a pronunciation and it is «BIH djih muh nus»—not of my making --></span
+			><span hidden="">BRS</span
+			><span hidden="">W.T. II<!-- the aforementioned ‘Runescape’ username --></span
+			><span hidden="">Bunny<!-- i was called this in like sixth grade --></span
+			><span hidden="">Young Samus<!-- i have never actually been ⸳called⸳ « Samus » but the young Samus from ‘Metroid: Other M’ is frequently used as a visual alias --></span
+			><span hidden="">Shizuku<!-- this is actually a reference to ‘Whisper of the Heart’ but the protagonist of ‘My Little Monster’ is also named Shizuku --></span
+			><span hidden="">🙇🏻‍♀️</span
+			><span hidden="">alien<!-- this is what people called me in ‘Minecraft’ and also was a Mii that i used for a time --></span
+			></dd
+			><dt>Gender</dt><dd id="gender"
+			><span>the trust of her ancient anatomy<!-- this is a reference to the song «Drexler» by MADE IN HEIGHTS --></span
+			><span hidden="">Korrastyle airbending<!-- this is a reference to ‘The Legend of Korra’ --></span
+			><span hidden="">dæmon<!-- i disidentify with the spelling ‘demon’ --></span
+			><span hidden="">vampires<!-- i donʼt know why this is plural but it feels like it should be; letʼs call it a GODSMACK reference --></span
+			><span hidden="">sleepy + snuggly + a little revolutionary<!-- this is my tagline on a number of accounts --></span
+			><span hidden="">girl</span
+			><span hidden="">nonbinary</span
+			><span hidden="">woman</span
+			><span hidden="">bite<!-- nom --></span
+			><span hidden="">unknown<!-- this is actually a reference to ‘Pokémon’ --></span
+			><span hidden="">Copycat<!-- this is also a reference to ‘Pokémon’ --></span
+			><span hidden="">fantasy<!-- this and the next are puns on the fact that ‘gender’ and ‘genre’ are etymologically the same --></span
+			><span hidden="">magical realism</span
+			><span hidden="">ash<!-- this and the next are my magical affinities --></span
+			><span hidden="">stone</span
+			><span hidden="">sagebrush<!-- everyone who grew up in the Columbia Plateau has to be at least part sagebrush --></span
+			><span hidden="">fluid</span
+			><span hidden="">geologists now believe that there were 40 or more separate floods … the peak flow of the floods is estimated to be 40–60km<sup>3</sup>/hr … up to 1.9×1019 joules of potential energy were released by each … the equivalent of 4,500 megatons of TNT<!-- this is real --></span
+			><span hidden="">wolfgirl<!-- this is specifically an affinity for Allie HART --></span
+			><span hidden="">😘<!-- this also --></span
+			><span hidden="">🌊</span
+			><span hidden="">[ Clean ]</span
+			><span hidden="">any objections, Adam ?<!-- this is a reference to ‘Metroid: Other M’ --></span
+			><span hidden="">there isnʼt one<!-- this is a reference to ‘This Sex Which Is Not One’ --></span
+			><span hidden="">noöne<!-- same reference --></span
+			><span hidden="">″<!-- this is an oblique reference to ‘The Second Sex’ --></span
+			><span hidden="">queer</span
+			><span hidden="">writer<!-- iʼm calling this a reference to ‘Whisper of the Heart’ although ymmv --></span
+			><span hidden=""><cite>Zelda</cite> fangirl</span
+			></dd><dt>Likes</dt><dd id="likes"
+			><span>pokémon</span
+			><span hidden="">cute things</span
+			><span hidden="">ᴾᴋᴹɴ</span
+			><span hidden="">you</span
+			><span hidden=""><cite>Zelda</cite></span
+			><span hidden="">refreshing this page</span
+			><span hidden="">Nintendo DSi</span
+			><span hidden="">mojibake</span
+			><span hidden="">languages</span
+			><span hidden=""><cite>Chihayafuru</cite></span
+			><span hidden="">text</span
+			><span hidden="">orthography</span
+			><span hidden="">the English language</span
+			><span hidden="">OMAM</span
+			><span hidden="">Florence + the Machine</span
+			><span hidden="">NIGHTMARE</span
+			><span hidden=""><cite>My Little Monster</cite></span
+			><span hidden="">ice creams</span
+			><span hidden="">mangas</span
+			><span hidden="">fanfiction</span
+			><span hidden="">playlists</span
+			><span hidden="">mixtapes</span
+			><span hidden="">this website</span
+			><span hidden="">XML</span
+			><span hidden="">grid layouts</span
+			><span hidden="">change</span
+			><span hidden="">growth</span
+			><span hidden="">growlithe</span
+			><span hidden="">the World Wide Web</span
+			><span hidden="">🎶</span
+			><span hidden="">Unicode</span
+			></dd>
+	</dl>
+	<section>
+		<h2>Fiction</h2>
+		<p><span class="S"><u>i</u>ʼve</span> released drafts of original stories iʼve written before, but at this point they are all outdated and iʼm looking at revising them. <span class="S"><u>s</u>o,</span> sharing them here seems a tad improper. <span class="S"><u>e</u>xpect</span> this section to fill out more in the future, though.</p>
+	</section>
+	<p class="LONG">
+		<span class="S"><u>i</u>f</span> you donʼt like this webpage I have some bad news for you regarding the rest of my webpages
+	</p>
 	<nav>
-		<h2>Also On:</h2>
-		<ul>
-			<li><a property="foaf:weblog"
-				href="/Current/index.atom">Blog</a></li>
-			<li><a property="foaf:account"
-				href="https://glitch.social/@kibi">Fediverse</a
-				></li>
-			<li><a property="foaf:account"
-				href="https://github.com/marrus-sh">GitHub</a></li>
-			<li><a property="foaf:plan" href="/.plan.txt"><code
-				>.plan</code></a></li>
-		</ul>
+		<h2>Nonfiction</h2>
+		<dl><dt><a href="https://www.cybremonday.deals/"><cite>CYBREMONDAY</cite></a></dt><dd>Get Hot Cybre Deals Here !!</dd><dt><a href="./Documents/fediguide.xhtml"><cite>Guide to Fediverse Drama</cite></a></dt><dd>ActivityPubʼs Most Cited</dd><dt><a href="https://www.u2764.com/"><cite>JOURNAL : \u2764</cite></a></dt><dd>a web journal aimed at reïmagining what it means to be a web journal ( this is categorized as « nonfiction » but it is properly multi­‑genre )</dd></dl>
 	</nav>
-	<div class="FORTUNES">
-		<blockquote class="FORTUNE">
-			<a href="
-https://madeinheights.bandcamp.com/track/drexler">The trust of her
-				ancient anatomy.</a>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Korra&#x2010;style airbending.
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			<a href="
-https://en.wikipedia.org/wiki/List_of_Chihayafuru_episodes">G O ! !
-				!</a>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Let's GO!
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			How Many Meme Do Teen?
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			<a href="">Click Here For Fortune.</a>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			function (ò_óˇ) {};
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			[Clean]
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			gosh!
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			蠲淢ẩꟹ뚬괗
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			⬲䑺昸⼴偉䄳奐丸䤭
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			潇匠潨浥歡
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			<i>*blushes wildly*</i>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Tired of bad websites.
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Just say <strong>NO</strong> to bad formatting!
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Open as the web.
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Respect.
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			<a href="https://bluescholars.bandcamp.com/track/27"
-				>Expect it.</a>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			sleepy + snuggly + a little revolutionary
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			<a href="
-https://web.archive.org/web/20161224035004/http://moonbase.rydia.net/mental/blog/gaming/metroid-other-m-the-elephant/article.html
-">any objections, Adam?</a>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			😘
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			<a href="
-http://dragonage.wikia.com/wiki/Merrill/Dialogue#Merrill_and_Anders">We
-				have our own stories. I don't need to borrow yours.</a>
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			i like cute things and pokémon~
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			unofficial home of the Copycat Fan Club
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			Too young for any of this.
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			No time to waste.
-		</blockquote>
-		<blockquote class="FORTUNE" hidden="">
-			TLoZ fangirl.
-		</blockquote>
-		<script>
-			void function ( ) {
-				var
-					number = 0 ,
-					fortunes = document.querySelectorAll(
-						".FORTUNE" ) ,
-					luckyNumber = (
-						Math.random( ) * fortunes.length ) >>> 0
-				for
-					( ; fortunes.length > number ; number++ )
-					if
-						( number == luckyNumber )
-						fortunes.item( number )
-							.removeAttribute( "hidden" )
-					else
-						fortunes.item( number )
-							.setAttribute( "hidden" , "" ) }( )
-		</script>
-	</div>
-	<div class="BADGES">
-		<a href="https://www.KIBI.family/">
-			<img class="BADGE" alt="
-This is a KIBI Project site. &lt;KIBI.FAMILY&gt;" src="
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAACVBMVEWwHBz6%2BPcfGhQqHD6VAAABMElEQVRIidWTWxbDIAhEwf0vuo0GBwY1niT9KG3V%2BriOI4r8YSgFjQ6be%2BCDXfltm77Xnqr6q189%2F3iwoF9dJ47ETdSObZU%2FoY7A2kpMDIfo6xLfTdAR2LChT6N0GDi0YqIYIrUXaO4onnqsos5X57Z6qQswZUVSDK0Uy6xY5vGD2AEvd5sN9sSMD2QtZgcOj7vTuDf%2FFFRwE7bWXbZLxitw2EMEpQa%2BdahE5bAiKQ7ibS0pRlLzDY0U9wVBsSSwO4bQlKkV7ij9BeGleYv5GWYrWk1OsUJD0uAgjR7n8f148TW%2BEGzEW5HA5R4nLWNwaXPK8fnGuaLUtitLndCRJZMlcc9ZBXVEYDiAmRzBTZ4RTFiJihncTsbktWJbvVLsVc%2FB7PEa7M5x5fHvsuK1%2BAA4FQWFD3jQ8QAAAABJRU5ErkJggg%3D%3D
-" height="31" width="88" />
-		</a>
-		<a href="https://validator.w3.org/check?uri=referer">
-			<img class="BADGE" alt="Valid XHTML 1.1!" src="
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAllBMVEUAAAAAAAALCwsbGxsrKys7OztLS0tbW1tra2t7e3uLi4ubm5urq6u7u7vLy8vb29vr6%2Bv7%2B%2Fv%2F%2F%2F8TFhgjKS0xOD02PkRJVFxMWGBgbnhpeYV9kJ2QprWbs8OnwdKyzeAAWpwebagxea9Vkb18qsybvtjT4%2B7i7PNEXW8fW4drg5cybZl2kac5dKGJs9FEhrarq62Ql6AHg7VaAAAAMnRSTlMA%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F5BaZwMAAAJRSURBVEiJ7ZZtk6IwDMc36OLDKosFRaW2RZ7ukZv7%2Fl%2FukrSw6OG4Osy9urxI02H8NfxJUl%2BC8e2FLRD3rdafN7mc%2FQc%2FBz5JxU7ZVafWcMW9SqXW6ekpcAqJlhDrIxy0jkFFQBYpgL3WOwCt8OE1uMwK%2FHXBXtTGZGS5EOFiHojVxkqxgzQG2YFlmkCSSgSDOsENcG0yJJbmLHixhqf4AF4wDSyYckTmEXbHYwT4%2FgfaKtjCYQ%2FxMFicTYU%2BMzX63OR1XdJRbzBdvHpe6D5eAoQ7sgQ98C6J4HALXFB%2BiC9bfEah%2F4oqzBauKiREKHMnxQdY4jG3wKwCiou6VhQWrIpHjzahA6PAKPMAWO8PmsERVQmBjemqwmCaKG5mk8cjUJpw0q8KwqgoGgLzqVo5ieTyq2Eyg3N89dyQFmeOUGcR%2Bn2woipFp05Ux3aDkWbHT09kmPF3%2FvYOXKIKJitNwQWSZ4a0eHuq8366qrLgmqjIPpNHq%2BjrrZ8B%2F2q5rvPOTgdbGVx0l533MNeBC9xYXwurTXYJljFg35F9RD1e8xfXgSuutdrY7mNwaKONbRCZbFtwF%2FXzbK657RDilkAtClHmVoq1Jc%2FXXee1uOQKzLym4365mG45a1BgAedYGyWdM3snrhfcAzte49Zvl2OztBMo4%2BQNSxJ4%2FmwCS%2FG5jFv7cT2Pi85XOQ9NJPuT6UpcgJPtALhPbh4d9JI7lnrXRcPk5uEbRNmbSKZtNEhuxr9M28oY%2F5Zua3n867%2Bx3fcP%2FldsVvft9wM2b8H%2B2LZl7h%2Bh5PPvxrhAcgAAAABJRU5ErkJggg%3D%3D
-" height="31" width="88" />
-		</a>
-	</div>
+	<nav>
+		<h2>Fanfiction</h2>
+		<dl><dt><a href="https://archiveofourown.org/works/14899557"><cite>The Legend of Samus and Ilia : Ξ “ The Meaning of Twilight ”</cite></a></dt><dd>a gay <cite>Metroid Prime : Corruption</cite> ☓ <cite>The Legend of Zelda : Twilight Princess</cite> crossover fanfiction about trauma and recovery ; vols 1+2 complete, vols 3–8 forthcoming whenever</dd></dl>
+	</nav>
+	<nav>
+		<h2>Sevensi</h2>
+		<p><span class="S"><u>S</u>evensi</span> is a fictional culture and ( language ?? ) which iʼve been developing at a snailʼs pace since 2009. <span class="S"><u>t</u>hereʼs</span> <a href="http://langdev.xyz/jsv/osv/primer/">a bit of a preliminary primer here</a>. <span class="S"><u>a</u>s</span> i publish more and more resources about it, iʼll post the links here.</p>
+	</nav>
+	<p class="LONG">
+		<!-- this is a quote by Merrill from ‘Dragon Age 2’ -->
+		<span class="S"><u>w</u>e</span> have our own stories. <span class="S"><u>i</u></span> donʼt need to borrow yours.
+	</p>
+	<img alt="a cute black­‑and­‑white doodle of Kirby with a star on a transparent background" width="530" height="530" src="./Images/Kirbi/media.png"/>
+	<nav>
+		<h2>Programs</h2>
+		<dl><dt><a href="https://gist.github.com/marrus-sh/ce267187fff0c658c0b4b06b997e5376"><cite>Deluxe Makefile for LaTeX</cite></a></dt><dd>i use this makefile a lot, often called from within <em>another</em>—do i expect anyone else to understand what it does ? not really</dd><dt><a href="https://go.kibi.family/writer/"><cite>KibiWriter</cite></a></dt><dd>a dead basic plaintext editor that runs in the browser</dd></dl>
+	</nav>
+	<nav>
+		<h2>Friends of KIBI</h2>
+		<p><span class="S"><u>t</u>hese</span> are people who i know and who are honoured friends of the KIBI family.</p>
+		<dl><dt><a href="https://catflame.eerie.garden/">Catflame</a></dt><dd><b>'leftie</b>—a black­‑furred feral housecat with a body of flame</dd><dt><a href="https://acey.eerie.garden/">Fidgetcetera</a></dt><dd><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi mathvariant="bold">Mx. Ace Fucking Jaycee</mi> <mo lspace="veryverythickmathspace" rspace="veryverythickmathspace">⊇</mo> <mrow><mo lspace="0em">{</mo><mtable columnspacing="thinmathspace"><mtr><mtd><mi>Nemmy Nyms</mi></mtd><mtd><mo>,</mo></mtd></mtr> <mtr><mtd><mi>Salix Quercus</mi></mtd></mtr></mtable></mrow></math></dd></dl>
+		<p>( <span class="S"><u>i</u>f</span> you are a friend and want your website listed here let me know. )</p>
+	</nav>
+	<nav>
+		<h2>Links</h2>
+		<dl><dt><a href="https://mutant.tech/"><cite>Mutant Standard</cite></a></dt><dd>an alternative, subculturally­‑situated emoji set that foregoes Unicodeʼs attempts at universality for a queerer, more diverse and representational experiënce</dd><dt><a href="https://eerie.garden/"><cite>An Eerie Garden</cite></a></dt><dd>a garden!⁠home for queer people and queer things</dd></dl>
+	</nav>
+	<nav>
+		<h2>Library</h2>
+		<p><span class="S"><u>f</u>orthcoming : </span><span class="S"><u>a</u></span> library of public­‑domain and free­‑culture texts, with personal annotations. <span class="S"><u>p</u>otentially</span> some fair­‑use excerpts of some less­‑free texts as well.</p>
+	</nav>
+	<nav>
+		<h2>Miscellany</h2>
+		<dl><dt><a href="https://style.u2764.com"><cite>Style : \u2764</cite></a></dt><dd>a gallery of webpage styles that you can browse and use</dd></dl>
+	</nav>
+	<p style="Text-Align: Center; Font-Variant-Numeric: Lining-Nums Tabular-Nums; Letter-Spacing: Calc(.81EM - 1CH)" class="LONG">
+		00001<br aria-hidden="true"/>00000<br aria-hidden="true"/>00000
+	</p>
+	<button style="Display: Block; Box-Sizing: Border-Box; Margin: 0; Border: Thin CurrentColor Solid; Border-Radius: .35REM; Padding: 0; Width: 9REM; Height: 9REM; Color: CurrentColor; Background: Transparent; Font: Inherit; Text-Transform: Uppercase" id="beep-boop">beep</button>
+	<p>
+		<a href="https://github.com/marrus-sh/">my code</a> is likely not useful to you
+	</p>
+	<img style="Grid-Row-End: Span 2; Max-Height: 42REM" alt="a black­‑and­‑white doodle of a cute girl, standing" width="114" height="402" src="./Images/Portrait/media.png"/>
+	<p>
+		<span style="Font-Style: Normal">💁🏻😘✨</span>
+	</p>
+	<p>
+		<span class="S"><u>X</u>X⸺X</span>
+	</p>
+	<p>
+		<span style="Font-Style: Normal">☕️🎐</span>
+	</p>
+	<p>
+		made with <a href="https://coteditor.com/">CotEditor</a> + <a href="https://www.mozilla.org/en-US/firefox/">Firefox</a>⁓
+	</p>
+	<p class="LONG">
+		<span class="S"><u>c</u>opyright</span> © 2019 Kyebego. <span class="S"><u>t</u>he</span> source code for this site is available <a href="https://www.wikihow.com/View-Source-Code">through your browser</a> or <a href="https://github.com/marrus-sh/marrus-sh.github.io/">on GitHub</a>.
+	</p>
+	<footer>
+		<dl><dt>last updated</dt><dd><time datetime="2019-04-15">15 April 2019</time></dd></dl>
+	</footer>
+	<script>
+( ( )  =>  {
+	function pickSplashes ( )  {
+		[
+			"splash"
+			, "alias"
+			, "gender"
+			, "likes"
+		].forEach( ( kindOfSplash )  =>  {
+			let
+				splashes  =  document.getElementById( kindOfSplash ).getElementsByTagNameNS(
+					"http://www.w3.org/1999/xhtml"
+					, "span"
+				)
+				, selectedSplash  =  Math.floor( Math.random( ) * splashes.length )
+			Array.prototype.forEach.call(
+				splashes
+				, (
+					splash
+					, index
+				)  =>  splash[ index == selectedSplash  ?  "removeAttribute"  :  "setAttribute" ](
+					"hidden"
+					, ""
+				)
+			)
+		} )
+	}
+	document.addEventListener(
+		"visibilitychange"
+		, pickSplashes
+	)
+	document.getElementById("beep-boop").addEventListener(
+		"click"
+		, ( event )  =>  event.target.textContent == "beep"  ?  (
+			event.target.textContent  =  "boop"
+			, event.target.style.color  =  "#FAF8F7"
+			, event.target.style.background  =  "#302F2B"
+		)  :  (
+			event.target.textContent  =  "beep"
+			, event.target.style.color  =  "CurrentColor"
+			, event.target.style.background  =  "Transparent"
+		)
+	)
+	pickSplashes( )
+} )( )
+	</script>
 </body>
 </html>

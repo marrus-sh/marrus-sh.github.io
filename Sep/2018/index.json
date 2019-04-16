@@ -1,15 +1,11 @@
 {
 	"@context": [
 		"https://www.w3.org/ns/activitystreams",
-		"https://vocab.KIBI.network/press",
 		{ "go": "https://go.KIBI.family/" }
 	],
 	"@graph": [
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Sep/2018/#fringe-beginnings",
 			"name": "Fringe Mastodev – Part I: The Beginnings",
 			"attributedTo": "go:About/#me",
@@ -28,15 +24,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Sep/2018/#fringe-allie",
 			"name": "Fringe Mastodev – Part II: Enter Allie Hart",
 			"attributedTo": "go:About/#me",
@@ -55,15 +46,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Sep/2018/#updates",
 			"name": "Site Updates – September 2018",
 			"attributedTo": "go:About/#me",
@@ -82,15 +68,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Sep/2018/#modern-7c",
 			"name": "Modern? Sevensi Serialization",
 			"attributedTo": "go:About/#me",
@@ -109,15 +90,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Sep/2018/#mixtape39",
 			"name": "dot support – [GOMIX‐2018W39]",
 			"attributedTo": "go:About/#me",
@@ -136,15 +112,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Sep/2018/#jing",
 			"name": "Neutral Jing",
 			"attributedTo": "go:About/#me",
@@ -163,9 +134,7 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
 			"type": "OrderedCollectionPage",
@@ -179,7 +148,7 @@
 				"type": "Link",
 				"rel": "alternate",
 				"mediaType": "application/atom+xml",
-				"href": "go:Current/index.atom"
+				"href": "go:Sep/2018/index.atom"
 			},
 			"orderedItems": [
 				"go:Sep/2018/#jing",
@@ -188,8 +157,7 @@
 				"go:Sep/2018/#updates",
 				"go:Sep/2018/#fringe-allie",
 				"go:Sep/2018/#fringe-beginnings"
-			],
-			"serverInfo": "go:About/#server"
+			]
 		}
 	]
 }

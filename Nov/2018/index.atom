@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>KIBI Gô's Blog</title>
+	<link rel="self" href="https://go.KIBI.family/Current/index.atom"
+		/>
+	<link rel="prev-archive"
+		href="https://go.KIBI.family/Oct/2018/index.atom" />
+	<link rel="current"
+		href="https://go.KIBI.family/Current/index.atom" />
+	<updated>2019-04-09T19:15:03-07:00</updated>
+	<author>
+		<name>KIBI Gô</name>
+		<uri>https://go.KIBI.family/About/#me</uri>
+	</author>
+	<id>https://go.KIBI.family/Posts/</id>
+	<entry>
+		<title>October Recap</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Nov/2018/recap-oct.xhtml" />
+		<id>https://go.KIBI.family/Nov/2018/#recap-oct</id>
+		<updated>2018-11-01T14:55:06-07:00</updated>
+		<summary type="html">
+			&lt;p&gt;A recap of everything I made and experienced in
+				October.&lt;/p&gt;
+		</summary>
+	</entry>
+	<entry>
+		<title>Fringe Mastodev – Part IV: Intermission</title>
+		<link rel="alternate" type="application/xhtml+xml" href="
+https://go.KIBI.family/Nov/2018/fringe-intermission.xhtml" />
+		<id>https://go.KIBI.family/Nov/2018/#fringe-intermission</id>
+		<updated>2018-11-06T13:27:37-08:00</updated>
+		<summary type="html">
+			&lt;p&gt;Mastodon has a culture of exploitation.
+			We need to talk about it.&lt;/p&gt;
+		</summary>
+	</entry>
+</feed>

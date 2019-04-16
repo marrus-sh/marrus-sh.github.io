@@ -1,15 +1,11 @@
 {
 	"@context": [
 		"https://www.w3.org/ns/activitystreams",
-		"https://vocab.KIBI.network/press",
 		{ "go": "https://go.KIBI.family/" }
 	],
 	"@graph": [
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Oct/2018/#fringe-glitch",
 			"name": "Fringe Mastodev – Part III: Joining GlitchSoc",
 			"attributedTo": "go:About/#me",
@@ -28,15 +24,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Oct/2018/#mixtape40",
 			"name": "future bar – [GOMIX‐2018W40]",
 			"attributedTo": "go:About/#me",
@@ -55,15 +46,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Oct/2018/#recap-sep",
 			"name": "September Recap",
 			"attributedTo": "go:About/#me",
@@ -82,15 +68,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Oct/2018/#7c-text",
 			"name": "Sevensi Text",
 			"attributedTo": "go:About/#me",
@@ -109,9 +90,7 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
 			"type": "OrderedCollectionPage",
@@ -125,15 +104,14 @@
 				"type": "Link",
 				"rel": "alternate",
 				"mediaType": "application/atom+xml",
-				"href": "go:Current/index.atom"
+				"href": "go:Oct/2018/index.atom"
 			},
 			"orderedItems": [
 				"go:Oct/2018/#7c-text",
 				"go:Oct/2018/#recap-sep",
 				"go:Oct/2018/#mixtape40",
 				"go:Oct/2018/#fringe-glitch"
-			],
-			"serverInfo": "go:About/#server"
+			]
 		}
 	]
 }

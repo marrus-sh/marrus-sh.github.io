@@ -1,15 +1,11 @@
 {
 	"@context": [
 		"https://www.w3.org/ns/activitystreams",
-		"https://vocab.KIBI.network/press",
 		{ "go": "https://go.KIBI.family/" }
 	],
 	"@graph": [
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Nov/2018/#recap-oct",
 			"name": "October Recap",
 			"attributedTo": "go:About/#me",
@@ -28,15 +24,10 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Nov/2018/#fringe-intermission",
 			"name": "Fringe Mastodev – Part IV: Intermission",
 			"attributedTo": "go:About/#me",
@@ -55,9 +46,26 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
+		},
+		{
+			"type": "OrderedCollectionPage",
+			"id": "go:Nov/2018/",
+			"first": "go:Current/",
+			"last": "go:Jun/2018/",
+			"prev": "go:Current/",
+			"next": "go:Oct/2018/",
+			"partOf": "go:Posts/",
+			"url": {
+				"type": "Link",
+				"rel": "alternate",
+				"mediaType": "application/atom+xml",
+				"href": "go:Nov/2018/index.atom"
+			},
+			"orderedItems": [
+				"go:Nov/2018/#fringe-intermission",
+				"go:Nov/2018/#recap-oct"
+			]
 		}
 	]
 }

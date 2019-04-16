@@ -5,9 +5,11 @@
 		/>
 	<link rel="prev-archive"
 		href="https://go.KIBI.family/Sep/2018/index.atom" />
+	<link rel="next-archive"
+		href="https://go.KIBI.family/Nov/2018/index.atom" />
 	<link rel="current"
 		href="https://go.KIBI.family/Current/index.atom" />
-	<updated>2018-11-01T15:00:04-07:00</updated>
+	<updated>2019-04-09T19:13:05-07:00</updated>
 	<author>
 		<name>KIBI Gô</name>
 		<uri>https://go.KIBI.family/About/#me</uri>

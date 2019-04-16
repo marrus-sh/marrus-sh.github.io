@@ -1,15 +1,11 @@
 {
 	"@context": [
 		"https://www.w3.org/ns/activitystreams",
-		"https://vocab.KIBI.network/press",
 		{ "go": "https://go.KIBI.family/" }
 	],
 	"@graph": [
 		{
-			"type": [
-				"Page",
-				"Post"
-			],
+			"type": "Page",
 			"id": "go:Jul/2018/#clacks-overhead",
 			"name": "Clacks Overhead",
 			"attributedTo": "go:About/#me",
@@ -28,9 +24,7 @@
 					"mediaType": "text/html",
 					"href": "https://patreon.com/kibigo"
 				}
-			],
-			"isFreelyAvailable": true,
-			"serverInfo": "go:About/#server"
+			]
 		},
 		{
 			"type": "OrderedCollectionPage",
@@ -46,10 +40,7 @@
 				"mediaType": "application/atom+xml",
 				"href": "go:Jul/2018/index.atom"
 			},
-			"orderedItems": [
-				"go:Jul/2018/#clacks-overhead"
-			],
-			"serverInfo": "go:About/#server"
+			"orderedItems": [ "go:Jul/2018/#clacks-overhead" ]
 		}
 	]
 }
