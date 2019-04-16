@@ -55,6 +55,7 @@ cite:Not(.BIG)::AFTER { Content: " »" }
 dt cite {
 	Display: Inline-Block;
 	Position: Relative;
+	Margin: 0 0 0 -3EM;
 	Box-Sizing: Border-Box;
 	Padding: 0 1.5EM;
 	Max-Width: 100%;
@@ -84,7 +85,7 @@ dt cite::AFTER {
 }
 dt {
 	Position: Relative;
-	Padding-Bottom: 1EM;
+	Padding: 0 0 1EM 3EM;
 	Font-Style: Inherit;
 	Font-Weight: Bold;
 }
@@ -104,7 +105,10 @@ dt a[href]::AFTER {
 	Text-Overflow: Ellipsis;
 	Content: Attr(href);
 }
-dt small { Font-Weight: Normal }
+dt small {
+	Display: Inline-Block;
+	Font-Weight: Normal;
+}
 dd { Margin: 1EM 0 0 3EM }
 u {
 	Font-Weight: Bold;
