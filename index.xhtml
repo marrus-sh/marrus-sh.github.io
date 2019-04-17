@@ -39,10 +39,10 @@ body {
 @media ( Max-Width: 28.125EM ) {
 	body { Grid-Template-Columns: 1FR 1FR }
 	body>h1 { Border: None }
-	body>*:Not(h1) { Width: 100% ! IMPORTANT } /* Overrides inline styles */
+	body>*:Not(h1):Not(.NOGRID) { Width: 100% ! IMPORTANT } /* Overrides inline styles */
 	:Root body>img { Max-Width: Calc(50VW - 3.5REM) }
 }
-body>* {
+body>*:Not(.NOGRID) {
 	Box-Sizing: Border-Box;
 	Color: #302F2B;
 	Background: #FAF8F7;
@@ -50,7 +50,7 @@ body>* {
 h1 {
 	Position: Fixed;
 	Writing-Mode: Vertical-LR;
-	Top: 0;
+	Top: 1REM;
 	Right: 0;
 	Bottom: 0;
 	Margin: 0;
@@ -245,6 +245,7 @@ time { Text-Transform: Uppercase }
 	</style>
 </head>
 <body>
+	<a style="Position: Absolute; Top: .5REM; Right: -3.5REM; Font-Weight: Bold" class="NOGRID" href="./Current/">Current →</a>
 	<h1>KIBI Gô</h1>
 	<div role="note">
 		<p><span class="S"><u>i</u></span> used to have a whole bunch of information about things i am working on here, but there are so many things and i bounce around amongst them so often that frankly itʼs too much work to try to keep current. <span class="S"><u>t</u>hatʼs</span> what <a href="https://weirder.earth/@onethousandtwentyfour">microblogging</a> is for anyway.</p>
