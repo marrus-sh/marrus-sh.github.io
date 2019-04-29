@@ -63,7 +63,9 @@ p {
 	Margin-Inline-Start: 2CH;
 	Font-Size: .8REM;
 	Font-Family: Monospace;
-	Text-Indent: -2CH;
+}
+@supports (Margin-Inline-Start: 2CH) {
+	p { Text-Indent: -2CH }
 }
 p>*,
 dd>* { Text-Indent: 0 }
@@ -81,7 +83,7 @@ cite.A::AFTER { Content: " »" }
 	</section>
 	<section id="listening">
 		<h2>Listening To</h2>
-		<p>girl in red. <cite class="M">chapter 1</cite>. Marie Ulven, 2018.</p>
+		<p>SOAK. <cite class="M">Grim Town</cite>. Rough Trade Records, 2019.</p>
 		<p>Jenny Hval. <cite class="M">Blood Bitch</cite>. Sacred Bones Records, 2016.</p>
 	</section>
 	<section id="reading">
@@ -90,7 +92,7 @@ cite.A::AFTER { Content: " »" }
 			<dt>Fiction</dt>
 			<dd>Muriel Barbery. <cite class="M">The Elegance of the Hedgehog</cite>. Translated by Alison Anderson. New York : Europa Editions, 2008.</dd>
 			<dt>Nonfiction</dt>
-			<dd>Jasbir K. Puar. <cite class="M">The Right to Maim : Debility, capacity, disability</cite>. Durham : Duke University Press, 2017.</dd>
+			<dd>José Esteban Muñoz. <cite class="M">Disidentifications : Queers of Color and the Performance of Politics</cite>. Minneapolis : University of Minnesota Press, 1999.</dd>
 			<dt>Manga</dt>
 			<dd>Robico. <cite class="M">My Little Monster</cite>. New York : Kodansha Comics, 2014–2016.</dd>
 			<dt>Classics</dt>
