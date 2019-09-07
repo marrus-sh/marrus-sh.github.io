@@ -499,9 +499,9 @@ const
 		DETAIL.lastElementChild.textContent = ""
 		if ( character ) {
 			const glyphs = character.glyphs
-			DETAIL.lastElementChild.innerHTML = `<STRONG>${ codepoint } ${ character.name }</STRONG>${ (aliases => aliases.size ? '<P><SPAN Aria-Hidden=true>=</SPAN><SPAN Class=SCREENREADER>Aliases:</SPAN> ' + Array.from(aliases).join(", ") : "")(character.aliases) }<DL>${ (alsoKnownAs => alsoKnownAs.size ? '<DT>Also known as:<DD Style="List-Style-Type: &quot;- &quot;">' + Array.from(alsoKnownAs).map(sanitize).join('<DD Style="List-Style-Type: &quot;- &quot;">') : "")(character.alsoKnownAs) }<DT>Notes:${ (notes => notes.size ? '<DD Style="List-Style-Type: Disc">' + Array.from(notes).map(sanitize).join('<DD Style="List-Style-Type: Disc">') : "<DD><I>No notes.</I>")(character.notes) }<DT>As text:<DD><SAMP>${ sanitize(character) }</SAMP></DL>`
+			DETAIL.lastElementChild.innerHTML = `<STRONG>${ padhex(character.codepoint) } ${ character.name }</STRONG>${ (aliases => aliases.size ? '<P><SPAN Aria-Hidden=true>=</SPAN><SPAN Class=SCREENREADER>Aliases:</SPAN> ' + Array.from(aliases).join(", ") : "")(character.aliases) }<DL>${ (alsoKnownAs => alsoKnownAs.size ? '<DT>Also known as:<DD Style="List-Style-Type: &quot;- &quot;">' + Array.from(alsoKnownAs).map(sanitize).join('<DD Style="List-Style-Type: &quot;- &quot;">') : "")(character.alsoKnownAs) }<DT>Notes:${ (notes => notes.size ? '<DD Style="List-Style-Type: Disc">' + Array.from(notes).map(sanitize).join('<DD Style="List-Style-Type: Disc">') : "<DD><I>No notes.</I>")(character.notes) }<DT>As text:<DD><SAMP>${ sanitize(character) }</SAMP></DL>`
 			DETAIL.lastElementChild.insertBefore(canvasGlyph(character, Array.from(character.glyphs.sizes).reduce(( best, current ) => current > best && current <= 64 ? current : best, 0) || 64), DETAIL.lastElementChild.firstChild) }
-		else DETAIL.lastElementChild.innerHTML = `<STRONG>${ codepoint } [ Unassigned ]</STRONG>`
+		else DETAIL.lastElementChild.innerHTML = `<STRONG>${ padhex(parseInt(codepoint, 0x10)) } [ Unassigned ]</STRONG>`
 		DETAIL.removeAttribute("Hidden") }
 	, displayList = ( characters ) => {
 		let row = void { }
@@ -571,7 +571,7 @@ const
 			displayDetail(target.getAttribute("Data-Codepoint"))
 			break
 			case "TD":
-			displayDetail(target.parentNode.firstElementChild.textContent + target.cellIndex) } }
+			displayDetail(target.parentNode.firstElementChild.textContent + target.cellIndex.toString(0x10)) } }
 	, handleLoad = ( ) => loadCharset(INPUT.value)
 	, handleMeans = ( ) => {
 		const text = document.getElementById("means.text").checked
