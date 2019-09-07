@@ -1,0 +1,648 @@
+<!dOcTyPe HTML>
+<HTML Lang=en>
+<TITLE>KixtView</TITLE>
+<META Charset=utf-8>
+<META Name=referrer Content=no-referrer>
+<STYLE>
+*.SCREENREADER,
+#charset INPUT[Type=radio],
+#mode INPUT[Type=radio] {
+	Position: Absolute;
+	Width: 1PX;
+	Height: 1PX;
+	Overflow: Hidden;
+	Clip-Path: Inset(50%);
+}
+*:Link { Color: DarkCyan }
+*:Visited { Color: DarkMagenta }
+*:Link:Active,
+*:Visited:Active { Color: DarkRed }
+HTML {
+	Color: SaddleBrown;
+	Background: Linen;
+	Font: Normal Large / 1.2 Serif;
+}
+BODY {
+	Margin: Auto;
+	Padding: 5PX;
+	Max-Width: 62EM;
+}
+H1 {
+	Margin: 0;
+	Font: Small-Caps XX-Large / 1.5 Serif;
+	Text-Align: Center;
+}
+H2 {
+	Margin: 0;
+	Font: Small-Caps Larger / 1.5 Sans-Serif;
+}
+HR {
+	Margin: 5PX -5PX;
+	Border-Style: Solid None None;
+	Border-Color: CurrentColor;
+	Border-Width: 1PX;
+	Padding: 0;
+	Color: Inherit;
+}
+P {
+	Margin: 0;
+	Text-Align: Justify;
+}
+P+P { Margin-Top: 1.2EM }
+DL { Margin: 1REM 0 }
+DD+DT { Margin-Top: 1REM }
+DD {
+	Display: List-Item;
+	List-Style-Type: None;
+}
+DETAILS {
+	Margin: 5PX -5PX;
+	Border-Bottom: Thin Solid;
+	Padding: 0 5PX 5PX;
+}
+SUMMARY {
+	Margin: 0 -5PX;
+	Padding: 0 5PX;
+	Font-Weight: Bold;
+	Text-Align: Left;
+	Cursor: Default;
+}
+DETAILS[Open] SUMMARY {
+	Margin-Bottom: 5PX;
+	Border-Bottom: Thin Solid;
+	Padding-Bottom: 5PX;
+}
+TD,
+TH { Vertical-Align: Top }
+TH[Scope=row] { Text-Align: Right }
+BUTTON {
+	Box-Sizing: Content-Box;
+	Margin: 0;
+	Border: None;
+	Border-Radius: 5PX;
+	Padding: 0 .1EM;
+	Color: Maroon;
+	Background: OldLace;
+	Font: Bold 1EM / 1.2 Sans-Serif;
+	Min-Width: 1EM;
+	Min-Height: 1.2EM;
+}
+BUTTON:Disabled {
+	Color: RosyBrown;
+	Background: Transparent;
+}
+BUTTON:Not(:Disabled):Active { Background: Ivory }
+SELECT {
+	Display: Block;
+	Box-Sizing: Border-Box;
+	Margin: 0;
+	Min-Width: 100%;
+}
+TEXTAREA {
+	Display: Block;
+	Border: None;
+	Padding: .25EM .5CH;
+	Font: Normal Large / 1 Monospace;
+}
+CANVAS {
+	Display: Block;
+	Background: White;
+	Image-Rendering: Crisp-Edges;
+}
+#charset,
+#lookup,
+#input {
+	Float: Left;
+	Margin: 5PX;
+	Border: Thin Chocolate Solid;
+	Border-Radius: 5PX;
+	Color: Maroon;
+	Background: Bisque;
+}
+#charset,
+#mode {
+	Float: None;
+	Font-Size: Smaller;
+	Font-Variant-Caps: Small-Caps;
+}
+#charset TH,
+#mode TH {
+	Font-Size: Larger;
+	Vertical-Align: Middle;
+}
+#charset TD,
+#mode TD {
+	Width: 20%;
+	Vertical-Align: Middle;
+}
+#charset LABEL,
+#mode LABEL {
+	Display: Block;
+	Border: Thin Maroon Solid;
+	Color: BlanchedAlmond;
+	Background: Maroon;
+	Padding: 5PX;
+	Line-Height: 1;
+	Text-Align: Center;
+}
+#charset INPUT:Focus+LABEL,
+#mode INPUT:Focus+LABEL { Outline: Thin Maroon Dotted }
+#charset INPUT:Checked+LABEL,
+#mode INPUT:Checked+LABEL {
+	Color: Maroon;
+	Background: BlanchedAlmond;
+	Text-Decoration: Dashed Underline;
+}
+#mode TD {
+	Min-Width: Max-Content;
+	Width: 6EM;
+}
+#mode TH { Min-Width: 4EM }
+#lookup { Border-Spacing: 5PX }
+#include {
+	Position: Relative;
+	Margin-Right: Calc(-1.2EM - 5PX);
+	Z-Index: 1;
+}
+#input { Padding: 5PX }
+#input::AFTER {
+	Display: Block;
+	Clear: Both;
+	Content: "";
+}
+#gofill {
+	Float: Left;
+	Margin: 5PX 5PX 0 0;
+	Font-Size: 2EM;
+}
+#command { Margin: 5PX 0 }
+#command BUTTON {
+	Color: Inherit;
+	Background: Transparent;
+	Font: Bold .8EM / 1.5 Monospace;
+	Text-Decoration: Dashed Sienna Underline;
+}
+#command BUTTON:Active { Text-Decoration-Style: Solid }
+#results {
+	Display: Grid;
+	Clear: Both;
+	Grid-Template-Columns: 1FR 1FR;
+	Margin: 5PX;
+	Grid-Gap: 5PX;
+	Gap: 5PX;
+	Align-Items: Start;
+	Font-Size: Medium;
+}
+#results>* {
+	Border: Thin Burlywood Solid;
+	Padding: 5PX 10PX 5PX 15PX;
+	Overflow: Auto;
+	Color: Maroon;
+	Background: FloralWhite;
+}
+#error {
+	Grid-Row: 1;
+	Grid-Column: 1 / 3;
+	Margin: 2PX -3PX;
+	Border: 3PX DarkRed Solid;
+	Border-Radius: 8PX;
+	Padding: 5PX;
+	Color: DarkRed;
+	Background: MistyRose;
+	Font-Size: Larger;
+}
+#error:Empty { Display: None }
+#list\.plain {
+	Table-Layout: Fixed;
+	Border-Collapse: Collapse;
+	Width: 100%;
+	Font: Normal Medium / 2 Monospace;
+}
+#list\.plain TD,
+#list\.plain TH {
+	Vertical-Align: Middle;
+	Padding: 0 .5CH;
+	Text-Align: Left;
+}
+#list\.plain TBODY TR { Cursor: Default }
+#list\.plain TBODY TD,
+#list\.plain TBODY TH {
+	Color: Black;
+	Background: White;
+}
+#list\.plain THEAD TH { Border-Bottom: Thin Solid }
+#list\.plain THEAD TH:Nth-Of-Type(1) { Width: 4CH }
+#list\.plain THEAD TH:Nth-Of-Type(2) { Width: 16PX }
+#list\.plain THEAD TH:Nth-Of-Type(4) { Width: 2EM }
+#list\.plain BUTTON {
+	Display: Block;
+	Margin: Auto;
+	Border: Thin Solid;
+	Padding: .1EM;
+	Background: Transparent;
+	Min-Width: 1.2EM;
+}
+#list\.plain CANVAS {
+	Width: 16PX;
+	Height: 16PX;
+}
+#list\.grid {
+	Table-Layout: Fixed;
+	Writing-Mode: Vertical-LR;
+	Border-Spacing: 3PX;
+	Height: 666PX; /* Calc(36PX * 17 + 3PX * 18) */
+	Font: X-Small / 1 Sans-Serif;
+	Text-Orientation: Upright;
+}
+#list\.grid TD,
+#list\.grid TH {
+	Padding: 0;
+	Vertical-Align: Middle;
+	Text-Align: Center;
+}
+#list\.grid TD {
+	Border: 1PX Gainsboro Solid;
+	Width: 32PX;
+	Height: 32PX;
+	Color: Black;
+	Background: White;
+}
+#list\.grid TH {
+	Width: 34PX;
+	Height: 38PX;
+}
+#list\.grid TD:Empty { Background: WhiteSmoke }
+#list\.grid TH { Font-Style: Italic }
+#list\.grid TBODY TH {
+	Writing-Mode: Horizontal-TB;
+	Direction: LTR;
+	Font-Style: Normal;
+}
+#list\.grid CANVAS {
+	Border-Style: Solid None;
+	Border-Color: CurrentColor;
+	Border-Width: 2PX;
+	Color: White;
+	Background: CurrentColor;
+}
+#list\.grid CANVAS.BEYOND { Color: WhiteSmoke }
+#detail { Text-Align: Center }
+#detail>DIV {
+	Margin: 1EM 0;
+	Text-Align: Left;
+}
+#detail CANVAS {
+	Float: Right;
+	Margin: 0 0 1EM 1CH;
+	Border: 2PX Gainsboro Solid;
+	Width: 128PX;
+	Height: 128PX;
+}
+#detail P { Text-Align: Left }
+#info {
+	Grid-Row: 3;
+	Grid-Column: 1 / 3;
+	Text-Align: Center;
+}
+</STYLE>
+<h1>KixtView</h1>
+<TABLE Id=charset>
+	<TR>
+		<TH RowSpan=2 Scope=rowgroup>Charset:
+		<TD>
+			<INPUT Id=charset.transmission Name=charset Type=radio Value=https://charset.KIBI.network/Kixt/Transmission>
+			<LABEL For=charset.transmission>
+				Transmission
+			</LABEL>
+		<TD>
+			<INPUT Id=charset.controls Name=charset Type=radio Value=https://charset.KIBI.network/Kixt/Controls>
+			<LABEL For=charset.controls>
+				Controls
+			</LABEL>
+		<TD>
+			<INPUT Id=charset.xml Name=charset Type=radio Value=https://charset.KIBI.network/Kixt/XML>
+			<LABEL For=charset.xml>
+				XML
+			</LABEL>
+		<TD>
+			<INPUT Id=charset.ascii Name=charset Type=radio Value=https://charset.KIBI.network/Kixt/ASCII Checked>
+			<LABEL For=charset.ascii>
+				ASCII
+			</LABEL>
+	<TR>
+		<TD>
+			<INPUT Id=charset.custom Name=charset Type=radio Value=custom>
+			<LABEL For=charset.custom>
+				Custom:
+			</LABEL>
+		<TD ColSpan=3>
+			<DIV Style="Display: Flex">
+				<INPUT Id=charset.custom.input Type=url Placeholder=http://example.com/charset Disabled Style="Flex: Auto">
+				<BUTTON Id=charset.custom.load Title="Load the custom charset." Aria-Label="Load the custom charset." Disabled Style="Margin-Left: 5PX">Load</BUTTON>
+			</DIV>
+</TABLE>
+<TABLE Id=lookup>
+	<TR>
+		<TH Scope=row>Show block:
+		<TD>
+			<SELECT Id=block Title="Display the characters in a given block." Aria-Label="Display the characters in a given block." Disabled><OPTION Value="">Loading…</SELECT>
+		<TD>
+			<BUTTON Id=go.block Title="Display the block." Aria-Label="Display the block.">⇩</BUTTON>
+	<TR>
+		<TH Scope=row>Show range:
+		<TD>
+			<INPUT Id=range Type=text Title="Display the range of characters between two end points." Aria-Label="Display the range of characters between two end points." Placeholder="0000:0000" Size=9 Pattern=[0-9A-Fa-f]{0,4}(\.\.|[:|–/-])[0-9A-Fa-f]{0,4}>
+		<TD>
+			<BUTTON Id=go.range Title="Display the range." Aria-Label="Display the range.">⇩</BUTTON>
+	<TR>
+		<TH Scope=row>Find:
+		<TD>
+			<INPUT Id=search Title="Perform a search for a character." Aria-Label="Perform a search for a character." Type=text Pattern=[0-9A-Fa-f]{1,4} Placeholder="0000">
+			<DIV Id=means>
+				…as:
+				<LABEL Title="Hexadecimal search." Aria-Label="Hexadecimal search.">
+					<INPUT Id=means.hex Name=means Type=radio Value=hex Checked>
+					Hex
+				</LABEL>
+				<LABEL Title="Text search." Aria-Label="Hexadecimal search.">
+					<INPUT Id=means.text Name=means Type=radio Value=text>
+					Text
+				</LABEL>
+			</DIV>
+			<DIV Id=include Hidden>
+				…including:
+				<LABEL Title="Names and aliases." Aria-Label="Names and aliases.">
+					<INPUT Id=include.name Type=checkbox Checked>
+					Name
+				</LABEL>
+				<LABEL Title="Other names and notes." Aria-Label="Other names and notes.">
+					<INPUT Id=include.notes Type=checkbox Checked>
+					Notes
+				</LABEL>
+			</DIV>
+		<TD>
+			<BUTTON Id=go.search Title="Perform the search." Aria-Label="Perform the search.">⇩</BUTTON>
+</TABLE>
+<DIV Id=input>
+	<TEXTAREA Id=textarea Placeholder="text area" Rows=3 Cols=31 Autofocus Autocomplete=Off Spellcheck=False></TEXTAREA>
+	<TABLE Id=mode>
+		<TR>
+			<TH Scope=rowgroup>Mode:
+			<TD>
+				<INPUT Id=mode.convert Name=mode Type=radio Value=convert Checked>
+				<LABEL For=mode.convert Title="Attempt to convert the characters from Unicode." Aria-Label="Attempt to convert the characters from Unicode.">
+					Unicode
+				</LABEL>
+			<TD>
+				<INPUT Id=mode.16bit Name=mode Type=radio Value=16bit>
+				<LABEL For=mode.16bit Title="Use the UCS-2 16-bit representation of each character." Aria-Label="Use the UCS-2 16-bit representation of each character.">
+					16 bit
+				</LABEL>
+	</TABLE>
+	<DIV Id=gofill>
+		<BUTTON Id=go.textarea Title="Display the characters in the text area." Aria-Label="Display the characters in the text area.">⇓</BUTTON>
+		<BUTTON Id=command.fill Title="Fill the text area with the listed characters." Aria-Label="Fill the text area with the listed characters.">⇑</BUTTON>
+	</DIV>
+	<DIV Id=command>
+		<BUTTON Id=command.select Title="Select all text in the text area." Aria-Label="Select all text in the text area.">Select</BUTTON>
+		<BUTTON Id=command.clear Title="Clear all text in the text area." Aria-Label="Clear all text in the text area.">Clear</BUTTON>
+		<BUTTON Id=command.load Title="Load the text in the text area as a Kixt Charset Definition." Aria-Label="Load the text in the text area as a Kixt Charset Definition.">Load</BUTTON>
+	</DIV>
+</DIV>
+<DIV Id=results>
+	<DIV Id=error>
+		<NOSCRIPT><P>Unfortunately, KixtView requires JavaScript enabled in your browser to work.</P></NOSCRIPT>
+		<SCRIPT>document.getElementById("error").textContent=""</SCRIPT></DIV>
+	<SECTION Id=list Hidden>
+		<h2>Lookup results</h2>
+		<TABLE Id=list.plain Hidden>
+			<THEAD>
+				<TR>
+					<TH Scope=Col><SPAN Aria-Hidden=true><I>NNNN</I></SPAN><SPAN Class=SCREENREADER>Codepoint</SPAN>
+					<TH Scope=Col><SPAN Class=SCREENREADER>Glyph</SPAN>
+					<TH Scope=Col>Name
+					<TH Scope=Col><SPAN Class=SCREENREADER>Append to text area</SPAN>
+			<TBODY>
+		</TABLE>
+		<TABLE Id=list.grid Hidden>
+			<THEAD>
+				<TR>
+					<TH Scope=Col><SPAN Class=SCREENREADER>Leading bytes</SPAN>
+					<TH Scope=Col>0
+					<TH Scope=Col>1
+					<TH Scope=Col>2
+					<TH Scope=Col>3
+					<TH Scope=Col>4
+					<TH Scope=Col>5
+					<TH Scope=Col>6
+					<TH Scope=Col>7
+					<TH Scope=Col>8
+					<TH Scope=Col>9
+					<TH Scope=Col>A
+					<TH Scope=Col>B
+					<TH Scope=Col>C
+					<TH Scope=Col>D
+					<TH Scope=Col>E
+					<TH Scope=Col>F
+			<TBODY>
+		</TABLE>
+	</SECTION>
+	<SECTION Id=detail Hidden>
+		<H2>Character details</H2>
+		<DIV></DIV>
+	</SECTION>
+	<FOOTER Id=info>
+		<DETAILS Id=charsetinfo Hidden>
+			<SUMMARY>About this Charset</SUMMARY>
+			<DIV Id=charsetinfo.contents></DIV>
+		</DETAILS>
+		<DETAILS>
+			<SUMMARY>About KixtView</SUMMARY>
+			<P>
+				This app allows for the searching and display of characters from Kixt Charset Definition documents.
+				Select a charset (or load your own from a URL), and then use the above panels to search for characters.
+				After finding the character you are looking for, click on it in the results pane to display detailed character information.
+			<P>
+				For more information on Kixt Charset Definitions, see the <A HRef="https://spec.KIBI.network/Kixt/-/Charset/" Target=_blank><CITE>Kixt Charset</CITE></A> specification.
+		</DETAILS>
+		<SMALL>Designed and coded by <A HRef=https://go.KIBI.family/ Target=_blank>Kyebego</A>.
+		Inspired by <A HRef=https://r12a.github.io/uniview/ Target=_blank>UniView</A> by <A HRef=https://r12a.github.io/ Target=_blank>r12a</A>.</SMALL>
+	</FOOTER>
+</DIV>
+<SCRIPT Type=module>
+import * as Kijch from "./Kijch/index.js"
+let
+	kijch = void { }
+	, request = void { }
+const
+	[ BLOCK, DETAIL, GRID, INPUT, LIST, LOAD, PLAIN, RANGE, SEARCH, TEXTAREA ] = [ "block", "detail", "list.grid", "charset.custom.input", "list", "charset.custom.load", "list.plain", "range", "search", "textarea" ].map(document.getElementById.bind(document))
+	, CHARSETS = [ "charset.transmission", "charset.controls", "charset.xml", "charset.ascii", "charset.custom" ].map(document.getElementById.bind(document))
+	, COMMANDS = [ "command.select", "command.clear", "command.load", "command.fill" ].reduce(( r, v ) => ((r[v.substring(8).toUpperCase()] = document.getElementById(v)), r), { })
+	, CUSTOM = CHARSETS[4]
+	, GOES = [ "go.block", "go.range", "go.search", "go.textarea" ].reduce(( r, v ) => ((r[v.substring(3).toUpperCase()] = document.getElementById(v)), r), { })
+	, INCLUDES = [ "include.name", "include.notes" ].map(document.getElementById.bind(document))
+	, MEANSES = [ "means.hex", "means.text" ].map(document.getElementById.bind(document))
+	, MODES = [ "mode.convert", "mode.16bit" ].map(document.getElementById.bind(document))
+	, canvasGlyph = ( character, size ) => {
+		const
+			canvas = document.createElement("CANVAS")
+			, context = canvas.getContext("2d")
+			, glyph = character.glyphs.fit(size, size) || getaGlyphs.fit(size, size)
+		canvas.width = canvas.height = size
+		canvas.title = `${padhex(character.codepoint)} ${character.name}`
+		canvas.setAttribute("Data-Codepoint", padhex(character.codepoint))
+		context.putImageData(glyph, Math.max(Math.floor((size - glyph.width) / 2), 0), Math.max(Math.floor((size - glyph.height) / 2), 0))
+		return canvas }
+	, displayDetail = ( codepoint ) => {
+		if ( !kijch || !codepoint ) return DETAIL.setAttribute("Hidden", "")
+		const character = kijch.characters[parseInt(codepoint, 0x10)]
+		DETAIL.lastElementChild.textContent = ""
+		if ( character ) {
+			const glyphs = character.glyphs
+			DETAIL.lastElementChild.innerHTML = `<STRONG>${ codepoint } ${ character.name }</STRONG>${ (aliases => aliases.size ? '<P><SPAN Aria-Hidden=true>=</SPAN><SPAN Class=SCREENREADER>Aliases:</SPAN> ' + Array.from(aliases).join(", ") : "")(character.aliases) }<DL>${ (alsoKnownAs => alsoKnownAs.size ? '<DT>Also known as:<DD Style="List-Style-Type: &quot;- &quot;">' + Array.from(alsoKnownAs).map(sanitize).join('<DD Style="List-Style-Type: &quot;- &quot;">') : "")(character.alsoKnownAs) }<DT>Notes:${ (notes => notes.size ? '<DD Style="List-Style-Type: Disc">' + Array.from(notes).map(sanitize).join('<DD Style="List-Style-Type: Disc">') : "<DD><I>No notes.</I>")(character.notes) }<DT>As text:<DD><SAMP>${ sanitize(character) }</SAMP></DL>`
+			DETAIL.lastElementChild.insertBefore(canvasGlyph(character, Array.from(character.glyphs.sizes).reduce(( best, current ) => current > best && current <= 64 ? current : best, 0) || 64), DETAIL.lastElementChild.firstChild) }
+		else DETAIL.lastElementChild.innerHTML = `<STRONG>${ codepoint } [ Unassigned ]</STRONG>`
+		DETAIL.removeAttribute("Hidden") }
+	, displayList = ( characters ) => {
+		let row = void { }
+		if ( !kijch || !characters || !characters.length ) return LIST.setAttribute("Hidden", "")
+		GRID.setAttribute("Hidden", "")
+		PLAIN.tBodies[0].textContent = ""
+		characters.forEach(( character, index ) => {
+			const row = document.createElement("TR")
+			if ( character instanceof Kijch.Character ) {
+				row.innerHTML = `<TH Scope=Row>${ padhex(character.codepoint) }`
+				row.appendChild((cell => (cell.appendChild(canvasGlyph(character, 32)), cell))(document.createElement("TD")))
+				row.appendChild((cell => (cell.textContent = character.name, cell))(document.createElement("TD")))
+				row.appendChild((cell => (cell.innerHTML = "<button>⇧</button>", cell))(document.createElement("TD"))) }
+			else row.innerHTML = `<TH Scope=Row>${ padhex(character.codepoint) }<TD><TD>[ Unassigned ]<TD>`
+			PLAIN.tBodies[0].appendChild(row) })
+		PLAIN.removeAttribute("Hidden")
+		LIST.removeAttribute("Hidden") }
+	, displayRange = ( start, end ) => {
+		const characters = kijch ? kijch.characters.slice(16 * Math.floor(start / 16), 16 * (Math.floor(end / 16) + 1)) : [ ]
+		if ( !characters.length || isNaN(start) || isNaN(end) || end < start ) return LIST.setAttribute("Hidden", "")
+		if ( end - start <= 0x10 ) return displayList( characters.filter(character => character.codepoint >= start && character.codepoint <= end) )
+		let
+			character = characters[0]
+			, index = 0
+			, row = void { }
+		PLAIN.setAttribute("Hidden", "")
+		GRID.tBodies[0].textContent = ""
+		for ( ; index < characters.length ; character = characters[++index] ) {
+			const cell = document.createElement("TD")
+			if ( character ) if ( character.codepoint >= start && character.codepoint <= end ) cell.appendChild(canvasGlyph(character, 32))
+			else cell.appendChild(canvasGlyph(character, 32)).className = "BEYOND"
+			else cell.setAttribute("aria-label", cell.title = "[ Unassigned ]")
+			if ( !(index % 16) ) {
+				row = document.createElement("TR")
+				row.innerHTML = `<TH Scope=Row>${ (Math.floor(start / 16) + Math.floor(index / 16)).toString(0x10).toUpperCase() }`
+				GRID.tBodies[0].appendChild(row) }
+			row.appendChild(cell) }
+		GRID.removeAttribute("Hidden")
+		LIST.removeAttribute("Hidden") }
+	, enableOrDisableCustom = ( ) => {
+		INPUT[CUSTOM.checked ? "removeAttribute" : "setAttribute"]("Disabled", "")
+		INPUT[CUSTOM.checked ? "addEventListener" : "removeEventListener"]("input", enableOrDisableLoad)
+		enableOrDisableLoad() }
+	, enableOrDisableLoad = ( ) => {
+		const inputOK = !INPUT.disabled && INPUT.value && INPUT.validity.valid
+		LOAD[inputOK ? "removeAttribute" : "setAttribute"]("Disabled", "")
+		LOAD[inputOK ? "addEventListener" : "removeEventListener"]("click", handleLoad) }
+	, getaGlyphs = new Kijch.Glyphs(new Set(["0000000000FEFEFE0000FEFEFE000000", "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC000000000000000000000000000000000000000000000000000000003FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC3FFFFFFC000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"]))
+	, handleBlock = ( ) => {
+		if ( BLOCK.disabled ) return
+		if ( BLOCK.value != Kijch.NO_BLOCK ) return (e => displayRange(+e.getAttribute("Data-Start"), +e.getAttribute("Data-End")))(BLOCK.selectedOptions[0])
+		LIST.setAttribute("Hidden", "") }
+	, handleCharset = ( ) => {
+		const charset = CHARSETS.find(elt => elt.checked)
+		enableOrDisableCustom()
+		if ( charset != CUSTOM ) loadCharset(charset.value) }
+	, handleCommandClear = ( ) => ((TEXTAREA.value = ""), TEXTAREA.focus())
+	, handleCommandFill = ( ) => {
+		if ( !kijch || LIST.hasAttribute("Hidden") ) return
+		const characters = kijch.characters
+		TEXTAREA.setRangeText(Array.prototype.map.call((GRID.hasAttribute("Hidden") ? PLAIN : GRID).tBodies[0].querySelectorAll("[Data-Codepoint]"), elt => MODES[0].checked ? characters[parseInt(elt.getAttribute("Data-Codepoint"), 0x10)] : String.fromCodePoint(parseInt(elt.getAttribute("Data-Codepoint"), 0x10))).join(""), TEXTAREA.selectionStart, TEXTAREA.selectionEnd, "end") }
+	, handleCommandLoad = ( ) => handleRequest({ target: { responseText: TEXTAREA.value, responseURL: "#textarea" } })
+	, handleCommandSelect = ( ) => TEXTAREA.select()
+	, handleGrid = ( { target } ) => {
+		switch ( target.tagName.toUpperCase() ) {
+			case "CANVAS":
+			displayDetail(target.getAttribute("Data-Codepoint"))
+			break
+			case "TD":
+			displayDetail(target.parentNode.firstElementChild.textContent + target.cellIndex) } }
+	, handleLoad = ( ) => loadCharset(INPUT.value)
+	, handleMeans = ( ) => {
+		const text = document.getElementById("means.text").checked
+		document.getElementById("search")[text ? "removeAttribute" : "setAttribute"]("Pattern", "[0-9A-Fa-f]{1,4}")
+		document.getElementById("search").setAttribute("Placeholder", text ? "Text…" : "0000")
+		document.getElementById("include")[text ? "removeAttribute" : "setAttribute"]("Hidden", "") }
+	, handlePlain = ( { target } ) => {
+		switch ( target.tagName.toUpperCase() ) {
+			case "BUTTON":
+			if (kijch) TEXTAREA.setRangeText(MODES[0].checked ? kijch.characters[parseInt(target.parentNode.parentNode.firstElementChild.textContent, 0x10)] : String.fromCodePoint(parseInt(target.parentNode.parentNode.firstElementChild.textContent, 0x10)), TEXTAREA.selectionStart, TEXTAREA.selectionEnd, "end")
+			case "TBODY":
+			break
+			case "TR":
+			displayDetail(target.firstElementChild.textContent)
+			break
+			case "TD":
+			case "TH":
+			displayDetail(target.parentNode.firstElementChild.textContent)
+			break
+			default:
+			displayDetail(target.parentNode.parentNode.firstElementChild.textContent) } }
+	, handleRange = ( ) => RANGE.validity.valid ? displayRange(...RANGE.value.split(/\.\.|[:|–/-]/).map(n => parseInt(n, 0x10))) : LIST.setAttribute("Hidden", "")
+	, handleRequest = ( e ) => {
+		try { kijch = new Kijch.Charset(e.target.responseText) } catch ( err ) {
+			document.getElementById("error").innerHTML = `<P>There was an error processing the Kixt Charset Definition at &#60;<A HRef="${ sanitize(e.target.responseURL) }" Rel="noopener noreferrer">${ sanitize(e.target.responseURL) }</A>&#62;:</P>
+<CODE>${ sanitize(err) }</CODE>`
+			return }
+		document.getElementById("error").textContent = ""
+		document.getElementById("charsetinfo.contents").innerHTML = `
+<H3>&#60;<A Href="${ sanitize(kijch.IRI) }" Rel="noopener noreferrer">${ sanitize(kijch.IRI) }</A>&#62;${ kijch.alsoKnownAs.size ? ` <SMALL>[${ Array.from(kijch.alsoKnownAs).map(otherName => sanitize(otherName)).join(", ") }]</SMALL>` : "" }</H3>${ kijch.notes.size ? `
+<H4>Notes:</H4>
+<UL>${ Array.from(kijch.notes).map(note => `<LI>${ sanitize(note) }`).join("") }</UL>` : "" }
+`
+		document.getElementById("charsetinfo").removeAttribute("Hidden")
+		document.getElementById("block").innerHTML = [ [ { name: Kijch.NO_BLOCK } ] ].concat(Array.from(new Set(Object.values(kijch.blocks))).map(a => (( { characters } ) => [ a, characters.findIndex(n => n), characters.length - characters.reverse().findIndex(n => n) - 1 ])(a)).sort(( a, b ) => a[1] - b[1])).map(( [ { name }, start = '""', end = '""' ] ) => `<OPTION Data-Start=${ start } Data-End=${ end } Value="${ name }">${ Array.prototype.map.call(name, ( n, i, a ) => i && /[^ -]/.test(a[i - 1]) ? n.toLowerCase() : n).join("") }${ start == '""' ? "" : ` [${ [ start, end ].map(n => padhex(n)).join("–") }]` }`).join("")
+		document.getElementById("block").removeAttribute("Disabled")
+		displayDetail()
+		displayList() }
+	, handleSearch = ( ) => !kijch ? LIST.setAttribute("Hidden", "") : (characters => displayList(MEANSES[0].checked ? (SEARCH.value.match(/[0-9A-Fa-f]+/g) || [ ]).map(codepoint => characters[parseInt(codepoint, 0x10)] || { codepoint: parseInt(codepoint, 0x10) }) : characters.filter(character => (test => INCLUDES[0].checked && (test(character.name) || Array.from(character.aliases).some(test)) || INCLUDES[1].checked && (Array.from(character.alsoKnownAs).some(test) || (Array.from(character.notes).some(test))))((( ) => { try { return RegExp.prototype.test.bind(new RegExp(SEARCH.value, "iu")) } catch ( e ) { return s => s.toLowerCase().includes(SEARCH.value.toLowerCase()) } })()))))(kijch.characters)
+	, handleTextarea = ( ) => !kijch ? LIST.setAttribute("Hidden", "") : (characters => displayList(MODES[0].checked ? (value => {
+			let
+				character = void { }
+				, current = value[0]
+				, index = 0
+				, result = [ ]
+			for ( ; index < value.length ; index += current.length || 1 ) {
+				[ character, current ] = characters.reduce(( best, char ) => (( bestAsUnicode, asUnicode ) => asUnicode.length > bestAsUnicode.length && asUnicode == value.substring(index, index + asUnicode.length) ? [ char, asUnicode ] : best)(best[1], char.toString()), [ null, "" ])
+				if ( character ) result.push(character) }
+			return result })(TEXTAREA.value) : Array.prototype.map.call(TEXTAREA.value, s => characters[s.charCodeAt(0)] || { codepoint: s.charCodeAt(0) })))(kijch.characters)
+	, loadCharset = ( iri ) => {
+		if ( request ) request.abort()
+		request = new XMLHttpRequest
+		request.addEventListener("load", handleRequest)
+		request.open("GET", iri)
+		request.responseType = "text"
+		request.send() }
+	, padhex = s => (n => new Array(3 - Math.floor(n ? Math.log2(n) / 4 : 0)).fill(0).join("") + n.toString(0x10).toUpperCase())(s >>> 0)
+	, sanitize = s => String.prototype.replace.call(s, /["&'<>]/g, n => `&#${ n.charCodeAt(0) };`)
+handleMeans()
+handleCharset()
+MEANSES.forEach(elt => elt.addEventListener("change", handleMeans))
+CHARSETS.forEach(elt => elt.addEventListener("change", handleCharset))
+; [
+	[ PLAIN.tBodies[0], handlePlain ]
+	, [ GRID.tBodies[0], handleGrid ]
+	, [ GOES.BLOCK, handleBlock ]
+	, [ GOES.RANGE, handleRange ]
+	, [ GOES.SEARCH, handleSearch ]
+	, [ GOES.TEXTAREA, handleTextarea ]
+	, [ COMMANDS.CLEAR, handleCommandClear ]
+	, [ COMMANDS.FILL, handleCommandFill ]
+	, [ COMMANDS.LOAD, handleCommandLoad ]
+	, [ COMMANDS.SELECT, handleCommandSelect ] ].forEach(p => p[0].addEventListener("click", p[1]))
+</SCRIPT>

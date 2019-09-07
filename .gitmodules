@@ -1,0 +1,3 @@
+[submodule "Kijch"]
+	path = Kijch
+	url = https://github.com/marrus-sh/Kijch.git
