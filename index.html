@@ -499,7 +499,7 @@ const
 		DETAIL.lastElementChild.textContent = ""
 		if ( character ) {
 			const glyphs = character.glyphs
-			DETAIL.lastElementChild.innerHTML = `<STRONG>${ padhex(character.codepoint) } ${ character.name }</STRONG>${ (aliases => aliases.size ? '<P><SPAN Aria-Hidden=true>=</SPAN><SPAN Class=SCREENREADER>Aliases:</SPAN> ' + Array.from(aliases).join(", ") : "")(character.aliases) }<DL>${ (alsoKnownAs => alsoKnownAs.size ? '<DT>Also known as:<DD Style="List-Style-Type: &quot;- &quot;">' + Array.from(alsoKnownAs).map(sanitize).join('<DD Style="List-Style-Type: &quot;- &quot;">') : "")(character.alsoKnownAs) }<DT>Notes:${ (notes => notes.size ? '<DD Style="List-Style-Type: Disc">' + Array.from(notes).map(sanitize).join('<DD Style="List-Style-Type: Disc">') : "<DD><I>No notes.</I>")(character.notes) }<DT>As text:<DD><SAMP>${ sanitize(character) }</SAMP></DL>`
+			DETAIL.lastElementChild.innerHTML = `<STRONG>${ padhex(character.codepoint) } ${ character.name }</STRONG>${ (aliases => aliases.size ? '<P><SPAN Aria-Hidden=true>=</SPAN><SPAN Class=SCREENREADER>Aliases:</SPAN> ' + Array.from(aliases).join(", ") : "")(character.aliases) }<DL><DT>As text:<DD><SAMP>${ sanitize(character) }</SAMP>${ (alsoKnownAs => alsoKnownAs.size ? '<DT>Also known as:<DD Style="List-Style-Type: &quot;- &quot;">' + Array.from(alsoKnownAs).map(sanitize).join('<DD Style="List-Style-Type: &quot;- &quot;">') : "")(character.alsoKnownAs) }<DT>Notes:${ (notes => notes.size ? '<DD Style="List-Style-Type: Disc">' + Array.from(notes).map(sanitize).join('<DD Style="List-Style-Type: Disc">') : "<DD><I>No notes.</I>")(character.notes) }<DT>Unicode mapping:<DD>&#60;${ character.unicode.map(n => "U+" + padhex(n)).join(", ") }&#62;</DL>`
 			DETAIL.lastElementChild.insertBefore(canvasGlyph(character, Array.from(character.glyphs.sizes).reduce(( best, current ) => current > best && current <= 64 ? current : best, 0) || 64), DETAIL.lastElementChild.firstChild) }
 		else DETAIL.lastElementChild.innerHTML = `<STRONG>${ padhex(parseInt(codepoint, 0x10)) } [ Unassigned ]</STRONG>`
 		DETAIL.removeAttribute("Hidden") }
@@ -628,7 +628,7 @@ const
 		request.open("GET", iri)
 		request.responseType = "text"
 		request.send() }
-	, padhex = s => (n => new Array(3 - Math.floor(n ? Math.log2(n) / 4 : 0)).fill(0).join("") + n.toString(0x10).toUpperCase())(s >>> 0)
+	, padhex = s => (n => new Array(Math.max(0, 3 - Math.floor(n ? Math.log2(n) / 4 : 0))).fill(0).join("") + n.toString(0x10).toUpperCase())(s >>> 0)
 	, sanitize = s => String.prototype.replace.call(s, /["&'<>]/g, n => `&#${ n.charCodeAt(0) };`)
 handleMeans()
 handleCharset()
