@@ -232,7 +232,7 @@ CANVAS {
 }
 #list\.plain THEAD TH { Border-Bottom: Thin Solid }
 #list\.plain THEAD TH:Nth-Of-Type(1) { Width: 4CH }
-#list\.plain THEAD TH:Nth-Of-Type(2) { Width: 16PX }
+#list\.plain THEAD TH:Nth-Of-Type(2) { Width: 24PX }
 #list\.plain THEAD TH:Nth-Of-Type(4) { Width: 2EM }
 #list\.plain BUTTON {
 	Display: Block;
@@ -243,8 +243,8 @@ CANVAS {
 	Min-Width: 1.2EM;
 }
 #list\.plain CANVAS {
-	Width: 16PX;
-	Height: 16PX;
+	Width: 24PX;
+	Height: 24PX;
 }
 #list\.grid {
 	Table-Layout: Fixed;
@@ -262,8 +262,6 @@ CANVAS {
 }
 #list\.grid TD {
 	Border: 1PX Gainsboro Solid;
-	Width: 32PX;
-	Height: 32PX;
 	Color: Black;
 	Background: White;
 }
@@ -274,6 +272,7 @@ CANVAS {
 #list\.grid TD:Empty { Background: WhiteSmoke }
 #list\.grid TH { Font-Style: Italic }
 #list\.grid TBODY TH {
+	Padding-Top: Calc(( 38PX - 1EM ) / 2);
 	Writing-Mode: Horizontal-TB;
 	Direction: LTR;
 	Font-Style: Normal;
@@ -282,6 +281,8 @@ CANVAS {
 	Border-Style: Solid None;
 	Border-Color: CurrentColor;
 	Border-Width: 2PX;
+	Width: 32PX;
+	Height: 32PX;
 	Color: White;
 	Background: CurrentColor;
 }
@@ -487,11 +488,11 @@ const
 		const
 			canvas = document.createElement("CANVAS")
 			, context = canvas.getContext("2d")
-			, glyph = character.glyphs.fit(size, size) || getaGlyphs.fit(size, size)
-		canvas.width = canvas.height = size
+			, glyph = character.glyphs.sizes.has(size) ? character.glyphs.fit(size, size) : character.glyphs.sizes.has(size / 2) ? character.glyphs.fit(size/2, size/2) : character.glyphs.fit(size, size) || getaGlyphs.fit(size, size)
+		canvas.width = canvas.height = glyph.height
 		canvas.title = `${padhex(character.codepoint)} ${character.name}`
 		canvas.setAttribute("Data-Codepoint", padhex(character.codepoint))
-		context.putImageData(glyph, Math.max(Math.floor((size - glyph.width) / 2), 0), Math.max(Math.floor((size - glyph.height) / 2), 0))
+		context.putImageData(glyph, (glyph.height - glyph.width) / 2, 0)
 		return canvas }
 	, displayDetail = ( codepoint ) => {
 		if ( !kijch || !codepoint ) return DETAIL.setAttribute("Hidden", "")
@@ -512,7 +513,7 @@ const
 			const row = document.createElement("TR")
 			if ( character instanceof Kijch.Character ) {
 				row.innerHTML = `<TH Scope=Row>${ padhex(character.codepoint) }`
-				row.appendChild((cell => (cell.appendChild(canvasGlyph(character, 32)), cell))(document.createElement("TD")))
+				row.appendChild((cell => (cell.appendChild(canvasGlyph(character, 24)), cell))(document.createElement("TD")))
 				row.appendChild((cell => (cell.textContent = character.name, cell))(document.createElement("TD")))
 				row.appendChild((cell => (cell.innerHTML = "<button>⇧</button>", cell))(document.createElement("TD"))) }
 			else row.innerHTML = `<TH Scope=Row>${ padhex(character.codepoint) }<TD><TD>[ Unassigned ]<TD>`
