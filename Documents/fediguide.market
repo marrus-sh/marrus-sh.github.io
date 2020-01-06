@@ -1,6 +1,7 @@
 <meta charset="UTF-8"/>
 <title lang="en" xml:lang="en">Guide to Fediverse Drama</title>
 <meta name="viewport" content="width=device-width,intial-scale=1"/>
+<link rel="alternate" type="text/x.market" href="fediguide.market" />
 <style>
 html {
 	Color: #1F1A14; /* Basically just black */
@@ -161,6 +162,10 @@ _| t |_his is not actually a comprehensive guide to fediverse journalism and sho
 ? @| '| Fringe Mastodev||Part IV : Intermission |' |@{!https://go.kibi.family/Nov/2018/fringe-intermission.xhtml} [| [ `|<time datetime="2018-11-06">06 November 2018</time>|` ] |[
 
 ,. _| a |_ personal and critical analysis of fediverse culture and its treatment of caretakers, drawing on trends which i noticed and experienced throughout the time that i developed for the software. _| t |_his was intended only as an intermission in the '| Fringe Mastodev |' {.BIG} series, but after people started dogpiling my friends for sharing it ( jeez ! ), i stopped writing about Mastodon altogether ( for some time, at least ).
+
+? @| '| This Is Our Fediverse |' |@{!https://go.kibi.family/Documents/ourfedi.xhtml} [| [ `|<time datetime="2019-08-26">26 August 2019</time>|` ] |[
+
+,. _| a |_ mostly contentless flyer mocking up a pink zine aesthetic for fediverse propaganda.
 
 ? @| '| Progressing Fringe Mastodev |' |@{!http://www.u2764.com/page08.xhtml} [| [ `|<time datetime="2019-09-19">19 September 2019</time>|` ] |[
 
