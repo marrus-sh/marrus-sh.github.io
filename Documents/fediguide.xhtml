@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8"/>
-	<title>Guide to Fediverse Drama</title>
-	<meta name="viewport" content="width=device-width,intial-scale=1"/>
-	<style>
+<meta charset="UTF-8"/>
+<title lang="en" xml:lang="en">Guide to Fediverse Drama</title>
+<meta name="viewport" content="width=device-width,intial-scale=1"/>
+<style>
 html {
 	Color: #1F1A14; /* Basically just black */
 	Background: #FAF8F7; /* Basically just white */
@@ -18,26 +18,6 @@ body {
 *:Visited { Color: #4B2DF7 }
 *:Link:Active,
 *:Visited:Active { Color: #B01C1C }
-aside {
-	Position: Relative;
-	Margin: 1.5EM 2EM 1.5EM -1EM;
-	Border: 3PX #B01C1C Solid;
-	Padding: 0 1EM;
-	Text-Align: Justify;
-	Hyphens: Auto;
-	Z-Index: 0;
-}
-aside::BEFORE {
-	Display: Block;
-	Position: Absolute;
-	Top: Calc(-.5EM - 3PX);
-	Bottom: Calc(-.5EM - 3PX);
-	Left: Calc(-2EM - 3PX);
-	Right: Calc(-2EM - 3PX);
-	Background: #F56E973F;
-	Z-Index: -1;
-	Content: "";
-}
 b {
 	Display: Inline-Block;
 	Margin: Calc(-.25EM - 3PX) -3PX Calc(-.1EM - 3PX);
@@ -52,6 +32,26 @@ b {
 cite:Not(.BIG) { Font-Style: Inherit }
 cite:Not(.BIG)::BEFORE { Content: "« " }
 cite:Not(.BIG)::AFTER { Content: " »" }
+div[role=note] {
+	Position: Relative;
+	Margin: 1.5EM 2EM 1.5EM -1EM;
+	Border: 3PX #B01C1C Solid;
+	Padding: 0 1EM;
+	Text-Align: Justify;
+	Hyphens: Auto;
+	Z-Index: 0;
+}
+div[role=note]::BEFORE {
+	Display: Block;
+	Position: Absolute;
+	Top: Calc(-.5EM - 3PX);
+	Bottom: Calc(-.5EM - 3PX);
+	Left: Calc(-2EM - 3PX);
+	Right: Calc(-2EM - 3PX);
+	Background: #F56E973F;
+	Z-Index: -1;
+	Content: "";
+}
 dt cite {
 	Display: Inline-Block;
 	Position: Relative;
@@ -114,57 +114,53 @@ u {
 	Font-Weight: Bold;
 	Text-Decoration: None;
 }
-	</style>
+</style>
 </head>
 <body>
-	<h1>Guide to Fediverse Drama</h1>
+<div lang="en" xml:lang="en">
+	<h1 aria-level="1">Guide to Fediverse Drama</h1>
 	<p><u>t</u>his page is an overview of everything i have ever written about the OStatus/ActivityPub fediverse, by date. <u>d</u>ue to the nature of time, many of these pieces will now be outdated.</p>
 	<p><u>t</u>his is not actually a comprehensive guide to fediverse journalism and should not be taken as such.</p>
 	<dl>
 		<dt><a href="https://gist.github.com/marrus-sh/384365b448af037661c9e6e28a2d64d6"><cite>Thoughts on the Future of the Mastodon Ecosystem</cite></a> <small>[ <time datetime="2017-04-02">02 April 2017</time> ]</small></dt>
 		<dd>
-			<p><u>e</u>arly thoughts on the long­‑term sustainability of the Mastodon project, in particular looking at specific features needed for supporting certain kinds of community, and different means of acquiring revenue for the project at­‑large.</p>
-		</dd>
+			<p><u>e</u>arly thoughts on the long­‑term sustainability of the Mastodon project, in particular looking at specific features needed for supporting certain kinds of community, and different means of acquiring revenue for the project at­‑large.</p></dd>
 		<dt><a href="https://medium.com/@alliethehart/gameingers-are-dead-and-so-is-mastodon-705b535ed616"><cite>Mourning Mastodon :<br/>Realizing the death which preceded the Universe</cite></a> <small>[ <time datetime="2017-04-22">22 April 2017</time> ]</small></dt>
 		<dd>
-			<p><u>t</u>he article that put me on the map regarding fedi drama. <u>a</u> critique of upstream Mastodonʼs development practices, at a time when upstream was still the sole progenitor of Mastodon software. <u>t</u>he historical aspects of this critique are still valid, but the conversation has shifted somewhat since the popularization of fringe Mastodev.</p>
-		</dd>
+			<p><u>t</u>he article that put me on the map regarding fedi drama. <u>a</u> critique of upstream Mastodonʼs development practices, at a time when upstream was still the sole progenitor of Mastodon software. <u>t</u>he historical aspects of this critique are still valid, but the conversation has shifted somewhat since the popularization of fringe Mastodev.</p></dd>
 		<dt><a href="https://medium.com/@alliethehart/mourning-what-now-10964cce22a8"><cite>Mourning What Now ?!?! :<br/>A response to “ Mourning Mastodon,” by the author</cite></a> <small>[ <time datetime="2017-04-23">23 April 2017</time> ]</small></dt>
 		<dd>
-			<p><u>s</u>ome clarifications and meta­‑commentary on <cite>Mourning Mastodon</cite>, responding to how the original was received.</p>
-		</dd>
+			<p><u>s</u>ome clarifications and meta­‑commentary on <cite>Mourning Mastodon</cite>, responding to how the original was received.</p></dd>
 		<dt><a href="http://marrus.xyz/ledger/mastodon/mastodon-wishlist-020170617.html"><cite>Mastodon Wishlist ( 1/? )</cite></a> <small>[ <time datetime="2017-06-17">06 June 2017</time> ]</small></dt>
 		<dd>
-			<p><u>a</u> list of features for Mastodon that i was hopeful might be implemented.</p>
-		</dd>
+			<p><u>a</u> list of features for Mastodon that i was hopeful might be implemented.</p></dd>
 		<dt><a href="http://marrus.xyz/ledger/mastodon/mastodon-custom-emoji-020170712.html"><cite>Custom Emoji for Mastodon</cite></a> <small>[ <time datetime="2017-07-12">12 July 2017</time> ]</small></dt>
 		<dd>
-			<p><u>a</u> proposal for Mastodon custom emoji using Unicode characters and ZWJ sequences—this is <em>not</em> the approach upstream Mastodon decided to use.</p>
-		</dd>
+			<p><u>a</u> proposal for Mastodon custom emoji using Unicode characters and ZWJ sequences—this is <em>not</em> the approach upstream Mastodon decided to use.</p></dd>
 		<dt><a href="http://marrus.xyz/ledger/mastodon/introducing-mastodon-go-020171031.html"><cite>Introducing : Mastodon GO!</cite></a> <small>[ <time datetime="2017-10-31">31 October 2017</time> ]</small></dt>
 		<dd>
 			<p><u>a</u>n introduction to a custom Mastodon frontend that i worked on developing as a part of the GlitchSoc fork of Mastodon. <u>i</u>t includes a brief history of my attempts at Mastodon frontend development, and some analysis of what i believe to be effective frontend design.</p>
 			<p>( <u>t</u>his frontend was never finished ; i left GlitchSoc development before i could bring it to a state of completion. )</p>
-			<aside>
-				<p><u>t</u>he huge gap in writings between this and the next post are for two reasons :— <span style="White-Space: NoWrap"><b>1.</b> </span><u>f</u>rom October until the end of the year, i was busy at work building and designing things for GlitchSoc ; and <span style="White-Space: NoWrap"><b>2.</b> </span><u>t</u>he vast majority of my time <em>after</em> the new year was spent either on (inter)personal affairs or exploring non­‑Mastodon RDF approaches to federated content. <u>i</u> also made <a href="https://www.cybremonday.deals/2018/">a zine</a>.</p>
-			</aside>
-		</dd>
+			<div role="note">
+				<p><u>t</u>he huge gap in writings between this and the next post are for two reasons :— <span style="White-Space: NoWrap"><b>1.</b> </span><u>f</u>rom October until the end of the year, i was busy at work building and designing things for GlitchSoc ; and <span style="White-Space: NoWrap"><b>2.</b> </span><u>t</u>he vast majority of my time <em>after</em> the new year was spent either on (inter)personal affairs or exploring non­‑Mastodon RDF approaches to federated content. <u>i</u> also made <a href="https://www.cybremonday.deals/2018/">a zine</a>.</p></div></dd>
 		<dt><a href="https://go.kibi.family/Sep/2018/fringe-beginnings.xhtml"><cite>Fringe Mastodev<br/>Part I : The Beginnings</cite></a> <small>[ <time datetime="2018-09-09">09 September 2018</time> ]</small></dt>
 		<dd>
-			<p><u>a</u> re­‑analysis of the period of time leading up to the original <cite>Mourning Mastodon</cite> piece, describing my early attempts at forking the Mastodon software.</p>
-		</dd>
+			<p><u>a</u> re­‑analysis of the period of time leading up to the original <cite>Mourning Mastodon</cite> piece, describing my early attempts at forking the Mastodon software.</p></dd>
 		<dt><a href="https://go.kibi.family/Sep/2018/fringe-allie.xhtml"><cite>Fringe Mastodev<br/>Part II : Enter Allie Hart</cite></a> <small>[ <time datetime="2018-09-16">16 September 2018</time> ]</small></dt>
 		<dd>
-			<p><u>a</u> continuätion of the narrative in <cite>Fringe Mastodev – Part I</cite>, describing the publishing of <cite>Mourning Mastodon</cite> and further frontend work.</p>
-		</dd>
+			<p><u>a</u> continuätion of the narrative in <cite>Fringe Mastodev – Part I</cite>, describing the publishing of <cite>Mourning Mastodon</cite> and further frontend work.</p></dd>
 		<dt><a href="https://go.kibi.family/Oct/2018/fringe-glitch.xhtml"><cite>Fringe Mastodev<br/>Part III : Joining GlitchSoc</cite></a> <small>[ <time datetime="2018-10-01">01 October 2018</time> ]</small></dt>
 		<dd>
-			<p><u>a</u> history of the founding and early development work on the GlitchSoc fork of Mastodon, of which i was an early contributor.</p>
-		</dd>
+			<p><u>a</u> history of the founding and early development work on the GlitchSoc fork of Mastodon, of which i was an early contributor.</p></dd>
 		<dt><a href="https://go.kibi.family/Nov/2018/fringe-intermission.xhtml"><cite>Fringe Mastodev<br/>Part IV : Intermission</cite></a> <small>[ <time datetime="2018-11-06">06 November 2018</time> ]</small></dt>
 		<dd>
-			<p><u>a</u> personal and critical analysis of fediverse culture and its treatment of caretakers, drawing on trends which i noticed and experienced throughout the time that i developed for the software. <u>t</u>his was intended only as an intermission in the <cite class="BIG">Fringe Mastodev</cite> series, but after people started dogpiling my friends for sharing it ( jeez ! ), i stopped writing about Mastodon altogether ( for some time, at least ).</p>
-		</dd>
-	</dl>
+			<p><u>a</u> personal and critical analysis of fediverse culture and its treatment of caretakers, drawing on trends which i noticed and experienced throughout the time that i developed for the software. <u>t</u>his was intended only as an intermission in the <cite class="BIG">Fringe Mastodev</cite> series, but after people started dogpiling my friends for sharing it ( jeez ! ), i stopped writing about Mastodon altogether ( for some time, at least ).</p></dd>
+		<dt><a href="http://www.u2764.com/page08.xhtml"><cite>Progressing Fringe Mastodev</cite></a> <small>[ <time datetime="2019-09-19">19 September 2019</time> ]</small></dt>
+		<dd>
+			<p><u>a</u> conclusion to the <cite class="BIG">Fringe Mastodev</cite> series, taking note of more recent developments, and analysing the problems with the open­‑source model as applied to fediverse projects by disadvantaged developers.</p></dd>
+		<dt><a href="http://www.u2764.com/page09.xhtml"><cite>Building Fedi Motion</cite></a> <small>[ <time datetime="2019-09-26">26 September 2019</time> ]</small></dt>
+		<dd>
+			<p><u>a</u>n analysis of “ what sort of problems can be solved through social media ”—with the conclusion “ community problems ”. <u>t</u>his piece advocates organizing around community issues such as violence as a way of building fediverse solidarity, by getting diverse groups working together rather than simply arguïng about praxis.</p></dd></dl>
+</div>
 </body>
 </html>

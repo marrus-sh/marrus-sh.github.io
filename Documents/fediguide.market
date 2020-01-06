@@ -1,0 +1,171 @@
+<meta charset="UTF-8"/>
+<title lang="en" xml:lang="en">Guide to Fediverse Drama</title>
+<meta name="viewport" content="width=device-width,intial-scale=1"/>
+<style>
+html {
+	Color: #1F1A14; /* Basically just black */
+	Background: #FAF8F7; /* Basically just white */
+}
+body {
+	Margin: 0 Auto;
+	Padding: 8PX; /* Default margins around `body` in Firefox */
+	Max-Width: 640PX;
+}
+*:Link,
+*:Visited { Color: #4B2DF7 }
+*:Link:Active,
+*:Visited:Active { Color: #B01C1C }
+b {
+	Display: Inline-Block;
+	Margin: Calc(-.25EM - 3PX) -3PX Calc(-.1EM - 3PX);
+	Border: 3PX Double;
+	Border-Radius: Calc(50% * 1.1294) 50%;
+	Padding: .25EM .175EM .1EM;
+	Min-Width: 1EM;
+	Line-Height: 1;
+	Font-Variant-Numeric: Tabular-Nums Lining-Nums;
+	Text-Align: Center;
+}
+cite:Not(.BIG) { Font-Style: Inherit }
+cite:Not(.BIG)::BEFORE { Content: "« " }
+cite:Not(.BIG)::AFTER { Content: " »" }
+div[role=note] {
+	Position: Relative;
+	Margin: 1.5EM 2EM 1.5EM -1EM;
+	Border: 3PX #B01C1C Solid;
+	Padding: 0 1EM;
+	Text-Align: Justify;
+	Hyphens: Auto;
+	Z-Index: 0;
+}
+div[role=note]::BEFORE {
+	Display: Block;
+	Position: Absolute;
+	Top: Calc(-.5EM - 3PX);
+	Bottom: Calc(-.5EM - 3PX);
+	Left: Calc(-2EM - 3PX);
+	Right: Calc(-2EM - 3PX);
+	Background: #F56E973F;
+	Z-Index: -1;
+	Content: "";
+}
+dt cite {
+	Display: Inline-Block;
+	Position: Relative;
+	Margin: 0 0 0 -3EM;
+	Box-Sizing: Border-Box;
+	Padding: 0 1.5EM;
+	Max-Width: 100%;
+	Text-Decoration: Inherit;
+}
+dt cite::BEFORE,
+dt cite::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Top: 0;
+	Bottom: 0;
+	Margin: Auto;
+	Width: 1EM;
+	Height: 1EM;
+	Font-Size: 1.5EM;
+	Font-Weight: Normal;
+	Line-Height: 1;
+	Opacity: .8;
+}
+dt cite::BEFORE {
+	Left: 0;
+	Text-Align: Right;
+}
+dt cite::AFTER {
+	Right: 0;
+	Text-Align: Left;
+}
+dt {
+	Position: Relative;
+	Padding: 0 0 1EM 3EM;
+	Font-Style: Inherit;
+	Font-Weight: Bold;
+}
+dt a[href]::AFTER {
+	Display: Block;
+	Position: Absolute;
+	Left: 1.25EM;
+	Right: 0;
+	Bottom: 0;
+	Overflow: Hidden;
+	Color: #302F2B;
+	Font-Size: .8EM;
+	Font-Weight: Normal;
+	Line-Height: 1.25;
+	White-Space: NoWrap;
+	Text-Decoration: Dashed Underline;
+	Text-Overflow: Ellipsis;
+	Content: Attr(href);
+}
+dt small {
+	Display: Inline-Block;
+	Font-Weight: Normal;
+}
+dd { Margin: 1EM 0 0 3EM }
+u {
+	Font-Weight: Bold;
+	Text-Decoration: None;
+}
+</style>
+
+: {@en} Guide to Fediverse Drama
+_| t |_his page is an overview of everything i have ever written about the OStatus/ActivityPub fediverse, by date. _| d |_ue to the nature of time, many of these pieces will now be outdated.
+
+_| t |_his is not actually a comprehensive guide to fediverse journalism and should not be taken as such.
+
+? @| '| Thoughts on the Future of the Mastodon Ecosystem |' |@{!https://gist.github.com/marrus-sh/384365b448af037661c9e6e28a2d64d6} [| [ `|<time datetime="2017-04-02">02 April 2017</time>|` ] |[
+
+,. _| e |_arly thoughts on the long­‑term sustainability of the Mastodon project, in particular looking at specific features needed for supporting certain kinds of community, and different means of acquiring revenue for the project at­‑large.
+
+? @| '| Mourning Mastodon :||Realizing the death which preceded the Universe |' |@{!https://medium.com/@alliethehart/gameingers-are-dead-and-so-is-mastodon-705b535ed616} [| [ `|<time datetime="2017-04-22">22 April 2017</time>|` ] |[
+
+,. _| t |_he article that put me on the map regarding fedi drama. _| a |_ critique of upstream Mastodonʼs development practices, at a time when upstream was still the sole progenitor of Mastodon software. _| t |_he historical aspects of this critique are still valid, but the conversation has shifted somewhat since the popularization of fringe Mastodev.
+
+? @| '| Mourning What Now ?!?! :||A response to “ Mourning Mastodon,” by the author |' |@{!https://medium.com/@alliethehart/mourning-what-now-10964cce22a8} [| [ `|<time datetime="2017-04-23">23 April 2017</time>|` ] |[
+
+,. _| s |_ome clarifications and meta­‑commentary on '| Mourning Mastodon |', responding to how the original was received.
+
+? @| '| Mastodon Wishlist ( 1/? ) |' |@{!http://marrus.xyz/ledger/mastodon/mastodon-wishlist-020170617.html} [| [ `|<time datetime="2017-06-17">06 June 2017</time>|` ] |[
+
+,. _| a |_ list of features for Mastodon that i was hopeful might be implemented.
+
+? @| '| Custom Emoji for Mastodon |' |@{!http://marrus.xyz/ledger/mastodon/mastodon-custom-emoji-020170712.html} [| [ `|<time datetime="2017-07-12">12 July 2017</time>|` ] |[
+
+,. _| a |_ proposal for Mastodon custom emoji using Unicode characters and ZWJ sequences—this is *| not |* the approach upstream Mastodon decided to use.
+
+? @| '| Introducing : Mastodon GO! |' |@{!http://marrus.xyz/ledger/mastodon/introducing-mastodon-go-020171031.html} [| [ `|<time datetime="2017-10-31">31 October 2017</time>|` ] |[
+
+,. _| a |_n introduction to a custom Mastodon frontend that i worked on developing as a part of the GlitchSoc fork of Mastodon. _| i |_t includes a brief history of my attempts at Mastodon frontend development, and some analysis of what i believe to be effective frontend design.
+,
+,. ( _| t |_his frontend was never finished ; i left GlitchSoc development before i could bring it to a state of completion. )
+,
+,: {role=note}. _| t |_he huge gap in writings between this and the next post are for two reasons :— :| #| 1. |#  |: {$White-Space: $NoWrap}_| f |_rom October until the end of the year, i was busy at work building and designing things for GlitchSoc ; and :| #| 2. |#  |: {$White-Space: $NoWrap}_| t |_he vast majority of my time *| after |* the new year was spent either on (inter)personal affairs or exploring non­‑Mastodon RDF approaches to federated content. _| i |_ also made @| a zine |@{!https://www.cybremonday.deals/2018/}.
+
+? @| '| Fringe Mastodev||Part I : The Beginnings |' |@{!https://go.kibi.family/Sep/2018/fringe-beginnings.xhtml} [| [ `|<time datetime="2018-09-09">09 September 2018</time>|` ] |[
+
+,. _| a |_ re­‑analysis of the period of time leading up to the original '| Mourning Mastodon |' piece, describing my early attempts at forking the Mastodon software.
+
+? @| '| Fringe Mastodev||Part II : Enter Allie Hart |' |@{!https://go.kibi.family/Sep/2018/fringe-allie.xhtml} [| [ `|<time datetime="2018-09-16">16 September 2018</time>|` ] |[
+
+,. _| a |_ continuätion of the narrative in '| Fringe Mastodev – Part I |', describing the publishing of '| Mourning Mastodon |' and further frontend work.
+
+? @| '| Fringe Mastodev||Part III : Joining GlitchSoc |' |@{!https://go.kibi.family/Oct/2018/fringe-glitch.xhtml} [| [ `|<time datetime="2018-10-01">01 October 2018</time>|` ] |[
+
+,. _| a |_ history of the founding and early development work on the GlitchSoc fork of Mastodon, of which i was an early contributor.
+
+? @| '| Fringe Mastodev||Part IV : Intermission |' |@{!https://go.kibi.family/Nov/2018/fringe-intermission.xhtml} [| [ `|<time datetime="2018-11-06">06 November 2018</time>|` ] |[
+
+,. _| a |_ personal and critical analysis of fediverse culture and its treatment of caretakers, drawing on trends which i noticed and experienced throughout the time that i developed for the software. _| t |_his was intended only as an intermission in the '| Fringe Mastodev |' {.BIG} series, but after people started dogpiling my friends for sharing it ( jeez ! ), i stopped writing about Mastodon altogether ( for some time, at least ).
+
+? @| '| Progressing Fringe Mastodev |' |@{!http://www.u2764.com/page08.xhtml} [| [ `|<time datetime="2019-09-19">19 September 2019</time>|` ] |[
+
+,. _| a |_ conclusion to the '| Fringe Mastodev |' {.BIG} series, taking note of more recent developments, and analysing the problems with the open­‑source model as applied to fediverse projects by disadvantaged developers.
+
+? @| '| Building Fedi Motion |' |@{!http://www.u2764.com/page09.xhtml} [| [ `|<time datetime="2019-09-26">26 September 2019</time>|` ] |[
+
+,. _| a |_n analysis of “ what sort of problems can be solved through social media ”—with the conclusion “ community problems ”. _| t |_his piece advocates organizing around community issues such as violence as a way of building fediverse solidarity, by getting diverse groups working together rather than simply arguïng about praxis.

@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
 <meta charset="UTF-8"/>
 <title lang="en" xml:lang="en">This Is Our Fediverse</title>
 <meta name="viewport" content="width=device-width,intial-scale=1"/>
@@ -134,20 +131,28 @@ span.CIRCLE {
 :Any-Link { Color: Inherit }
 :Any-Link:Active { Color: #EC331C }
 </style>
-</head>
-<body>
-<h1 lang="en" xml:lang="en" aria-level="1"><span class="LINE"><span aria-hidden="true">Vey Hyo Thi An</span></span> <span class="LINE"><span aria-hidden="true">She Ey We Kitn</span></span> <span class="LINE"><span aria-hidden="true">Ve Ze </span> <b>This </b> <span aria-hidden="true">Sie</span></span> <span class="LINE"><span aria-hidden="true">They </span> <b>Is </b> <span aria-hidden="true">Xe Fae</span></span> <span class="LINE"><span aria-hidden="true">It </span> <b>Our </b> <span aria-hidden="true">Thon Co</span></span> <span class="LINE"><b>Fediverse</b></span></h1>
-<div lang="en" xml:lang="en">
-	<p><b>Alright, so Iʼm bad at copy.</b> But itʼs pretty rare that I get to play around with colours in my design work <small>(because my <a href="https://www.u2764.com/"><cite>JOURNAL</cite></a> has a fixed palette)</small>, and Iʼve been thinking about the colour pink <small>(which shades are/arenʼt acceptable; pink as queer symbol; pink as marketing trend)</small> and the role of design on the fediverse <small>(the responsibility that designers have; how we can use design as platform; how we can use design <em>to</em> deplatform)</small> and so I threw this together as a quick thing in about an hour or so.</p>
-	<p>Itʼs complete contentless propaganda. But uhhh… <strong>Gab is bad</strong> and all, itʼs not really that complicated of a subject­‑matter. And I think we still have a long ways to go as far as zineïng it up and making shit that makes fascists uncomfortable.</p>
-	<hr />
-	<p>So, letʼs work on that yʼall!!</p>
-	<footer style="Text-Align: Right">
-		<p>— Kyebego</p>
-	</footer>
-	<div style="Margin: 1.5EM; Text-Align: Center">
-		<p><span style="Color: #462412" class="CIRCLE"></span> <span style="Color: #381806" class="CIRCLE"></span> <span style="Color: #FFB6AF" class="CIRCLE"></span> <span style="Color: #D67666" class="CIRCLE"></span> <span style="Color: #EC331C" class="CIRCLE"></span></p>
-	</div>
-</div>
-</body>
-</html>
+
+- :| :| Vey Hyo Thi An |: {aria-hidden=true} |: {.LINE} :| :| She Ey We Kitn |: {aria-hidden=true} |: {.LINE} :| :| Ve Ze \ \ |: {aria-hidden=true} #| This \ \ |# :| Sie |: {aria-hidden=true} |: {.LINE} :| :| They \ \ |: {aria-hidden=true} #| Is \ \ |# :| Xe Fae |: {aria-hidden=true} |: {.LINE} :| :| It \ \ |: {aria-hidden=true} #| Our \ \ |# :| Thon Co |: {aria-hidden=true} |: {.LINE} :| #| Fediverse |# |: {.LINE} - {@en}
+
+: {@en}
+#| Alright, so Iʼm bad at copy. |#
+But itʼs pretty rare that I get to play around with colours in my design work [| (because my @| '| JOURNAL |' |@ {!https://www.u2764.com/} has a fixed palette) |[, and Iʼve been thinking about the colour pink [| (which shades are/arenʼt acceptable; pink as queer symbol; pink as marketing trend) |[ and the role of design on the fediverse [| (the responsibility that designers have; how we can use design as platform; how we can use design *| to |* deplatform) |[ and so I threw this together as a quick thing in about an hour or so.
+
+Itʼs complete contentless propaganda.
+But uhhh… !| Gab is bad |! and all, itʼs not really that complicated of a subject­‑matter.
+And I think we still have a long ways to go as far as zineïng it up and making shit that makes fascists uncomfortable.
+
+` <hr />
+
+So, letʼs work on that yʼall!!
+
+__ {$Text-Align: $Right}
+— Kyebego
+
+:: {$Margin: $1.5EM; $Text-Align: $Center}
+
+:| |:{.CIRCLE $Color: $#462412}
+:| |:{.CIRCLE $Color: $#381806}
+:| |:{.CIRCLE $Color: $#FFB6AF}
+:| |:{.CIRCLE $Color: $#D67666}
+:| |:{.CIRCLE $Color: $#EC331C}

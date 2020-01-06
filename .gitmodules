@@ -1,0 +1,3 @@
+[submodule "MarketCommons-Racket"]
+	path = Tools/MarketCommons
+	url = https://monsterware.dev/kibimon/MarketCommons-Racket.git
