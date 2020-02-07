@@ -88,6 +88,8 @@ _| t |_ { .S }he following are plain­‑text reproductions that undoubtedly wil
 
 & @| 05 february 2020 |@ { !#05 }
 
+& @| 06 february 2020 |@ { !#06 }
+
 $$ { #01 }
 ^^^
 -- 01 february 2020
@@ -262,3 +264,27 @@ Think about it...
 @| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
 
 @| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #06 }
+^^^
+-- 06 february 2020
+@| '| 小圈子 |' \|\ _| 輕描淡寫 |_ { .NAME } |@ { !https://vill4in.bandcamp.com/album/--5 .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| f |# { .DROP }olks who were around on mastodon in 2017 might remember what was described as the magic of that time. _| t |_ { .S }hink my @| _| CYBREMONDAY |_ { .NAME } |@ { !https://go.kibi.family/CYBREMONDAY/2018/ } (2018) zine; there were folks trying to figure out how to hack the blockchiain to give trans girls money; there were folks joining up to make music, podcasts, games; @| Mutant Standard |@ { !https://mutant.tech/ } got started around that time, as did @| GlitchSoc |@ { !https://glitch-soc.github.io/docs/ }, which i was involved in. _| f |_ { .S }or a long time i thought that magic was driven by a lie, which collapsed sometime mid­‑2018, but with the stuff going on about @| _| #MastoMonday |_ { .NAME } |@ { !https://elekk.xyz/tags/MastoMonday } lately i’m beginning to wonder if maybe that magic is still alive. _| m |_ { .S }aybe what’s changed... is my relation to it.
+
+$$$$
+
+#| a |# { .DROP }nd not just mine—codemom left; persons who shall not be named (thankfully, in some cases) stepped out of the public spotlight. _| b |_ { .S }ut as an early adopter of mastodon, connectedness to its dominant culture and trends for me largely came free. _| a |_ { .S }nd it’s been a weird—and perhaps difficult—transition out of that place to where i am now. _| t |_ { .S }o be clear: _| i |_ { .S } was tired as fuck of having hundreds of followers, and intentionally distanced myself from the popular folks who attracted them. _| i |_ { .S }’m not complaining about being obscure. _| b |_ { .S }ut that doesn’t mean i don’t still have dreams; it doesn’t mean i don’t still want to organize and get things done. _| w |_ { .S }e need a social media where the little people can accomplish things, too.
+
+$$$$
+
+#| i |# { .DROP }n other news, i’ve been thinking of revamping my website. _| s |_ { .S }tay tuned?
+
+___
+It’ll be super rad...
+
+. { $Display: $Grid; $Grid-Template-Columns: $Repeat(3, $Max-Content); $Justify-Content: $End; $Align-Items: $Center; $Font-Size: $XXX-Large }@| _| Lady||KIBI |_ { .NAME $Font-Size: $XX-Large; $Text-Align: $Center } @kibimon||:| `|	|` |: { $White-Space: $Pre }@monsterpit||:| `|		|` |: { $White-Space: $Pre }.net |@ { !https://monsterpit.net/@kibimon .SIG $Align-Self: $Start; $Tab-Size: $1EM; $-moz-Tab-Size: $1EM; $Text-Align: $Left } / @| _| ^| 🎐 |^ { $Font-Size: $Large }J’Li |_ { .NAME $Text-Align: $Center } @jellyfish_link||:| `|	|` |: { $White-Space: $Pre }@elekk||:| `|		|` |: { $White-Space: $Pre }.xyz |@ { !https://elekk.xyz/@jellyfish_link .SIG $Align-Self: $Start; $Tab-Size: $1EM; $-moz-Tab-Size: $1EM; $Text-Align: $Left }
