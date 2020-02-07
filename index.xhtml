@@ -25,8 +25,8 @@ body>article>header>*:First-Child,body>article>section>*:First-Child{ Display: B
 body>article>header>div,body>article>section>div{ Padding: 3REM 0 }
 body>article>header>img:First-Child,body>article>section>img:First-Child{ Border: None; Width: Auto; Max-Width: 100%; Height: 100%; Object-Position: Bottom; Object-Fit: Contain }
 body>article>section{ Text-Align: Justify; Text-Align-Last: Center }
-body>article>section::BEFORE{ Grid-Column: Span 1 / 1; Height: 100%; Border-Left: Thin Solid; Content: "" }
-body>article>section::AFTER{ Grid-Column: -1 / Span 1; Height: 100%; Border-Right: Thin Solid; Content: "" }
+body>article>section::before{ Grid-Column: Span 1 / 1; Height: 100%; Border-Left: Thin Solid; Content: "" }
+body>article>section::after{ Grid-Column: -1 / Span 1; Height: 100%; Border-Right: Thin Solid; Content: "" }
 body>article>*.BREAK{ Grid-Column: Span 4 / 4; Border-Bottom: Thin Solid; Width: 100%; Height: 1.5REM }
 body>article>*.BREAK:Last-Child{ Border-Bottom: None; Height: 0 }
 body>article>section+*.BREAK{ Border-Top: Thin Solid }
@@ -35,13 +35,13 @@ h1{ Margin: 0 0 0 Auto; Width: Max-Content; Max-Width: 100%; Color: Var(--Pitch-
 h2{ Margin: 0; Color: Var(--Pitch-Colour); Font: 900 2.5REM / 1.2 "Source Serif Pro", "Gentium Plus", Serif; Text-Align: Center }
 h2:Not(:First-Child){ Margin-Top: 3.7REM }
 h3{ Display: Inline; Margin: 0; Font: 900 1.6875REM / 1.2 "Source Serif Pro", "Gentium Plus", Serif }
-h3::BEFORE{ Display: Block; Margin: 2.025REM 0 0; Content: "" }
-h3::AFTER{ Content: ": " }
+h3::before{ Display: Block; Margin: 2.025REM 0 0; Content: "" }
+h3::after{ Content: ": " }
 p{ Margin: 1.35EM 0 0 }
 strong{ Font-Weight: 600 }
 header p{ Margin: 0; Text-Align: Inherit; Text-Align-Last: Inherit }
 h3+p{ Display: Inline; Margin: 0 }
-h3+p::AFTER{ Display: Block; Content: "" }
+h3+p::after{ Display: Block; Content: "" }
 @keyframes slidein {
 	from { Top: 1.25EM }
 	to { Top: 0 } }
@@ -64,7 +64,7 @@ h3+p::AFTER{ Display: Block; Content: "" }
 *.SCROLL:Empty { Display: None }
 *.SCROLL>*{ Display: Block; Position: Absolute; Bottom: Calc(.25REM - 1PX); Max-Width: 100%; Overflow: Hidden; White-Space: NoWrap; Text-Transform: Uppercase; Text-Overflow: Ellipsis; Animation: 24S Linear Both scroll }
 *.SCROLL~*.SCROLL>*{ Animation-Name: revscroll }
-*.SCROLL>*+*::BEFORE,*.SCROLL~*.SCROLL>*::BEFORE{ Content: " / " }
+*.SCROLL>*+*::before,*.SCROLL~*.SCROLL>*::before{ Content: " / " }
 	</style>
 </head>
 <body>
@@ -347,7 +347,7 @@ _pollToUpdateGender()
 				<h2>Getting in touch</h2>
 				<p>If you want to contact me, <strong>the best place to do so is on the fediverse</strong>, where I have two accounts: <a href="https://monsterpit.net/@kibimon">@kibimon<wbr/>@monsterpit<wbr/>.net</a>, which is where I put my more <strong>critical or tech­‑oriented thoughts</strong> (ignoring the fact that that server is otherwise brimming with lewd monsters—itʼs a Fediverse thing), and <a href="https://elekk.xyz/@jellyfish_link">@jellyfish_link<wbr/>@elekk<wbr/>.xyz</a>, which represents my more <strong>positive, literary, and passion­‑oriented side</strong>.</p>
 				<p>Right now (February 2020) I am also attempting to write a letter a day, and you can read <a href="./Documents/icwm-2020.xhtml">an archive of those letters here</a>.</p>
-				<p>My pronouns are <i>they</i>/<i>them</i>/<i>their</i>/<i>theirs</i>/<i>themself</i> (in formal/impersonal situations), <i>she</i>/<i>her</i>/<i>her</i>/<i>hers</i>/<i>herself</i> (when gender is relevant), and <i>hyo</i>/<i>hie</i>/<i>hie</i>/<i>hine</i>/<i>hieself</i> (when itʼs not).</p>
+				<p>My pronouns are <i>they</i>/<wbr /><i>them</i>/<wbr /><i>their</i>/<wbr /><i>theirs</i>/<wbr /><i>themself</i> (in formal/impersonal situations), <i>she</i>/<wbr /><i>her</i>/<wbr /><i>her</i>/<wbr /><i>hers</i>/<wbr /><i>herself</i> (when gender is relevant), and <i>hyo</i>/<wbr /><i>hie</i>/<wbr /><i>hie</i>/<wbr /><i>hine</i>/<wbr /><i>hieself</i> (when itʼs not).</p>
 			</div>
 		</section>
 		<div class="BREAK"></div>
