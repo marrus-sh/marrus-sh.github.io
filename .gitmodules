@@ -1,3 +1,9 @@
 [submodule "MarketCommons-Racket"]
 	path = Tools/MarketCommons
 	url = https://monsterware.dev/kibimon/MarketCommons-Racket.git
+[submodule "Fonts/Source-Serif-Pro"]
+	path = Fonts/Source-Serif-Pro
+	url = https://github.com/adobe-fonts/source-serif-pro.git
+[submodule "Fonts/Mplus-Fonts"]
+	path = Fonts/Mplus-Fonts
+	url = https://github.com/rayshan/mplus-fonts.git
