@@ -90,6 +90,8 @@ _| t |_ { .S }he following are plain­‑text reproductions that undoubtedly wil
 
 & @| 06 february 2020 |@ { !#06 }
 
+& @| 07 february 2020 |@ { !#07 }
+
 $$ { #01 }
 ^^^
 -- 01 february 2020
@@ -288,3 +290,29 @@ ___
 It’ll be super rad...
 
 . { $Display: $Grid; $Grid-Template-Columns: $Repeat(3, $Max-Content); $Justify-Content: $End; $Align-Items: $Center; $Font-Size: $XXX-Large }@| _| Lady||KIBI |_ { .NAME $Font-Size: $XX-Large; $Text-Align: $Center } @kibimon||:| `|	|` |: { $White-Space: $Pre }@monsterpit||:| `|		|` |: { $White-Space: $Pre }.net |@ { !https://monsterpit.net/@kibimon .SIG $Align-Self: $Start; $Tab-Size: $1EM; $-moz-Tab-Size: $1EM; $Text-Align: $Left } / @| _| ^| 🎐 |^ { $Font-Size: $Large }J’Li |_ { .NAME $Text-Align: $Center } @jellyfish_link||:| `|	|` |: { $White-Space: $Pre }@elekk||:| `|		|` |: { $White-Space: $Pre }.xyz |@ { !https://elekk.xyz/@jellyfish_link .SIG $Align-Self: $Start; $Tab-Size: $1EM; $-moz-Tab-Size: $1EM; $Text-Align: $Left }
+
+$$ { #07 }
+^^^
+-- 07 february 2020
+@| '| Memory Sketches |' \|\ _| Tim Linghaus |_ { .NAME } |@ { !https://timlinghaus.bandcamp.com/album/memory-sketches .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| i |# { .DROP } actually did update @| my webpage |@ { !https://go.KIBI.family/ }! _| i |_ { .S }t looks all clean and professional now. _| i |_t actually took me somewhat by surprise, seeing how many things i had listed on it, because in the past it has always seemed a struggle finding anything to list at all. _| i |_ { .S } guess i have been busy? _| a |_ { .S }nd that’s not even counting the fact that i, like, did a _| NaNoWriMo |_ { .NAME } last year.
+
+_| i |_ { .S } still feel like most of my work over the past few years has been primarily not useful to anyone but myself. _| i |_ think doing things which are helpful to other people might be my 2020 goal.
+
+$$$$
+
+#| th |# { .DROP }ere’s a phrase: _| t |_ { .S }he best camera for capturing a moment is the one you have with you? _| i |_ feel like i don’t hear that phrase enough. _| t |_ { .S }he best publishing platform is the one you have access to. _| t |_ { .S }he best chat app is the one your friends have installed. _| t |_ { .S }he best digital audio workstation is the one which runs on your computer. _| i |_ { .S } think sometimes we get so caught up in obtaining the proper equipment that we forget to capture the moment using the equipment we have. _| d |_ { .S }on’t run home for your ]| DSLR |] { /Digital /Single­‑lens /Reflex /Camera }, pull out your phone and take a picture of the damn sunset. _| y |_ { .S }’know?
+
+_| i |_ { .S } think probably the biggest change in my approach over the past few years has been in designing cameras you can capture the sunset with.
+
+___
+. { $Font-Size: $X-Large } Send me Polaroids of your Polaroids,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
