@@ -41,9 +41,10 @@ footer blockquote{ Border: None; Margin-Left: -1REM; Padding: 0 1REM; Max-Width:
 a[href]{ Color: Inherit; Text-Decoration: Dashed Underline }
 a.NP{ Display: Block; Border-Style: Solid Dotted Dotted; Border-Width: Thin; Padding: 0 .1EM; Text-Decoration: None }
 a.NP::AFTER{ Display: Block; Margin: -.25EM 0 -.75EM; Line-Height: 1; Text-Align: Right; Content: "♫" }
-a.SIG{ Display: Block; Margin: .55EM 0 .55EM Auto; Border: Thin Solid; Padding: 0 .25REM .55EM; Width: Max-Content; Max-Width: 100%; Overflow: Hidden; Font-Size: Medium; Text-Decoration: None }
+a.SIG{ Display: Block; Margin: .55EM 0 .55EM Auto; Border: Thin Solid; Padding: 0 .25REM .55EM; Width: Max-Content; Max-Width: 100%; Overflow: Hidden; Font: Normal Medium / 1.1 Eadui, Sans-Serif; Text-Decoration: None }
 abbr{ Font-Variant-Alternates: Styleset(Titling) }
-b.DROP{ Float: Left; Position: Relative; Margin: 0 3PX 3PX 0; Border-Style: Solid None None Dashed; Border-Width: Thin; Padding: 0 1PX 1PX 0; Box-Shadow: 2PX 2PX CurrentColor; Font-Size: 2.5EM; Font-Weight: Inherit; Font-Variant-Alternates: Styleset(Drops); Font-Variant-Caps: Normal; Z-Index: 0 }
+b{ Font: Inherit; Text-Decoration: Double Underline }
+b.DROP{ Float: Left; Position: Relative; Margin: 0 3PX 3PX 0; Border-Style: Solid None None Dashed; Border-Width: Thin; Padding: 0 1PX 1PX 0; Box-Shadow: 2PX 2PX CurrentColor; Font-Size: 2.5EM; Font-Weight: Inherit; Font-Variant-Alternates: Styleset(Drops); Font-Variant-Caps: Normal; Text-Decoration: None; Z-Index: 0 }
 b.DROP::First-Letter{ Text-Transform: Uppercase }
 blockquote b.DROP,h1[aria-level="5"].MENTION b.DROP{ Margin: 0; Border: None; Padding: 0; Box-Shadow: None; Font-Size: 2EM; Line-Height: 1 }
 h1[aria-level="5"].MENTION b.DROP{ Margin-Right: 3PX }
@@ -66,7 +67,7 @@ q::AFTER{ Margin: 0 0 0 .25EM; Content: "» "}
 strong{ Font: Inherit; Letter-Spacing: .075EM }
 a.SIG span.SUFFIX{ Position: Relative; Top: .55EM }
 u.NAME{ Font-Variant-Caps: Normal; Text-Decoration: None }
-a.SIG u.NAME{ Display: Block; Margin: 0 -.25REM; Border-Bottom: Thin Solid; Padding: 0 .25REM; Font-Size: XXX-Large; Text-Align: Right }
+a.SIG u.NAME{ Display: Block; Margin: 0 -.25REM; Border-Bottom: Thin Solid; Padding: 0 .25REM; Font: Normal XXX-Large / 1.1 Cursive; Text-Align: Right }
 </style>
 
 @ { @en } _| InCoWriMo 2020 |_ { .NAME } @
@@ -91,6 +92,8 @@ _| t |_ { .S }he following are plain­‑text reproductions that undoubtedly wil
 & @| 06 february 2020 |@ { !#06 }
 
 & @| 07 february 2020 |@ { !#07 }
+
+& @| 08 february 2020 |@ { !#08 }
 
 $$ { #01 }
 ^^^
@@ -300,7 +303,7 @@ $$$ Friends of KIBI:
 
 $$$$
 
-#| i |# { .DROP } actually did update @| my webpage |@ { !https://go.KIBI.family/ }! _| i |_ { .S }t looks all clean and professional now. _| i |_t actually took me somewhat by surprise, seeing how many things i had listed on it, because in the past it has always seemed a struggle finding anything to list at all. _| i |_ { .S } guess i have been busy? _| a |_ { .S }nd that’s not even counting the fact that i, like, did a _| NaNoWriMo |_ { .NAME } last year.
+#| i |# { .DROP } actually did update @| my webpage |@ { !https://go.KIBI.family/ }! _| i |_ { .S }t looks all clean and professional now. _| i |_t actually took me somewhat by surprise, seeing how many things i had listed on it, because in the past it has always seemed a struggle finding anything to list at all. _| i |_ { .S } guess i have been busy? _| a |_ { .S }nd that’s not even counting the fact that i, like, did a _| NaNoWriMo |_ { .NAME } last year.
 
 _| i |_ { .S } still feel like most of my work over the past few years has been primarily not useful to anyone but myself. _| i |_ think doing things which are helpful to other people might be my 2020 goal.
 
@@ -312,6 +315,28 @@ _| i |_ { .S } think probably the biggest change in my approach over the past fe
 
 ___
 . { $Font-Size: $X-Large } Send me Polaroids of your Polaroids,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #08 }
+^^^
+-- 08 february 2020
+@| '| Beat the Champ |' \|\ _| The Mountain Goats |_ { .NAME } |@ { !http://www.worldcat.org/oclc/904452681 .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| i |# { .DROP } was speaking with a friend earlier, and one topic which came up was how the things a person might seek out of a friendship might change over the course of recovery. _| i |_ { .S } n #| stage I |#, it is important to have people who listen to and validate your experiences. _| i |_ { .S }n #| stage II |#, you need people who will give you space and respect your emotional unavailability. _| b |_ { .S }ut come #| stage III |#, you need people who will invest themselves and their time in you, to assert for yourself that it is possible for you to have “normal”, healthy, intimate relationships again.
+
+_| i |_ { .S } think the transition from #| stage I |# to #| stage II |# typically comes pretty easily (thankfully), since the people who listen to and affirm survivors are typically *| other survivors |*, who have similar needs themselves, or at least understand them. _| b |_ { .S }ut everyone makes the transition from #| stage II |# to #| stage III |# at different times. _| a |_ { .S }nd that is hard, because your existing friends stop being able to meet your needs, and because the people you need now are the same sort you have spent the last year(s) pushing away. _| i |_ { .S }t is especially hard on a place like mastodon, which is Not That Large Actually, where most of the social groups you might try to insert yourself into already know your face, even if you are like me, and regularly change your accounts.
+
+_| e |_ { .S }ven among groups that commonly tout things like “people change”, i think we could use some more recognition that people’s *| needs |* change, too.
+
+___
+. { $Font-Size: $X-Large } Sincerely yours,
 
 @| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
 
