@@ -36,11 +36,12 @@ blockquote p,footer p{ Display: Block }
 blockqupte p::BEFORE,footer p::BEFORE{ Content: None }
 blockquote p+p{ Margin-Top: 1.1EM }
 pre{ Margin: 0; Padding: 0 1EM; Font: Inherit; Font-Variant-Caps: Normal; White-Space: Pre-Wrap }
-blockquote{ Float: Left; Position: Relative; Box-Sizing: Border-Box; Margin: 0 .5REM 0 0; Border: Thin Dashed; Padding: 0 .5REM; Width: Max-Content; Min-Width: Min-Content; Max-Width: 40%; Box-Shadow: 1PX 1PX CurrentColor; Font: Normal XX-Large / 1.1 Cursive; Text-Align: Left }
+blockquote,figure{ Float: Left; Position: Relative; Box-Sizing: Border-Box; Margin: 0 .5REM 0 0; Border: Thin Dashed; Padding: 0 .5REM; Width: Max-Content; Min-Width: Min-Content; Max-Width: 40%; Box-Shadow: 1PX 1PX CurrentColor; Font: Normal XX-Large / 1.1 Cursive; Text-Align: Left }
 blockquote::BEFORE,blockquote::AFTER{ Display: Block; Position: Absolute; Top: 0; Bottom: 0; Margin: Auto; Border: Thin Solid; Width: 1EM; Height: 1EM; Color: Black; Background: White; Font: Normal X-Large / 1 Sans-Serif; Text-Align: Center }
 blockquote::BEFORE{ Left: -.5EM; Content: "«" }
 blockquote::AFTER{ Right: -.5EM; Content: "»" }
-footer blockquote{ Border: None; Margin-Left: -1REM; Padding: 0 1REM; Max-Width: 60%; Box-Shadow: None; Font-Size: Large }
+footer blockquote,footer figure{ Border: None; Margin-Left: -1REM; Padding: 0 1REM; Max-Width: 60%; Box-Shadow: None; Font-Size: Large }
+figcaption{ Margin: 0; Border-Top: Thin Solid; Padding: .55EM 0; Min-Width: 100%; Width: Min-Content; Font: Normal Medium / 1.1 Cursive; Text-Align: Center }
 a[href]{ Color: Inherit; Text-Decoration: Dashed Underline }
 a.NP{ Display: Block; Border-Style: Solid Dotted Dotted; Border-Width: Thin; Padding: 0 .1EM; Text-Decoration: None }
 a.NP::AFTER{ Display: Block; Margin: -.25EM 0 -.75EM; Line-Height: 1; Text-Align: Right; Content: "♫" }
@@ -88,7 +89,8 @@ a.SIG u.NAME{ Display: Block; Margin: 0 -.25REM; Border-Bottom: Thin Solid; Padd
 			<li><a href="#05">05 february 2020</a></li>
 			<li><a href="#06">06 february 2020</a></li>
 			<li><a href="#07">07 february 2020</a></li>
-			<li><a href="#08">08 february 2020</a></li></ol>
+			<li><a href="#08">08 february 2020</a></li>
+			<li><a href="#09">09 february 2020</a></li></ol>
 	</nav>
 	<section id="01">
 		<header>
@@ -303,7 +305,34 @@ resource[pname`rdfs:label`] = "Example"</code></pre>
 			</section>
 		</section>
 		<footer>
-			<p style="Font-Size: X-Large">Sincerely yours,</p>
+			<p>Sincerely yours,</p>
+			<p><a href="https://elekk.xyz/@jellyfish_link" class="SIG"><u class="NAME">J’Li 🎐</u> @jellyfish_link@elekk<span class="SUFFIX">.xyz</span></a></p>
+			<p><a href="https://monsterpit.net/@kibimon" class="SIG"><u class="NAME">Lady KIBI</u> @kibimon@monsterpit<span class="SUFFIX">.net</span></a></p>
+		</footer>
+	</section>
+	<section id="09">
+		<header>
+			<h1 aria-level="2">09 february 2020</h1>
+			<p><a href="https://ssm.lnk.to/STUTS" class="NP"><cite>Eutopia</cite> | <u class="NAME">STUTS</u></a></p>
+		</header>
+		<section>
+			<h1 aria-level="3">Friends of KIBI:</h1>
+			<section>
+				<p><b class="DROP">s</b>omething i have always appreciated about japanese is the incredibly mixed nature of its script—in one paragraph one might find kanji, hiragana, katakana, hindu­‑arabic numerals, latin letters, assorted symbols and punctuation, and—netled within an unassuming kaomoji, tibetan marks or canadian syllabics or any host of other characters. <u class="S">s</u>omething i have always appreciated about unicode is the fact that it makes this radical mixing of scripts possible.</p>
+			</section>
+			<section>
+				<p><b class="DROP">a</b>mong speakers of latin­‑script languages especially, i think there is a tendency to forget that unicode is largely jut a compilation of historical artefacts, a corpus of marks which humans have bothered to make on pages over the years. <u class="S">t</u>here is nothing innate or magical about an arbitrary assignment of codepoints to a selection of historically­‑meaningful glyphs, and that set can be expanded at any time. <u class="S">i</u> recently learned that <a href="https://r12a.github.io/app-analysestring/?chars=%E1%9B%B1%E1%9B%B2%E1%9B%B3">three of the characters in the runic block</a> are tolkienian inventions, encoded solely because he happened to use them in the <cite>Hobbit</cite>. <u class="S">a</u>nd then of course there are <a href="https://r12a.github.io/app-analysestring/?chars=%E2%84%B2%E2%85%8E%E2%86%83%E2%86%84%E2%B1%B5%E2%B1%B6">the claudian letters</a>, and any number of others. <u class="S">u</u>nicode is not a language society; their business is not to decree how these glyphs might be employed by a language; and indeed any person finds themself with the whole of the corpus at their disposal, to do with as they please.</p>
+				<p><u class="S">i</u> want to see more people doing interesting things with them.</p>
+			</section>
+		</section>
+		<footer>
+			<figure>
+				<p style="Font: Bold XXX-Large / 1 Sans-Serif">ᛱᛲᛳ</p>
+				<figcaption>Tolkenian Runes</figcaption></figure>
+			<figure>
+				<p style="Font: Bold XXX-Large / 1 Sans-Serif">ℲↃⱵ</p>
+				<figcaption>Claudian Letters</figcaption></figure>
+			<p style="Font-Size: X-Large">Encode more weird shit,</p>
 			<p><a href="https://elekk.xyz/@jellyfish_link" class="SIG"><u class="NAME">J’Li 🎐</u> @jellyfish_link@elekk<span class="SUFFIX">.xyz</span></a></p>
 			<p><a href="https://monsterpit.net/@kibimon" class="SIG"><u class="NAME">Lady KIBI</u> @kibimon@monsterpit<span class="SUFFIX">.net</span></a></p>
 		</footer>

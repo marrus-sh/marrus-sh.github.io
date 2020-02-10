@@ -33,11 +33,12 @@ blockquote p,footer p{ Display: Block }
 blockqupte p::BEFORE,footer p::BEFORE{ Content: None }
 blockquote p+p{ Margin-Top: 1.1EM }
 pre{ Margin: 0; Padding: 0 1EM; Font: Inherit; Font-Variant-Caps: Normal; White-Space: Pre-Wrap }
-blockquote{ Float: Left; Position: Relative; Box-Sizing: Border-Box; Margin: 0 .5REM 0 0; Border: Thin Dashed; Padding: 0 .5REM; Width: Max-Content; Min-Width: Min-Content; Max-Width: 40%; Box-Shadow: 1PX 1PX CurrentColor; Font: Normal XX-Large / 1.1 Cursive; Text-Align: Left }
+blockquote,figure{ Float: Left; Position: Relative; Box-Sizing: Border-Box; Margin: 0 .5REM 0 0; Border: Thin Dashed; Padding: 0 .5REM; Width: Max-Content; Min-Width: Min-Content; Max-Width: 40%; Box-Shadow: 1PX 1PX CurrentColor; Font: Normal XX-Large / 1.1 Cursive; Text-Align: Left }
 blockquote::BEFORE,blockquote::AFTER{ Display: Block; Position: Absolute; Top: 0; Bottom: 0; Margin: Auto; Border: Thin Solid; Width: 1EM; Height: 1EM; Color: Black; Background: White; Font: Normal X-Large / 1 Sans-Serif; Text-Align: Center }
 blockquote::BEFORE{ Left: -.5EM; Content: "«" }
 blockquote::AFTER{ Right: -.5EM; Content: "»" }
-footer blockquote{ Border: None; Margin-Left: -1REM; Padding: 0 1REM; Max-Width: 60%; Box-Shadow: None; Font-Size: Large }
+footer blockquote,footer figure{ Border: None; Margin-Left: -1REM; Padding: 0 1REM; Max-Width: 60%; Box-Shadow: None; Font-Size: Large }
+figcaption{ Margin: 0; Border-Top: Thin Solid; Padding: .55EM 0; Min-Width: 100%; Width: Min-Content; Font: Normal Medium / 1.1 Cursive; Text-Align: Center }
 a[href]{ Color: Inherit; Text-Decoration: Dashed Underline }
 a.NP{ Display: Block; Border-Style: Solid Dotted Dotted; Border-Width: Thin; Padding: 0 .1EM; Text-Decoration: None }
 a.NP::AFTER{ Display: Block; Margin: -.25EM 0 -.75EM; Line-Height: 1; Text-Align: Right; Content: "♫" }
@@ -94,6 +95,8 @@ _| t |_ { .S }he following are plain­‑text reproductions that undoubtedly wil
 & @| 07 february 2020 |@ { !#07 }
 
 & @| 08 february 2020 |@ { !#08 }
+
+& @| 09 february 2020 |@ { !#09 }
 
 $$ { #01 }
 ^^^
@@ -336,7 +339,40 @@ _| i |_ { .S } think the transition from #| stage I |# to #| stage II |# typical
 _| e |_ { .S }ven among groups that commonly tout things like “people change”, i think we could use some more recognition that people’s *| needs |* change, too.
 
 ___
-. { $Font-Size: $X-Large } Sincerely yours,
+Sincerely yours,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #09 }
+^^^
+-- 09 february 2020
+@| '| Eutopia |' \|\ _| STUTS |_ { .NAME } |@ { !https://ssm.lnk.to/STUTS .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| s |# { .DROP }omething i have always appreciated about japanese is the incredibly mixed nature of its script—in one paragraph one might find kanji, hiragana, katakana, hindu­‑arabic numerals, latin letters, assorted symbols and punctuation, and—netled within an unassuming kaomoji, tibetan marks or canadian syllabics or any host of other characters. _| s |_ { .S }omething i have always appreciated about unicode is the fact that it makes this radical mixing of scripts possible.
+
+$$$$
+
+#| a |# { .DROP }mong speakers of latin­‑script languages especially, i think there is a tendency to forget that unicode is largely jut a compilation of historical artefacts, a corpus of marks which humans have bothered to make on pages over the years. _| t |_ { .S }here is nothing innate or magical about an arbitrary assignment of codepoints to a selection of historically­‑meaningful glyphs, and that set can be expanded at any time. _| i |_ { .S } recently learned that @| three of the characters in the runic block |@ { !https://r12a.github.io/app-analysestring/?chars=%E1%9B%B1%E1%9B%B2%E1%9B%B3 } are tolkienian inventions, encoded solely because he happened to use them in the '| Hobbit |'. _| a |_ { .S }nd then of course there are @| the claudian letters |@ { !https://r12a.github.io/app-analysestring/?chars=%E2%84%B2%E2%85%8E%E2%86%83%E2%86%84%E2%B1%B5%E2%B1%B6 }, and any number of others. _| u |_ { .S }nicode is not a language society; their business is not to decree how these glyphs might be employed by a language; and indeed any person finds themself with the whole of the corpus at their disposal, to do with as they please.
+
+_| i |_ { .S } want to see more people doing interesting things with them.
+
+___
+
+[ . { $Font: $Bold $XXX-Large $/ $1 $Sans-Serif } ᛱᛲᛳ
+[
+[ _ Tolkenian Runes
+
+[ . { $Font: $Bold $XXX-Large $/ $1 $Sans-Serif } ℲↃⱵ
+[
+[ _ Claudian Letters
+
+. { $Font-Size: $X-Large } Encode more weird shit,
 
 @| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
 
