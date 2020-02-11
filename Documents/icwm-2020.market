@@ -98,6 +98,8 @@ _| t |_ { .S }he following are plain­‑text reproductions that undoubtedly wil
 
 & @| 09 february 2020 |@ { !#09 }
 
+& @| 10 february 2020 |@ { !#10 }
+
 $$ { #01 }
 ^^^
 -- 01 february 2020
@@ -332,7 +334,7 @@ $$$ Friends of KIBI:
 
 $$$$
 
-#| i |# { .DROP } was speaking with a friend earlier, and one topic which came up was how the things a person might seek out of a friendship might change over the course of recovery. _| i |_ { .S } n #| stage I |#, it is important to have people who listen to and validate your experiences. _| i |_ { .S }n #| stage II |#, you need people who will give you space and respect your emotional unavailability. _| b |_ { .S }ut come #| stage III |#, you need people who will invest themselves and their time in you, to assert for yourself that it is possible for you to have “normal”, healthy, intimate relationships again.
+#| i |# { .DROP } was speaking with a friend earlier, and one topic which came up was how the things a person might seek out of a friendship might change over the course of recovery. _| i |_ { .S }n #| stage I |#, it is important to have people who listen to and validate your experiences. _| i |_ { .S }n #| stage II |#, you need people who will give you space and respect your emotional unavailability. _| b |_ { .S }ut come #| stage III |#, you need people who will invest themselves and their time in you, to assert for yourself that it is possible for you to have “normal”, healthy, intimate relationships again.
 
 _| i |_ { .S } think the transition from #| stage I |# to #| stage II |# typically comes pretty easily (thankfully), since the people who listen to and affirm survivors are typically *| other survivors |*, who have similar needs themselves, or at least understand them. _| b |_ { .S }ut everyone makes the transition from #| stage II |# to #| stage III |# at different times. _| a |_ { .S }nd that is hard, because your existing friends stop being able to meet your needs, and because the people you need now are the same sort you have spent the last year(s) pushing away. _| i |_ { .S }t is especially hard on a place like mastodon, which is Not That Large Actually, where most of the social groups you might try to insert yourself into already know your face, even if you are like me, and regularly change your accounts.
 
@@ -373,6 +375,32 @@ ___
 [ _ Claudian Letters
 
 . { $Font-Size: $X-Large } Encode more weird shit,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #10 }
+^^^
+-- 10 february 2020
+@| '| Wave |' \|\ _| Patrick Watson |_ { .NAME } |@ { !https://patrickwatson.bandcamp.com/album/wave .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| o |# { .DROP }ne phrase which i have never placed much stock in is the phrase “bad at writing”. _| i |_ { .S } have seen people, with no hint of irony, send off texts or social media posts saying they “can’t write”, and it takes everything in me not to reply: _| y |_ { .S }ou do know that you’re writing right now, don’t you? _| b |_ { .S }ut what they mean is that they are not practiced in a certain *| form |* of writing, that they do not meet the prescriptive standards by which our society judges those who might seek the label of “writer”. _| a |_ { .S }nd, i think those are bollocks, so.
+
+$$$$
+
+#| i |# { .DROP } think the same is true of programming, only worse, by which i mean the arbitrary standards are. _| t |_ { .S }his is the intent behind my @| _| #prrgrrmmng |_ { .NAME } |@ { !https://elekk.xyz/tags/prrgrrmmng } hashtag, why i refuse the terms “coding” and “coder”, and why, despite my general affinity for their ethos, i will never identify as “hacker”. _| a |_ { .S }nd part of this comes from my _| macOS |_ { .NAME } roots; the _| AppleScript |_ { .NAME } mentality of programming scripts without need for a terminal, an understanding of the underlying technologies, or a real programming language. _| i |_ { .S }t is a far distance from that to C or Rust or whatever the “coding world” thinks “good programs” should be written in.
+
+$$$$
+
+#| o |# { .DROP }f course, some people say they “can’t write/program” and mean instead that they don’t *| want |* to. _| b |_ { .S }ut that is a different conversation entirely.
+
+___
+. { $Font-Size: $X-Large } IDK I just wanna see more cool webpages,
 
 @| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
 
