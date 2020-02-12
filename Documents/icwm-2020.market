@@ -100,6 +100,8 @@ _| t |_ { .S }he following are plain­‑text reproductions that undoubtedly wil
 
 & @| 10 february 2020 |@ { !#10 }
 
+& @| 11 february 2020 |@ { !#11 }
+
 $$ { #01 }
 ^^^
 -- 01 february 2020
@@ -401,6 +403,32 @@ $$$$
 
 ___
 . { $Font-Size: $X-Large } IDK I just wanna see more cool webpages,
+
+@| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
+
+@| _| Lady KIBI |_ { .NAME } @kibimon@monsterpit:| .net |: { .SUFFIX } |@ { !https://monsterpit.net/@kibimon .SIG }
+
+$$ { #11 }
+^^^
+-- 11 february 2020
+@| '| Night |' \|\ _| Ola Gjeilo |_ { .NAME } |@ { !http://olagjeilo.com/albums/ola-gjeilo-night/ .NP }
+
+$$$ Friends of KIBI:
+
+$$$$
+
+#| t |# { .DROP }oday’s contentious hot take is about @| _| #javascript |_ { .NAME } |@ { !https://elekk.xyz/tags/javascript }, and it is this: _| j |_ { .S }avascript code (especially: libraries, packages) should emphasize flexibility over efficiency (or, for that matter, simplicity). _| t |_ { .S }his is not to say that efficiency/simplicity is not important, but: efficiency requires rigidity, and simplicity requires straightforwardness, and (to put it another way) if your goal is to emphasize those things, you *| should not be writing javascript |*. _| b |_ { .S }ecause as a prototype­‑based language, the whole *| point |* of javascript is that everything can be mucked with, and nothing is necessarily quite what it seems. _| t |_ { .S }hat is not simple *| or |* efficient. _| t |_ { .S }hat is not what javascript is *| for |*.
+
+$$$$
+
+#| th |# { .DROP }is speaks to an underlying problem which i think plagues javascript development, which is that people tend to treat it like whatever class­‑based compiled language they are used to, only worse, instead of seeing it as its own language with its own strengths. _| w |_ { .S }hich means you never see people programming to take advantage of those strengths, only to mitigate its weaknesses. _| t |_ { .S }he javascript meta would look *| very |* different if writing flexible, prototype­‑informed (beyond simple inheritance) code was the norm, and by different i mean more diverse and interesting, and less universalizing or scalable. _| m |_ { .S }any of the assumptions in today’s code simply would not hold. _| j |_ { .S }avascript is not a language for people making assumptions.
+
+$$$$
+
+#| i |# { .DROP }n other news, i’ve recently started doing duolingo again. _| d |_ { .S }uolingo is good for me because it helps me feel accomplished even on days where i don’t do much, which is good for my mental health.
+
+___
+Wish me luck!
 
 @| _| J’Li 🎐 |_ { .NAME } @jellyfish_link@elekk:| .xyz |: { .SUFFIX } |@ { !https://elekk.xyz/@jellyfish_link .SIG }
 
