@@ -7,3 +7,12 @@
 [submodule "Fonts/Mplus-Fonts"]
 	path = Fonts/Mplus-Fonts
 	url = https://github.com/rayshan/mplus-fonts.git
+[submodule "Tools/Kico"]
+	path = Tools/Kico
+	url = https://github.com/marrus-sh/Kico.git
+[submodule "Tools/xmldom"]
+	path = Tools/xmldom
+	url = https://github.com/xmldom/xmldom.git
+[submodule "Fonts/Elstob"]
+	path = Fonts/Elstob
+	url = https://github.com/psb1558/Elstob-font.git

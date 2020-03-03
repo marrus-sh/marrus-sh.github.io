@@ -1,0 +1,63 @@
+#! usr/bin/env node
+
+import Kico from "../Kico/Kico.mjs"
+import { readFileSync, writeFileSync } from "fs"
+import { basename, extname, resolve } from "path"
+import { DOMParser, XMLSerializer } from "../xmldom/dom-parser.js"
+const
+	parser = new DOMParser
+	, serializer = new XMLSerializer
+	, turt = Kico.pname.bind({ "": "https://vocab.KIBI.network/TurtBurgler/#" })
+let
+	ꝟscript = null
+	, ꝟstyle = null
+for ( const file of process.argv.slice(2) ) {
+	const ext = extname(file)
+	if ( ext == ".css" ) ꝟstyle = readFileSync(file)
+	else if ( ext == ".js" ) ꝟscript = readFileSync(file)
+	else if ( ext == ".ttl" && basename(file) != "index.ttl" ) {
+		const codex = Kico.Graph
+			.fromTurtle(readFileSync(file))
+			.addAction({ action: ({ subject, predicate, object }, graph ) => {
+				const
+					, $url = new URL (object.nominalValue, `file://${ resolve(file) }`)
+					, document = parser.parseFromString(
+						readFileSync(new URL ($url.pathname, $url.origin)),
+						"application/xml")
+					, hash = $url.hash
+					, _hashElt = hash.length > 1
+						? document.getElementById(hash.substring(1))
+						: null
+				return graph
+					.remove({ subject, predicate, object })
+					.add({
+						subject,
+						predicate,
+						object: {
+							interfaceName: "Literal"
+							, nominalValue: serializer.serializeToString(_hashElt
+								? Array.from(_hashElt.childNodes()).reduce(
+									( frag, $ ) => (frag.appendChild($), frag),
+									document.createDocumentFragment())
+								: hash.length > 1 ? document.createDocumentFragment()
+								: document.documentElement)
+							, datatype: Kico.pname`rdf:XMLLiteral` } })
+				, test: ( { object: datatype } ) => datatype.interfaceName == "Literal"
+					&& datatype.equals(turt`:burgle`) }, true)
+			.codices().next().value
+		if ( codex == null ) continue
+		else {
+			const document = parser.parseFromString(`<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"/><title></title><meta name="generator" content="${ Kico.l10n`Kico: Kico (full).` } ${ Kico.l10n`Kico: Kico version.` }"/><link rel="alternate" type="text/turtle" href="./index.ttl"/><link rel="alternate" type="application/n-triples" href="./index.nt"/><style></style><script></script></head><body></body></html>`, "application/xml")
+			writeFileSync(resolve(file, "./index.ttl"), codex.toTurtle())
+			writeFileSync(resolve(file, "./index.nt"), codex.toNT())
+			document.documentElement.setAttribute("lang", codex.language)
+			document.documentElement.setAttributeNS(
+				"http://www.w3.org/XML/1998/namespace", "lang", codex.language)
+			document.getElementsByTagName("title")[0].textContent = codex.title
+			if ( ꝟstyle ) document.getElementsByTagName("style")[0].textContent = ꝟstyle
+			if ( ꝟscript ) document.getElementsByTagName("script")[0].textContent = ꝟscript
+			document.getElementsByTagName("body")[0]
+				.appendChild(codex.toDOMNode(document))
+			writeFileSync(resolve(file, "./index.xhtml"),
+				serializer.serializeToString(document)) } }
+	else throw new TypeError (`Invalid argument: ${ file }`) }

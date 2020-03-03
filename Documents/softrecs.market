@@ -1,0 +1,238 @@
+<meta charset="UTF-8"/>
+<title lang="en" xml:lang="en">KIBI Software Recommendations</title>
+<meta name="viewport" content="width=device-width,intial-scale=1"/>
+<link rel="alternate" type="text/x.market" href="softrecs.market" />
+<style>
+html {
+	Color: #1F1A14; /* Basically just black */
+	Background: #FAF8F7; /* Basically just white */
+}
+body {
+	Margin: 0 Auto;
+	Padding: 8PX; /* Default margins around `body` in Firefox */
+	Max-Width: 640PX;
+}
+*:Link,
+*:Visited { Color: #4B2DF7 }
+*:Link:Active,
+*:Visited:Active { Color: #B01C1C }
+</style>
+
+@ KIBI Software Recommendations
+
+The followings are a number of softwares which I find myself using frequently.
+My main working environment runs macOS; consequently, most of these will be UNIXlike tools or macOS apps.
+Iʼve also included some fonts that I love at the end.
+
+$$ Applications
+
+$$$ CD Ripping / Audio Conversion – XLD (X Lossless Decoder)
+
+? Website
+
+, @||@ { !https://tmkk.undo.jp/xld/index_e.html }
+
+? Repo
+
+, @||@ { !https://sourceforge.net/p/xld/code/ }
+
+? License
+
+, All rights reserved.
+
+*| Very |* handy drag­‑and­‑drop program for converting audio files, and it does a good job of ripping CDs without having to open iTunes too.
+
+$$$ File Mangement – Nimble Commander
+
+? Website
+
+, @||@ { !https://magnumbytes.com/ }
+
+? Repo
+
+, @||@ { !https://github.com/mikekazakov/nimble-commander }
+
+? License
+
+, @| '| GNU General Public License, Version 3.0 |' |@ { !https://github.com/mikekazakov/nimble-commander/blob/master/LICENSE }
+
+A two­‑pane, keyboard­‑navigable file browser.
+I find this easier to work in for project directories with potentially lots of folders or files than Finder, and the ability to set a shortcut to open a file in a text editor instead of its default app is extremely handy.
+I use the free version available through the Mac App Store and have no complaints.
+
+$$$ Keyboard Layout Customization – Ukelele
+
+? Website
+
+, @||@ { !https://software.sil.org/ukelele/ }
+
+? Repo
+
+, @||@ { !https://github.com/sillsdev/Ukelele }
+
+? License
+
+, All rights reserved.
+
+macOS has the best custom keyboard support of any operating system, but you wouldnʼt know it without downloading Ukelele, provided by SIL.
+Everything I type these days is written on a custom keyboard configured to my uses, and all of my custom keyboards start out being created with Ukelele.
+
+$$$ Markdown – MacDown
+
+? Website
+
+, @||@ { !https://macdown.uranusjr.com/ }
+
+? Repo
+
+, @||@ { !https://github.com/MacDownApp/macdown }
+
+? License
+
+, @| '| The MIT License |' |@ { !https://github.com/MacDownApp/macdown/blob/master/LICENSE/macdown.txt }
+
+Better than Byword, and also free.
+Typically I just use CotEditor for Markdown editing, because it has more sophisticated support for Unicode and other character­‑level operations, but having a live preview is important to you, MacDown has you covered.
+
+$$$ Media Playback – Aural
+
+? Website
+
+, @||@ { !https://github.com/maculateConception/aural-player/releases/latest }
+
+? Repo
+
+, @||@ { !https://github.com/maculateConception/aural-player }
+
+? License
+
+, All rights reserved.
+
+Iʼll admit that Iʼve only been using this one for a little bit so far, but it plays my music and looks better than VLC, so, like, thatʼs 90% of my requirements right there.
+
+$$$ Media Tagging – kid3
+
+? Website
+
+, @||@ { !https://kid3.kde.org/ }
+
+? Repo
+
+, @||@ { !https://invent.kde.org/kde/kid3/ }
+
+? License
+
+, @| '| GNU General Public License, Version 2.0 |' |@ { !https://invent.kde.org/kde/kid3/-/blob/master/COPYING }
+
+Tagging media metadata—titles, artist, artwork, and the like—for people who donʼt use iTunes or similar library systems.
+The first thing I do when I download/rip an album is open it up in kid3 and edit the tags for consistency with the rest of my music library.
+
+$$$ RDF/OWL Ontologies – Protégé
+
+? Website
+
+, @||@ { !https://protege.stanford.edu/ }
+
+? Repo
+
+, @||@ { !https://github.com/protegeproject/protege }
+
+? License
+
+, @| '| BSD 2‑Clause License |' |@ { !https://github.com/protegeproject/protege/blob/master/license.txt }
+
+A lot of RDF/OWL tools are expensive specialist resources targeted at Big Data corporations; this is a free program targeted at University departments.
+Java­‑based, which, I hate to admit, is (still) where all the good cross­‑platform app development is happening these days.
+
+$$$ Text Editor – CotEditor
+
+? Website
+
+, @||@ { !https://coteditor.com/ }
+
+? Repo
+
+, @||@ { !https://github.com/coteditor/CotEditor }
+
+? License
+
+, @| '| Apache License, Version 2.0 |' |@ { !https://github.com/coteditor/CotEditor/blob/develop/LICENSE }
+
+*| The |* best text editor for macOS.
+Replaces: TextEdit, gEdit, and similar.
+Easily­‑configurable syntax highlighting.
+Not an IDE; do not use if youʼre expecting something like Sublime Text or Atom.
+Phenomenal Unicode support, just customizable enough, simply works.
+
+$$$ Web Browser – Firefox
+
+? Website
+
+, @||@ { !https://www.mozilla.org/en-CA/firefox/new/ }
+
+? Repo
+
+, @||@ { !https://hg.mozilla.org/mozilla-central/ }
+
+? License
+
+, @| '| Mozilla Public License 2.0 |' |@ { !https://hg.mozilla.org/mozilla-central/file/tip/toolkit/content/license.html }
+
+Iʼve never used a web browser other than Firefox and nor have I ever had any reason to.
+As a web designer, it consistently gives me the best results and conforms closest to existing web standards.
+In my experience, WebKit implementations of features often appear rather… half­‑baked, compared to Gecko ones.
+
+$$ Fonts
+
+$$$ GNU Unifont
+
+? Website
+
+, @||@ { !http://www.unifoundry.com/unifont/ }
+
+? Repo
+
+, None
+
+? License
+
+, @| '| GNU General Public License, Version 2.0 |' with the GNU font embedding exception |@ { !http://unifoundry.com/LICENSE.txt }
+
+Itʼs a bitmaplike font with (virtually) every Unicode codepoint.
+The tools created for the Unifont project can also be used to build your own bitmaplike fonts if you so please.
+
+$$$ Junicode
+
+? Website
+
+, @||@ { !http://junicode.sourceforge.net/ }
+
+? Repo
+
+, @||@ { !https://sourceforge.net/p/junicode/junicode/ }
+
+? License
+
+, @| '| Open Font License |' |@ { !http://scripts.sil.org/OFL }
+
+Probably the first font I ever fell in love with, which is a problem for me because there are very few modern fonts which have that oldstyle shape.
+I discovered Junicode because I needed a font which supported a wide variety of mediævalist Unicode characters, and Junicode definitely delivers.
+
+$$$ M+ Fonts
+
+? Website
+
+, @||@ { !https://mplus-fonts.osdn.jp/ }
+
+? Repo
+
+, @||@ { !https://osdn.net/cvs/view/mplus-fonts/mplus_outline_fonts/ }
+
+? License
+
+, > . These fonts are free software.
+Unlimited permission is granted to use, copy, and distribute them, with or without modification, either commercially or noncommercially.
+THESE FONTS ARE PROVIDED "AS IS" WITHOUT WARRANTY.
+
+The webpage for these fonts has influenced my web design perspective more than any other thing on the internet.
+The font themselves are definitely near the top of my favourite sans­‑serifs as well.
