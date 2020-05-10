@@ -110,6 +110,8 @@ $$$ Media Playback – Aural
 
 Iʼll admit that Iʼve only been using this one for a little bit so far, but it plays my music and looks better than VLC, so, like, thatʼs 90% of my requirements right there.
 
+!| Update: |! Iʼve noticed a few bugs but nothing I canʼt live with.
+
 $$$ Media Tagging – kid3
 
 ? Website
@@ -144,6 +146,22 @@ $$$ RDF/OWL Ontologies – Protégé
 A lot of RDF/OWL tools are expensive specialist resources targeted at Big Data corporations; this is a free program targeted at University departments.
 Java­‑based, which, I hate to admit, is (still) where all the good cross­‑platform app development is happening these days.
 
+$$$ Terminal Emulator – iTerm2
+
+? Website
+
+, @||@ { !https://www.iterm2.com/ }
+
+? Repo
+
+, @||@ { !https://gitlab.com/gnachman/iterm2 }
+
+? License
+
+, @| '| GNU General Public License, Version 2.0 |' |@ { !https://www.iterm2.com/license.txt }
+
+Ever since macOS Catalina switched the default shell to ~| zsh |~, Iʼve had annoying issues with fullwidth Unicode characters in Terminal. Using iTerm2 has fixed that, so it gets my recommendation. Also, it looks just a little bit nicer than Terminal ever did.
+
 $$$ Text Editor – CotEditor
 
 ? Website
@@ -168,7 +186,7 @@ $$$ Web Browser – Firefox
 
 ? Website
 
-, @||@ { !https://www.mozilla.org/en-CA/firefox/new/ }
+, @||@ { !https://www.mozilla.org/firefox/new/ }
 
 ? Repo
 

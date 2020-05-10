@@ -7,20 +7,21 @@
 	<meta name="referrer" content="no-referrer"/>
 	<link rel="stylesheet" href="Fonts/Source-Serif-Pro/source-serif-pro.css"/>
 	<style>
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 200; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-thin.ttf') Format('truetype') }
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 300; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-light.ttf') Format('truetype') }
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 400; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-regular.ttf') Format('truetype') }
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 500; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-medium.ttf') Format('truetype') }
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 600; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-bold.ttf') Format('truetype') }
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 700; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-heavy.ttf') Format('truetype') }
-@font-face{ Font-Family: "M+ 2p"; Font-Weight: 800; Src: URL('./Fonts/Mplus-Fonts/fonts/mplus-2p-black.ttf') Format('truetype') }
-:Root{ Font: Medium / 1.35 "Source Serif Pro", "Gentium Plus", Serif; --Pitch-Colour: #1F1A14; --Charcoal-Colour: #302F2B; --Ink-Colour: #57534C; --Crayon-Colour: #75706A; --Highlight-Colour: #948D87; --Card-Colour: #B8B3B0; --Parchment-Colour: #DEDBD9; --Paper-Colour: #FAF8F7 }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 200; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-thin.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 300; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-light.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 400; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-regular.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 500; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-medium.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 600; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-bold.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 700; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-heavy.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2p"; Font-Weight: 800; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2p-black.ttf") Format("truetype") }
+:Root{ Font: Medium / 1.35 "Source Serif Pro", "Gentium Plus", "JuniusX", Serif; --Pitch-Colour: #1F1A14; --Charcoal-Colour: #302F2B; --Ink-Colour: #57534C; --Crayon-Colour: #75706A; --Highlight-Colour: #948D87; --Card-Colour: #B8B3B0; --Parchment-Colour: #DEDBD9; --Paper-Colour: #FAF8F7 }
 *:Any-Link{ Color: Var(--Pitch-Colour); Text-Decoration: Var(--Crayon-Colour) Underline }
 html{ Color: Var(--Charcoal-Colour); Background: Var(--Paper-Colour) }
 body{ Margin: 0; Padding: 0 }
 body>header{ Font-Size: Small; Font-Weight: 200 }
-body>article{ Display: Grid; Grid-Template-Rows: Min-Content; Grid-Template-Columns: MinMax(Min-Content, Calc(40% - 1.5REM)) Auto; Margin: 0 Auto; Padding: 3.375REM 1REM 4.05REM; Max-Width: 52REM; Overflow: Auto; Gap: 0 1REM; Justify-Items: Center; Align-Items: Center }
+body>article{ Display: Grid; Grid-Template-Rows: Min-Content; Grid-Template-Columns: MinMax(Min-Content, Calc(40% - 1.5REM)) Auto; Margin: 0 Auto; Padding: 3.375REM 1REM; Max-Width: 52REM; Overflow: Auto; Gap: 0 1REM; Justify-Items: Center; Align-Items: Center }
 body>article>header,body>article>section{ Display: Contents }
+body>article>div[role=note]{ Display: Block; Grid-Column: 1 / 3; Max-Width: 31.2REM; Font-Size: Small; Text-Align: Justify; Text-Align-Last: Center }
 body>article>header>*:First-Child,body>article>section>*:First-Child{ Display: Block; Writing-Mode: Vertical-LR; Grid-Column: 1 / 2; Margin: 0; Border-Style: None Solid; Height: Max-Content; Justify-Self: Center; Font: 800 XX-Large / 1 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif; Text-Align: Center; Text-Transform: Uppercase; Text-Orientation: Upright }
 body>article>header>div,body>article>section>div{ Padding: 3REM 0 }
 body>article>header>img:First-Child,body>article>section>img:First-Child{ Border: None; Width: Auto; Max-Width: 100%; Height: 100%; Object-Position: Bottom; Object-Fit: Contain }
@@ -30,7 +31,14 @@ body>article>section::after{ Grid-Column: -1 / Span 1; Height: 100%; Border-Righ
 body>article>*.BREAK{ Grid-Column: Span 4 / 4; Border-Bottom: Thin Solid; Width: 100%; Height: 1.5REM }
 body>article>*.BREAK:Last-Child{ Border-Bottom: None; Height: 0 }
 body>article>section+*.BREAK{ Border-Top: Thin Solid }
+body>footer{ Margin: 0 Auto 4.05REM; Max-Width: 52REM; Font-Size: Small }
+body>footer>nav{ Margin: 0 1REM; Border-Style: Solid None; Padding: .75EM 1EM; Font-Weight: 700; Text-Align-Last: Center }
+body>footer>nav>h2{ Font-Size: Inherit; Line-Height: Inherit }
+body>footer>nav ul{ Margin: .75EM 0 0; Padding: 0 }
+body>footer>nav li{ Display: Inline List-Item; List-Style-Position: Inside }
+body>footer>nav li:Not(:Last-Child)::after{ Content: "   " }
 header{ Color: Var(--Ink-Colour); Font: 300 Medium / 1.5 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif; Text-Align: Right; Text-Transform: Uppercase }
+div[role=note]>p{ Color: Var(--Ink-Colour); Font-Style: Italic; Font-Weight: 600 }
 h1{ Margin: 0 0 0 Auto; Width: Max-Content; Max-Width: 100%; Color: Var(--Pitch-Colour); Font: 700 Small-Caps 5.4REM / 1 "Source Serif Pro", "Gentium Plus", Serif; Text-Transform: None }
 h2{ Margin: 0; Color: Var(--Pitch-Colour); Font: 900 2.5REM / 1.2 "Source Serif Pro", "Gentium Plus", Serif; Text-Align: Center }
 h2:Not(:First-Child){ Margin-Top: 3.7REM }
@@ -54,17 +62,18 @@ h3+p::after{ Display: Block; Content: "" }
 @keyframes revscroll {
 	from { Right: 100% }
 	to { Right: -100% } }
-#alt-name-box { Display: Inline-Block; Padding: .25EM 0; Max-Width: 80%; Height: 1EM; Vertical-Align: Top; White-Space: NoWrap }
+#alt-name-box { Display: Inline-Block; Padding: .25EM 0; Max-Width: 80%; Height: 1EM; Vertical-Align: Top; White-Space: NoWrap; Contain: Paint }
 #alt-name-box span { Display: Block; Margin: 0 0 -1EM; Width: 100%; Height: 1EM; Overflow: Hidden; Line-Height: 1; Text-Overflow: Ellipsis }
 #alt-name { Display: Block; Overflow: Hidden }
 #alt-name span { Position: Relative; Animation: 1.2S .4S Ease-In Both slidein }
 #alt-name span:Not(:Last-Child) { Animation: 1.2S .4S Ease-Out Both slideout }
 #alt-names { Display: Block; Height: 0; Overflow: Hidden; Visibility: Hidden }
-*.SCROLL { Position: Absolute; Box-Sizing: Border-Box; Left: 0; Right: 0; Border-Style: Solid None; Border-Color: Var(--Crayon-Colour); Border-Width: Thin; Height: 1.5REM; Overflow: Hidden; Color: Var(--Charcoal-Colour); Background: Var(--Parchment-Colour); Font: 500 1REM / 1 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif }
+*.SCROLL { Position: Absolute; Box-Sizing: Border-Box; Left: 0; Right: 0; Border-Style: Solid None; Border-Color: Var(--Crayon-Colour); Border-Width: Thin; Height: 1.5REM; Overflow: Hidden; Color: Var(--Charcoal-Colour); Background: Var(--Parchment-Colour); Font: 500 1REM / 1 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif; Contain: Strict }
 *.SCROLL:Empty { Display: None }
 *.SCROLL>*{ Display: Block; Position: Absolute; Bottom: Calc(.25REM - 1PX); Max-Width: 100%; Overflow: Hidden; White-Space: NoWrap; Text-Transform: Uppercase; Text-Overflow: Ellipsis; Animation: 24S Linear Both scroll }
 *.SCROLL~*.SCROLL>*{ Animation-Name: revscroll }
 *.SCROLL>*+*::before,*.SCROLL~*.SCROLL>*::before{ Content: " / " }
+*:Lang(en-Runr){ Font-Family: JuniusX, Junicode, "Noto Sans Runic", Sans-Serif }
 	</style>
 </head>
 <body>
@@ -85,6 +94,7 @@ h3+p::after{ Display: Block; Content: "" }
 		<span>sup toops. im a Bad Girl now.</span>
 		<span>unicorn union food<br/><small><time datetime="2018-04-02">4/2/18</time> No additional text</small></span>
 		<span>beep boop</span>
+		<span>tabular defenestration</span>
 		<script>
 const fortuneëlt = document.getElementById("fortune")
 const selectFortune = ( ) => {
@@ -105,9 +115,9 @@ fortuneëlt.hidden = false
 				<p id="gender-top" class="SCROLL" style="Margin-Top: -3REM"></p>
 				<h1>KIBI Gô</h1>
 				<p>kibigo!</p><!-- i use this for code and usernames mostly -->
-				<p>Ɣ̕ȝɛ<span style="Text-Transform: None">β</span>ɛɣɔ</p><!-- sevensi spelling; β should be ꞵ but it doesnʼt have font support -->
-				<p>cibbæ go</p><!-- cibäȝn spelling -->
-				<p>ᚳᛁᛒᛒᚫ᛫ᚸᚪ</p><!-- cibäȝn (runic) spelling -->
+				<p>Ɣ̕ȝɛ<span style="Text-Transform: None">β</span>ɛɣɔ</p><!-- sevensi spelling; ‹β› should be ‹ꞵ› but it doesnʼt have font support -->
+				<p lang="en-x-kibben">cyb:æ go</p><!-- cyb꞉a꞉n latin spelling; ‹:› should be ‹꞉› but it doesnʼt have font support  -->
+				<p lang="en-Runr-x-kibben">ᛣᛁᛒ᛬ᛟ ᚸᚫ</p><!-- ᛣᛁᛒ᛬ᛟᚾ (cyb꞉a꞉n runic) spelling -->
 				<p>１０２４×Ｇｏ</p><!-- this was invented for Twitter and other places with extreme username scarcity -->
 				<p id="aka" hidden="">
 					<strong><abbr title="Also Known As">AKA:</abbr></strong>
@@ -151,6 +161,8 @@ _the ordering here is wholly insignificant.
 							<span>Jelli</span><!-- this is a phonetic pronunciation of the above and also a game engine i wrote one time -->
 							<span>tracer mom</span><!-- this is a reference to Tracer from Overwatch and a fanfiction i once wrote -->
 							<span>Leaf</span><!-- the default girlʼs name in Pokémon FireRed and LeafGreen versions, which i have used for every Pokémon trainer since -->
+							<span>Autumn Leaf</span><!-- ⸳technically⸳ «Leaf» is a middle name but I never go by just «Autumn» -->
+							<span>Lady L</span><!-- my nickname in Pokémon Y; after Shauna calls you « Lady L » once you never go back -->
 							<span>[leaf]</span><!-- this is how i signed some of my early playlists -->
 							<span>leaf_adventure</span><!-- this was the name of my website and GitHub user for a while -->
 							<span>ms leaf adventure</span><!-- this looks like “microsoft leaf adventure” but i promise its the title Ms instead -->
@@ -177,16 +189,19 @@ _the ordering here is wholly insignificant.
 							<span>BRS</span><!-- burrs -->
 							<span>W.T. II</span><!-- the aforementioned ‘Runescape’ username -->
 							<span>Bunny</span><!-- i was called this in like sixth grade -->
-							<span>Young Samus</span><!-- i have never actually been ⸳called⸳ « Samus » but the young Samus from ‘Metroid: Other M’ is frequently used as a visual alias -->
+							<span>Young Samus</span><!-- i have never actually been ⸳called⸳ «Samus» but the young Samus from ‘Metroid: Other M’ is frequently used as a visual alias -->
+							<span>Lady</span><!-- «Lady» is Samusʼs nickname but itʼs also a pokémon trainer class -->
 							<span>Shizuku</span><!-- this is actually a reference to ‘Whisper of the Heart’ but the protagonist of ‘My Little Monster’ is also named Shizuku -->
 							<span>🙇🏻‍♀️</span><!-- i use this emoji a lot -->
 							<span>alien_dude</span><!-- this is what people called me in ‘Minecraft’ and also was a Mii that i used for a time -->
+							<span>alien</span><!-- shortform of the above -->
 							<span>Meowth</span><!-- this is a reference to the Pokémon fanfiction ‘The Long Walk’ by way of “Moggy” -->
 							<span>Kitty</span><!-- this is NOT a furry name ; if you need a reference, I would vouch for ‘The Bartimaeus Trilogy’ by Jonathan Stroud -->
 							<span>Kitty Mogs</span><!-- this is also not a furry name but it was chosen by my followers, many of whom are furries -->
 							<span>Daisy</span><!-- would you believe that this is ALSO a variant form of “Maragaret” -->
 							<span>Linden</span><!-- if i had a tree name this would be my tree name -->
 							<span>Tilia</span><!-- Tilia is the genus of lindens -->
+							<span>Hedge</span><!-- hog -->
 						</span>
 					</span>
 				</p>
@@ -226,6 +241,19 @@ _the ordering here is wholly insignificant.
 					<span>trauma­‑informed pop</span>
 					<span>mojibake</span>
 					<span>trans girl dæmon code</span>
+					<span>hedgehog</span>
+					<span>dyke</span>
+					<span>lesbian</span>
+					<span>grrrl</span>
+					<span>Varia</span>
+					<span>tired</span>
+					<span>chimecho</span>
+					<span>leafeon</span>
+					<span>Normal</span>
+					<span>Dark</span>
+					<span>Ghost</span>
+					<span>Fire</span>
+					<span>🍂</span>
 					<!-- INTERESTS -->
 					<span>cute things</span>
 					<span>you</span>
@@ -256,15 +284,21 @@ _the ordering here is wholly insignificant.
 					<span>Putting Things On The Internet</span>
 					<span>Building</span>
 					<span>colours</span>
+					<span>deer bois</span>
+					<span>goat gals</span>
+					<span>zines</span>
+					<span>music</span>
+					<span>Alternative</span>
 				</p>
 				<p id="gender-bottom" class="SCROLL" style="Margin: 1.5REM 0 0"></p>
 				<script>
 document.getElementById("aka").hidden = false
 const
-	ñelts = document.getElementById("alt-names").children
-	, genders = document.getElementById("genders").children
+	genderBottomScroll = document.getElementById("gender-bottom")
 	, genderTopScroll = document.getElementById("gender-top")
-	, genderBottomScroll = document.getElementById("gender-bottom")
+	, genders = document.getElementById("genders").children
+	, fonts = document.fonts
+	, ñelts = document.getElementById("alt-names").children
 	, _pollToUpdateGender = ( ) => {
 		if ( genders.length == 0 ) {
 			window.requestAnimationFrame(_pollToUpdateGender)
@@ -292,11 +326,15 @@ document.getElementById("alt-name").appendChild(
 	ñelts[Math.floor(Math.random() * ñelts.length)])
 genderTopScroll.hidden = false
 genderBottomScroll.hidden = false
-_pollToUpdateGender()
+if ( fonts ) fonts.load(`500 1REM / 1 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif`).finally(_pollToUpdateGender)
+else _pollToUpdateGender()
 				</script>
 			</div>
 		</header>
-		<div style="Padding-Top: Inherit;" class="BREAK"></div>
+		<div role="note" style="Padding-Top: Inherit">
+			<p>Please note that this webpage looks phenomenally best in <a href="https://www.mozilla.org/firefox/new/">Firefox</a>.</p>
+		</div>
+		<div class="BREAK"></div>
 		<section>
 			<p>Goal<span style="Text-Combine-Upright: All">01</span></p>
 			<div>
@@ -327,7 +365,7 @@ _pollToUpdateGender()
 				<p>I love English—as a language, I love the English language—but the politics of it are fraught, to say the least. For much of its history, English has been at war with itself—governed by an upper­‑class which despised non­‑Latin letters, non­‑Latin spellings, non­‑Latin grammatical constructs (English is not a Latin language)—now, this aberrant form is being utilized as an agent of colonialism, English as whiteness par excellence, for similarly waging war against non­‑European cultures around the world.</p>
 				<p>The only path I see for salvaging English from this toxic programme is to return to it some character other than the transparent whiteness which it has been forced to maintain. I see resituating English as <em>a</em> language of the world, rather than <em>the</em> world language, as a fundamental step in resituating English culture as <em>a</em>, and not <em>the</em>, culture of the globe.</p>
 				<p>And I think one of the most radical places for asserting this difference is on the level of orthography. English is <em>so</em> strongly associated with Basic Latin—that is, ASCII—but our Basic Latin orthography is not particularly well­‑suited to English! What would it look like if English joined the other languages of the world in needing something a little more expressive than just plain ASCII?</p>
-				<p><span lang="en-x-kibaen">CIBÆ̈ Æȝŋgliṡ (Cibäȝn) iz wån atæ̈mpt at imaġinœŋg ƕåt ðat miȝt bæ like, and it løcs sumþœŋg like ðis.</span> More details, at some point.</p>
+				<p><span lang="en-x-kibben">CYB꞉Æ Æ꞉ŋglyṡ (Cyb꞉a꞉n) yz wȝn at꞉æmpt at ymaġynæ꞉ŋg ƕȝt ðat my꞉t bæ lyke, &amp; yt lwcs sumþæ꞉ŋg lyke ðis.</span> More details, at some point.</p>
 			</div>
 		</section>
 		<div class="BREAK"></div>
@@ -337,7 +375,7 @@ _pollToUpdateGender()
 				<h2>Advancing the artform of literature</h2>
 				<p>If I think the English language is in a rough spot, <strong>I think English literature is in even a worse one.</strong> This is the hardest point for me to talk about, because I donʼt actually have anything <em>done</em> yet (thatʼs a lie—Iʼve written <strong>a lot of fanfiction</strong>) but believe me when I say I spend long hours thinking about it.</p>
 				<h3><cite>Journal: \u2764</cite></h3>
-				<p>If we expand the definition of <i>literature</i> to include “casual criticism”, I do keep a web­‑journal running over at <a href="https://www.u2764.com/"><cite>Journal: \u2764</cite></a>. The goal of this journal is to reïmagine internet publishing as a union of form and content, with each page standing on its own with a unique design and character. Itʼs also something of a storage space for my thoughts that is a little more permanent that what one might find on social media.</p>
+				<p>However, if we expand the definition of <i>literature</i> to include “casual criticism”, I do keep a web­‑journal running over at <a href="https://www.u2764.com/"><cite>Journal: \u2764</cite></a>. The goal of this journal is to reïmagine internet publishing as a union of form and content, with each page standing on its own with a unique design and character. Itʼs also something of a storage space for my thoughts that is a little more permanent that what one might find on social media.</p>
 			</div>
 		</section>
 		<div class="BREAK"></div>
@@ -346,11 +384,19 @@ _pollToUpdateGender()
 			<div>
 				<h2>Getting in touch</h2>
 				<p>If you want to contact me, <strong>the best place to do so is on the fediverse</strong>, where I have two accounts: <a href="https://monsterpit.net/@kibimon">@kibimon<wbr/>@monsterpit<wbr/>.net</a>, which is where I put my more <strong>critical or tech­‑oriented thoughts</strong> (ignoring the fact that that server is otherwise brimming with lewd monsters—itʼs a Fediverse thing), and <a href="https://elekk.xyz/@jellyfish_link">@jellyfish_link<wbr/>@elekk<wbr/>.xyz</a>, which represents my more <strong>positive, literary, and passion­‑oriented side</strong>.</p>
-				<p>Right now (February 2020) I am also attempting to write a letter a day, and you can read <a href="./Documents/icwm-2020.xhtml">an archive of those letters here</a>.</p>
-				<p>My pronouns are <i>they</i>/<wbr /><i>them</i>/<wbr /><i>their</i>/<wbr /><i>theirs</i>/<wbr /><i>themself</i> (in formal/impersonal situations), <i>she</i>/<wbr /><i>her</i>/<wbr /><i>her</i>/<wbr /><i>hers</i>/<wbr /><i>herself</i> (when gender is relevant), and <i>hyo</i>/<wbr /><i>hie</i>/<wbr /><i>hie</i>/<wbr /><i>hine</i>/<wbr /><i>hieself</i> (when itʼs not).</p>
+				<p>My pronouns are <strong><i>they</i>/<wbr /><i>them</i>/<wbr /><i>their</i>/<wbr /><i>theirs</i>/<wbr /><i>themself</i></strong> (in formal/impersonal situations), <strong><i>she</i>/<wbr /><i>her</i>/<wbr /><i>her</i>/<wbr /><i>hers</i>/<wbr /><i>herself</i></strong> (when gender is relevant), and <strong><i>hyo</i>/<wbr /><i>hie</i>/<wbr /><i>hie</i>/<wbr /><i>hine</i>/<wbr /><i>hieself</i></strong> (when itʼs not).</p>
 			</div>
 		</section>
 		<div class="BREAK"></div>
 	</article>
+	<footer>
+		<nav>
+			<h2>Documents:</h2>
+			<ul>
+				<li><a href="./Documents/palettes.xhtml">Palettes</a></li>
+				<li><a href="./Documents/softrecs.xhtml">Software Recommendations</a></li>
+			</ul>
+		</nav>
+	</footer>
 </body>
 </html>

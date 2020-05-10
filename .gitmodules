@@ -16,3 +16,6 @@
 [submodule "Fonts/Elstob"]
 	path = Fonts/Elstob
 	url = https://github.com/psb1558/Elstob-font.git
+[submodule "Fonts/Junicode-New"]
+	path = Fonts/Junicode-New
+	url = https://github.com/psb1558/Junicode-New.git
