@@ -1956,10 +1956,10 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg{ Display: Block; Order: 1; Margin-Block: 0 Auto; Margin-Inline: 0 .375EM }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg:First-Child{ Font-Weight: Bolder; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Numeric: Proportional-Nums Lining-Nums }
-			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child{ Font-Variant-Caps: All-Small-Caps }
-			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child>*.tei.ref,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Caps: Normal }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg+*.tei.seg{ Order: 3; Margin-Block: Auto 0; Margin-Inline: .375EM 0 }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.list{ Margin-Inline: 1.5EM 0 }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg+*.tei.seg{ Order: 3; Margin-Block: Auto 0; Margin-Inline: .375EM 0 }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.list{ Margin-Inline: 1.5EM 0 }
+			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child{ Font-Variant-Caps: All-Small-Caps }
+			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Caps: Normal }
 			*.tei.text>div>*>div>*.tei.divGen{ Margin-Block: 3EM }
 			<fallback/>
 		</style:css>
@@ -1996,9 +1996,9 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 					<copy-of select="tei:head/node()"/>
 				</tei:ref>
 			</tei:seg>
-			<if test="ancestor-or-self::*/preceding-sibling::*/descendant-or-self::tei:pb[@n]">
+			<if test="tei:head/ancestor-or-self::*/preceding-sibling::*/descendant-or-self::tei:pb[@n]">
 				<tei:seg>
-					<value-of select="ancestor-or-self::*/preceding-sibling::*[descendant-or-self::tei:pb[@n]][1]/descendant-or-self::tei:pb[@n][last()]/@n"/>
+					<value-of select="tei:head/ancestor-or-self::*[preceding-sibling::*/descendant-or-self::tei:pb[@n]][1]/preceding-sibling::*[descendant-or-self::tei:pb[@n]][1]/descendant-or-self::tei:pb[@n][last()]/@n"/>
 				</tei:seg>
 			</if>
 		</variable>

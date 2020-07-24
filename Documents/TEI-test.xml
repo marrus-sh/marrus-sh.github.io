@@ -89,6 +89,7 @@ KiT2X.xslt Demo
 			<divGen type="figlist" n="LoF"><head>List of Figures</head></divGen>
 			<divGen type="tablist" n="LoT"><head>List of Tables</head></divGen>
 		</front>
+		<pb n="00" xml:id="Page_00"/>
 		<body>
 			<head>TEI Test</head>
 			<divGen type="toc" xml:id="toc-small"><head>Contents</head></divGen>
