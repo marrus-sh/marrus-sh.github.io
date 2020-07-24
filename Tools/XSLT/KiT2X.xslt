@@ -124,7 +124,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</choose>
 	</template>
 	<template name="generate-toc">
-		<param name="divs" select="ancestor::tei:TEI//tei:div[not(ancestor::tei:div or ancestor::tei:divGen)]|ancestor::tei:TEI//tei:divGen[not(ancestor::tei:div or ancestor::tei:divGen)]"/>
+		<param name="divs" select="ancestor::tei:TEI//tei:div[not(ancestor::tei:div or ancestor::tei:divGen or ancestor::tei:body[tei:head])]|ancestor::tei:TEI//tei:divGen[not(ancestor::tei:div or ancestor::tei:divGen or ancestor::tei:body[tei:head])]|ancestor::tei:TEI//tei:body[tei:head]"/>
 		<for-each select="$divs">
 			<if test="tei:head or tei:div or tei:divGen">
 				<tei:item>
@@ -672,7 +672,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</html:span>
 		<style:css>
 			*.tei.pb{ Position: Absolute; Inset-Inline-End: -3EM; Margin-Inline: .25EM; Min-Inline-Size: 2.5EM; Text-Align: End; Text-Indent: 0; White-Space: Pre; Z-Index: -1 }
-			*.tei.text>div>*>div>*.tei.pb{ Inset-Inline-End: 0 }
+			*.tei.text>div>*.tei.pb,*.tei.text>div>*>div>*.tei.pb{ Inset-Inline-End: 0 }
 			*.tei.pb::before{ Color: Var(--GreyText); Font-Size: Smaller; Font-Variant-Caps: Normal; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Content: "[[ " Attr(data--t-e-i_n) " ]]" }
 			*.tei.milestone{ Display: Inline }
 			<fallback/>
@@ -1926,7 +1926,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.divGen *.tei.ref{ Color: Inherit; Text-Decoration: Underline }
 			*.tei.divGen *.tei.list *.tei.list{ Margin-Block: 0; Columns: Auto }
 			*.tei.divGen *.tei.list>dl{ Display: Block; Margin: 0 }
-			*.tei.divGen *.tei.list>ol,*.tei.divGen *.tei.list>ul{ Display: Block; Margin: 0; Max-Inline-Size: None }
+			*.tei.divGen *.tei.list>ul{ Display: Block; Margin: 0; Width: 100%; Max-Inline-Size: None }
 			*.tei.divGen *.tei.list>dl>*.tei.label::after{ Content: ":—" }
 			*.tei.divGen *.tei.list>dl>*.tei.label>*.tei.term{ Font-Weight: Inherit }
 			*.tei.divGen *.tei.list *.tei.list>dl>*.tei.label{ Font-Weight: Inherit; Font-Variant-Caps: Small-Caps }
@@ -1934,25 +1934,29 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.divGen *.tei.list>dl>*.tei.item{ Padding-Inline: 3EM 0; Text-Indent: -1.5EM }
 			*.tei.divGen *.tei.list>dl>*.tei.item>*{ Text-Indent: 0 }
 			*.tei.divGen *.tei.list>ul>*.tei.item::before{ Content: None }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg{ Display: Flex }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg::after{ Display: Block; Order: 2; Margin: Auto; Border-Block-End: Thin Dotted; Flex: Auto; Content: "" }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg{ Display: Block; Order: 1; Margin-Block: 0 Auto; Margin-Inline: 0 .375EM }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child{ Font-Weight: Bolder; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums }
-			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Numeric: Proportional-Nums Lining-Nums }
+			*.tei.divGen *.tei.list[data--t-e-i_type=gloss]{ Display: Block; Margin: 0 }
+			*.tei.divGen *.tei.list[data--t-e-i_type=gloss] *.tei.list[data--t-e-i_type=gloss]{ Margin-Inline: -1.5EM 0 }
+			*.tei.divGen *.tei.list[data--t-e-i_type=index],*.tei.divGen *.tei.list[data--t-e-i_type=index]>ul,*.tei.divGen *.tei.list[data--t-e-i_type=index]>ul>*.tei.item>div{ Display: Inline; Margin: 0 }
+			*.tei.divGen *.tei.list[data--t-e-i_type=index]>ul>*.tei.item:Not(:Last-Child)::after{ Content: ", " }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*{ Display: Flex }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi{ Margin-Block: .75EM 0; Font-Size: Larger; Font-Weight: Bolder; Font-Variant-Caps: Small-Caps; Text-Decoration: None }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi:Last-Child,*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi~*:Last-Child { Margin-Block-End: .75EM }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi~*{ Margin-Inline: 0 }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*::after{ Display: Block; Order: 2; Margin: Auto; Border-Block-End: Thin Dotted; Flex: Auto; Content: "" }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi::after{ Border-Block-End: 2PX Dotted }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg{ Display: Block; Order: 1; Margin-Block: 0 Auto; Margin-Inline: 0 .375EM }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg:First-Child{ Font-Weight: Bolder; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Numeric: Proportional-Nums Lining-Nums }
 			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child{ Font-Variant-Caps: All-Small-Caps }
 			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child>*.tei.ref,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Caps: Normal }
 			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.seg>*.tei.seg+*.tei.seg{ Order: 3; Margin-Block: Auto 0; Margin-Inline: .375EM 0 }
 			*.tei.divGen *.tei.list>ul>*.tei.item>div>*.tei.list{ Margin-Inline: 1.5EM 0 }
-			*.tei.divGen *.tei.list[data--t-e-i_type=index],*.tei.divGen *.tei.list[data--t-e-i_type=index]>ul,*.tei.divGen *.tei.list[data--t-e-i_type=index]>ul>*.tei.item>div{ Display: Inline; Margin: 0 }
-			*.tei.divGen *.tei.list[data--t-e-i_type=index]>ul>*.tei.item:Not(:Last-Child)::after{ Content: ", " }
-			*.tei.divGen *.tei.list[data--t-e-i_type=gloss]{ Display: Block; Margin: 0 }
-			*.tei.divGen *.tei.list[data--t-e-i_type=gloss] *.tei.list[data--t-e-i_type=gloss]{ Margin-Inline: -1.5EM 0 }
 			*.tei.text>div>*>div>*.tei.divGen{ Margin-Block: 3EM }
 			<fallback/>
 		</style:css>
 	</template>
 	<template match="*[tei:head]" mode="list">
-		<tei:seg>
+		<variable name="contents">
 			<tei:seg>
 				<choose>
 					<when test="@n">
@@ -1988,7 +1992,19 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 					<value-of select="ancestor-or-self::*/preceding-sibling::*[descendant-or-self::tei:pb[@n]][1]/descendant-or-self::tei:pb[@n][last()]/@n"/>
 				</tei:seg>
 			</if>
-		</tei:seg>
+		</variable>
+		<choose>
+			<when test="self::tei:body">
+				<tei:hi>
+					<copy-of select="$contents"/>
+				</tei:hi>
+			</when>
+			<otherwise>
+				<tei:seg>
+					<copy-of select="$contents"/>
+				</tei:seg>
+			</otherwise>
+		</choose>
 	</template>
 	<template match="tei:index">
 		<html:span>
@@ -2049,7 +2065,9 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:hgroup>
 		<style:css>
-			*.tei.docTitle{ Display: Block; Margin-Inline: Auto; Border-Block-End: Thin Solid; Max-Block-Size: Max-Content; Font-Size: Larger; Font-Weight: Bolder }
+			*.tei.docTitle{ Display: Block; Margin-Inline: Auto; Max-Block-Size: Max-Content; Font-Size: Larger; Font-Weight: Bolder }
+			*.tei.docTitle:Not(:First-Child){ Border-Block-Start: Thin Solid }
+			*.tei.docTitle:Not(:Last-Child){ Border-Block-End: Thin Solid }
 			<fallback/>
 		</style:css>
 	</template>
