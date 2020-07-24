@@ -428,6 +428,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</choose>
 		<style:css>
 			*.tei.front,*.tei.body,*.tei.back{ Display: Block; Break-Before: Page; Margin-Block: 3EM }
+			*.tei.front,*.tei.back{ Padding-Inline: 3EM }
 			*.tei.front:Not(:First-Child)::before,*.tei.body:Not(:First-Child)::before,*.tei.back:Not(:First-Child)::before{ Display: Block; Margin-Block: 3EM; Margin-Inline: -1.5EM; Border-Block-Start: Thin Solid; Content: "" }
 			*.tei.front>footer,*.tei.body>footer,*.tei.back>footer{ Margin-Block: 1.5EM 0; Border-Block-Start: Thin Solid; Padding-Block: .75EM 0; Padding-Inline: 1.5EM 0 }
 			*.tei.front>footer>ul,*.tei.body>footer>ul,*.tei.back>footer>ul{ Margin: 0; Padding: 0 }
@@ -536,9 +537,9 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			*.tei.head{ Display: Block; Margin-Block: 1.5EM; Font-Size: Larger; Font-Weight: Inherit; Font-Variant-Numeric: Proportional-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto }
 			*.tei.head[data--t-e-i_n]::before{ Display: Block; Font-Size: Smaller; Font-Weight: Lighter; Font-Variant-Caps: All-Small-Caps; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Line-Height: 1; Text-Decoration: Underline; Content: Attr(data--t-e-i_n) }
-			*.tei.body>*.tei.head{ Font-Size: XXX-Large }
-			*.tei.body>*.tei.div>*.tei.head,*.tei.body>*.tei.divGen>*.tei.head{ Font-Size: XX-Large }
-			*.tei.body>*.tei.div>*.tei.div>*.tei.head,*.tei.body>*.tei.div>*.tei.divGen>*.tei.head{ Font-Size: X-Large }
+			*.tei.body>div>*.tei.head{ Font-Size: XXX-Large }
+			*.tei.body>div>*.tei.div>div>*.tei.head,*.tei.body>div>*.tei.divGen>div>*.tei.head{ Font-Size: XX-Large }
+			*.tei.body>div>*.tei.div>div>*.tei.div>div>*.tei.head,*.tei.body>div>*.tei.div>div>*.tei.divGen>div>*.tei.head{ Font-Size: X-Large }
 			<fallback/>
 		</style:css>
 	</template>
@@ -1884,7 +1885,6 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 				<if test="@type='index'">
 					<attribute name="type">gloss</attribute>
 				</if>
-				<copy-of select="tei:head"/>
 				<choose>
 					<when test="@type='index'">
 						<call-template name="generate-index">
@@ -1925,6 +1925,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
 			<html:div>
+				<apply-templates select="tei:head"/>
 				<apply-templates select="exsl:node-set($contents)"/>
 			</html:div>
 		</html:nav>
@@ -2059,8 +2060,8 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:header>
 		<style:css>
-			*.tei.titlePage{ Display: Block; Margin-Block: 3EM; Border: Thin Solid; Padding: 1.5EM; Text-Align: Center; Text-Align-Last: Auto }
-			*.tei.titlePage>*{ Display: Block }
+			*.tei.titlePage{ Display: Block; Margin-Block: 3EM; Margin-Inline: -3EM; Border: Thin Solid; Padding-Block: 1.5EM; Padding-Inline: 3EM; Text-Align: Center; Text-Align-Last: Auto }
+			*.tei.titlePage>*{ Display: Block; Margin-Inline: Auto; Max-Inline-Size: Max-Content }
 			*.tei.titlePage>*:Not(:First-Child){ Margin-Block-Start: 1.5EM }
 			<fallback/>
 		</style:css>
@@ -2073,7 +2074,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:hgroup>
 		<style:css>
-			*.tei.docTitle{ Display: Block; Margin-Inline: Auto; Max-Block-Size: Max-Content; Font-Size: Larger; Font-Weight: Bolder }
+			*.tei.docTitle{ Display: Block; Font-Size: Larger; Font-Weight: Bolder }
 			*.tei.docTitle:Not(:First-Child){ Border-Block-Start: Thin Solid }
 			*.tei.docTitle:Not(:Last-Child){ Border-Block-End: Thin Solid }
 			<fallback/>
