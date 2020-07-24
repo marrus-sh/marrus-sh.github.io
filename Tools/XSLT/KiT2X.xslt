@@ -329,7 +329,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:details>
 		<style:css>
-			*.tei.TEI,*.tei.TEICorpus{ Display: Flow-Root Block; Color: Var(--PlainText); Background: Var(--Background); Font: Medium / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Hyphens: Auto; --Background: Canvas; --EditText: ActiveText; --EditorialText: LinkText; --GreyText: GrayText; --PlainText: CanvasText }
+			*.tei.TEI,*.tei.TEICorpus{ Display: Flow-Root Block; Color: Var(--PlainText); Background: Var(--Background); Font: Medium / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; Hyphens: Auto; --Background: Canvas; --EditText: ActiveText; --EditorialText: LinkText; --GreyText: GrayText; --PlainText: CanvasText }
 			*.tei.teiCorpus>*.tei.TEI{ Margin-Block: 6EM }
 			<fallback/>
 		</style:css>
@@ -355,12 +355,12 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</html:summary>
 		<style:css>
 			*.tei.teiHeader{ Display: Block; Position: Relative; Margin-Block: 0 .5EM; Border-Block: Thin Var(--GreyText) Solid; Padding-Block: .5EM; Padding-Inline: 3EM; Line-Height: 1 }
-			*.tei.teiHeader::before,*.tei.teiHeader::after{ Display: List-Item; Position: Absolute; Inset-Block: 0; Inset-Inline-Start: 0; Margin: Auto; Block-Size: 1EM; Inline-Size: 1.5EM; List-Style: Inside Disclosure-Closed; Color: Var(--GreyText); Font-Size: 2EM; Text-Align: End; Content: "" }
+			*.tei.teiHeader::before,*.tei.teiHeader::after{ Display: List-Item; Position: Absolute; Inset-Block: 0; Inset-Inline-Start: 0; Margin: Auto; Block-Size: 1EM; Inline-Size: 1.5EM; List-Style: Inside Disclosure-Closed; Color: Var(--GreyText); Font-Size: 2EM; Text-Align: End; Text-Align-Last: Auto; Content: "" }
 			*.tei.teiHeader::after{ Direction: RTL }
 			details[open]>summary.tei.teiHeader{ Border-Block-End: Medium Var(--GreyText) Double }
 			details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader::after{ List-Style-Type: Disclosure-Open }
 			*.tei.teiHeader>table{ Direction: LTR; Margin-Block: 0; Margin-Inline: Auto; Border-Collapse: Collapse; Line-Height: 1 }
-			*.tei.teiHeader>table>tbody>tr>th{ Position: Relative; Padding-Block: .375EM; Padding-Inline: .375EM .75EM; Color: Var(--GreyText); Font-Weight: Inherit; Text-Align: End }
+			*.tei.teiHeader>table>tbody>tr>th{ Position: Relative; Padding-Block: .375EM; Padding-Inline: .375EM .75EM; Color: Var(--GreyText); Font-Weight: Inherit; Text-Align: End; Text-Align-Last: Auto }
 			*.tei.teiHeader>table>tbody>tr:Not(:Last-Child)>th{ Border-Block-End: Thin Solid }
 			*.tei.teiHeader>table>tbody>tr>td{ Font-Size: Smaller }
 			<fallback/>
@@ -472,8 +472,8 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</otherwise>
 		</choose>
 		<style:css>
-			*.tei.p{ Display: Block; Position: Relative; Margin: 0 }
-			*.tei.p[data--t-e-i_n]::before{ Position: Absolute; Inset-Block-Start: 0; Inset-Inline-End: 100%; Margin-Inline: 0 .75EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "¶" Attr(data--t-e-i_n) }
+			*.tei.p{ Display: Block; Position: Relative; Margin: 0; Text-Align: Justify; Text-Align-Last: Auto }
+			*.tei.p[data--t-e-i_n]::before{ Position: Absolute; Inset-Block-Start: 0; Inset-Inline-End: 100%; Margin-Inline: 0 .75EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; Text-Align-Last: Auto; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "¶" Attr(data--t-e-i_n) }
 			*.tei.p+*.tei.p,*.tei.p.indent{ Text-Indent: 1.5EM }
 			*.tei.p+*.tei.p.unindent,*.tei.p+*.tei.p[data--t-e-i_part=M],*.tei.p+*.tei.p[data--t-e-i_part=F],*.tei.p.indent.unindent,*.tei.p>*{ Text-Indent: 0 }
 			span.tei.p>span:Last-Child{ Display: None }
@@ -516,7 +516,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			*.tei.div{ Display: Block; Position: Relative; Break-Before: Page; Margin-Block: 1.5EM }
 			*.tei.div[data--t-e-i_type=dedication]{ Font-Variant-Caps: Small-Caps; Text-Align-Last: Center }
-			*.tei.div[data--t-e-i_n]::before{ Position: Absolute; Box-Sizing: Border-Box; Inset-Block-Start: 0; Inset-Inline-End: -3EM; Border: Thin Solid; Padding-Inline: .25EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Background: Var(--Background); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Center; Text-Indent: 0; White-Space: Pre; Content: "§" Attr(data--t-e-i_n) }
+			*.tei.div[data--t-e-i_n]::before{ Position: Absolute; Box-Sizing: Border-Box; Inset-Block-Start: 0; Inset-Inline-End: -3EM; Border: Thin Solid; Padding-Inline: .25EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Background: Var(--Background); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "§" Attr(data--t-e-i_n) }
 			*.tei.text>div>*>div>*.tei.div{ Margin-Block: 3EM }
 			*.tei.div>footer{ Margin-Block: 1.5EM 0; Border-Block-Start: Thin Solid; Padding-Block: .75EM 0; Padding-Inline: 1.5EM 0 }
 			*.tei.div>footer>ul{ Margin: 0; Padding: 0 }
@@ -534,7 +534,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:h1>
 		<style:css>
-			*.tei.head{ Display: Block; Margin-Block: 1.5EM; Font-Size: Larger; Font-Weight: Inherit; Font-Variant-Numeric: Proportional-Nums Lining-Nums; Text-Align: Center }
+			*.tei.head{ Display: Block; Margin-Block: 1.5EM; Font-Size: Larger; Font-Weight: Inherit; Font-Variant-Numeric: Proportional-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto }
 			*.tei.head[data--t-e-i_n]::before{ Display: Block; Font-Size: Smaller; Font-Weight: Lighter; Font-Variant-Caps: All-Small-Caps; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Line-Height: 1; Text-Decoration: Underline; Content: Attr(data--t-e-i_n) }
 			*.tei.body>*.tei.head{ Font-Size: XXX-Large }
 			*.tei.body>*.tei.div>*.tei.head,*.tei.body>*.tei.divGen>*.tei.head{ Font-Size: XX-Large }
@@ -551,7 +551,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<html:strong><apply-templates/></html:strong>
 		</html:footer>
 		<style:css>
-			*.tei.trailer{ Display: Block; Margin-Block: 1.5EM; Font-Weight: Bolder; Font-Variant-Caps: Small-Caps; Text-Align: End }
+			*.tei.trailer{ Display: Block; Margin-Block: 1.5EM; Font-Weight: Bolder; Font-Variant-Caps: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
 			*.tei.trailer>strong{ Font-Weight: Inherit }
 			<fallback/>
 		</style:css>
@@ -567,7 +567,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</if>
 		</html:span>
 		<style:css>
-			*.tei.l{ Display: Block; Position: Relative; Padding-Inline-Start: 3EM; Text-Align: Start; Text-Indent: -3EM }
+			*.tei.l{ Display: Block; Position: Relative; Padding-Inline-Start: 3EM; Text-Align: Start; Text-Align-Last: Auto; Text-Indent: -3EM }
 			*.tei.l.indent{ Padding-Inline-Start: 4.5EM }
 			*.tei.l.indent.unindent{ Padding-Inline-Start: 3EM }
 			*.tei.l[data--t-e-i_n]::after{ Position: Absolute; Inset-Block-End: 0; Inset-Inline-Start: 100%; Margin-Inline-Start: .5EM; Color: Var(--GreyText); Font-Size: Smaller; Font-Variant-Caps: Normal; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Indent: 0; White-Space: Pre; Content: "[" Attr(data--t-e-i_n) "]" }
@@ -636,7 +636,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</choose>
 		</html:strong>
 		<style:css>
-			*.tei.speaker{ Display: Block; Text-Align: Center; Text-Transform: Uppercase }
+			*.tei.speaker{ Display: Block; Text-Align: Center; Text-Align-Last: Auto; Text-Transform: Uppercase }
 			<fallback/>
 		</style:css>
 	</template>
@@ -678,7 +678,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<call-template name="handle-typed"/>
 		</html:span>
 		<style:css>
-			*.tei.pb{ Position: Absolute; Inset-Inline-End: -3EM; Margin-Inline: .25EM; Min-Inline-Size: 2.5EM; Text-Align: End; Text-Indent: 0; White-Space: Pre; Z-Index: -1 }
+			*.tei.pb{ Position: Absolute; Inset-Inline-End: -3EM; Margin-Inline: .25EM; Min-Inline-Size: 2.5EM; Text-Align: End; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Z-Index: -1 }
 			*.tei.text>div>*.tei.pb,*.tei.text>div>*>div>*.tei.pb{ Inset-Inline-End: 0 }
 			*.tei.pb::before{ Color: Var(--GreyText); Font-Size: Smaller; Font-Variant-Caps: Normal; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Content: "[[ " Attr(data--t-e-i_n) " ]]" }
 			*.tei.milestone{ Display: Inline }
@@ -870,7 +870,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.q[data--t-e-i_type=written]::before{ Font-Variant-Caps: Normal; Content: "« " }
 			*.tei.q[data--t-e-i_type=written]::after{ Font-Variant-Caps: Normal; Content: " »" }
 			blockquote.tei.q{ Display: Block; Position: Relative; Margin-Block: .75EM; Margin-Inline: -.5EM; Padding-Inline: 2EM; Min-Block-Size: 3EM }
-			blockquote.tei.q::before,blockquote.tei.q::after{ Display: Block; Position: Absolute; Min-Inline-Size: 1EM; Color: Var(--GreyText); Font-Size: 2EM; Text-Align: Center }
+			blockquote.tei.q::before,blockquote.tei.q::after{ Display: Block; Position: Absolute; Min-Inline-Size: 1EM; Color: Var(--GreyText); Font-Size: 2EM; Text-Align: Center; Text-Align-Last: Auto }
 			blockquote.tei.q::before{ Inset-Block-Start: -.25EM; Inset-Inline-End: Calc(100% - 1EM) }
 			blockquote.tei.q[data--t-e-i_type=spoken]::before{ Content: None }
 			blockquote.tei.q::after{ Inset-Block-Start: Calc(100% - 1EM); Inset-Inline-Start: Calc(100% - 1EM) }
@@ -976,15 +976,15 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			aside.tei.note{ Display: Block; Margin-Block: 1.5EM; Border-Block-Style: Solid Double; Border-Inline-Style: Solid Dashed; Border-Block-Width: Thin Medium; Border-Inline-Width: Thin; Padding-Block: .75EM; Padding-Inline: 3EM .5EM; Min-Block-Size: 3EM; Color: Inherit }
 			aside.tei.note aside.tei.note{ Font-Size: Smaller }
 			aside.tei.note *.tei.p::before,aside.tei.note *.tei.lg::before{ Margin-Inline-End: 3.75EM }
-			aside.tei.note>*.tei.seg:First-Child{ Display: Inline-Block; Margin-Inline-Start: -1EM; Min-Inline-Size: 1EM; Color: Var(--EditorialText); Font-Size: 2EM; Text-Align: End }
+			aside.tei.note>*.tei.seg:First-Child{ Display: Inline-Block; Margin-Inline-Start: -1EM; Min-Inline-Size: 1EM; Color: Var(--EditorialText); Font-Size: 2EM; Text-Align: End; Text-Align-Last: Auto }
 			aside.tei.note>*.tei.seg:First-Child,span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Float: Inline-Start; Font-Variant-Numeric: Tabular-Nums Lining-Nums; White-Space: Pre }
 			span.tei.note{ White-Space: NoWrap }
 			span.tei.note::before{ Content: "\2060" }
-			span.tei.note>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Decoration: Dotted Underline; Cursor: Default }
+			span.tei.note>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
 			span.tei.note>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
 			span.tei.note>sup[tabindex]+small{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(--PlainText); Background: Var(--Background); Font-Size: Small; Box-Shadow: 1PX 1PX 3PX Var(--GreyText); White-Space: Normal; Z-Index: 1 }
 			span.tei.note>sup[tabindex]:Focus+small,span.tei.note>sup[tabindex]:Hover+small,span.tei.note>sup[tabindex]+small:Focus-Within,span.tei.note>sup[tabindex]+small:Hover{ Display: Block }
-			span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(--EditorialText); Text-Align: Start }
+			span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(--EditorialText); Text-Align: Start; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -1020,7 +1020,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</html:li>
 		<style:css>
 			li.tei.note{ Display: Block; Color: Inherit }
-			li.tei.note>span:First-Child{ Display: Inline-Block; Float: Inline-Start; Margin-Inline-Start: -1.5EM; Min-Inline-Size: 1.5EM; Color: Var(--EditorialText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; White-Space: Pre }
+			li.tei.note>span:First-Child{ Display: Inline-Block; Float: Inline-Start; Margin-Inline-Start: -1.5EM; Min-Inline-Size: 1.5EM; Color: Var(--EditorialText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; Text-Align-Last: Auto; White-Space: Pre }
 			li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underline }
 			<fallback/>
 		</style:css>
@@ -1227,11 +1227,11 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.add>span{ Color: Var(--PlainText) }
 			*.tei.add:Not([data--t-e-i_place])>span::before,*.tei.add[data--t-e-i_place=inline]>span::before{ Color: Var(--EditText); Font-Variant-Caps: Normal; Content: "`" }
 			*.tei.add:Not([data--t-e-i_place])>span::after,*.tei.add[data--t-e-i_place=inline]>span::after{ Color: Var(--EditText); Font-Variant-Caps: Normal; Content: "´" }
-			*.tei.add>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Decoration: Dotted Underline; Cursor: Default }
+			*.tei.add>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
 			*.tei.add>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
 			*.tei.add>sup[tabindex]+span{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(--PlainText); Background: Var(--Background); Font-Size: Small; Box-Shadow: 1PX 1PX 3PX Var(--GreyText); White-Space: Normal; Z-Index: 1 }
 			*.tei.add>sup[tabindex]:Focus+span,*.tei.add>sup[tabindex]:Hover+span,*.tei.note>sup[tabindex]+span:Focus-Within,*.tei.note>sup[tabindex]+span:Hover{ Display: Block }
-			*.tei.add>sup[tabindex]+span>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(--EditText); Text-Align: Start }
+			*.tei.add>sup[tabindex]+span>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(--EditText); Text-Align: Start; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -1270,7 +1270,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			li.tei.add{ Display: Block; Color: Inherit }
 			li.tei.add>ins{ Display: Block; Text-Decoration: None }
-			li.tei.add>ins>span:First-Child{ Display: Inline-Block; Float: Inline-Start; Margin-Inline-Start: -1.5EM; Min-Inline-Size: 1.5EM; Color: Var(--EditText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; White-Space: Pre }
+			li.tei.add>ins>span:First-Child{ Display: Inline-Block; Float: Inline-Start; Margin-Inline-Start: -1.5EM; Min-Inline-Size: 1.5EM; Color: Var(--EditText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; Text-Align-Last: Auto; White-Space: Pre }
 			li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underline }
 			<fallback/>
 		</style:css>
@@ -1506,7 +1506,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.list>dl>*.tei.item{ Grid-Column: 2 / Span 1; Margin: 0; Padding: 0 }
 			*.tei.list>dl>*.tei.item::before{ Content: None }
 			*.tei.list>ol>*.tei.item,*.tei.list>ul>*.tei.item{ Display: Contents }
-			*.tei.list>ol>*.tei.item::before,*.tei.list>ul>*.tei.item::before{ Display: Block; Grid-Column: 1 / Span 1; Text-Align: End }
+			*.tei.list>ol>*.tei.item::before,*.tei.list>ul>*.tei.item::before{ Display: Block; Grid-Column: 1 / Span 1; Text-Align: End; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -1546,10 +1546,11 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</html:section>
 		<style:css>
 			*.tei.listBibl{ Display: Block; Margin-Block: 1.5EM }
-			*.tei.listBibl>ul{ Display: Block; Margin: 0; Padding-Inline: 3EM 0; Text-Align: Start }
+			*.tei.listBibl>ul{ Display: Block; Margin: 0; Padding-Inline: 3EM 0; Text-Align: Start; Text-Align-Last: Auto }
 			*.tei.listBibl>ul>li.tei.bibl{ Display: Block; Margin: 0; Text-Indent: -3EM }
 			*.tei.listBibl>ul>li.tei.bibl>*{ Text-Indent: 0 }
 			*.tei.listBibl>ul>li.tei.bibl>*.tei.p{ Margin-Block: 1.5EM }
+			*.tei.teiHeader *.tei.listBibl{ Margin-Block: 0 }
 			<fallback/>
 		</style:css>
 	</template>
@@ -1688,7 +1689,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</choose>
 		<style:css>
 			*.tei.cell{ Display: Table-Cell; Padding: 0 }
-			*.tei.cell[data--t-e-i_role=label]{ Font-Weight: Bolder; Text-Align: Center }
+			*.tei.cell[data--t-e-i_role=label]{ Font-Weight: Bolder; Text-Align: Center; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -1928,8 +1929,8 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</html:div>
 		</html:nav>
 		<style:css>
-			*.tei.divGen{ Display: Block; Position: Relative; Break-Before: Page; Margin-Block: 1.5EM; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Start }
-			*.tei.divGen[data--t-e-i_n]::before{ Position: Absolute; Box-Sizing: Border-Box; Inset-Block-Start: 0; Inset-Inline-End: -3EM; Border: Thin Solid; Padding-Inline: .25EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Background: Var(--Background); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Center; Text-Indent: 0; White-Space: Pre; Content: "§" Attr(data--t-e-i_n) }
+			*.tei.divGen{ Display: Block; Position: Relative; Break-Before: Page; Margin-Block: 1.5EM; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Start; Text-Align-Last: Auto }
+			*.tei.divGen[data--t-e-i_n]::before{ Position: Absolute; Box-Sizing: Border-Box; Inset-Block-Start: 0; Inset-Inline-End: -3EM; Border: Thin Solid; Padding-Inline: .25EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Background: Var(--Background); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "§" Attr(data--t-e-i_n) }
 			*.tei.divGen *.tei.ref{ Color: Inherit; Text-Decoration: Underline }
 			*.tei.divGen *.tei.list *.tei.list{ Margin-Block: 0; Columns: Auto }
 			*.tei.divGen *.tei.list>dl{ Display: Block; Margin: 0 }
@@ -2058,7 +2059,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:header>
 		<style:css>
-			*.tei.titlePage{ Display: Block; Margin-Block: 3EM; Border: Thin Solid; Padding: 1.5EM; Text-Align: Center }
+			*.tei.titlePage{ Display: Block; Margin-Block: 3EM; Border: Thin Solid; Padding: 1.5EM; Text-Align: Center; Text-Align-Last: Auto }
 			*.tei.titlePage>*{ Display: Block }
 			*.tei.titlePage>*:Not(:First-Child){ Margin-Block-Start: 1.5EM }
 			<fallback/>
@@ -2109,10 +2110,10 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.docEdition,*.tei.epigraph,*.tei.imprimatur{ Font-Weight: Bolder; Font-Variant-Caps: Small-Caps }
 			*.tei.docImprint{ Font-Size: Smaller; Font-Variant-Caps: Small-Caps }
 			*.tei.epigraph{ Margin-Inline: Auto; Max-Inline-Size: Max-Content }
-			*.tei.signed,*.tei.dateline{ Text-Align: End }
+			*.tei.signed,*.tei.dateline{ Text-Align: End; Text-Align-Last: Auto }
 			*.tei.dateline{ Font-Variant-Caps: Small-Caps }
 			*.tei.cit{ Margin-Block: 1.5EM; Margin-Inline: Auto; Max-Inline-Size: Max-Content }
-			*.tei.cit>*.tei.bibl{ Display: Block; Margin-Block: .75EM; Font-Size: Smaller; Font-Variant-Caps: Small-Caps; Text-Align: End }
+			*.tei.cit>*.tei.bibl{ Display: Block; Margin-Block: .75EM; Font-Size: Smaller; Font-Variant-Caps: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -2166,7 +2167,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:header>
 		<style:css>
-			*.tei.opener{ Display: Block; Text-Align: Start }
+			*.tei.opener{ Display: Block; Text-Align: Start; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -2177,7 +2178,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<apply-templates/>
 		</html:footer>
 		<style:css>
-			*.tei.closer{ Display: Block; Text-Align: End }
+			*.tei.closer{ Display: Block; Text-Align: End; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
@@ -2233,11 +2234,11 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			*.tei.titleStmt,*.tei.editionStmt,*.tei.publicationStmt,*.tei.seriesStmt,*.tei.notesStmt,*.tei.langUsage,*.tei.textClass{ Display: Table-Row-Group }
 			*.tei.titleStmt>tr>*,*.tei.editionStmt>tr>*,*.tei.publicationStmt>tr>*,*.tei.seriesStmt>tr>*,*.tei.notesStmt>tr>*,*.tei.langUsage>tr>*,*.tei.textClass>tr>*{ Border: Thin Var(--PlainText) Solid; Padding: .25EM }
-			*.tei.titleStmt>tr>th,*.tei.editionStmt>tr>th,*.tei.publicationStmt>tr>th,*.tei.seriesStmt>tr>th,*.tei.notesStmt>tr>th,*.tei.langUsage>tr>th,*.tei.textClass>tr>th{ Color: Var(--Background); Background: Var(--PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End }
-			*.tei.titleStmt>tr>th[scope=rowgroup],*.tei.editionStmt>tr>th[scope=rowgroup],*.tei.publicationStmt>tr>th[scope=rowgroup],*.tei.seriesStmt>tr>th[scope=rowgroup],*.tei.notesStmt>tr>th[scope=rowgroup],*.tei.langUsage>tr>th[scope=rowgroup],*.tei.textClass>tr>th[scope=rowgroup]{ Color: Inherit; Background: Inherit; Font-Weight: Bold; Text-Align: Center }
-			*.tei.titleStmt>tr>td,*.tei.editionStmt>tr>td,*.tei.publicationStmt>tr>td,*.tei.seriesStmt>tr>td,*.tei.notesStmt>tr>td,*.tei.langUsage>tr>td,*.tei.textClass>tr>td{ Text-Align: Start }
+			*.tei.titleStmt>tr>th,*.tei.editionStmt>tr>th,*.tei.publicationStmt>tr>th,*.tei.seriesStmt>tr>th,*.tei.notesStmt>tr>th,*.tei.langUsage>tr>th,*.tei.textClass>tr>th{ Color: Var(--Background); Background: Var(--PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
+			*.tei.titleStmt>tr>th[scope=rowgroup],*.tei.editionStmt>tr>th[scope=rowgroup],*.tei.publicationStmt>tr>th[scope=rowgroup],*.tei.seriesStmt>tr>th[scope=rowgroup],*.tei.notesStmt>tr>th[scope=rowgroup],*.tei.langUsage>tr>th[scope=rowgroup],*.tei.textClass>tr>th[scope=rowgroup]{ Color: Inherit; Background: Inherit; Font-Weight: Bold; Text-Align: Center; Text-Align-Last: Auto }
+			*.tei.titleStmt>tr>td,*.tei.editionStmt>tr>td,*.tei.publicationStmt>tr>td,*.tei.seriesStmt>tr>td,*.tei.notesStmt>tr>td,*.tei.langUsage>tr>td,*.tei.textClass>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
 			*.tei.notesStmt>tr>td>*.tei.note{ Margin: 0; Border: None; Padding: 0; Min-Block-Size: 0 }
-			*.tei.notesStmt>tr>td>*.tei.note>*.tei.seg{ Display: None }
+			*.tei.notesStmt>tr>td>*.tei.note>*.tei.seg:First-Child{ Display: None }
 			*.tei.langUsage>tr>td>*.tei.p{ Text-Align: Justify; Text-Align-Last: Center }
 			*.tei.textClass>tr>th>*.tei.ref{ Color: Inherit; Overflow-Wrap: Anywhere }
 			<fallback/>
@@ -2272,8 +2273,10 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			*.tei.teiHeader *.tei.respStmt{ Display: Table; Inline-Size: 100%; Border-Collapse: Collapse }
 			*.tei.teiHeader *.tei.respStmt>tbody>tr>*{ Border: Thin Var(--PlainText) Solid; Padding: .25EM }
-			*.tei.teiHeader *.tei.respStmt>tbody>tr>th{ Color: Var(--Background); Background: Var(--PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End }
-			*.tei.teiHeader *.tei.respStmt>tbody>tr>td{ Text-Align: Start }
+			*.tei.teiHeader *.tei.respStmt>tbody>tr>th{ Color: Var(--Background); Background: Var(--PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
+			*.tei.teiHeader *.tei.respStmt>tbody>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
+			*.tei.teiHeader *.tei.respStmt>tbody>tr>td>*.tei.note{ Margin: 0; Border: None; Padding: 0; Min-Block-Size: 0 }
+			*.tei.teiHeader *.tei.respStmt>tbody>tr>td>*.tei.note>*.tei.seg:First-Child{ Display: None }
 			<fallback/>
 		</style:css>
 	</template>
@@ -2297,7 +2300,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			*.tei.teiHeader *.tei.extent,*.tei.sourceDesc,*.tei.encodingDesc>*.tei.p,*.tei.projectDesc,*.tei.samplingDecl,*.tei.editorialDecl,*.tei.refsDecl,*.tei.classDecl,*.tei.creation{ Display: Table-Row-Group }
 			*.tei.teiHeader *.tei.extent>tr>*,*.tei.sourceDesc>tr>*,*.tei.encodingDesc>*.tei.p>tr>*,*.tei.projectDesc>tr>*,*.tei.samplingDecl>tr>*,*.tei.editorialDecl>tr>*,*.tei.refsDecl>tr>*,*.tei.classDecl>tr>*,*.tei.creation>tr>*{ Border: Thin Var(--PlainText) Solid; Padding: .25EM }
-			*.tei.teiHeader *.tei.extent>tr>th,*.tei.sourceDesc>tr>th,*.tei.encodingDesc>*.tei.p>tr>th,*.tei.projectDesc>tr>th,*.tei.samplingDecl>tr>th,*.tei.editorialDecl>tr>th,*.tei.refsDecl>tr>th,*.tei.classDecl>tr>th,*.tei.creation>tr>th{ Font-Weight: Bold; Font-Variant: Small-Caps; Text-Align: Justify; Text-Align-Last: Center }
+			*.tei.teiHeader *.tei.extent>tr>th,*.tei.sourceDesc>tr>th,*.tei.encodingDesc>*.tei.p>tr>th,*.tei.projectDesc>tr>th,*.tei.samplingDecl>tr>th,*.tei.editorialDecl>tr>th,*.tei.refsDecl>tr>th,*.tei.classDecl>tr>th,*.tei.creation>tr>th{ Font-Weight: Bold; Font-Variant: Small-Caps; Text-Align: Center; Text-Align-Last: Auto }
 			*.tei.teiHeader *.tei.extent>tr>td,*.tei.sourceDesc>tr>td,*.tei.encodingDesc>*.tei.p>tr>td,*.tei.projectDesc>tr>td,*.tei.samplingDecl>tr>td,*.tei.editorialDecl>tr>td,*.tei.refsDecl>tr>td,*.tei.classDecl>tr>td,*.tei.creation>tr>td{ Text-Align: Justify; Text-Align-Last: Center }
 			<fallback/>
 		</style:css>
@@ -2522,8 +2525,8 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.revisionDesc>*.tei.list{ Margin: 0; Border-Block-End: Thin Solid; Border-Inline: Thin Solid; Padding: .25EM }
 			*.tei.revisionDesc>table{ Inline-Size: 100%; Border-Collapse: Collapse }
 			*.tei.revisionDesc>table>tbody>tr>*{ Width: 50%; Border: Thin Var(--PlainText) Solid; Padding: .25EM }
-			*.tei.revisionDesc>table>tbody>tr>th{ Color: Var(--Background); Background: Var(--PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End }
-			*.tei.revisionDesc>table>tbody>tr>td{ Text-Align: Start }
+			*.tei.revisionDesc>table>tbody>tr>th{ Color: Var(--Background); Background: Var(--PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
+			*.tei.revisionDesc>table>tbody>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
 	</template>
