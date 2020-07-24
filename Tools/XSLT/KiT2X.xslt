@@ -893,8 +893,18 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</tei:seg>
 		</variable>
 		<choose>
-			<when test="not(ancestor::tei:p or ancestor::tei:lg)">
+			<when test="@anchored='false' and not(ancestor::tei:p or ancestor::tei:lg)">
 				<html:aside>
+					<call-template name="handle-id"/>
+					<call-template name="handle-tei"/>
+					<call-template name="handle-typed"/>
+					<call-template name="handle-placement"/>
+					<apply-templates select="exsl:node-set($prefix)"/>
+					<apply-templates/>
+				</html:aside>
+			</when>
+			<when test="ancestor::teiHeader and not(ancestor::tei:p or ancestor::tei:lg)">
+				<html:div>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
 					<call-template name="handle-typed"/>
@@ -906,7 +916,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 					</if>
 					<apply-templates select="exsl:node-set($prefix)"/>
 					<apply-templates/>
-				</html:aside>
+				</html:div>
 			</when>
 			<otherwise>
 				<html:span>
@@ -973,11 +983,11 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		</choose>
 		<style:css>
 			*.tei.note{ Display: Inline; Color: Var(--EditorialText) }
-			aside.tei.note{ Display: Block; Margin-Block: 1.5EM; Border-Block-Style: Solid Double; Border-Inline-Style: Solid Dashed; Border-Block-Width: Thin Medium; Border-Inline-Width: Thin; Padding-Block: .75EM; Padding-Inline: 3EM .5EM; Min-Block-Size: 3EM; Color: Inherit }
-			aside.tei.note aside.tei.note{ Font-Size: Smaller }
-			aside.tei.note *.tei.p::before,aside.tei.note *.tei.lg::before{ Margin-Inline-End: 3.75EM }
-			aside.tei.note>*.tei.seg:First-Child{ Display: Inline-Block; Margin-Inline-Start: -1EM; Min-Inline-Size: 1EM; Color: Var(--EditorialText); Font-Size: 2EM; Text-Align: End; Text-Align-Last: Auto }
-			aside.tei.note>*.tei.seg:First-Child,span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Float: Inline-Start; Font-Variant-Numeric: Tabular-Nums Lining-Nums; White-Space: Pre }
+			*:not(span).tei.note{ Display: Block; Margin-Block: 1.5EM; Border-Block-Style: Solid Double; Border-Inline-Style: Solid Dashed; Border-Block-Width: Thin Medium; Border-Inline-Width: Thin; Padding-Block: .75EM; Padding-Inline: 3EM .5EM; Min-Block-Size: 3EM; Color: Inherit }
+			*:not(span).tei.note *:not(span).tei.note{ Font-Size: Smaller }
+			*:not(span).tei.note *.tei.p::before,aside.tei.note *.tei.lg::before{ Margin-Inline-End: 3.75EM }
+			*:not(span).tei.note>*.tei.seg:First-Child{ Display: Inline-Block; Margin-Inline-Start: -1EM; Min-Inline-Size: 1EM; Color: Var(--EditorialText); Font-Size: 2EM; Text-Align: End; Text-Align-Last: Auto }
+			*:not(span).tei.note>*.tei.seg:First-Child,span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Float: Inline-Start; Font-Variant-Numeric: Tabular-Nums Lining-Nums; White-Space: Pre }
 			span.tei.note{ White-Space: NoWrap }
 			span.tei.note::before{ Content: "\2060" }
 			span.tei.note>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
@@ -2403,17 +2413,17 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 				</attribute>
 			</if>
 			<choose>
-				<when test="@usage = 0">
+				<when test="@usage=0">
 					<html:s>
 						<html:u><apply-templates/></html:u>
 					</html:s>
 				</when>
-				<when test="@usage >= 80">
+				<when test="@usage>=80">
 					<html:strong>
 						<html:u><apply-templates/></html:u>
 					</html:strong>
 				</when>
-				<when test="30 > @usage">
+				<when test="30>@usage">
 					<html:small>
 						<html:u><apply-templates/></html:u>
 					</html:small>

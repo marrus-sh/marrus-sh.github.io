@@ -161,10 +161,10 @@ KiT2X.xslt Demo
 						<head n="Figure 1">Yep its that cool girl.</head>
 						<graphic url="https://elekk.xyz/system/accounts/avatars/000/168/037/original/69682ea1d075280f.jpeg" width="+60px" height="60px"/>
 					</figure>
-					<note>
+					<note anchored="false">
 						<index><term>note</term></index>
 						<p n="nn1">The image above<note place="bottom" n="‡"><p>My social media avatar from elekk.xyz.</p></note> may not exist forever.</p>
-						<note n="n1">
+						<note n="n1" anchored="false">
 							<index><term>note</term></index>
 							<p n="nn2">But this<index><term>t<pb n="06"/>his</term></index> note will!</p>
 						</note>
