@@ -289,6 +289,14 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 	<!-- The Structure of a TEI Text -->
 	<template match="/tei:TEI|/tei:teiCorpus">
 		<html:html>
+			<if test="@xml:lang">
+				<attribute name="lang">
+					<value-of select="@xml:lang"/>
+				</attribute>
+				<attribute name="xml:lang">
+					<value-of select="@xml:lang"/>
+				</attribute>
+			</if>
 			<html:head>
 				<html:title>
 					<value-of select="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
