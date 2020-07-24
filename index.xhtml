@@ -348,35 +348,7 @@ else _pollToUpdateGender()
 				<p><a href="https://github.com/marrus-sh/BookGen"><cite>BookGen</cite></a> is a GNU Makefile for turning Markdown documents into PDF and HTML books. It’s the build system that I use for all of my longform writing, and while it’s a little messy, it gets the job done. Someday I’d like to make something which is a little more modular and not written in GNU Make, but that’s probably still a good time out.</p>
 				<h3>KiT2X.xslt</h3>
 				<p>Recently I have begun experimenting with using <a href="https://tei-c.org/"><abbr title="Text Encoding Initiative">TEI</abbr></a> documents to achieve the same effect as some of my more complicated BookGen styles, with less work. <a href="./Tools/XSLT/KiT2X.xslt"><cite>KiT2X.xslt</cite></a> is an XSL Transformation which can be applied to a TEI Lite document to make it viewable in web browsers. Here is an example:</p>
-				<iframe style="Display: Block; Margin: 1EM 0; Border: Thin Solid; Width: 100%; Height: 10.5EM" src='data:text/xml,&lt;?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
-&lt;TEI xmlns="http://www.tei-c.org/ns/1.0">
-	&lt;teiHeader>
-		&lt;fileDesc>
-			&lt;titleStmt>
-				&lt;title>A Small TEI Demo&lt;/title>
-				&lt;author>KIBI Gô&lt;/author>
-			&lt;/titleStmt>
-			&lt;sourceDesc>&lt;p>Born digital.&lt;/p>&lt;/sourceDesc>
-		&lt;/fileDesc>
-	&lt;/teiHeader>
-	&lt;text>
-		&lt;front>
-			&lt;titlePage>
-				&lt;docTitle>
-					&lt;titlePart>A Small TEI Demo&lt;/titlePart>
-					&lt;titlePart type="sub">to demonstrate KiT2X.xslt&lt;/titlePart>
-				&lt;/docTitle>
-			&lt;/titlePage>
-			&lt;divGen type="toc">&lt;head>Contents&lt;/head>&lt;/divGen>
-		&lt;/front>
-		&lt;pb n="01"/>
-		&lt;body>
-			&lt;head>A Small TEI Demo&lt;/head>
-			&lt;p>Hello World!&lt;/p>
-		&lt;/body>
-	&lt;/text>
-&lt;/TEI>
-'/>
+				<iframe style="Display: Block; Margin: 1EM 0; Border: Thin Solid; Width: 100%; Height: 10.5EM" src="./Documents/TEI-test.xml"/>
 				<!--
 				<h3>Kico</h3>
 				<p>Wiki software abounds, but, surprisingly, software for building encyclopædia‐like products which <em>aren’t</em> wikis is pretty hard to come by. <a href="https://github.com/leaf-adventure/Kico/"><cite>Kico: KIBI Codices</cite></a> is a (<abbr title="Work In Progress">WIP</abbr>) RDF‐based library for building roleplaying codices, worldbuilding bibles, textbook primers, and the like. It’s still in its early stages right now, but expect interesting things to come form it.</p>

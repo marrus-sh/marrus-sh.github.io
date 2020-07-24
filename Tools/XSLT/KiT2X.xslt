@@ -1,8 +1,6 @@
 <!--
 KIBI { TEI Lite → XHTML } XSL Transformation (KiT2X.xslt)
 
-/// handle xml:space
-
 ☞ Usage:
 
 Requires both XSLT 1.0 and EXSLT Common support.

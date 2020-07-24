@@ -1,0 +1,186 @@
+<?xml-stylesheet type="text/xsl" href="../Tools/XSLT/KiT2X.xslt"?>
+<!--
+KiT2X.xslt Demo
+
+1. Save this file to your computer.
+2. Open in Firefox.
+-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:h="http://www.w3.org/1999/xhtml" lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>TEI Test</title>
+				<author>KIBI Gô</author>
+				<respStmt>
+					<resp>soundtracked by</resp>
+					<name>8tracks</name>
+				</respStmt>
+			</titleStmt>
+			<editionStmt>
+				<edition>Some edition</edition>
+			</editionStmt>
+			<extent>fairly compact</extent>
+			<publicationStmt>
+				<distributor>GitHub</distributor>
+				<availability status="free">free</availability>
+				<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title>CC0</title></licence>
+			</publicationStmt>
+			<notesStmt>
+				<note>This here be a note about this here thing.</note>
+			</notesStmt>
+			<sourceDesc>
+				<p>Born digital: no previous source exists.</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<p>Look, I just did things which would test the things I needed to test. There really isn’t any rhyme or reason to it.</p>
+		</encodingDesc>
+		<profileDesc>
+			<creation>Sometime in <date when="2020">2020</date>.</creation>
+			<langUsage>
+				<language ident="en" usage="100">English</language>
+				<language ident="en-x-pirate" usage="0">Pirate English</language>
+			</langUsage>
+			<textClass>
+				<keywords source="https://archiveofourown.org/">
+					<term>Gen</term>
+				</keywords>
+				<keywords>
+					<term>cool</term>
+					<term>TEI</term>
+					<term>rad</term>
+					<term>fun</term>
+				</keywords>
+			</textClass>
+		</profileDesc>
+		<revisionDesc>
+			<change>I made the thing at some point idk.</change>
+		</revisionDesc>
+		<xenoData>
+			<h:style>
+				*.tei.titlePart[data--t-e-i_type="sub"]::before{ Content: "✨ " }
+				*.tei.titlePart[data--t-e-i_type="sub"]::after{ Content: " ✨" }
+			</h:style>
+		</xenoData>
+	</teiHeader>
+	<text>
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart>TEI Test</titlePart>
+					<titlePart type="sub">for KiT2X</titlePart>
+					<titlePart type="alt">or, The KIBI TEI to XHTML Demo</titlePart>
+					<titlePart type="short">TEI-Test</titlePart>
+					<titlePart type="desc">Being a demo of the KiT2X.xslt file.</titlePart>
+				</docTitle>
+				<epigraph>
+					<lg>
+						<l>And so is writ,</l>
+						<l>A file of wit.</l>
+					</lg>
+				</epigraph>
+				<byline>by <docAuthor>KIBI Gô</docAuthor></byline>
+				<docImprint>the Internet</docImprint>
+				<docDate>MMXX</docDate>
+				<docEdition>Some Ed.</docEdition>
+			</titlePage>
+			<div type="dedication">Dedicated to <name>Pashmina</name> from <title level="m">Animal Crossing</title>.</div>
+			<divGen type="toc" xml:id="toc" n="ToC"><head>Full Contents</head></divGen>
+			<divGen type="figlist" n="LoF"><head>List of Figures</head></divGen>
+			<divGen type="tablist" n="LoT"><head>List of Tables</head></divGen>
+		</front>
+		<body>
+			<head>TEI Test</head>
+			<divGen type="toc" xml:id="toc-small"><head>Contents</head></divGen>
+			<div xml:id="text" n="01">
+				<head n="Chapter 01">1 Great Text</head>
+				<p n="01">This<index><term>this</term></index> <h:mark style="color: green">is</h:mark> a test<index xml:id="index.test"><term>test</term></index> of the <hi>TEI <ref target="https://tei-c.org/">XSLT</ref> transform</hi><index><term>transform</term><index><term>TEI</term></index></index><note><p n="01·1">Here is a note<index><term>note</term></index> describing that transform<index><term>transform</term></index>.</p><p n="01·2">It takes in <choice><abbr type="acronym">TEI</abbr><expan>Text Encoding Initiative</expan></choice><index><term>transform</term><index><term>TEI</term></index></index> and produces <choice><abbr type="acronym">HTML</abbr><expan>HyperText Markup Language</expan></choice>.</p></note>. It is very <sic>g<unclear evidence="conjecture">oo</unclear>d</sic><note n="e1">Assumed to be <mentioned>good</mentioned>.</note>.<pb n="01"/><pb n="02"/></p>
+				<p n="02">This is so <del>bad</del><add>good</add><add place="margin">great</add><note place="inline">Foo.</note>. <gap><desc>A gap.</desc></gap>.<add place="bottom" n="^1"> But what can be said about this gap?</add> Here is a difficult thing<pc class="terminal">:</pc> <q type="spoken">Some spoken dialogue,</q> which is followed by a space.</p>
+				<lg n="03">
+					<l n="03:1">Not really a <emph>poem</emph>,</l>
+					<l rend="indent" n="03:2">but whatever.</l>
+				</lg>
+				<div n="01.I">
+					<head n="Act I">What Is This?!</head>
+					<stage type="setting">Int<pc>.</pc> A Room, Day</stage>
+					<stage type="novelistic"><p n="04">It is a sunny room, vacant. Nothing <pb n="03"/>much happening here.</p></stage>
+					<stage type="entrance">Enter <name>Thom</name>.</stage>
+					<sp>
+						<speaker>Thom</speaker>
+						<p n="05"><stage>Surprised.</stage> But what <emph>is</emph> this?!</p>
+					</sp>
+					<stage type="quick exit">Exit <name>Thom</name>.</stage>
+					<trailer>End Act I.</trailer>
+				</div>
+				<q type="written"><p n="06">Some <gi>text</gi><note place="bottom" n="1" xml:id="n1">Note 1</note> which is <val>quoted</val><note place="bottom">Unnumbered note.</note> from another source. This is what it has to say. Blah blah blah blah blah.</p></q>
+				<table>
+					<head n="Table 1">A simple table</head>
+					<row>
+						<cell role="label" cols="2">Data</cell>
+					</row>
+					<row>
+						<cell role="data">Data 1</cell>
+						<cell>Data 2<pb n="04"/></cell>
+					</row>
+				</table>
+				<list type="gloss">
+					<head>Glossary</head>
+					<label xml:id="thing_1.1">Thing 1</label>
+					<item>First dang term</item>
+					<label>Thing B</label>
+					<item>Term the second for y’all</item>
+					<label>Thing 1</label>
+					<item>First dang term</item>
+					<label>Thing B</label>
+					<item>Term the second for y’all</item>
+					<label>Thing 1</label>
+					<item>First dang term</item>
+					<label>Thing B</label>
+					<item>Term the second for y’all</item>
+					<label>Thing 1</label>
+					<item>First dang term</item>
+					<label>Thing B</label>
+					<item>Term the second<pb n="05"/> for y’all</item>
+					<label>Thing 1</label>
+					<item>First dang term</item>
+					<label>Thing B</label>
+					<item>Term the second for y’all</item>
+				</list>
+				<p>Here is a <term ref="#thing_1.1">Thing 1</term>.</p>
+				<ptr target="https://go.KIBI.family/"/>
+				<list>
+					<head n="List 01" xml:id="list">List</head>
+					<item>Thing</item>
+					<item>Thing 2</item>
+					<item>ThingC</item>
+				</list>
+				<div n="01.a">
+					<head n="a">An Image</head>
+					<figure>
+						<head n="Figure 1">Yep its that cool girl.</head>
+						<graphic url="https://elekk.xyz/system/accounts/avatars/000/168/037/original/69682ea1d075280f.jpeg" width="+60px" height="60px"/>
+					</figure>
+					<note>
+						<index><term>note</term></index>
+						<p n="nn1">The image above<note place="bottom" n="‡"><p>My social media avatar from elekk.xyz.</p></note> may not exist forever.</p>
+						<note n="n1">
+							<index><term>note</term></index>
+							<p n="nn2">But this<index><term>t<pb n="06"/>his</term></index> note will!</p>
+						</note>
+					</note>
+				</div>
+				<div n="01.b">
+					<head n="b">Examples</head>
+					<eg>An example bit.</eg>
+					<code>An example code.</code>
+					<p>To create <eg>this<index><term>this</term></index> example</eg>, try <code>this<index><term>this</term></index> code</code>.</p>
+				</div>
+				<trailer>End of text.</trailer>
+			</div>
+			<pb n="10"/>
+		</body>
+		<back>
+			<divGen type="index"><head>Index</head></divGen>
+		</back>
+	</text>
+</TEI>
