@@ -76,7 +76,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			<when test=".[starts-with(., ' ')]/preceding-sibling::tei:q[@type='spoken']">
 				<variable name="emsp">
 					<tei:seg rend="preserve">
-						<tei:seg rend="emsp"> </tei:seg>
+						<tei:pc rend="terminal emsp"> </tei:pc>
 					</tei:seg>
 				</variable>
 				<apply-templates select="exsl:node-set($emsp)"/>
@@ -1950,7 +1950,6 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*{ Display: Flex }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi{ Margin-Block: .75EM 0; Font-Size: Larger; Font-Weight: Bolder; Font-Variant-Caps: Small-Caps; Text-Decoration: None }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi:Last-Child,*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi~*:Last-Child { Margin-Block-End: .75EM }
-			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi~*{ Margin-Inline: 0 }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*::after{ Display: Block; Order: 2; Margin: Auto; Border-Block-End: Thin Dotted; Flex: Auto; Content: "" }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi::after{ Border-Block-End: 2PX Dotted }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg{ Display: Block; Order: 1; Margin-Block: 0 Auto; Margin-Inline: 0 .375EM }
@@ -1958,6 +1957,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Numeric: Proportional-Nums Lining-Nums }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*>*.tei.seg+*.tei.seg{ Order: 3; Margin-Block: Auto 0; Margin-Inline: .375EM 0 }
 			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.list{ Margin-Inline: 1.5EM 0 }
+			*.tei.divGen *.tei.list:Not([data--t-e-i_type=index])>ul>*.tei.item>div>*.tei.hi~*.tei.list{ Margin-Inline: 0 }
 			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child{ Font-Variant-Caps: All-Small-Caps }
 			*.tei.divGen[data--t-e-i_type=figlist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref,*.tei.divGen[data--t-e-i_type=tablist] *.tei.list>ul>*.tei.item>div>*>*.tei.seg:First-Child>*.tei.ref{ Font-Weight: Lighter; Font-Variant-Caps: Normal }
 			*.tei.text>div>*>div>*.tei.divGen{ Margin-Block: 3EM }
