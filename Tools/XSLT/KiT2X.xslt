@@ -73,7 +73,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 	<!-- Text‐Level Processing -->
 	<template match="text()">
 		<choose>
-			<when test=".[starts-with(., ' ')]/preceding-sibling::tei:q[@type='spoken']">
+			<when test=".[starts-with(., ' ')]/preceding-sibling::*[1][self::tei:q][@type='spoken']">
 				<variable name="emsp">
 					<tei:seg rend="preserve">
 						<tei:pc rend="terminal emsp"> </tei:pc>
@@ -855,8 +855,9 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</otherwise>
 		</choose>
 		<style:css>
-			*.tei.q{ Display: Inline }
-			*.tei.q::before,*.tei.q::after{ Content: None }
+			*.tei.q{ Display: Inline; Font-Style: Inherit }
+			*.tei.q::before{ Font-Variant-Caps: Normal; Content: "⟨" }
+			*.tei.q::after{ Font-Variant-Caps: Normal; Content: "⟩" }
 			*.tei.q[data--t-e-i_type=distinct]{ Font-Variant-Caps: Petite-Caps }
 			*.tei.q[data--t-e-i_type=term]{ Font-Weight: Bolder }
 			*.tei.q[data--t-e-i_type=foreign]::before{ Font-Variant-Caps: Normal; Content: "⸢" }
@@ -866,8 +867,6 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.q[data--t-e-i_type=soCalled]::before{ Font-Variant-Caps: Normal; Content: "“" }
 			*.tei.q[data--t-e-i_type=soCalled]::after{ Font-Variant-Caps: Normal; Content: "”" }
 			*.tei.q[data--t-e-i_type=spoken]::before{ Content: "― " }
-			*.tei.q[data--t-e-i_type=thought]::before{ Font-Variant-Caps: Normal; Content: "⟨" }
-			*.tei.q[data--t-e-i_type=thought]::after{ Font-Variant-Caps: Normal; Content: "⟩" }
 			*.tei.q[data--t-e-i_type=written]::before{ Font-Variant-Caps: Normal; Content: "« " }
 			*.tei.q[data--t-e-i_type=written]::after{ Font-Variant-Caps: Normal; Content: " »" }
 			blockquote.tei.q{ Display: Block; Position: Relative; Margin-Block: .75EM; Margin-Inline: -.5EM; Padding-Inline: 2EM; Min-Block-Size: 3EM }
