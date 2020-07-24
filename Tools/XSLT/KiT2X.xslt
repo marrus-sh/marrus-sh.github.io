@@ -858,6 +858,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.q{ Display: Inline; Font-Style: Inherit }
 			*.tei.q::before{ Font-Variant-Caps: Normal; Content: "⟨" }
 			*.tei.q::after{ Font-Variant-Caps: Normal; Content: "⟩" }
+			*.tei.q[data--t-e-i_type=distinct]::before,*.tei.q[data--t-e-i_type=distinct]::after,*.tei.q[data--t-e-i_type=term]::before,*.tei.q[data--t-e-i_type=term]::after,*.tei.q[data--t-e-i_type=spoken]::after{ Content: None }
 			*.tei.q[data--t-e-i_type=distinct]{ Font-Variant-Caps: Petite-Caps }
 			*.tei.q[data--t-e-i_type=term]{ Font-Weight: Bolder }
 			*.tei.q[data--t-e-i_type=foreign]::before{ Font-Variant-Caps: Normal; Content: "⸢" }
@@ -992,7 +993,8 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			span.tei.note::before{ Content: "\2060" }
 			span.tei.note>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
 			span.tei.note>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
-			span.tei.note>sup[tabindex]+small{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(--PlainText); Background: Var(--Background); Font-Size: Small; Box-Shadow: 1PX 1PX 3PX Var(--GreyText); White-Space: Normal; Z-Index: 1 }
+			span.tei.note>sup[tabindex]+small{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(--PlainText); Background: Var(--Background); Box-Shadow: 1PX 1PX 3PX Var(--GreyText); Font: Small / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; White-Space: Normal; Z-Index: 1 }
+			*.tei.front span.tei.note>sup[tabindex]+small,*.tei.back span.tei.note>sup[tabindex]+small{ Inset-Inline: Calc(-3EM - 3PX) }
 			span.tei.note>sup[tabindex]:Focus+small,span.tei.note>sup[tabindex]:Hover+small,span.tei.note>sup[tabindex]+small:Focus-Within,span.tei.note>sup[tabindex]+small:Hover{ Display: Block }
 			span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(--EditorialText); Text-Align: Start; Text-Align-Last: Auto }
 			<fallback/>
@@ -1239,8 +1241,9 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.add:Not([data--t-e-i_place])>span::after,*.tei.add[data--t-e-i_place=inline]>span::after{ Color: Var(--EditText); Font-Variant-Caps: Normal; Content: "´" }
 			*.tei.add>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
 			*.tei.add>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
-			*.tei.add>sup[tabindex]+span{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(--PlainText); Background: Var(--Background); Font-Size: Small; Box-Shadow: 1PX 1PX 3PX Var(--GreyText); White-Space: Normal; Z-Index: 1 }
-			*.tei.add>sup[tabindex]:Focus+span,*.tei.add>sup[tabindex]:Hover+span,*.tei.note>sup[tabindex]+span:Focus-Within,*.tei.note>sup[tabindex]+span:Hover{ Display: Block }
+			*.tei.add>sup[tabindex]+span{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(--PlainText); Background: Var(--Background); Box-Shadow: 1PX 1PX 3PX Var(--GreyText); Font: Small / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; White-Space: Normal; Z-Index: 1 }
+			*.tei.front *.tei.add>sup[tabindex]+span,*.tei.back *.tei.add>sup[tabindex]+span{ Inset-Inline: Calc(-3EM - 3PX) }
+			*.tei.add>sup[tabindex]:Focus+span,*.tei.add>sup[tabindex]:Hover+span,*.tei.add>sup[tabindex]+span:Focus-Within,*.tei.add>sup[tabindex]+span:Hover{ Display: Block }
 			*.tei.add>sup[tabindex]+span>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(--EditText); Text-Align: Start; Text-Align-Last: Auto }
 			<fallback/>
 		</style:css>
@@ -1431,7 +1434,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</otherwise>
 		</choose>
 		<style:css>
-			*.tei.date,*.tei.time{ Display: Inline }
+			*.tei.date,*.tei.time{ Display: Inline; Font-Variant-Caps: Petite-Caps; Text-Decoration: None }
 			<fallback/>
 		</style:css>
 	</template>
