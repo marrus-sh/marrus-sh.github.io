@@ -475,7 +475,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			*.tei.p{ Display: Block; Position: Relative; Margin: 0 }
 			*.tei.p[data--t-e-i_n]::before{ Position: Absolute; Inset-Block-Start: 0; Inset-Inline-End: 100%; Margin-Inline: 0 .75EM; Min-Inline-Size: 2.5EM; Color: Var(--GreyText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "¶" Attr(data--t-e-i_n) }
 			*.tei.p+*.tei.p,*.tei.p.indent{ Text-Indent: 1.5EM }
-			*.tei.p+*.tei.p[data--t-e-i_part=M],*.tei.p+*.tei.p[data--t-e-i_part=F],*.tei.p>*{ Text-Indent: 0 }
+			*.tei.p+*.tei.p.unindent,*.tei.p+*.tei.p[data--t-e-i_part=M],*.tei.p+*.tei.p[data--t-e-i_part=F],*.tei.p.indent.unindent,*.tei.p>*{ Text-Indent: 0 }
 			span.tei.p>span:Last-Child{ Display: None }
 			<fallback/>
 		</style:css>
@@ -569,6 +569,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<style:css>
 			*.tei.l{ Display: Block; Position: Relative; Padding-Inline-Start: 3EM; Text-Align: Start; Text-Indent: -3EM }
 			*.tei.l.indent{ Padding-Inline-Start: 4.5EM }
+			*.tei.l.indent.unindent{ Padding-Inline-Start: 3EM }
 			*.tei.l[data--t-e-i_n]::after{ Position: Absolute; Inset-Block-End: 0; Inset-Inline-Start: 100%; Margin-Inline-Start: .5EM; Color: Var(--GreyText); Font-Size: Smaller; Font-Variant-Caps: Normal; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Indent: 0; White-Space: Pre; Content: "[" Attr(data--t-e-i_n) "]" }
 			*.tei.l[data--t-e-i_part=M],*.tei.l[data--t-e-i_part=F],*.tei.l>*{ Text-Indent: 0 }
 			<fallback/>
