@@ -5,7 +5,7 @@ KiT2X.xslt Demo
 1. Save this file to your computer.
 2. Open in Firefox.
 -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:h="http://www.w3.org/1999/xhtml" lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:h="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
