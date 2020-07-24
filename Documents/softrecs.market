@@ -18,7 +18,7 @@ body {
 *:Visited:Active { Color: #B01C1C }
 </style>
 
-@ KIBI Software Recommendations
+@ { @en } KIBI Software Recommendations
 
 The followings are a number of softwares which I find myself using frequently.
 My main working environment runs macOS; consequently, most of these will be UNIXlike tools or macOS apps.
