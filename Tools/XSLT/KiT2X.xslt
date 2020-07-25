@@ -72,13 +72,13 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 	<!-- Text‐Level Processing -->
 	<template match="text()">
 		<choose>
-			<when test=".[starts-with(., ' ')]/preceding-sibling::*[1][self::tei:q][@type='spoken']">
-				<variable name="emsp">
-					<tei:seg rend="preserve">
-						<tei:pc rend="terminal emsp"> </tei:pc>
+			<when test=".[starts-with(., ' ')]/preceding-sibling::*[1][self::tei:q]">
+				<variable name="sp">
+					<tei:seg rend="space">
+						<text> </text>
 					</tei:seg>
 				</variable>
-				<apply-templates select="exsl:node-set($emsp)"/>
+				<apply-templates select="exsl:node-set($sp)"/>
 				<call-template name="process-text">
 					<with-param name="text">
 						<value-of select="substring-after(., ' ')"/>
@@ -846,6 +846,8 @@ span.tei.lg>span:Last-Child{ Display: None }
 *.tei.q[data\2D-t-e-i_type=soCalled]::before{ Font-Variant-Caps: Normal; Content: "“" }
 *.tei.q[data\2D-t-e-i_type=soCalled]::after{ Font-Variant-Caps: Normal; Content: "”" }
 *.tei.q[data\2D-t-e-i_type=spoken]::before{ Content: "― " }
+*.tei.q[data\2D-t-e-i_type=spoken]::after{ White-Space: Pre; Content: "  \2060" }
+*.tei.q[data\2D-t-e-i_type=spoken]+*.tei.seg.space{ Display: None }
 *.tei.q[data\2D-t-e-i_type=written]::before{ Font-Variant-Caps: Normal; Content: "« " }
 *.tei.q[data\2D-t-e-i_type=written]::after{ Font-Variant-Caps: Normal; Content: " »" }
 blockquote.tei.q{ Display: Block; Position: Relative; Margin-Block: .75EM; Margin-Inline: -.5EM; Padding-Inline: 2EM; Min-Block-Size: 3EM }
@@ -1743,7 +1745,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.s,*.tei.w,*.tei.pc{ Display: Inline }
 *.tei.pc{ White-Space: NoWrap }
-*.tei.pc.terminal::after,*.tei.s:Not(:Last-Child)>*.tei.pc:Last-Child::after{ Display: Inline-Block; Text-Decoration: None; Content: " " }
+*.tei.pc.terminal::after,*.tei.s:Not(:Last-Child)>*.tei.pc:Last-Child::after{ Display: Inline-Block; Text-Decoration: Inherit; Content: " " }
 -->
 	</template>
 	<template match="tei:interp|tei:interpGrp">
