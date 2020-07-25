@@ -86,6 +86,9 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 					</with-param>
 				</call-template>
 			</when>
+			<when test="ancestor-or-self::tei:abbr or ancestor-or-self::tei:code">
+				<value-of select="."/>
+			</when>
 			<otherwise>
 				<call-template name="process-text">
 					<with-param name="text">
@@ -303,7 +306,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 				</html:title>
 				<html:style>
 :Where(html,body){ Display: Block; Margin: 0; Padding: 0 }
-*.tei.preserve{ White-Space: Pre }
+*.tei.preserve{ White-Space: Break-Spaces }
 *.tei.preserve::before,*.tei.preserve::after{ Content: "\2060" }
 					<for-each select="document('')//comment()[starts-with(., ' [[ CSS: ]]&#x0A;')]">
 						<value-of select="substring-after(., ' [[ CSS: ]]&#x0A;')"/>
@@ -470,8 +473,8 @@ details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader:
 		<!-- [[ CSS: ]]
 *.tei.p{ Display: Block; Position: Relative; Margin: 0; Text-Align: Justify; Text-Align-Last: Auto }
 *.tei.p[data\2D-t-e-i_n]::before{ Position: Absolute; Inset-Block-Start: 0; Inset-Inline-End: 100%; Margin-Inline: 0 .75EM; Min-Inline-Size: 2.5EM; Color: Var(\2D-GreyText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: End; Text-Align-Last: Auto; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "¶" Attr(data\2D-t-e-i_n) }
-*.tei.p+*.tei.p,*.tei.p.indent{ Text-Indent: 1.5EM }
-*.tei.p+*.tei.p.unindent,*.tei.p+*.tei.p[data\2D-t-e-i_part=M],*.tei.p+*.tei.p[data\2D-t-e-i_part=F],*.tei.p.indent.unindent,*.tei.p>*{ Text-Indent: 0 }
+*.tei.p+*.tei.p,*.tei.p+*.tei.pb+*.tei.p,*.tei.p.indent{ Text-Indent: 1.5EM }
+*:root:root:root:root *.tei.p.unindent,*:root:root:root:root *.tei.p[data\2D-t-e-i_part=M],*:root:root:root:root *.tei.p[data\2D-t-e-i_part=F],*.tei.p>*{ Text-Indent: 0 }
 span.tei.p>span:Last-Child{ Display: None }
 -->
 	</template>
@@ -1791,7 +1794,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:code>
 		<!-- [[ CSS: ]]
-*.tei.code{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Border-Inline-Start: .5CH Solid; Padding-Inline: 1.5CH 0; Max-Inline-Size: 71CH; Overflow: Auto; Font-Family: Monospace; White-Space: Pre }
+*.tei.code{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Border-Inline-Start: .5CH Solid; Padding-Inline: 1.5CH 0; Max-Inline-Size: 71CH; Overflow: Auto; Font-Family: Monospace; White-Space: Break-Spaces }
 *.tei.p>*.tei.code,*.tei.lg>*.tei.code{ Display: Inline; Margin: 0; Border: 0; Padding: 0 }
 -->
 	</template>
@@ -1817,10 +1820,10 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:var>
 		<!-- [[ CSS: ]]
-*.tei.gi{ Display: Inline; Font-Style: Inherit; White-Space: Pre }
+*.tei.gi{ Display: Inline; Font-Style: Inherit }
 *.tei.gi::before{ Content: "\3C" }
 *.tei.gi::after{ Content: ">" }
-*.tei.att{ Display: Inline; Font-Family: Monospace; Font-Style: Inherit; White-Space: Pre }
+*.tei.att{ Display: Inline; Font-Family: Monospace; Font-Style: Inherit }
 -->
 	</template>
 	<template match="tei:val">
@@ -1830,7 +1833,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:code>
 		<!-- [[ CSS: ]]
-*.tei.val{ Display: Inline; Font-Family: Inherit; White-Space: Pre }
+*.tei.val{ Display: Inline; Font-Family: Inherit; White-Space: Break-Spaces }
 *.tei.val::before,*.tei.val::after{ Content: "\"" }
 -->
 	</template>
@@ -2117,7 +2120,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.opener{ Display: Block; Text-Align: Start; Text-Align-Last: Auto }
 -->
 	</template>
-	<template match="tei:closer">
+	<template match="tei:closer|tei:postscript">
 		<html:footer>
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
@@ -2125,6 +2128,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		</html:footer>
 		<!-- [[ CSS: ]]
 *.tei.closer{ Display: Block; Text-Align: End; Text-Align-Last: Auto }
+*.tei.postscript{ Display: Block }
 -->
 	</template>
 	<!-- The Electronic Title Page -->
