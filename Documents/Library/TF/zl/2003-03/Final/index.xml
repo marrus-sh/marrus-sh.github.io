@@ -3,17 +3,17 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title level="a">Tally Marries Dimond</title>
+				<title level="m">Tally Marries Dimond</title>
 				<author><name>TF</name><note>Not moniker recorded in source.</note></author>
 			</titleStmt>
 			<editionStmt>
-				<edition n="zl:2003-03:Final">Final draft, <date when="2003-03-05">March 5, 2003</date></edition>
+				<edition>Final draft, <date when="2003-03-05">March 5, 2003</date><lb/><idno type="URI">tag:marrus.xyz,2016:bns::zl:2003-03:Final</idno></edition>
 			</editionStmt>
 			<publicationStmt>
 				<publisher>KIBI Gô</publisher>
 				<date when="2020">2020</date>
 				<availability status="free">
-					Dedicated to the public domain via a<lb/><licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
 				</availability>
 			</publicationStmt>
 			<sourceDesc>
@@ -30,11 +30,12 @@
 		</encodingDesc>
 		<xenoData>
 			<html:style>
-				*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM }
+				*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
 				*.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
 				*.tei.front *,*:root:root:root *.tei.head{ Font: Inherit }
 				*:root *.tei.body::before{ Content: None }
 				*.tei.head{ Margin: 0 }
+				*.tei.p{ Text-Align: Start }
 				*.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
 				*.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
 				*.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
@@ -63,7 +64,7 @@
 				<p>I have known Tally and Dimond since I was six. I really wasn’t too surprised when Tally told me his news.</p>
 			</div>
 			<div>
-				<p>Back then we were living in Seattle. I went over to Harry Zell’s house. (Harry is another friend.<pc rend="terminal">)</pc> It was a beautiful spring day. The sun was shining which felt warm on my back, and the birds were singing. Tally, Harry, and I were busy building a fence, so Harry’s new puppy, Max, wouldn’t run away. The puppy was a purebred yellow Labrador. Tally began telling us his plans to marry Dimond when we saw Patrick Ether (who everyone calls Pot Ether, since he loves to cook) walking toward us.</p>
+				<p>Back then we were living in Seattle. I went over to Harry Zell’s house. (Harry is another friend.)<pc rend="terminal"/> It was a beautiful spring day. The sun was shining which felt warm on my back, and the birds were singing. Tally, Harry, and I were busy building a fence, so Harry’s new puppy, Max, wouldn’t run away. The puppy was a purebred yellow Labrador. Tally began telling us his plans to marry Dimond when we saw Patrick Ether (who everyone calls Pot Ether, since he loves to cook) walking toward us.</p>
 				<p><q type="spoken">Hey guys what are you up to?</q> asked Pot.</p>
 				<p><q type="spoken">We are helping Harry build a fence, so that Max won’t get out. Do you want to help?</q> Tally asked.</p>
 				<p><q type="spoken">Guess what, Tally is going to ask Dimond to marry him!</q> I exclaimed.</p>

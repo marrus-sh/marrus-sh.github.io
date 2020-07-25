@@ -1,0 +1,71 @@
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Switched Bodys!</title>
+				<author><name>TF</name><note>Not moniker recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition>Rough draft, <date when="2003-04-12">April 12, 2003</date><lb/><idno type="URI">tag:marrus.xyz,2016:bns::zl:2003-04:Rough</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Derived from a Rich Text Format file, which was itself a transcription of a handwritten draft.</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names has been made, as they received no special treatment in the source. Mistakes in source left as written.</p>
+				<p>Author’s name and other potentially identifying information has been redacted using <gi>gap</gi>.</p>
+				<p>Apostrophes have been normalized to <mentioned rend="literal"><pc>’</pc></mentioned> and hyphens have been normalized to <mentioned rend="literal"><pc>‐</pc></mentioned>.</p>
+			</editorialDecl>
+		</encodingDesc>
+		<xenoData>
+			<html:style>
+				*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+				*.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
+				*.tei.front *{ Font: Inherit }
+				*:root *.tei.docTitle{ Margin-Block: 1.5EM; Border: None; Font: Inherit; Text-Align: Center }
+				*.tei.titlePart{ Margin: 0; Font: Inherit; Text-Transform: None }
+				*:root *.tei.body::before{ Content: None }
+				*:root *.tei.note{ Border: None; Padding: 0; Min-Block-Size: 0; Color: Var(--EditorialText) }
+				*:root *.tei.note>*.tei.seg:First-Child{ Display: None }
+				*.tei.p{ Text-Align: Start }
+				*.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
+				*.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
+				*.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
+				*.tei.del::before,*.tei.del::after{ Content: None }
+				*.tei.del{ Text-Decoration: Var(--EditText) Line-Through }
+				*.tei.mentioned.literal::before{ Content: "‹ " }
+				*.tei.mentioned.literal::after{ Content: " ›" }
+			</html:style>
+		</xenoData>
+	</teiHeader>
+	<text>
+		<front>
+			<note anchored="false">
+				<p>Pot’s house: made out of purple bricks,</p>
+			</note>
+			<docTitle>
+				<titlePart>Switched Bodys!</titlePart>
+			</docTitle>
+			<docAuthor><gap reason="editorial"><desc>author name</desc></gap></docAuthor>
+			<docDate when="2003-04-12">4/12/03</docDate>
+			<docEdition>Rough Draft</docEdition>
+		</front>
+		<body xml:id="text">
+			<p><q type="spoken">Zzzzzt!</q></p>
+			<p>I was at Pot’s house when I heard that sound. Pot lives on 635 Magic St<pc>.</pc> Mode Lake, Rin. Pot lives in the planet Magiclanoid and the country Maglanond. Anyway, the sound <del>was</del> came from Pot’s machine. He had switched our bodys<pc rend="terminal">!</pc> Pot puts it in reverse and pulls the lever. Nothing happens.</p>
+			<p>Then Pot tries again, nothing happens. Tally comes over with harry. we dicide to build a machine to reverse us back into our normal bodys. We finish and try it but it doesn’t work either.</p>
+			<p>After that, We checked the first machine to make sure it was okay. <q type="spoken">Of course!</q> I said. <q type="spoken">We have to turn the machine on forward and then pull the lever!</q><pc rend="terminal"/> We try and it works!</p>
+			<p>It sure felt good to be in my own body. I won’t mess around with machines anymore. I know that!</p>
+		</body>
+	</text>
+</TEI>

@@ -38,6 +38,7 @@ But you should self-host it if possible, for the sake of resilience.
 
 	‡	Use `rend="terminal"` on a `<pc>` element to indicate sentence‐terminal punctuation.
 		Periods which are not element‐final and followed by a space will automatically be wrapped in a `<pc rend="terminal">` element; wrap non‐terminal periods in an ordinary `<pc>` element to avert this.
+		For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty `<pc rend="terminal"/>` to indicate separation from the text which follows.
 
 	‡	Use `rend="preserve"` to preserve whitespace.
 		Alternatively, use `xml:space="preserve"` (which produces equivalent HTML).
@@ -2186,14 +2187,14 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.textClass>tr>th>*.tei.ref{ Color: Inherit; Overflow-Wrap: Anywhere }
 -->
 	</template>
-	<template match="tei:sponsor|tei:funder|tei:principal|tei:respStmt|tei:resp|tei:edition|tei:extent|tei:distributor|tei:authority|tei:catDesc">
+	<template match="tei:sponsor|tei:funder|tei:principal|tei:respStmt|tei:resp|tei:extent|tei:distributor|tei:authority|tei:catDesc">
 		<html:span>
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
 			<apply-templates/>
 		</html:span>
 		<!-- [[ CSS: ]]
-*.tei.sponsor,*.tei.funder,*.tei.principal,*.tei.respStmt,*.tei.resp,*.tei.edition,*.tei.extent,*.tei.distributor,*.tei.authority,*.tei.catDesc{ Display: Inline }
+*.tei.sponsor,*.tei.funder,*.tei.principal,*.tei.respStmt,*.tei.resp,*.tei.extent,*.tei.distributor,*.tei.authority,*.tei.catDesc{ Display: Inline }
 -->
 	</template>
 	<template match="tei:teiHeader//tei:respStmt">
@@ -2218,6 +2219,24 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.teiHeader *.tei.respStmt>tbody>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
 *.tei.teiHeader *.tei.respStmt>tbody>tr>td>*.tei.note{ Margin: 0; Border: None; Padding: 0; Min-Block-Size: 0 }
 *.tei.teiHeader *.tei.respStmt>tbody>tr>td>*.tei.note>*.tei.seg:First-Child{ Display: None }
+-->
+	</template>
+	<template match="tei:edition">
+		<html:span>
+			<call-template name="handle-id"/>
+			<call-template name="handle-tei"/>
+			<html:span><apply-templates/></html:span>
+			<if test="self::tei:edition[@n]">
+				<html:small>
+					<text>(</text>
+					<value-of select="@n"/>
+					<text>)</text>
+				</html:small>
+			</if>
+		</html:span>
+		<!-- [[ CSS: ]]
+*.tei.edition{ Display: Inline }
+*.tei.edition>small{ Font-Size: Smaller }
 -->
 	</template>
 	<template match="tei:teiHeader//tei:extent|tei:sourceDesc|tei:encodingDesc/tei:p|tei:projectDesc|tei:samplingDecl|tei:editorialDecl|tei:refsDecl|tei:classDecl|tei:creation">
@@ -2252,7 +2271,8 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:span>
 		<!-- [[ CSS: ]]
-*.tei.idno{ Display: Inline }
+*.tei.idno{ Display: Inline; Font-Variant-Numeric: Tabular-Nums Lining-Nums }
+*.tei.idno[type=URI]{ Color: Var(\2D-EditorialText) }
 -->
 	</template>
 	<template match="tei:availability">
