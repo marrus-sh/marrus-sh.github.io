@@ -1,4 +1,18 @@
 <?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
+*.tei.front *,*:root:root:root *.tei.head{ Font: Inherit }
+*:root *.tei.body::before{ Content: None }
+*.tei.head{ Margin: 0 }
+*.tei.p{ Text-Align: Start }
+*.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
+*.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
+*.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
+*.tei.hi.bold{ Font-Weight: Bolder; Text-Decoration: None }
+*.tei.mentioned.literal::before{ Content: "‹ " }
+*.tei.mentioned.literal::after{ Content: " ›" }
+'?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<teiHeader>
 		<fileDesc>
@@ -28,22 +42,6 @@
 				<p>Source text is split up into multiple sections; these are encoded using <gi>div</gi>.</p>
 			</editorialDecl>
 		</encodingDesc>
-		<xenoData>
-			<html:style>
-				*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
-				*.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
-				*.tei.front *,*:root:root:root *.tei.head{ Font: Inherit }
-				*:root *.tei.body::before{ Content: None }
-				*.tei.head{ Margin: 0 }
-				*.tei.p{ Text-Align: Start }
-				*.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
-				*.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
-				*.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
-				*.tei.hi.bold{ Font-Weight: Bolder; Text-Decoration: None }
-				*.tei.mentioned.literal::before{ Content: "‹ " }
-				*.tei.mentioned.literal::after{ Content: " ›" }
-			</html:style>
-		</xenoData>
 	</teiHeader>
 	<text>
 		<front>

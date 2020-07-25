@@ -1,4 +1,22 @@
 <?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
+*.tei.front *{ Font: Inherit }
+*:root *.tei.docTitle{ Margin-Block: 1.5EM; Border: None; Font: Inherit; Text-Align: Center }
+*.tei.titlePart{ Margin: 0; Font: Inherit; Text-Transform: None }
+*:root *.tei.body::before{ Content: None }
+*:root *.tei.note{ Border: None; Padding: 0; Min-Block-Size: 0; Color: Var(--EditorialText) }
+*:root *.tei.note>*.tei.seg:First-Child{ Display: None }
+*.tei.p{ Text-Align: Start }
+*.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
+*.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
+*.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
+*.tei.del::before,*.tei.del::after{ Content: None }
+*.tei.del{ Text-Decoration: Var(--EditText) Line-Through }
+*.tei.mentioned.literal::before{ Content: "‹ " }
+*.tei.mentioned.literal::after{ Content: " ›" }
+'?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<teiHeader>
 		<fileDesc>
@@ -27,26 +45,6 @@
 				<p>Apostrophes have been normalized to <mentioned rend="literal"><pc>’</pc></mentioned> and hyphens have been normalized to <mentioned rend="literal"><pc>‐</pc></mentioned>.</p>
 			</editorialDecl>
 		</encodingDesc>
-		<xenoData>
-			<html:style>
-				*.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
-				*.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
-				*.tei.front *{ Font: Inherit }
-				*:root *.tei.docTitle{ Margin-Block: 1.5EM; Border: None; Font: Inherit; Text-Align: Center }
-				*.tei.titlePart{ Margin: 0; Font: Inherit; Text-Transform: None }
-				*:root *.tei.body::before{ Content: None }
-				*:root *.tei.note{ Border: None; Padding: 0; Min-Block-Size: 0; Color: Var(--EditorialText) }
-				*:root *.tei.note>*.tei.seg:First-Child{ Display: None }
-				*.tei.p{ Text-Align: Start }
-				*.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
-				*.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
-				*.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
-				*.tei.del::before,*.tei.del::after{ Content: None }
-				*.tei.del{ Text-Decoration: Var(--EditText) Line-Through }
-				*.tei.mentioned.literal::before{ Content: "‹ " }
-				*.tei.mentioned.literal::after{ Content: " ›" }
-			</html:style>
-		</xenoData>
 	</teiHeader>
 	<text>
 		<front>

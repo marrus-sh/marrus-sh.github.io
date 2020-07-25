@@ -47,7 +47,10 @@ But you should self-host it if possible, for the sake of resilience.
 	Inside of a `<body>`, `<divGen type="toc">` will produce a slightly abridged table of contents, excluding elements from outside of the ancestor `<body>` element.
 	Use `<divGen type="index" subtype="NAME">` to generate a named index (i.e., one whose index entries specify `indexName="NAME"`).
 
-†	The contents of the `<xenoData>` element (not TEI Lite) will be inserted directly into the `<head>` of the resulting HTML document.
+†	An `<?xml-stylesheet?>` instruction with a `type` of `"text/css"` will be converted into an HTML `<style>` element and placed in the `<head>` of the resulting HTML document.
+	Use this to add custom styling without breaking TEI Lite conformance.
+
+†	Alternatively, the contents of the `<xenoData>` element (not TEI Lite) will be inserted directly into the `<head>` of the resulting HTML document.
 	You can use this to insert additional metadata or styling.
 
 ☞ Disclaimer:
@@ -312,6 +315,46 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 						<value-of select="substring-after(., ' [[ CSS: ]]&#x0A;')"/>
 					</for-each>
 				</html:style>
+				<for-each select="//processing-instruction()[name(.)='xml-stylesheet'][contains(., 'type=&#x22;text/css&#x22;') or contains(., &#x22;type='text/css';&#x22;)]">
+					<html:link type="text/css">
+						<attribute name="rel">
+							<text>stylesheet</text>
+							<if test="contains(., 'alternate=&#x22;yes&#x22;') or contains(., &#x22;alternate='yes';&#x22;)">
+								<text> alternate</text>
+							</if>
+						</attribute>
+						<if test="contains(., 'title=&#x22;')">
+							<attribute name="title">
+								<value-of select="substring-before(substring-after(., 'title=&#x22;'), '&#x22;')"/>
+							</attribute>
+						</if>
+						<if test="contains(., &#x22;title='&#x22;)">
+							<attribute name="title">
+								<value-of select="substring-before(substring-after(., &#x22;title='&#x22;), &#x22;'&#x22;)"/>
+							</attribute>
+						</if>
+						<if test="contains(., 'href=&#x22;')">
+							<attribute name="href">
+								<value-of select="substring-before(substring-after(., 'href=&#x22;'), '&#x22;')"/>
+							</attribute>
+						</if>
+						<if test="contains(., &#x22;href='&#x22;)">
+							<attribute name="href">
+								<value-of select="substring-before(substring-after(., &#x22;href='&#x22;), &#x22;'&#x22;)"/>
+							</attribute>
+						</if>
+						<if test="contains(., 'media=&#x22;')">
+							<attribute name="media">
+								<value-of select="substring-before(substring-after(., 'media=&#x22;'), '&#x22;')"/>
+							</attribute>
+						</if>
+						<if test="contains(., &#x22;media='&#x22;)">
+							<attribute name="media">
+								<value-of select="substring-before(substring-after(., &#x22;media='&#x22;), &#x22;'&#x22;)"/>
+							</attribute>
+						</if>
+					</html:link>
+				</for-each>
 				<apply-templates select="tei:teiHeader/tei:xenoData/*"/>
 			</html:head>
 			<html:body>
@@ -840,7 +883,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 *.tei.q{ Display: Inline; Font-Style: Inherit }
 *.tei.q::before{ Font-Variant-Caps: Normal; Content: "⟨" }
 *.tei.q::after{ Font-Variant-Caps: Normal; Content: "⟩" }
-*.tei.q[data\2D-t-e-i_type=distinct]::before,*.tei.q[data\2D-t-e-i_type=distinct]::after,*.tei.q[data\2D-t-e-i_type=term]::before,*.tei.q[data\2D-t-e-i_type=term]::after,*.tei.q[data\2D-t-e-i_type=spoken]::after{ Content: None }
+*.tei.q[data\2D-t-e-i_type=distinct]::before,*.tei.q[data\2D-t-e-i_type=distinct]::after,*.tei.q[data\2D-t-e-i_type=term]::before,*.tei.q[data\2D-t-e-i_type=term]::after{ Content: None }
 *.tei.q[data\2D-t-e-i_type=distinct]{ Font-Variant-Caps: Petite-Caps }
 *.tei.q[data\2D-t-e-i_type=term]{ Font-Weight: Bolder }
 *.tei.q[data\2D-t-e-i_type=foreign]::before{ Font-Variant-Caps: Normal; Content: "⸢" }
