@@ -576,9 +576,9 @@ span.tei.p>span:Last-Child{ Display: None }
 		<!-- [[ CSS: ]]
 *.tei.head{ Display: Block; Margin-Block: 1.5EM; Font-Size: Larger; Font-Weight: Inherit; Font-Variant-Numeric: Proportional-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto }
 *.tei.head[data\2D-t-e-i_n]::before{ Display: Block; Font-Size: Smaller; Font-Weight: Lighter; Font-Variant-Caps: All-Small-Caps; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Line-Height: 1; Text-Decoration: Underline; White-Space: Break-Spaces; Content: Attr(data\2D-t-e-i_n) }
-*.tei.body>div>*.tei.head{ Font-Size: XXX-Large }
-*.tei.body>div>*.tei.div>div>*.tei.head,*.tei.body>div>*.tei.divGen>div>*.tei.head{ Font-Size: XX-Large }
-*.tei.body>div>*.tei.div>div>*.tei.div>div>*.tei.head,*.tei.body>div>*.tei.div>div>*.tei.divGen>div>*.tei.head{ Font-Size: X-Large }
+*.tei.text>div>*>div>*.tei.head{ Font-Size: XXX-Large }
+*.tei.text>div>*>div>*.tei.div>div>*.tei.head,*.tei.text>div>*>div>*.tei.divGen>div>*.tei.head{ Font-Size: XX-Large }
+*.tei.text>div>*>div>*.tei.div>div>*.tei.div>div>*.tei.head,*.tei.text>div>*>div>*.tei.div>div>*.tei.divGen>div>*.tei.head{ Font-Size: X-Large }
 -->
 	</template>
 	<template match="tei:trailer">
