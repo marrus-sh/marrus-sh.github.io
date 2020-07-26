@@ -26,7 +26,11 @@ But you should self-host it if possible, for the sake of resilience.
 †	Due to limitations in XSLT 1.0, if multiple pointers are provided as the `target` of an element, only the first will be processed.
 	Use multiple elements when you need to specify multiple pointers.
 
-†	Use `<pc>` to mark punctuation when multiple characters long.
+†	Use `<pc>` to mark punctuation, especially when multiple characters long.
+
+	‡	Use `type="terminal"` on a `<pc>` element to indicate sentence‐terminal punctuation.
+		Periods which are not element‐final and followed by a space will automatically be wrapped in a `<pc type="terminal">` element; wrap non‐terminal periods in an ordinary `<pc>` element to avert this.
+		For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty `<pc type="terminal"/>` to indicate separation from the text which follows.
 
 †	TEI `rend` is converted to HTML `class`.
 	A few `rend` values are predefined:
@@ -35,10 +39,6 @@ But you should self-host it if possible, for the sake of resilience.
 		Adjacent paragraphs will automatically be indented, but paragraphs will not be indented if any element comes between them.
 
 	‡	Use `rend="unindent"` to prevent indentation, as above.
-
-	‡	Use `rend="terminal"` on a `<pc>` element to indicate sentence‐terminal punctuation.
-		Periods which are not element‐final and followed by a space will automatically be wrapped in a `<pc rend="terminal">` element; wrap non‐terminal periods in an ordinary `<pc>` element to avert this.
-		For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty `<pc rend="terminal"/>` to indicate separation from the text which follows.
 
 	‡	Use `rend="preserve"` to preserve whitespace.
 		Alternatively, use `xml:space="preserve"` (which produces equivalent HTML).
@@ -107,7 +107,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 		<choose>
 			<when test="contains($text, '. ')">
 				<variable name="term">
-					<tei:pc rend="terminal">.</tei:pc>
+					<tei:pc type="terminal">.</tei:pc>
 				</variable>
 				<call-template name="process-text">
 					<with-param name="text">
@@ -575,7 +575,7 @@ span.tei.p>span:Last-Child{ Display: None }
 		</html:h1>
 		<!-- [[ CSS: ]]
 *.tei.head{ Display: Block; Margin-Block: 1.5EM; Font-Size: Larger; Font-Weight: Inherit; Font-Variant-Numeric: Proportional-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto }
-*.tei.head[data\2D-t-e-i_n]::before{ Display: Block; Font-Size: Smaller; Font-Weight: Lighter; Font-Variant-Caps: All-Small-Caps; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Line-Height: 1; Text-Decoration: Underline; Content: Attr(data\2D-t-e-i_n) }
+*.tei.head[data\2D-t-e-i_n]::before{ Display: Block; Font-Size: Smaller; Font-Weight: Lighter; Font-Variant-Caps: All-Small-Caps; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Line-Height: 1; Text-Decoration: Underline; White-Space: Break-Spaces; Content: Attr(data\2D-t-e-i_n) }
 *.tei.body>div>*.tei.head{ Font-Size: XXX-Large }
 *.tei.body>div>*.tei.div>div>*.tei.head,*.tei.body>div>*.tei.divGen>div>*.tei.head{ Font-Size: XX-Large }
 *.tei.body>div>*.tei.div>div>*.tei.div>div>*.tei.head,*.tei.body>div>*.tei.div>div>*.tei.divGen>div>*.tei.head{ Font-Size: X-Large }
@@ -915,7 +915,7 @@ blockquote.tei.q *.tei.p::before,blockquote.tei.q *.tei.lg::before{ Margin-Inlin
 					</when>
 					<otherwise>†</otherwise>
 				</choose>
-				<tei:pc rend="terminal">.</tei:pc>
+				<tei:pc type="terminal">.</tei:pc>
 				<text> </text>
 			</tei:seg>
 		</variable>
@@ -1033,7 +1033,7 @@ span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM;
 				</when>
 				<otherwise>†</otherwise>
 			</choose>
-			<tei:pc rend="terminal">.</tei:pc>
+			<tei:pc type="terminal">.</tei:pc>
 		</variable>
 		<html:li>
 			<call-template name="handle-id">
@@ -1188,7 +1188,7 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 						</when>
 						<otherwise>^</otherwise>
 					</choose>
-					<tei:pc rend="terminal">.</tei:pc>
+					<tei:pc type="terminal">.</tei:pc>
 					<text> </text>
 				</tei:seg>
 			</if>
@@ -1272,7 +1272,7 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 				</when>
 				<otherwise>^</otherwise>
 			</choose>
-			<tei:pc rend="terminal">.</tei:pc>
+			<tei:pc type="terminal">.</tei:pc>
 		</variable>
 		<html:li>
 			<call-template name="handle-id">
@@ -1540,7 +1540,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.item{ Display: Block }
 *.tei.item::before{ Font-Weight: Bolder }
 *.tei.item::before{ Content: "⁜  " }
-*.tei.item[data\2D-t-e-i_n]::before{ Content: Attr(data\2D-t-e-i_n) ".  " }
+*.tei.item[data\2D-t-e-i_n]::before{ White-Space: Pre; Content: Attr(data\2D-t-e-i_n) ".  " }
 -->
 	</template>
 	<!-- Bibliographic Citations -->
@@ -1581,6 +1581,33 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		</html:span>
 		<!-- [[ CSS: ]]
 *.tei.bibl,*.tei.biblScope{ Display: Inline }
+-->
+	</template>
+	<template match="tei:bibl|tei:biblScope">
+		<html:span>
+			<call-template name="handle-id"/>
+			<call-template name="handle-tei"/>
+			<if test="tei:bibl">
+				<call-template name="handle-docStatus"/>
+			</if>
+			<apply-templates/>
+		</html:span>
+		<!-- [[ CSS: ]]
+*.tei.bibl,*.tei.biblScope{ Display: Inline }
+-->
+	</template>
+	<template match="tei:relatedItem">
+		<html:span>
+			<call-template name="handle-id"/>
+			<call-template name="handle-tei"/>
+			<call-template name="handle-typed"/>
+			<if test="tei:bibl">
+				<call-template name="handle-docStatus"/>
+			</if>
+			<apply-templates/>
+		</html:span>
+		<!-- [[ CSS: ]]
+*.tei.relatedItem{ Display: Block }
 -->
 	</template>
 	<template match="tei:author|tei:editor|tei:publisher|tei:pubPlace">
@@ -1792,7 +1819,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.s,*.tei.w,*.tei.pc{ Display: Inline }
 *.tei.pc{ White-Space: NoWrap }
-*.tei.pc.terminal::after,*.tei.s:Not(:Last-Child)>*.tei.pc:Last-Child::after{ Display: Inline-Block; Text-Decoration: Inherit; Content: " " }
+*.tei.pc[data\2D-t-e-i_type=terminal]::after,*.tei.s:Not(:Last-Child)>*.tei.pc:Last-Child::after{ Display: Inline-Block; Text-Decoration: Inherit; Content: " " }
 -->
 	</template>
 	<template match="tei:interp|tei:interpGrp">
@@ -1970,12 +1997,12 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 				<choose>
 					<when test="@n">
 						<value-of select="@n"/>
-						<tei:pc rend="terminal">.</tei:pc>
+						<tei:pc type="terminal">.</tei:pc>
 						<text> </text>
 					</when>
 					<when test="tei:head/@n">
 						<value-of select="tei:head/@n"/>
-						<tei:pc rend="terminal">.</tei:pc>
+						<tei:pc type="terminal">.</tei:pc>
 						<text> </text>
 					</when>
 				</choose>
@@ -2035,7 +2062,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:address>
 		<!-- [[ CSS: ]]
-*.tei.address{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Padding-Inline: .3EM; Max-Inline-Size: Max-Content; Text-Align: Start; Text-Align-Last: Auto }
+*.tei.address{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Padding-Inline: .3EM; Max-Inline-Size: Max-Content; Font-Style: Inherit; Text-Align: Start; Text-Align-Last: Auto }
 -->
 	</template>
 	<template match="tei:addrLine">

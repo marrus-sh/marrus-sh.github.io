@@ -1,4 +1,7 @@
 <?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.titlePart[data--t-e-i_type="sub"]::before{ Content: "✨ " }
+'?>
 <!--
 KiT2X.xslt Demo
 
@@ -22,8 +25,7 @@ KiT2X.xslt Demo
 			<extent>fairly compact</extent>
 			<publicationStmt>
 				<distributor>GitHub</distributor>
-				<availability status="free">free</availability>
-				<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title>CC0</title></licence>
+				<availability status="free"><licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0</title></licence></availability>
 			</publicationStmt>
 			<notesStmt>
 				<note>This here be a note about this here thing.</note>
@@ -58,7 +60,6 @@ KiT2X.xslt Demo
 		</revisionDesc>
 		<xenoData>
 			<h:style>
-				*.tei.titlePart[data--t-e-i_type="sub"]::before{ Content: "✨ " }
 				*.tei.titlePart[data--t-e-i_type="sub"]::after{ Content: " ✨" }
 			</h:style>
 		</xenoData>

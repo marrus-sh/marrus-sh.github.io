@@ -60,9 +60,9 @@
 		</front>
 		<body xml:id="text">
 			<p><q type="spoken">Zzzzzt!</q></p>
-			<p>I was at Pot’s house when I heard that sound. Pot lives on 635 Magic St<pc>.</pc> Mode Lake, Rin. Pot lives in the planet Magiclanoid and the country Maglanond. Anyway, the sound <del>was</del> came from Pot’s machine. He had switched our bodys<pc rend="terminal">!</pc> Pot puts it in reverse and pulls the lever. Nothing happens.</p>
+			<p>I was at Pot’s house when I heard that sound. Pot lives on 635 Magic St<pc>.</pc> Mode Lake, Rin. Pot lives in the planet Magiclanoid and the country Maglanond. Anyway, the sound <del>was</del> came from Pot’s machine. He had switched our bodys<pc type="terminal">!</pc> Pot puts it in reverse and pulls the lever. Nothing happens.</p>
 			<p>Then Pot tries again, nothing happens. Tally comes over with harry. we dicide to build a machine to reverse us back into our normal bodys. We finish and try it but it doesn’t work either.</p>
-			<p>After that, We checked the first machine to make sure it was okay. <q type="spoken">Of course!</q> I said. <q type="spoken">We have to turn the machine on forward and then pull the lever!</q><pc rend="terminal"/> We try and it works!</p>
+			<p>After that, We checked the first machine to make sure it was okay. <q type="spoken">Of course!</q> I said. <q type="spoken">We have to turn the machine on forward and then pull the lever!</q><pc type="terminal"/> We try and it works!</p>
 			<p>It sure felt good to be in my own body. I won’t mess around with machines anymore. I know that!</p>
 		</body>
 	</text>
