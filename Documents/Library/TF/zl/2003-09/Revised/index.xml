@@ -1,3 +1,4 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
 <?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
 <?xml-stylesheet type="text/css" href='data:text/css,
 *.tei.text *.tei.front,*.tei.text *.tei.body,*:root *.tei.text *.tei.div{ Margin-Block: 0; Padding: 0; Font-Family: Helvetica, Sans-Serif; Font-Weight: Bold; Hyphens: None }
@@ -6,8 +7,9 @@
 *.tei.text *.tei.pb::before{ Color: Inherit; Font: Inherit; Content: Attr(data--t-e-i_n) }
 *.tei.text *.tei.front *{ Margin: 0; Border: None; Font: Inherit; Text-Transform: None }
 *.tei.text *.tei.body::before{ Content: None }
+*.tei.text *.tei.div:Not([data--t-e-i_type=letter])+*.tei.div:Not([data--t-e-i_type=letter]){ Margin-Block-Start: 1.5EM }
 *.tei.text *.tei.div[data--t-e-i_type=prologue]{ Font-Style: Italic }
-*.tei.text *.tei.div[data--t-e-i_type=letter]{ Margin-Block: 0; Padding-Inline: 1.5EM 0; Font-Size: Smaller; Font-Family: Zapfino, Cursive; Line-Height: 1.75REM }
+*.tei.text *.tei.div[data--t-e-i_type=letter]{ Padding-Inline: 1.5EM 0; Font-Size: Smaller; Font-Family: Zapfino, Cursive; Line-Height: 1.75REM }
 *.tei.text *.tei.div[data--t-e-i_type=letter] *.tei.p{ Text-Indent: 3EM }
 *.tei.text *.tei.div[data--t-e-i_type=letter] *.tei.closer{ Margin-Inline: Auto 0; Max-Inline-Size: Max-Content; Text-Align: Start }
 *.tei.text *.tei.div[data--t-e-i_type=letter] *.signed{ Text-Align: Inherit }
@@ -32,7 +34,7 @@
 *.tei.mentioned.literal::before{ Content: "‹ " }
 *.tei.mentioned.literal::after{ Content: " ›" }
 '?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
@@ -104,9 +106,11 @@
 					<p>Then Tally went to work on his potions<pc>.</pc> That’s how the day passed<pc>.</pc></p>
 				</div>
 			</div>
-			<div id="II">
+			<div xml:id="II">
 				<head n="II">The Next Chapter</head>
-				<p xml:space="preserve">Tally was ready for his test<pc type="terminal">.</pc> He had all day to complete it, but only one day<pc>.</pc> The tests were passed out, and Tally suddenly had an idea<pc type="terminal">.</pc> He pretended the questions were problems that he had to solve in order to make a recipe for a potion<pc>.</pc> He zipped through the test, handed it in, and went home<pc>.</pc> He couldn’t wait until tomorrow<pc>.</pc> Then he would get his grades and see if (which he doubted) he was a wizard<pc>.</pc> The next day, grade day, he didn’t receive a paper<pc>.</pc> He was not excused from class,  so he remained in his seat as everyone else left<pc type="terminal">.</pc> hen the room had emptied, the teacher privately gave him his letter<pc>.</pc> It read:</p>
+				<div>
+					<p xml:space="preserve">Tally was ready for his test<pc type="terminal">.</pc> He had all day to complete it, but only one day<pc>.</pc> The tests were passed out, and Tally suddenly had an idea<pc type="terminal">.</pc> He pretended the questions were problems that he had to solve in order to make a recipe for a potion<pc>.</pc> He zipped through the test, handed it in, and went home<pc>.</pc> He couldn’t wait until tomorrow<pc>.</pc> Then he would get his grades and see if (which he doubted) he was a wizard<pc>.</pc> The next day, grade day, he didn’t receive a paper<pc>.</pc> He was not excused from class,  so he remained in his seat as everyone else left<pc type="terminal">.</pc> hen the room had emptied, the teacher privately gave him his letter<pc>.</pc> It read:</p>
+				</div>
 				<div type="letter">
 					<opener>
 						<salute>Tally,</salute>
@@ -117,18 +121,20 @@
 						<signed>Mike</signed>
 					</closer>
 				</div>
-				<p xml:space="preserve"><q type="spoken">Mom I’m a wizard, and Mike signed the note himself!</q> Tally exclaimed upon arriving home<pc type="terminal">.</pc> </p>
-				<p xml:space="preserve"><q type="spoken">That’s great, son,</q> said his mom<pc type="terminal">.</pc> </p>
-				<p>Tally sighed<pc type="terminal">.</pc> Moms were not the type of people to tell good news to<pc type="terminal">.</pc> The next day Tally received a note telling him where to go for school<pc type="terminal">.</pc> Once he reprogrammed the computer of his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc></abbr> <expan>underground transportation vehicle</expan> with the directions to the new school, he wondered what to do next<pc>.</pc> He got an idea<pc>.</pc> First he left a note on his mom’s desk, and then he got in his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc></abbr> Tally smiled<pc>.</pc> It was time to have fun<pc>.</pc> It was time for a sneak peek at school<pc>.</pc></p>
+				<div>
+					<p xml:space="preserve"><q type="spoken">Mom I’m a wizard, and Mike signed the note himself!</q> Tally exclaimed upon arriving home<pc type="terminal">.</pc> </p>
+					<p xml:space="preserve"><q type="spoken">That’s great, son,</q> said his mom<pc type="terminal">.</pc> </p>
+					<p>Tally sighed<pc type="terminal">.</pc> Moms were not the type of people to tell good news to<pc type="terminal">.</pc> The next day Tally received a note telling him where to go for school<pc type="terminal">.</pc> Once he reprogrammed the computer of his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc></abbr> <expan>underground transportation vehicle</expan> with the directions to the new school, he wondered what to do next<pc>.</pc> He got an idea<pc>.</pc> First he left a note on his mom’s desk, and then he got in his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc></abbr> Tally smiled<pc>.</pc> It was time to have fun<pc>.</pc> It was time for a sneak peek at school<pc>.</pc></p>
+				</div>
 			</div>
-			<div id="III">
+			<div xml:id="III">
 				<head n="III">A sneak peak at school<lb/>(otherwise known as the super short chapter)</head>
 				<p>Tally pressed a newly installed button that was marked W<pc>.</pc> He was soon at his new school, which had the appearance of three mountains<pc>.</pc> He was just about to enter when he heard someone speak.</p>
 				<p><q type="spoken">Stop<pc>.</pc></q></p>
 				<p xml:space="preserve">He turned around and saw someone dressed in black standing behind him<pc>.</pc> </p>
 				<p><q type="spoken">Let’s talk this over in the <abbr type="acronym">SSS</abbr></q>, said the man in black<pc type="terminal">.</pc> <q type="spoken">Follow me</q><pc>.</pc></p>
 			</div>
-			<div id="IV">
+			<div xml:id="IV">
 				<head n="IV">The SSS</head>
 				<p>At the <abbr type="acronym">SSS</abbr> they went to the New Food Store (<abbr type="acronym">NFS</abbr>)<pc>.</pc> <q type="spoken">From now on you will be spending all your free time putting <abbr type="acronym">C<pc>.</pc>B<pc>.</pc></abbr> dates on our liqui‐food<pc>.</pc> Now is the perfect time to start,</q> the man said<pc>.</pc> There was one other person there, doing the same job<pc>.</pc></p>
 				<p><q type="spoken">How’d you get yourself in trouble?</q> asked the other boy<pc>.</pc></p>
@@ -139,11 +145,11 @@
 				<p><q type="spoken" rend="badendquote">You put in too much sugar cane</q>, Tally responded. <q type="spoken">By the way the name is Tally. Tally Magiczl<pc>.</pc></q></p>
 				<p><q type="spoken">Name’s Patrick, but everyone calls me Pot, because I like to cook</q> said the other boy<pc type="terminal">.</pc> From then until Tally’s duty day (really his double duty day) Tally put <abbr type="acronym">C<pc>.</pc>B<pc>.</pc></abbr> days on the liqui‐food containers<pc>.</pc> No matter what happened Tally dreaded his double‐duty day<pc>.</pc></p>
 			</div>
-			<div id="V">
+			<div xml:id="V">
 				<head n="V">The double duty Day <lb/>(The shortest chapter)</head>
 				<p>On his first duty day (also known as the first day of school) Tally went straight to the headmaster’s office<pc>.</pc> The headmaster was the same person as the guy dressed in black<pc>.</pc> He sat waiting for Tally. <q type="spoken">You will be making liqui‐food</q> he told Tally.</p>
 			</div>
-			<div id="VI">
+			<div xml:id="VI">
 				<head n="VI">His Double duty month <lb/>(the longest chapter)</head>
 				<p><q type="spoken">You shall have all other duties removed and, for the rest of the month you shall do your duty</q>, said the headmaster<pc>.</pc> <q type="spoken">Now go</q><pc>.</pc></p>
 				<p xml:space="preserve">Tally left and immediately went to the <abbr type="acronym">SSS</abbr> where he began to work<pc>.</pc> Pot was there too, although he was in the testing factory<pc type="terminal">.</pc> Tally gave the liqui‐food to Pot who put it in a sea serpent stew, and if the stew turned yellow, then the food passed the test<pc>.</pc> Then Pot gave it to Code, who was in the separating area, who separated the stew and the liqui‐food<pc type="terminal">.</pc> Next Code passed it to Jordan who packaged it<pc type="terminal">.</pc> </p>
@@ -156,24 +162,26 @@
 				<p><q type="spoken">Yeah</q>, said Code<pc>.</pc></p>
 				<p>Code passed him some <soCalled>Wakes the Dead</soCalled> dripping tape<pc>.</pc> Jordan put it on<pc>.</pc> The <soCalled>Wakes the dead</soCalled> formula dripped onto the three headed snake and <soCalled>Woke the Dead</soCalled><pc type="terminal">!!!</pc> The stupid, slimy, stinky, scaly, super‐powered, silly sea serpent was alive<pc>.</pc></p>
 			</div>
-			<div id="VII">
+			<div xml:id="VII">
 				<head n="VII">The Stupid, Slimy, Stinky, Scaly, Super‐powered, Silly Sea Serpent was Alive</head>
 				<p>The box rumbled<pc>.</pc> Then it burst open and a stupid, slimy, stinky, scaly, super‐powered, silly, sea serpent with three heads crawled out of the box<pc>.</pc> Tally gulped<pc>.</pc> He put the sea serpent in the box and wrote on it:</p>
-				<address>
-					<addrLine>To<pc type="terminal">:</pc> Jordan Mode</addrLine>
-					<addrLine>9999 Shorecurve</addrLine>
-					<addrLine>Wiscoming<pc type="terminal"/> 100‐900</addrLine>
-				</address>
+				<p>
+					<address>
+						<addrLine>To<pc type="terminal">:</pc> Jordan Mode</addrLine>
+						<addrLine>9999 Shorecurve</addrLine>
+						<addrLine>Wiscoming<pc type="terminal"/> 100‐900</addrLine>
+					</address>
+				</p>
 				<p rend="noindent">He mailed it to Jordan, because he didn’t like him<pc>.</pc> Tally got refills on liqui‐food ingredients, and went home<pc>.</pc> He then built a <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc>II</abbr> tunnel that would take him to Jordan’s house<pc type="terminal">.</pc> He wanted to be there when Jordan got the package<pc>.</pc></p>
 				<p>Tally got into his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc>II</abbr> but accidentally pressed <abbr type="acronym">SSS</abbr> instead<pc type="terminal">.</pc><pc type="terminal"/><pc type="terminal"/> When he arrived, he got out of the <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc>II</abbr>, and it’s doors locked<pc>.</pc> He was inside the <abbr type="acronym">SSS</abbr>, and although he tried to get out, all of the <abbr type="acronym">SSS</abbr>’s doors were sealed<pc>.</pc> Tally sighed<pc>.</pc> It was time for some serious potion making<pc>.</pc></p>
 			</div>
-			<div id="VIII">
+			<div xml:id="VIII">
 				<head n="VIII">Some Serious Potion Making</head>
 				<p>In the kitchen, Tally mixed O‐Jell with Rustifier and poured it on the doors of the SSS<pc>.</pc> The Rustifier rusted the doors while the O‐Jell took off the rust<pc>.</pc> The doors rusted away<pc>.</pc> Tally looked through the doorway and saw wood<pc>.</pc> Tally had forgotten all about the emergency wood panels<pc>.</pc> The fact that they were out meant that there must have been something wrong inside of the building<pc>.</pc></p>
 				<p><q type="spoken"> Hissssssssssssssssss…</q></p>
 				<p>Tally turned around and saw the sea serpent<pc>.</pc> Its hiss seemed to last forever<pc>.</pc> Tally ran, but the sea serpent caught up with him<pc>.</pc> He remembered that it was sense strengthened, and knew what he had to do<pc>.</pc> He made tons of noise<pc>.</pc> The snake, terrified of the racket that was vibrating in his head, shrank back<pc>.</pc> Tally threw his pocketknife at the snake<pc>.</pc> The snake tried to dodge it, but it hit him square in the forehead<pc>.</pc> It fell down dead<pc type="terminal">.</pc> Tally smiled<pc>.</pc> One down, zero to go<pc>.</pc></p>
 			</div>
-			<div id="IX">
+			<div xml:id="IX">
 				<head n="IX">The End…?</head>
 				<p>People burst the wooden door seal open and saw Tally, holding his pocketknife, and the sea serpent, covered with blood, against the wall<pc>.</pc></p>
 				<p><q type="spoken">What happened?</q> asked the other people<pc>.</pc></p>

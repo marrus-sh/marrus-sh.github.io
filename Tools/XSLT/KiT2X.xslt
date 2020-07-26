@@ -1321,7 +1321,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:del>
 		<!-- [[ CSS: ]]
-*.tei.gap{ Display: Inline; Font-Size: Smaller; Text-Decoration: None }
+*.tei.gap{ Display: Inline; Color: Var(\2D-GreyText); Font-Size: Smaller; Text-Decoration: None }
 -->
 	</template>
 	<template match="tei:desc">
@@ -2056,13 +2056,24 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		</html:span>
 	</template>
 	<template match="tei:address">
-		<html:address>
-			<call-template name="handle-id"/>
-			<call-template name="handle-tei"/>
-			<apply-templates/>
-		</html:address>
+		<choose>
+			<when test="ancestor::tei:p or ancestor::tei:lg">
+				<html:span>
+					<call-template name="handle-id"/>
+					<call-template name="handle-tei"/>
+					<apply-templates/>
+				</html:span>
+			</when>
+			<otherwise>
+				<html:address>
+					<call-template name="handle-id"/>
+					<call-template name="handle-tei"/>
+					<apply-templates/>
+				</html:address>
+			</otherwise>
+		</choose>
 		<!-- [[ CSS: ]]
-*.tei.address{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Padding-Inline: .3EM; Max-Inline-Size: Max-Content; Font-Style: Inherit; Text-Align: Start; Text-Align-Last: Auto }
+*.tei.address{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Padding-Inline: 3EM; Max-Inline-Size: Max-Content; Font-Style: Inherit; Text-Align: Start; Text-Align-Last: Auto }
 -->
 	</template>
 	<template match="tei:addrLine">

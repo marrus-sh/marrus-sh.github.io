@@ -1,3 +1,4 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
 <?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
 <?xml-stylesheet type="text/css" href='data:text/css,
 *.tei.front,*.tei.body,*:root:root:root *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
@@ -17,7 +18,7 @@
 *.tei.mentioned.literal::before{ Content: "‹ " }
 *.tei.mentioned.literal::after{ Content: " ›" }
 '?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
