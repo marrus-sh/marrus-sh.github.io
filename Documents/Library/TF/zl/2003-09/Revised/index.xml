@@ -1,0 +1,185 @@
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text *.tei.front,*.tei.text *.tei.body,*:root *.tei.text *.tei.div{ Margin-Block: 0; Padding: 0; Font-Family: Helvetica, Sans-Serif; Font-Weight: Bold; Hyphens: None }
+*.tei.text *.tei.front{ Font-Style: Italic; Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
+*.tei.text *.tei.pb{ Font-Family: Helvetica, Serif; Font-Style: Normal; Font-Weight: Bold; Line-Height: 1.5EM } /* Serif is the fallback here to distinguish from *.tei.q[data--t-e-i_type=written].black */
+*.tei.text *.tei.pb::before{ Color: Inherit; Font: Inherit; Content: Attr(data--t-e-i_n) }
+*.tei.text *.tei.front *{ Margin: 0; Border: None; Font: Inherit; Text-Transform: None }
+*.tei.text *.tei.body::before{ Content: None }
+*.tei.text *.tei.div[data--t-e-i_type=prologue]{ Font-Style: Italic }
+*.tei.text *.tei.div[data--t-e-i_type=letter]{ Margin-Block: 0; Padding-Inline: 1.5EM 0; Font-Size: Smaller; Font-Family: Zapfino, Cursive; Line-Height: 1.75REM }
+*.tei.text *.tei.div[data--t-e-i_type=letter] *.tei.p{ Text-Indent: 3EM }
+*.tei.text *.tei.div[data--t-e-i_type=letter] *.tei.closer{ Margin-Inline: Auto 0; Max-Inline-Size: Max-Content; Text-Align: Start }
+*.tei.text *.tei.div[data--t-e-i_type=letter] *.signed{ Text-Align: Inherit }
+*:root:root:root *.tei.text *.tei.head{ Margin-Block: 1.5REM; Font: Inherit }
+*.tei.text *.tei.head[data--t-e-i_n]::before{ Font: Inherit; Text-Decoration: None }
+*:root:root:root *.tei.text *.tei.head:Not([data--t-e-i_n]){ Font-Size: Larger; Text-Transform: Uppercase }
+*.tei.text *.tei.trailer{ Font-Variant-Caps: Inherit; Text-Align: Start }
+*.tei.text *.tei.address{ Margin-Block: 1.5EM }
+*.tei.text *.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
+*.tei.text *.tei.p.noindent{ Text-Indent: 0 }
+*.tei.text *.tei.pc[data--t-e-i_type=terminal]::after{ White-Space: Break-Spaces; Content: " " }
+*.tei.text *.tei.q[data--t-e-i_type=spoken]::before,*.tei.text *.tei.mentioned::before,*.tei.text *.tei.q.badendquote[data--t-e-i_type=spoken]::after{ Content: "“" }
+*.tei.text *.tei.q.badstartquote[data--t-e-i_type=spoken]::before,*.tei.text *.tei.q[data--t-e-i_type=spoken]::after,*.tei.text *.tei.mentioned::after{ Content: "”" }
+*.tei.text *.tei.q.halfstartquote[data--t-e-i_type=spoken]::after{ Content: "‘" }
+*.tei.text *.tei.q.halfendquote[data--t-e-i_type=spoken]::after{ Content: "’" }
+*.tei.text *.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
+*.tei.text *.tei.q[data--t-e-i_type=written]::before,*.tei.text *.tei.q[data--t-e-i_type=written]::after{ Display: None }
+*.tei.text *.tei.q.black[data--t-e-i_type=written]{ Font-Family: Arial Black, Sans-Serif }
+*.tei.text *.tei.q.script[data--t-e-i_type=written]{ Font-Family: Apple Chancery, Cursive }
+*.tei.text *.tei.abbr[data--t-e-i_type=acronym]{ Font-Variant-Caps: Inherit }
+*.tei.text *.tei.expan{ Font-Size: Inherit }
+*.tei.mentioned.literal::before{ Content: "‹ " }
+*.tei.mentioned.literal::after{ Content: " ›" }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Tally Magiczl</title>
+				<author><name>TF</name><note>Not moniker recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition>Revised draft, <date when="2012-01-15">January 15, 2012</date><lb/><idno type="URI">tag:marrus.xyz,2016:bns::zl:2003-09:Revised</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+			</publicationStmt>
+			<notesStmt>
+				<note anchored="false">
+					<p>Revisions mostly constitute orthographic normalization and minor changes in phrasing compared to the original version.</p>
+				</note>
+			</notesStmt>
+			<sourceDesc>
+				<p>Born digital. Source is a Rich Text Format file.</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names has been made, as they received no special treatment in the source. Mistakes in source left as written.</p>
+				<p>Author’s name and other potentially identifying information has been redacted using <gi>gap</gi>.</p>
+				<p>Hyphens have been normalized from hyphen‐dashes to <mentioned rend="literal"><pc>‐</pc></mentioned>. Punctuation followed by two spaces are marked as terminal; all other punctuation is recorded as non‐terminal (even when the intention is clearly to end a sentence).</p>
+				<p>Source text is split up into multiple chapters, each potentially containing multiple sections. These have been encoded with <gi>div</gi>. When a section ends immediately prior to a page beginning, it is somewhat ambiguous in the source.</p>
+				<p>Quotation marks are not always matched properly; <val>badstartquote</val> and <val>badendquote</val>, as values of the <att>rend</att> attribute, indicate incorrect starting and ending marks, respectively.</p>
+				<p>Every chapter begins on a new page in the source; otherwise, page numbers are not marked.</p>
+				<p>Linebreaks within paragraphs are preserved. When these occur before a <gi>pb</gi>, the linebreak was a consequence of page numbering.</p>
+			</editorialDecl>
+		</encodingDesc>
+	</teiHeader>
+	<text>
+		<front>
+			<docAuthor><gap reason="editorial"><desc>author name</desc></gap></docAuthor>
+			<docDate when="2012-01-15">9/29/03 (Revised 1/15/12)</docDate>
+			<docTitle>
+				<titlePart>Tally Magiczl</titlePart>
+			</docTitle>
+		</front>
+		<body xml:id="text">
+			<div type="prologue" xml:id="prologue">
+				<head>Prologue</head>
+				<p>This story takes place in the future, year 6060, at a time when humans are struggling to survive<pc type="terminal">.</pc> All children are required to take tests, those that score highly are chosen to become wizards<pc type="terminal">.</pc> Most wizards come from parents who are also wizards, but occasionally wizards were chosen from non‐wizard families<pc type="terminal">.</pc> This is a story about one of those very <soCalled>special</soCalled> kids<pc>…………………………….</pc></p>
+			</div>
+			<div xml:id="I">
+				<head n="I">Chapter one</head>
+				<div>
+					<p xml:space="preserve">In order to understand this tale, one must first understand the meaning of the word <mentioned>wizard</mentioned>, as it is used here<pc>.</pc> A wizard is a highly intelligent human<pc>.</pc> Wizards have a great deal of power and privileges not granted to ordinary citizens<pc type="terminal">.</pc> The main character of this story, a young boy named Tally, has coffee dark brown ‐ hair, emerald green eyes, a scar, and always wears a necklace with a pearl white stone on it<pc type="terminal">.</pc> But enough of that; to the story<pc>:</pc> </p>
+				</div>
+				<div>
+					<p><q type="spoken">Owww!</q></p>
+					<p>Tally jumped up and down holding his foot<pc>.</pc> He had stubbed his toe on his green stone science table<pc>.</pc> Angry, he kicked the table over and jumped some more<pc>.</pc> He noticed none of his metal vials had moved off the table in which he had kicked over, and none of the potions in those vials had spilled out<pc>.</pc></p>
+					<p><q type="spoken">It worked!</q> yelled Tally<pc>.</pc></p>
+					<p>He moved forward<pc type="terminal">.</pc> <q type="spoken">Owwwwwwww!!!</q></p>
+					<p xml:space="preserve">Tally's foot filled with pain<pc type="terminal">.</pc> He had been working on a potion to made things stick together<pc type="terminal">.</pc> He had previously applied some on his vials, and to see it work filled him with joy<pc type="terminal">.</pc> He was glad that none of his potions were ruined<pc type="terminal">.</pc> </p>
+					<p><q type="spoken">Time for school,</q> his mother yelled<pc>.</pc></p>
+					<p><q type="spoken">Just a little longer,</q> said Tally<pc type="terminal">.</pc><q type="spoken">I’m going my way<pc>.</pc></q></p>
+					<p>Tally’s way was underground transportation<pc>.</pc> One might think that Tally would get straight A’s, because of his creations, but he could barely make straight C’s<pc type="terminal">.</pc> He flunked twice<pc>.</pc> He wanted to get a wizard’s degree in potion making, but he knew he couldn’t do it<pc type="terminal">.</pc></p>
+					<p>At school, it was grade day, so the day hardly had a minute of school in it<pc>.</pc> The teacher handed grades out, said <q type="spoken" rend="badstartquote">You may go now</q> and then school was out<pc>.</pc></p>
+					<p xml:space="preserve">After he was dismissed Tally went home<pc>.</pc> </p>
+					<p><q type="spoken">Mom, I passed,</q> Tally said<pc>.</pc></p>
+					<p><q type="spoken">Very good,</q> said his mom<pc>.</pc></p>
+					<p>Then Tally went to work on his potions<pc>.</pc> That’s how the day passed<pc>.</pc></p>
+				</div>
+			</div>
+			<div id="II">
+				<head n="II">The Next Chapter</head>
+				<p xml:space="preserve">Tally was ready for his test<pc type="terminal">.</pc> He had all day to complete it, but only one day<pc>.</pc> The tests were passed out, and Tally suddenly had an idea<pc type="terminal">.</pc> He pretended the questions were problems that he had to solve in order to make a recipe for a potion<pc>.</pc> He zipped through the test, handed it in, and went home<pc>.</pc> He couldn’t wait until tomorrow<pc>.</pc> Then he would get his grades and see if (which he doubted) he was a wizard<pc>.</pc> The next day, grade day, he didn’t receive a paper<pc>.</pc> He was not excused from class,  so he remained in his seat as everyone else left<pc type="terminal">.</pc> hen the room had emptied, the teacher privately gave him his letter<pc>.</pc> It read:</p>
+				<div type="letter">
+					<opener>
+						<salute>Tally,</salute>
+					</opener>
+					<p>You have passed the test, so other grades do not matter. Congratulations Wizard<pc>.</pc></p>
+					<closer>
+						<salute xml:space="preserve">Signed<pc type="terminal">,</pc> </salute>
+						<signed>Mike</signed>
+					</closer>
+				</div>
+				<p xml:space="preserve"><q type="spoken">Mom I’m a wizard, and Mike signed the note himself!</q> Tally exclaimed upon arriving home<pc type="terminal">.</pc> </p>
+				<p xml:space="preserve"><q type="spoken">That’s great, son,</q> said his mom<pc type="terminal">.</pc> </p>
+				<p>Tally sighed<pc type="terminal">.</pc> Moms were not the type of people to tell good news to<pc type="terminal">.</pc> The next day Tally received a note telling him where to go for school<pc type="terminal">.</pc> Once he reprogrammed the computer of his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc></abbr> <expan>underground transportation vehicle</expan> with the directions to the new school, he wondered what to do next<pc>.</pc> He got an idea<pc>.</pc> First he left a note on his mom’s desk, and then he got in his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc></abbr> Tally smiled<pc>.</pc> It was time to have fun<pc>.</pc> It was time for a sneak peek at school<pc>.</pc></p>
+			</div>
+			<div id="III">
+				<head n="III">A sneak peak at school<lb/>(otherwise known as the super short chapter)</head>
+				<p>Tally pressed a newly installed button that was marked W<pc>.</pc> He was soon at his new school, which had the appearance of three mountains<pc>.</pc> He was just about to enter when he heard someone speak.</p>
+				<p><q type="spoken">Stop<pc>.</pc></q></p>
+				<p xml:space="preserve">He turned around and saw someone dressed in black standing behind him<pc>.</pc> </p>
+				<p><q type="spoken">Let’s talk this over in the <abbr type="acronym">SSS</abbr></q>, said the man in black<pc type="terminal">.</pc> <q type="spoken">Follow me</q><pc>.</pc></p>
+			</div>
+			<div id="IV">
+				<head n="IV">The SSS</head>
+				<p>At the <abbr type="acronym">SSS</abbr> they went to the New Food Store (<abbr type="acronym">NFS</abbr>)<pc>.</pc> <q type="spoken">From now on you will be spending all your free time putting <abbr type="acronym">C<pc>.</pc>B<pc>.</pc></abbr> dates on our liqui‐food<pc>.</pc> Now is the perfect time to start,</q> the man said<pc>.</pc> There was one other person there, doing the same job<pc>.</pc></p>
+				<p><q type="spoken">How’d you get yourself in trouble?</q> asked the other boy<pc>.</pc></p>
+				<p><q type="spoken">Tried to get a sneak peek at school,</q> Tally answered. <q type="spoken"> How ‘bout you?</q></p>
+				<p><q type="spoken">Accidentally made a potion that made things yell insults,</q> the other boy responded<pc>.</pc></p>
+				<p><q type="spoken">What potion was it?</q> Tally asked<pc>.</pc></p>
+				<p><q type="spoken">Slime Repellent</q>, the other boy replied<pc>.</pc></p>
+				<p><q type="spoken" rend="badendquote">You put in too much sugar cane</q>, Tally responded. <q type="spoken">By the way the name is Tally. Tally Magiczl<pc>.</pc></q></p>
+				<p><q type="spoken">Name’s Patrick, but everyone calls me Pot, because I like to cook</q> said the other boy<pc type="terminal">.</pc> From then until Tally’s duty day (really his double duty day) Tally put <abbr type="acronym">C<pc>.</pc>B<pc>.</pc></abbr> days on the liqui‐food containers<pc>.</pc> No matter what happened Tally dreaded his double‐duty day<pc>.</pc></p>
+			</div>
+			<div id="V">
+				<head n="V">The double duty Day <lb/>(The shortest chapter)</head>
+				<p>On his first duty day (also known as the first day of school) Tally went straight to the headmaster’s office<pc>.</pc> The headmaster was the same person as the guy dressed in black<pc>.</pc> He sat waiting for Tally. <q type="spoken">You will be making liqui‐food</q> he told Tally.</p>
+			</div>
+			<div id="VI">
+				<head n="VI">His Double duty month <lb/>(the longest chapter)</head>
+				<p><q type="spoken">You shall have all other duties removed and, for the rest of the month you shall do your duty</q>, said the headmaster<pc>.</pc> <q type="spoken">Now go</q><pc>.</pc></p>
+				<p xml:space="preserve">Tally left and immediately went to the <abbr type="acronym">SSS</abbr> where he began to work<pc>.</pc> Pot was there too, although he was in the testing factory<pc type="terminal">.</pc> Tally gave the liqui‐food to Pot who put it in a sea serpent stew, and if the stew turned yellow, then the food passed the test<pc>.</pc> Then Pot gave it to Code, who was in the separating area, who separated the stew and the liqui‐food<pc type="terminal">.</pc> Next Code passed it to Jordan who packaged it<pc type="terminal">.</pc> </p>
+				<p xml:space="preserve">One day Tally accidentally knocked over his shelf of ingredients and all except one thing fell in the potion<pc>.</pc> Tally read the remaining bottle’s label<pc>.</pc> It read<pc type="terminal">:</pc> <q type="written" rend="black">Transforming vial one<pc type="terminal">.</pc></q> The top read: <q type="written" rend="script">Strength and sense adding juice<pc type="terminal">.</pc> Use in emergencies only<pc type="terminal">.</pc> Dyes Yellow<pc>.</pc> </q></p>
+				<p>Tally gulped, but passed the container of liqui‐food to Pot<pc>.</pc> Pot poured in the liqui‐food in to the stew<pc>.</pc> <q type="spoken" rend="halfendquote">Hey, Tally, have any yellow food coloring?</q> asked Pot<pc>.</pc></p>
+				<p>This is an emergency thought Tally as he passed over the container<pc>.</pc> <q type="spoken">It was mislabeled</q>, he lied<pc>.</pc></p>
+				<p>Pot poured in the juice<pc>.</pc> <q type="spoken">Thanks,</q> he said<pc>.</pc> Pot passed the stew to Code<pc>.</pc> Code asked Pot if he had any green dye, and Pot reached for the green dye but grabbed slime instead<pc>.</pc> He passed the slime to Code<pc>.</pc> Code poured in the slime and separated the two foods<pc>.</pc> He passed both foods to Jordan<pc>.</pc> Jordan packaged them<pc>.</pc></p>
+				<p>What no one knew was this chain of mistakes caused a sea serpent in the stew to mutate and grow three heads<pc>.</pc> It also had six very strong senses<pc>.</pc> The only thing stopping it was the fact that it was dead<pc>.</pc></p>
+				<p><q type="spoken">Hey do you have any tape?</q> asked Jordan<pc>.</pc></p>
+				<p><q type="spoken">Yeah</q>, said Code<pc>.</pc></p>
+				<p>Code passed him some <soCalled>Wakes the Dead</soCalled> dripping tape<pc>.</pc> Jordan put it on<pc>.</pc> The <soCalled>Wakes the dead</soCalled> formula dripped onto the three headed snake and <soCalled>Woke the Dead</soCalled><pc type="terminal">!!!</pc> The stupid, slimy, stinky, scaly, super‐powered, silly sea serpent was alive<pc>.</pc></p>
+			</div>
+			<div id="VII">
+				<head n="VII">The Stupid, Slimy, Stinky, Scaly, Super‐powered, Silly Sea Serpent was Alive</head>
+				<p>The box rumbled<pc>.</pc> Then it burst open and a stupid, slimy, stinky, scaly, super‐powered, silly, sea serpent with three heads crawled out of the box<pc>.</pc> Tally gulped<pc>.</pc> He put the sea serpent in the box and wrote on it:</p>
+				<address>
+					<addrLine>To<pc type="terminal">:</pc> Jordan Mode</addrLine>
+					<addrLine>9999 Shorecurve</addrLine>
+					<addrLine>Wiscoming<pc type="terminal"/> 100‐900</addrLine>
+				</address>
+				<p rend="noindent">He mailed it to Jordan, because he didn’t like him<pc>.</pc> Tally got refills on liqui‐food ingredients, and went home<pc>.</pc> He then built a <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc>II</abbr> tunnel that would take him to Jordan’s house<pc type="terminal">.</pc> He wanted to be there when Jordan got the package<pc>.</pc></p>
+				<p>Tally got into his <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc>II</abbr> but accidentally pressed <abbr type="acronym">SSS</abbr> instead<pc type="terminal">.</pc><pc type="terminal"/><pc type="terminal"/> When he arrived, he got out of the <abbr type="acronym">U<pc>.</pc>T<pc>.</pc>V<pc>.</pc>II</abbr>, and it’s doors locked<pc>.</pc> He was inside the <abbr type="acronym">SSS</abbr>, and although he tried to get out, all of the <abbr type="acronym">SSS</abbr>’s doors were sealed<pc>.</pc> Tally sighed<pc>.</pc> It was time for some serious potion making<pc>.</pc></p>
+			</div>
+			<div id="VIII">
+				<head n="VIII">Some Serious Potion Making</head>
+				<p>In the kitchen, Tally mixed O‐Jell with Rustifier and poured it on the doors of the SSS<pc>.</pc> The Rustifier rusted the doors while the O‐Jell took off the rust<pc>.</pc> The doors rusted away<pc>.</pc> Tally looked through the doorway and saw wood<pc>.</pc> Tally had forgotten all about the emergency wood panels<pc>.</pc> The fact that they were out meant that there must have been something wrong inside of the building<pc>.</pc></p>
+				<p><q type="spoken"> Hissssssssssssssssss…</q></p>
+				<p>Tally turned around and saw the sea serpent<pc>.</pc> Its hiss seemed to last forever<pc>.</pc> Tally ran, but the sea serpent caught up with him<pc>.</pc> He remembered that it was sense strengthened, and knew what he had to do<pc>.</pc> He made tons of noise<pc>.</pc> The snake, terrified of the racket that was vibrating in his head, shrank back<pc>.</pc> Tally threw his pocketknife at the snake<pc>.</pc> The snake tried to dodge it, but it hit him square in the forehead<pc>.</pc> It fell down dead<pc type="terminal">.</pc> Tally smiled<pc>.</pc> One down, zero to go<pc>.</pc></p>
+			</div>
+			<div id="IX">
+				<head n="IX">The End…?</head>
+				<p>People burst the wooden door seal open and saw Tally, holding his pocketknife, and the sea serpent, covered with blood, against the wall<pc>.</pc></p>
+				<p><q type="spoken">What happened?</q> asked the other people<pc>.</pc></p>
+				<p><q type="spoken">I killed a stupid sea serpent,</q> answered Tally<pc>.</pc></p>
+			</div>
+			<trailer>the end</trailer>
+		</body>
+	</text>
+</TEI>

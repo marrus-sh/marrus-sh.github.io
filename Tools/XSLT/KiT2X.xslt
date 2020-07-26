@@ -89,7 +89,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 					</with-param>
 				</call-template>
 			</when>
-			<when test="ancestor-or-self::tei:abbr or ancestor-or-self::tei:code">
+			<when test="ancestor::tei:abbr or ancestor::tei:code or ancestor::tei:pc">
 				<value-of select="."/>
 			</when>
 			<otherwise>
@@ -1845,11 +1845,11 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:i>
 		<!-- [[ CSS: ]]
-*.tei.eg{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Border-Inline-Start: .5CH Solid; Padding-Inline: 1.5CH 0; Max-Inline-Size: 71CH; Overflow: Auto; Font-Style: Inherit }
+*.tei.eg{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Border-Inline-Start: .5CH Solid; Padding-Inline: 1.5CH 0; Max-Inline-Size: 71CH; Overflow: Auto; Font-Style: Inherit; Hyphens: None }
 *.tei.p>*.tei.eg,*.tei.lg>*.tei.eg{ Display: Inline; Margin: 0; Border: 0; Padding: 0 }
 *.tei.p>*.tei.eg::before,*.tei.lg>*.tei.eg::before{ Font-Variant-Caps: Normal; Content: "‹ " }
 *.tei.p>*.tei.eg::after,*.tei.lg>*.tei.eg::after{ Font-Variant-Caps: Normal; Content: " ›" }
-*.tei.formula{ Display: Inline }
+*.tei.formula{ Display: Inline; Hyphens: None }
 -->
 	</template>
 	<template match="tei:code">
@@ -1864,7 +1864,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:code>
 		<!-- [[ CSS: ]]
-*.tei.code{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Border-Inline-Start: .5CH Solid; Padding-Inline: 1.5CH 0; Max-Inline-Size: 71CH; Overflow: Auto; Font-Family: Monospace; White-Space: Break-Spaces }
+*.tei.code{ Display: Block; Margin-Block: .75EM; Margin-Inline: Auto; Border-Inline-Start: .5CH Solid; Padding-Inline: 1.5CH 0; Max-Inline-Size: 71CH; Overflow: Auto; Font-Family: Monospace; White-Space: Break-Spaces; Hyphens: None }
 *.tei.p>*.tei.code,*.tei.lg>*.tei.code{ Display: Inline; Margin: 0; Border: 0; Padding: 0 }
 -->
 	</template>
@@ -1875,7 +1875,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:var>
 		<!-- [[ CSS: ]]
-*.tei.ident{ Display: Inline; Font-Variant-Caps: Petite-Caps }
+*.tei.ident{ Display: Inline; Font-Variant-Caps: Petite-Caps; Hyphens: None }
 -->
 	</template>
 	<template match="tei:gi|tei:att">
@@ -1890,10 +1890,10 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:var>
 		<!-- [[ CSS: ]]
-*.tei.gi{ Display: Inline; Font-Style: Inherit }
+*.tei.gi{ Display: Inline; Font-Style: Inherit; Hyphens: None }
 *.tei.gi::before{ Content: "\3C" }
 *.tei.gi::after{ Content: ">" }
-*.tei.att{ Display: Inline; Font-Family: Monospace; Font-Style: Inherit }
+*.tei.att{ Display: Inline; Font-Family: Monospace; Font-Style: Inherit; Hyphens: None }
 -->
 	</template>
 	<template match="tei:val">
@@ -1903,7 +1903,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:code>
 		<!-- [[ CSS: ]]
-*.tei.val{ Display: Inline; Font-Family: Inherit; White-Space: Break-Spaces }
+*.tei.val{ Display: Inline; Font-Family: Inherit; White-Space: Break-Spaces; Hyphens: None }
 *.tei.val::before,*.tei.val::after{ Content: "\"" }
 -->
 	</template>
@@ -2252,7 +2252,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.titleStmt,*.tei.editionStmt,*.tei.publicationStmt,*.tei.seriesStmt,*.tei.notesStmt,*.tei.langUsage,*.tei.textClass{ Display: Table-Row-Group }
 *.tei.titleStmt>tr>*,*.tei.editionStmt>tr>*,*.tei.publicationStmt>tr>*,*.tei.seriesStmt>tr>*,*.tei.notesStmt>tr>*,*.tei.langUsage>tr>*,*.tei.textClass>tr>*{ Border: Thin Var(\2D-PlainText) Solid; Padding: .25EM }
-*.tei.titleStmt>tr>th,*.tei.editionStmt>tr>th,*.tei.publicationStmt>tr>th,*.tei.seriesStmt>tr>th,*.tei.notesStmt>tr>th,*.tei.langUsage>tr>th,*.tei.textClass>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
+*.tei.titleStmt>tr>th,*.tei.editionStmt>tr>th,*.tei.publicationStmt>tr>th,*.tei.seriesStmt>tr>th,*.tei.notesStmt>tr>th,*.tei.langUsage>tr>th,*.tei.textClass>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto; Hyphens: None }
 *.tei.titleStmt>tr>th[scope=rowgroup],*.tei.editionStmt>tr>th[scope=rowgroup],*.tei.publicationStmt>tr>th[scope=rowgroup],*.tei.seriesStmt>tr>th[scope=rowgroup],*.tei.notesStmt>tr>th[scope=rowgroup],*.tei.langUsage>tr>th[scope=rowgroup],*.tei.textClass>tr>th[scope=rowgroup]{ Color: Inherit; Background: Inherit; Font-Weight: Bold; Text-Align: Center; Text-Align-Last: Auto }
 *.tei.titleStmt>tr>td,*.tei.editionStmt>tr>td,*.tei.publicationStmt>tr>td,*.tei.seriesStmt>tr>td,*.tei.notesStmt>tr>td,*.tei.langUsage>tr>td,*.tei.textClass>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
 *.tei.notesStmt>tr>td>*.tei.note{ Margin: 0; Border: None; Padding: 0; Min-Block-Size: 0 }
@@ -2289,7 +2289,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.teiHeader *.tei.respStmt{ Display: Table; Inline-Size: 100%; Border-Collapse: Collapse }
 *.tei.teiHeader *.tei.respStmt>tbody>tr>*{ Border: Thin Var(\2D-PlainText) Solid; Padding: .25EM }
-*.tei.teiHeader *.tei.respStmt>tbody>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
+*.tei.teiHeader *.tei.respStmt>tbody>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto; Hyphens: None }
 *.tei.teiHeader *.tei.respStmt>tbody>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
 *.tei.teiHeader *.tei.respStmt>tbody>tr>td>*.tei.note{ Margin: 0; Border: None; Padding: 0; Min-Block-Size: 0 }
 *.tei.teiHeader *.tei.respStmt>tbody>tr>td>*.tei.note>*.tei.seg:First-Child{ Display: None }
@@ -2396,7 +2396,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			</if>
 		</html:div>
 		<!-- [[ CSS: ]]
-*.tei.taxonomy{ Display: Block; Columns: 17EM }
+*.tei.taxonomy{ Display: Block; Columns: 17EM; Hyphens: None }
 *.tei.taxonomy>ul{ Margin: 0; Padding: 0; }
 -->
 	</template>
@@ -2499,7 +2499,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			</choose>
 		</html:span>
 		<!-- [[ CSS: ]]
-*.tei.classCode{ Display: Inline }
+*.tei.classCode{ Display: Inline; Hyphens: None }
 *.tei.classCode>small{ Font-Size: Smaller }
 -->
 	</template>
@@ -2543,6 +2543,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		</html:div>
 		<!-- [[ CSS: ]]
 *.tei.keywords,*.tei.revisionDesc{ Display: Block }
+*.tei.keywords{ Hyphens: None }
 *.tei.keywords>*.tei.list{ Margin: 0 }
 *.tei.keywords>*.tei.list>ul{ Display: Block; Margin: 0 }
 *.tei.keywords>*.tei.list>ul>*.tei.item{ Display: Inline Grid; Grid-Template-Columns: Auto Auto Auto }
