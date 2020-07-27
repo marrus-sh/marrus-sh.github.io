@@ -9,7 +9,7 @@
 *:root *.tei.body::before{ Content: None }
 *:root *.tei.note{ Border: None; Padding: 0; Min-Block-Size: 0; Color: Var(--EditorialText) }
 *:root *.tei.note>*.tei.seg:First-Child{ Display: None }
-*.tei.p{ Text-Align: Start }
+*.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
 *.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
 *.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
 *.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }

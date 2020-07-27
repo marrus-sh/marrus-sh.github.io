@@ -6,7 +6,7 @@
 *.tei.front *,*:root:root:root *.tei.head{ Font: Inherit }
 *:root *.tei.body::before{ Content: None }
 *.tei.head{ Margin: 0 }
-*.tei.p{ Text-Align: Start }
+*.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
 *.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
 *.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
 *.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }

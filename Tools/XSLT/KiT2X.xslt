@@ -292,6 +292,20 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 			</attribute>
 		</if>
 	</template>
+	<template name="linkify">
+		<param name="target"/>
+		<variable name="wrappedcontents">
+			<tei:p>
+				<tei:ref target="{$target}">
+					<copy-of select="node()"/>
+				</tei:ref>
+			</tei:p>
+		</variable>
+		<variable name="wrapped">
+			<apply-templates select="exsl:node-set($wrappedcontents)"/>
+		</variable>
+		<copy-of select="exsl:node-set($wrapped)//*[contains(@class, 'ref')][1]"/>
+	</template>
 	<!-- The Structure of a TEI Text -->
 	<template match="/tei:TEI|/tei:teiCorpus">
 		<html:html>
@@ -416,10 +430,10 @@ details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader:
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
 			<html:div><apply-templates/></html:div>
-			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][ancestor::tei:p or ancestor::tei:lg][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
+			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
 				<html:footer>
 					<html:ul>
-						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][ancestor::tei:p or ancestor::tei:lg][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
+						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
 							<apply-templates select="." mode="endnotes"/>
 						</for-each>
 					</html:ul>
@@ -436,10 +450,10 @@ details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader:
 	<template match="tei:front|tei:body|tei:back">
 		<variable name="contents">
 			<html:div><apply-templates/></html:div>
-			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][ancestor::tei:p or ancestor::tei:lg][not(ancestor::tei:div)][count(current()|ancestor::tei:text[1])=1]">
+			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div)][count(current()|ancestor::tei:text[1])=1]">
 				<html:footer>
 					<html:ul>
-						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][ancestor::tei:p or ancestor::tei:lg][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
+						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
 							<apply-templates select="." mode="endnotes"/>
 						</for-each>
 					</html:ul>
@@ -524,10 +538,10 @@ span.tei.p>span:Last-Child{ Display: None }
 	<template match="tei:div">
 		<variable name="contents">
 			<html:div><apply-templates/></html:div>
-			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][ancestor::tei:p or ancestor::tei:lg][count(current()|ancestor::tei:div[1])=1]">
+			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][count(current()|ancestor::tei:div[1])=1]">
 				<html:footer>
 					<html:ul>
-						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][ancestor::tei:p or ancestor::tei:lg][count(current()|ancestor::tei:div[1])=1]">
+						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][count(current()|ancestor::tei:div[1])=1]">
 							<apply-templates select="." mode="endnotes"/>
 						</for-each>
 					</html:ul>
@@ -779,41 +793,26 @@ span.tei.lg>span:Last-Child{ Display: None }
 -->
 	</template>
 	<template match="tei:term">
-		<variable name="contents">
-			<choose>
-				<when test="@ref">
-					<tei:ref target="{@ref}">
-						<copy-of select="@*|node()"/>
-					</tei:ref>
-				</when>
-				<otherwise>
-					<copy-of select="@*|node()"/>
-				</otherwise>
-			</choose>
-		</variable>
 		<html:b>
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
-			<apply-templates select="exsl:node-set($contents)"/>
+			<choose>
+				<when test="@ref">
+					<call-template name="linkify">
+						<with-param name="target" select="@ref"/>
+					</call-template>
+				</when>
+				<otherwise>
+					<apply-templates/>
+				</otherwise>
+			</choose>
 		</html:b>
 		<!-- [[ CSS: ]]
 *.tei.term{ Display: Inline; Font-Weight: Bolder }
 -->
 	</template>
 	<template match="tei:title">
-		<variable name="contents">
-			<choose>
-				<when test="@ref">
-					<tei:ref target="{@ref}">
-						<copy-of select="@*|node()"/>
-					</tei:ref>
-				</when>
-				<otherwise>
-					<copy-of select="@*|node()"/>
-				</otherwise>
-			</choose>
-		</variable>
 		<html:cite>
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
@@ -827,7 +826,16 @@ span.tei.lg>span:Last-Child{ Display: None }
 					<value-of select="@level"/>
 				</attribute>
 			</if>
-			<apply-templates select="exsl:node-set($contents)"/>
+			<choose>
+				<when test="@ref">
+					<call-template name="linkify">
+						<with-param name="target" select="@ref"/>
+					</call-template>
+				</when>
+				<otherwise>
+					<apply-templates/>
+				</otherwise>
+			</choose>
 		</html:cite>
 		<!-- [[ CSS: ]]
 *.tei.title{ Display: Inline; Font-Style: Inherit; Font-Variant-Numeric: Proportional-Nums Lining-Nums }
@@ -840,7 +848,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 	</template>
 	<template match="tei:q">
 		<choose>
-			<when test="not(ancestor::tei:p or ancestor::tei:lg)">
+			<when test="parent::tei:cit and not(ancestor::tei:p or ancestor::tei:lg)">
 				<html:blockquote>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
@@ -897,12 +905,12 @@ span.tei.lg>span:Last-Child{ Display: None }
 *.tei.q[data\2D-t-e-i_type=spoken]+*.tei.seg.space{ Display: None }
 *.tei.q[data\2D-t-e-i_type=written]::before{ Font-Variant-Caps: Normal; Content: "« " }
 *.tei.q[data\2D-t-e-i_type=written]::after{ Font-Variant-Caps: Normal; Content: " »" }
-blockquote.tei.q{ Display: Block; Position: Relative; Margin-Block: .75EM; Margin-Inline: -.5EM; Padding-Inline: 2EM; Min-Block-Size: 3EM }
-blockquote.tei.q::before,blockquote.tei.q::after{ Display: Block; Position: Absolute; Min-Inline-Size: 1EM; Color: Var(\2D-GreyText); Font-Size: 2EM; Text-Align: Center; Text-Align-Last: Auto }
-blockquote.tei.q::before{ Inset-Block-Start: -.25EM; Inset-Inline-End: Calc(100% - 1EM) }
-blockquote.tei.q[data\2D-t-e-i_type=spoken]::before{ Content: None }
-blockquote.tei.q::after{ Inset-Block-Start: Calc(100% - 1EM); Inset-Inline-Start: Calc(100% - 1EM) }
-blockquote.tei.q *.tei.p::before,blockquote.tei.q *.tei.lg::before{ Margin-Inline-End: 2.25EM }
+*.tei.cit>*.tei.q{ Display: Block; Position: Relative; Margin-Block: .75EM; Margin-Inline: -.5EM; Padding-Inline: 2EM; Min-Block-Size: 3EM }
+*.tei.cit>*.tei.q::before,*.tei.cit>*.tei.q::after{ Display: Block; Position: Absolute; Min-Inline-Size: 1EM; Color: Var(\2D-GreyText); Font-Size: 2EM; Text-Align: Center; Text-Align-Last: Auto }
+*.tei.cit>*.tei.q::before{ Inset-Block-Start: -.25EM; Inset-Inline-End: Calc(100% - 1EM) }
+*.tei.cit>*.tei.q[data\2D-t-e-i_type=spoken]::before,*.tei.cit>*.tei.q[data\2D-t-e-i_type=spoken]::after{ Content: None }
+*.tei.cit>*.tei.q::after{ Inset-Block-Start: Calc(100% - 1EM); Inset-Inline-Start: Calc(100% - 1EM) }
+*.tei.cit>*.tei.q *.tei.p::before,*.tei.cit>*.tei.q *.tei.lg::before{ Margin-Inline-End: 2.25EM }
 -->
 	</template>
 	<!-- Notes -->
@@ -920,7 +928,7 @@ blockquote.tei.q *.tei.p::before,blockquote.tei.q *.tei.lg::before{ Margin-Inlin
 			</tei:seg>
 		</variable>
 		<choose>
-			<when test="@anchored='false' and not(ancestor::tei:p or ancestor::tei:lg)">
+			<when test="@anchored='false' and not(@place='bottom' or ancestor::tei:p or ancestor::tei:lg)">
 				<html:aside>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
@@ -930,7 +938,7 @@ blockquote.tei.q *.tei.p::before,blockquote.tei.q *.tei.lg::before{ Margin-Inlin
 					<apply-templates/>
 				</html:aside>
 			</when>
-			<when test="ancestor::teiHeader and not(ancestor::tei:p or ancestor::tei:lg)">
+			<when test="ancestor::teiHeader and not(@place='bottom' or ancestor::tei:p or ancestor::tei:lg)">
 				<html:div>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
@@ -965,7 +973,7 @@ blockquote.tei.q *.tei.p::before,blockquote.tei.q *.tei.lg::before{ Margin-Inlin
 							<call-template name="handle-id"/>
 						</otherwise>
 					</choose>
-					<if test="not(@place='inline')">
+					<if test="not(@place='inline') and not(@anchored='false')">
 						<variable name="super">
 							<choose>
 								<when test="@n">
@@ -1616,11 +1624,13 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<call-template name="handle-tei"/>
 			<choose>
 				<when test="@ref">
-					<html:a class="tei ref" href="{@ref}">
-						<apply-templates/>
-					</html:a>
+					<call-template name="linkify">
+						<with-param name="target" select="@ref"/>
+					</call-template>
 				</when>
-				<otherwise><apply-templates/></otherwise>
+				<otherwise>
+					<apply-templates/>
+				</otherwise>
 			</choose>
 		</html:span>
 		<!-- [[ CSS: ]]
@@ -2137,6 +2147,9 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<html:div>
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
+			<if test="self::tei:cit">
+				<call-template name="handle-typed"/>
+			</if>
 			<apply-templates/>
 		</html:div>
 		<!-- [[ CSS: ]]
@@ -2156,11 +2169,13 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<call-template name="handle-tei"/>
 			<choose>
 				<when test="@ref">
-					<html:a class="tei ref" href="{@ref}">
-						<apply-templates/>
-					</html:a>
+					<call-template name="linkify">
+						<with-param name="target" select="@ref"/>
+					</call-template>
 				</when>
-				<otherwise><apply-templates/></otherwise>
+				<otherwise>
+					<apply-templates/>
+				</otherwise>
 			</choose>
 		</html:span>
 		<!-- [[ CSS: ]]
@@ -2381,14 +2396,13 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<call-template name="handle-tei"/>
 			<choose>
 				<when test="@target">
-					<variable name="contents">
-						<tei:ref target="{@target}">
-							<copy-of select="node()"/>
-						</tei:ref>
-					</variable>
-					<apply-templates select="exsl:node-set($contents)"/>
+					<call-template name="linkify">
+						<with-param name="target" select="@target"/>
+					</call-template>
 				</when>
-				<otherwise><apply-templates/></otherwise>
+				<otherwise>
+					<apply-templates/>
+				</otherwise>
 			</choose>
 		</html:span>
 		<!-- [[ CSS: ]]
