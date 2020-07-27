@@ -7,10 +7,14 @@
 *:root *.tei.docTitle{ Margin-Block: 1.5EM; Border: None; Font: Inherit; Text-Align: Center }
 *.tei.titlePart{ Margin: 0; Font: Inherit; Text-Transform: None }
 *:root *.tei.body::before{ Content: None }
+*:root *.tei.note{ Border: None; Padding: 0; Min-Block-Size: 0; Color: Var(--EditorialText) }
+*:root *.tei.note>*.tei.seg:First-Child{ Display: None }
 *.tei.p{ Text-Align: Start }
 *.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
 *.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
 *.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
+*.tei.del::before,*.tei.del::after{ Content: None }
+*.tei.del{ Text-Decoration: Var(--EditText) Line-Through }
 *.tei.mentioned.literal::before{ Content: "‹ " }
 *.tei.mentioned.literal::after{ Content: " ›" }
 '?>
@@ -19,10 +23,10 @@
 		<fileDesc>
 			<titleStmt>
 				<title level="m">Switched Bodys!</title>
-				<author><name>TF</name><note>Not moniker recorded in source.</note></author>
+				<author><name>BJMNS</name><note>Not moniker recorded in source.</note></author>
 			</titleStmt>
 			<editionStmt>
-				<edition>Final draft, <date when="2003-04-13">April 13, 2003</date><lb/><idno type="URI">tag:marrus.xyz,2016:bns::zl:2003-04:Final</idno></edition>
+				<edition>Rough draft, <date when="2003-04-12">April 12, 2003</date><lb/><idno type="URI">tag:bjmns.tumblr.com,2013:bns::1:1:2003-04:1</idno></edition>
 			</editionStmt>
 			<publicationStmt>
 				<publisher>KIBI Gô</publisher>
@@ -32,7 +36,7 @@
 				</availability>
 			</publicationStmt>
 			<sourceDesc>
-				<p>Source is a Rich Text Format file (original format unknown).</p>
+				<p>Source is a Rich Text Format file, which was itself a transcription of a handwritten draft.</p>
 			</sourceDesc>
 		</fileDesc>
 		<encodingDesc>
@@ -45,23 +49,22 @@
 	</teiHeader>
 	<text>
 		<front>
+			<note anchored="false">
+				<p>Pot’s house: made out of purple bricks,</p>
+			</note>
 			<docTitle>
 				<titlePart>Switched Bodys!</titlePart>
 			</docTitle>
 			<docAuthor><gap reason="editorial"><desc>author name</desc></gap></docAuthor>
-			<docDate when="2003-04-13">4/13/03</docDate>
-			<docEdition>Final Draft</docEdition>
+			<docDate when="2003-04-12">4/12/03</docDate>
+			<docEdition>Rough Draft</docEdition>
 		</front>
 		<body xml:id="text">
 			<p><q type="spoken">Zzzzzt!</q></p>
-			<p>I was at Pot’s house when I heard that loud sound. Pot lives on the planet Magiclanoid and in the country of Maglanond. Pot lives at 635 Magic St<pc>.</pc> Mode Lake, Rin. Pot lives in a house made out of purple bricks. Bricks come in all colors on the planet Magiclanoid. Let me tell you about Pot. He is two years younger than me, he has dark brown hair, just like I do, and hazel eyes, just like I do. He weares glasses just like mine.</p>
-			<p>We were in Pot’s garage when I heard that awful sound. It came from Pot’s machine. Our bodies had been switched<pc type="terminal">!</pc> Pot, who is now in my body, puts the machine in reverse and pulls the lever. Nothing happens.</p>
-			<p>Then Pot tries again, still nothing. Tally comes over with Harry and Dimond. Tally has dark brown hair and emerald eyes, and a scar on his forehead. He has been my friend since I was two. Dimond has dark brown hair, emerald eyes and is five years old. She has been my friend since I was three. Harry has dark brown hair and emerald eyes and is six. He has been my friend since I was two.</p>
-			<p>I explain to the group what has happened and that I am trapped in Pot’s body. Pot explains that he can’t get the machine to work. We decide to build a new machine to reverse us back to our normal bodies. After 12 hours of backbreaking work we try our new machine. Nothing happens.</p>
-			<p>After that, we check over the original machine to see if it was okay.</p>
-			<p><q type="spoken">Of course</q> I said. <q type="spoken">We have to put the machine on forward before pulling the lever!</q></p>
-			<p>We try it and it works!</p>
-			<p>It sure felt good to be back in my own body. I won’t mess with machines anymore, I know that!</p>
+			<p>I was at Pot’s house when I heard that sound. Pot lives on 635 Magic St<pc>.</pc> Mode Lake, Rin. Pot lives in the planet Magiclanoid and the country Maglanond. Anyway, the sound <del>was</del> came from Pot’s machine. He had switched our bodys<pc type="terminal">!</pc> Pot puts it in reverse and pulls the lever. Nothing happens.</p>
+			<p>Then Pot tries again, nothing happens. Tally comes over with harry. we dicide to build a machine to reverse us back into our normal bodys. We finish and try it but it doesn’t work either.</p>
+			<p>After that, We checked the first machine to make sure it was okay. <q type="spoken">Of course!</q> I said. <q type="spoken">We have to turn the machine on forward and then pull the lever!</q><pc type="terminal"/> We try and it works!</p>
+			<p>It sure felt good to be in my own body. I won’t mess around with machines anymore. I know that!</p>
 		</body>
 	</text>
 </TEI>
