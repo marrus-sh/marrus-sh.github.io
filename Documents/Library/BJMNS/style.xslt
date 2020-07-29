@@ -26,7 +26,7 @@
 			</for-each>
 			<apply-templates/>
 			<html:style>
-html{ Position: Relative; Margin: Auto; Padding: 0; Background: Black; Inline-Size: 64REM; Max-Inline-Size: 100%; Color: #333; Font-Family: Serif; Line-Height: 1.25 }
+html{ Position: Relative; Margin: Auto; Padding: 0; Background: Black; Inline-Size: 54REM; Max-Inline-Size: 100%; Color: #333; Font-Family: Serif; Line-Height: 1.25 }
 body{ Margin-Block: 0 2REM; Margin-Inline: 0; Border-End-Start-Radius: 4REM; Border-End-End-Radius: 4REM; Padding-Block: 1REM; Padding-Inline: 5REM; Background: White }
 #BNS{ Writing-Mode: Horizontal-TB; Display: Flex; Flex-Direction: Column; Min-Block-Size: Calc(100VH - 4REM) }
 #BNS>header{ Flex: None }
