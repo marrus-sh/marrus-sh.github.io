@@ -1,0 +1,398 @@
+<!DOCTYPE rdf:RDF [
+	<!ENTITY NamedIndividual "http://www.w3.org/2002/07/owl#NamedIndividual">
+	<!ENTITY NCName "http://www.w3.org/2001/XMLSchema#NCName">
+	<!ENTITY bjmns "tag:bjmns.tumblr.com,2013:">
+	<!ENTITY bns "tag:bjmns.tumblr.com,2013:bns::">
+	<!ENTITY gYearMonth "http://www.w3.org/2001/XMLSchema#gYearMonth">
+	<!ENTITY integer "http://www.w3.org/2001/XMLSchema#integer">
+]>
+<rdf:RDF
+	xml:base="https://go.KIBI.family/Documents/Library/BJMNS/"
+	xmlns="https://go.KIBI.family/Ontologies/BNS/#"
+	xmlns:bns="https://go.KIBI.family/Ontologies/BNS/#"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+	<owl:Ontology rdf:about="#">
+		<owl:imports rdf:resource="https://go.KIBI.family/Ontologies/BNS/#"/>
+	</owl:Ontology>
+	<Corpus rdf:about="&bns;">
+		<fullTitle xml:lang="en">BJMNS Presents:</fullTitle>
+		<dc:abstract rdf:parseType="Resource">
+			<contents rdf:parseType="Literal">
+				<html:div lang="en" xml:lang="en">
+					<html:p>A corpus of, roughly speaking, every creative work that I (<html:a href="https://go.KIBI.family/">KIBI Gô</html:a>) created prior to graduating college mid‐2016, based on the categorization system I used circa 2013 and updated periodically thereafter.  Back in these days I cared a lot about keeping a record of <html:em>literally everything</html:em>, so you will find a lot of inconsequential stuff in this collection.</html:p>
+					<html:p><html:i>BJMNS</html:i> is a generic username that I employed often during this time, replacing the earlier <html:i>TF</html:i> which I had used for artistic works in middle and high school.  There is no clear delineation between projects created under the two monikers, so they are unified here.</html:p>
+				</html:div>
+			</contents>
+		</dc:abstract>
+		<hasCover rdf:parseType="Resource">
+			<contents rdf:parseType="Literal">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512" fill="currentColor" stroke="none">
+					<title lang="en" xml:lang="en">A monogram of the letters ‹ BRS ›, which I used in conjunction with the BJMNS moniker, again replacing a TF monogram.</title>
+					<g transform="translate(0,-540.36218)">
+						<g transform="matrix(1.28,0,0,1.28,-64,-230.66142)">
+							<g transform="translate(-20,10)">
+								<path d="m 260,642.36218 c 60,0 80,10 80,50 0,40 -20,50 -60,50 l -10,0 c 0,0 50,0 50,-50 0,-50 -70,-50 -70,-50 z"/>
+								<path d="m 280,742.36218 c 40,0 60,10 60,50 0,40 -20,50 -80,50 l -10,0 c 0,0 70,0 70,-50 0,-50 -50,-50 -50,-50 z"/>
+								<path d="m 220,742.36218 c -40,0 -60,10 -60,50 0,40 40,50 90,50 l 0,0 c 0,0 -70,0 -70,-50 0,-50 50,-50 50,-50 z"/>
+								<path d="m 260,942.36218 c 60,0 80,-10 80,-50 0,-40 -40,-50 -90,-50 l 0,0 c 0,0 70,0 70,50 0,50 -70,50 -70,50 z"/>
+								<path d="m 280,742.36218 c 40,0 60,10 60,50 0,40 50,50 50,50 l -10,0 c 0,0 -60,0 -60,-50 0,-50 -50,-50 -50,-50 z"/>
+								<path d="m 250,120 c 0,0 10,0 10,70 l 0,10 c 0,70 -10,70 -10,70 0,0 -10,-10 -10,-70 l 0,-10 c 0,-70 10,-70 10,-70 z" transform="translate(0,552.36218)"/>
+							</g>
+							<path d="M 250,50 C 139.54305,50 50,139.54305 50,250 50,360.45695 139.54305,450 250,450 360.45695,450 450,360.45695 450,250 450,139.54305 360.45695,50 250,50 z m 0,10 c 99.41125,0 180,85.0659 180,190 0,104.9341 -80.58875,190 -180,190 C 150.58875,440 70,354.9341 70,250 70,145.0659 150.58875,60 250,60 z" transform="translate(0,552.36218)"/>
+						</g>
+					</g>
+				</svg>
+			</contents>
+		</hasCover>
+		<forAuthor>
+			<Author rdf:about="&bjmns;">
+				<fullTitle xml:lang="en">BJMNS</fullTitle>
+				<owl:sameAs rdf:resource="https://go.KIBI.family/About/#me"/>
+			</Author>
+		</forAuthor>
+		<hasProjects rdf:parseType="Collection">
+			<Project rdf:about="&bns;0">
+				<identifier rdf:datatype="&NCName;">mw</identifier>
+				<fullTitle xml:lang="en">Minor Works</fullTitle>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en">
+							<html:p>An umbrella project for all minor works not deserving of their own project in the BNS system.</html:p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<includes>
+					<Volume rdf:about="&bns;0:0">
+						<index rdf:datatype="&integer;">0</index>
+						<fullTitle xml:lang="en">Miscellany</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en">
+									<html:p>In short, every work which I kept a record of but which I did not deem notable enough to classify as even a minor work.  This volume contains poetry, visual art, essays, and so forth.</html:p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+					<Volume rdf:about="&bns;0:1">
+						<index rdf:datatype="&integer;">1</index>
+						<fullTitle xml:lang="en">Exasperated Wolf</fullTitle>
+						<abbreviatedTitle xml:lang="en">EW</abbreviatedTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en">
+									<html:p>A collection of stories written in elementary school as vocabulary practice, all starring a character known only as Exasperated Wolf.</html:p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<includes>
+							<Version rdf:about="&bns;0:1:0">
+								<index rdf:datatype="&integer;">0</index>
+								<includes>
+									<Draft rdf:about="&bns;0:1:0:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Exasperated Wolf and the Big Flood</fullTitle>
+										<isPublishedAs rdf:resource="0/1/0/1/"/>
+									</Draft>
+								</includes>
+							</Version>
+							<Version rdf:about="&bns;0:1:1">
+								<index rdf:datatype="&integer;">1</index>
+								<includes>
+									<Draft rdf:about="&bns;0:1:1:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Exasperated Wolf and Little Red Riding Hood</fullTitle>
+										<isPublishedAs rdf:resource="0/1/1/1/"/>
+									</Draft>
+								</includes>
+							</Version>
+							<Version rdf:about="&bns;0:1:2">
+								<index rdf:datatype="&integer;">2</index>
+								<includes>
+									<Draft rdf:about="&bns;0:1:2:0">
+										<index rdf:datatype="&integer;">0</index>
+										<fullTitle xml:lang="en">Don’t miss: Exasperated Wolf and the Boy who cried “WOLF”</fullTitle>
+										<isPublishedAs rdf:resource="0/1/2/0/"/>
+									</Draft>
+									<Draft rdf:about="&bns;0:1:2:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Exasperated Wolf and the Boy who cried “Wolf”</fullTitle>
+										<isPublishedAs rdf:resource="0/1/2/1/"/>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+					<!--
+					<Volume rdf:about="&bns;0:2">
+						<index rdf:datatype="&integer;">2</index>
+						<fullTitle xml:lang="en">Billie Bee / Charlie Caterpillar</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:3">
+						<index rdf:datatype="&integer;">3</index>
+						<fullTitle xml:lang="en">Dino Bug</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:4">
+						<index rdf:datatype="&integer;">4</index>
+						<fullTitle xml:lang="en">Sting</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:5">
+						<index rdf:datatype="&integer;">5</index>
+						<fullTitle xml:lang="en">Mov’d</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:6">
+						<index rdf:datatype="&integer;">6</index>
+						<fullTitle xml:lang="en">Lego Duct Wars</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:7">
+						<index rdf:datatype="&integer;">7</index>
+						<fullTitle xml:lang="en">The Rebellion</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:8">
+						<index rdf:datatype="&integer;">8</index>
+						<fullTitle xml:lang="en">Point.</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:9">
+						<index rdf:datatype="&integer;">9</index>
+						<fullTitle xml:lang="en">UFO</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:10">
+						<index rdf:datatype="&integer;">10</index>
+						<fullTitle xml:lang="en">Sidewalk Artist</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:11">
+						<index rdf:datatype="&integer;">11</index>
+						<fullTitle xml:lang="en">The Guy</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:12">
+						<index rdf:datatype="&integer;">12</index>
+						<fullTitle xml:lang="en">The Rising</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:13">
+						<index rdf:datatype="&integer;">13</index>
+						<fullTitle xml:lang="en">This War (Music Video)</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:14">
+						<index rdf:datatype="&integer;">14</index>
+						<fullTitle xml:lang="en">Strategy [Calculator]</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:15">
+						<index rdf:datatype="&integer;">15</index>
+						<fullTitle xml:lang="en">PKMN ElectricYellow</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:16">
+						<index rdf:datatype="&integer;">16</index>
+						<fullTitle xml:lang="en">El Libro</fullTitle>
+					</Volume>
+					<Volume rdf:about="&bns;0:17">
+						<index rdf:datatype="&integer;">17</index>
+						<fullTitle xml:lang="en">Love</fullTitle>
+					</Volume>
+					-->
+				</includes>
+			</Project>
+			<Project rdf:about="&bns;1">
+				<identifier rdf:datatype="&NCName;">TM</identifier>
+				<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en">
+							<html:p><html:cite>Harry Potter</html:cite> was the first book series I got into as a (very young) kid, and when I was very little I used to run around pretending I was a <html:cite>Harry Potter</html:cite> wizard or witch.  But, being an inventive sort, I got bored of this pretty quickly and decided to just create my <html:em>own</html:em> magical fantasy boarding‐school, hence <html:cite>Tally Magiczl</html:cite>.</html:p>
+							<html:p>Most of the writing I did in elementary school was set in this universe, which I mostly put to rest after <html:a href="&bns;1:1:2003-09:1"><html:code>bjmns:1:1:2003-09:1</html:code></html:a>. Because the actual number of stories is unknown (and many were doubtless lost to time), early versions are organized by year and month of inception.</html:p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<includes>
+					<Volume rdf:about="&bns;1:1">
+						<index rdf:datatype="&integer;">1</index>
+						<includes>
+							<Version rdf:about="&bns;1:1:2003-03">
+								<index rdf:datatype="&gYearMonth;">2003-03</index>
+								<includes>
+									<Draft rdf:about="&bns;1:1:2003-03:Final">
+										<index rdf:datatype="&NCName;">Final</index>
+										<fullTitle xml:lang="en">Tally Marries Dimond</fullTitle>
+										<isPublishedAs rdf:resource="1/1/2003-03/Final/"/>
+									</Draft>
+								</includes>
+							</Version>
+							<Version rdf:about="&bns;1:1:2003-04">
+								<index rdf:datatype="&gYearMonth;">2003-04</index>
+								<includes>
+									<Draft rdf:about="&bns;1:1:2003-04:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
+										<isPublishedAs rdf:resource="1/1/2003-04/1/"/>
+									</Draft>
+									<Draft rdf:about="&bns;1:1:2003-04:2">
+										<index rdf:datatype="&integer;">2</index>
+										<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
+										<isPublishedAs rdf:resource="1/1/2003-04/2/"/>
+									</Draft>
+								</includes>
+							</Version>
+							<Version rdf:about="&bns;1:1:2003-09">
+								<index rdf:datatype="&gYearMonth;">2003-09</index>
+								<includes>
+									<Draft rdf:about="&bns;1:1:2003-09:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<isPublishedAs rdf:resource="1/1/2003-09/1/"/>
+									</Draft>
+									<Draft rdf:about="&bns;1:1:2003-09:2">
+										<index rdf:datatype="&integer;">2</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<isPublishedAs rdf:resource="1/1/2003-09/2/"/>
+									</Draft>
+								</includes>
+							</Version>
+							<Version rdf:about="&bns;1:1:N">
+								<index rdf:datatype="&NCName;">N</index>
+								<includes>
+									<Draft rdf:about="&bns;1:1:N:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<isPublishedAs rdf:resource="1/1/N/1/"/>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+				</includes>
+			</Project>
+			<!--
+			<Project rdf:about="&bns;2">
+				<identifier rdf:datatype="&NCName;">drowned</identifier>
+				<fullTitle xml:lang="en">Drowned</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;3">
+				<identifier rdf:datatype="&NCName;">palm</identifier>
+				<fullTitle xml:lang="en">In the Palm of My Hand</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;4">
+				<identifier rdf:datatype="&NCName;">alchemy</identifier>
+				<fullTitle xml:lang="en">Alchemy</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;5">
+				<identifier rdf:datatype="&NCName;">mantle</identifier>
+				<fullTitle xml:lang="en">Edgar Mantle</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;6">
+				<identifier rdf:datatype="&NCName;">TLoI</identifier>
+				<fullTitle xml:lang="en">The Legend of I———</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;7">
+				<identifier rdf:datatype="&NCName;">forces</identifier>
+				<fullTitle xml:lang="en">Tyneland</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;8">
+				<identifier rdf:datatype="&NCName;">brian</identifier>
+				<fullTitle xml:lang="en">Brian’s World</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;9">
+				<identifier rdf:datatype="&NCName;">xi</identifier>
+				<fullTitle xml:lang="en">Susan</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;10">
+				<identifier rdf:datatype="&NCName;">dark</identifier>
+				<fullTitle xml:lang="en">Project Black</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;12">
+				<identifier rdf:datatype="&NCName;">TtP</identifier>
+				<fullTitle xml:lang="en">To the Point</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;13">
+				<identifier rdf:datatype="&NCName;">psi</identifier>
+				<fullTitle xml:lang="en">Ψ</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;14">
+				<identifier rdf:datatype="&NCName;">fairies</identifier>
+				<fullTitle xml:lang="en">f(x)</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;15">
+				<identifier rdf:datatype="&NCName;">seven</identifier>
+				<fullTitle xml:lang="en">7</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;16">
+				<identifier rdf:datatype="&NCName;">pink</identifier>
+				<fullTitle xml:lang="en">Vampire</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;17">
+				<identifier rdf:datatype="&NCName;">xXXjt</identifier>
+				<fullTitle xml:lang="en">x-XX-jt</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;18">
+				<identifier rdf:datatype="&NCName;">V</identifier>
+				<fullTitle xml:lang="en">V</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;19">
+				<identifier rdf:datatype="&NCName;">ItB</identifier>
+				<fullTitle xml:lang="en">Into the Battle</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;20">
+				<identifier rdf:datatype="&NCName;">echo</identifier>
+				<fullTitle xml:lang="en">Movie Project Echo</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;21">
+				<identifier rdf:datatype="&NCName;">worn</identifier>
+				<fullTitle xml:lang="en">WORN</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;22">
+				<identifier rdf:datatype="&NCName;">game9</identifier>
+				<fullTitle xml:lang="en">Four Stories</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;23">
+				<identifier rdf:datatype="&NCName;">IDA</identifier>
+				<fullTitle xml:lang="en">IDA</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;24">
+				<identifier rdf:datatype="&NCName;">ZZ</identifier>
+				<fullTitle xml:lang="en">Comic‐ZZ</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;25">
+				<identifier rdf:datatype="&NCName;">munsta</identifier>
+				<fullTitle xml:lang="en">Munsta</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;26">
+				<identifier rdf:datatype="&NCName;">pig</identifier>
+				<fullTitle xml:lang="en">Zhätee</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;27">
+				<identifier rdf:datatype="&NCName;">rGame</identifier>
+				<fullTitle xml:lang="en">RockGame</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;28">
+				<identifier rdf:datatype="&NCName;">SG</identifier>
+				<fullTitle xml:lang="en">SG</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;29">
+				<identifier rdf:datatype="&NCName;">strategy</identifier>
+				<fullTitle xml:lang="en">Strategy</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;30">
+				<identifier rdf:datatype="&NCName;">joh</identifier>
+				<fullTitle xml:lang="en">Jō</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;31">
+				<identifier rdf:datatype="&NCName;">Mel</identifier>
+				<fullTitle xml:lang="en">Mel</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;32">
+				<identifier rdf:datatype="&NCName;">LightDark</identifier>
+				<fullTitle xml:lang="en">LightDark</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;33">
+				<identifier rdf:datatype="&NCName;">despair</identifier>
+				<fullTitle xml:lang="en">Despair</fullTitle>
+			</Project>
+			<Project rdf:about="&bns;34">
+				<identifier rdf:datatype="&NCName;">uGame</identifier>
+				<fullTitle xml:lang="en">UnicornGame</fullTitle>
+			</Project>
+			-->
+		</hasProjects>
+	</Corpus>
+</rdf:RDF>
