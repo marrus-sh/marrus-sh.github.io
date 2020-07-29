@@ -10,7 +10,15 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:svg="http://www.w3.org/2000/svg"
 >
-	<variable name="rdf" select="//html:link[@type='application/rdf+xml']/@href[1]"/>
+	<variable name="rdf" select="//html:link[@rel='alternate'][@type='application/rdf+xml']/@href[1]"/>
+	<variable name="prefix" select="substring-before(//html:html/@prefix, ': ')"/>
+	<variable name="expansion" select="substring-after(//html:html/@prefix, ': ')"/>
+	<template name="shorten">
+		<param name="uri"/>
+		<if test="starts-with($uri, $expansion)">
+			<value-of select="concat($prefix, ':', substring-after($uri, $expansion))"/>
+		</if>
+	</template>
 	<template match="html:*|svg:*">
 		<copy>
 			<for-each select="@*">
@@ -142,10 +150,10 @@ document.addEventListener(`keydown`, v => {
 			<value-of select="document($rdf)//bns:Corpus/bns:fullTitle"/>
 		</copy>
 	</template>
-	<template match="html:a[starts-with(@href, 'tag:bjmns.tumblr.com,2013:bns::')]">
+	<template match="html:a[starts-with(@href, $expansion)]">
 		<copy>
 			<attribute name="href">
-				<value-of select="concat('#bjmns:', substring-after(@href, 'tag:bjmns.tumblr.com,2013:bns::'))"/>
+				<value-of select="concat('#', $prefix, ':', substring-after(@href, $expansion))"/>
 			</attribute>
 			<for-each select="@*[not(name(.)='href')]">
 				<copy/>
@@ -158,32 +166,42 @@ document.addEventListener(`keydown`, v => {
 			<for-each select="@*">
 				<copy/>
 			</for-each>
-			<html:header>
-				<html:h1>
-					<html:a href="#bjmns">
-						<value-of select="document($rdf)//bns:Corpus/bns:fullTitle"/>
-					</html:a>
-				</html:h1>
-				<html:nav>
-					<html:ol>
-						<for-each select="document($rdf)//bns:Project">
-							<html:li value="{count(preceding-sibling::*)}">
-								<html:a>
-									<attribute name="href">
-										<text>#</text>
-										<apply-templates select="." mode="bnspath"/>
-									</attribute>
-									<value-of select="bns:identifier"/>
-								</html:a>
-							</html:li>
-						</for-each>
-					</html:ol>
-				</html:nav>
-			</html:header>
-			<html:div>
-				<html:span>Loading...</html:span>
-				<apply-templates select="document($rdf)/*"/>
-			</html:div>
+			<for-each select="document($rdf)">
+				<html:header>
+					<html:h1>
+						<html:a>
+							<attribute name="href">
+								<text>#</text>
+								<call-template name="shorten">
+									<with-param name="uri" select=".//bns:Corpus[1]/@rdf:about"/>
+								</call-template>
+							</attribute>
+							<value-of select=".//bns:Corpus/bns:fullTitle[1]"/>
+						</html:a>
+					</html:h1>
+					<html:nav>
+						<html:ol>
+							<for-each select=".//bns:Project">
+								<html:li value="{count(preceding-sibling::*)}">
+									<html:a>
+										<attribute name="href">
+											<text>#</text>
+											<call-template name="shorten">
+												<with-param name="uri" select="@rdf:about"/>
+											</call-template>
+										</attribute>
+										<value-of select="bns:identifier"/>
+									</html:a>
+								</html:li>
+							</for-each>
+						</html:ol>
+					</html:nav>
+				</html:header>
+				<html:div>
+					<html:span>Loading...</html:span>
+					<apply-templates/>
+				</html:div>
+			</for-each>
 		</copy>
 	</template>
 	<template name="name">
@@ -229,7 +247,11 @@ document.addEventListener(`keydown`, v => {
 				<html:a data-nav="prev">
 					<attribute name="href">
 						<text>#</text>
-						<apply-templates select="preceding-sibling::*[1]" mode="bnspath"/>
+						<for-each select="preceding-sibling::*[1]">
+							<call-template name="shorten">
+								<with-param name="uri" select="@rdf:about"/>
+							</call-template>
+						</for-each>
 					</attribute>
 					<text>←</text>
 				</html:a>
@@ -238,7 +260,11 @@ document.addEventListener(`keydown`, v => {
 				<html:a data-nav="parent">
 					<attribute name="href">
 						<text>#</text>
-						<apply-templates select="../.." mode="bnspath"/>
+						<for-each select="../..">
+							<call-template name="shorten">
+								<with-param name="uri" select="@rdf:about"/>
+							</call-template>
+						</for-each>
 					</attribute>
 					<text>↑</text>
 				</html:a>
@@ -247,7 +273,11 @@ document.addEventListener(`keydown`, v => {
 				<html:a data-nav="child">
 					<attribute name="href">
 						<text>#</text>
-						<apply-templates select="bns:hasProjects/*[1]|bns:includes/*[1]" mode="bnspath"/>
+						<for-each select="*[self::bns:hasProjects|self::bns:includes]/*[1]">
+							<call-template name="shorten">
+								<with-param name="uri" select="@rdf:about"/>
+							</call-template>
+						</for-each>
 					</attribute>
 				<text>↓</text>
 				</html:a>
@@ -256,17 +286,41 @@ document.addEventListener(`keydown`, v => {
 				<html:a data-nav="next">
 					<attribute name="href">
 						<text>#</text>
-						<apply-templates select="following-sibling::*[1]" mode="bnspath"/>
+						<for-each select="following-sibling::*[1]">
+							<call-template name="shorten">
+								<with-param name="uri" select="@rdf:about"/>
+							</call-template>
+						</for-each>
 					</attribute>
 					<text>→</text>
 				</html:a>
 			</if>
 		</html:nav>
 	</template>
+	<template name="footer">
+		<html:footer>
+			<if test="starts-with(@rdf:about, $expansion)">
+				<html:code>
+					<call-template name="shorten">
+						<with-param name="uri" select="@rdf:about"/>
+					</call-template>
+				</html:code>
+			</if>
+			<html:code>
+				<text>&lt;</text>
+				<html:a href="{@rdf:about}">
+					<value-of select="@rdf:about"/>
+				</html:a>
+				<text>></text>
+			</html:code>
+		</html:footer>
+	</template>
 	<template match="bns:Corpus">
 		<html:section hidden="">
 			<attribute name="id">
-				<apply-templates select="." mode="bnspath"/>
+				<call-template name="shorten">
+					<with-param name="uri" select="@rdf:about"/>
+				</call-template>
 			</attribute>
 			<html:header>
 				<html:p>Corpus of</html:p>
@@ -279,23 +333,9 @@ document.addEventListener(`keydown`, v => {
 					<apply-templates select="dc:abstract"/>
 				</html:div>
 			</html:section>
-			<html:footer>
-				<html:code>
-					<apply-templates select="." mode="bnspath"/>
-				</html:code>
-				<html:code>
-					<text>&lt;</text>
-					<html:a href="{@rdf:about}">
-						<value-of select="@rdf:about"/>
-					</html:a>
-					<text>></text>
-				</html:code>
-			</html:footer>
+			<call-template name="footer"/>
 		</html:section>
 		<apply-templates select="bns:hasProjects/*"/>
-	</template>
-	<template match="bns:Corpus" mode="bnspath">
-		<text>bjmns</text>
 	</template>
 	<template match="bns:Author">
 		<call-template name="name"/>
@@ -303,7 +343,9 @@ document.addEventListener(`keydown`, v => {
 	<template match="bns:Project">
 		<html:section hidden="">
 			<attribute name="id">
-				<apply-templates select="." mode="bnspath"/>
+				<call-template name="shorten">
+					<with-param name="uri" select="@rdf:about"/>
+				</call-template>
 			</attribute>
 			<html:header>
 				<html:p>
@@ -327,18 +369,7 @@ document.addEventListener(`keydown`, v => {
 					</html:nav>
 				</if>
 			</html:section>
-			<html:footer>
-				<html:code>
-					<apply-templates select="." mode="bnspath"/>
-				</html:code>
-				<html:code>
-					<text>&lt;</text>
-					<html:a href="{@rdf:about}">
-						<value-of select="@rdf:about"/>
-					</html:a>
-					<text>></text>
-				</html:code>
-			</html:footer>
+			<call-template name="footer"/>
 		</html:section>
 		<apply-templates select="bns:includes/*"/>
 	</template>
@@ -350,7 +381,9 @@ document.addEventListener(`keydown`, v => {
 	<template match="bns:Volume">
 		<html:section hidden="">
 			<attribute name="id">
-				<apply-templates select="." mode="bnspath"/>
+				<call-template name="shorten">
+					<with-param name="uri" select="@rdf:about"/>
+				</call-template>
 			</attribute>
 			<html:header>
 				<html:p>
@@ -376,18 +409,7 @@ document.addEventListener(`keydown`, v => {
 					</html:nav>
 				</if>
 			</html:section>
-			<html:footer>
-				<html:code>
-					<apply-templates select="." mode="bnspath"/>
-				</html:code>
-				<html:code>
-					<text>&lt;</text>
-					<html:a href="{@rdf:about}">
-						<value-of select="@rdf:about"/>
-					</html:a>
-					<text>></text>
-				</html:code>
-			</html:footer>
+			<call-template name="footer"/>
 		</html:section>
 		<apply-templates select="bns:includes/*"/>
 	</template>
@@ -396,7 +418,9 @@ document.addEventListener(`keydown`, v => {
 			<html:a>
 				<attribute name="href">
 					<text>#</text>
-					<apply-templates select="." mode="bnspath"/>
+					<call-template name="shorten">
+						<with-param name="uri" select="@rdf:about"/>
+					</call-template>
 				</attribute>
 				<html:strong>
 					<text>Volume </text>
@@ -419,15 +443,12 @@ document.addEventListener(`keydown`, v => {
 			</if>
 		</html:li>
 	</template>
-	<template match="bns:Volume" mode="bnspath">
-		<apply-templates select="ancestor::bns:Project" mode="bnspath"/>
-		<text>:</text>
-		<value-of select="bns:index"/>
-	</template>
 	<template match="bns:Version">
 		<html:section hidden="">
 			<attribute name="id">
-				<apply-templates select="." mode="bnspath"/>
+				<call-template name="shorten">
+					<with-param name="uri" select="@rdf:about"/>
+				</call-template>
 			</attribute>
 			<html:header>
 				<html:p>
@@ -455,18 +476,7 @@ document.addEventListener(`keydown`, v => {
 					</html:nav>
 				</if>
 			</html:section>
-			<html:footer>
-				<html:code>
-					<apply-templates select="." mode="bnspath"/>
-				</html:code>
-				<html:code>
-					<text>&lt;</text>
-					<html:a href="{@rdf:about}">
-						<value-of select="@rdf:about"/>
-					</html:a>
-					<text>></text>
-				</html:code>
-			</html:footer>
+			<call-template name="footer"/>
 		</html:section>
 		<apply-templates select="bns:includes/*"/>
 	</template>
@@ -475,7 +485,9 @@ document.addEventListener(`keydown`, v => {
 			<html:a>
 				<attribute name="href">
 					<text>#</text>
-					<apply-templates select="." mode="bnspath"/>
+					<call-template name="shorten">
+						<with-param name="uri" select="@rdf:about"/>
+					</call-template>
 				</attribute>
 				<html:strong>
 					<text>Version </text>
@@ -498,15 +510,12 @@ document.addEventListener(`keydown`, v => {
 			</if>
 		</html:li>
 	</template>
-	<template match="bns:Version" mode="bnspath">
-		<apply-templates select="ancestor::bns:Volume" mode="bnspath"/>
-		<text>:</text>
-		<value-of select="bns:index"/>
-	</template>
 	<template match="bns:Draft">
 		<html:section hidden="">
 			<attribute name="id">
-				<apply-templates select="." mode="bnspath"/>
+				<call-template name="shorten">
+					<with-param name="uri" select="@rdf:about"/>
+				</call-template>
 			</attribute>
 			<html:header>
 				<html:p>
@@ -523,7 +532,27 @@ document.addEventListener(`keydown`, v => {
 				<call-template name="navigate"/>
 			</html:header>
 			<choose>
-				<when test="bns:isPublishedAs">
+				<when test="bns:isPublishedAs/*[@rdf:about]">
+					<html:div>
+						<for-each select="bns:isPublishedAs/*[@rdf:about][1]">
+							<choose>
+								<when test="self::dcmitype:StillImage">
+									<html:img alt="{dc:abstract/@contents}" src="{@rdf:about}"/>
+								</when>
+								<when test="self::dcmitype:MovingImage">
+									<html:video controls="" src="{@rdf:about}"/>
+								</when>
+								<when test="self::dcmitype:Sound">
+									<html:audio controls="" src="{@rdf:about}"/>
+								</when>
+								<otherwise>
+									<html:iframe src="{@rdf:about}"/>
+								</otherwise>
+							</choose>
+						</for-each>
+					</html:div>
+				</when>
+				<when test="bns:isPublishedAs/@rdf:resource">
 					<html:div>
 						<html:iframe src="{bns:isPublishedAs/@rdf:resource}"/>
 					</html:div>
@@ -537,18 +566,7 @@ document.addEventListener(`keydown`, v => {
 					</html:section>
 				</otherwise>
 			</choose>
-			<html:footer>
-				<html:code>
-					<apply-templates select="." mode="bnspath"/>
-				</html:code>
-				<html:code>
-					<text>&lt;</text>
-					<html:a href="{@rdf:about}">
-						<value-of select="@rdf:about"/>
-					</html:a>
-					<text>></text>
-				</html:code>
-			</html:footer>
+			<call-template name="footer"/>
 		</html:section>
 	</template>
 	<template match="bns:Draft" mode="list">
@@ -556,7 +574,9 @@ document.addEventListener(`keydown`, v => {
 			<html:a>
 				<attribute name="href">
 					<text>#</text>
-					<apply-templates select="." mode="bnspath"/>
+					<call-template name="shorten">
+						<with-param name="uri" select="@rdf:about"/>
+					</call-template>
 				</attribute>
 				<html:strong>
 					<text>Draft </text>
@@ -573,10 +593,5 @@ document.addEventListener(`keydown`, v => {
 				</for-each>
 			</html:a>
 		</html:li>
-	</template>
-	<template match="bns:Draft" mode="bnspath">
-		<apply-templates select="ancestor::bns:Version" mode="bnspath"/>
-		<text>:</text>
-		<value-of select="bns:index"/>
 	</template>
 </stylesheet>
