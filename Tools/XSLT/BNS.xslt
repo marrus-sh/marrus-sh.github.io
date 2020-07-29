@@ -32,11 +32,10 @@
 			<for-each select="@*">
 				<copy/>
 			</for-each>
-			<apply-templates/>
 			<html:style>
 html{ Position: Relative; Margin: Auto; Padding: 0; Background: Black; Inline-Size: 54REM; Max-Inline-Size: 100%; Color: #333; Font-Family: Serif; Line-Height: 1.25 }
 body{ Margin-Block: 0 2REM; Margin-Inline: 0; Border-End-Start-Radius: 4REM; Border-End-End-Radius: 4REM; Padding-Block: 1REM; Padding-Inline: 5REM; Background: White }
-#BNS{ Writing-Mode: Horizontal-TB; Display: Flex; Flex-Direction: Column; Min-Block-Size: Calc(100VH - 4REM) }
+#BNS{ Writing-Mode: Horizontal-TB; Display: Flex; Flex-Direction: Column; Min-Block-Size: Calc(100VH - 4REM); Block-Size: 28REM }
 #BNS>header{ Flex: None }
 #BNS>header>h1{ Display: Block; Margin-Block: .5REM; Color: #111; Font-Size: XXX-Large; Font-Family: Sans-Serif; Text-Align: Center }
 #BNS>header>nav{ Font-Size: Medium; Margin-Block: 1REM; Color: #333; Font-Family: Sans-Serif; Line-Height: 1.2; Text-Align: Justify; Text-Align-Last: Center }
@@ -45,19 +44,19 @@ body{ Margin-Block: 0 2REM; Margin-Inline: 0; Border-End-Start-Radius: 4REM; Bor
 #BNS>header>nav a{ Text-Decoration: None }
 #BNS>div{ Position: Relative; Flex: Auto; Margin-Block: 0 -1REM; Margin-Inline: -5REM; Min-Block-Size: Calc(60VH - 2REM); Overflow: Hidden }
 #BNS>div>span{ Display: Block; Position: Absolute; Margin: Auto; Inset-Block: 0; Inset-Inline: 0; Block-Size: 1EM; Inline-Size: Max-Content; Line-Height: 1; White-Space: Pre }
-#BNS>div>section{ Display: Grid; Position: Absolute; Box-Sizing: Border-Box; Inset-Block: 0; Inset-Inline: 0 Auto; Inline-Size: 100%; Border: .25REM Black Solid; Border-Radius: 4REM; Padding: 2REM; Gap: 1REM 2REM; Grid-Template-Rows: Min-Content 1FR Min-Content; Grid-Template-Columns: 1FR 23EM; Overflow: Hidden; Background: #EEE }
+#BNS>div>section{ Display: Grid; Position: Absolute; Box-Sizing: Border-Box; Inset-Block: 0; Inset-Inline: 0 Auto; Border: .25REM Black Solid; Border-Radius: 4REM; Padding: 2REM; Inline-Size: 100%; Gap: 1REM 2REM; Grid-Template-Rows: Min-Content 1FR Min-Content; Grid-Template-Columns: 1FR 23EM; Overflow: Hidden; Background: #EEE }
 #BNS>div>section[hidden]{ Display: None }
 #BNS>div>section>header,#BNS>div>section>header+section,#BNS>div>section>div,#BNS>div>section>footer{ Grid-Column: 1 / Span 2 }
-#BNS>div>section>header{ Grid-Row: 1 / Span 1; Margin-Block: -1REM 0; Margin-Inline: -2REM; Border-Block-End: Thin Black Solid; Padding-Block: 0 1REM; Padding-Inline: 2REM; Text-Align: Center }
-#BNS>div>section>header>p{ Margin-Block: 0 .3125EM; Font-Variant-Caps: Small-Caps; Text-Align: Center }
-#BNS>div>section>header>nav{ Display: Grid; Grid-Auto-Flow: Column; Grid-Auto-Columns: 1FR; Margin-Block: .3125EM 0; Margin-Inline: Auto; Max-Inline-Size: Max-Content; Gap: .5REM; Text-Align: Center }
+#BNS>div>section>header{ Display: Grid; Grid-Auto-Flow: Dense Column; Grid-Row: 1 / Span 1; Margin-Block: -1REM 0; Margin-Inline: -2REM; Border-Block-End: Thin Black Solid; Padding-Block: 0 1REM; Padding-Inline: 2REM; Grid-Template-Rows: Auto Auto Auto; Grid-Template-Columns: Auto 1EM 1EM Min-Content 1EM 1EM Auto; Gap: .3125EM .5REM; Text-Align: Center }
+#BNS>div>section>header>p{ Grid-Column: 2 / Span 5; Margin-Block: 0; Min-Width: Max-Content; Color: #555; Font-Variant-Caps: Small-Caps; Text-Align: Center; Text-Decoration: Underline }
+#BNS>div>section>header>hgroup>h1{ Grid-Column: 1 / Span 7 }
+#BNS>div>section>header>hgroup>h2{ Grid-Column: 4 / Span 1; Margin-Block: 0; Min-Width: Max-Content; Font-Size: Inherit; Font-Weight: Inherit; Font-Variant-Caps: Small-Caps; Color: #333 }
+#BNS>div>section>header>hgroup,#BNS>div>section>header>nav{ Display: Contents }
 #BNS>div>section>header>nav>a{ Text-Decoration: None }
-#BNS>div>section>header>nav>a[data-nav=prev]{ Grid-Column: 1 / Span 1 }
-#BNS>div>section>header>nav>a[data-nav=parent]{ Grid-Column: 2 / Span 1 }
-#BNS>div>section>header>nav>a[data-nav=child]{ Grid-Column: 1 / Span 1 }
-#BNS>div>section>header>nav>a+a[data-nav=child]{ Grid-Column: 4 / Span 1 }
-#BNS>div>section>header>nav>a[data-nav=next]{ Grid-Column: 2 / Span 1 }
-#BNS>div>section>header>nav>a:Not([data-nav=child])~a[data-nav=next]{ Grid-Column: 5 / Span 1 }
+#BNS>div>section>header>nav>a[data-nav=prev]{ Grid-Column: 2 / Span 1 }
+#BNS>div>section>header>nav>a[data-nav=parent]{ Grid-Column: 3 / Span 1 }
+#BNS>div>section>header>nav>a[data-nav=child]{ Grid-Column: 5 / Span 1 }
+#BNS>div>section>header>nav>a[data-nav=next]{ Grid-Column: 6 / Span 1 }
 #BNS>div>section>section{ Display: Flex; Flex-Direction: Column; Box-Sizing: Border-Box; Grid-Row: 2 / Span 1; Margin-Inline: Auto; Border-Block: Thin Black Solid; Padding-Inline: 0 1PX; Inline-Size: 100%; Max-Inline-Size: 23EM; Overflow: Auto }
 #BNS>div>section>section>*{ Flex: 1; Border-Color: Black; Margin-Block: -1PX 0; Border-Block-Style: Solid Double; Border-Block-Width: Thin Medium; Border-Inline-Style: Solid Double; Border-Inline-Width: Thin Medium; Padding-Block: 1EM; Padding-Inline: 1EM; Background: #FFF; Box-Shadow: 1PX 1PX Black }
 #BNS>div>section>section>*:Not(:Empty)~*{ Margin-Block-Start: Calc(1EM + 1PX) }
@@ -143,6 +142,7 @@ document.addEventListener(`keydown`, v => {
 	if ( !a ) return
 	location.hash = a.hash })
 			</html:script>
+			<apply-templates/>
 		</copy>
 	</template>
 	<template match="html:title">
@@ -198,22 +198,69 @@ document.addEventListener(`keydown`, v => {
 					</html:nav>
 				</html:header>
 				<html:div>
-					<html:span>Loading...</html:span>
+					<html:span lang="en" xml:lang="en">Loading...</html:span>
 					<apply-templates/>
 				</html:div>
 			</for-each>
 		</copy>
 	</template>
 	<template name="name">
-		<if test="bns:fullTitle">
-			<html:hgroup>
-				<for-each select="bns:fullTitle">
-					<html:h1 lang="{@xml:lang}">
-						<value-of select="."/>
-					</html:h1>
-				</for-each>
-			</html:hgroup>
-		</if>
+		<html:hgroup>
+			<for-each select="bns:fullTitle">
+				<html:h1 lang="{@xml:lang}">
+					<value-of select="."/>
+				</html:h1>
+			</for-each>
+			<for-each select="bns:abbreviatedTitle|dc:alternate">
+				<html:h2 lang="{@xml:lang}">
+					<value-of select="."/>
+				</html:h2>
+			</for-each>
+			<if test="not(bns:abbreviatedTitle|dc:alternate)">
+				<choose>
+					<when test="self::bns:Project">
+						<html:h2>
+							<value-of select="bns:identifier"/>
+						</html:h2>
+					</when>
+					<when test="self::bns:Volume">
+						<html:h2>
+							<choose>
+								<when test="bns:index>0 and 9>=bns:index">
+									<value-of select="translate(bns:index, '123456789', 'ⅠⅡⅢⅣⅤⅥⅦⅧⅨ')"/>
+								</when>
+								<when test="bns:index=10">
+									<text>Ⅹ</text>
+								</when>
+								<when test="bns:index=11">
+									<text>Ⅺ</text>
+								</when>
+								<when test="bns:index=12">
+									<text>Ⅻ</text>
+								</when>
+								<otherwise>
+									<value-of select="bns:index"/>
+								</otherwise>
+							</choose>
+						</html:h2>
+					</when>
+					<when test="self::bns:Version">
+						<html:h2>
+							<text>v</text>
+							<value-of select="bns:index"/>
+						</html:h2>
+					</when>
+					<when test="self::bns:Draft">
+						<html:h2>
+							<text>v</text>
+							<value-of select="../../bns:index"/>
+							<text>d</text>
+							<value-of select="bns:index"/>
+						</html:h2>
+					</when>
+				</choose>
+			</if>
+		</html:hgroup>
 	</template>
 	<template name="cover">
 		<variable name="covers" select="bns:hasCover[@rdf:parseType='Resource']|bns:hasCover[not(@rdf:parseType='Resource')]/*"/>
@@ -323,7 +370,7 @@ document.addEventListener(`keydown`, v => {
 				</call-template>
 			</attribute>
 			<html:header>
-				<html:p>Corpus of</html:p>
+				<html:p lang="en" xml:lang="en">Corpus of</html:p>
 				<apply-templates select="bns:forAuthor/*"/>
 				<call-template name="navigate"/>
 			</html:header>
@@ -348,7 +395,7 @@ document.addEventListener(`keydown`, v => {
 				</call-template>
 			</attribute>
 			<html:header>
-				<html:p>
+				<html:p lang="en" xml:lang="en">
 					<text>Project </text>
 					<value-of select="count(preceding-sibling::*)"/>
 				</html:p>
@@ -362,7 +409,7 @@ document.addEventListener(`keydown`, v => {
 				</html:div>
 				<if test="bns:includes">
 					<html:nav>
-						<html:h1>Volumes</html:h1>
+						<html:h1 lang="en" xml:lang="en">Volumes</html:h1>
 						<html:ol>
 							<apply-templates select="bns:includes/*" mode="list"/>
 						</html:ol>
@@ -386,7 +433,7 @@ document.addEventListener(`keydown`, v => {
 				</call-template>
 			</attribute>
 			<html:header>
-				<html:p>
+				<html:p lang="en" xml:lang="en">
 					<text>Project </text>
 					<value-of select="count(ancestor::bns:Project/preceding-sibling::*)"/>
 					<text>, Volume </text>
@@ -402,7 +449,7 @@ document.addEventListener(`keydown`, v => {
 				</html:div>
 				<if test="bns:includes">
 					<html:nav>
-						<html:h1>Versions</html:h1>
+						<html:h1 lang="en" xml:lang="en">Versions</html:h1>
 						<html:ol>
 							<apply-templates select="bns:includes/*" mode="list"/>
 						</html:ol>
@@ -422,7 +469,7 @@ document.addEventListener(`keydown`, v => {
 						<with-param name="uri" select="@rdf:about"/>
 					</call-template>
 				</attribute>
-				<html:strong>
+				<html:strong lang="en" xml:lang="en">
 					<text>Volume </text>
 					<value-of select="bns:index"/>
 					<if test="bns:fullTitle">
@@ -451,7 +498,7 @@ document.addEventListener(`keydown`, v => {
 				</call-template>
 			</attribute>
 			<html:header>
-				<html:p>
+				<html:p lang="en" xml:lang="en">
 					<text>Project </text>
 					<value-of select="count(ancestor::bns:Project/preceding-sibling::*)"/>
 					<text>, Volume </text>
@@ -469,7 +516,7 @@ document.addEventListener(`keydown`, v => {
 				</html:div>
 				<if test="bns:includes">
 					<html:nav>
-						<html:h1>Drafts</html:h1>
+						<html:h1 lang="en" xml:lang="en">Drafts</html:h1>
 						<html:ol>
 							<apply-templates select="bns:includes/*" mode="list"/>
 						</html:ol>
@@ -489,7 +536,7 @@ document.addEventListener(`keydown`, v => {
 						<with-param name="uri" select="@rdf:about"/>
 					</call-template>
 				</attribute>
-				<html:strong>
+				<html:strong lang="en" xml:lang="en">
 					<text>Version </text>
 					<value-of select="bns:index"/>
 					<if test="bns:fullTitle">
@@ -518,7 +565,7 @@ document.addEventListener(`keydown`, v => {
 				</call-template>
 			</attribute>
 			<html:header>
-				<html:p>
+				<html:p lang="en" xml:lang="en">
 					<text>Project </text>
 					<value-of select="count(ancestor::bns:Project/preceding-sibling::*)"/>
 					<text>, Volume </text>
@@ -578,7 +625,7 @@ document.addEventListener(`keydown`, v => {
 						<with-param name="uri" select="@rdf:about"/>
 					</call-template>
 				</attribute>
-				<html:strong>
+				<html:strong lang="en" xml:lang="en">
 					<text>Draft </text>
 					<value-of select="bns:index"/>
 					<if test="bns:fullTitle">

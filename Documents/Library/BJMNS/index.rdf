@@ -127,13 +127,13 @@
 										<index rdf:datatype="&integer;">0</index>
 										<fullTitle xml:lang="en">Don’t miss: Exasperated Wolf and the Boy who cried “WOLF”</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:0:1:2:0"/>
-										<isPublishedAs rdf:resource="0/1/2/0/"/>
+										<isPublishedAs rdf:resource="0/1/2/0/text.xml"/>
 									</Draft>
 									<Draft rdf:about="&bns;0:1:2:1">
 										<index rdf:datatype="&integer;">1</index>
 										<fullTitle xml:lang="en">Exasperated Wolf and the Boy who cried “Wolf”</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:0:1:2:1"/>
-										<isPublishedAs rdf:resource="0/1/2/1/"/>
+										<isPublishedAs rdf:resource="0/1/2/1/text.xml"/>
 									</Draft>
 								</includes>
 							</Version>
@@ -344,7 +344,7 @@
 										<index rdf:datatype="&NCName;">Final</index>
 										<fullTitle xml:lang="en">Tally Marries Dimond</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:1:1:2003-03:Final"/>
-										<isPublishedAs rdf:resource="1/1/2003-03/Final/"/>
+										<isPublishedAs rdf:resource="1/1/2003-03/Final/text.xml"/>
 									</Draft>
 								</includes>
 							</Version>
@@ -356,13 +356,13 @@
 										<index rdf:datatype="&integer;">1</index>
 										<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:1:1:2003-04:1"/>
-										<isPublishedAs rdf:resource="1/1/2003-04/1/"/>
+										<isPublishedAs rdf:resource="1/1/2003-04/1/text.xml"/>
 									</Draft>
 									<Draft rdf:about="&bns;1:1:2003-04:2">
 										<index rdf:datatype="&integer;">2</index>
 										<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:1:1:2003-04:2"/>
-										<isPublishedAs rdf:resource="1/1/2003-04/2/"/>
+										<isPublishedAs rdf:resource="1/1/2003-04/2/text.xml"/>
 									</Draft>
 								</includes>
 							</Version>
@@ -374,13 +374,13 @@
 										<index rdf:datatype="&integer;">1</index>
 										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:1:1:2003-09:1"/>
-										<isPublishedAs rdf:resource="1/1/2003-09/1/"/>
+										<isPublishedAs rdf:resource="1/1/2003-09/1/text.xml"/>
 									</Draft>
 									<Draft rdf:about="&bns;1:1:2003-09:2">
 										<index rdf:datatype="&integer;">2</index>
 										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:1:1:2003-09:2"/>
-										<isPublishedAs rdf:resource="1/1/2003-09/2/"/>
+										<isPublishedAs rdf:resource="1/1/2003-09/2/text.xml"/>
 									</Draft>
 								</includes>
 							</Version>
@@ -392,7 +392,7 @@
 										<index rdf:datatype="&integer;">1</index>
 										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
 										<owl:sameAs rdf:resource="#bjmns:1:1:N:1"/>
-										<isPublishedAs rdf:resource="1/1/N/1/"/>
+										<isPublishedAs rdf:resource="1/1/N/1/text.xml"/>
 									</Draft>
 								</includes>
 							</Version>
