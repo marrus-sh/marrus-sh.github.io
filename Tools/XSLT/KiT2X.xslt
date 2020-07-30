@@ -571,6 +571,8 @@ span.tei.p>span:Last-Child{ Display: None }
 		<!-- [[ CSS: ]]
 *.tei.div{ Display: Flow-Root; Position: Relative; Break-Before: Page; Margin-Block: 1.5EM }
 *.tei.div[data\2D-t-e-i_type=dedication]{ Font-Variant-Caps: Small-Caps; Text-Align-Last: Center }
+*.tei.div:First-Child,*.tei.text>div>*>div>*.tei.div:First-Child{ Margin-Block-Start: 0 }
+*.tei.div:Last-Child,*.tei.text>div>*>div>*.tei.div:Last-Child{ Margin-Block-End: 0 }
 *.tei.div[data\2D-t-e-i_n]::before{ Position: Absolute; Box-Sizing: Border-Box; Inset-Block-Start: 0; Inset-Inline-End: -3EM; Border: Thin Solid; Padding-Inline: .25EM; Min-Inline-Size: 2.5EM; Color: Var(\2D-GreyText); Background: Var(\2D-Background); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "§" Attr(data\2D-t-e-i_n) }
 *.tei.text>div>*>div>*.tei.div{ Margin-Block: 3EM }
 *.tei.div>footer{ Margin-Block: 1.5EM 0; Border-Block-Start: Thin Solid; Padding-Block: .75EM 0; Padding-Inline: 1.5EM 0 }
@@ -1968,7 +1970,9 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			</html:div>
 		</html:nav>
 		<!-- [[ CSS: ]]
-*.tei.divGen{ Display: Block; Position: Relative; Break-Before: Page; Margin-Block: 1.5EM; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Start; Text-Align-Last: Auto }
+*.tei.divGen{ Display: Flow-Root; Position: Relative; Break-Before: Page; Margin-Block: 1.5EM; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Start; Text-Align-Last: Auto }
+*.tei.divGen:First-Child,*.tei.text>div>*>div>*.tei.divGen:First-Child{ Margin-Block-Start: 0 }
+*.tei.divGen:Last-Child,*.tei.text>div>*>div>*.tei.divGen:Last-Child{ Margin-Block-End: 0 }
 *.tei.divGen[data\2D-t-e-i_n]::before{ Position: Absolute; Box-Sizing: Border-Box; Inset-Block-Start: 0; Inset-Inline-End: -3EM; Border: Thin Solid; Padding-Inline: .25EM; Min-Inline-Size: 2.5EM; Color: Var(\2D-GreyText); Background: Var(\2D-Background); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Center; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Content: "§" Attr(data\2D-t-e-i_n) }
 *.tei.divGen *.tei.ref{ Color: Inherit; Text-Decoration: Underline }
 *.tei.divGen *.tei.list *.tei.list{ Margin-Block: 0; Columns: Auto }
