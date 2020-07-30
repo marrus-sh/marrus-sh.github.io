@@ -487,6 +487,13 @@
 								<index rdf:datatype="&integer;">0</index>
 								<fullTitle xml:lang="en">Nat Gets Attacked</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:2:1:0"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+											<p>A boy named Nat goes cliffdiving and is abducted by underwater aliens.  He decides not to go cliffdiving anymore after that.</p>
+										</html:div>
+									</contents>
+								</dc:abstract>
 								<includes>
 									<Draft rdf:about="&bns;2:1:0:1">
 										<index rdf:datatype="&integer;">1</index>
@@ -495,6 +502,18 @@
 										<isPublishedAs rdf:resource="2/1/0/1/text.xml"/>
 									</Draft>
 								</includes>
+							</Version>
+							<Version rdf:about="&bns;2:1:1">
+								<index rdf:datatype="&integer;">1</index>
+								<fullTitle xml:lang="en">Drowned</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:2:1:1"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+											<p><em>Ostensibly</em> this was going to be a reboot of <a href="&bns;2:1:0"><code>bjmns:2:1:0</code></a>, but in actuality it amounted to nothing more than a few scattered paragraphs split across a few scattered “drafts”.  There’s nothing of substance there.</p>
+										</html:div>
+									</contents>
+								</dc:abstract>
 							</Version>
 						</includes>
 					</Volume>
