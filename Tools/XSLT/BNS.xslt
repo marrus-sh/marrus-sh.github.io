@@ -22,11 +22,6 @@
 			<call-template name="prefixes"/>
 		</html:dl>
 	</variable>
-	<variable name="about">
-		<call-template name="expand">
-			<with-param name="pname" select="normalize-space(//html:html/@about)"/>
-		</call-template>
-	</variable>
 	<template name="shorten">
 		<param name="uri"/>
 		<variable name="expansion" select="exsl:node-set($prefixes)//html:dd[starts-with($uri, .)]"/>
@@ -155,10 +150,21 @@ dl{ Margin-Block: 1EM }
 dl:First-Child{ Margin-Block-Start: 0 }
 dt{ Font-Weight: Bold }
 dd{ Display: List-Item; List-Style-Type: Square; Margin-Inline: 1EM 0 }
-*:Any-Link{ Color: Inherit }
-*:Any-Link:Hover{ Color: #777 }
+button[onclick="i(event)"]{ Margin-Inline: 0; Border-Color: #777; Border-Width: Thin; Border-Block-Style: None Dotted; Border-Inline-Style: None; Padding: 0; Vertical-Align: Super; Color: #333; Background: Transparent; Font: Smaller; Cursor: Pointer }
+*:Any-Link{ Color: #333 }
+*:Any-Link:Hover,button[onclick="i(event)"]:Hover{ Color: #777 }
+a{ White-Space: Normal }
+a[data-expanded]+small{ Display: Inline-Block; Vertical-Align: Sub; Font-Size: Smaller; Line-Height: 1 }
+a[data-expanded]+small::before{ Content: "[" }
+a[data-expanded]+small::after{ Content: "]" }
 			</html:style>
 			<html:script>
+const u = s => ({
+	madsrdf: `http://www.loc.gov/mads/rdf/v1#`,
+	rdf: `http://www.w3.org/1999/02/22-rdf-syntax-ns#`,
+	rdfs: `http://www.w3.org/2000/01/rdf-schema#`,
+	skos: `http://www.w3.org/2004/02/skos/core#`,
+	xml: `http://www.w3.org/XML/1998/namespace` }[s])
 const o = ( { target: e } ) => {
 	e.hidden = e.dataset.slide == `out`
 	e.removeAttribute `data-slide`
@@ -166,25 +172,34 @@ const o = ( { target: e } ) => {
 	e.removeEventListener(`animationend`, o) }
 const i = ( { target: e } ) => {
 	const a = e.previousElementSibling
-	fetch(a.href.indexOf `http://www.wikidata.org/entity/` == 0 ? `https://www.wikidata.org/wiki/Special:EntityData/${ a.href.substring(`http://www.wikidata.org/entity/`.length) }` : a.href, {
+	if ( a.origin != location.origin || a.pathname != location.pathname || a.search != location.search ) fetch(a.href.indexOf `http://www.wikidata.org/entity/` == 0 ? `https://www.wikidata.org/wiki/Special:EntityData/${ a.href.substring(`http://www.wikidata.org/entity/`.length) }` : a.href, {
 		headers: { Accept: `application/rdf+xml` },
 		method: `GET`,
 		mode: `cors`,
 		redirect: `follow`,
 		referrerPolicy: `no-referrer` }).then(r => r.text().then(t => {
 			const d = (new DOMParser).parseFromString(t, `text/xml`)
-			const n = d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label]`, d, s => ({
-				madsrdf: `http://www.loc.gov/mads/rdf/v1#`,
-				rdf: `http://www.w3.org/1999/02/22-rdf-syntax-ns#`,
-				rdfs: `http://www.w3.org/2000/01/rdf-schema#`,
-				skos: `http://www.w3.org/2004/02/skos/core#` }[s]), XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
-			const c = document.createElementNS(`http://www.w3.org/1999/xhtml`, `cite`)
-			if ( n?.hasAttributeNS?.(`http://www.w3.org/XML/1998/namespace`, `lang`) ) c.setAttribute(`lang`, n.getAttributeNS(`http://www.w3.org/XML/1998/namespace`, `lang`))
+			const n = d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label][@xml:lang='en' or starts-with(@xml:lang, 'en-')]`, d, u, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue ?? d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label]`, d, u, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 			if ( n ) {
+				const c = document.createElementNS(`http://www.w3.org/1999/xhtml`, `cite`)
+				const s = document.createElementNS(`http://www.w3.org/1999/xhtml`, `small`)
+				if ( n.hasAttributeNS(`http://www.w3.org/XML/1998/namespace`, `lang`) ) c.setAttribute(`lang`, n.getAttributeNS(`http://www.w3.org/XML/1998/namespace`, `lang`))
 				c.textContent = n.textContent
-				a.textContent = ""
-				a.appendChild(c) }
-			e.parentNode.removeChild(e) })).catch(( ) => e.parentNode.removeChild(e)) }
+				for ( const h of a.childNodes ) { s.appendChild(h) }
+				a.appendChild(c)
+				e.parentNode.replaceChild(s, e)
+				a.dataset.expanded = "" } })).catch(( ) => e.parentNode.removeChild(e))
+	else {
+		let n = document.getElementById(a.hash.substring(1))?.querySelector?.(`h1`)
+		if ( n ) {
+			const c = document.createElementNS(`http://www.w3.org/1999/xhtml`, `cite`)
+			const s = document.createElementNS(`http://www.w3.org/1999/xhtml`, `small`)
+			c.lang = n.lang
+			c.textContent = n.textContent
+			for ( const h of a.childNodes ) { s.appendChild(h) }
+			a.appendChild(c)
+			e.parentNode.replaceChild(s, e)
+			a.dataset.expanded = "" } } }
 window.addEventListener(`load`, ( ) => {
 	const d = document.querySelector `#BNS>div`
 	d.removeChild(d.firstElementChild)
@@ -193,10 +208,11 @@ window.addEventListener(`load`, ( ) => {
 	for ( const p of document.querySelectorAll `#BNS>div>section` ) {
 		p.hidden = p != e
 		if ( p == e )
-			for ( f of e.querySelectorAll `iframe,audio,video,img` ) {
-				if ( f.dataset.src ) {
-					f.src = f.dataset.src
-					f.removeAttribute `data-src` } } } })
+			for ( f of e.querySelectorAll `iframe[data-src],audio[data-src],video[data-src],img[data-src]` ) {
+				const n = f.cloneNode()
+				n.src = f.dataset.src
+				n.removeAttribute `data-src`
+				f.parentNode.replaceChild(n, f) } } })
 window.addEventListener(`hashchange`, v => {
 	if ( 1 >= location.hash.length ) return
 	let m = false
@@ -208,10 +224,11 @@ window.addEventListener(`hashchange`, v => {
 		if ( p == e ) {
 			m = true
 			if ( e.hidden || p.dataset.slide == `out` ) {
-				for ( f of e.querySelectorAll `iframe,audio,video,img` ) {
-					if ( f.dataset.src ) {
-						f.src = f.dataset.src
-						f.removeAttribute `data-src` } }
+				for ( f of e.querySelectorAll `iframe[data-src],audio[data-src],video[data-src],img[data-src]` ) {
+					const n = f.cloneNode()
+					n.src = f.dataset.src
+					n.removeAttribute `data-src`
+					f.parentNode.replaceChild(n, f) }
 				e.dataset.slide = `in`
 				e.addEventListener(`animationend`, o)
 				e.hidden = false } }
@@ -241,19 +258,45 @@ document.addEventListener(`keydown`, v => {
 			<value-of select="document($rdf)//bns:Corpus/bns:fullTitle"/>
 		</copy>
 	</template>
-	<template match="html:a[starts-with(@href, $about)]">
-		<copy>
-			<attribute name="href">
-				<text>#</text>
-				<call-template name="shorten">
-					<with-param name="uri" select="@href"/>
-				</call-template>
-			</attribute>
-			<for-each select="@*[not(name(.)='href')]">
-				<copy/>
-			</for-each>
-			<apply-templates/>
-		</copy>
+	<template match="html:a">
+		<variable name="short">
+			<call-template name="shorten">
+				<with-param name="uri" select="@href"/>
+			</call-template>
+		</variable>
+		<variable name="target" select="document($rdf)//*[self::bns:hasProjects|self::bns:includes]/*[@rdf:about=current()/@href]"/>
+		<variable name="result">
+			<copy>
+				<choose>
+					<when test="$target">
+						<attribute name="href">
+							<text>#</text>
+							<value-of select="$short"/>
+						</attribute>
+					</when>
+					<otherwise>
+						<for-each select="@href">
+							<copy/>
+						</for-each>
+					</otherwise>
+				</choose>
+				<for-each select="@*[not(name(.)='href')]">
+					<copy/>
+				</for-each>
+				<apply-templates/>
+			</copy>
+		</variable>
+		<choose>
+			<when test="count(*)=1 and html:code">
+				<html:span style="White-Space: NoWrap">
+					<copy-of select="$result"/>
+					<html:button title="Attempt to fetch link metadata." onclick="i(event)">[?]</html:button>
+				</html:span>
+			</when>
+			<otherwise>
+				<copy-of select="$result"/>
+			</otherwise>
+		</choose>
 	</template>
 	<template match="html:article[@id='BNS']">
 		<copy>
@@ -815,15 +858,15 @@ document.addEventListener(`keydown`, v => {
 				<for-each select="bns:inspiration/@rdf:resource">
 					<variable name="link">
 						<html:a href="{.}">
-							<call-template name="shorten">
-								<with-param name="uri" select="."/>
-							</call-template>
+							<html:code>
+								<call-template name="shorten">
+									<with-param name="uri" select="."/>
+								</call-template>
+							</html:code>
 						</html:a>
 					</variable>
 					<html:dd>
 						<apply-templates select="exsl:node-set($link)"/>
-						<text> </text>
-						<html:button onclick="i(event)">[?]</html:button>
 					</html:dd>
 				</for-each>
 			</if>
