@@ -1,10 +1,12 @@
 <!DOCTYPE rdf:RDF [
-	<!ENTITY NamedIndividual "http://www.w3.org/2002/07/owl#NamedIndividual">
 	<!ENTITY NCName "http://www.w3.org/2001/XMLSchema#NCName">
 	<!ENTITY bjmns "tag:bjmns.tumblr.com,2013:">
 	<!ENTITY bns "tag:bjmns.tumblr.com,2013:bns::">
 	<!ENTITY gYearMonth "http://www.w3.org/2001/XMLSchema#gYearMonth">
 	<!ENTITY integer "http://www.w3.org/2001/XMLSchema#integer">
+	<!ENTITY lcbw "http://id.loc.gov/resources/works/">
+	<!ENTITY lcsh "http://id.loc.gov/authorities/subjects/">
+	<!ENTITY wikidata "http://www.wikidata.org/entity/">
 ]>
 <rdf:RDF
 	xml:base="https://go.KIBI.family/Documents/Library/BJMNS/"
@@ -94,10 +96,16 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&lcbw;1544990"/>
+						<inspiration rdf:resource="&lcbw;12001639"/>
+						<inspiration rdf:resource="&lcsh;sh85147259"/>
 						<includes>
 							<Version rdf:about="&bns;0:1:0">
 								<index rdf:datatype="&integer;">0</index>
+								<fullTitle xml:lang="en">Exasperated Wolf and the Big Flood</fullTitle>
+								<abbreviatedTitle xml:lang="en">flood</abbreviatedTitle>
 								<owl:sameAs rdf:resource="#bjmns:0:1:0"/>
+								<inspiration rdf:resource="&lcsh;sh85049168"/>
 								<includes>
 									<Draft rdf:about="&bns;0:1:0:1">
 										<index rdf:datatype="&integer;">1</index>
@@ -109,7 +117,11 @@
 							</Version>
 							<Version rdf:about="&bns;0:1:1">
 								<index rdf:datatype="&integer;">1</index>
+								<fullTitle xml:lang="en">Exasperated Wolf and Little Red Riding Hood</fullTitle>
+								<abbreviatedTitle xml:lang="en">littlered</abbreviatedTitle>
 								<owl:sameAs rdf:resource="#bjmns:0:1:1"/>
+								<inspiration rdf:resource="&lcsh;sh88005840"/>
+								<inspiration rdf:resource="&wikidata;Q11838"/>
 								<includes>
 									<Draft rdf:about="&bns;0:1:1:1">
 										<index rdf:datatype="&integer;">1</index>
@@ -121,7 +133,10 @@
 							</Version>
 							<Version rdf:about="&bns;0:1:2">
 								<index rdf:datatype="&integer;">2</index>
+								<fullTitle xml:lang="en">Exasperated Wolf and the Boy who cried “Wolf”</fullTitle>
+								<abbreviatedTitle xml:lang="en">wolfboy</abbreviatedTitle>
 								<owl:sameAs rdf:resource="#bjmns:0:1:2"/>
+								<inspiration rdf:resource="&wikidata;Q1190945"/>
 								<includes>
 									<Draft rdf:about="&bns;0:1:2:0">
 										<index rdf:datatype="&integer;">0</index>
@@ -152,6 +167,8 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q4986149"/>
+						<inspiration rdf:resource="&wikidata;Q2927680"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:3">
 						<index rdf:datatype="&integer;">3</index>
@@ -197,6 +214,7 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&lcsh;sh2007009593"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:5">
 						<index rdf:datatype="&integer;">5</index>
@@ -210,6 +228,8 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q849666"/>
+						<inspiration rdf:resource="&wikidata;Q4986149"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:6">
 						<index rdf:datatype="&integer;">6</index>
@@ -223,6 +243,7 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q849666"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:7">
 						<index rdf:datatype="&integer;">7</index>
@@ -236,6 +257,8 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&lcsh;sh85139074"/>
+						<inspiration rdf:resource="&wikidata;Q498871"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:8">
 						<index rdf:datatype="&integer;">8</index>
@@ -250,6 +273,7 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&lcbw;503025"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:9">
 						<index rdf:datatype="&integer;">9</index>
@@ -262,6 +286,7 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q220665"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:10">
 						<index rdf:datatype="&integer;">10</index>
@@ -275,6 +300,7 @@
 								</html:div>
 							</contents>
 						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q925587"/>
 					</Volume>
 					<!--
 					<Volume rdf:about="&bns;0:11">
@@ -331,6 +357,12 @@
 						</html:div>
 					</contents>
 				</dc:abstract>
+				<inspiration rdf:resource="&lcbw;2126644"/>
+				<inspiration rdf:resource="&lcbw;4035856"/>
+				<inspiration rdf:resource="&lcbw;4995027"/>
+				<inspiration rdf:resource="&lcbw;12103280"/>
+				<inspiration rdf:resource="&lcbw;13093944"/>
+				<inspiration rdf:resource="&lcsh;sh2008113556"/>
 				<includes>
 					<Volume rdf:about="&bns;1:1">
 						<index rdf:datatype="&integer;">1</index>
@@ -338,7 +370,16 @@
 						<includes>
 							<Version rdf:about="&bns;1:1:2003-03">
 								<index rdf:datatype="&gYearMonth;">2003-03</index>
+								<fullTitle xml:lang="en">Tally Marries Dimond</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:1:1:2003-03"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en">
+											<html:p>A boy named Tally proposes to and marries his longtime love interest, a girl named Dimond (misspelling intentional).  There existed at least one prior draft with a significantly different plot (as I recall, perhaps there was some competition for Dimond’s hand?), but this has in all likelihood been lost to time and the wastebasket.</html:p>
+											<html:p>This is quite possibly the first romance story (if you can call it that) I ever wrote, so uh, take from that what you will.</html:p>
+										</html:div>
+									</contents>
+								</dc:abstract>
 								<includes>
 									<Draft rdf:about="&bns;1:1:2003-03:Final">
 										<index rdf:datatype="&NCName;">Final</index>
@@ -350,7 +391,15 @@
 							</Version>
 							<Version rdf:about="&bns;1:1:2003-04">
 								<index rdf:datatype="&gYearMonth;">2003-04</index>
-									<owl:sameAs rdf:resource="#bjmns:1:1:2003-04"/>
+								<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:1:1:2003-04"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en">
+											<html:p>A mishap with a strange machine results in two friends switching bodies.</html:p>
+										</html:div>
+									</contents>
+								</dc:abstract>
 								<includes>
 									<Draft rdf:about="&bns;1:1:2003-04:1">
 										<index rdf:datatype="&integer;">1</index>
@@ -368,7 +417,15 @@
 							</Version>
 							<Version rdf:about="&bns;1:1:2003-09">
 								<index rdf:datatype="&gYearMonth;">2003-09</index>
+								<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:1:1:2003-09"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en">
+											<html:p>In the future, a young boy passes an exam and gets to go to an elite school.  There, he has adventures.</html:p>
+										</html:div>
+									</contents>
+								</dc:abstract>
 								<includes>
 									<Draft rdf:about="&bns;1:1:2003-09:1">
 										<index rdf:datatype="&integer;">1</index>
@@ -387,6 +444,14 @@
 							<Version rdf:about="&bns;1:1:N">
 								<index rdf:datatype="&NCName;">N</index>
 								<owl:sameAs rdf:resource="#bjmns:1:1:N"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en">
+											<html:p>In the future, a boy studies science in a magical age where it is popularly considered irrelevant.</html:p>
+											<html:p>Pretty much exclusively a spinoff (and inversion) of <html:a href="&bns;1:1:2003-09">bjmns:1:1:2003-09</html:a>, and not earlier concepts.</html:p>
+										</html:div>
+									</contents>
+								</dc:abstract>
 								<includes>
 									<Draft rdf:about="&bns;1:1:N:1">
 										<index rdf:datatype="&integer;">1</index>

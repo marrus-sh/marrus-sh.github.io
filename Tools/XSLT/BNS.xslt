@@ -1,3 +1,8 @@
+<!DOCTYPE stylesheet [
+	<!ENTITY NCName "http://www.w3.org/2001/XMLSchema#NCName">
+	<!ENTITY gYearMonth "http://www.w3.org/2001/XMLSchema#gYearMonth">
+	<!ENTITY integer "http://www.w3.org/2001/XMLSchema#integer">
+]>
 <stylesheet
 	id="transform"
 	version="1.0"
@@ -5,18 +10,72 @@
 	xmlns:bns="https://go.KIBI.family/Ontologies/BNS/#"
 	xmlns:dc="http://purl.org/dc/terms/"
 	xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+	xmlns:exsl="http://exslt.org/common"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:svg="http://www.w3.org/2000/svg"
 >
 	<variable name="rdf" select="//html:link[@rel='alternate'][@type='application/rdf+xml']/@href[1]"/>
-	<variable name="prefix" select="substring-before(//html:html/@prefix, ': ')"/>
-	<variable name="expansion" select="substring-after(//html:html/@prefix, ': ')"/>
+	<variable name="prefixes">
+		<html:dl>
+			<call-template name="prefixes"/>
+		</html:dl>
+	</variable>
+	<variable name="about">
+		<call-template name="expand">
+			<with-param name="pname" select="normalize-space(//html:html/@about)"/>
+		</call-template>
+	</variable>
 	<template name="shorten">
 		<param name="uri"/>
-		<if test="starts-with($uri, $expansion)">
-			<value-of select="concat($prefix, ':', substring-after($uri, $expansion))"/>
+		<variable name="expansion" select="exsl:node-set($prefixes)//html:dd[starts-with($uri, .)]"/>
+		<variable name="prefix" select="$expansion//preceding-sibling::html:dt[1]"/>
+		<choose>
+			<when test="$prefix">
+				<value-of select="concat($prefix, ':', substring-after($uri, $expansion))"/>
+			</when>
+			<otherwise>
+				<value-of select="$uri"/>
+			</otherwise>
+		</choose>
+	</template>
+	<template name="expand">
+		<param name="pname"/>
+		<variable name="prefix" select="exsl:node-set($prefixes)//html:dt[starts-with($pname, concat(., ':'))]"/>
+		<variable name="expansion" select="$prefix//following-sibling::html:dd[1]"/>
+		<choose>
+			<when test="$prefix">
+				<value-of select="concat($expansion, substring-after($pname, concat($prefix, ':')))"/>
+			</when>
+			<otherwise>
+				<value-of select="$pname"/>
+			</otherwise>
+		</choose>
+	</template>
+	<template name="prefixes">
+		<param name="prefix" select="normalize-space(//html:html/@prefix)"/>
+		<if test="contains($prefix, ': ')">
+			<html:div>
+				<html:dt>
+					<value-of select="substring-before($prefix, ': ')"/>
+				</html:dt>
+				<html:dd>
+					<choose>
+						<when test="contains(substring-after($prefix, ': '), ' ')">
+							<value-of select="substring-before(substring-after($prefix, ': '), ' ')"/>
+						</when>
+						<otherwise>
+							<value-of select="substring-after($prefix, ': ')"/>
+						</otherwise>
+					</choose>
+				</html:dd>
+			</html:div>
+			<if test="contains(substring-after($prefix, ': '), ' ')">
+				<call-template name="prefixes">
+					<with-param name="prefix" select="substring-after(substring-after($prefix, ': '), ' ')"/>
+				</call-template>
+			</if>
 		</if>
 	</template>
 	<template match="html:*|svg:*">
@@ -92,6 +151,10 @@ p{ Margin-Block: 0; Margin-Inline: Auto; Text-Align: Justify; Text-Align-Last: C
 p:Not(:First-Child){ Margin-Block: .625EM 0 }
 ol{ Margin: 0; Padding: 0; List-Style-Type: None }
 ol ol{ Margin-Inline: 1EM 0 }
+dl{ Margin-Block: 1EM }
+dl:First-Child{ Margin-Block-Start: 0 }
+dt{ Font-Weight: Bold }
+dd{ Display: List-Item; List-Style-Type: Square; Margin-Inline: 1EM 0 }
 *:Any-Link{ Color: Inherit }
 *:Any-Link:Hover{ Color: #777 }
 			</html:style>
@@ -101,26 +164,54 @@ const o = ( { target: e } ) => {
 	e.removeAttribute `data-slide`
 	e.removeAttribute `data-direction`
 	e.removeEventListener(`animationend`, o) }
+const i = ( { target: e } ) => {
+	const a = e.previousElementSibling
+	fetch(a.href.indexOf `http://www.wikidata.org/entity/` == 0 ? `https://www.wikidata.org/wiki/Special:EntityData/${ a.href.substring(`http://www.wikidata.org/entity/`.length) }` : a.href, {
+		headers: { Accept: `application/rdf+xml` },
+		method: `GET`,
+		mode: `cors`,
+		redirect: `follow`,
+		referrerPolicy: `no-referrer` }).then(r => r.text().then(t => {
+			const d = (new DOMParser).parseFromString(t, `text/xml`)
+			const n = d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label]`, d, s => ({
+				madsrdf: `http://www.loc.gov/mads/rdf/v1#`,
+				rdf: `http://www.w3.org/1999/02/22-rdf-syntax-ns#`,
+				rdfs: `http://www.w3.org/2000/01/rdf-schema#`,
+				skos: `http://www.w3.org/2004/02/skos/core#` }[s]), XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+			const c = document.createElementNS(`http://www.w3.org/1999/xhtml`, `cite`)
+			if ( n?.hasAttributeNS?.(`http://www.w3.org/XML/1998/namespace`, `lang`) ) c.setAttribute(`lang`, n.getAttributeNS(`http://www.w3.org/XML/1998/namespace`, `lang`))
+			if ( n ) {
+				c.textContent = n.textContent
+				a.textContent = ""
+				a.appendChild(c) }
+			e.parentNode.removeChild(e) })).catch(( ) => e.parentNode.removeChild(e)) }
 window.addEventListener(`load`, ( ) => {
 	const d = document.querySelector `#BNS>div`
 	d.removeChild(d.firstElementChild)
 	let e = document.getElementById(location.hash.substring(1))
 	if ( !e || !e.matches `#BNS>div>section` ) e = document.querySelector `#BNS>div>section`
-	for ( const p of document.querySelectorAll `#BNS>div>section` ) { p.hidden = p != e } })
+	for ( const p of document.querySelectorAll `#BNS>div>section` ) {
+		p.hidden = p != e
+		if ( p == e )
+			for ( f of e.querySelectorAll `iframe,audio,video,img` ) {
+				if ( f.dataset.src ) {
+					f.src = f.dataset.src
+					f.removeAttribute `data-src` } } } })
 window.addEventListener(`hashchange`, v => {
 	if ( 1 >= location.hash.length ) return
 	let m = false
 	let n = location.hash.substring(1)
 	let c = document.querySelector `#BNS>div>section:Not([hidden])`
-	let e = null
-	while ( !(e = document.getElementById(n)) ) {
-		if ( n.includes `:` ) n = n.substring(0, n.indexOf `:` )
-		else return }
+	let e = document.getElementById(n)
 	if ( !e.matches `#BNS>div>section` ) return
 	for ( const p of document.querySelectorAll `#BNS>div>section` ) {
 		if ( p == e ) {
 			m = true
 			if ( e.hidden || p.dataset.slide == `out` ) {
+				for ( f of e.querySelectorAll `iframe,audio,video,img` ) {
+					if ( f.dataset.src ) {
+						f.src = f.dataset.src
+						f.removeAttribute `data-src` } }
 				e.dataset.slide = `in`
 				e.addEventListener(`animationend`, o)
 				e.hidden = false } }
@@ -150,10 +241,13 @@ document.addEventListener(`keydown`, v => {
 			<value-of select="document($rdf)//bns:Corpus/bns:fullTitle"/>
 		</copy>
 	</template>
-	<template match="html:a[starts-with(@href, $expansion)]">
+	<template match="html:a[starts-with(@href, $about)]">
 		<copy>
 			<attribute name="href">
-				<value-of select="concat('#', $prefix, ':', substring-after(@href, $expansion))"/>
+				<text>#</text>
+				<call-template name="shorten">
+					<with-param name="uri" select="@href"/>
+				</call-template>
 			</attribute>
 			<for-each select="@*[not(name(.)='href')]">
 				<copy/>
@@ -198,11 +292,357 @@ document.addEventListener(`keydown`, v => {
 					</html:nav>
 				</html:header>
 				<html:div>
-					<html:span lang="en" xml:lang="en">Loading...</html:span>
+					<html:span lang="en">Loading...</html:span>
 					<apply-templates/>
 				</html:div>
 			</for-each>
 		</copy>
+	</template>
+	<template name="formatted">
+		<choose>
+			<when test="self::bns:Project|parent::bns:hasProjects">
+				<variable name="index" select="count(preceding-sibling::*)"/>
+				<if test="10>$index">0</if>
+				<if test="100>$index">0</if>
+				<value-of select="$index"/>
+			</when>
+			<when test="self::bns:Book">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<choose>
+							<when test="bns:index=1">Α</when>
+							<when test="bns:index=2">Β</when>
+							<when test="bns:index=3">Γ</when>
+							<when test="bns:index=4">Δ</when>
+							<when test="bns:index=5">Ε</when>
+							<when test="bns:index=6">Ζ</when>
+							<when test="bns:index=7">Η</when>
+							<when test="bns:index=8">Θ</when>
+							<when test="bns:index=9">Ι</when>
+							<when test="bns:index=10">Κ</when>
+							<when test="bns:index=11">Λ</when>
+							<when test="bns:index=12">Μ</when>
+							<when test="bns:index=13">Ν</when>
+							<when test="bns:index=14">Ξ</when>
+							<when test="bns:index=15">Ο</when>
+							<when test="bns:index=16">Π</when>
+							<when test="bns:index=17">Ρ</when>
+							<when test="bns:index=18">Σ</when>
+							<when test="bns:index=19">Τ</when>
+							<when test="bns:index=20">Υ</when>
+							<when test="bns:index=21">Φ</when>
+							<when test="bns:index=22">Χ</when>
+							<when test="bns:index=23">Ψ</when>
+							<when test="bns:index=24">Ω</when>
+							<otherwise>
+								<value-of select="number(bns:index)"/>
+							</otherwise>
+						</choose>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Volume">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<choose>
+							<when test="bns:index>49">
+								<value-of select="number(bns:index)"/>
+							</when>
+							<when test="bns:index>9">
+								<choose>
+									<when test="substring(number(bns:index), 1, 1)='4'">XXXX</when>
+									<when test="substring(number(bns:index), 1, 1)='3'">XXX</when>
+									<when test="substring(number(bns:index), 1, 1)='2'">XX</when>
+									<when test="substring(number(bns:index), 1, 1)='1'">X</when>
+								</choose>
+								<choose>
+									<when test="substring(number(bns:index), 2, 1)='9'">VIV</when>
+									<when test="substring(number(bns:index), 2, 1)='8'">VIII</when>
+									<when test="substring(number(bns:index), 2, 1)='7'">VII</when>
+									<when test="substring(number(bns:index), 2, 1)='6'">VI</when>
+									<when test="substring(number(bns:index), 2, 1)='5'">V</when>
+									<when test="substring(number(bns:index), 2, 1)='4'">IV</when>
+									<when test="substring(number(bns:index), 2, 1)='3'">III</when>
+									<when test="substring(number(bns:index), 2, 1)='2'">II</when>
+									<when test="substring(number(bns:index), 2, 1)='1'">I</when>
+								</choose>
+							</when>
+							<when test="bns:index>0">
+								<choose>
+									<when test="bns:index=9">VIV</when>
+									<when test="bns:index=8">VIII</when>
+									<when test="bns:index=7">VII</when>
+									<when test="bns:index=6">VI</when>
+									<when test="bns:index=5">V</when>
+									<when test="bns:index=4">IV</when>
+									<when test="bns:index=3">III</when>
+									<when test="bns:index=2">II</when>
+									<when test="bns:index=1">I</when>
+								</choose>
+							</when>
+							<otherwise>
+								<value-of select="number(bns:index)"/>
+							</otherwise>
+						</choose>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Part">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<choose>
+							<when test="bns:index>49">
+								<value-of select="number(bns:index)"/>
+							</when>
+							<when test="bns:index>9">
+								<choose>
+									<when test="substring(number(bns:index), 1, 1)='4'">xxx</when>
+									<when test="substring(number(bns:index), 1, 1)='3'">xxx</when>
+									<when test="substring(number(bns:index), 1, 1)='2'">xx</when>
+									<when test="substring(number(bns:index), 1, 1)='1'">x</when>
+								</choose>
+								<choose>
+									<when test="substring(number(bns:index), 2, 1)='9'">viv</when>
+									<when test="substring(number(bns:index), 2, 1)='8'">viii</when>
+									<when test="substring(number(bns:index), 2, 1)='7'">vii</when>
+									<when test="substring(number(bns:index), 2, 1)='6'">vi</when>
+									<when test="substring(number(bns:index), 2, 1)='5'">v</when>
+									<when test="substring(number(bns:index), 2, 1)='4'">iv</when>
+									<when test="substring(number(bns:index), 2, 1)='3'">iii</when>
+									<when test="substring(number(bns:index), 2, 1)='2'">ii</when>
+									<when test="substring(number(bns:index), 2, 1)='1'">i</when>
+								</choose>
+							</when>
+							<when test="bns:index>0">
+								<choose>
+									<when test="bns:index=9">VIV</when>
+									<when test="bns:index=8">VIII</when>
+									<when test="bns:index=7">VII</when>
+									<when test="bns:index=6">VI</when>
+									<when test="bns:index=5">V</when>
+									<when test="bns:index=4">IV</when>
+									<when test="bns:index=3">III</when>
+									<when test="bns:index=2">II</when>
+									<when test="bns:index=1">I</when>
+								</choose>
+							</when>
+							<otherwise>
+								<value-of select="number(bns:index)"/>
+							</otherwise>
+						</choose>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Side">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<choose>
+							<when test="bns:index=1">A</when>
+							<when test="bns:index=2">B</when>
+							<when test="bns:index=3">C</when>
+							<when test="bns:index=4">D</when>
+							<when test="bns:index=5">E</when>
+							<when test="bns:index=6">F</when>
+							<when test="bns:index=7">G</when>
+							<when test="bns:index=8">H</when>
+							<when test="bns:index=9">I</when>
+							<when test="bns:index=10">J</when>
+							<when test="bns:index=11">K</when>
+							<when test="bns:index=12">L</when>
+							<when test="bns:index=13">M</when>
+							<when test="bns:index=14">N</when>
+							<when test="bns:index=15">O</when>
+							<when test="bns:index=16">P</when>
+							<when test="bns:index=17">Q</when>
+							<when test="bns:index=18">R</when>
+							<when test="bns:index=19">S</when>
+							<when test="bns:index=20">T</when>
+							<when test="bns:index=21">U</when>
+							<when test="bns:index=22">V</when>
+							<when test="bns:index=23">W</when>
+							<when test="bns:index=24">X</when>
+							<when test="bns:index=25">Y</when>
+							<when test="bns:index=26">Z</when>
+							<otherwise>
+								<value-of select="number(bns:index)"/>
+							</otherwise>
+						</choose>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Chapter">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<if test="10>$index">0</if>
+						<value-of select="number(bns:index)"/>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Section">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<value-of select="number(bns:index)"/>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Verse">
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<choose>
+							<when test="bns:index=1">α</when>
+							<when test="bns:index=2">β</when>
+							<when test="bns:index=3">γ</when>
+							<when test="bns:index=4">δ</when>
+							<when test="bns:index=5">ε</when>
+							<when test="bns:index=6">ζ</when>
+							<when test="bns:index=7">η</when>
+							<when test="bns:index=8">θ</when>
+							<when test="bns:index=9">ι</when>
+							<when test="bns:index=10">κ</when>
+							<when test="bns:index=11">λ</when>
+							<when test="bns:index=12">μ</when>
+							<when test="bns:index=13">ν</when>
+							<when test="bns:index=14">ξ</when>
+							<when test="bns:index=15">ο</when>
+							<when test="bns:index=16">π</when>
+							<when test="bns:index=17">ρ</when>
+							<when test="bns:index=18">σ</when>
+							<when test="bns:index=19">τ</when>
+							<when test="bns:index=20">υ</when>
+							<when test="bns:index=21">φ</when>
+							<when test="bns:index=22">χ</when>
+							<when test="bns:index=23">ψ</when>
+							<when test="bns:index=24">ω</when>
+							<otherwise>
+								<value-of select="number(bns:index)"/>
+							</otherwise>
+						</choose>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Concept">
+				<text>c</text>
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<value-of select="number(bns:index)"/>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<html:sup>
+							<value-of select="bns:index"/>
+						</html:sup>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Version">
+				<text>v</text>
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<value-of select="number(bns:index)"/>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<html:sup>
+							<value-of select="bns:index"/>
+						</html:sup>
+					</otherwise>
+				</choose>
+			</when>
+			<when test="self::bns:Draft">
+				<for-each select="ancestor::bns:Version[1]">
+					<call-template name="formatted"/>
+				</for-each>
+				<text>d</text>
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<value-of select="number(bns:index)"/>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<html:sup>
+							<value-of select="bns:index"/>
+						</html:sup>
+					</otherwise>
+				</choose>
+			</when>
+			<otherwise>
+				<choose>
+					<when test="bns:index/@rdf:datatype='&integer;'">
+						<value-of select="number(bns:index)"/>
+					</when>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
+						<value-of select="bns:index"/>
+					</when>
+					<otherwise>
+						<text>“</text>
+						<value-of select="bns:index"/>
+						<text>”</text>
+					</otherwise>
+				</choose>
+			</otherwise>
+		</choose>
 	</template>
 	<template name="name">
 		<html:hgroup>
@@ -211,59 +651,56 @@ document.addEventListener(`keydown`, v => {
 					<value-of select="."/>
 				</html:h1>
 			</for-each>
-			<for-each select="bns:abbreviatedTitle|dc:alternate">
-				<html:h2 lang="{@xml:lang}">
-					<value-of select="."/>
-				</html:h2>
-			</for-each>
-			<if test="not(bns:abbreviatedTitle|dc:alternate)">
-				<choose>
-					<when test="self::bns:Project">
-						<html:h2>
-							<value-of select="bns:identifier"/>
+			<choose>
+				<when test="self::bns:Author">
+					<html:h2 lang="{@xml:lang}">
+						<html:abbr title="Branching Notational System">BNS</html:abbr>
+						<text>: </text>
+						<value-of select="bns:fullTitle|bns:abbreviatedTitle"/>
+					</html:h2>
+				</when>
+				<otherwise>
+					<for-each select="bns:abbreviatedTitle|dc:alternate">
+						<html:h2 lang="{@xml:lang}">
+							<value-of select="."/>
 						</html:h2>
-					</when>
-					<when test="self::bns:Volume">
-						<html:h2>
+					</for-each>
+					<if test="not(bns:abbreviatedTitle|dc:alternate)">
+						<html:h2 lang="{@xml:lang}">
 							<choose>
-								<when test="bns:index>0 and 9>=bns:index">
-									<value-of select="translate(bns:index, '123456789', 'ⅠⅡⅢⅣⅤⅥⅦⅧⅨ')"/>
-								</when>
-								<when test="bns:index=10">
-									<text>Ⅹ</text>
-								</when>
-								<when test="bns:index=11">
-									<text>Ⅺ</text>
-								</when>
-								<when test="bns:index=12">
-									<text>Ⅻ</text>
+								<when test="self::bns:Project">
+									<value-of select="bns:identifier"/>
 								</when>
 								<otherwise>
-									<value-of select="bns:index"/>
+									<call-template name="formatted"/>
 								</otherwise>
 							</choose>
 						</html:h2>
-					</when>
-					<when test="self::bns:Version">
-						<html:h2>
-							<text>v</text>
-							<value-of select="bns:index"/>
-						</html:h2>
-					</when>
-					<when test="self::bns:Draft">
-						<html:h2>
-							<text>v</text>
-							<value-of select="../../bns:index"/>
-							<text>d</text>
-							<value-of select="bns:index"/>
-						</html:h2>
-					</when>
-				</choose>
-			</if>
+					</if>
+				</otherwise>
+			</choose>
 		</html:hgroup>
 	</template>
+	<template name="namedformat">
+		<html:span lang="en">
+			<choose>
+				<when test="self::bns:Project|parent::bns:hasProjects">
+					<text>Project </text>
+					<call-template name="formatted"/>
+				</when>
+				<when test="self::bns:Concept|self::bns:Version|self::bns:Draft">
+					<call-template name="formatted"/>
+				</when>
+				<otherwise>
+					<value-of select="name(.)"/>
+					<text> </text>
+					<call-template name="formatted"/>
+				</otherwise>
+			</choose>
+		</html:span>
+	</template>
 	<template name="cover">
-		<variable name="covers" select="bns:hasCover[@rdf:parseType='Resource']|bns:hasCover[not(@rdf:parseType='Resource')]/*"/>
+		<variable name="covers" select="bns:hasCover[@rdf:resource|@rdf:parseType='Resource']|bns:hasCover[not(@rdf:parseType='Resource')]/*"/>
 		<if test="$covers">
 			<html:figure>
 				<for-each select="$covers[1]">
@@ -272,16 +709,22 @@ document.addEventListener(`keydown`, v => {
 							<apply-templates select="bns:contents/*"/>
 						</when>
 						<when test="self::dcmitype:StillImage">
-							<html:img alt="{dc:abstract/@contents}" src="{@rdf:about}"/>
+							<html:img alt="{dc:abstract/@contents}" data-src="{@rdf:about}"/>
 						</when>
 						<when test="self::dcmitype:MovingImage">
-							<html:video controls="" src="{@rdf:about}"/>
+							<html:video controls="" data-src="{@rdf:about}">
+								<if test="bns:hasCover/@rdf:about|bns:hasCover/*/@rdf:about">
+									<attribute name="poster">
+										<value-of select="bns:hasCover/@rdf:resource|bns:hasCover/*/@rdf:about"/>
+									</attribute>
+								</if>
+							</html:video>
 						</when>
 						<when test="self::dcmitype:Sound">
-							<html:audio controls="" src="{@rdf:about}"/>
+							<html:audio controls="" data-src="{@rdf:about}"/>
 						</when>
 						<otherwise>
-							<html:iframe src="{@rdf:about}"/>
+							<html:iframe data-src="{@rdf:resource|@rdf:about}"/>
 						</otherwise>
 					</choose>
 				</for-each>
@@ -345,12 +788,15 @@ document.addEventListener(`keydown`, v => {
 		</html:nav>
 	</template>
 	<template name="footer">
+		<variable name="shortened">
+			<call-template name="shorten">
+				<with-param name="uri" select="@rdf:about"/>
+			</call-template>
+		</variable>
 		<html:footer>
-			<if test="starts-with(@rdf:about, $expansion)">
+			<if test="string($shortened)!=string(@rdf:about)">
 				<html:code>
-					<call-template name="shorten">
-						<with-param name="uri" select="@rdf:about"/>
-					</call-template>
+					<value-of select="$shortened"/>
 				</html:code>
 			</if>
 			<html:code>
@@ -362,7 +808,33 @@ document.addEventListener(`keydown`, v => {
 			</html:code>
 		</html:footer>
 	</template>
-	<template match="bns:Corpus">
+	<template name="metadata">
+		<variable name="contents">
+			<if test="bns:inspiration/@rdf:resource">
+				<html:dt>Inspiration</html:dt>
+				<for-each select="bns:inspiration/@rdf:resource">
+					<variable name="link">
+						<html:a href="{.}">
+							<call-template name="shorten">
+								<with-param name="uri" select="."/>
+							</call-template>
+						</html:a>
+					</variable>
+					<html:dd>
+						<apply-templates select="exsl:node-set($link)"/>
+						<text> </text>
+						<html:button onclick="i(event)">[?]</html:button>
+					</html:dd>
+				</for-each>
+			</if>
+		</variable>
+		<if test="string($contents)">
+			<html:dl>
+				<copy-of select="$contents"/>
+			</html:dl>
+		</if>
+	</template>
+	<template match="*[bns:hasProjects]">
 		<html:section hidden="">
 			<attribute name="id">
 				<call-template name="shorten">
@@ -370,7 +842,7 @@ document.addEventListener(`keydown`, v => {
 				</call-template>
 			</attribute>
 			<html:header>
-				<html:p lang="en" xml:lang="en">Corpus of</html:p>
+				<html:p lang="en">Corpus of</html:p>
 				<apply-templates select="bns:forAuthor/*"/>
 				<call-template name="navigate"/>
 			</html:header>
@@ -378,6 +850,7 @@ document.addEventListener(`keydown`, v => {
 			<html:section>
 				<html:div>
 					<apply-templates select="dc:abstract"/>
+					<call-template name="metadata"/>
 				</html:div>
 			</html:section>
 			<call-template name="footer"/>
@@ -387,213 +860,30 @@ document.addEventListener(`keydown`, v => {
 	<template match="bns:Author">
 		<call-template name="name"/>
 	</template>
-	<template match="bns:Project">
+	<template match="*[parent::bns:includes|parent::bns:hasProjects]">
 		<html:section hidden="">
 			<attribute name="id">
 				<call-template name="shorten">
 					<with-param name="uri" select="@rdf:about"/>
 				</call-template>
 			</attribute>
-			<html:header>
-				<html:p lang="en" xml:lang="en">
-					<text>Project </text>
-					<value-of select="count(preceding-sibling::*)"/>
-				</html:p>
-				<call-template name="name"/>
-				<call-template name="navigate"/>
-			</html:header>
-			<call-template name="cover"/>
-			<html:section>
-				<html:div>
-					<apply-templates select="dc:abstract"/>
-				</html:div>
-				<if test="bns:includes">
-					<html:nav>
-						<html:h1 lang="en" xml:lang="en">Volumes</html:h1>
-						<html:ol>
-							<apply-templates select="bns:includes/*" mode="list"/>
-						</html:ol>
-					</html:nav>
-				</if>
-			</html:section>
-			<call-template name="footer"/>
-		</html:section>
-		<apply-templates select="bns:includes/*"/>
-	</template>
-	<template match="bns:Project" mode="bnspath">
-		<apply-templates select="ancestor::bns:Corpus" mode="bnspath"/>
-		<text>:</text>
-		<value-of select="count(preceding-sibling::*)"/>
-	</template>
-	<template match="bns:Volume">
-		<html:section hidden="">
-			<attribute name="id">
-				<call-template name="shorten">
-					<with-param name="uri" select="@rdf:about"/>
-				</call-template>
-			</attribute>
-			<html:header>
-				<html:p lang="en" xml:lang="en">
-					<text>Project </text>
-					<value-of select="count(ancestor::bns:Project/preceding-sibling::*)"/>
-					<text>, Volume </text>
-					<value-of select="bns:index"/>
-				</html:p>
-				<call-template name="name"/>
-				<call-template name="navigate"/>
-			</html:header>
-			<call-template name="cover"/>
-			<html:section>
-				<html:div>
-					<apply-templates select="dc:abstract"/>
-				</html:div>
-				<if test="bns:includes">
-					<html:nav>
-						<html:h1 lang="en" xml:lang="en">Versions</html:h1>
-						<html:ol>
-							<apply-templates select="bns:includes/*" mode="list"/>
-						</html:ol>
-					</html:nav>
-				</if>
-			</html:section>
-			<call-template name="footer"/>
-		</html:section>
-		<apply-templates select="bns:includes/*"/>
-	</template>
-	<template match="bns:Volume" mode="list">
-		<html:li value="{bns:index}">
-			<html:a>
-				<attribute name="href">
-					<text>#</text>
-					<call-template name="shorten">
-						<with-param name="uri" select="@rdf:about"/>
-					</call-template>
-				</attribute>
-				<html:strong lang="en" xml:lang="en">
-					<text>Volume </text>
-					<value-of select="bns:index"/>
-					<if test="bns:fullTitle">
-						<text>:</text>
-					</if>
-				</html:strong>
-				<for-each select="bns:fullTitle">
-					<text> </text>
-					<html:cite>
-						<value-of select="."/>
-					</html:cite>
-				</for-each>
-			</html:a>
-			<if test="bns:includes">
-				<html:ol>
-					<apply-templates select="bns:includes/*" mode="list"/>
-				</html:ol>
-			</if>
-		</html:li>
-	</template>
-	<template match="bns:Version">
-		<html:section hidden="">
-			<attribute name="id">
-				<call-template name="shorten">
-					<with-param name="uri" select="@rdf:about"/>
-				</call-template>
-			</attribute>
-			<html:header>
-				<html:p lang="en" xml:lang="en">
-					<text>Project </text>
-					<value-of select="count(ancestor::bns:Project/preceding-sibling::*)"/>
-					<text>, Volume </text>
-					<value-of select="ancestor::bns:Volume/bns:index"/>
-					<text>, Version </text>
-					<value-of select="bns:index"/>
-				</html:p>
-				<call-template name="name"/>
-				<call-template name="navigate"/>
-			</html:header>
-			<call-template name="cover"/>
-			<html:section>
-				<html:div>
-					<apply-templates select="dc:abstract"/>
-				</html:div>
-				<if test="bns:includes">
-					<html:nav>
-						<html:h1 lang="en" xml:lang="en">Drafts</html:h1>
-						<html:ol>
-							<apply-templates select="bns:includes/*" mode="list"/>
-						</html:ol>
-					</html:nav>
-				</if>
-			</html:section>
-			<call-template name="footer"/>
-		</html:section>
-		<apply-templates select="bns:includes/*"/>
-	</template>
-	<template match="bns:Version" mode="list">
-		<html:li value="{bns:index}">
-			<html:a>
-				<attribute name="href">
-					<text>#</text>
-					<call-template name="shorten">
-						<with-param name="uri" select="@rdf:about"/>
-					</call-template>
-				</attribute>
-				<html:strong lang="en" xml:lang="en">
-					<text>Version </text>
-					<value-of select="bns:index"/>
-					<if test="bns:fullTitle">
-						<text>:</text>
-					</if>
-				</html:strong>
-				<for-each select="bns:fullTitle">
-					<text> </text>
-					<html:cite>
-						<value-of select="."/>
-					</html:cite>
-				</for-each>
-			</html:a>
-			<if test="bns:includes">
-				<html:ol>
-					<apply-templates select="bns:includes/*" mode="list"/>
-				</html:ol>
-			</if>
-		</html:li>
-	</template>
-	<template match="bns:Draft">
-		<html:section hidden="">
-			<attribute name="id">
-				<call-template name="shorten">
-					<with-param name="uri" select="@rdf:about"/>
-				</call-template>
-			</attribute>
-			<html:header>
-				<html:p lang="en" xml:lang="en">
-					<text>Project </text>
-					<value-of select="count(ancestor::bns:Project/preceding-sibling::*)"/>
-					<text>, Volume </text>
-					<value-of select="ancestor::bns:Volume/bns:index"/>
-					<text>, Version </text>
-					<value-of select="ancestor::bns:Version/bns:index"/>
-					<text>, Draft </text>
-					<value-of select="bns:index"/>
-				</html:p>
-				<call-template name="name"/>
-				<call-template name="navigate"/>
-			</html:header>
+			<apply-templates select="." mode="header"/>
 			<choose>
 				<when test="bns:isPublishedAs/*[@rdf:about]">
 					<html:div>
 						<for-each select="bns:isPublishedAs/*[@rdf:about][1]">
 							<choose>
 								<when test="self::dcmitype:StillImage">
-									<html:img alt="{dc:abstract/@contents}" src="{@rdf:about}"/>
+									<html:img alt="{dc:abstract/@contents}" data-src="{@rdf:about}"/>
 								</when>
 								<when test="self::dcmitype:MovingImage">
-									<html:video controls="" src="{@rdf:about}"/>
+									<html:video controls="" data-src="{@rdf:about}"/>
 								</when>
 								<when test="self::dcmitype:Sound">
-									<html:audio controls="" src="{@rdf:about}"/>
+									<html:audio controls="" data-src="{@rdf:about}"/>
 								</when>
 								<otherwise>
-									<html:iframe src="{@rdf:about}"/>
+									<html:iframe data-src="{@rdf:about}"/>
 								</otherwise>
 							</choose>
 						</for-each>
@@ -601,7 +891,7 @@ document.addEventListener(`keydown`, v => {
 				</when>
 				<when test="bns:isPublishedAs/@rdf:resource">
 					<html:div>
-						<html:iframe src="{bns:isPublishedAs/@rdf:resource}"/>
+						<html:iframe data-src="{bns:isPublishedAs/@rdf:resource}"/>
 					</html:div>
 				</when>
 				<otherwise>
@@ -609,14 +899,47 @@ document.addEventListener(`keydown`, v => {
 					<html:section>
 						<html:div>
 							<apply-templates select="dc:abstract"/>
+							<call-template name="metadata"/>
 						</html:div>
+						<if test="bns:includes">
+							<html:nav>
+								<html:h1 lang="en">Includes</html:h1>
+								<html:ol>
+									<apply-templates select="bns:includes/*" mode="list"/>
+								</html:ol>
+							</html:nav>
+						</if>
 					</html:section>
 				</otherwise>
 			</choose>
 			<call-template name="footer"/>
 		</html:section>
+		<apply-templates select="bns:includes/*"/>
 	</template>
-	<template match="bns:Draft" mode="list">
+	<template match="*[parent::bns:includes|parent::bns:hasProjects]" mode="header">
+		<html:header>
+			<html:p>
+				<for-each select="ancestor::*[parent::bns:includes|parent::bns:hasProjects]">
+					<choose>
+						<when test="self::bns:Version[descendant::bns:Draft]"/>
+						<otherwise>
+							<call-template name="namedformat"/>
+							<text> :: </text>
+						</otherwise>
+					</choose>
+				</for-each>
+				<choose>
+					<when test="self::bns:Version[child::bns:Draft]"/>
+					<otherwise>
+						<call-template name="namedformat"/>
+					</otherwise>
+				</choose>
+			</html:p>
+			<call-template name="name"/>
+			<call-template name="navigate"/>
+		</html:header>
+	</template>
+	<template match="*[parent::bns:includes|parent::bns:hasProjects]" mode="list">
 		<html:li value="{bns:index}">
 			<html:a>
 				<attribute name="href">
@@ -625,9 +948,8 @@ document.addEventListener(`keydown`, v => {
 						<with-param name="uri" select="@rdf:about"/>
 					</call-template>
 				</attribute>
-				<html:strong lang="en" xml:lang="en">
-					<text>Draft </text>
-					<value-of select="bns:index"/>
+				<html:strong>
+					<call-template name="namedformat"/>
 					<if test="bns:fullTitle">
 						<text>:</text>
 					</if>
@@ -639,6 +961,11 @@ document.addEventListener(`keydown`, v => {
 					</html:cite>
 				</for-each>
 			</html:a>
+			<if test="bns:includes">
+				<html:ol>
+					<apply-templates select="bns:includes/*" mode="list"/>
+				</html:ol>
+			</if>
 		</html:li>
 	</template>
 </stylesheet>
