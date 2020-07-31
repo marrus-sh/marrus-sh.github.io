@@ -2,6 +2,7 @@
 	<!ENTITY NCName "http://www.w3.org/2001/XMLSchema#NCName">
 	<!ENTITY gYearMonth "http://www.w3.org/2001/XMLSchema#gYearMonth">
 	<!ENTITY integer "http://www.w3.org/2001/XMLSchema#integer">
+	<!ENTITY date "http://www.w3.org/2001/XMLSchema#date">
 ]>
 <stylesheet
 	id="transform"
@@ -48,6 +49,37 @@
 			</otherwise>
 		</choose>
 	</template>
+	<template name="formatnumber">
+		<param name="number"/>
+		<variable name="num" select="number($number)"/>
+		<choose>
+			<when test="0>$num">
+				<text>−</text>
+				<value-of select="-$num"/>
+			</when>
+			<otherwise>
+				<value-of select="$num"/>
+			</otherwise>
+		</choose>
+	</template>
+	<template match="*" mode="contents">
+		<choose>
+			<when test="@rdf:parseType='Literal'">
+				<apply-templates/>
+			</when>
+			<when test="@rdf:parseType='Resource' and bns:contents">
+				<apply-templates select="bns:contents" mode="contents"/>
+			</when>
+			<when test="*/bns:contents">
+				<apply-templates select="*/bns:contents" mode="contents"/>
+			</when>
+			<otherwise>
+				<html:span lang="{@xml:lang}">
+					<value-of select="."/>
+				</html:span>
+			</otherwise>
+		</choose>
+	</template>
 	<template name="prefixes">
 		<param name="prefix" select="normalize-space(//html:html/@prefix)"/>
 		<if test="contains($prefix, ': ')">
@@ -91,11 +123,12 @@ html{ Position: Relative; Margin: Auto; Padding: 0; Background: Black; Inline-Si
 body{ Margin-Block: 0 2REM; Margin-Inline: 0; Border-End-Start-Radius: 4REM; Border-End-End-Radius: 4REM; Padding-Block: 1REM; Padding-Inline: 5REM; Background: White }
 #BNS{ Writing-Mode: Horizontal-TB; Display: Flex; Flex-Direction: Column; Min-Block-Size: Calc(100VH - 4REM); Block-Size: 28REM }
 #BNS>header{ Flex: None }
-#BNS>header>h1{ Display: Block; Margin-Block: .5REM; Color: #111; Font-Size: XXX-Large; Font-Family: Sans-Serif; Text-Align: Center }
-#BNS>header>nav{ Font-Size: Medium; Margin-Block: 1REM; Color: #333; Font-Family: Sans-Serif; Line-Height: 1.2; Text-Align: Justify; Text-Align-Last: Center }
+#BNS>header>h1{ Display: Block; Margin-Block: .5REM; Color: #111; Font-Size: XX-Large; Font-Family: Sans-Serif; Text-Align: Center }
+#BNS>header>nav{ Font-Size: Medium; Margin-Block: .5REM 1REM; Color: #333; Font-Family: Sans-Serif; Text-Align: Justify; Text-Align-Last: Center }
 #BNS>header>nav>ol,#BNS>header>nav>ol>li{ Display: Inline; Margin: 0; Padding: 0 }
-#BNS>header>nav>ol>li+li::before{ Content: " | " }
+#BNS>header>nav>ol>li+li::before{ Margin-Inline-Start: .5EM; Border-Inline-Start: Thin Solid; Padding-Inline-Start: .5EM; Content: "" }
 #BNS>header>nav a{ Text-Decoration: None }
+#BNS>header>nav a:Focus,#BNS>header>nav a:Hover{ Color: Inherit; Text-Decoration: Underline }
 #BNS>div{ Position: Relative; Flex: Auto; Margin-Block: 0 -1REM; Margin-Inline: -5REM; Min-Block-Size: Calc(60VH - 2REM); Overflow: Hidden }
 #BNS>div>span{ Display: Block; Position: Absolute; Margin: Auto; Inset-Block: 0; Inset-Inline: 0; Block-Size: 1EM; Inline-Size: Max-Content; Line-Height: 1; White-Space: Pre }
 #BNS>div>section{ Display: Grid; Position: Absolute; Box-Sizing: Border-Box; Inset-Block: 0; Inset-Inline: 0 Auto; Border: .25REM Black Solid; Border-Radius: 4REM; Padding: 2REM; Inline-Size: 100%; Gap: 1REM 2REM; Grid-Template-Rows: Min-Content 1FR Min-Content; Grid-Template-Columns: 1FR 23EM; Overflow: Hidden; Background: #EEE }
@@ -103,6 +136,8 @@ body{ Margin-Block: 0 2REM; Margin-Inline: 0; Border-End-Start-Radius: 4REM; Bor
 #BNS>div>section>header,#BNS>div>section>header+section,#BNS>div>section>div,#BNS>div>section>footer{ Grid-Column: 1 / Span 2 }
 #BNS>div>section>header{ Display: Grid; Grid-Auto-Flow: Dense Column; Grid-Row: 1 / Span 1; Margin-Block: -1REM 0; Margin-Inline: -2REM; Border-Block-End: Thin Black Solid; Padding-Block: 0 1REM; Padding-Inline: 2REM; Grid-Template-Rows: Auto Auto Auto; Grid-Template-Columns: Auto 1EM 1EM Min-Content 1EM 1EM Auto; Gap: .3125EM .5REM; Text-Align: Center }
 #BNS>div>section>header>p{ Grid-Column: 2 / Span 5; Margin-Block: 0; Min-Width: Max-Content; Color: #555; Font-Variant-Caps: Small-Caps; Text-Align: Center; Text-Decoration: Underline }
+#BNS>div>section>header>p>a{ Color: Inherit }
+#BNS>div>section>header>p>a:Focus,#BNS>div>section>header>p>a:Hover{ Color: #333; Text-Decoration: Double Underline }
 #BNS>div>section>header>hgroup>h1{ Grid-Column: 1 / Span 7 }
 #BNS>div>section>header>hgroup>h2{ Grid-Column: 4 / Span 1; Margin-Block: 0; Min-Width: Max-Content; Font-Size: Inherit; Font-Weight: Inherit; Font-Variant-Caps: Small-Caps; Color: #333 }
 #BNS>div>section>header>hgroup,#BNS>div>section>header>nav{ Display: Contents }
@@ -140,19 +175,22 @@ body{ Margin-Block: 0 2REM; Margin-Inline: 0; Border-End-Start-Radius: 4REM; Bor
 #BNS>div>section[data-direction=reverse][data-slide=in]{ Animation: In-From-Start 1S Both }
 #BNS>div>section[data-slide=out]{ Animation: Out-To-Start 1S Both }
 #BNS>div>section[data-direction=reverse][data-slide=out]{ Animation: Out-To-End 1S Both }
-h1{ Margin-Block: 0; Color: #222; Font-Size: XX-Large; Font-Family: Sans-Serif; Line-Height: 1; Text-Align: Center }
-nav>h1{ Margin-Block: 0 .5REM; Margin-Inline: Auto; Border-Width: Thin; Border-Block-Style: Dotted Solid; Border-Block-Color: #777 #111; Border-Inline-Style: Dashed; Border-Inline-Color: #333; Padding-Block: .3125EM; Padding-Inline: 1EM; Max-Inline-Size: Max-Content; Font-Size: X-Large }
-p{ Margin-Block: 0; Margin-Inline: Auto; Text-Align: Justify; Text-Align-Last: Center }
-p:Not(:First-Child){ Margin-Block: .625EM 0 }
-ol{ Margin: 0; Padding: 0; List-Style-Type: None }
-ol ol{ Margin-Inline: 1EM 0 }
-dl{ Margin-Block: 1EM }
+h1{ Margin-Block: 0; Color: #222; Font-Size: X-Large; Font-Family: Sans-Serif; Line-Height: 1; Text-Align: Center }
+nav>h1{ Margin-Block: 0 .5REM; Margin-Inline: Auto; Border-Width: Thin; Border-Block-Style: Dotted Solid; Border-Block-Color: #777 #111; Border-Inline-Style: Dashed; Border-Inline-Color: #333; Padding-Block: .3125EM; Padding-Inline: 1EM; Max-Inline-Size: Max-Content }
+blockquote,p{ Margin-Block: 0; Margin-Inline: Auto; Text-Align: Justify; Text-Align-Last: Center }
+blockquote:Not(:First-Child),p:Not(:First-Child){ Margin-Block: .625EM 0 }
+blockquote{ Padding-Inline: 1EM; Font-Style: Italic }
+dl,ol,ul{ Margin-Block: 1EM; Margin-Inline: 0; Padding: 0; Text-Align: Start; Text-Align-Last: Auto }
+ol{ Margin-Block: 0; List-Style-Type: None }
+dt,dd,li{ Margin-Inline: 0; Padding: 0 }
+ol ol li,ul li,dd{ Margin-Inline: 1EM 0 }
+dl{ Margin-Block: 1EM; Padding-Inline: 0 }
 dl:First-Child{ Margin-Block-Start: 0 }
 dt{ Font-Weight: Bold }
-dd{ Display: List-Item; List-Style-Type: Square; Margin-Inline: 1EM 0 }
-button[onclick="i(event)"]{ Margin-Inline: 0; Border-Color: #777; Border-Width: Thin; Border-Block-Style: None Dotted; Border-Inline-Style: None; Padding: 0; Vertical-Align: Super; Color: #333; Background: Transparent; Font: Smaller; Cursor: Pointer }
+dd{ Display: List-Item; List-Style-Type: Square }
+button{ Margin-Inline: 0; Border-Color: #777; Border-Width: Thin; Border-Block-Style: None Dotted; Border-Inline-Style: None; Padding: 0; Vertical-Align: Super; Color: #333; Background: Transparent; Font: Smaller; Cursor: Pointer }
 *:Any-Link{ Color: #333 }
-*:Any-Link:Hover,button[onclick="i(event)"]:Hover{ Color: #777 }
+*:Any-Link:Hover,button:Hover{ Color: #777 }
 a{ White-Space: Normal }
 a[data-expanded]+small{ Display: Inline-Block; Vertical-Align: Sub; Font-Size: Smaller; Line-Height: 1 }
 a[data-expanded]+small::before{ Content: "[" }
@@ -171,6 +209,9 @@ const o = ( { target: e } ) => {
 	e.removeAttribute `data-direction`
 	e.removeEventListener(`animationend`, o) }
 const i = ( { target: e } ) => {
+	console.log(e.onclick)
+	e.onclick = null
+	console.log(e.onclick)
 	const a = e.previousElementSibling
 	if ( a.origin != location.origin || a.pathname != location.pathname || a.search != location.search ) fetch(a.href.indexOf `http://www.wikidata.org/entity/` == 0 ? `https://www.wikidata.org/wiki/Special:EntityData/${ a.href.substring(`http://www.wikidata.org/entity/`.length) }` : a.href, {
 		headers: { Accept: `application/rdf+xml` },
@@ -179,7 +220,7 @@ const i = ( { target: e } ) => {
 		redirect: `follow`,
 		referrerPolicy: `no-referrer` }).then(r => r.text().then(t => {
 			const d = (new DOMParser).parseFromString(t, `text/xml`)
-			const n = d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label][@xml:lang='en' or starts-with(@xml:lang, 'en-')]`, d, u, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue ?? d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label]`, d, u, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+			const n = d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label][@xml:lang='${document.documentElement.lang}' or starts-with(@xml:lang, '${document.documentElement.lang}-')]`, d, u, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue ?? d.evaluate(`//*[@rdf:about='${a.href}']/*[self::madsrdf:authoritativeLabel|self::skos:prefLabel|self::rdfs:label]`, d, u, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 			if ( n ) {
 				const c = document.createElementNS(`http://www.w3.org/1999/xhtml`, `cite`)
 				const s = document.createElementNS(`http://www.w3.org/1999/xhtml`, `small`)
@@ -290,7 +331,8 @@ document.addEventListener(`keydown`, v => {
 			<when test="count(*)=1 and html:code">
 				<html:span style="White-Space: NoWrap">
 					<copy-of select="$result"/>
-					<html:button title="Attempt to fetch link metadata." onclick="i(event)">[?]</html:button>
+					<text>&#x2060;</text>
+					<html:button title="Attempt to fetch link metadata." onclick="i(event)" type="button">[?]</html:button>
 				</html:span>
 			</when>
 			<otherwise>
@@ -313,7 +355,7 @@ document.addEventListener(`keydown`, v => {
 									<with-param name="uri" select=".//bns:Corpus[1]/@rdf:about"/>
 								</call-template>
 							</attribute>
-							<value-of select=".//bns:Corpus/bns:fullTitle[1]"/>
+							<apply-templates select=".//bns:Corpus/bns:fullTitle[1]" mode="contents"/>
 						</html:a>
 					</html:h1>
 					<html:nav>
@@ -327,7 +369,9 @@ document.addEventListener(`keydown`, v => {
 												<with-param name="uri" select="@rdf:about"/>
 											</call-template>
 										</attribute>
-										<value-of select="bns:identifier"/>
+										<html:code style="Font-Size: 1REM">
+											<value-of select="bns:identifier"/>
+										</html:code>
 									</html:a>
 								</html:li>
 							</for-each>
@@ -378,12 +422,14 @@ document.addEventListener(`keydown`, v => {
 							<when test="bns:index=23">Ψ</when>
 							<when test="bns:index=24">Ω</when>
 							<otherwise>
-								<value-of select="number(bns:index)"/>
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
 							</otherwise>
 						</choose>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -397,7 +443,9 @@ document.addEventListener(`keydown`, v => {
 					<when test="bns:index/@rdf:datatype='&integer;'">
 						<choose>
 							<when test="bns:index>49">
-								<value-of select="number(bns:index)"/>
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
 							</when>
 							<when test="bns:index>9">
 								<choose>
@@ -432,12 +480,14 @@ document.addEventListener(`keydown`, v => {
 								</choose>
 							</when>
 							<otherwise>
-								<value-of select="number(bns:index)"/>
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
 							</otherwise>
 						</choose>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -446,52 +496,43 @@ document.addEventListener(`keydown`, v => {
 					</otherwise>
 				</choose>
 			</when>
-			<when test="self::bns:Part">
+			<when test="self::bns:Arc">
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
 						<choose>
-							<when test="bns:index>49">
-								<value-of select="number(bns:index)"/>
-							</when>
-							<when test="bns:index>9">
-								<choose>
-									<when test="substring(number(bns:index), 1, 1)='4'">xxx</when>
-									<when test="substring(number(bns:index), 1, 1)='3'">xxx</when>
-									<when test="substring(number(bns:index), 1, 1)='2'">xx</when>
-									<when test="substring(number(bns:index), 1, 1)='1'">x</when>
-								</choose>
-								<choose>
-									<when test="substring(number(bns:index), 2, 1)='9'">viv</when>
-									<when test="substring(number(bns:index), 2, 1)='8'">viii</when>
-									<when test="substring(number(bns:index), 2, 1)='7'">vii</when>
-									<when test="substring(number(bns:index), 2, 1)='6'">vi</when>
-									<when test="substring(number(bns:index), 2, 1)='5'">v</when>
-									<when test="substring(number(bns:index), 2, 1)='4'">iv</when>
-									<when test="substring(number(bns:index), 2, 1)='3'">iii</when>
-									<when test="substring(number(bns:index), 2, 1)='2'">ii</when>
-									<when test="substring(number(bns:index), 2, 1)='1'">i</when>
-								</choose>
-							</when>
-							<when test="bns:index>0">
-								<choose>
-									<when test="bns:index=9">VIV</when>
-									<when test="bns:index=8">VIII</when>
-									<when test="bns:index=7">VII</when>
-									<when test="bns:index=6">VI</when>
-									<when test="bns:index=5">V</when>
-									<when test="bns:index=4">IV</when>
-									<when test="bns:index=3">III</when>
-									<when test="bns:index=2">II</when>
-									<when test="bns:index=1">I</when>
-								</choose>
-							</when>
+							<when test="bns:index=1">α</when>
+							<when test="bns:index=2">β</when>
+							<when test="bns:index=3">γ</when>
+							<when test="bns:index=4">δ</when>
+							<when test="bns:index=5">ε</when>
+							<when test="bns:index=6">ζ</when>
+							<when test="bns:index=7">η</when>
+							<when test="bns:index=8">θ</when>
+							<when test="bns:index=9">ι</when>
+							<when test="bns:index=10">κ</when>
+							<when test="bns:index=11">λ</when>
+							<when test="bns:index=12">μ</when>
+							<when test="bns:index=13">ν</when>
+							<when test="bns:index=14">ξ</when>
+							<when test="bns:index=15">ο</when>
+							<when test="bns:index=16">π</when>
+							<when test="bns:index=17">ρ</when>
+							<when test="bns:index=18">σ</when>
+							<when test="bns:index=19">τ</when>
+							<when test="bns:index=20">υ</when>
+							<when test="bns:index=21">φ</when>
+							<when test="bns:index=22">χ</when>
+							<when test="bns:index=23">ψ</when>
+							<when test="bns:index=24">ω</when>
 							<otherwise>
-								<value-of select="number(bns:index)"/>
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
 							</otherwise>
 						</choose>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -531,12 +572,14 @@ document.addEventListener(`keydown`, v => {
 							<when test="bns:index=25">Y</when>
 							<when test="bns:index=26">Z</when>
 							<otherwise>
-								<value-of select="number(bns:index)"/>
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
 							</otherwise>
 						</choose>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -548,11 +591,13 @@ document.addEventListener(`keydown`, v => {
 			<when test="self::bns:Chapter">
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
-						<if test="10>$index">0</if>
-						<value-of select="number(bns:index)"/>
+						<if test="10>bns:index">0</if>
+						<call-template name="formatnumber">
+							<with-param name="number" select="bns:index"/>
+						</call-template>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -564,10 +609,12 @@ document.addEventListener(`keydown`, v => {
 			<when test="self::bns:Section">
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
-						<value-of select="number(bns:index)"/>
+						<call-template name="formatnumber">
+							<with-param name="number" select="bns:index"/>
+						</call-template>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -580,37 +627,52 @@ document.addEventListener(`keydown`, v => {
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
 						<choose>
-							<when test="bns:index=1">α</when>
-							<when test="bns:index=2">β</when>
-							<when test="bns:index=3">γ</when>
-							<when test="bns:index=4">δ</when>
-							<when test="bns:index=5">ε</when>
-							<when test="bns:index=6">ζ</when>
-							<when test="bns:index=7">η</when>
-							<when test="bns:index=8">θ</when>
-							<when test="bns:index=9">ι</when>
-							<when test="bns:index=10">κ</when>
-							<when test="bns:index=11">λ</when>
-							<when test="bns:index=12">μ</when>
-							<when test="bns:index=13">ν</when>
-							<when test="bns:index=14">ξ</when>
-							<when test="bns:index=15">ο</when>
-							<when test="bns:index=16">π</when>
-							<when test="bns:index=17">ρ</when>
-							<when test="bns:index=18">σ</when>
-							<when test="bns:index=19">τ</when>
-							<when test="bns:index=20">υ</when>
-							<when test="bns:index=21">φ</when>
-							<when test="bns:index=22">χ</when>
-							<when test="bns:index=23">ψ</when>
-							<when test="bns:index=24">ω</when>
+							<when test="bns:index>49">
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
+							</when>
+							<when test="bns:index>9">
+								<choose>
+									<when test="substring(number(bns:index), 1, 1)='4'">xxx</when>
+									<when test="substring(number(bns:index), 1, 1)='3'">xxx</when>
+									<when test="substring(number(bns:index), 1, 1)='2'">xx</when>
+									<when test="substring(number(bns:index), 1, 1)='1'">x</when>
+								</choose>
+								<choose>
+									<when test="substring(number(bns:index), 2, 1)='9'">viv</when>
+									<when test="substring(number(bns:index), 2, 1)='8'">viii</when>
+									<when test="substring(number(bns:index), 2, 1)='7'">vii</when>
+									<when test="substring(number(bns:index), 2, 1)='6'">vi</when>
+									<when test="substring(number(bns:index), 2, 1)='5'">v</when>
+									<when test="substring(number(bns:index), 2, 1)='4'">iv</when>
+									<when test="substring(number(bns:index), 2, 1)='3'">iii</when>
+									<when test="substring(number(bns:index), 2, 1)='2'">ii</when>
+									<when test="substring(number(bns:index), 2, 1)='1'">i</when>
+								</choose>
+							</when>
+							<when test="bns:index>0">
+								<choose>
+									<when test="bns:index=9">viv</when>
+									<when test="bns:index=8">viii</when>
+									<when test="bns:index=7">vii</when>
+									<when test="bns:index=6">vi</when>
+									<when test="bns:index=5">v</when>
+									<when test="bns:index=4">iv</when>
+									<when test="bns:index=3">iii</when>
+									<when test="bns:index=2">ii</when>
+									<when test="bns:index=1">i</when>
+								</choose>
+							</when>
 							<otherwise>
-								<value-of select="number(bns:index)"/>
+								<call-template name="formatnumber">
+									<with-param name="number" select="bns:index"/>
+								</call-template>
 							</otherwise>
 						</choose>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -623,10 +685,12 @@ document.addEventListener(`keydown`, v => {
 				<text>c</text>
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
-						<value-of select="number(bns:index)"/>
+						<call-template name="formatnumber">
+							<with-param name="number" select="bns:index"/>
+						</call-template>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<html:sup>
@@ -639,10 +703,12 @@ document.addEventListener(`keydown`, v => {
 				<text>v</text>
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
-						<value-of select="number(bns:index)"/>
+						<call-template name="formatnumber">
+							<with-param name="number" select="bns:index"/>
+						</call-template>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<html:sup>
@@ -652,16 +718,15 @@ document.addEventListener(`keydown`, v => {
 				</choose>
 			</when>
 			<when test="self::bns:Draft">
-				<for-each select="ancestor::bns:Version[1]">
-					<call-template name="formatted"/>
-				</for-each>
 				<text>d</text>
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
-						<value-of select="number(bns:index)"/>
+						<call-template name="formatnumber">
+							<with-param name="number" select="bns:index"/>
+						</call-template>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<html:sup>
@@ -673,10 +738,12 @@ document.addEventListener(`keydown`, v => {
 			<otherwise>
 				<choose>
 					<when test="bns:index/@rdf:datatype='&integer;'">
-						<value-of select="number(bns:index)"/>
+						<call-template name="formatnumber">
+							<with-param name="number" select="bns:index"/>
+						</call-template>
 					</when>
-					<when test="bns:index/@rdf:datatype='&gYearMonth;'">
-						<value-of select="bns:index"/>
+					<when test="bns:index/@rdf:datatype='&gYearMonth;' or bns:index/@rdf:datatype='&date;'">
+						<value-of select="translate(bns:index, '-', '–')"/>
 					</when>
 					<otherwise>
 						<text>“</text>
@@ -689,37 +756,37 @@ document.addEventListener(`keydown`, v => {
 	</template>
 	<template name="name">
 		<html:hgroup>
-			<for-each select="bns:fullTitle">
+			<for-each select="bns:fullTitle[1]">
 				<html:h1 lang="{@xml:lang}">
-					<value-of select="."/>
+					<apply-templates select="." mode="contents"/>
 				</html:h1>
 			</for-each>
 			<choose>
 				<when test="self::bns:Author">
-					<html:h2 lang="{@xml:lang}">
-						<html:abbr title="Branching Notational System">BNS</html:abbr>
-						<text>: </text>
-						<value-of select="bns:fullTitle|bns:abbreviatedTitle"/>
-					</html:h2>
-				</when>
-				<otherwise>
-					<for-each select="bns:abbreviatedTitle|dc:alternate">
+					<for-each select="bns:fullTitle[1]">
 						<html:h2 lang="{@xml:lang}">
-							<value-of select="."/>
+							<html:abbr title="Branching Notational System">BNS</html:abbr>
+							<text>: </text>
+							<apply-templates select="." mode="contents"/>
 						</html:h2>
 					</for-each>
-					<if test="not(bns:abbreviatedTitle|dc:alternate)">
-						<html:h2 lang="{@xml:lang}">
-							<choose>
-								<when test="self::bns:Project">
-									<value-of select="bns:identifier"/>
-								</when>
-								<otherwise>
-									<call-template name="formatted"/>
-								</otherwise>
-							</choose>
-						</html:h2>
-					</if>
+				</when>
+				<otherwise>
+					<html:h2>
+						<choose>
+							<when test="bns:identifier">
+								<value-of select="bns:identifier"/>
+							</when>
+							<otherwise>
+								<if test="self::bns:Draft">
+									<for-each select="ancestor::bns:Version[1]">
+										<call-template name="formatted"/>
+									</for-each>
+								</if>
+								<call-template name="formatted"/>
+							</otherwise>
+						</choose>
+					</html:h2>
 				</otherwise>
 			</choose>
 		</html:hgroup>
@@ -748,8 +815,8 @@ document.addEventListener(`keydown`, v => {
 			<html:figure>
 				<for-each select="$covers[1]">
 					<choose>
-						<when test="bns:contents[@rdf:parseType='Literal']">
-							<apply-templates select="bns:contents/*"/>
+						<when test="bns:contents">
+							<apply-templates select="bns:contents" mode="contents"/>
 						</when>
 						<when test="self::dcmitype:StillImage">
 							<html:img alt="{dc:abstract/@contents}" data-src="{@rdf:about}"/>
@@ -941,14 +1008,21 @@ document.addEventListener(`keydown`, v => {
 					<call-template name="cover"/>
 					<html:section>
 						<html:div>
-							<apply-templates select="dc:abstract"/>
+							<apply-templates select="dc:abstract" mode="contents"/>
 							<call-template name="metadata"/>
 						</html:div>
 						<if test="bns:includes">
 							<html:nav>
 								<html:h1 lang="en">Includes</html:h1>
 								<html:ol>
-									<apply-templates select="bns:includes/*" mode="list"/>
+									<for-each select="bns:includes/*[bns:index/@rdf:datatype='&integer;']">
+										<sort select="bns:index" data-type="number"/>
+										<apply-templates select="." mode="list"/>
+									</for-each>
+									<for-each select="bns:includes/*[not(bns:index/@rdf:datatype='&integer;')]">
+										<sort select="bns:index" lang="en" case-order="upper-first"/>
+										<apply-templates select="." mode="list"/>
+									</for-each>
 								</html:ol>
 							</html:nav>
 						</if>
@@ -957,19 +1031,31 @@ document.addEventListener(`keydown`, v => {
 			</choose>
 			<call-template name="footer"/>
 		</html:section>
-		<apply-templates select="bns:includes/*"/>
+		<for-each select="bns:includes/*[bns:index/@rdf:datatype='&integer;']">
+			<sort select="bns:index" data-type="number"/>
+			<apply-templates select="."/>
+		</for-each>
+		<for-each select="bns:includes/*[not(bns:index/@rdf:datatype='&integer;')]">
+			<sort select="bns:index" lang="en" case-order="upper-first"/>
+			<apply-templates select="."/>
+		</for-each>
 	</template>
 	<template match="*[parent::bns:includes|parent::bns:hasProjects]" mode="header">
 		<html:header>
 			<html:p>
 				<for-each select="ancestor::*[parent::bns:includes|parent::bns:hasProjects]">
-					<choose>
-						<when test="self::bns:Version[descendant::bns:Draft]"/>
-						<otherwise>
-							<call-template name="namedformat"/>
-							<text> :: </text>
-						</otherwise>
-					</choose>
+					<html:a>
+						<attribute name="href">
+							<text>#</text>
+							<call-template name="shorten">
+								<with-param name="uri" select="@rdf:about"/>
+							</call-template>
+						</attribute>
+						<call-template name="namedformat"/>
+					</html:a>
+					<if test="not(self::bns:Version[descendant::bns:Draft])">
+						<text> :: </text>
+					</if>
 				</for-each>
 				<choose>
 					<when test="self::bns:Version[child::bns:Draft]"/>
@@ -993,16 +1079,24 @@ document.addEventListener(`keydown`, v => {
 				</attribute>
 				<html:strong>
 					<call-template name="namedformat"/>
-					<if test="bns:fullTitle">
+					<if test="bns:fullTitle|bns:abbreviatedTitle">
 						<text>:</text>
 					</if>
 				</html:strong>
-				<for-each select="bns:fullTitle">
-					<text> </text>
-					<html:cite>
-						<value-of select="."/>
-					</html:cite>
-				</for-each>
+				<choose>
+					<when test="bns:abbreviatedTitle">
+						<text> </text>
+						<html:cite>
+							<apply-templates select="bns:abbreviatedTitle[1]" mode="contents"/>
+						</html:cite>
+					</when>
+					<when test="bns:fullTitle">
+						<text> </text>
+						<html:cite>
+							<apply-templates select="bns:fullTitle[1]" mode="contents"/>
+						</html:cite>
+					</when>
+				</choose>
 			</html:a>
 			<if test="bns:includes">
 				<html:ol>

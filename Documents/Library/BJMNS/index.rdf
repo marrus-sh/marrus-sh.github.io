@@ -7,6 +7,7 @@
 	<!ENTITY lcbw "http://id.loc.gov/resources/works/">
 	<!ENTITY lcsh "http://id.loc.gov/authorities/subjects/">
 	<!ENTITY wikidata "http://www.wikidata.org/entity/">
+	<!ENTITY xhtml "http://www.w3.org/1999/xhtml">
 ]>
 <rdf:RDF
 	xml:base="https://go.KIBI.family/Documents/Library/BJMNS/"
@@ -26,7 +27,7 @@
 		<owl:sameAs rdf:resource="#bjmns:"/>
 		<dc:abstract rdf:parseType="Resource">
 			<contents rdf:parseType="Literal">
-				<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+				<div lang="en" xml:lang="en" xmlns="&xhtml;">
 					<p>A corpus of, roughly speaking, every creative work that I (<a href="https://go.KIBI.family/">KIBI Gô</a>) created prior to graduating college mid‐2016, based on the categorization system I used circa 2013 and updated periodically thereafter.  Back in these days I cared a lot about keeping a record of <em>literally everything</em>, so you will find a lot of inconsequential stuff in this collection.</p>
 					<p><i>BJMNS</i> is a generic username that I employed often during this time, replacing the earlier <i>TF</i> which I had used for artistic works in middle and high school.  There is no clear delineation between projects created under the two monikers, so they are unified here.</p>
 				</div>
@@ -65,8 +66,8 @@
 				<owl:sameAs rdf:resource="#bjmns:0"/>
 				<dc:abstract rdf:parseType="Resource">
 					<contents rdf:parseType="Literal">
-						<div lang="en" xml:lang="en">
-							<p>An umbrella project for all miscellaneous not deserving of their own project in the BNS system.</p>
+						<div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p>An umbrella project for all miscellaneous works not deserving of their own project in the BNS system.</p>
 						</div>
 					</contents>
 				</dc:abstract>
@@ -78,7 +79,7 @@
 						<owl:sameAs rdf:resource="#bjmns:0:0"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>In short, every work which I kept a record of but which I did not deem notable enough to classify as even a minor work.  This volume contains poetry, visual art, essays, and so forth.</p>
 								</div>
 							</contents>
@@ -91,7 +92,7 @@
 						<owl:sameAs rdf:resource="#bjmns:0:1"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>A collection of stories written in elementary school as vocabulary practice, all starring a character known only as Exasperated Wolf.</p>
 								</div>
 							</contents>
@@ -102,8 +103,9 @@
 						<includes>
 							<Version rdf:about="&bns;0:1:0">
 								<index rdf:datatype="&integer;">0</index>
+								<identifier rdf:datatype="&NCName;">flood</identifier>
 								<fullTitle xml:lang="en">Exasperated Wolf and the Big Flood</fullTitle>
-								<abbreviatedTitle xml:lang="en">flood</abbreviatedTitle>
+								<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> and Flood</span></abbreviatedTitle>
 								<owl:sameAs rdf:resource="#bjmns:0:1:0"/>
 								<inspiration rdf:resource="&lcsh;sh85049168"/>
 								<includes>
@@ -117,8 +119,9 @@
 							</Version>
 							<Version rdf:about="&bns;0:1:1">
 								<index rdf:datatype="&integer;">1</index>
+								<identifier rdf:datatype="&NCName;">littlered</identifier>
 								<fullTitle xml:lang="en">Exasperated Wolf and Little Red Riding Hood</fullTitle>
-								<abbreviatedTitle xml:lang="en">littlered</abbreviatedTitle>
+								<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> and Little Red</span></abbreviatedTitle>
 								<owl:sameAs rdf:resource="#bjmns:0:1:1"/>
 								<inspiration rdf:resource="&lcsh;sh88005840"/>
 								<inspiration rdf:resource="&wikidata;Q11838"/>
@@ -133,14 +136,16 @@
 							</Version>
 							<Version rdf:about="&bns;0:1:2">
 								<index rdf:datatype="&integer;">2</index>
+								<identifier rdf:datatype="&NCName;">wolfboy</identifier>
 								<fullTitle xml:lang="en">Exasperated Wolf and the Boy who cried “Wolf”</fullTitle>
-								<abbreviatedTitle xml:lang="en">wolfboy</abbreviatedTitle>
+								<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> and Boy</span></abbreviatedTitle>
 								<owl:sameAs rdf:resource="#bjmns:0:1:2"/>
 								<inspiration rdf:resource="&wikidata;Q1190945"/>
 								<includes>
 									<Draft rdf:about="&bns;0:1:2:0">
 										<index rdf:datatype="&integer;">0</index>
 										<fullTitle xml:lang="en">Don’t miss: Exasperated Wolf and the Boy who cried “WOLF”</fullTitle>
+										<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> <abbr title="Advertisement">Ad</abbr></span></abbreviatedTitle>
 										<owl:sameAs rdf:resource="#bjmns:0:1:2:0"/>
 										<isPublishedAs rdf:resource="0/1/2/0/text.xml"/>
 									</Draft>
@@ -156,12 +161,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:2">
 						<index rdf:datatype="&integer;">2</index>
+						<identifier rdf:datatype="&NCName;">Bug</identifier>
 						<fullTitle xml:lang="en">Billy Bee / Charlie Caterpillar</fullTitle>
-						<abbreviatedTitle xml:lang="en">Bug</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:2"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>In addition to writing, in elementary school I was very interested in comic books, thanks to such works as <a href="&lcbw;4772328"><code>lcbw:4772328</code></a> and <a href="&lcbw;4980379"><code>lcbw:4980379</code></a>.  Inspired by <a href="&wikidata;Q4986149"><code>wikidata:Q4986149</code></a>, the comics I made primarily starred various insects with names such as Billy and Bobby Bee and Charlie Caterpillar.</p>
 									<p>By nature of the medium, I wasn’t able to digitize these comics, and most of the paper copies have likely been lost.</p>
 								</div>
@@ -172,12 +177,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:3">
 						<index rdf:datatype="&integer;">3</index>
+						<identifier rdf:datatype="&NCName;">dinobug</identifier>
 						<fullTitle xml:lang="en">Dino Bug</fullTitle>
-						<abbreviatedTitle xml:lang="en">dinobug</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:3"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>Another attempt at comicwriting, clearly inspired by <a href="&bns;0:2"><code>bjmns:0:2</code></a> but more whimsical.  I only made a few (bad) comics but I loved the little guy.</p>
 								</div>
 							</contents>
@@ -204,12 +209,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:4">
 						<index rdf:datatype="&integer;">4</index>
+						<identifier rdf:datatype="&NCName;">sting</identifier>
 						<fullTitle xml:lang="en">Sting</fullTitle>
-						<abbreviatedTitle xml:lang="en">sting</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:4"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>This was my sole attempt at writing a cape comic in middle school and I made it as far as a single page before getting bored.  That page is probably still lying around somewhere, but it’s never been scanned.</p>
 								</div>
 							</contents>
@@ -218,12 +223,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:5">
 						<index rdf:datatype="&integer;">5</index>
+						<identifier rdf:datatype="&NCName;">movd</identifier>
 						<fullTitle xml:lang="en">Mov’d</fullTitle>
-						<abbreviatedTitle xml:lang="en">movd</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:5"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>A stop‐motion film made in iMovie!  No plot whatsoever, just a bunch of little experiments set to copyrighted music that I can’t legally upload here.</p>
 								</div>
 							</contents>
@@ -233,12 +238,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:6">
 						<index rdf:datatype="&integer;">6</index>
+						<identifier rdf:datatype="&NCName;">ductwars</identifier>
 						<fullTitle xml:lang="en">Lego Duct Wars</fullTitle>
-						<abbreviatedTitle xml:lang="en">ductwars</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:6"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>Another stop‐motion film (in this case, a brickfilm), this time with a plot!  Or, it would have been, had it ever actually been made.</p>
 								</div>
 							</contents>
@@ -247,12 +252,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:7">
 						<index rdf:datatype="&integer;">7</index>
+						<identifier rdf:datatype="&NCName;">rebellion</identifier>
 						<fullTitle xml:lang="en">The Rebellion</fullTitle>
-						<abbreviatedTitle xml:lang="en">rebellion</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:7"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>This was a LEGO movie that I made with a classmate in seventh grade for Medieval History class, focusing on the 1381 Peasants’ Revolt in England.  I do still have the script, but I’m not publishing it.</p>
 								</div>
 							</contents>
@@ -262,12 +267,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:8">
 						<index rdf:datatype="&integer;">8</index>
+						<identifier rdf:datatype="&NCName;">brian</identifier>
 						<fullTitle xml:lang="en">Brian’s World</fullTitle>
-						<abbreviatedTitle xml:lang="en">brian</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:8"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>This story never got past the conceptual stage; it was vaguely inspired by <a href="&lcbw;503025"><code>lcbw:503025</code></a> but I think I could tell that the idea was bad pretty quickly.  No idea what the title means.  There might be a page of a draft somewhere.</p>
 									<p>However, it <em>is</em> the first story project of mine to use a draft numbering system like the one you see here, so it does have that going for it.</p>
 								</div>
@@ -277,11 +282,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:9">
 						<index rdf:datatype="&integer;">9</index>
+						<identifier rdf:datatype="&NCName;">ufo</identifier>
 						<fullTitle xml:lang="en">UFO</fullTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:9"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>This is the very first game I programmed!!  It was a very bad knockoff of <a href="&wikidata;Q220665"><code>wikidata:Q220665</code></a>, written for the TI‐84 graphing calculator.  Because that’s what I did in math class in high school.</p>
 								</div>
 							</contents>
@@ -290,12 +296,12 @@
 					</Volume>
 					<Volume rdf:about="&bns;0:10">
 						<index rdf:datatype="&integer;">10</index>
+						<identifier rdf:datatype="&NCName;">ItB</identifier>
 						<fullTitle xml:lang="en">Into the Battle</fullTitle>
-						<abbreviatedTitle xml:lang="en">ItB</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:10"/>
 						<dc:abstract rdf:parseType="Resource">
 							<contents rdf:parseType="Literal">
-								<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
 									<p>This was an <em>idea</em> for a short animated video, which I came up with back when I was brainstorming for <a href="&bns;20"><code>bjmns:20</code></a>.  I never actually did anything with it.</p>
 								</html:div>
 							</contents>
@@ -305,40 +311,43 @@
 					<!--
 					<Volume rdf:about="&bns;0:11">
 						<index rdf:datatype="&integer;">11</index>
+						<identifier rdf:datatype="&NCName;">guy</identifier>
 						<fullTitle xml:lang="en">The Guy</fullTitle>
-						<abbreviatedTitle xml:lang="en">guy</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:11"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:12">
 						<index rdf:datatype="&integer;">12</index>
+						<identifier rdf:datatype="&NCName;">V</identifier>
 						<fullTitle xml:lang="en">V</fullTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:12"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:13">
 						<index rdf:datatype="&integer;">13</index>
+						<identifier rdf:datatype="&NCName;">thiswar</identifier>
 						<fullTitle xml:lang="en">This War (Music Video)</fullTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:13"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:14">
 						<index rdf:datatype="&integer;">14</index>
+						<identifier rdf:datatype="&NCName;">strategy</identifier>
 						<fullTitle xml:lang="en">Strategy [Calculator]</fullTitle>
-						<abbreviatedTitle xml:lang="en">Strategy</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:14"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:15">
 						<index rdf:datatype="&integer;">15</index>
+						<identifier rdf:datatype="&NCName;">ElectricYellow</identifier>
 						<fullTitle xml:lang="en">PKMN ElectricYellow</fullTitle>
-						<abbreviatedTitle xml:lang="en">ElectricYellow</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:15"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:16">
 						<index rdf:datatype="&integer;">16</index>
+						<identifier rdf:datatype="&NCName;">Libro</identifier>
 						<fullTitle xml:lang="en">El Libro</fullTitle>
-						<abbreviatedTitle xml:lang="en">Libro</abbreviatedTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:16"/>
 					</Volume>
 					<Volume rdf:about="&bns;0:17">
 						<index rdf:datatype="&integer;">17</index>
+						<identifier rdf:datatype="&NCName;">Love</identifier>
 						<fullTitle xml:lang="en">Love</fullTitle>
 						<owl:sameAs rdf:resource="#bjmns:0:17"/>
 					</Volume>
@@ -346,12 +355,12 @@
 				</includes>
 			</Project>
 			<Project rdf:about="&bns;1">
-				<identifier rdf:datatype="&NCName;">TM</identifier>
+				<identifier rdf:datatype="&NCName;">zl</identifier>
 				<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
 				<owl:sameAs rdf:resource="#bjmns:1"/>
 				<dc:abstract rdf:parseType="Resource">
 					<contents rdf:parseType="Literal">
-						<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
 							<p><a href="&wikidata;Q8337"><code>wikidata:Q8337</code></a> was the first book series I got into as a (very young) kid, and when I was very little I used to run around pretending I was a <a href="&wikidata;Q8337"><code>wikidata:Q8337</code></a> wizard or witch.  But, being an inventive sort, I got bored of this pretty quickly and decided to just create my <em>own</em> magical fantasy boarding‐school, whence <a href="&bns;1"><code>bjmns:1</code></a>.</p>
 							<p>Most of the writing I did in elementary school was set in this universe, which I mostly put to rest after <a href="&bns;1:1:2003-09:1"><code>bjmns:1:1:2003-09:1</code></a>. Because the actual number of stories is unknown (and many were doubtless lost to time), early versions are organized by year and month of inception.</p>
 						</html:div>
@@ -371,11 +380,12 @@
 						<includes>
 							<Version rdf:about="&bns;1:1:2003-03">
 								<index rdf:datatype="&gYearMonth;">2003-03</index>
+								<identifier rdf:datatype="&NCName;">dimond</identifier>
 								<fullTitle xml:lang="en">Tally Marries Dimond</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:1:1:2003-03"/>
 								<dc:abstract rdf:parseType="Resource">
 									<contents rdf:parseType="Literal">
-										<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+										<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
 											<p>A boy named Tally proposes to and marries his longtime love interest, a girl named Dimond (misspelling intentional).  There existed at least one prior draft with a significantly different plot (as I recall, perhaps there was some competition for Dimond’s hand?), but this has in all likelihood been lost to time and the wastebasket.</p>
 											<p>This is quite possibly the first romance story (if you can call it that) I ever wrote, so uh, take from that what you will.</p>
 										</html:div>
@@ -392,11 +402,12 @@
 							</Version>
 							<Version rdf:about="&bns;1:1:2003-04">
 								<index rdf:datatype="&gYearMonth;">2003-04</index>
+								<identifier rdf:datatype="&NCName;">bodys</identifier>
 								<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:1:1:2003-04"/>
 								<dc:abstract rdf:parseType="Resource">
 									<contents rdf:parseType="Literal">
-										<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+										<div lang="en" xml:lang="en" xmlns="&xhtml;">
 											<p>A mishap with a strange machine results in two friends switching bodies.</p>
 										</div>
 									</contents>
@@ -418,11 +429,12 @@
 							</Version>
 							<Version rdf:about="&bns;1:1:2003-09">
 								<index rdf:datatype="&gYearMonth;">2003-09</index>
+								<identifier rdf:datatype="&NCName;">TM</identifier>
 								<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:1:1:2003-09"/>
 								<dc:abstract rdf:parseType="Resource">
 									<contents rdf:parseType="Literal">
-										<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+										<div lang="en" xml:lang="en" xmlns="&xhtml;">
 											<p>In the future, a young boy passes an exam and gets to go to an elite school.  There, he has adventures.</p>
 										</div>
 									</contents>
@@ -444,10 +456,11 @@
 							</Version>
 							<Version rdf:about="&bns;1:1:N">
 								<index rdf:datatype="&NCName;">N</index>
+								<identifier rdf:datatype="&NCName;">N</identifier>
 								<owl:sameAs rdf:resource="#bjmns:1:1:N"/>
 								<dc:abstract rdf:parseType="Resource">
 									<contents rdf:parseType="Literal">
-										<div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+										<div lang="en" xml:lang="en" xmlns="&xhtml;">
 											<p>In the future, a boy studies science in a magical age where it is popularly considered irrelevant.</p>
 											<p>Pretty much exclusively a spinoff (and inversion) of <a href="&bns;1:1:2003-09"><code>bjmns:1:1:2003-09</code></a>, and not earlier concepts.</p>
 										</div>
@@ -472,7 +485,7 @@
 				<owl:sameAs rdf:resource="#bjmns:2"/>
 				<dc:abstract rdf:parseType="Resource">
 					<contents rdf:parseType="Literal">
-						<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
 							<p><a href="&bns;2:1:0:1"><code>bjmns:2:1:0:1</code></a> was a short story that I wrote for class in the third grade and is actually probably one of my better stories from that time.  (If you compare other works from around those dates, you'll see that they are… not great.)  It was originally set in the <a href="&bns;1"><code>bjmns:1</code></a> universe, because by default everything I wrote was at that time.</p>
 							<p>Later, in college, I realized that the story maybe actually had some metaphoric or symbolic potential, so I broke it off into its own project since it really didn't have anything to do with the larger <a href="&bns;1"><code>bjmns:1</code></a>verse in the first place.</p>
 						</html:div>
@@ -481,6 +494,7 @@
 				<includes>
 					<Volume rdf:about="&bns;2:1">
 						<index rdf:datatype="&integer;">1</index>
+						<identifier rdf:datatype="&NCName;">ele-alien</identifier>
 						<owl:sameAs rdf:resource="#bjmns:2:1"/>
 						<includes>
 							<Version rdf:about="&bns;2:1:0">
@@ -489,7 +503,7 @@
 								<owl:sameAs rdf:resource="#bjmns:2:1:0"/>
 								<dc:abstract rdf:parseType="Resource">
 									<contents rdf:parseType="Literal">
-										<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+										<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
 											<p>A boy named Nat goes cliffdiving and is abducted by underwater aliens.  He decides not to go cliffdiving anymore after that.</p>
 										</html:div>
 									</contents>
@@ -505,11 +519,12 @@
 							</Version>
 							<Version rdf:about="&bns;2:1:1">
 								<index rdf:datatype="&integer;">1</index>
+								<identifier rdf:datatype="&NCName;">drowned</identifier>
 								<fullTitle xml:lang="en">Drowned</fullTitle>
 								<owl:sameAs rdf:resource="#bjmns:2:1:1"/>
 								<dc:abstract rdf:parseType="Resource">
 									<contents rdf:parseType="Literal">
-										<html:div lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+										<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
 											<p><em>Ostensibly</em> this was going to be a reboot of <a href="&bns;2:1:0"><code>bjmns:2:1:0</code></a>, but in actuality it amounted to nothing more than a few scattered paragraphs split across a few scattered “drafts”.  There’s nothing of substance there.</p>
 										</html:div>
 									</contents>
@@ -519,12 +534,181 @@
 					</Volume>
 				</includes>
 			</Project>
-			<!--
 			<Project rdf:about="&bns;3">
 				<identifier rdf:datatype="&NCName;">palm</identifier>
 				<fullTitle xml:lang="en">In the Palm of My Hand</fullTitle>
 				<owl:sameAs rdf:resource="#bjmns:3"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p>A story about technology, connectivity, transhumanism, and internet surveillance.  In what I’m now thinking to be the summer after sixth grade, I was sitting in my room and <a href="&wikidata;Q16938261"><code>wikidata:Q16938261</code></a> came on and that basically inspired this whole concept about smart devices and surveillance and resistance and all of that stuff.</p>
+							<p>The history of this project is recorded in more detail in <a href="&bns;8:1:0:3"><code>bjmns:8:1:0:3</code></a> if you can get past the high‐school writing.  There isn’t any record of <a href="&bns;3:-1"><code>bjmns:3:-1</code></a> or <a href="&bns;3:0"><code>bjmns:3:0</code></a> in the original BJMNS <abbr title="Branching Notational System">BNS</abbr> categorization, so I’ve added them as volumes −1 and 0 here.</p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<inspiration rdf:resource="&wikidata;Q16938261"/>
+				<includes>
+					<Volume rdf:about="&bns;3:-1">
+						<index rdf:datatype="&integer;">-1</index>
+						<identifier rdf:datatype="&NCName;">penny</identifier>
+						<owl:sameAs rdf:resource="#bjmns:3:-1"/>
+						<fullTitle xml:lang="en">Vote for Penny</fullTitle>
+						<abbreviatedTitle xml:lang="en">Vote 4 Penny</abbreviatedTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p> In... what evidence strongly suggests to be the sixth grade, student body elections happening at school (presumably, at the beginning of the year for sixth graders) inspired me to come up with a story about school elections of my own, featuring a protagonist named Penny, and with pennies‐the‐currency standing in as some symbol or other.  This is the <em>original</em> slice‐of‐life school fic, and inspired all the ones to come in varying degrees.</p>
+									<p>(In particular, the character of Penelope Baines from <a href="&bns;41"><code>bjmns:41</code></a> is inspired by this Penny.)</p>
+									<p>That said, I never actually wrote any of it.  But the protagonist of <a href="&bns;3:1"><code>bjmns:3:1</code></a> was ostensibly originally created for this story.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&lcbw;4943220"/>
+					</Volume>
+					<Volume rdf:about="&bns;3:0">
+						<index rdf:datatype="&integer;">0</index>
+						<identifier rdf:datatype="&NCName;">santa</identifier>
+						<owl:sameAs rdf:resource="#bjmns:3:0"/>
+						<fullTitle xml:lang="en">The Santa Affair</fullTitle>
+						<abbreviatedTitle xml:lang="en">Santa Affair</abbreviatedTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>Inspired not insignificantly by <a href="&wikidata;Q97940458"><code>wikidata:Q97940458</code></a>, tells the story of a boy who uncovers a global Santa conspiracy and I think almost ends Christmas.  The protagonist is the same as in <a href="&bns;3:1"><code>bjmns:3:1</code></a>, only as a teen.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q97940458"/>
+					</Volume>
+					<Volume rdf:about="&bns;3:1">
+						<index rdf:datatype="&integer;">1</index>
+						<identifier rdf:datatype="&NCName;">rylie</identifier>
+						<owl:sameAs rdf:resource="#bjmns:3:1"/>
+						<fullTitle xml:lang="en">In the Palm of My Hand</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes (v2):</p>
+									<blockquote>
+										<h1 style="Margin-Block: 0 1.25EM; Font: Inherit; Text-Align: Start; Text-Align-Last: Auto; Text-Decoration: Underline">The Story of Rylielectronics</h1>
+										<ul>
+											<li>I.U. starts “chip project”.</li>
+											<li>Adjusts power lines to only give power to Rylielectronics; would take other products and make them compatible. (Also added chip!)</li>
+											<li>chip instaled..</li>
+											<li>chip (&amp; me) sustained for gov. purposes.</li>
+										</ul>
+									</blockquote>
+									<p>See also <a href="&bns;:8:1:0:3"><code>bjmns:8:1:0:3</code></a>.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<includes>
+							<Version rdf:about="&bns;3:1:0">
+								<index rdf:datatype="&integer;">0</index>
+								<owl:sameAs rdf:resource="#bjmns:3:1:0"/>
+								<includes>
+									<Draft rdf:about="&bns;3:1:0:1">
+										<index rdf:datatype="&integer;">1</index>
+										<owl:sameAs rdf:resource="#bjmns:3:1:0:1"/>
+										<isPublishedAs rdf:resource="3/1/0/1/text.xml"/>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+					<Volume rdf:about="&bns;3:2">
+						<index rdf:datatype="&integer;">2</index>
+						<owl:sameAs rdf:resource="#bjmns:3:2"/>
+						<fullTitle xml:lang="en">Download Complete</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>Story of how Tyler is killed, and why his mind still lives.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+					<Volume rdf:about="&bns;3:3">
+						<index rdf:datatype="&integer;">3</index>
+						<owl:sameAs rdf:resource="#bjmns:3:3"/>
+						<fullTitle xml:lang="en">We will be Invincible</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>The 3rd World War is coming, and only Tyler can stop it.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+					<Volume rdf:about="&bns;3:4">
+						<index rdf:datatype="&integer;">4</index>
+						<owl:sameAs rdf:resource="#bjmns:3:4"/>
+						<fullTitle xml:lang="en">The aftermath of WWIII</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>Now Tyler’s existence is no longer secret, and not everybody wants him to exist.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+					<Volume rdf:about="&bns;3:5">
+						<index rdf:datatype="&integer;">5</index>
+						<owl:sameAs rdf:resource="#bjmns:3:5"/>
+						<fullTitle xml:lang="en">Breaking the Code</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>The technicians want Tyler dead, and try to break the code of his existence.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+					<Volume rdf:about="&bns;3:6">
+						<index rdf:datatype="&integer;">6</index>
+						<owl:sameAs rdf:resource="#bjmns:3:6"/>
+						<fullTitle xml:lang="en">Explosion</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>The Sun is going to blow, threatening the survival of the human race.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+					<Volume rdf:about="&bns;3:7">
+						<index rdf:datatype="&integer;">7</index>
+						<owl:sameAs rdf:resource="#bjmns:3:2"/>
+						<fullTitle xml:lang="en">Welcome to Earth</fullTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>Humans move to a new planet, name it Earth after their original planet. It is in the <strong style="Font-Weight: Inherit; Text-Transform: Uppercase">Ice Age</strong> and humans are forced to take a step back in evolution if they are to survive.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
 			</Project>
+			<!--
 			<Project rdf:about="&bns;4">
 				<identifier rdf:datatype="&NCName;">piwhall</identifier>
 				<fullTitle xml:lang="en">Alchemy</fullTitle>
