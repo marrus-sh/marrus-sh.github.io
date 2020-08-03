@@ -16,47 +16,49 @@ But you should self-host it if possible, for the sake of resilience.
 
 ☞ Notes:
 
-†	Valid TEI Lite should produce valid HTML in ※most※ cases.
+⁜	Valid TEI Lite should produce valid HTML in ※most※ cases.
 	There are doubtless edge‐cases.
-	You ※can※ nest `<p>` elements in places allowed by TEI; for example, `<p><note><p>note paragraphs</p></note></p>`.
-	The nested `<p>`s will be converted to HTML `<span>`s.
+	You ※can※ nest <p> elements in places allowed by TEI; for example, ‹ <p><note><p>note paragraphs</p></note></p> ›.
+	The nested <p>s will be converted to HTML <span>s.
 
-†	HTML is passed through unmodified; you can use HTML directly in your TEI document (although this is no longer TEI Lite).
+⁜	HTML is passed through unmodified; you can use HTML directly in your TEI document (although this is no longer TEI Lite).
 
-†	Due to limitations in XSLT 1.0, if multiple pointers are provided as the `target` of an element, only the first will be processed.
+⁜	Due to limitations in XSLT 1.0, if multiple pointers are provided as the ‹ target › of an element, only the first will be processed.
 	Use multiple elements when you need to specify multiple pointers.
 
-†	Use `<pc>` to mark punctuation, especially when multiple characters long.
+⁜	Use <pc> to mark punctuation, especially when multiple characters long.
 
-	‡	Use `type="terminal"` on a `<pc>` element to indicate sentence‐terminal punctuation.
-		Periods which are not element‐final and followed by a space will automatically be wrapped in a `<pc type="terminal">` element; wrap non‐terminal periods in an ordinary `<pc>` element to avert this.
-		For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty `<pc type="terminal"/>` to indicate separation from the text which follows.
+	⁜	Use ‹ type="terminal" › on a <pc> element to indicate sentence‐terminal punctuation.
+		Periods which are not element‐final and followed by a space will automatically be wrapped in a ‹ <pc type="terminal"> › element; wrap non‐terminal periods in an ordinary <pc> element to avert this.
+		For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty ‹ <pc type="terminal"/> › to indicate separation from the text which follows.
 
-†	TEI `rend` is converted to HTML `class`.
-	A few `rend` values are predefined:
+⁜	Use ‹ type="literal" › on a <q> element to indicate a quoted literal string (i.e., one which refers to a specific glyph or sequence of glyphs as opposed to a word or phrase).
 
-	‡	Use `rend="indent"` to indent a line of verse, or force indentation on a paragraph.
+⁜	TEI ‹ rend › is converted to HTML ‹ class ›.
+	A few rend values are predefined:
+
+	⁜	Use ‹ rend="indent" › to indent a line of verse, or force indentation on a paragraph.
 		Adjacent paragraphs will automatically be indented, but paragraphs will not be indented if any element comes between them.
 
-	‡	Use `rend="unindent"` to prevent indentation, as above.
+	⁜	Use ‹ rend="unindent" › to prevent indentation, as above.
 
-	‡	Use `rend="preserve"` to preserve whitespace.
-		Alternatively, use `xml:space="preserve"` (which produces equivalent HTML).
+	⁜	Use ‹ rend="preserve" › to preserve whitespace.
+		Alternatively, use ‹ xml:space="preserve" › (which produces equivalent HTML).
 
-†	Use `<divGen>` for automatic generation of navigational elements.
-	Inside of a `<body>`, `<divGen type="toc">` will produce a slightly abridged table of contents, excluding elements from outside of the ancestor `<body>` element.
-	Use `<divGen type="index" subtype="NAME">` to generate a named index (i.e., one whose index entries specify `indexName="NAME"`).
+⁜	Use <divGen> for automatic generation of navigational elements.
+	Inside of a <body>, ‹ <divGen type="toc"> › will produce a slightly abridged table of contents, excluding elements from outside of the ancestor <body> element.
+	Use ‹ <divGen type="index" subtype="NAME"> › to generate a named index (i.e., one whose index entries specify ‹ indexName="NAME" ›).
 
-†	An `<?xml-stylesheet?>` instruction with a `type` of `"text/css"` will be converted into an HTML `<style>` element and placed in the `<head>` of the resulting HTML document.
+⁜	An <?xml-stylesheet?> instruction with a ‹ type › of "text/css" will be converted into an HTML <style> element and placed in the <head> of the resulting HTML document.
 	Use this to add custom styling without breaking TEI Lite conformance.
 
-†	Alternatively, the contents of the `<xenoData>` element (not TEI Lite) will be inserted directly into the `<head>` of the resulting HTML document.
+⁜	Alternatively, the contents of the <xenoData> element (not TEI Lite) will be inserted directly into the <head> of the resulting HTML document.
 	You can use this to insert additional metadata or styling.
 
 ☞ Disclaimer:
 
 To the extent possible under law, KIBI Gô has waived all copyright and related or neighboring rights to this file via a CC0 1.0 Universal Public Domain Dedication.
-See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
+See ‹ https://creativecommons.org/publicdomain/zero/1.0/ › for more information.
 -->
 <stylesheet
 	version="1.0"
@@ -76,7 +78,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 	<!-- Text‐Level Processing -->
 	<template match="text()">
 		<choose>
-			<when test=".[starts-with(., ' ')]/preceding-sibling::*[1][self::tei:q]">
+			<when test="self::*[starts-with(., ' ')]/preceding-sibling::*[1]/self::tei:q">
 				<variable name="sp">
 					<tei:seg rend="space">
 						<text> </text>
@@ -419,7 +421,7 @@ See `https://creativecommons.org/publicdomain/zero/1.0/` for more information.
 details[open]>summary.tei.teiHeader{ Border-Block-End: Medium Var(\2D-GreyText) Double }
 details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader::after{ List-Style-Type: Disclosure-Open }
 *.tei.teiHeader>table{ Direction: LTR; Margin-Block: 0; Margin-Inline: Auto; Border-Collapse: Collapse; Line-Height: 1 }
-*.tei.teiHeader>table>tbody>tr>th{ Position: Relative; Padding-Block: .375EM; Padding-Inline: .375EM .75EM; Color: Var(\2D-GreyText); Font-Weight: Inherit; Text-Align: End; Text-Align-Last: Auto }
+*.tei.teiHeader>table>tbody>tr>th{ Position: Relative; Padding-Block: .375EM; Padding-Inline: .375EM .75EM; Color: Var(\2D-GreyText); Font-Weight: Inherit; Text-Align: End; Text-Align-Last: Auto; Hyphens: None }
 *.tei.teiHeader>table>tbody>tr:Not(:Last-Child)>th{ Border-Block-End: Thin Solid }
 *.tei.teiHeader>table>tbody>tr>td{ Font-Size: Smaller }
 -->
@@ -430,10 +432,10 @@ details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader:
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
 			<html:div><apply-templates/></html:div>
-			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
+			<if test=".//*[self::tei:note|self::tei:add][@place='bottom' or @place='end'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
 				<html:footer>
 					<html:ul>
-						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
+						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom' or @place='end'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
 							<apply-templates select="." mode="endnotes"/>
 						</for-each>
 					</html:ul>
@@ -450,10 +452,10 @@ details[open]>summary.tei.teiHeader::before,details[open]>summary.tei.teiHeader:
 	<template match="tei:front|tei:body|tei:back">
 		<variable name="contents">
 			<html:div><apply-templates/></html:div>
-			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div)][count(current()|ancestor::tei:text[1])=1]">
+			<if test=".//*[self::tei:note|self::tei:add][@place='bottom' or @place='end'][not(ancestor::tei:div)][count(current()|ancestor::tei:front[1]|ancestor::tei:body[1]|ancestor::tei:back[1])=1]">
 				<html:footer>
 					<html:ul>
-						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][not(ancestor::tei:div or ancestor::tei:body or ancestor::tei:front or ancestor::tei:back)][count(current()|ancestor::tei:text[1])=1]">
+						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom' or @place='end'][not(ancestor::tei:div)][count(current()|ancestor::tei:front[1]|ancestor::tei:body[1]|ancestor::tei:back[1])=1]">
 							<apply-templates select="." mode="endnotes"/>
 						</for-each>
 					</html:ul>
@@ -538,10 +540,10 @@ span.tei.p>span:Last-Child{ Display: None }
 	<template match="tei:div">
 		<variable name="contents">
 			<html:div><apply-templates/></html:div>
-			<if test=".//*[self::tei:note|self::tei:add][@place='bottom'][count(current()|ancestor::tei:div[1])=1]">
+			<if test=".//*[self::tei:note|self::tei:add][@place='bottom' or @place='end'][count(current()|ancestor::tei:div[1])=1]">
 				<html:footer>
 					<html:ul>
-						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom'][count(current()|ancestor::tei:div[1])=1]">
+						<for-each select=".//*[self::tei:note|self::tei:add][@place='bottom' or @place='end'][count(current()|ancestor::tei:div[1])=1]">
 							<apply-templates select="." mode="endnotes"/>
 						</for-each>
 					</html:ul>
@@ -779,7 +781,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 		</html:em>
 		<!-- [[ CSS: ]]
 *.tei.emph{ Display: Inline; Font-Style: Inherit }
-*.tei.emph::before,*.tei.emph::after{ Font-Size: Smaller; Vertical-Align: Middle; Content: "※" }
+*.tei.emph::before,*.tei.emph::after{ Content: "※" }
 -->
 	</template>
 	<template match="tei:label">
@@ -898,6 +900,8 @@ span.tei.lg>span:Last-Child{ Display: None }
 *.tei.q[data\2D-t-e-i_type=term]{ Font-Weight: Bolder }
 *.tei.q[data\2D-t-e-i_type=foreign]::before{ Font-Variant-Caps: Normal; Content: "⸢" }
 *.tei.q[data\2D-t-e-i_type=foreign]::after{ Font-Variant-Caps: Normal; Content: "⸣" }
+*.tei.q[data\2D-t-e-i_type=literal]::before{ Font-Variant-Caps: Normal; Content: "‹ " }
+*.tei.q[data\2D-t-e-i_type=literal]::after{ Font-Variant-Caps: Normal; Content: " ›" }
 *.tei.q[data\2D-t-e-i_type=mentioned]::before{ Font-Variant-Caps: Normal; Content: "‘" }
 *.tei.q[data\2D-t-e-i_type=mentioned]::after{ Font-Variant-Caps: Normal; Content: "’" }
 *.tei.q[data\2D-t-e-i_type=soCalled]::before{ Font-Variant-Caps: Normal; Content: "“" }
@@ -919,18 +923,20 @@ span.tei.lg>span:Last-Child{ Display: None }
 	<template match="tei:note">
 		<variable name="prefix">
 			<tei:seg>
-				<choose>
-					<when test="@n">
-						<value-of select="@n"/>
-					</when>
-					<otherwise>†</otherwise>
-				</choose>
-				<tei:pc type="terminal">.</tei:pc>
-				<text> </text>
+				<if test="@n or not(@anchored='false')">
+					<choose>
+						<when test="@n">
+							<value-of select="@n"/>
+						</when>
+						<otherwise>†</otherwise>
+					</choose>
+					<tei:pc type="terminal">.</tei:pc>
+					<text> </text>
+				</if>
 			</tei:seg>
 		</variable>
 		<choose>
-			<when test="@anchored='false' and not(@place='bottom' or ancestor::tei:p or ancestor::tei:lg)">
+			<when test="@anchored='false' and not(@place='bottom' or @place='end' or ancestor::tei:p or ancestor::tei:lg)">
 				<html:aside>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
@@ -940,7 +946,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 					<apply-templates/>
 				</html:aside>
 			</when>
-			<when test="ancestor::teiHeader and not(@place='bottom' or ancestor::tei:p or ancestor::tei:lg)">
+			<when test="ancestor::teiHeader and not(@place='bottom' or @place='end' or ancestor::tei:p or ancestor::tei:lg)">
 				<html:div>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
@@ -966,7 +972,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 						</attribute>
 					</if>
 					<choose>
-						<when test="@place='bottom'">
+						<when test="@place='bottom' or @place='end'">
 							<attribute name="id">
 								<value-of select="concat('TEI.sup.', generate-id(.))"/>
 							</attribute>
@@ -986,7 +992,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 						</variable>
 						<html:sup tabindex="0">
 							<choose>
-								<when test="@place='bottom'">
+								<when test="@place='bottom' or @place='end'">
 									<html:a id="TEI.sup.{generate-id(.)}">
 										<choose>
 											<when test="@xml:id">
@@ -1009,7 +1015,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 							</choose>
 						</html:sup>
 					</if>
-					<if test="not(@place='bottom')">
+					<if test="not(@place='bottom' or @place='end')">
 						<html:small>
 							<apply-templates select="exsl:node-set($prefix)"/>
 							<apply-templates/>
@@ -1027,12 +1033,15 @@ span.tei.lg>span:Last-Child{ Display: None }
 *:not(span).tei.note>*.tei.seg:First-Child,span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Float: Inline-Start; Font-Variant-Numeric: Tabular-Nums Lining-Nums; White-Space: Pre }
 span.tei.note{ White-Space: NoWrap }
 span.tei.note::before{ Content: "\2060" }
+span.tei.note>small{ Font-Size: Inherit; White-Space: Normal }
+span.tei.note[data\2D-t-e-i_place=above]>small{ Font-Size: Smaller; Vertical-Align: Super }
+span.tei.note[data\2D-t-e-i_place=below]>small{ Font-Size: Smaller; Vertical-Align: Sub }
+span.tei.note>small>*.tei.seg:First-Child:Not(:Empty){ Display: Inline-Block; Min-Inline-Size: 1.5EM; Color: Var(\2D-EditorialText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Start; Text-Align-Last: Auto }
 span.tei.note>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
 span.tei.note>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
-span.tei.note>sup[tabindex]+small{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(\2D-PlainText); Background: Var(\2D-Background); Box-Shadow: 1PX 1PX 3PX Var(\2D-GreyText); Font: Small / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; White-Space: Normal; Z-Index: 1 }
+span.tei.note>sup[tabindex]+small{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(\2D-PlainText); Background: Var(\2D-Background); Box-Shadow: 1PX 1PX 3PX Var(\2D-GreyText); Font: Small / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; Vertical-Align: Baseline; Z-Index: 1 }
 *.tei.front span.tei.note>sup[tabindex]+small,*.tei.back span.tei.note>sup[tabindex]+small{ Inset-Inline: Calc(-3EM - 3PX) }
 span.tei.note>sup[tabindex]:Focus+small,span.tei.note>sup[tabindex]:Hover+small,span.tei.note>sup[tabindex]+small:Focus-Within,span.tei.note>sup[tabindex]+small:Hover{ Display: Block }
-span.tei.note>sup[tabindex]+small>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(\2D-EditorialText); Text-Align: Start; Text-Align-Last: Auto }
 -->
 	</template>
 	<template match="tei:note" mode="endnotes">
@@ -1210,7 +1219,7 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 			<call-template name="handle-transcriptional"/>
 			<call-template name="handle-editLike"/>
 			<choose>
-				<when test="@place='bottom'">
+				<when test="@place='bottom' or @place='end'">
 					<attribute name="id">
 						<value-of select="concat('TEI.sup.', generate-id(.))"/>
 					</attribute>
@@ -1230,7 +1239,7 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 				</variable>
 				<html:sup tabindex="0">
 					<choose>
-						<when test="@place='bottom'">
+						<when test="@place='bottom' or @place='end'">
 							<html:a id="TEI.sup.{generate-id(.)}">
 								<choose>
 									<when test="@xml:id">
@@ -1253,7 +1262,7 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 					</choose>
 				</html:sup>
 			</if>
-			<if test="not(@place='bottom')">
+			<if test="not(@place='bottom' or @place='end')">
 				<html:span>
 					<apply-templates select="exsl:node-set($prefix)"/>
 					<apply-templates/>
@@ -1261,17 +1270,17 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 			</if>
 		</html:ins>
 		<!-- [[ CSS: ]]
-*.tei.add{ Display: Inline; Color: Var(\2D-EditText); White-Space: NoWrap; Text-Decoration: None }
-*.tei.add::before{ Content: "\2060" }
-*.tei.add>span{ Color: Var(\2D-PlainText) }
-*.tei.add:Not([data\2D-t-e-i_place])>span::before,*.tei.add[data\2D-t-e-i_place=inline]>span::before{ Color: Var(\2D-EditText); Font-Variant-Caps: Normal; Content: "`" }
-*.tei.add:Not([data\2D-t-e-i_place])>span::after,*.tei.add[data\2D-t-e-i_place=inline]>span::after{ Color: Var(\2D-EditText); Font-Variant-Caps: Normal; Content: "´" }
-*.tei.add>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
-*.tei.add>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
-*.tei.add>sup[tabindex]+span{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(\2D-PlainText); Background: Var(\2D-Background); Box-Shadow: 1PX 1PX 3PX Var(\2D-GreyText); Font: Small / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; White-Space: Normal; Z-Index: 1 }
-*.tei.front *.tei.add>sup[tabindex]+span,*.tei.back *.tei.add>sup[tabindex]+span{ Inset-Inline: Calc(-3EM - 3PX) }
-*.tei.add>sup[tabindex]:Focus+span,*.tei.add>sup[tabindex]:Hover+span,*.tei.add>sup[tabindex]+span:Focus-Within,*.tei.add>sup[tabindex]+span:Hover{ Display: Block }
-*.tei.add>sup[tabindex]+span>*.tei.seg:First-Child{ Min-Inline-Size: 1.5EM; Color: Var(\2D-EditText); Text-Align: Start; Text-Align-Last: Auto }
+ins.tei.add{ Display: Inline; Color: Var(\2D-EditText); White-Space: NoWrap; Text-Decoration: None }
+ins.tei.add::before{ Content: "\2060" }
+ins.tei.add>span{ Color: Var(\2D-PlainText); White-Space: Normal }
+ins.tei.add>span>*.tei.seg:First-Child:Not(:Empty){ Display: Inline-Block; Min-Inline-Size: 1.5EM; Color: Var(\2D-EditText); Font-Variant-Numeric: Tabular-Nums Lining-Nums; Text-Align: Start; Text-Align-Last: Auto }
+ins.tei.add:Not([data\2D-t-e-i_place])>span::before,*.tei.add[data\2D-t-e-i_place=inline]>span::before{ Color: Var(\2D-EditText); Font-Variant-Caps: Normal; Content: "`" }
+ins.tei.add:Not([data\2D-t-e-i_place])>span::after,*.tei.add[data\2D-t-e-i_place=inline]>span::after{ Color: Var(\2D-EditText); Font-Variant-Caps: Normal; Content: "´" }
+ins.tei.add>sup[tabindex]{ Display: Inline-Block; Vertical-Align: Super; Margin-Inline: -.25EM; Padding-Inline: .25EM; Min-Inline-Size: .5EM; Font-Size: Smaller; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Line-Height: 1; Text-Align: Center; Text-Align-Last: Auto; Text-Decoration: Dotted Underline; Cursor: Default }
+ins.tei.add>sup[tabindex]>a{ Display: Block; Margin-Inline: -.25EM; Padding-Inline: .25EM; Color: Inherit; Text-Decoration: Dotted Underline }
+ins.tei.add>sup[tabindex]+span{ Display: None; Position: Absolute; Inset-Inline: -3PX; Border-Style: Solid; Border-Color: Transparent; Border-Width: 3PX; Padding-Block: 1.5EM; Padding-Inline: 4EM; Color: Var(\2D-PlainText); Background: Var(\2D-Background); Box-Shadow: 1PX 1PX 3PX Var(\2D-GreyText); Font: Small / 1.5 JuniusX, Junicode, Elstob, ElstobD, Cormorant Garamond, Cormorant, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums; Text-Align: Justify; Text-Align-Last: Auto; Vertical-Align: Baseline; Z-Index: 1 }
+ins.tei.front *.tei.add>sup[tabindex]+span,ins.tei.back *.tei.add>sup[tabindex]+span{ Inset-Inline: Calc(-3EM - 3PX) }
+ins.tei.add>sup[tabindex]:Focus+span,ins.tei.add>sup[tabindex]:Hover+span,ins.tei.add>sup[tabindex]+span:Focus-Within,ins.tei.add>sup[tabindex]+span:Hover{ Display: Block }
 -->
 	</template>
 	<template match="tei:add" mode="endnotes">
@@ -1754,7 +1763,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 						<value-of select="tei:desc"/>
 					</when>
 					<when test="ancestor::tei:figure/tei:figDesc">
-						<value-of select="ancestor::tei:figure/tei:figDesc"/>
+						<value-of select="ancestor::tei:figure[tei:figDesc][1]/tei:figDesc"/>
 					</when>
 				</choose>
 			</attribute>
@@ -1762,10 +1771,24 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 				<attribute name="width">
 					<choose>
 						<when test="starts-with(@width, '+')">
-							<value-of select="substring(@width, 2, string-length(@width)-3)"/>
+							<choose>
+								<when test="@scale">
+									<value-of select="round(number(substring(@width, 2, string-length(@width)-3))*number(@scale))"/>
+								</when>
+								<otherwise>
+									<value-of select="round(substring(@width, 2, string-length(@width)-3))"/>
+								</otherwise>
+							</choose>
 						</when>
 						<otherwise>
-							<value-of select="substring(@width, 1, string-length(@width)-2)"/>
+							<choose>
+								<when test="@scale">
+									<value-of select="round(number(substring(@width, 1, string-length(@width)-2))*number(@scale))"/>
+								</when>
+								<otherwise>
+									<value-of select="round(substring(@width, 1, string-length(@width)-2))"/>
+								</otherwise>
+							</choose>
 						</otherwise>
 					</choose>
 				</attribute>
@@ -1774,10 +1797,24 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 				<attribute name="height">
 					<choose>
 						<when test="starts-with(@height, '+')">
-							<value-of select="substring(@height, 2, string-length(@height)-3)"/>
+							<choose>
+								<when test="@scale">
+									<value-of select="round(number(substring(@height, 2, string-length(@height)-3))*number(@scale))"/>
+								</when>
+								<otherwise>
+									<value-of select="round(substring(@height, 2, string-length(@height)-3))"/>
+								</otherwise>
+							</choose>
 						</when>
 						<otherwise>
-							<value-of select="substring(@height, 1, string-length(@height)-2)"/>
+							<choose>
+								<when test="@scale">
+									<value-of select="round(number(substring(@height, 1, string-length(@height)-2))*number(@scale))"/>
+								</when>
+								<otherwise>
+									<value-of select="round(substring(@height, 1, string-length(@height)-2))"/>
+								</otherwise>
+							</choose>
 						</otherwise>
 					</choose>
 				</attribute>
@@ -1786,6 +1823,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.graphic{ Display: Inline-Block }
 *.tei.figure>*.tei.graphic{ Display: Block; Margin: Auto }
+*.tei.p *.tei.graphic,*.tei.l *.tei.graphic{ Block-Size: 1EM; Inline-Size: Auto; Vertical-Align: Middle }
 -->
 	</template>
 	<template match="tei:figure">
@@ -1794,7 +1832,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
 			<call-template name="handle-placement"/>
-			<apply-templates select="*[not(self::tei:head)]"/>
+			<apply-templates select="*[not(self::tei:head or self::tei:figDesc)]"/>
 			<if test="tei:head">
 				<html:figcaption>
 					<for-each select="tei:head">
@@ -1902,10 +1940,11 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:var>
 		<!-- [[ CSS: ]]
-*.tei.gi{ Display: Inline; Font-Style: Inherit; Hyphens: None }
+*.tei.gi,*.tei.att{ Display: Inline; Font-Style: Inherit; Hyphens: None }
 *.tei.gi::before{ Content: "\3C" }
 *.tei.gi::after{ Content: ">" }
-*.tei.att{ Display: Inline; Font-Family: Monospace; Font-Style: Inherit; Hyphens: None }
+*.tei.att::before{ Content: "‹ " }
+*.tei.att::after{ Content: " ›" }
 -->
 	</template>
 	<template match="tei:val">
@@ -2217,7 +2256,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:header>
 		<!-- [[ CSS: ]]
-*.tei.opener{ Display: Block; Text-Align: Start; Text-Align-Last: Auto }
+*.tei.opener{ Display: Block; Margin-Block-End: 1.5EM; Text-Align: Start; Text-Align-Last: Auto }
 -->
 	</template>
 	<template match="tei:closer|tei:postscript">
@@ -2227,8 +2266,10 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<apply-templates/>
 		</html:footer>
 		<!-- [[ CSS: ]]
-*.tei.closer{ Display: Block; Text-Align: End; Text-Align-Last: Auto }
-*.tei.postscript{ Display: Block }
+*.tei.closer{ Display: Block; Margin-Block-Start: 1.5EM; Text-Align: End; Text-Align-Last: Auto }
+*.tei.postscript{ Display: Block; Margin-Block-Start: 1.5EM }
+*.tei.postscript>*.tei.label:First-Child{ Display: Inline-Block; Float: Inline-Start; Clear: Inline-Start; Min-Block-Size: 1.5EM }
+*.tei.postscript>*.tei.label:First-Child::after{ White-Space: Pre; Content: "  " }
 -->
 	</template>
 	<!-- The Electronic Title Page -->
@@ -2254,7 +2295,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<for-each select="*">
 				<html:tr>
 					<choose>
-						<when test=".[parent::tei:textClass][@source]">
+						<when test="self::*[@source]/parent::tei:textClass">
 							<variable name="source">
 								<tei:ref target="{@source}">
 									<value-of select="@source"/>
@@ -2363,7 +2404,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.teiHeader *.tei.extent,*.tei.sourceDesc,*.tei.encodingDesc>*.tei.p,*.tei.projectDesc,*.tei.samplingDecl,*.tei.editorialDecl,*.tei.refsDecl,*.tei.classDecl,*.tei.creation{ Display: Table-Row-Group }
 *.tei.teiHeader *.tei.extent>tr>*,*.tei.sourceDesc>tr>*,*.tei.encodingDesc>*.tei.p>tr>*,*.tei.projectDesc>tr>*,*.tei.samplingDecl>tr>*,*.tei.editorialDecl>tr>*,*.tei.refsDecl>tr>*,*.tei.classDecl>tr>*,*.tei.creation>tr>*{ Border: Thin Var(\2D-PlainText) Solid; Padding: .25EM }
-*.tei.teiHeader *.tei.extent>tr>th,*.tei.sourceDesc>tr>th,*.tei.encodingDesc>*.tei.p>tr>th,*.tei.projectDesc>tr>th,*.tei.samplingDecl>tr>th,*.tei.editorialDecl>tr>th,*.tei.refsDecl>tr>th,*.tei.classDecl>tr>th,*.tei.creation>tr>th{ Font-Weight: Bold; Font-Variant: Small-Caps; Text-Align: Center; Text-Align-Last: Auto }
+*.tei.teiHeader *.tei.extent>tr>th,*.tei.sourceDesc>tr>th,*.tei.encodingDesc>*.tei.p>tr>th,*.tei.projectDesc>tr>th,*.tei.samplingDecl>tr>th,*.tei.editorialDecl>tr>th,*.tei.refsDecl>tr>th,*.tei.classDecl>tr>th,*.tei.creation>tr>th{ Font-Weight: Bold; Font-Variant: Small-Caps; Text-Align: Center; Text-Align-Last: Auto; Hyphens: None }
 *.tei.teiHeader *.tei.extent>tr>td,*.tei.sourceDesc>tr>td,*.tei.encodingDesc>*.tei.p>tr>td,*.tei.projectDesc>tr>td,*.tei.samplingDecl>tr>td,*.tei.editorialDecl>tr>td,*.tei.refsDecl>tr>td,*.tei.classDecl>tr>td,*.tei.creation>tr>td{ Text-Align: Justify; Text-Align-Last: Center }
 -->
 	</template>
@@ -2532,7 +2573,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.classCode>small{ Font-Size: Smaller }
 -->
 	</template>
-	<template match="tei:keywords|tei:revisionDesc">
+	<template match="tei:keywords">
 		<variable name="list">
 			<choose>
 				<when test="tei:list">
@@ -2540,7 +2581,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 				</when>
 				<otherwise>
 					<tei:list>
-						<for-each select="*">
+						<for-each select="tei:term">
 							<tei:item><copy-of select="."/></tei:item>
 						</for-each>
 					</tei:list>
@@ -2550,38 +2591,88 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<html:div>
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
-			<if test="self::tei:revisionDesc">
-				<call-template name="handle-docStatus"/>
-				<html:table>
-					<html:tbody>
-						<html:tr>
-							<html:th>status</html:th>
-							<html:td>
-								<choose>
-									<when test="@status">
-										<value-of select="@status"/>
-									</when>
-									<otherwise>draft</otherwise>
-								</choose>
-							</html:td>
-						</html:tr>
-					</html:tbody>
-				</html:table>
-			</if>
 			<apply-templates select="exsl:node-set($list)"/>
 		</html:div>
 		<!-- [[ CSS: ]]
-*.tei.keywords,*.tei.revisionDesc{ Display: Block }
+*.tei.keywords{ Display: Block }
 *.tei.keywords{ Hyphens: None }
 *.tei.keywords>*.tei.list{ Margin: 0 }
 *.tei.keywords>*.tei.list>ul{ Display: Block; Margin: 0 }
 *.tei.keywords>*.tei.list>ul>*.tei.item{ Display: Inline Grid; Grid-Template-Columns: Auto Auto Auto }
 *.tei.keywords>*.tei.list>ul>*.tei.item::before{ Content: "⁜ " }
 *.tei.keywords>*.tei.list>ul>*.tei.item:Not(:Last-Child)::after{ Display: Block; White-Space: Pre; Content: ", " }
-*.tei.revisionDesc>*.tei.list{ Margin: 0; Border-Block-End: Thin Solid; Border-Inline: Thin Solid; Padding: .25EM }
+-->
+	</template>
+	<template match="tei:revisionDesc">
+		<variable name="docstatus">
+			<choose>
+				<when test="@status">
+					<value-of select="@status"/>
+				</when>
+				<otherwise>draft</otherwise>
+			</choose>
+		</variable>
+		<variable name="list">
+			<choose>
+				<when test="tei:list">
+					<copy-of select="tei:list"/>
+				</when>
+				<otherwise>
+					<tei:list type="gloss">
+						<for-each select="tei:change">
+							<variable name="status">
+								<choose>
+									<when test="@status">
+										<value-of select="@status"/>
+									</when>
+									<otherwise>draft</otherwise>
+								</choose>
+							</variable>
+							<variable name="nextstatus">
+								<choose>
+									<when test="not(following-sibling::tei:change)"/>
+									<when test="following-sibling::tei:change[1]/@status">
+										<value-of select="following-sibling::tei:change[1]/@status"/>
+									</when>
+									<otherwise>draft</otherwise>
+								</choose>
+							</variable>
+							<tei:label>
+								<value-of select="@when"/>
+								<if test="$status!=$docstatus and not($status=$nextstatus)">
+									<text> (</text>
+									<value-of select="$status"/>
+									<text>)</text>
+								</if>
+							</tei:label>
+							<tei:item><copy-of select="."/></tei:item>
+						</for-each>
+					</tei:list>
+				</otherwise>
+			</choose>
+		</variable>
+		<html:div>
+			<call-template name="handle-id"/>
+			<call-template name="handle-tei"/>
+			<call-template name="handle-docStatus"/>
+			<html:table>
+				<html:tbody>
+					<html:tr>
+						<html:th>status</html:th>
+						<html:td>
+							<value-of select="$docstatus"/>
+						</html:td>
+					</html:tr>
+				</html:tbody>
+			</html:table>
+			<apply-templates select="exsl:node-set($list)"/>
+		</html:div>
+		<!-- [[ CSS: ]]
+*.tei.revisionDesc{ Display: Block }
+*.tei.revisionDesc>*.tei.list{ Margin: 0; Border-Block-End: Thin Solid; Border-Inline: Thin Solid; Padding: .25EM; Columns: Auto }
 *.tei.revisionDesc>table{ Inline-Size: 100%; Border-Collapse: Collapse }
 *.tei.revisionDesc>table>tbody>tr>*{ Width: 50%; Border: Thin Var(\2D-PlainText) Solid; Padding: .25EM }
-*.tei.revisionDesc>table>tbody>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto }
+*.tei.revisionDesc>table>tbody>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto; Hyphens: None }
 *.tei.revisionDesc>table>tbody>tr>td{ Text-Align: Start; Text-Align-Last: Auto }
 -->
 	</template>
