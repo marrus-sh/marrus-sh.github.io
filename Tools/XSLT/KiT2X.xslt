@@ -1,7 +1,7 @@
 <!--
 KIBI { TEI Lite → XHTML } XSL Transformation (KiT2X.xslt)
 
-☞ Usage:
+§ Usage:
 
 Requires both XSLT 1.0 and EXSLT Common support.
 CSS features require at least Firefox 76.
@@ -11,54 +11,34 @@ Stick the following at the beginning of your XML file:
 <?xml-stylesheet type="text/xsl" href="/path/to/KiT2X.xslt"?>
 ```
 
-At time of writing, this file is available at `https://go.KIBI.family/Tools/XSLT/KiT2X.xslt`.
+At time of writing, this file is available at ‹ https://go.KIBI.family/Tools/XSLT/KiT2X.xslt ›.
 But you should self-host it if possible, for the sake of resilience.
 
-☞ Notes:
+§ Notes:
 
-⁜	Valid TEI Lite should produce valid HTML in ※most※ cases.
-	There are doubtless edge‐cases.
-	You ※can※ nest <p> elements in places allowed by TEI; for example, ‹ <p><note><p>note paragraphs</p></note></p> ›.
-	The nested <p>s will be converted to HTML <span>s.
-
+⁜	Valid TEI Lite should produce valid HTML in ※most※ cases.  There are doubtless edge‐cases.  You ※can※ nest <p> elements in places allowed by TEI; for example, ‹ <p><note><p>note paragraphs</p></note></p> ›.  The nested <p>s will be converted to HTML <span>s.
 ⁜	HTML is passed through unmodified; you can use HTML directly in your TEI document (although this is no longer TEI Lite).
-
-⁜	Due to limitations in XSLT 1.0, if multiple pointers are provided as the ‹ target › of an element, only the first will be processed.
-	Use multiple elements when you need to specify multiple pointers.
-
+⁜	Due to limitations in XSLT 1.0 (and HTML), if multiple pointers are provided as the @target of an element, only the first will be processed.  Use multiple elements when you need to specify multiple pointers.
 ⁜	Use <pc> to mark punctuation, especially when multiple characters long.
 
-	⁜	Use ‹ type="terminal" › on a <pc> element to indicate sentence‐terminal punctuation.
-		Periods which are not element‐final and followed by a space will automatically be wrapped in a ‹ <pc type="terminal"> › element; wrap non‐terminal periods in an ordinary <pc> element to avert this.
-		For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty ‹ <pc type="terminal"/> › to indicate separation from the text which follows.
+	⁜	Use ‹ type="terminal" › on a <pc> element to indicate sentence‐terminal punctuation.  Periods which are not element‐final and followed by a space (specifically, not other whitespace) will automatically be wrapped in a ‹ <pc type="terminal"> › element; wrap non‐terminal periods in an ordinary <pc> element to avert this.  For spans of text (parentheticals; quotes) which function as a sentence in the surrounding context, use an empty ‹ <pc type="terminal"/> › to indicate separation from the text which follows.
 
 ⁜	Use ‹ type="literal" › on a <q> element to indicate a quoted literal string (i.e., one which refers to a specific glyph or sequence of glyphs as opposed to a word or phrase).
+⁜	TEI @rend is converted to HTML @class.  A few @rend values are predefined:
 
-⁜	TEI ‹ rend › is converted to HTML ‹ class ›.
-	A few rend values are predefined:
-
-	⁜	Use ‹ rend="indent" › to indent a line of verse, or force indentation on a paragraph.
-		Adjacent paragraphs will automatically be indented, but paragraphs will not be indented if any element comes between them.
-
+	⁜	Use ‹ rend="indent" › to indent a line of verse, or force indentation on a paragraph.  Adjacent paragraphs will automatically be indented, but paragraphs will not be indented if any element comes between them. (A single <pb> is allowed.)
 	⁜	Use ‹ rend="unindent" › to prevent indentation, as above.
+	⁜	Use ‹ rend="preserve" › to preserve whitespace.  Alternatively, use ‹ xml:space="preserve" › (which produces equivalent HTML).
+	⁜	Use ‹ <seg rend="GI"> › to give the <seg> the same rendering as some <GI> element.
 
-	⁜	Use ‹ rend="preserve" › to preserve whitespace.
-		Alternatively, use ‹ xml:space="preserve" › (which produces equivalent HTML).
+⁜	The first two values of @class for the resulting HTML will be ‹ tei GI › where ‹ GI › is the local name of the source TEI element.  So you can use ‹ [class^="tei GI"] › to match specifically GI elements, not including ‹ <seg rend="GI"> › or similar.
+⁜	Use <divGen> for automatic generation of navigational elements.  Inside of a <body>, ‹ <divGen type="toc"> › will produce a slightly abridged table of contents, excluding elements from outside of the ancestor <body> element.  Use ‹ <divGen type="index" subtype="NAME"> › to generate a named index (i.e., one whose index entries specify ‹ indexName="NAME" ›).
+⁜	An <?xml-stylesheet?> instruction with a @type of "text/css" will be converted into an HTML <style> element and placed in the <head> of the resulting HTML document.  Use this to add custom styling without breaking TEI Lite conformance.
+⁜	Alternatively, the contents of the <xenoData> element (not TEI Lite) will be inserted directly into the <head> of the resulting HTML document.  You can use this to insert additional metadata or styling.
 
-⁜	Use <divGen> for automatic generation of navigational elements.
-	Inside of a <body>, ‹ <divGen type="toc"> › will produce a slightly abridged table of contents, excluding elements from outside of the ancestor <body> element.
-	Use ‹ <divGen type="index" subtype="NAME"> › to generate a named index (i.e., one whose index entries specify ‹ indexName="NAME" ›).
+§ Disclaimer:
 
-⁜	An <?xml-stylesheet?> instruction with a ‹ type › of "text/css" will be converted into an HTML <style> element and placed in the <head> of the resulting HTML document.
-	Use this to add custom styling without breaking TEI Lite conformance.
-
-⁜	Alternatively, the contents of the <xenoData> element (not TEI Lite) will be inserted directly into the <head> of the resulting HTML document.
-	You can use this to insert additional metadata or styling.
-
-☞ Disclaimer:
-
-To the extent possible under law, KIBI Gô has waived all copyright and related or neighboring rights to this file via a CC0 1.0 Universal Public Domain Dedication.
-See ‹ https://creativecommons.org/publicdomain/zero/1.0/ › for more information.
+To the extent possible under law, KIBI Gô has waived all copyright and related or neighboring rights to this file via a CC0 1.0 Universal Public Domain Dedication.  See ‹ https://creativecommons.org/publicdomain/zero/1.0/ › for more information.
 -->
 <stylesheet
 	version="1.0"
@@ -731,7 +711,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 		<!-- [[ CSS: ]]
 *.tei.pb{ Position: Absolute; Inset-Inline-End: -3EM; Margin-Inline: .25EM; Min-Inline-Size: 2.5EM; Font-Size: Medium; Text-Align: End; Text-Align-Last: Auto; Text-Indent: 0; White-Space: Pre; Z-Index: -1 }
 *.tei.text>div>*.tei.pb{ Inset-Inline-End: 0 }
-*.tei.pb::before{ Color: Var(\2D-GreyText); Font-Size: Smaller; Font-Variant-Caps: Normal; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Content: "[[ " Attr(data\2D-t-e-i_n) " ]]" }
+*.tei.pb[data\2D-t-e-i_n]::before{ Color: Var(\2D-GreyText); Font-Size: Smaller; Font-Variant-Caps: Normal; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Content: "[[ " Attr(data\2D-t-e-i_n) " ]]" }
 *.tei.milestone{ Display: Inline }
 -->
 	</template>
@@ -741,6 +721,7 @@ span.tei.lg>span:Last-Child{ Display: None }
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
 		</html:br>
+		<text>&#x200B;</text>
 	</template>
 	<!-- Marking Highlighted Phrases -->
 	<template match="tei:hi|tei:foreign|tei:mentioned|tei:soCalled">
@@ -942,11 +923,16 @@ span.tei.lg>span:Last-Child{ Display: None }
 					<call-template name="handle-tei"/>
 					<call-template name="handle-typed"/>
 					<call-template name="handle-placement"/>
+					<if test="@anchored">
+						<attribute name="data--t-e-i_anchored">
+							<value-of select="@anchored"/>
+						</attribute>
+					</if>
 					<apply-templates select="exsl:node-set($prefix)"/>
 					<apply-templates/>
 				</html:aside>
 			</when>
-			<when test="ancestor::teiHeader and not(@place='bottom' or @place='end' or ancestor::tei:p or ancestor::tei:lg)">
+			<when test="ancestor::teiHeader and not(@place='bottom' or @place='end' or ancestor::tei:head or ancestor::tei:p or ancestor::tei:lg)">
 				<html:div>
 					<call-template name="handle-id"/>
 					<call-template name="handle-tei"/>
@@ -1140,9 +1126,7 @@ li.tei.note>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Underlin
 			<call-template name="handle-fragmentable"/>
 			<apply-templates/>
 		</html:span>
-		<!-- [[ CSS: ]]
-*.tei.seg{ Display: Inline }
--->
+		<!-- No CSS for <seg> to enable @rend overrides -->
 	</template>
 	<!-- Editorial Interventions -->
 	<template match="tei:corr|tei:reg">
@@ -1337,10 +1321,41 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 					<value-of select="@agent"/>
 				</attribute>
 			</if>
+			<if test="@unit and @quantity">
+				<attribute name="data--t-e-i_unit">
+					<value-of select="@unit"/>
+				</attribute>
+				<attribute name="data--t-e-i_quantity">
+					<value-of select="@quantity"/>
+				</attribute>
+				<html:span>
+					<attribute name="style">
+						<choose>
+							<when test="@unit='line'">
+								<text>Display: Block; Block-Size: </text>
+								<value-of select="number(@quantity)*1.5"/>
+								<text>em; Background: CurrentColor</text>
+							</when>
+							<when test="@unit='char'">
+								<text>Display: Inline-Block; Block-Size: 1EM; Inline-Size: </text>
+								<value-of select="number(@quantity)"/>
+								<text>ch; Background: CurrentColor</text>
+							</when>
+							<otherwise>
+								<text>Display: Inline-Block; Block-Size: 1EM; Inline-Size: </text>
+								<value-of select="number(@quantity)"/>
+								<value-of select="@unit"/>
+								<text>; Background: CurrentColor</text>
+							</otherwise>
+						</choose>
+					</attribute>
+				</html:span>
+			</if>
 			<apply-templates/>
 		</html:del>
 		<!-- [[ CSS: ]]
 *.tei.gap{ Display: Inline; Color: Var(\2D-GreyText); Font-Size: Smaller; Text-Decoration: None }
+*.tei.gap:Empty::after{ Content: "⸺" }
 -->
 	</template>
 	<template match="tei:desc">
@@ -1499,25 +1514,23 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<choose>
 				<when test="@type='gloss'">
 					<html:dl>
-						<for-each select="tei:label|tei:item">
-							<choose>
-								<when test="self::tei:label">
-									<html:dt>
-										<call-template name="handle-id"/>
-										<call-template name="handle-tei"/>
-										<call-template name="handle-typed"/>
-										<call-template name="handle-placement"/>
-										<apply-templates/>
-									</html:dt>
-								</when>
-								<otherwise>
+						<for-each select="tei:label">
+							<html:div>
+								<html:dt>
+									<call-template name="handle-id"/>
+									<call-template name="handle-tei"/>
+									<call-template name="handle-typed"/>
+									<call-template name="handle-placement"/>
+									<apply-templates/>
+								</html:dt>
+								<for-each select="following-sibling::tei:item[1]">
 									<html:dd>
 										<call-template name="handle-id"/>
 										<call-template name="handle-tei"/>
 										<apply-templates/>
 									</html:dd>
-								</otherwise>
-							</choose>
+								</for-each>
+							</html:div>
 						</for-each>
 					</html:dl>
 				</when>
@@ -1540,9 +1553,10 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.list[data\2D-t-e-i_type=gloss]>.tei.head{ Column-Span: All }
 *.tei.list>dl,*.tei.list>ol,*.tei.list>ul{ Display: Grid; Grid-Template-Columns: Auto Auto; Margin-Block: 0; Margin-Inline: Auto; Padding: 0; Max-Inline-Size: Max-Content }
 *.tei.list>dl{ Gap: 0 1.5EM }
-*.tei.list>dl>*.tei.label{ Grid-Column: 1 / Span 1 }
-*.tei.list>dl>*.tei.item{ Grid-Column: 2 / Span 1; Margin: 0; Padding: 0 }
-*.tei.list>dl>*.tei.item::before{ Content: None }
+*.tei.list>dl>div{ Display: Contents }
+*.tei.list>dl>div>*.tei.label{ Grid-Column: 1 / Span 1 }
+*.tei.list>dl>div>*.tei.item{ Grid-Column: 2 / Span 1; Margin: 0; Padding: 0 }
+*.tei.list>dl>div>*.tei.item::before{ Content: None }
 *.tei.list>ol>*.tei.item,*.tei.list>ul>*.tei.item{ Display: Contents }
 *.tei.list>ol>*.tei.item::before,*.tei.list>ul>*.tei.item::before{ Display: Block; Grid-Column: 1 / Span 1; Text-Align: End; Text-Align-Last: Auto }
 -->
@@ -1823,7 +1837,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.graphic{ Display: Inline-Block }
 *.tei.figure>*.tei.graphic{ Display: Block; Margin: Auto }
-*.tei.p *.tei.graphic,*.tei.l *.tei.graphic{ Block-Size: 1EM; Inline-Size: Auto; Vertical-Align: Middle }
+*.tei.p *.tei.graphic,*.tei.l *.tei.graphic{ Max-Block-Size: 1EM; Inline-Size: Auto; Vertical-Align: Middle }
 -->
 	</template>
 	<template match="tei:figure">
@@ -1943,8 +1957,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 *.tei.gi,*.tei.att{ Display: Inline; Font-Style: Inherit; Hyphens: None }
 *.tei.gi::before{ Content: "\3C" }
 *.tei.gi::after{ Content: ">" }
-*.tei.att::before{ Content: "‹ " }
-*.tei.att::after{ Content: " ›" }
+*.tei.att::before{ Content: "@" }
 -->
 	</template>
 	<template match="tei:val">
@@ -2305,6 +2318,14 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 								<apply-templates select="exsl:node-set($source)"/>
 							</html:th>
 						</when>
+						<when test="self::tei:idno and @type">
+							<html:th scope="row">
+								<value-of select="@type"/>
+							</html:th>
+						</when>
+						<when test="self::tei:ptr">
+							<html:th scope="row">URI</html:th>
+						</when>
 						<when test="not(self::tei:p)">
 							<html:th scope="row">
 								<value-of select="name(.)"/>
@@ -2315,7 +2336,19 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 						<if test="self::tei:p">
 							<attribute name="colspan">2</attribute>
 						</if>
-						<apply-templates select="."/>
+						<choose>
+							<when test="self::tei:ptr">
+								<variable name="contents">
+									<tei:idno type="URI">
+										<value-of select="@target"/>
+									</tei:idno>
+								</variable>
+								<apply-templates select="exsl:node-set($contents)"/>
+							</when>
+							<otherwise>
+								<apply-templates select="."/>
+							</otherwise>
+						</choose>
 					</html:td>
 				</html:tr>
 			</for-each>
@@ -2413,10 +2446,19 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 			<call-template name="handle-id"/>
 			<call-template name="handle-tei"/>
 			<call-template name="handle-typed"/>
-			<apply-templates/>
+			<choose>
+				<when test="@type='URI'">
+					<call-template name="linkify">
+						<with-param name="target" select="."/>
+					</call-template>
+				</when>
+				<otherwise>
+					<apply-templates/>
+				</otherwise>
+			</choose>
 		</html:span>
 		<!-- [[ CSS: ]]
-*.tei.idno{ Display: Inline; Font-Variant-Numeric: Tabular-Nums Lining-Nums }
+*.tei.idno{ Display: Inline; Font-Variant-Numeric: Tabular-Nums Lining-Nums; Overflow-Wrap: Anywhere; Hyphens: None }
 *.tei.idno[type=URI]{ Color: Var(\2D-EditorialText) }
 -->
 	</template>
@@ -2670,6 +2712,7 @@ li.tei.add>ins>span:First-Child>a{ Color: Inherit; Text-Decoration: Dashed Under
 		<!-- [[ CSS: ]]
 *.tei.revisionDesc{ Display: Block }
 *.tei.revisionDesc>*.tei.list{ Margin: 0; Border-Block-End: Thin Solid; Border-Inline: Thin Solid; Padding: .25EM; Columns: Auto }
+*.tei.revisionDesc>*.tei.list>dl{ Max-Inline-Size: None }
 *.tei.revisionDesc>table{ Inline-Size: 100%; Border-Collapse: Collapse }
 *.tei.revisionDesc>table>tbody>tr>*{ Width: 50%; Border: Thin Var(\2D-PlainText) Solid; Padding: .25EM }
 *.tei.revisionDesc>table>tbody>tr>th{ Color: Var(\2D-Background); Background: Var(\2D-PlainText); Font-Weight: Inherit; Font-Variant: Small-Caps; Text-Align: End; Text-Align-Last: Auto; Hyphens: None }

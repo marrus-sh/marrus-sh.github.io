@@ -1,0 +1,95 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text *.tei.front,*.tei.body,*:root *.tei.text *.tei.div{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.text *.tei.front{ Text-Align: End ! IMPORTANT; Text-Align-Last: Auto }
+*.tei.text *.tei.front *,*:root *.tei.text *.tei.head{ Font: Inherit }
+*.tei.text  *.tei.body::before{ Content: None }
+*.tei.text *.tei.head{ Margin: 0 }
+*.tei.text *.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
+*.tei.text *.tei.q[data--t-e-i_type=spoken]::before{ Content: "“" }
+*.tei.text *.tei.q[data--t-e-i_type=spoken]::after{ Content: "”" }
+*.tei.text *.tei.q[data--t-e-i_type=spoken]+*.tei.seg.space{ Display: Inline }
+*.tei.text *.tei.hi.bold{ Font-Weight: Bolder; Text-Decoration: None }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Tally Marries Dimond</title>
+				<author><name>BJMNS</name><note>Not moniker recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition>Final draft, <date when="2003-03-05">March 5, 2003</date><lb/><idno type="URI">tag:bjmns.tumblr.com,2013:bns::1:1:2003-03:Final</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+				<ptr target="https://go.KIBI.family/Corpora/BJMNS/1/1/2003-03/Final/text.xml"/>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Source is a Rich Text Format file (original format unknown).</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names has been made, as they received no special treatment in the source.</p>
+				<p>Author’s name and other potentially identifying information has been redacted using <gi>gap</gi>.</p>
+				<p>Apostrophes have been normalized to <q type="literal"><pc>’</pc></q> and hyphens have been normalized to <q type="literal"><pc>‐</pc></q>.</p>
+				<p>Source text is split up into multiple sections; these are encoded using <gi>div</gi>.</p>
+			</editorialDecl>
+		</encodingDesc>
+		<revisionDesc status="published">
+			<change when="2020-08-04" status="published"><gi>revisionDesc</gi> added; minor changes to markup.</change>
+			<change when="2020-07-26" status="published">Initial version based off of a Rich Text Format source.</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<front>
+			<docAuthor><gap reason="editorial"><desc>author name</desc></gap></docAuthor>
+			<docDate when="2003-03-05">March 5, 2003</docDate>
+			<docEdition>Final Draft</docEdition>
+		</front>
+		<body xml:id="text">
+			<head>Tally Marries Dimond</head>
+			<div>
+				<p><q type="spoken">Yo!</q></p>
+				<p>I remember saying that to Tally Magiczl. I am <gap reason="editorial"><desc>author name</desc></gap> (but everyone calls me <gap reason="editorial"><desc>author nick</desc></gap>). I am 70 years old. I live in Cody, Wyoming.</p>
+			</div>
+			<div>
+				<p>Thirty years ago, when I was living in Seattle, Washington, Tally told me he was going to ask Dimond Alexandrite to marry him.</p>
+				<p>Let me tell you about Tally. He was 38 years old. He had brown hair and blue eyes. He had a scar on his forehead. It looks like this: <hi rend="bold">ZL</hi>, with the L slanted and the two letters attached.</p>
+				<p>Dimond had emerald green eyes and brown hair. She was 37 and had known Tally for most of her life. Her parents traveled a lot and often had her stay with Tally and his parents when she was a child. (I’ll bet Tally liked that!)</p>
+				<p>I have known Tally and Dimond since I was six. I really wasn’t too surprised when Tally told me his news.</p>
+			</div>
+			<div>
+				<p>Back then we were living in Seattle. I went over to Harry Zell’s house. (Harry is another friend.)<pc type="terminal"/> It was a beautiful spring day. The sun was shining which felt warm on my back, and the birds were singing. Tally, Harry, and I were busy building a fence, so Harry’s new puppy, Max, wouldn’t run away. The puppy was a purebred yellow Labrador. Tally began telling us his plans to marry Dimond when we saw Patrick Ether (who everyone calls Pot Ether, since he loves to cook) walking toward us.</p>
+				<p><q type="spoken">Hey guys what are you up to?</q> asked Pot.</p>
+				<p><q type="spoken">We are helping Harry build a fence, so that Max won’t get out. Do you want to help?</q> Tally asked.</p>
+				<p><q type="spoken">Guess what, Tally is going to ask Dimond to marry him!</q> I exclaimed.</p>
+				<p><q type="spoken">How are you going to get Dimond to marry you?</q> Pot questioned Tally.</p>
+				<p><q type="spoken">I don’t know,</q> responded Tally.</p>
+				<p><q type="spoken">Do you have any ideas?</q> I asked Harry.</p>
+				<p><q type="spoken">How about diamonds, rings, and chocolate castles?</q> he suggested.</p>
+				<p><q type="spoken">Also you can get her some books,</q> I added. <q type="spoken">Dimond loves books.</q></p>
+				<p><q type="spoken">Great ideas guys</q>, Tally said. <q type="spoken">I’ll go home to think about it. See ya later!</q></p>
+				<p>It was getting late and the fence was done, so we all (except for Tally that is) went to <gap reason="editorial"><desc>pizza parlour in author’s hometown</desc></gap> and had a pepperoni pizza, which tasted great!</p>
+			</div>
+			<div>
+				<p>After a few days Tally came over to visit and tell me what he was going to do.</p>
+				<p><q type="spoken">I’m going to give Dimond a book. When she opens the book an Alexandrite ring will fall out. The book will have chocolate pages that she can eat.</q> Tally explained to me.</p>
+				<p><q type="spoken">Good idea and good luck,</q> I told him.</p>
+			</div>
+			<div>
+				<p>Two days later when Pot and I were over at Harry’s playing with Max, Tally came by. He said he gave Dimond the book and asks her to marry him.</p>
+				<p>He had also said <q type="spoken">Dimond was going to ask me to marry her if I didn’t hurry up and ask her first. We have been planning the wedding and we want you guys to be a part of it.</q></p>
+			</div>
+			<div>
+				<p>Today, I am off to the 30‐year anniversary party for Tally and Dimond. Tally learned that he could count on his friends to help him with his problems and today we are throwing him and Dimond a surprise anniversary party. I hope they enjoy the surprise. I can’t wait to eat the cake. It smells delicious!</p>
+			</div>
+		</body>
+	</text>
+</TEI>

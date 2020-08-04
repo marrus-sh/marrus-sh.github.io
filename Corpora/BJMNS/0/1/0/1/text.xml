@@ -1,0 +1,70 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text *.tei.front,*.tei.text *.tei.body{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.text *.tei.front *{ Margin: 0; Font: Inherit; Text-Align: Center; Text-Transform: None }
+*.tei.text *.tei.docTitle{ Font-Size: Larger; Border: None }
+*.tei.text *.tei.docAuthor{ Display: Inline }
+*.tei.text *.tei.body::before{ Content: None }
+*.tei.text *.tei.trailer{ Margin: 0; Font-Size: Larger; Font-Weight: Inherit; Font-Variant-Caps: Inherit; Text-Align: Start }
+*.tei.text *.tei.trailer *.tei.seg.big{ Display: Block; Font-Size: Larger }
+*.tei.text *.tei.trailer *.tei.seg.small{ Display: Block; Font-Size: Smaller }
+*.tei.text *.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
+*.tei.text *.tei.q::before{ Content: "“" }
+*.tei.text *.tei.q::after{ Content: "”" }
+*.tei.text *.tei.q+*.tei.seg.space{ Display: Inline }
+*.tei.text *.tei.title{ Text-Decoration: None }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Exasperated Wolf and the Big Flood</title>
+				<author><name>BJMNS</name><note>Not moniker recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition><date when="2004-11-03">November 3, 2004</date><lb/><idno type="URI">tag:bjmns.tumblr.com,2013:bns::0:1:0:1</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+				<ptr target="https://go.KIBI.family/Corpora/BJMNS/0/1/0/1/text.xml"/>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Source is a Rich Text Format file (original format unknown).</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names has been made, as they received no special treatment in the source.</p>
+				<p>Author’s name and other potentially identifying information has been redacted using <gi>gap</gi>.</p>
+				<p>Apostrophes have been normalized to <q type="literal"><pc>’</pc></q> and hyphens have been normalized to <q type="literal"><pc>‐</pc></q>.</p>
+			</editorialDecl>
+		</encodingDesc>
+		<revisionDesc status="published">
+			<change when="2020-08-04" status="published"><gi>revisionDesc</gi> added; minor changes to markup.</change>
+			<change when="2020-07-26" status="published">Initial version based of a Rich Text Format source.</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<front>
+			<docTitle>
+				<titlePart>Exasperated Wolf and the Big Flood</titlePart>
+			</docTitle>
+			<byline>By: <docAuthor><gap reason="editorial"><desc>author name</desc></gap></docAuthor></byline>
+			<docDate when="2004-11-03">11/03/04</docDate>
+		</front>
+		<body xml:id="text">
+			<p>Once upon a time, there was a big exasperated wolf, who was in charge of protecting the streams and waterways. One day it started to rain. It rained, hailed, and was stormy for days. The wolf saw that the streams were starting to engulf the banks. He put up barriers to trap the water so that it wouldn’t flood the nearby banks. The wolf did grueling work but could not stop the water from leaking through. He asked the rabbits to help him but they acted disdainfully. He became frantic and pounced on a raccoon romping and playing nearby. He told the raccoon how perilous and risky the impassable water was.</p>
+			<p>The raccoon knew the wolf. He was the Exasperated Wolf. He had made the wolf even more exasperated and angry yesterday, when he had acted belligerently, so he was full of disbelief when the wolf told the story. He knew this must be a yarn, and not a true story. The raccoon, named Jeff, had a compulsion to hit Exasperated Wolf, but didn’t because he, and the wolf, smelled some food that was spoiled. It smelled rancid, so the wolf cried out in anguish. <q type="spoken">What is that awful smell?</q> he wailed. He charged and ran across the wide expanse of the field toward the rabbits, who were filling his boat with water. He lunged at the rabbits and knocked them away, but it was too late. The boat had begun to sink. Exasperated Wolf bailed the water out of the boat, and Jeff began to help him. <q type="spoken">I don’t need your help.</q> Exasperated Wolf said nastily, but Jeff kept working. Both were unwavering and without doubt that they would succeed, but it was no good. As they wavered and shook, and the boat sank. As Exasperated Wolf stared at his sinking boat, he heard a soothing voice. It was a girl who needed water because she was dehydrated.</p>
+			<trailer>
+				<seg rend="big">To Be Continued<lb/></seg>
+				<seg rend="small">as Wolf takes occupation of Granny’s house in<lb/></seg>
+				<seg rend="big"><title level="m">Exasperated Wolf and Little Red Riding Hood</title></seg>
+			</trailer>
+		</body>
+	</text>
+</TEI>

@@ -1,0 +1,86 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text *.tei.body{ Padding-Inline: 0; Font-Variant-Numeric: Proportional-Nums Lining-Nums; Text-Align: Start; Hyphens: None }
+*.tei.text *.tei.body *.tei.head{ Margin-Block: 0; Margin-Inline: 3EM; Font-Size: Larger; Text-Align: Start; Text-Decoration: Underline }
+*.tei.text *.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
+*.tei.text *.tei.opener,*.tei.text *.tei.closer{ Margin: 0 }
+*.tei.text *.tei.q::before{ Content: "“" }
+*.tei.text *.tei.q::after{ Content: "”" }
+*.tei.text *.tei.q+*.tei.seg.space{ Display: Inline }
+*.tei.text *.tei.abbr{ Font-Variant-Caps: Inherit }
+*.tei.text *.tei.emph{ Text-Decoration: Double Underline }
+*.tei.text *.tei.emph.caps{ Text-Transform: Uppercase; Text-Decoration: None }
+*.tei.text *.tei.strong{ Font-Weight: Bolder }
+*.tei.text *.tei.initial{ Font-Style: Italic }
+*.tei.text *.tei.soCalled.oblique{ Font-Weight: Bolder; Font-Style: Oblique }
+*.tei.text *.tei.emph::before,*.tei.text *.tei.emph::after{ Content: None }
+*.tei.text *.tei.list>ul>*.tei.item::before{ Content: "⁃ " }
+*.tei.text *.tei.list>*.tei.head,*.tei.text *.tei.list>dl,*.tei.text *.tei.list>dl>div>*.tei.label{ Display: Inline; Margin: 0; Padding: 0; Font: Inherit; Text-Decoration: None; }
+*.tei.text *.tei.list>*.tei.head::after{ Content: " " }
+*.tei.text *.tei.note[data--t-e-i_place=margin]{ Position: Absolute; Margin: 0; Border: None; Padding: 0; Inset-Inline-Start: -3REM; Inline-Size: 3.5REM; Font-Size: Smaller }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">The story of Rylielectronics</title>
+				<author><name>BJMNS</name><note>As Tyler Fengat.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition><idno type="URI">tag:bjmns.tumblr.com,2013:bns::3::notes:The_story_of_Rylielectronics</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+				<ptr target="https://go.KIBI.family/Corpora/BJMNS/3/:notes/The_story_of_Rylielectronics/text.xml"/>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Source is a handwritten draft (pencil on college‐ruled notebook paper).</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names or titles of works has been made, as they received no special treatment in the source.</p>
+				<p>Mistakes are preserved as written. Additions are noted with the <gi>add</gi> element and strikeouts with <gi>del</gi>.</p>
+				<p>The page has a header of <q type="written" xml:space="preserve">B@N: In the Palm of My Hand</q>; this is not transcribed.</p>
+			</editorialDecl>
+		</encodingDesc>
+		<revisionDesc status="published">
+			<change when="2020-08-04" status="published">Initial version, based on original handwritten source.</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body xml:id="text">
+			<head>The story of Rylielectronics</head>
+			<list>
+				<item><del>R&amp;E Electronics buys out <emph>all</emph> power plants.</del></item>
+				<item><add place="margin"><abbr type="acronym">IU</abbr></add>Starts <soCalled>chip project</soCalled>, <del>changes name to Rylielectronics</del></item>
+				<item>Ajusts power lines to only give power to Rylielectronics; would take other products and make them compatible. (Also added chip!)</item>
+				<item><del><abbr type="acronym">I.U.</abbr> (International Union) gets suspicious, send me in</del></item>
+				<item><del>I am captured</del>, chip installed, <del>think it should overload m brain.</del></item>
+				<item><del>Doesn’t (I don’t just get the electronic’s memory, I also get their processors and <del>memory</del><add place="above">RAM</add>)</del></item>
+				<item><del>Defeat Rylielectronics <abbr type="suspension">w/</abbr>chip</del></item>
+				<item>chip (&amp; me) sustained for <abbr type="suspension">gov.</abbr> purposes</item>
+			</list>
+			<list type="gloss">
+				<head>Sequels:</head>
+				<label>Download Complete</label>
+				<item><seg rend="initial">story of how</seg> Tyler is killed, and why his mind still lives.</item>
+				<label>We will be Invincible</label>
+				<item><seg rend="initial">The</seg> 3<seg rend="sup">rd</seg> World War is coming, and only Tyler can stop it.</item>
+				<label>The aftermath of <abbr type="acronym">WWIII</abbr></label>
+				<item><seg rend="initial">Now</seg> Tyler’s exestince is no longer secret, and not everybody wants him to exist<note anchored="false" place="margin">Book 1 written</note></item>
+				<label>Breaking the Code</label>
+				<item><seg rend="initial">the</seg> technicians want Tyler dead, and try to break the code of his existence.</item>
+				<label><del>Explosion</del></label>
+				<item><del><seg rend="initial">The</seg> Sun is going to blow, threatening the survival of the human race</del></item>
+				<label><del>Welcome to Earth</del></label>
+				<item><del><seg rend="initial">Humans</seg> move to a new planet, name it Earth after their original planet. It is in the land of Africa. <emph rend="caps">Ice Age</emph> and humans are forced to take a step back in evolution if they are to survive.</del></item>
+			</list>
+		</body>
+	</text>
+</TEI>

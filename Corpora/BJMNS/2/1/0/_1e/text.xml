@@ -1,0 +1,93 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text{ Font-Size: 1REM; Font-Family: Monospace }
+*.tei.text *.tei.abbr{ Font: Inherit }
+*.tei.text *.tei.front{ Margin: 0; Padding-Inline: 3REM; Color: Var(--GreyText); Font-Size: Larger; Font-Family: Sans-Serif }
+*.tei.text *.tei.body{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.text *.tei.body::before{ Content: None }
+*.tei.text *.tei.body *.tei.head{ Margin: 0; Font: Inherit; Text-Align: Start }
+*.tei.text *.tei.body *.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
+*.tei.text *.tei.note{ Margin: 0; Border: None; Padding-Block: 0; Padding-Inline: 3REM; Min-Block-Size: 0; Color: Var(--GreyText); Font-Family: Sans-Serif }
+*.tei.text *.tei.note>*.tei.seg:First-Child{ Display: None }
+*.tei.text *.tei.add{ Font-Family: Sans-Serif }
+*.tei.text *.tei.add>span{ Color: Var(--EditText); Font-Family: Sans-Serif }
+*.tei.text *.tei.add>span::before,*.tei.text *.tei.add>span::after,*.tei.text *.tei.del::before,*.tei.text *.tei.del::after{ Content: None }
+*.tei.text *.tei.del{ Text-Decoration: Var(--EditText) Double Line-Through }
+*.tei.text *.tei.q::before{ Content: "“" }
+*.tei.text *.tei.q::after{ Content: "”" }
+*.tei.text *.tei.q+*.tei.seg.space{ Display: Inline }
+*.tei.text *.tei.div:Not(:First-Child){ Margin-Block-Start: 3EM }
+*.tei.text *.tei.div:Not(:Last-Child){ Margin-Block-End: 3EM }
+*.tei.text>div>*>div>*.tei.div:Not(:Last-Child){ Margin-Block-End: 4.5EM }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Nat Gets Attacked by Ele the Alien Under the Sea</title>
+				<author><name>BJMNS</name><note>Not recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition><title level="s"><abbr type="acronym">FBI</abbr>: Editing Old Stories</title> edited draft.<lb/><idno type="URI">tag:bjmns.tumblr.com,2013:bns::2:1:0:_1e</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+				<ptr target="https://go.KIBI.family/Corpora/BJMNS/2/1/0/1/text.xml"/>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Source for main text is a plaintext file (born digital; original format unknown). Source for annotations are handwritten edits made on a printed‐out copy of that file, or likely some subset of its original format interpreted as plain‐text, given the gibberish at the end of the file (not transcribed).</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names has been made, as they received no special treatment in the source.</p>
+				<p>Source is broken up into multiple sections; these are encoded using <gi>div</gi>.</p>
+				<p>Source designation of terminal punctuation (using two spaces) has been preserved via <gi>pc</gi> with a <val>terminal</val> <att>type</att>.</p>
+				<p>Edits are encoded using the <gi>add</gi> and <gi>del</gi> elements. The <gi>front</gi> and <gi>note</gi> elements are also additions not present in the original text.</p>
+			</editorialDecl>
+		</encodingDesc>
+		<revisionDesc status="published">
+			<change when="2020-08-04" status="published">Initial version based off of a paper source.</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<front>
+			<p><abbr type="acronym">FBI</abbr>: Editing Old Stories</p>
+		</front>
+		<body xml:id="text">
+			<head>Nat Gets Attacked by Ele the Alien Under the Sea</head>
+			<note anchored="false">First appearance: Third Grade Assignment</note>
+			<div>
+				<div>
+					<p><q type="spoken">Dad<add>,</add> can I jump off that cliff over there?</q><pc type="terminal"/> I <del>begged</del><add place="above">asked</add>.</p>
+					<p><q type="spoken">Of course Nat,</q> my dad told me.</p>
+					<p><del>Oh</del>, let me introduce myself<pc type="terminal">.</pc> My name is Nat Shoemen<pc type="terminal">.</pc> I’m eight years old<pc type="terminal">.</pc> I am a boy and have dark brown eyes<pc>.</pc> My hair is pitch black and I have dark skin<pc type="terminal">.</pc> I weigh about 52.5 pounds and am four feet three inches tall<pc>.</pc> I love cliff diving into the ocean<pc type="terminal">.</pc> You cliff dive by going to the top of a cliff<pc type="terminal">.</pc> Then when you get to the top you dive into the water<pc>.</pc> Well, there are some things about me.</p>
+					<p>Right now we are on vacation and at a cliff diving area<pc type="terminal">.</pc> The cliff diving area is over the Pacific Ocean<pc>.</pc> Now back to the story<pc type="terminal">.</pc> I went over to a cliff that was 300 feet high and I did a triple back flip off the edge<del>π</del> and into the ocean.</p>
+					<p><del><q type="spoken">Sploosh!!!</q></del><add><q type="spoken">Ka‐Sploosh!!!</q></add></p>
+					<p xml:space="preserve">I landed in the murky water<pc type="terminal">.</pc> All of a sudden some seaweed wrapped around my leg<pc>.</pc> </p>
+				</div>
+				<div>
+					<p xml:space="preserve">I looked down and stared at the evilest alien I <del>had</del><add place="above">have</add> ever seen (I <del>had</del><add place="above">have</add> only seen two before) yanking down on my leg<pc type="terminal">.</pc> She had pea green eyes, dark brown hair, freckles, and was three feet tall<pc>.</pc> She was wearing a green shirt, black pants and black boots<pc>.</pc> She pulled and tugged me further down under the ocean into a giant bubble<pc>.</pc> I finally let out my breath which I had been holding all of this time<pc>.</pc> I <del>gazed</del><add place="below">glanced</add> around inside the bubble and was amazed at how <del>elegant</del><add place="above">nice</add> her home was<pc>.</pc> </p>
+					<p><q type="spoken">Dad, I found a human<add>,</add></q> the alien told another alien, I think it was her father.</p>
+					<p xml:space="preserve"><q type="spoken">Good work, Ele</q> the alien, who I think was the father, said<pc>.</pc><q type="spoken">Now we can start asking it questions.</q> </p>
+					<p xml:space="preserve">I found out they were planning to invade Earth<pc type="terminal">.</pc> </p>
+					<p><q type="spoken">I’m going to have to warn people</q> I said to myself<pc>.</pc> <q type="spoken">But, how?</q></p>
+				</div>
+				<div>
+					<p>I knew the surface was too far under the ocean to <del>ϊ</del>swim to the top<pc type="terminal">.</pc> I <del>observed</del><add place="above">watched</add> a dolphin through the wall of the bubble<pc>.</pc> <q type="spoken">If I could break through the wall of the bubble I could ride the dolphin to the surface.</q> I said to myself<pc>.</pc> I quickly <del>exploded</del><add place="above">burst</add> through the wall of the bubble and onto the dolphin as he raced by and he immediately swam to the surface near the shore<pc type="terminal">.</pc> I was out of breath, but I made it.</p>
+				</div>
+			</div>
+			<div>
+				<p xml:space="preserve">  Now<del>,</del> I needed to find a way to warn people of the planned invasion by aliens.</p>
+				<p xml:space="preserve">I told my dad all that had just happened to me<pc>.</pc> </p>
+				<p xml:space="preserve"><q type="spoken">Nat, there is no such thing as aliens</q> he explained to me<pc type="terminal">.</pc> </p>
+				<p>I don’t know what happened to the aliens, but I am never going cliff diving again. I am sure of that.</p>
+			</div>
+		</body>
+	</text>
+</TEI>

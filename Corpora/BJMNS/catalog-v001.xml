@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group prefer="public" xml:base="">
+        <uri name="https://go.KIBI.family/Corpora/BJMNS/#" uri="index.rdf"/>
+        <uri name="https://go.KIBI.family/Ontologies/BNS/#" uri="../../../Ontologies/BNS/index.xml"/>
+    </group>
+</catalog>

@@ -1,0 +1,1479 @@
+<!DOCTYPE rdf:RDF [
+	<!ENTITY NCName "http://www.w3.org/2001/XMLSchema#NCName">
+	<!ENTITY BJMNS "https://go.KIBI.family/Corpora/BJMNS/">
+	<!ENTITY bjmns "tag:bjmns.tumblr.com,2013:bns::">
+	<!ENTITY gYearMonth "http://www.w3.org/2001/XMLSchema#gYearMonth">
+	<!ENTITY integer "http://www.w3.org/2001/XMLSchema#integer">
+	<!ENTITY LANGDEV "https://go.KIBI.family/Corpora/LANGDEV/">
+	<!ENTITY langdev "tag:langdev.xyz,2017:">
+	<!ENTITY lcbw "http://id.loc.gov/resources/works/">
+	<!ENTITY lcbh "http://id.loc.gov/resources/hubs/">
+	<!ENTITY lcsh "http://id.loc.gov/authorities/subjects/">
+	<!ENTITY string "http://www.w3.org/2001/XMLSchema#string">
+	<!ENTITY wikidata "http://www.wikidata.org/entity/">
+	<!ENTITY xhtml "http://www.w3.org/1999/xhtml">
+]>
+<rdf:RDF
+	xml:base="&BJMNS;"
+	xmlns="https://go.KIBI.family/Ontologies/BNS/#"
+	xmlns:bns="https://go.KIBI.family/Ontologies/BNS/#"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+	<owl:Ontology rdf:about="#">
+		<owl:imports rdf:resource="https://go.KIBI.family/Ontologies/BNS/#"/>
+	</owl:Ontology>
+	<dc:FileFormat rdf:nodeID="HTML">
+		<dc:identifier rdf:datatype="&string;">text/html</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="JPEG">
+		<dc:identifier rdf:datatype="&string;">image/jpeg</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="PDF">
+		<dc:identifier rdf:datatype="&string;">application/pdf</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="PLAIN">
+		<dc:identifier rdf:datatype="&string;">text/plain</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="PNG">
+		<dc:identifier rdf:datatype="&string;">image/png</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="RTF">
+		<dc:identifier rdf:datatype="&string;">application/rtf</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="TEI">
+		<dc:identifier rdf:datatype="&string;">application/tei+xml</dc:identifier>
+	</dc:FileFormat>
+	<dc:FileFormat rdf:nodeID="XHTML">
+		<dc:identifier rdf:datatype="&string;">application/xhtml+xml</dc:identifier>
+	</dc:FileFormat>
+	<Corpus rdf:about="&bjmns;">
+		<fullTitle xml:lang="en">BJMNS Presents:</fullTitle>
+		<owl:sameAs rdf:resource="#bjmns:"/>
+		<owl:sameAs rdf:resource="./"/>
+		<dc:abstract rdf:parseType="Resource">
+			<contents rdf:parseType="Literal">
+				<div lang="en" xml:lang="en" xmlns="&xhtml;">
+					<p>A corpus of, roughly speaking, every creative work that I (<a href="https://go.KIBI.family/">KIBI Gô</a>) created prior to graduating college mid‐2016, based on the categorization system I used circa 2013 and updated periodically thereafter.  Back in these days I cared a lot about keeping a record of <em>literally everything</em>, so you will find a lot of inconsequential stuff in this collection.</p>
+					<p><i>BJMNS</i> is a generic username that I employed often during this time, replacing the earlier <i>TF</i> which I had used for artistic works in middle and high school.  There is no clear delineation between projects created under the two monikers, so they are unified here.</p>
+				</div>
+			</contents>
+		</dc:abstract>
+		<hasCover rdf:parseType="Resource">
+			<contents rdf:parseType="Literal">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512" fill="currentColor" stroke="none">
+					<title lang="en" xml:lang="en">A monogram of the letters ‹ BRS ›, which I used in conjunction with the BJMNS moniker, again replacing a TF monogram.</title>
+					<g transform="translate(0,-540.36218)">
+						<g transform="matrix(1.28,0,0,1.28,-64,-230.66142)">
+							<g transform="translate(-20,10)">
+								<path d="m 260,642.36218 c 60,0 80,10 80,50 0,40 -20,50 -60,50 l -10,0 c 0,0 50,0 50,-50 0,-50 -70,-50 -70,-50 z"/>
+								<path d="m 280,742.36218 c 40,0 60,10 60,50 0,40 -20,50 -80,50 l -10,0 c 0,0 70,0 70,-50 0,-50 -50,-50 -50,-50 z"/>
+								<path d="m 220,742.36218 c -40,0 -60,10 -60,50 0,40 40,50 90,50 l 0,0 c 0,0 -70,0 -70,-50 0,-50 50,-50 50,-50 z"/>
+								<path d="m 260,942.36218 c 60,0 80,-10 80,-50 0,-40 -40,-50 -90,-50 l 0,0 c 0,0 70,0 70,50 0,50 -70,50 -70,50 z"/>
+								<path d="m 280,742.36218 c 40,0 60,10 60,50 0,40 50,50 50,50 l -10,0 c 0,0 -60,0 -60,-50 0,-50 -50,-50 -50,-50 z"/>
+								<path d="m 250,120 c 0,0 10,0 10,70 l 0,10 c 0,70 -10,70 -10,70 0,0 -10,-10 -10,-70 l 0,-10 c 0,-70 10,-70 10,-70 z" transform="translate(0,552.36218)"/>
+							</g>
+							<path d="M 250,50 C 139.54305,50 50,139.54305 50,250 50,360.45695 139.54305,450 250,450 360.45695,450 450,360.45695 450,250 450,139.54305 360.45695,50 250,50 z m 0,10 c 99.41125,0 180,85.0659 180,190 0,104.9341 -80.58875,190 -180,190 C 150.58875,440 70,354.9341 70,250 70,145.0659 150.58875,60 250,60 z" transform="translate(0,552.36218)"/>
+						</g>
+					</g>
+				</svg>
+			</contents>
+		</hasCover>
+		<forAuthor>
+			<Author rdf:about="tag:bjmns.tumblr.com,2013:">
+				<fullTitle xml:lang="en">BJMNS</fullTitle>
+				<owl:sameAs rdf:resource="https://go.KIBI.family/About/#me"/>
+			</Author>
+		</forAuthor>
+		<hasProjects rdf:parseType="Collection">
+			<Project rdf:about="&bjmns;0">
+				<identifier rdf:datatype="&NCName;">mw</identifier>
+				<fullTitle xml:lang="en">Minor Works</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:0"/>
+				<owl:sameAs rdf:resource="0/"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p>An umbrella project for all miscellaneous works not deserving of their own project in the BNS system.</p>
+						</div>
+					</contents>
+				</dc:abstract>
+				<includes>
+					<Volume rdf:about="&bjmns;0:0">
+						<index rdf:datatype="&integer;">0</index>
+						<fullTitle xml:lang="en">Miscellany</fullTitle>
+						<abbreviatedTitle xml:lang="en">ETC</abbreviatedTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:0"/>
+						<owl:sameAs rdf:resource="0/0/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>In short, every work which I kept a record of but which I did not deem notable enough to classify as even a minor work.  This volume contains poetry, visual art, essays, and so forth.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:1">
+						<index rdf:datatype="&integer;">1</index>
+						<fullTitle xml:lang="en">Exasperated Wolf</fullTitle>
+						<abbreviatedTitle xml:lang="en">EW</abbreviatedTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:1"/>
+						<owl:sameAs rdf:resource="0/1/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>A collection of stories written in elementary school as vocabulary practice, all starring a character known only as Exasperated Wolf.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&lcbw;1544990"/>
+						<inspiration rdf:resource="&lcbw;12001639"/>
+						<inspiration rdf:resource="&lcsh;sh85147259"/>
+						<includes>
+							<Version rdf:about="&bjmns;0:1:0">
+								<index rdf:datatype="&integer;">0</index>
+								<identifier rdf:datatype="&NCName;">flood</identifier>
+								<fullTitle xml:lang="en">Exasperated Wolf and the Big Flood</fullTitle>
+								<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> and Flood</span></abbreviatedTitle>
+								<owl:sameAs rdf:resource="#bjmns:0:1:0"/>
+								<owl:sameAs rdf:resource="0/1/0/"/>
+								<inspiration rdf:resource="&lcsh;sh85049168"/>
+								<includes>
+									<Draft rdf:about="&bjmns;0:1:0:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Exasperated Wolf and the Big Flood</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:0:1:0:1"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/0/1/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/0/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/0/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+						<includes>
+							<Version rdf:about="&bjmns;0:1:1">
+								<index rdf:datatype="&integer;">1</index>
+								<identifier rdf:datatype="&NCName;">littlered</identifier>
+								<fullTitle xml:lang="en">Exasperated Wolf and Little Red Riding Hood</fullTitle>
+								<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> and Little Red</span></abbreviatedTitle>
+								<owl:sameAs rdf:resource="#bjmns:0:1:1"/>
+								<owl:sameAs rdf:resource="0/1/1/"/>
+								<inspiration rdf:resource="&lcsh;sh88005840"/>
+								<inspiration rdf:resource="&wikidata;Q11838"/>
+								<includes>
+									<Draft rdf:about="&bjmns;0:1:1:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Exasperated Wolf and Little Red Riding Hood</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:0:1:1:1"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/1/1/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/1/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/1/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+						<includes>
+							<Version rdf:about="&bjmns;0:1:2">
+								<index rdf:datatype="&integer;">2</index>
+								<identifier rdf:datatype="&NCName;">wolfboy</identifier>
+								<fullTitle xml:lang="en">Exasperated Wolf and the Boy who cried “Wolf”</fullTitle>
+								<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> and Boy</span></abbreviatedTitle>
+								<owl:sameAs rdf:resource="#bjmns:0:1:2"/>
+								<owl:sameAs rdf:resource="0/1/2/"/>
+								<inspiration rdf:resource="&wikidata;Q1190945"/>
+								<includes>
+									<Draft rdf:about="&bjmns;0:1:2:0">
+										<index rdf:datatype="&integer;">0</index>
+										<fullTitle xml:lang="en">Don’t miss: Exasperated Wolf and the Boy who cried “WOLF”</fullTitle>
+										<abbreviatedTitle rdf:parseType="Literal"><span xmlns="&xhtml;" xml:lang="en"><abbr title="Exasperated Wolf">EW</abbr> <abbr title="Advertisement">Ad</abbr></span></abbreviatedTitle>
+										<owl:sameAs rdf:resource="#bjmns:0:1:2:0"/>
+										<owl:sameAs rdf:resource="0/1/2/0/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/2/0/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/2/0/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/2/0/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+								<includes>
+									<Draft rdf:about="&bjmns;0:1:2:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Exasperated Wolf and the Boy who cried “Wolf”</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:0:1:2:1"/>
+										<owl:sameAs rdf:resource="0/1/2/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/2/1/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/2/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/1/2/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:2">
+						<index rdf:datatype="&integer;">2</index>
+						<identifier rdf:datatype="&NCName;">Bug</identifier>
+						<fullTitle xml:lang="en">Billy Bee / Charlie Caterpillar</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:2"/>
+						<owl:sameAs rdf:resource="0/2/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>In addition to writing, in elementary school I was very interested in comic books, thanks to such works as <a href="&lcbw;4772328"><code>lcbw:4772328</code></a> and <a href="&lcbw;4980379"><code>lcbw:4980379</code></a>.  Inspired by <a href="&wikidata;Q4986149"><code>wikidata:Q4986149</code></a>, the comics I made primarily starred various insects with names such as Billy and Bobby Bee and Charlie Caterpillar.</p>
+									<p>By nature of the medium, I wasn’t able to digitize these comics, and most of the paper copies have likely been lost.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q4986149"/>
+						<inspiration rdf:resource="&wikidata;Q2927680"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:3">
+						<index rdf:datatype="&integer;">3</index>
+						<identifier rdf:datatype="&NCName;">dinobug</identifier>
+						<fullTitle xml:lang="en">Dino Bug</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:3"/>
+						<owl:sameAs rdf:resource="0/3/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>Another attempt at comicwriting, clearly inspired by <a href="&BJMNS;0/2/"><code>bjmns:0:2</code></a> but more whimsical.  I only made a few (bad) comics but I loved the little guy.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<hasCover>
+							<dcmitype:StillImage rdf:about="0/3/0/1/cover.png">
+								<dc:format rdf:nodeID="PNG"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents xml:lang="en">A dino‐looking thing made out of triangles and stick limbs, labeled Dino Bug.</contents>
+								</dc:abstract>
+							</dcmitype:StillImage>
+						</hasCover>
+						<includes>
+							<Version rdf:about="&bjmns;0:3:0">
+								<index rdf:datatype="&integer;">0</index>
+								<owl:sameAs rdf:resource="#bjmns:0:3:0"/>
+								<owl:sameAs rdf:resource="0/3/0/"/>
+								<includes>
+									<Draft rdf:about="&bjmns;0:3:0:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Dino Bug</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:0:3:0:1"/>
+										<owl:sameAs rdf:resource="0/3/0/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="0/3/0/1/text.pdf">
+												<dc:format rdf:nodeID="PDF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:4">
+						<index rdf:datatype="&integer;">4</index>
+						<identifier rdf:datatype="&NCName;">sting</identifier>
+						<fullTitle xml:lang="en">Sting</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:4"/>
+						<owl:sameAs rdf:resource="0/4/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>This was my sole attempt at writing a cape comic in middle school and I made it as far as a single page before getting bored.  That page is probably still lying around somewhere, but it’s never been scanned.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&lcsh;sh2007009593"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:5">
+						<index rdf:datatype="&integer;">5</index>
+						<identifier rdf:datatype="&NCName;">movd</identifier>
+						<fullTitle xml:lang="en">Mov’d</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:5"/>
+						<owl:sameAs rdf:resource="0/5/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>A stop‐motion film made in iMovie!  No plot whatsoever, just a bunch of little experiments set to copyrighted music that I can’t legally upload here.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q849666"/>
+						<inspiration rdf:resource="&wikidata;Q4986149"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:6">
+						<index rdf:datatype="&integer;">6</index>
+						<identifier rdf:datatype="&NCName;">ductwars</identifier>
+						<fullTitle xml:lang="en">Lego Duct Wars</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:6"/>
+						<owl:sameAs rdf:resource="0/6/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>Another stop‐motion film (in this case, a brickfilm), this time with a plot!  Or, it would have been, had it ever actually been made.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q849666"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:7">
+						<index rdf:datatype="&integer;">7</index>
+						<identifier rdf:datatype="&NCName;">rebellion</identifier>
+						<fullTitle xml:lang="en">The Rebellion</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:7"/>
+						<owl:sameAs rdf:resource="0/7/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>This was a LEGO movie that I made with a classmate in seventh grade for Medieval History class, focusing on the 1381 Peasants’ Revolt in England.  I do still have the script, but I’m not publishing it.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&lcsh;sh85139074"/>
+						<inspiration rdf:resource="&wikidata;Q498871"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:8">
+						<index rdf:datatype="&integer;">8</index>
+						<identifier rdf:datatype="&NCName;">brian</identifier>
+						<fullTitle xml:lang="en">Brian’s World</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:8"/>
+						<owl:sameAs rdf:resource="0/8/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>This story never got past the conceptual stage; it was vaguely inspired by <a href="&lcbw;503025"><code>lcbw:503025</code></a> but I think I could tell that the idea was bad pretty quickly.  No idea what the title means.  There might be a page of a draft somewhere.</p>
+									<p>However, it <em>is</em> the first story project of mine to use a draft numbering system like the one you see here, so it does have that going for it.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&lcbw;503025"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:9">
+						<index rdf:datatype="&integer;">9</index>
+						<identifier rdf:datatype="&NCName;">ufo</identifier>
+						<fullTitle xml:lang="en">UFO</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:9"/>
+						<owl:sameAs rdf:resource="0/9/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>This is the very first game I programmed!!  It was a very bad knockoff of <a href="&wikidata;Q220665"><code>wikidata:Q220665</code></a>, written for the TI‐84 graphing calculator.  Because that’s what I did in math class in high school.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q220665"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:10">
+						<index rdf:datatype="&integer;">10</index>
+						<identifier rdf:datatype="&NCName;">ItB</identifier>
+						<fullTitle xml:lang="en">Into the Battle</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:10"/>
+						<owl:sameAs rdf:resource="0/10/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>This was an <em>idea</em> for a short animated video, which I came up with back when I was brainstorming for <a href="&BJMNS;20/"><code>bjmns:20</code></a>.  I never actually did anything with it.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q925587"/>
+					</Volume>
+				</includes>
+					<!--
+				<includes>
+					<Volume rdf:about="&bjmns;0:11">
+						<index rdf:datatype="&integer;">11</index>
+						<identifier rdf:datatype="&NCName;">guy</identifier>
+						<fullTitle xml:lang="en">The Guy</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:11"/>
+						<owl:sameAs rdf:resource="0/11/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:12">
+						<index rdf:datatype="&integer;">12</index>
+						<identifier rdf:datatype="&NCName;">V</identifier>
+						<fullTitle xml:lang="en">V</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:12"/>
+						<owl:sameAs rdf:resource="0/12/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:13">
+						<index rdf:datatype="&integer;">13</index>
+						<identifier rdf:datatype="&NCName;">thiswar</identifier>
+						<fullTitle xml:lang="en">This War (Music Video)</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:13"/>
+						<owl:sameAs rdf:resource="0/13/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:14">
+						<index rdf:datatype="&integer;">14</index>
+						<identifier rdf:datatype="&NCName;">strategy</identifier>
+						<fullTitle xml:lang="en">Strategy [Calculator]</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:14"/>
+						<owl:sameAs rdf:resource="0/14/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:15">
+						<index rdf:datatype="&integer;">15</index>
+						<identifier rdf:datatype="&NCName;">EY</identifier>
+						<fullTitle xml:lang="en">PKMN ElectricYellow</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:15"/>
+						<owl:sameAs rdf:resource="0/15/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:16">
+						<index rdf:datatype="&integer;">16</index>
+						<identifier rdf:datatype="&NCName;">Libro</identifier>
+						<fullTitle xml:lang="en">El Libro</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:16"/>
+						<owl:sameAs rdf:resource="0/16/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;0:17">
+						<index rdf:datatype="&integer;">17</index>
+						<identifier rdf:datatype="&NCName;">Love</identifier>
+						<fullTitle xml:lang="en">Love</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:0:17"/>
+						<owl:sameAs rdf:resource="0/17/"/>
+					</Volume>
+				</includes>
+					-->
+			</Project>
+			<Project rdf:about="&bjmns;1">
+				<identifier rdf:datatype="&NCName;">zl</identifier>
+				<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:1"/>
+				<owl:sameAs rdf:resource="1/"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p><a href="&wikidata;Q8337"><code>wikidata:Q8337</code></a> was the first book series I got into as a (very young) kid, and when I was very little I used to run around pretending I was a <a href="&wikidata;Q8337"><code>wikidata:Q8337</code></a> wizard or witch.  But, being an inventive sort, I got bored of this pretty quickly and decided to just create my <em>own</em> magical fantasy boarding‐school, whence <a href="&BJMNS;1/"><code>bjmns:1</code></a>.</p>
+							<p>Most of the writing I did in elementary school was set in this universe, which I mostly put to rest after <a href="&BJMNS;1/1/2003-09:1/"><code>bjmns:1:1:2003-09:1</code></a>. Because the actual number of stories is unknown (and many were doubtless lost to time), early versions are organized by year and month of inception.</p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<inspiration rdf:resource="&wikidata;Q8337"/>
+				<inspiration rdf:resource="&lcbw;2126644"/>
+				<inspiration rdf:resource="&lcbw;4035856"/>
+				<inspiration rdf:resource="&lcbw;4995027"/>
+				<inspiration rdf:resource="&lcbw;12103280"/>
+				<inspiration rdf:resource="&lcbw;13093944"/>
+				<inspiration rdf:resource="&lcsh;sh2008113556"/>
+				<includes>
+					<Volume rdf:about="&bjmns;1:1">
+						<index rdf:datatype="&integer;">1</index>
+						<owl:sameAs rdf:resource="#bjmns:1:1"/>
+						<owl:sameAs rdf:resource="1/1/"/>
+						<includes>
+							<Version rdf:about="&bjmns;1:1:2003-03">
+								<index rdf:datatype="&gYearMonth;">2003-03</index>
+								<identifier rdf:datatype="&NCName;">dimond</identifier>
+								<fullTitle xml:lang="en">Tally Marries Dimond</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:1:1:2003-03"/>
+								<owl:sameAs rdf:resource="1/1/2003-03/"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+											<p>A boy named Tally proposes to and marries his longtime love interest, a girl named Dimond (misspelling intentional).  There existed at least one prior draft with a significantly different plot (as I recall, perhaps there was some competition for Dimond’s hand?), but this has in all likelihood been lost to time and the wastebasket.</p>
+											<p>This is quite possibly the first romance story (if you can call it that) I ever wrote, so uh, take from that what you will.</p>
+										</html:div>
+									</contents>
+								</dc:abstract>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:2003-03:Final">
+										<index rdf:datatype="&NCName;">Final</index>
+										<fullTitle xml:lang="en">Tally Marries Dimond</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:2003-03:Final"/>
+										<owl:sameAs rdf:resource="1/1/2003-03/Final/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-03/Final/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-03/Final/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-03/Final/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+						<includes>
+							<Version rdf:about="&bjmns;1:1:2003-04">
+								<index rdf:datatype="&gYearMonth;">2003-04</index>
+								<identifier rdf:datatype="&NCName;">bodys</identifier>
+								<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:1:1:2003-04"/>
+								<owl:sameAs rdf:resource="1/1/2003-04/"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<div lang="en" xml:lang="en" xmlns="&xhtml;">
+											<p>A mishap with a strange machine results in two friends switching bodies.</p>
+										</div>
+									</contents>
+								</dc:abstract>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:2003-04:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:2003-04:1"/>
+										<owl:sameAs rdf:resource="1/1/2003-04/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-04/1/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-04/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-04/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:2003-04:2">
+										<index rdf:datatype="&integer;">2</index>
+										<fullTitle xml:lang="en">Switched Bodys!</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:2003-04:2"/>
+										<owl:sameAs rdf:resource="1/1/2003-04/2/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-04/2/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-04/2/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-04/2/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+						<includes>
+							<Version rdf:about="&bjmns;1:1:2003-09">
+								<index rdf:datatype="&gYearMonth;">2003-09</index>
+								<identifier rdf:datatype="&NCName;">TM</identifier>
+								<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:1:1:2003-09"/>
+								<owl:sameAs rdf:resource="1/1/2003-09/"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<div lang="en" xml:lang="en" xmlns="&xhtml;">
+											<p>In the future, a young boy passes an exam and gets to go to an elite school.  There, he has adventures.</p>
+										</div>
+									</contents>
+								</dc:abstract>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:2003-09:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:2003-09:1"/>
+										<owl:sameAs rdf:resource="1/1/2003-09/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/1/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:2003-09:_1e">
+										<index rdf:datatype="&NCName;">_1e</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:2003-09:_1e"/>
+										<owl:sameAs rdf:resource="1/1/2003-09/_1e/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/_1e/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:2003-09:2">
+										<index rdf:datatype="&integer;">2</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:2003-09:2"/>
+										<owl:sameAs rdf:resource="1/1/2003-09/2/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/2/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/2/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/2/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+								<hasNote>
+									<Note rdf:about="&bjmns;1:1:2003-09::notes:Tally_Magiczl">
+										<identifier rdf:datatype="&NCName;">Tally_Magiczl</identifier>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns;1:1:2003-09::notes:Tally_Magiczl"/>
+										<owl:sameAs rdf:resource="1/1/2003-09/:notes/Tally_Magiczl"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/:notes/Tally_Magiczl/text.png">
+												<dc:format rdf:nodeID="PNG"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/2003-09/:notes/Tally_Magiczl/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Note>
+								</hasNote>
+							</Version>
+						</includes>
+						<includes>
+							<Version rdf:about="&bjmns;1:1:N">
+								<index rdf:datatype="&NCName;">N</index>
+								<identifier rdf:datatype="&NCName;">N</identifier>
+								<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:1:1:N"/>
+								<owl:sameAs rdf:resource="1/1/N/"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<div lang="en" xml:lang="en" xmlns="&xhtml;">
+											<p>In the future, a boy studies science in a magical age where it is popularly considered irrelevant.</p>
+											<p>Pretty much exclusively a spinoff (and inversion) of <a href="&BJMNS;1/1/2003-09/"><code>bjmns:1:1:2003-09</code></a>, and not earlier concepts.</p>
+										</div>
+									</contents>
+								</dc:abstract>
+								<includes>
+									<Draft rdf:about="&bjmns;1:1:N:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Tally Magiczl</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:1:1:N:1"/>
+										<owl:sameAs rdf:resource="1/1/N/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/N/1/text.html">
+												<dc:format rdf:nodeID="HTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/N/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="1/1/N/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+				</includes>
+			</Project>
+			<Project rdf:about="&bjmns;2">
+				<identifier rdf:datatype="&NCName;">natele</identifier>
+				<fullTitle xml:lang="en">Drowned</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:2"/>
+				<owl:sameAs rdf:resource="2/"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p><a href="&BJMNS;2/1/0/1/"><code>bjmns:2:1:0:1</code></a> was a short story that I wrote for class in the third grade and is actually probably one of my better stories from that time.  (If you compare other works from around those dates, you'll see that they are… not great.)  It was originally set in the <a href="&BJMNS;1/"><code>bjmns:1</code></a> universe, because by default everything I wrote was at that time.</p>
+							<p>Later, in college, I realized that the story maybe actually had some metaphoric or symbolic potential, so I broke it off into its own project since it really didn't have anything to do with the larger <a href="&BJMNS;1/"><code>bjmns:1</code></a>verse in the first place.</p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<includes>
+					<Volume rdf:about="&bjmns;2:1">
+						<index rdf:datatype="&integer;">1</index>
+						<identifier rdf:datatype="&NCName;">ele-alien</identifier>
+						<owl:sameAs rdf:resource="#bjmns:2:1"/>
+						<owl:sameAs rdf:resource="2/1/"/>
+						<includes>
+							<Version rdf:about="&bjmns;2:1:0">
+								<index rdf:datatype="&integer;">0</index>
+								<fullTitle xml:lang="en">Nat Gets Attacked</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:2:1:0"/>
+								<owl:sameAs rdf:resource="2/1/0/"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+											<p>A boy named Nat goes cliffdiving and is abducted by underwater aliens.  He decides not to go cliffdiving anymore after that.</p>
+										</html:div>
+									</contents>
+								</dc:abstract>
+								<includes>
+									<Draft rdf:about="&bjmns;2:1:0:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">Nat Gets Attacked by Ele the Alien Under the Sea</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:2:1:0:1"/>
+										<owl:sameAs rdf:resource="2/1/0/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="2/1/0/1/text.txt">
+												<dc:format rdf:nodeID="PLAIN"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="2/1/0/1/text.xhtml">
+												<dc:format rdf:nodeID="XHTML"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="2/1/0/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+								<includes>
+									<Draft rdf:about="&bjmns;2:1:0:_1e">
+										<index rdf:datatype="&NCName;">_1e</index>
+										<fullTitle xml:lang="en">Nat Gets Attacked by Ele the Alien Under the Sea</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:2:1:0:_1e"/>
+										<owl:sameAs rdf:resource="2/1/0/_1e/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="2/1/0/_1e/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+						<includes>
+							<Version rdf:about="&bjmns;2:1:1">
+								<index rdf:datatype="&integer;">1</index>
+								<identifier rdf:datatype="&NCName;">drowned</identifier>
+								<fullTitle xml:lang="en">Drowned</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:2:1:1"/>
+								<owl:sameAs rdf:resource="2/1/1/"/>
+								<dc:abstract rdf:parseType="Resource">
+									<contents rdf:parseType="Literal">
+										<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+											<p><em>Ostensibly</em> this was going to be a reboot of <a href="&BJMNS;2/1/0/"><code>bjmns:2:1:0</code></a>, but in actuality it amounted to nothing more than a few scattered paragraphs split across a few scattered “drafts”.  There’s nothing of substance there.</p>
+										</html:div>
+									</contents>
+								</dc:abstract>
+							</Version>
+						</includes>
+					</Volume>
+				</includes>
+			</Project>
+			<Project rdf:about="&bjmns;3">
+				<identifier rdf:datatype="&NCName;">palm</identifier>
+				<fullTitle xml:lang="en">In the Palm of My Hand</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:3"/>
+				<owl:sameAs rdf:resource="3/"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p>A story about technology, connectivity, transhumanism, and internet surveillance.  In what I’m now thinking to be the summer after sixth grade, I was sitting in my room and <a href="&wikidata;Q16938261"><code>wikidata:Q16938261</code></a> came on and that basically inspired this whole concept about smart devices and surveillance and resistance and all of that stuff.</p>
+							<p>The history of this project is recorded in more detail in <a href="&BJMNS;8/1/0/3/"><code>bjmns:8:1:0:3</code></a> if you can get past the high‐school writing.  There isn’t any record of <a href="&BJMNS;3/-1/"><code>bjmns:3:-1</code></a> or <a href="&BJMNS;3/0/"><code>bjmns:3:0</code></a> in the original BJMNS <abbr title="Branching Notational System">BNS</abbr> categorization, so I’ve added them as volumes −1 and 0 here.</p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<inspiration rdf:resource="&wikidata;Q16938261"/>
+				<inspiration rdf:resource="&wikidata;Q6816260"/>
+				<inspiration rdf:resource="&lcbh;28f3ae7fcfe5d09906fbd8cc80e5781c"/>
+				<includes>
+					<Volume rdf:about="&bjmns;3:-1">
+						<index rdf:datatype="&integer;">-1</index>
+						<identifier rdf:datatype="&NCName;">penny</identifier>
+						<fullTitle xml:lang="en">Vote for Penny</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:-1"/>
+						<owl:sameAs rdf:resource="3/-1/"/>
+						<abbreviatedTitle xml:lang="en">Vote 4 Penny</abbreviatedTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p> In... what evidence strongly suggests to be the sixth grade, student body elections happening at school (presumably, at the beginning of the year for sixth graders) inspired me to come up with a story about school elections of my own, featuring a protagonist named Penny, and with pennies‐the‐currency standing in as some symbol or other.  This is the <em>original</em> slice‐of‐life school fic, and inspired all the ones to come in varying degrees.</p>
+									<p>(In particular, the character of Penelope Baines from <a href="&BJMNS;41/"><code>bjmns:41</code></a> is inspired by this Penny.)</p>
+									<p>That said, I never actually wrote any of it.  But the protagonist of <a href="&BJMNS;3/1/"><code>bjmns:3:1</code></a> was ostensibly originally created for this story.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&lcbw;4943220"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:0">
+						<index rdf:datatype="&integer;">0</index>
+						<identifier rdf:datatype="&NCName;">santa</identifier>
+						<fullTitle xml:lang="en">The Santa Affair</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:0"/>
+						<owl:sameAs rdf:resource="3/0/"/>
+						<abbreviatedTitle xml:lang="en">Santa Affair</abbreviatedTitle>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>Inspired not insignificantly by <a href="&wikidata;Q97940458"><code>wikidata:Q97940458</code></a>, tells the story of a boy who uncovers a global Santa conspiracy and I think almost ends Christmas.  The protagonist is the same as in <a href="&BJMNS;3/1/"><code>bjmns:3:1</code></a>, only as a teen.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<inspiration rdf:resource="&wikidata;Q97940458"/>
+						<hasNote>
+							<Note rdf:about="&bjmns;3:0::notes:outline">
+								<identifier rdf:datatype="&NCName;">outline</identifier>
+								<fullTitle xml:lang="en">The Santa Affair</fullTitle>
+								<owl:sameAs rdf:resource="#bjmns:3:0::notes:outline"/>
+								<owl:sameAs rdf:resource="3/0/:notes/outline/"/>
+								<isPublishedAs>
+									<dcmitype:Text rdf:about="3/0/:notes/outline/text.pdf">
+										<dc:format rdf:nodeID="PDF"/>
+									</dcmitype:Text>
+								</isPublishedAs>
+								<isPublishedAs>
+									<dcmitype:Text rdf:about="3/0/:notes/outline/text.xml">
+										<dc:format rdf:nodeID="TEI"/>
+									</dcmitype:Text>
+								</isPublishedAs>
+							</Note>
+						</hasNote>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:1">
+						<index rdf:datatype="&integer;">1</index>
+						<identifier rdf:datatype="&NCName;">rylie</identifier>
+						<fullTitle xml:lang="en">In the Palm of My Hand</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:1"/>
+						<owl:sameAs rdf:resource="3/1/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes (revised):</p>
+									<blockquote>
+										<h1 style="Margin-Block: 0 1.25EM; Margin-Inline: 0; Border: None; Padding: 0; Font: Inherit; Text-Align: Start; Text-Align-Last: Auto; Text-Decoration: Underline">The Story of Rylielectronics</h1>
+										<ul>
+											<li>I.U. starts “chip project”.</li>
+											<li>Adjusts power lines to only give power to Rylielectronics; would take other products and make them compatible. (Also added chip!)</li>
+											<li>chip instaled..</li>
+											<li>chip (&amp; me) sustained for gov. purposes.</li>
+										</ul>
+									</blockquote>
+									<p>See also <a href="&BJMNS;8/1/0/3/"><code>bjmns:8:1:0:3</code></a>.</p>
+								</html:div>
+							</contents>
+						</dc:abstract>
+						<includes>
+							<Version rdf:about="&bjmns;3:1:0">
+								<index rdf:datatype="&integer;">0</index>
+								<owl:sameAs rdf:resource="#bjmns:3:1:0"/>
+								<owl:sameAs rdf:resource="3/1/0/"/>
+								<includes>
+									<Draft rdf:about="&bjmns;3:1:0:1">
+										<index rdf:datatype="&integer;">1</index>
+										<fullTitle xml:lang="en">In the Palm of My Hand</fullTitle>
+										<owl:sameAs rdf:resource="#bjmns:3:1:0:1"/>
+										<owl:sameAs rdf:resource="3/1/0/1/"/>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="3/1/0/1/text.pdf">
+												<dc:format rdf:nodeID="PDF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="3/1/0/1/text.rtf">
+												<dc:format rdf:nodeID="RTF"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+										<isPublishedAs>
+											<dcmitype:Text rdf:about="3/1/0/1/text.xml">
+												<dc:format rdf:nodeID="TEI"/>
+											</dcmitype:Text>
+										</isPublishedAs>
+									</Draft>
+								</includes>
+							</Version>
+						</includes>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:2">
+						<index rdf:datatype="&integer;">2</index>
+						<fullTitle xml:lang="en">Download Complete</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:2"/>
+						<owl:sameAs rdf:resource="3/2/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>Story of how Tyler is killed, and why his mind still lives.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:3">
+						<index rdf:datatype="&integer;">3</index>
+						<fullTitle xml:lang="en">We will be Invincible</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:3"/>
+						<owl:sameAs rdf:resource="3/3/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>The 3rd World War is coming, and only Tyler can stop it.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:4">
+						<index rdf:datatype="&integer;">4</index>
+						<fullTitle xml:lang="en">The aftermath of WWIII</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:4"/>
+						<owl:sameAs rdf:resource="3/4/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>Now Tyler’s existence is no longer secret, and not everybody wants him to exist.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:5">
+						<index rdf:datatype="&integer;">5</index>
+						<fullTitle xml:lang="en">Breaking the Code</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:5"/>
+						<owl:sameAs rdf:resource="3/5/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>The technicians want Tyler dead, and try to break the code of his existence.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:6">
+						<index rdf:datatype="&integer;">6</index>
+						<fullTitle xml:lang="en">Explosion</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:6"/>
+						<owl:sameAs rdf:resource="3/6/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>The Sun is going to blow, threatening the survival of the human race.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;3:7">
+						<index rdf:datatype="&integer;">7</index>
+						<fullTitle xml:lang="en">Welcome to Earth</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3:7"/>
+						<owl:sameAs rdf:resource="3/7/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>From the original project notes:</p>
+									<blockquote>
+										<p>Humans move to a new planet, name it Earth after their original planet. It is in the <strong style="Font-Weight: Inherit; Text-Transform: Uppercase">Ice Age</strong> and humans are forced to take a step back in evolution if they are to survive.</p>
+									</blockquote>
+								</html:div>
+							</contents>
+						</dc:abstract>
+					</Volume>
+				</includes>
+				<hasNote>
+					<Note rdf:about="&bjmns;3::notes:Create-a-Character">
+						<identifier rdf:datatype="&NCName;">Create-a-Character</identifier>
+						<fullTitle xml:lang="en">Create‐a‐Character</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3::notes:Create-a-Character"/>
+						<owl:sameAs rdf:resource="3/:notes/Create-a-Character/"/>
+						<isPublishedAs>
+							<dcmitype:Text rdf:about="3/:notes/Create-a-Character/text.pdf">
+								<dc:format rdf:nodeID="PDF"/>
+							</dcmitype:Text>
+						</isPublishedAs>
+						<isPublishedAs>
+							<dcmitype:Text rdf:about="3/:notes/Create-a-Character/text.xml">
+								<dc:format rdf:nodeID="TEI"/>
+							</dcmitype:Text>
+						</isPublishedAs>
+					</Note>
+				</hasNote>
+				<hasNote>
+					<Note rdf:about="&bjmns;3::notes:The_story_of_Rylielectronics">
+						<identifier rdf:datatype="&NCName;">The_story_of_Rylielectronics</identifier>
+						<fullTitle xml:lang="en">The story of Rylielectronics</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:3::notes:The_story_of_Rylielectronics"/>
+						<owl:sameAs rdf:resource="3/:notes/The_story_of_Rylielectronics/"/>
+						<isPublishedAs>
+							<dcmitype:Text rdf:about="3/:notes/The_story_of_Rylielectronics/text.png">
+								<dc:format rdf:nodeID="PNG"/>
+							</dcmitype:Text>
+						</isPublishedAs>
+						<isPublishedAs>
+							<dcmitype:Text rdf:about="3/:notes/The_story_of_Rylielectronics/text.xml">
+								<dc:format rdf:nodeID="TEI"/>
+							</dcmitype:Text>
+						</isPublishedAs>
+					</Note>
+				</hasNote>
+			</Project>
+			<!--
+			<Project rdf:about="&bjmns;4">
+				<identifier rdf:datatype="&NCName;">piwhall</identifier>
+				<fullTitle xml:lang="en">Project Alchemy</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:4"/>
+				<owl:sameAs rdf:resource="4/"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<html:div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p>Follows an apprentice alchemist and his discovery of the existence of demons on another plane of existence.  For the sake of spellcasting, I invented an alternate Old English language, (termed “the Old Language”; see <a href="&LANGDEV;cpe/oen/"><code>langdev:cpe:oen</code></a>), marking the beginnings of my interest in language development.</p>
+						</html:div>
+					</contents>
+				</dc:abstract>
+				<inspiration rdf:resource="&lcbw;13154660"/>
+				<inspiration rdf:resource="&lcbw;14075923"/>
+				<inspiration rdf:resource="&lcbh;16ae8da271effbf3944940c8fd69a176"/>
+				<inspiration rdf:resource="&lcbw;13445862"/>
+				<inspiration rdf:resource="&lcbh;de7f79fdf094c4fafdca4bb4884a7d79"/>
+				<includes>
+					<Volume rdf:about="&bjmns;4:1">
+						<index rdf:datatype="&integer;">1</index>
+						<fullTitle xml:lang="en">Dark Knights</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:4:1"/>
+						<owl:sameAs rdf:resource="4/1/"/>
+					</Volume>
+				</includes>
+				<includes>
+					<Volume rdf:about="&bjmns;4:2">
+						<index rdf:datatype="&integer;">2</index>
+						<fullTitle xml:lang="en">Bright Daze</fullTitle>
+						<owl:sameAs rdf:resource="4/2/"/>
+					</Volume>
+				</includes>
+				<hasNote>
+					<Note rdf:about="&bjmns;4::notes:Create-a-Character">
+						<identifier rdf:datatype="&NCName;">Create-a-Character</identifier>
+						<fullTitle xml:lang="en">Create‐a‐Character</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:4::notes:Create-a-Character"/>
+						<owl:sameAs rdf:resource="4/:notes/Create-a-Character/"/>
+						<isPublishedAs>
+							<dcmitype:Text rdf:about="4/:notes/Create-a-Character/text.png">
+								<dc:format rdf:nodeID="PNG"/>
+							</dcmitype:Text>
+						</isPublishedAs>
+					</Note>
+				</hasNote>
+				<hasNote>
+					<Note rdf:about="&bjmns;4::notes:Translations_of_the_old_language">
+						<identifier rdf:datatype="&NCName;">Translations_of_the_old_language</identifier>
+						<fullTitle xml:lang="en">Translations of the old language</fullTitle>
+						<owl:sameAs rdf:resource="#bjmns:4::notes:Translations_of_the_old_language"/>
+						<owl:sameAs rdf:resource="4/:notes/Translations_of_the_old_language/"/>
+						<isPublishedAs>
+							<dcmitype:Text rdf:about="4/:notes/Translations_of_the_old_language/text.pdf">
+								<dc:format rdf:nodeID="PDF"/>
+							</dcmitype:Text>
+						</isPublishedAs>
+					</Note>
+				</hasNote>
+			</Project>
+			<Project rdf:about="&bjmns;5">
+				<identifier rdf:datatype="&NCName;">mantle</identifier>
+				<fullTitle xml:lang="en">Edgar Mantle</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:5"/>
+				<owl:sameAs rdf:resource="5/"/>
+			</Project>
+			<Project rdf:about="&bjmns;6">
+				<identifier rdf:datatype="&NCName;">TLoI</identifier>
+				<fullTitle xml:lang="en">The Legend of Ilia</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:6"/>
+				<owl:sameAs rdf:resource="6/"/>
+			</Project>
+			<Project rdf:about="&bjmns;7">
+				<identifier rdf:datatype="&NCName;">forces</identifier>
+				<fullTitle xml:lang="en">Tyneland</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:7"/>
+				<owl:sameAs rdf:resource="7/"/>
+			</Project>
+			<Project rdf:about="&bjmns;8">
+				<identifier rdf:datatype="&NCName;">AYNiL</identifier>
+				<fullTitle xml:lang="en">Point.</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:8"/>
+				<owl:sameAs rdf:resource="8/"/>
+			</Project>
+			<Project rdf:about="&bjmns;9">
+				<identifier rdf:datatype="&NCName;">Susan</identifier>
+				<fullTitle xml:lang="en">Xi</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:9"/>
+				<owl:sameAs rdf:resource="9/"/>
+			</Project>
+			<Project rdf:about="&bjmns;10">
+				<identifier rdf:datatype="&NCName;">three</identifier>
+				<fullTitle xml:lang="en">Project Black</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:10"/>
+				<owl:sameAs rdf:resource="10/"/>
+			</Project>
+			<Project rdf:about="&bjmns;11">
+				<identifier rdf:datatype="&NCName;">TtP</identifier>
+				<fullTitle xml:lang="en">To the Point</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:11"/>
+				<owl:sameAs rdf:resource="11/"/>
+			</Project>
+			<Project rdf:about="&bjmns;12">
+				<identifier rdf:datatype="&NCName;">Ψ</identifier>
+				<fullTitle xml:lang="en">Ψ</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:12"/>
+				<owl:sameAs rdf:resource="12/"/>
+			</Project>
+			<Project rdf:about="&bjmns;13">
+				<identifier rdf:datatype="&NCName;">fairies</identifier>
+				<fullTitle xml:lang="en">f(x)</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:13"/>
+				<owl:sameAs rdf:resource="13/"/>
+			</Project>
+			<Project rdf:about="&bjmns;14">
+				<identifier rdf:datatype="&NCName;">sv</identifier>
+				<fullTitle xml:lang="en">The Sparrow and the Cat</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:14"/>
+				<owl:sameAs rdf:resource="14/"/>
+			</Project>
+			<Project rdf:about="&bjmns;15">
+				<identifier rdf:datatype="&NCName;">seven</identifier>
+				<fullTitle xml:lang="en">The Chronicle of the Seven</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:15"/>
+				<owl:sameAs rdf:resource="15/"/>
+			</Project>
+			<Project rdf:about="&bjmns;16">
+				<identifier rdf:datatype="&NCName;">pink</identifier>
+				<fullTitle xml:lang="en">Vampire</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:16"/>
+				<owl:sameAs rdf:resource="16/"/>
+			</Project>
+			<Project rdf:about="&bjmns;17">
+				<identifier rdf:datatype="&NCName;">five</identifier>
+				<fullTitle xml:lang="en">Romance of New Nation</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:17"/>
+				<owl:sameAs rdf:resource="17/"/>
+			</Project>
+			<Project rdf:about="&bjmns;18">
+				<identifier rdf:datatype="&NCName;">ENGL-102</identifier>
+				<fullTitle xml:lang="en">The Rising</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:18"/>
+				<owl:sameAs rdf:resource="18/"/>
+			</Project>
+			<Project rdf:about="&bjmns;19">
+				<identifier rdf:datatype="&NCName;">blue</identifier>
+				<fullTitle xml:lang="en">Code Blue</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:19"/>
+				<owl:sameAs rdf:resource="19/"/>
+			</Project>
+			<Project rdf:about="&bjmns;20">
+				<identifier rdf:datatype="&NCName;">echo</identifier>
+				<fullTitle xml:lang="en">Movie Project Echo</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:20"/>
+				<owl:sameAs rdf:resource="20/"/>
+			</Project>
+			<Project rdf:about="&bjmns;21">
+				<identifier rdf:datatype="&NCName;">WORN</identifier>
+				<fullTitle xml:lang="en">WORN</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:21"/>
+				<owl:sameAs rdf:resource="21/"/>
+			</Project>
+			<Project rdf:about="&bjmns;22">
+				<identifier rdf:datatype="&NCName;">game9</identifier>
+				<fullTitle xml:lang="en">Four Stories</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:22"/>
+				<owl:sameAs rdf:resource="22/"/>
+			</Project>
+			<Project rdf:about="&bjmns;23">
+				<identifier rdf:datatype="&NCName;">IDA</identifier>
+				<fullTitle xml:lang="en">IDA</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:23"/>
+				<owl:sameAs rdf:resource="23/"/>
+			</Project>
+			<Project rdf:about="&bjmns;24">
+				<identifier rdf:datatype="&NCName;">ZZ</identifier>
+				<fullTitle xml:lang="en">Comic‐ZZ</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:24"/>
+				<owl:sameAs rdf:resource="24/"/>
+			</Project>
+			<Project rdf:about="&bjmns;25">
+				<identifier rdf:datatype="&NCName;">munsta</identifier>
+				<fullTitle xml:lang="en">Munsta</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:25"/>
+				<owl:sameAs rdf:resource="25/"/>
+			</Project>
+			<Project rdf:about="&bjmns;26">
+				<identifier rdf:datatype="&NCName;">pig</identifier>
+				<fullTitle xml:lang="en">Zhätee</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:26"/>
+				<owl:sameAs rdf:resource="26/"/>
+			</Project>
+			<Project rdf:about="&bjmns;27">
+				<identifier rdf:datatype="&NCName;">RGAME</identifier>
+				<fullTitle xml:lang="en">RockGame</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:27"/>
+				<owl:sameAs rdf:resource="27/"/>
+			</Project>
+			<Project rdf:about="&bjmns;28">
+				<identifier rdf:datatype="&NCName;">SG</identifier>
+				<fullTitle xml:lang="en">SG</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:28"/>
+				<owl:sameAs rdf:resource="28/"/>
+			</Project>
+			<Project rdf:about="&bjmns;29">
+				<identifier rdf:datatype="&NCName;">strategy</identifier>
+				<fullTitle xml:lang="en">StrategyGame</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:29"/>
+				<owl:sameAs rdf:resource="29/"/>
+			</Project>
+			<Project rdf:about="&bjmns;30">
+				<identifier rdf:datatype="&NCName;">Jō</identifier>
+				<fullTitle xml:lang="en">Jō</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:30"/>
+				<owl:sameAs rdf:resource="30/"/>
+			</Project>
+			<Project rdf:about="&bjmns;31">
+				<identifier rdf:datatype="&NCName;">Mel</identifier>
+				<fullTitle xml:lang="en">Mel</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:31"/>
+				<owl:sameAs rdf:resource="31/"/>
+			</Project>
+			<Project rdf:about="&bjmns;32">
+				<identifier rdf:datatype="&NCName;">LightDark</identifier>
+				<fullTitle xml:lang="en">LightDark</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:32"/>
+				<owl:sameAs rdf:resource="32/"/>
+			</Project>
+			<Project rdf:about="&bjmns;33">
+				<identifier rdf:datatype="&NCName;">despair</identifier>
+				<fullTitle xml:lang="en">Despair</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:33"/>
+				<owl:sameAs rdf:resource="33/"/>
+			</Project>
+			<Project rdf:about="&bjmns;34">
+				<identifier rdf:datatype="&NCName;">uGame</identifier>
+				<fullTitle xml:lang="en">UnicornGame</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:34"/>
+				<owl:sameAs rdf:resource="34/"/>
+			</Project>
+			<Project rdf:about="&bjmns;35">
+				<identifier rdf:datatype="&NCName;">R</identifier>
+				<fullTitle xml:lang="en">R.</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:35"/>
+				<owl:sameAs rdf:resource="35/"/>
+			</Project>
+			<Project rdf:about="&bjmns;36">
+				<identifier rdf:datatype="&NCName;">Love</identifier>
+				<fullTitle xml:lang="en">Love</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:36"/>
+				<owl:sameAs rdf:resource="36/"/>
+			</Project>
+			<Project rdf:about="&bjmns;37">
+				<identifier rdf:datatype="&NCName;">P...Y</identifier>
+				<fullTitle xml:lang="en">Parody</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:37"/>
+				<owl:sameAs rdf:resource="37/"/>
+			</Project>
+			<Project rdf:about="&bjmns;38">
+				<identifier rdf:datatype="&NCName;">clock</identifier>
+				<fullTitle xml:lang="en">Project Clock</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:38"/>
+				<owl:sameAs rdf:resource="38/"/>
+			</Project>
+			<Project rdf:about="&bjmns;39">
+				<identifier rdf:datatype="&NCName;">StoryGame</identifier>
+				<fullTitle xml:lang="en">StoryGame</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:39"/>
+				<owl:sameAs rdf:resource="39/"/>
+			</Project>
+			<Project rdf:about="&bjmns;40">
+				<identifier rdf:datatype="&NCName;">tʃ</identifier>
+				<fullTitle xml:lang="en">Lite</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:40"/>
+				<owl:sameAs rdf:resource="40/"/>
+			</Project>
+			<Project rdf:about="&bjmns;41">
+				<identifier rdf:datatype="&NCName;">Vague</identifier>
+				<fullTitle xml:lang="en">Vague</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:41"/>
+				<owl:sameAs rdf:resource="41/"/>
+			</Project>
+			<Project rdf:about="&bjmns;42">
+				<identifier rdf:datatype="&NCName;">FAINT</identifier>
+				<fullTitle xml:lang="en">FAINT</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:42"/>
+				<owl:sameAs rdf:resource="42/"/>
+			</Project>
+			<Project rdf:about="&bjmns;43">
+				<identifier rdf:datatype="&NCName;">mn</identifier>
+				<fullTitle xml:lang="en">(mn)</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:43"/>
+				<owl:sameAs rdf:resource="43/"/>
+			</Project>
+			<Project rdf:about="&bjmns;44">
+				<identifier rdf:datatype="&NCName;">PKMNY</identifier>
+				<fullTitle xml:lang="en">PKMNY</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:44"/>
+				<owl:sameAs rdf:resource="44/"/>
+			</Project>
+			<Project rdf:about="&bjmns;45">
+				<identifier rdf:datatype="&NCName;">game5</identifier>
+				<fullTitle xml:lang="en">APPLE CIDER</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:45"/>
+				<owl:sameAs rdf:resource="45/"/>
+			</Project>
+			<Project rdf:about="&bjmns;46">
+				<identifier rdf:datatype="&NCName;">rainy-day</identifier>
+				<fullTitle xml:lang="en">rainy day &lt;3</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:46"/>
+				<owl:sameAs rdf:resource="46/"/>
+			</Project>
+			<Project rdf:about="&bjmns;47">
+				<identifier rdf:datatype="&NCName;">sniper</identifier>
+				<fullTitle xml:lang="en">sniper</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:47"/>
+				<owl:sameAs rdf:resource="47/"/>
+			</Project>
+			<Project rdf:about="&bjmns;48">
+				<identifier rdf:datatype="&NCName;">learn-fizeng</identifier>
+				<fullTitle xml:lang="en">learn斤丸舌</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:48"/>
+				<owl:sameAs rdf:resource="48/"/>
+			</Project>
+			<Project rdf:about="&bjmns;49">
+				<identifier rdf:datatype="&NCName;">one-act</identifier>
+				<fullTitle xml:lang="en">SOME PLAY</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:49"/>
+				<owl:sameAs rdf:resource="49/"/>
+			</Project>
+			<Project rdf:about="&bjmns;50">
+				<identifier rdf:datatype="&NCName;">즹DS论</identifier>
+				<fullTitle xml:lang="en">즹DS论</fullTitle>
+				<owl:sameAs rdf:resource="#bjmns:50"/>
+				<owl:sameAs rdf:resource="50/"/>
+			</Project>
+			-->
+		</hasProjects>
+	</Corpus>
+</rdf:RDF>

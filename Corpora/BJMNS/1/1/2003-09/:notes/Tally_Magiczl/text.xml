@@ -1,0 +1,99 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text{ Font-Variant-Numeric: Proportional-Nums Lining-Nums }
+*.tei.text *.tei.front,*.tei.text *.tei.body{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.text *.tei.front *.tei.docTitle{ Font-Weight: Inherit }
+*.tei.text *.tei.front *.tei.titlePart{ Margin-Block: 0; Margin-Inline: 1.5EM; Font-Weight: Inherit; Font-Variant-Caps: Inherit; Text-Decoration: Underline; Text-Transform: None }
+*.tei.text *.tei.body::before{ Content: None }
+*.tei.text *.tei.body *.tei.div *.tei.head{ Margin-Block: 0 1.5EM; Font: Inherit; Text-Align: Start }
+*.tei.text *.tei.body *.tei.div *.tei.head::before{ Display: Inline; Font: Inherit; Text-Decoration: None; Content: Attr(data--t-e-i_n) ": " }
+*.tei.text *.tei.list>ul{ Display: Block; Max-Inline-Size: None }
+*.tei.text *.tei.list *.tei.item::before{ Float: Left; Font: Inherit; Content: Attr(data--t-e-i_n) ") " }
+*.tei.text *.tei.mentioned::before{ Content: "“" }
+*.tei.text *.tei.mentioned::after{ Content: "”" }
+*.tei.text *.tei.abbr{ Font: Inherit }
+*.tei.text *.tei.emph:Not(.caps){ Text-Decoration: Underline }
+*.tei.text *.tei.emph.caps{ Text-Transform: Uppercase }
+*.tei.text *.tei.emph::before,*.tei.text *.tei.emph::after{ Content: None }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Tally Magiczl</title>
+				<author><name>BJMNS</name><note>Not recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition><idno type="URI">tag:bjmns.tumblr.com,2013:bns::1:1:2003-09::notes:Tally_Magiczl</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+				<ptr target="https://go.KIBI.family/Corpora/BJMNS/1/1/2003-09/:notes/Tally_Magiczl/text.xml"/>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Source is handwritten in blue ink on lined college‐ruled notebook paper.</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Allcaps text in the source has been transcribed with ordinary casing and <gi>emph</gi> with a <att>rend</att> of <val>caps</val>. Underlines are transcribed with <gi>emph</gi> with no <att>rend</att>.</p>
+			</editorialDecl>
+		</encodingDesc>
+		<revisionDesc status="published">
+			<change when="2020-08-04" status="published">Initial transcription of handwritten source.</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<front>
+			<docTitle>
+				<titlePart>Tally Magiczl</titlePart>
+			</docTitle>
+		</front>
+		<body xml:id="text">
+			<div>
+				<head n="Step 1">Little Stuff</head>
+				<list>
+					<item n="I">
+						<p>Tally’s name. <emph rend="caps">It must be changed.</emph> Let’s dig out the old notebook<pc>...</pc></p>
+						<p>The only <emph>somewhat</emph> good name in there is Ivan Ingersal. It’ll do for now<pc>...</pc></p>
+					</item>
+					<item n="II">
+						<p>Keep the necklace. It fits.</p>
+					</item>
+					<item n="III">
+						<p>Change <mentioned>potion.</mentioned><pc type="terminal"/> Use solution or substance.</p>
+					</item>
+					<item n="IV">
+						<p>Use normall degrees (<abbr type="acronym">BA</abbr>, <abbr type="acronym">MA</abbr>, <abbr type="acronym">PhD</abbr>, <abbr type="acronym">MD</abbr><pc>...</pc>)</p>
+					</item>
+					<item n="V">
+						<p>Cut the transitions and adjectives. And cut the fancy <mentioned>said</mentioned>’s</p>
+					</item>
+					<item n="VI">
+						<p>Explain Mike</p>
+					</item>
+					<item n="VII">
+						<p>Change <mentioned><abbr type="acronym">C.B.</abbr></mentioned> to <mentioned>Sell By</mentioned></p>
+					</item>
+					<item n="VIII">
+						<p>Cut the <abbr type="acronym">SSS</abbr>, Double Duty Day, funny chapter names, <abbr type="contraction">ect.</abbr></p>
+					</item>
+					<item n="IX">
+						<p>The name’s Patrick if its Patrick. Not Pot.</p>
+					</item>
+					<item n="X">
+						<p>Change <mentioned>Code</mentioned> to <mentioned>Cody</mentioned></p>
+					</item>
+					<item n="XI">
+						<p>Redo <abbr type="suspension">p.</abbr> 10–∞</p>
+					</item>
+				</list>
+			</div>
+		</body>
+	</text>
+</TEI>

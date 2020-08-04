@@ -2,6 +2,6 @@
 SCHEMA="$(dirname $0)/../Schema"
 DTD="${SCHEMA}/tei_lite.dtd"
 RELAXNG="${SCHEMA}/tei_lite.rng"
-PREFIX="Documents/Library/"
+PREFIX="Corpora/"
 SUFFIX="/text.xml"
 xmllint --noout --dtdvalid $DTD --relaxng $RELAXNG "$PREFIX$1$SUFFIX"

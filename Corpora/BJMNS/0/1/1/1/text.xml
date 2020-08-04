@@ -1,0 +1,73 @@
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng"?>
+<?xml-stylesheet type="text/xsl" href="https://go.KIBI.family/Tools/XSLT/KiT2X.xslt"?>
+<?xml-stylesheet type="text/css" href='data:text/css,
+*.tei.text *.tei.front,*.tei.text *.tei.body{ Margin-Block: 1.5EM; Padding: 0; Hyphens: None }
+*.tei.text *.tei.front>div{ Display: Grid; Grid-Template-Columns: Auto Max-Content }
+*.tei.text *.tei.front *{ Grid-Column: 2 / Span 1; Font: Inherit; Margin: 0; Text-Align: Start; Text-Transform: None }
+*.tei.text *.tei.front *.tei.docTitle{ Grid-Column: 1 / Span 2; Margin-Block: 1.5EM 0; Border: None }
+*.tei.text *.tei.body::before{ Content: None }
+*.tei.text *.tei.trailer{ Font-Weight: Inherit; Font-Variant-Caps: Inherit; Text-Align: Start }
+*.tei.text *.tei.p{ Text-Align: Start; Text-Indent: 1.5EM }
+*.tei.text *.tei.front *.tei.p{ Text-Indent: 0 }
+*.tei.text *.tei.q::before{ Content: "“" }
+*.tei.text *.tei.q::after{ Content: "”" }
+*.tei.text *.tei.q+*.tei.seg.space{ Display: Inline }
+*.tei.text *.tei.emph{ Text-Transform: Uppercase }
+*.tei.text *.tei.emph::before,*.tei.text *.tei.emph::after{ Content: None }
+*.tei.text *.tei.title{ Text-Decoration: None }
+'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title level="m">Exasperated Wolf and Little Red Riding Hood</title>
+				<author><name>BJMNS</name><note>Not moniker recorded in source.</note></author>
+			</titleStmt>
+			<editionStmt>
+				<edition><date when="2005-01-19">January 19, 2005</date><lb/><idno type="URI">tag:bjmns.tumblr.com,2013:bns::0:1:1:1</idno></edition>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>KIBI Gô</publisher>
+				<date when="2020">2020</date>
+				<availability status="free">
+					<licence target="https://creativecommons.org/publicdomain/zero/1.0/"><title level="m">CC0 1.0 Universal Public Domain Dedication</title></licence>
+				</availability>
+				<ptr target="https://go.KIBI.family/Corpora/BJMNS/0/1/1/1/text.xml"/>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Source is a Rich Text Format file (original format unknown).</p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<editorialDecl>
+				<p>Quotes are marked up using TEI; no attempt to mark up names has been made, as they received no special treatment in the source.</p>
+				<p>Author’s name and other potentially identifying information has been redacted using <gi>gap</gi>.</p>
+				<p>Apostrophes have been normalized to <q type="literal"><pc>’</pc></q> and hyphens have been normalized to <q type="literal"><pc>‐</pc></q>. Spacing has been normalized and terminal punctuation marked according to usual conventions (the source was inconsistent; note that periods followed by a space are assumed to be terminal and left unmarked).</p>
+			</editorialDecl>
+		</encodingDesc>
+		<revisionDesc status="published">
+			<change when="2020-08-04" status="published"><gi>revisionDesc</gi> added; minor changes to markup.</change>
+			<change when="2020-07-26" status="published">Initial version based of a Rich Text Format source.</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<front>
+			<docAuthor><gap reason="editorial"><desc>author name</desc></gap></docAuthor>
+			<docDate when="2005-01-19">1/19/05</docDate>
+			<argument>
+				<p>Vocabulary<lb/>Bonus<lb/>Theme Three<lb/>Words in a story</p>
+			</argument>
+			<docTitle>
+				<titlePart>Exasperated Wolf<lb/>and<lb/>Little Red Riding Hood</titlePart>
+			</docTitle>
+		</front>
+		<body xml:id="text">
+			<p>Exasperated Wolf arrived deep into the forest through an empty aqueduct. The aqueduct made a passageway to the terraced hillside, which was isolated from other inhabitants, especially humans. The hillside looked just like giant steps. He felt very ingenious and smart for figuring out a way through the many provinces in Canada to this place flourishing with plants of astounding colors.</p>
+			<p>While he was admiring the scenery, he heard footsteps. A friendly and sociable girl was skipping on the path next to him. She decided to talk to him. <q type="spoken">Hello,</q> she said. <q type="spoken">I am going to visit my grandma, so that I can give her some cookies to eat while Grandpa is away. Grandpa is an archeologist and is going to get some stones from quarries, so he can reconstruct a pyramid. Two weeks ago, he found a perfectly preserved mosaic about a famine in which everyone starved. It was in perfect condition, not a single tile was cracked<pc type="terminal">!</pc> He found an emblem that showed good virtues, too. He is really cool<pc type="terminal">!</pc></q></p>
+			<p>Exasperated Wolf looked at her with interest. As she talked, he formulated an elaborate plan. He would scour himself clean, so that his hygiene would be perfect. He would disguise himself to look like the grandfather, and then proceed to sneak up on Grandma. (Sneaking up on grandmas is his specialty.)</p>
+			<p>Once he got to the house, he would persuade her out of the house and disguise himself as the grandma. After that, he would scare the kid, take some cookies and be on his way.<lb/>He got to the grandpa’s bedroom and was looking through his clothes when Grandma came charging in, bellowing and yelling: <q type="spoken">What’s going on in here<pc type="terminal">?</pc> You roused me from my sleep<pc type="terminal">!</pc> Even those democratic people in Washington <abbr type="geographic">D.C.</abbr> could hear you<pc type="terminal">!</pc> They are probably in an administrative meeting trying to figure out how to run civilization. I am going to skewer you with this newfangled rod with two prongs to make it a more reliable marshmallow toaster. It came out yesterday<pc type="terminal">!</pc> I wonder how good it works on you, you brute!</q> <lb/>What could Exasperated Wolf do<pc type="terminal">?</pc> He ran. As for the rest of the Little Red Riding Hood story, well, someone just made that up.</p>
+			<trailer>The <emph>End</emph></trailer>
+			<trailer>Don’t miss<pc type="terminal">:</pc> <title level="m">Exasperated Wolf and the Boy Who Cried <q type="spoken"><emph>Wolf</emph>!</q></title></trailer>
+		</body>
+	</text>
+</TEI>
