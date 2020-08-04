@@ -1,1 +1,13 @@
+# Meaningful markup:
 *.xml linguist-detectable
+*.rdf linguist-detectable
+
+# Data:
+*.json -linguist-detectable
+
+# Embeds:
+Fonts/** -linguist-detectable
+*/2018/** -linguist-detectable
+
+# Generated files:
+Corpora/**/index.html linguist-generated
