@@ -5,9 +5,9 @@
 # Data:
 *.json -linguist-detectable
 
-# Embeds:
-Fonts/** -linguist-detectable
-*/2018/** -linguist-detectable
+# Vendored:
+Fonts/** linguist-vendored
+*/2018/** linguist-vendored
 
 # Generated files:
 Corpora/**/index.html linguist-generated

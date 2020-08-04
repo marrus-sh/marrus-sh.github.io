@@ -1,0 +1,110 @@
+<!DOCTYPE rdf:RDF [
+	<!ENTITY NCName "http://www.w3.org/2001/XMLSchema#NCName">
+	<!ENTITY BJMNS "https://go.KIBI.family/Corpora/BJMNS/">
+	<!ENTITY bjmns "tag:bjmns.tumblr.com,2013:bns::">
+	<!ENTITY gYearMonth "http://www.w3.org/2001/XMLSchema#gYearMonth">
+	<!ENTITY integer "http://www.w3.org/2001/XMLSchema#integer">
+	<!ENTITY LANGDEV "https://go.KIBI.family/Corpora/LANGDEV/">
+	<!ENTITY langdev "tag:langdev.xyz,2017:">
+	<!ENTITY lcbw "http://id.loc.gov/resources/works/">
+	<!ENTITY lcbh "http://id.loc.gov/resources/hubs/">
+	<!ENTITY lcsh "http://id.loc.gov/authorities/subjects/">
+	<!ENTITY string "http://www.w3.org/2001/XMLSchema#string">
+	<!ENTITY wikidata "http://www.wikidata.org/entity/">
+	<!ENTITY xhtml "http://www.w3.org/1999/xhtml">
+]>
+<rdf:RDF
+	xml:base="&LANGDEV;"
+	xmlns="https://go.KIBI.family/Ontologies/BNS/#"
+	xmlns:bns="https://go.KIBI.family/Ontologies/BNS/#"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+	<owl:Ontology rdf:about="#">
+		<owl:imports rdf:resource="https://go.KIBI.family/Ontologies/BNS/#"/>
+	</owl:Ontology>
+	<dc:FileFormat rdf:nodeID="TEI">
+		<dc:identifier rdf:datatype="&string;">application/tei+xml</dc:identifier>
+	</dc:FileFormat>
+	<Corpus rdf:about="&langdev;">
+		<fullTitle xml:lang="en">LANGDEV</fullTitle>
+		<owl:sameAs rdf:resource="#langdev:"/>
+		<owl:sameAs rdf:resource="./"/>
+		<dc:abstract rdf:parseType="Resource">
+			<contents rdf:parseType="Literal">
+				<div lang="en" xml:lang="en" xmlns="&xhtml;">
+					<p>A corpus of linguistic reference material and other information (some current, some of historical interest) for the various <u>LANGDEV</u> languages.</p>
+					<p>Note that <u>LANGDEV</u> encoding policy is to give each revision of a dictionary its own draft number in the corpus.  This differs from the encoding policy of other BNS corpuses, which might allow multiple published versions of a draft with minor editorial revisions.  Because of this, the difference between drafts can at times be quite small.</p>
+				</div>
+			</contents>
+		</dc:abstract>
+		<forAuthor>
+			<Author rdf:about="http://langdev.xyz/about/#me">
+				<fullTitle xml:lang="en">The LANGDEV Project</fullTitle>
+			</Author>
+		</forAuthor>
+		<hasProjects rdf:parseType="Collection">
+			<Project rdf:about="&langdev;cpe">
+				<identifier rdf:datatype="&NCName;">cpe</identifier>
+				<fullTitle xml:lang="en">English</fullTitle>
+				<owl:sameAs rdf:resource="#langdev:cpe"/>
+				<owl:sameAs rdf:resource="cpe/"/>
+				<dc:abstract rdf:parseType="Resource">
+					<contents rdf:parseType="Literal">
+						<div lang="en" xml:lang="en" xmlns="&xhtml;">
+							<p>English‐language derivatives.</p>
+						</div>
+					</contents>
+				</dc:abstract>
+				<includes>
+					<Book rdf:about="&langdev;cpe:oen">
+						<index rdf:datatype="&NCName;">oen</index>
+						<identifier rdf:datatype="&NCName;">oen</identifier>
+						<fullTitle xml:lang="en">The Old Language</fullTitle>
+						<owl:sameAs rdf:resource="#langdev:cpe:oen"/>
+						<owl:sameAs rdf:resource="cpe/oen/"/>
+						<dc:abstract rdf:parseType="Resource">
+							<contents rdf:parseType="Literal">
+								<div lang="en" xml:lang="en" xmlns="&xhtml;">
+									<p>Created in 2006, probably.  A fictitious alternate <u class="lang">Middle English</u>.  (See <a href="&BJMNS;4/"><code>bjmns:4</code></a>.)  Dwbi.</p>
+								</div>
+							</contents>
+						</dc:abstract>
+						<includes>
+							<Concept rdf:about="&langdev;cpe:oen:dict">
+								<index rdf:datatype="&NCName;">dict</index>
+								<identifier rdf:datatype="&NCName;">dict</identifier>
+								<fullTitle xml:lang="en">The Old Language: Dictionary</fullTitle>
+								<owl:sameAs rdf:resource="#langdev:cpe:oen:dict"/>
+								<owl:sameAs rdf:resource="cpe/oen/dict/"/>
+								<includes>
+									<Version rdf:about="&langdev;cpe:oen:dict:1">
+										<index rdf:datatype="&integer;">1</index>
+										<owl:sameAs rdf:resource="#langdev:cpe:oen:dict:1"/>
+										<owl:sameAs rdf:resource="cpe/oen/dict/1/"/>
+										<includes>
+											<Draft rdf:about="&langdev;cpe:oen:dict:1:01">
+												<index rdf:datatype="&integer;">1</index>
+												<fullTitle xml:lang="en">The Old Language: Dictionary</fullTitle>
+												<owl:sameAs rdf:resource="#langdev:cpe:oen:dict:1:01"/>
+												<owl:sameAs rdf:resource="cpe/oen/dict/1/01/"/>
+												<isPublishedAs>
+													<dcmitype:Text rdf:about="cpe/oen/dict/1/01/dict.xml">
+														<dc:format rdf:nodeID="TEI"/>
+													</dcmitype:Text>
+												</isPublishedAs>
+											</Draft>
+										</includes>
+									</Version>
+								</includes>
+							</Concept>
+						</includes>
+					</Book>
+				</includes>
+			</Project>
+		</hasProjects>
+	</Corpus>
+</rdf:RDF>
