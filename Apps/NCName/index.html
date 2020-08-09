@@ -1,0 +1,15 @@
+<!dOcTyPe hTmL>
+<HTML Lang=en>
+<TITLE>XML NCName Validator</TITLE>
+<STYLE>
+html{ Display: Flex; Flex-Direction: Column; Min-Block-Size: 100VH; Line-Height: 1.5 }
+body{ Margin: Auto; Border: Thin Solid; Border-Radius: 1EM; Padding: 1EM; Inline-Size: 45CH; Max-Inline-Size: 100%; Text-Align: Center }
+h1{ Margin-Block: Auto 1REM }
+div{ Margin-Block: 1REM Auto }
+input:Valid+div::after{ Color: VisitedText; Content: "That is a valid NCName according to XML 1.1 🎉" }
+input:Invalid+div::after{ Color: ActiveText; Content: "That is not a valid NCName according to XML 1.1 😢" }
+input:Placeholder-Shown+div::after{ Content: None }
+</STYLE>
+<H1>XML NCName Validator</H1>
+<INPUT Type=text Pattern=[A-Z_a-z\u{C0}-\u{D6}\u{D8}-\u{F6}\u{F8}-\u{2FF}\u{370}-\u{37D}\u{37F}-\u{1FFF}\u{200C}-\u{200D}\u{2070}-\u{218F}\u{2C00}-\u{2FEF}\u{3001}-\u{D7FF}\u{F900}-\u{FDCF}\u{FDF0}-\u{FFFD}\u{10000}-\u{EFFFF}][A-Z_a-z\u{C0}-\u{D6}\u{D8}-\u{F6}\u{F8}-\u{2FF}\u{370}-\u{37D}\u{37F}-\u{1FFF}\u{200C}-\u{200D}\u{2070}-\u{218F}\u{2C00}-\u{2FEF}\u{3001}-\u{D7FF}\u{F900}-\u{FDCF}\u{FDF0}-\u{FFFD}\u{10000}-\u{EFFFF}\-\.0-9\u{B7}\u{300}-\u{36F}\u{203F}-\u{2040}]* Placeholder=NCName_1.1>
+<DIV></DIV>
