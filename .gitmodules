@@ -22,3 +22,6 @@
 [submodule "Apps/Writer"]
 	path = Apps/Writer
 	url = https://github.com/marrus-sh/writer.git
+[submodule "Tools/Kijch"]
+	path = Tools/Kijch
+	url = https://github.com/marrus-sh/Kijch.git
