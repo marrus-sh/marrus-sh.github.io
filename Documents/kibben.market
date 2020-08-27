@@ -366,7 +366,7 @@ A hypothetical character set containing all the characters required to compose a
 		<td>£</td>
 		<td>#</td>
 		<td>◊</td>
-		<td>☓</td>
+		<td>•</td>
 		<td>⁜</td>
 		<td>†</td>
 		<td>‡</td>
@@ -722,7 +722,7 @@ Note that Caps Lock switches the layout into Runic, and Caps Lock + Option gives
 			<td colspan="4">&amp;</td>
 			<td colspan="4">√</td>
 			<td colspan="4">∼</td>
-			<td colspan="4">☓</td>
+			<td colspan="4">•</td>
 			<td colspan="4">◊</td>
 			<td colspan="4">⸠</td>
 			<td colspan="4">{</td>
@@ -1656,6 +1656,9 @@ $$$ { #consonants.notes } Notes
 The letters :| Q |: { @en-x-kibben .UPPER } and :| X |: { @en-x-kibben .UPPER } are forbidden in syllable onsets.
 Similarly, the letter :| H |: { @en-x-kibben .UPPER } is forbidden in syllable codas except as :| HC |: { @en-x-kibben .UPPER }.
 Many lenitions are rare, occurring only in a few words.
+
+As an abbreviation, :| C |: { @en-x-kibben .UPPER } may be reduced to a cedilla, so that :| HC |: { @en-x-kibben .UPPER }, :| GC |: { @en-x-kibben .UPPER }, :| KC |: { @en-x-kibben .UPPER }, :| QC |: { @en-x-kibben .UPPER }, :| XC |: { @en-x-kibben .UPPER }, :| ZC |: { @en-x-kibben .UPPER }, :| SC |: { @en-x-kibben .UPPER }, :| ƑC |: { @en-x-kibben .UPPER } are instead written :| Ḩ |: { @en-x-kibben .UPPER }, :| Ģ |: { @en-x-kibben .UPPER }, :| Ķ |: { @en-x-kibben .UPPER }, :| Q̧ |: { @en-x-kibben .UPPER }, :| X̧ |: { @en-x-kibben .UPPER }, :| Z̧ |: { @en-x-kibben .UPPER }, :| Ş |: { @en-x-kibben .UPPER }, :| Ƒ̧ |: { @en-x-kibben .UPPER }.
+The choice of cedilla or :| C |: { @en-x-kibben .UPPER } should be consistent within a text; the two are not distinctive.
 
 :| Ƒ |: { @en-x-kibben } is used in place of :| ST |: { @en-x-kibben .UPPER } whenever the two comprise a single unit, as in /| past → :| paƒ |: { @en-x-kibben } |/ { .DERIVATION }; :| ST |: { @en-x-kibben .UPPER } is used instead when the two belong to different morphemes, as in /| passed → :| past |: { @en-x-kibben } |/ { .DERIVATION }.
 Similar principles apply to :| Q |: { @en-x-kibben .UPPER } and :| X |: { @en-x-kibben .UPPER }.
