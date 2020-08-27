@@ -78,8 +78,8 @@ abbr{ Font-Variant-Caps: Small-Caps }
 b,dfn{ Font-Style: Inherit; Font-Weight: 500; Font-Variant-Caps: Small-Caps }
 cite,em,i{ Font-Style: Inherit }
 cite{ Text-Decoration: Wavy Underline }
-em::before{ Content: "※\2060" }
-em::after{ Content: "\2060※" }
+em::before{ Content: "⁜\2060" }
+em::after{ Content: "\2060⁜" }
 i{ Text-Decoration: Underline }
 i.DERIVATION{ Font-Weight: 200; Text-Decoration: None }
 i.DERIVATION::before{ Content: "⟨" }
@@ -137,9 +137,9 @@ u.S::BEFORE{ Content: " ̲" }
 	<section id="alphabet">
 		<h1 aria-level="2">The Alphabet</h1>
 		<p>The Kibben alphabet is 32 letters, which will be explained in the following sections. The Latin ordering is as follows:</p>
-		<figure lang="en-x-kibben" xml:lang="en-x-kibben" style="Line-Height: 1" class="UPPER">A​B​D​Ð​E​F​Ƒ​G​H​I​J​K​L​M​N​Ŋ​O​P​Q​R​S​T​U​V​W​X​Y​Z​Þ​Ø​Ꜷ​C</figure>
+		<figure lang="en-x-kibben" xml:lang="en-x-kibben" style="Line-Height: 1" class="UPPER">A​B​D​Ð​E​F​Ƒ​G​H​I​J​K​L​M​N​Ŋ​O​P​Q​R​S​T​U​V​W​X​Y​Z​Þ​Ø​Å​C</figure>
 		<p>Note that of the above letters, <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">E</span>, <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span>, and <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">C</span> do not have standalone sound values, and instead modify the pronunciation of the letters which precede them. Note also that the Basic Latin letter U does not appear in native Kibben words.</p>
-		<p>Each Latin letter also has a Runic equivalent. In futhorc <i class="DERIVATION">foithaurk → <span lang="en-x-kibben" xml:lang="en-x-kibben">føþꜷrk</span></i> ordering, these are:</p>
+		<p>Each Latin letter also has a Runic equivalent. In futhorc <i class="DERIVATION">foithaurk → <span lang="en-x-kibben" xml:lang="en-x-kibben">føþårk</span></i> ordering, these are:</p>
 		<figure lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">
 			<table style="Grid-Auto-Columns: Auto; Gap: 0; Padding: 0; Font: Inherit">
 <colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
@@ -148,7 +148,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td>F</td>
 <td>Ø</td>
 <td>Þ</td>
-<td>Ꜷ</td>
+<td>Å</td>
 <td>R</td>
 <td>K</td>
 <td>G</td>
@@ -220,7 +220,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td>FI</td>
 <td>ØROX</td>
 <td>ÞORN</td>
-<td>ꜶSE</td>
+<td>ÅS</td>
 <td>RYDYŊ</td>
 <td>KALX</td>
 <td>GYFT</td>
@@ -323,38 +323,38 @@ u.S::BEFORE{ Content: " ̲" }
 <tr>
 <th scope="row" lang="zxx" xml:lang="zxx">2x</th>
 <td class="ABBR"><abbr title="space" lang="en" xml:lang="en">sp</abbr></td>
-<td>&amp;</td>
-<td>@</td>
-<td>#</td>
-<td>№</td>
+<td>☞</td>
+<td>§</td>
+<td>¶</td>
 <td>$</td>
-<td>θ</td>
-<td>=</td>
-<td>∧</td>
-<td>⏑</td>
-<td>×</td>
-<td>+</td>
-<td>÷</td>
-<td>−</td>
+<td>£</td>
+<td>#</td>
+<td>◊</td>
+<td>☓</td>
+<td>⁜</td>
+<td>†</td>
+<td>‡</td>
+<td>√</td>
 <td>∼</td>
-<td>·</td>
+<td>+</td>
+<td>−</td>
 </tr>
 <tr>
 <th scope="row" lang="zxx" xml:lang="zxx">3x</th>
-<td>¶</td>
-<td>§</td>
-<td>†</td>
-<td>‡</td>
-<td>⹋</td>
-<td>᛭</td>
-<td>⁜</td>
-<td>※</td>
+<td>⁓</td>
+<td style="Font-Size: .5EM">⸺</td>
+<td>→</td>
+<td>=</td>
+<td>⪤</td>
+<td>×</td>
+<td>÷</td>
+<td>–</td>
+<td>‐</td>
+<td>~</td>
+<td>·</td>
+<td>⁺</td>
 <td>*</td>
-<td>⁂</td>
-<td>‴</td>
-<td>″</td>
-<td>′</td>
-<td>°</td>
+<td>᛭</td>
 <td>᛫</td>
 <td>᛬</td>
 </tr>
@@ -408,74 +408,35 @@ u.S::BEFORE{ Content: " ̲" }
 <td>7</td>
 <td>8</td>
 <td>9</td>
-<td>◊</td>
-<td>☓</td>
-<td>/</td>
-<td class="ABBR"><abbr title="soft hyphen" lang="en" xml:lang="en">shy</abbr></td>
-<td>◌̇</td>
-<td>◌̈</td>
+<td>↊</td>
+<td>↋</td>
+<td>%</td>
+<td>∅</td>
+<td>⦰</td>
+<td>θ</td>
 </tr>
 <tr>
 <th scope="row" lang="zxx" xml:lang="zxx">7x</th>
-<td>_</td>
-<td>⁓</td>
-<td style="Font-Size: .5EM">⸺</td>
+<td>°</td>
+<td>′</td>
+<td>″</td>
 <td>—</td>
-<td>–</td>
 <td>.</td>
 <td>!</td>
 <td>?</td>
 <td>:</td>
 <td>;</td>
 <td>,</td>
+<td>_</td>
+<td>/</td>
 <td>‖</td>
 <td>|</td>
-<td>‐</td>
-<td>~</td>
+<td>\</td>
 <td class="ABBR"><abbr title="delete" lang="en" xml:lang="en">del</abbr></td>
 </tr>
-<!--
-<tr lang="en" xml:lang="en">
-<th scope="row" lang="zxx" xml:lang="zxx">8x</th>
-<td class="ABBR"><abbr title="padding character">pad</abbr></td>
-<td class="ABBR"><abbr title="high octet preset">hop</abbr></td>
-<td class="ABBR"><abbr title="break permitted here">bph</abbr></td>
-<td class="ABBR"><abbr title="no break here">nbh</abbr></td>
-<td class="ABBR"><abbr title="index">ind</abbr></td>
-<td class="ABBR"><abbr title="next line">nel</abbr></td>
-<td class="ABBR"><abbr title="start of selected area">ssa</abbr></td>
-<td class="ABBR"><abbr title="end of selected area">esa</abbr></td>
-<td class="ABBR"><abbr title="horizontal tabulation set">hts</abbr></td>
-<td class="ABBR"><abbr title="horizontal tabulation with justification">htj</abbr></td>
-<td class="ABBR"><abbr title="vertical tabulation set">vts</abbr></td>
-<td class="ABBR"><abbr title="partial line down">pld</abbr></td>
-<td class="ABBR"><abbr title="partial line up">plu</abbr></td>
-<td class="ABBR"><abbr title="reverse index">ri</abbr></td>
-<td class="ABBR"><abbr title="single-shift two">ss2</abbr></td>
-<td class="ABBR"><abbr title="single-shift three">ss3</abbr></td>
-</tr>
-<tr lang="en" xml:lang="en">
-<th scope="row" lang="zxx" xml:lang="zxx">9x</th>
-<td class="ABBR"><abbr title="device control string">dcs</abbr></td>
-<td class="ABBR"><abbr title="private use one">pu1</abbr></td>
-<td class="ABBR"><abbr title="private use two">pu2</abbr></td>
-<td class="ABBR"><abbr title="set transmit state">sts</abbr></td>
-<td class="ABBR"><abbr title="cancel character">cch</abbr></td>
-<td class="ABBR"><abbr title="message waiting">mw</abbr></td>
-<td class="ABBR"><abbr title="start of protected area">spa</abbr></td>
-<td class="ABBR"><abbr title="end of protected area">epa</abbr></td>
-<td class="ABBR"><abbr title="start of string">sos</abbr></td>
-<td class="ABBR"><abbr title="single graphic character introducer">sgci</abbr></td>
-<td class="ABBR"><abbr title="single character introducer">sci</abbr></td>
-<td class="ABBR"><abbr title="control sequence introducer">csi</abbr></td>
-<td class="ABBR"><abbr title="string terminator">st</abbr></td>
-<td class="ABBR"><abbr title="operating system command">osc</abbr></td>
-<td class="ABBR"><abbr title="privacy message">pm</abbr></td>
-<td class="ABBR"><abbr title="application program command">apc</abbr></td>
-</tr>
--->
 <tr>
 <th scope="row" lang="zxx" xml:lang="zxx">8x</th>
+<td>æ</td>
 <td>ɑ</td>
 <td>ɔ</td>
 <td>ɛ</td>
@@ -483,31 +444,30 @@ u.S::BEFORE{ Content: " ̲" }
 <td>ʌ</td>
 <td>ɾ</td>
 <td>ʃ</td>
-<td>ː</td>
+<td>ʰ</td>
 <td>◌̂</td>
 <td>◌̄</td>
 <td>◌̃</td>
-<td>"</td>
-<td>\</td>
+<td>◌᷎</td>
 <td>◌̊</td>
-<td>ˈ</td>
+<td>◌̍</td>
 <td>◌͡</td>
 </tr>
 <tr>
 <th scope="row" lang="zxx" xml:lang="zxx">9x</th>
+<td>ʔ</td>
 <td>ɒ</td>
 <td>ə</td>
 <td>ᴈ</td>
 <td>ʊ</td>
 <td>ʍ</td>
-<td>ɹ</td>
+<td>ɫ</td>
 <td>ʒ</td>
-<td>ʔ</td>
+<td>ː</td>
 <td>◌̌</td>
+<td>◌̆</td>
 <td>◌̧</td>
 <td>◌̨</td>
-<td>'</td>
-<td>%</td>
 <td>◌̥</td>
 <td>◌̩</td>
 <td>◌͜</td>
@@ -516,8 +476,8 @@ u.S::BEFORE{ Content: " ̲" }
 <th scope="row" lang="zxx" xml:lang="zxx">Ax</th>
 <td class="ABBR"><abbr title="no-break space" lang="en" xml:lang="en">nb<br/>sp</abbr></td>
 <td class="ABBR"><abbr title="narrow no-break space" lang="en" xml:lang="en">nnb<br/>sp</abbr></td>
-<td>→</td>
-<td>←</td>
+<td>'</td>
+<td>"</td>
 <td>&lt;</td>
 <td>></td>
 <td>⟨</td>
@@ -535,8 +495,8 @@ u.S::BEFORE{ Content: " ̲" }
 <th scope="row" lang="en" xml:lang="en">Bx</th>
 <td class="ABBR"><abbr title="em space" lang="en" xml:lang="en">em<br/>sp</abbr></td>
 <td>―</td>
-<td>☞</td>
-<td>☜</td>
+<td>◌̇</td>
+<td>◌̈</td>
 <td>‹</td>
 <td>›</td>
 <td>«</td>
@@ -555,7 +515,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td>F</td>
 <td>Ø</td>
 <td>Þ</td>
-<td>Ꜷ</td>
+<td>@</td>
 <td>R</td>
 <td>K</td>
 <td>G</td>
@@ -593,7 +553,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td>f</td>
 <td>ø</td>
 <td>þ</td>
-<td>ꜷ</td>
+<td>&amp;</td>
 <td>r</td>
 <td>k</td>
 <td>g</td>
@@ -627,139 +587,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td>c</td>
 </tr>
 </tbody>
-</table>
-<hr/>
-<details open="">
-<summary>Exceptional Mappings from Unicode</summary>
-<div style="Margin: 0 2CH .7EM; Font-Size: 1REM">The following Unicode characters may be mapped to characters in the Kibben charset even though they have no direct equivalents:</div>
-<table style="Grid-Template-Columns: 2FR 4FR 2FR 7FR">
-<colgroup><col/><col/></colgroup>
-<colgroup><col/><col/></colgroup>
-<thead>
-<tr>
-<th style="Grid-Column-End: Span 2" scope="colgroup" colspan="2">Unicode</th>
-<th style="Grid-Column-End: Span 2" scope="colgroup" colspan="2">Kibben</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-</td>
-<td><span class="UNICODE" title="HYPHEN-MINUS">U+002D</span></td>
-<td>−</td>
-<td><span class="UNICODE" title="MINUS SIGN">Ki+2D</span></td>
-</tr>
-<tr>
-<td>^</td>
-<td><span class="UNICODE" title="CIRCUMFLEX ACCENT">U+005E</span></td>
-<td> ̂</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING CIRCUMFLEX ACCENT">Ki+A0, Ki+88</span></td>
-</tr>
-<tr>
-<td>`</td>
-<td><span class="UNICODE" title="GRAVE ACCENT">U+0060</span></td>
-<td> ̀</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING GRAVE ACCENT">Ki+A0, Ki+BE</span></td>
-</tr>
-<tr>
-<td>i</td>
-<td><span class="UNICODE">U+0069</span></td>
-<td>ı</td>
-<td><span class="UNICODE">Ki+90</span></td>
-</tr>
-<tr>
-<td>j</td>
-<td><span class="UNICODE">U+006A</span></td>
-<td>ȷ</td>
-<td><span class="UNICODE">Ki+91</span></td>
-</tr>
-<tr>
-<td>¨</td>
-<td><span class="UNICODE" title="DIAERESIS">U+00A8</span></td>
-<td> ̈</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING DIAERESIS">Ki+A0, Ki+6F</span></td>
-</tr>
-<tr>
-<td>¯</td>
-<td><span class="UNICODE" title="MACRON">U+00AF</span></td>
-<td> ̄</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING MACRON">Ki+A0, Ki+89</span></td>
-</tr>
-<tr>
-<td>´</td>
-<td><span class="UNICODE" title="ACUTE ACCENT">U+00B4</span></td>
-<td> ́</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING ACUTE ACCENT">Ki+A0, Ki+BF</span></td>
-</tr>
-<tr>
-<td>¸</td>
-<td><span class="UNICODE" title="CEDILLA">U+00B8</span></td>
-<td> ̧</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING CEDILLA">Ki+A0, Ki+99</span></td>
-</tr>
-<tr>
-<td>ˇ</td>
-<td><span class="UNICODE" title="CARON">U+02C7</span></td>
-<td> ̌</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING CARON">Ki+A0, Ki+98</span></td>
-</tr>
-<tr>
-<td>ˌ</td>
-<td><span class="UNICODE" title="MODIFIER LETTER LOW VERTICAL LINE">U+02CC</span></td>
-<td> ̩</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING VERTICAL LINE BELOW">Ki+A0, Ki+9E</span></td>
-</tr>
-<tr>
-<td>˙</td>
-<td><span class="UNICODE" title="DOT ABOVE">U+02D9</span></td>
-<td> ̇</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING DOT ABOVE">Ki+A0, Ki+6E</span></td>
-</tr>
-<tr>
-<td>˚</td>
-<td><span class="UNICODE" title="RING ABOVE">U+02DA</span></td>
-<td> ̊</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING RING ABOVE">Ki+A0, Ki+8D</span></td>
-</tr>
-<tr>
-<td>˛</td>
-<td><span class="UNICODE" title="OGONEK">U+02DB</span></td>
-<td> ̨</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING OGONEK">Ki+A0, Ki+9A</span></td>
-</tr>
-<tr>
-<td>˜</td>
-<td><span class="UNICODE" title="SMALL TILDE">U+02DC</span></td>
-<td> ̃</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING TILDE">Ki+A0, Ki+8A</span></td>
-</tr>
-<tr>
-<td>˳</td>
-<td><span class="UNICODE" title="MODIFIER LETTER LOW RING">U+02F3</span></td>
-<td> ̥</td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING RING BELOW">Ki+A0, Ki+9D</span></td>
-</tr>
-<tr>
-<td>‿</td>
-<td><span class="UNICODE" title="CHARACTER TIE">U+203F</span></td>
-<td> ͜ </td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING DOUBLE BREVE BELOW">Ki+A0, Ki+97, Ki+A0</span></td>
-</tr>
-<tr>
-<td>⁀</td>
-<td><span class="UNICODE" title="CHARACTER TIE">U+2040</span></td>
-<td> ͡ </td>
-<td><span class="UNICODE" title="NO-BREAK SPACE, COMBINING DOUBLE INVERTED BREVE">Ki+A0, Ki+97, Ki+A0</span></td>
-</tr>
-<tr>
-<td>⸞</td>
-<td><span class="UNICODE" title="TILDE WITH DOT ABOVE">U+2E1E</span></td>
-<td>~̇</td>
-<td><span class="UNICODE" title="TILDE, COMBINING DOT ABOVE">Ki+7E, Ki+6E</span></td>
-</tr>
-</tbody>
-</table>
-<div role="note">(These mappings are not reversible.)</div>
-</details></figure>
+</table></figure>
 			<p>However, unless you are in an environment with strict 8‑bit encoding requirements, you should just use Unicode.</p>
 		</section>
 		<section id="alphabet.keylayout">
@@ -785,9 +613,9 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">7</td>
 <td colspan="4">8</td>
 <td colspan="4">9</td>
+<td colspan="4">↊</td>
+<td colspan="4">↋</td>
 <td colspan="4">0</td>
-<td colspan="4">−</td>
-<td colspan="4">+</td>
 <td colspan="6">⌫</td>
 </tr>
 <tr>
@@ -799,7 +627,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">t</td>
 <td colspan="4">y</td>
 <td colspan="4">u</td>
-<td colspan="4">ı</td>
+<td colspan="4">i</td>
 <td colspan="4">o</td>
 <td colspan="4">p</td>
 <td colspan="4">‘</td>
@@ -814,7 +642,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">f</td>
 <td colspan="4">g</td>
 <td colspan="4">h</td>
-<td colspan="4">ȷ</td>
+<td colspan="4">j</td>
 <td colspan="4">k</td>
 <td colspan="4">l</td>
 <td colspan="4">«</td>
@@ -832,7 +660,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">m</td>
 <td colspan="4">,</td>
 <td colspan="4">.</td>
-<td colspan="4">‐</td>
+<td colspan="4">·</td>
 <td colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = true">⇧</td>
 </tr>
 <tr>
@@ -850,18 +678,18 @@ u.S::BEFORE{ Content: " ̲" }
 <tbody class="UPPER">
 <tr>
 <td colspan="4"><u>´</u></td>
-<td colspan="4">†</td>
+<td colspan="4">⁜</td>
 <td colspan="4">@</td>
 <td colspan="4">&amp;</td>
-<td colspan="4">#</td>
-<td colspan="4">*</td>
-<td colspan="4">·</td>
-<td colspan="4">[</td>
-<td colspan="4">(</td>
-<td colspan="4">)</td>
-<td colspan="4">]</td>
-<td colspan="4">÷</td>
-<td colspan="4">×</td>
+<td colspan="4">√</td>
+<td colspan="4">∼</td>
+<td colspan="4">☓</td>
+<td colspan="4">◊</td>
+<td colspan="4">⸠</td>
+<td colspan="4">{</td>
+<td colspan="4">}</td>
+<td colspan="4">⸡</td>
+<td colspan="4">\</td>
 <td colspan="6">⌫</td>
 </tr>
 <tr>
@@ -878,7 +706,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">P</td>
 <td colspan="4">“</td>
 <td colspan="4">”</td>
-<td colspan="4">/</td>
+<td colspan="4">⸺</td>
 </tr>
 <tr>
 <td colspan="7" onclick="this.closest(`figure`).querySelector(`input.CAPSLOCK`).checked = true">⇪</td>
@@ -904,9 +732,9 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">B</td>
 <td colspan="4">N</td>
 <td colspan="4">M</td>
-<td colspan="4">;</td>
-<td colspan="4">:</td>
-<td colspan="4">–</td>
+<td colspan="4">?</td>
+<td colspan="4">!</td>
+<td colspan="4">‐</td>
 <td class="ON" colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = false">⇧</td>
 </tr>
 <tr>
@@ -923,48 +751,48 @@ u.S::BEFORE{ Content: " ̲" }
 </tbody>
 <tbody>
 <tr>
-<td colspan="4"><u>ˇ</u></td>
-<td colspan="4">‡</td>
+<td colspan="4"><u>¯</u></td>
+<td colspan="4">†</td>
 <td colspan="4">¶</td>
 <td colspan="4">|</td>
-<td colspan="4">⁜</td>
-<td colspan="4">ɾ</td>
-<td colspan="4">ƒ</td>
-<td colspan="4">⸠</td>
-<td colspan="4">{</td>
-<td colspan="4">}</td>
-<td colspan="4">⸡</td>
-<td colspan="4">=</td>
-<td colspan="4">ː</td>
+<td colspan="4">+</td>
+<td colspan="4">−</td>
+<td colspan="4">*</td>
+<td colspan="4">#</td>
+<td colspan="4">[</td>
+<td colspan="4">(</td>
+<td colspan="4">)</td>
+<td colspan="4">]</td>
+<td colspan="4">∅</td>
 <td colspan="6">⌦</td>
 </tr>
 <tr>
 <td colspan="6">⇥</td>
-<td colspan="4">ɑ</td>
-<td colspan="4">ʍ</td>
-<td colspan="4">ᴈ</td>
-<td colspan="4">ɹ</td>
+<td colspan="4">ɔ</td>
+<td colspan="4">ʌ</td>
+<td colspan="4">ɛ</td>
+<td colspan="4">ɾ</td>
 <td colspan="4">þ</td>
 <td colspan="4">ɪ</td>
-<td colspan="4">ꜷ</td>
-<td colspan="4">ɛ</td>
+<td colspan="4">ʊ</td>
+<td colspan="4">ı</td>
 <td colspan="4">ø</td>
-<td colspan="4">ʔ</td>
-<td colspan="4"><u>ˌ</u></td>
-<td colspan="4">ˈ</td>
-<td colspan="4">⸺</td>
+<td colspan="4">θ</td>
+<td colspan="4"><u>¨</u></td>
+<td colspan="4"><u>˙</u></td>
+<td colspan="4">%</td>
 </tr>
 <tr>
 <td colspan="7" onclick="this.closest(`figure`).querySelector(`input.CAPSLOCK`).checked = true">⇪</td>
-<td colspan="4">ɒ</td>
+<td colspan="4">ɑ</td>
 <td colspan="4">ʃ</td>
 <td colspan="4">ð</td>
 <td colspan="4">ƒ</td>
 <td colspan="4">ŋ</td>
-<td colspan="4"><u>˳</u></td>
-<td colspan="4"><u>‿</u></td>
-<td colspan="4"><u>˙</u></td>
-<td colspan="4"><u>¨</u></td>
+<td colspan="4">ʰ</td>
+<td colspan="4">ȷ</td>
+<td colspan="4">ː</td>
+<td colspan="4">ɫ</td>
 <td colspan="4">‹</td>
 <td colspan="4">›</td>
 <td colspan="7">⏎</td>
@@ -972,14 +800,14 @@ u.S::BEFORE{ Content: " ̲" }
 <tr>
 <td colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = true">⇧</td>
 <td colspan="4">ʒ</td>
-<td colspan="4">ə</td>
-<td colspan="4">ɔ</td>
-<td colspan="4">ʌ</td>
-<td colspan="4"><u>˚</u></td>
+<td colspan="4"><u>ˈ</u></td>
 <td colspan="4"><u>˜</u></td>
+<td colspan="4"><u>^</u></td>
+<td colspan="4"><u>˚</u></td>
+<td colspan="4"><u> ᷎</u></td>
 <td colspan="4"><u>⁀</u></td>
-<td colspan="4">?</td>
-<td colspan="4">!</td>
+<td colspan="4">;</td>
+<td colspan="4">:</td>
 <td colspan="4">~</td>
 <td colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = true">⇧</td>
 </tr>
@@ -997,64 +825,64 @@ u.S::BEFORE{ Content: " ̲" }
 </tbody>
 <tbody>
 <tr>
-<td colspan="4"><u>^</u></td>
-<td colspan="4">⹋</td>
+<td colspan="4"><u>˘</u></td>
+<td colspan="4">‡</td>
 <td colspan="4">§</td>
 <td colspan="4">‖</td>
-<td colspan="4">※</td>
-<td colspan="4">⁂</td>
-<td colspan="4">№</td>
+<td colspan="4">×</td>
+<td colspan="4">÷</td>
+<td colspan="4">⁺</td>
+<td colspan="4">£</td>
 <td colspan="4">⸢</td>
 <td colspan="4">⟨</td>
 <td colspan="4">⟩</td>
 <td colspan="4">⸣</td>
-<td colspan="4">∼</td>
-<td colspan="4">⏑</td>
+<td colspan="4">⦰</td>
 <td colspan="6">⌦</td>
 </tr>
 <tr>
 <td colspan="6">⇥</td>
-<td colspan="4">→</td>
-<td colspan="4">′</td>
-<td colspan="4">°</td>
-<td colspan="4">\</td>
+<td colspan="4">æ</td>
+<td colspan="4">ʍ</td>
+<td colspan="4">ᴈ</td>
+<td colspan="4">ə</td>
 <td colspan="4">Þ</td>
-<td colspan="4">j</td>
-<td colspan="4">Ꜷ</td>
-<td colspan="4">i</td>
+<td colspan="4">→</td>
+<td colspan="4">°</td>
+<td colspan="4">′</td>
 <td colspan="4">Ø</td>
-<td colspan="4">⏑</td>
+<td colspan="4">ʔ</td>
 <td colspan="4">"</td>
 <td colspan="4">'</td>
-<td colspan="4">%</td>
+<td colspan="4">/</td>
 </tr>
 <tr>
 <td colspan="7" onclick="this.closest(`figure`).querySelector(`input.CAPSLOCK`).checked = true">⇪</td>
-<td colspan="4">←</td>
+<td colspan="4">ɒ</td>
 <td colspan="4">$</td>
 <td colspan="4">Ð</td>
 <td colspan="4">Ƒ</td>
 <td colspan="4">Ŋ</td>
 <td colspan="4">☞</td>
-<td colspan="4">_</td>
-<td colspan="4">☓</td>
-<td colspan="4">◊</td>
+<td colspan="4">″</td>
+<td colspan="4">=</td>
+<td colspan="4">⪤</td>
 <td colspan="4">&lt;</td>
 <td colspan="4">></td>
 <td colspan="7">⏎</td>
 </tr>
 <tr>
 <td class="ON" colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = false">⇧</td>
-<td colspan="4">‴</td>
-<td colspan="4">″</td>
+<td colspan="4">_</td>
+<td colspan="4"><u>ˌ</u></td>
 <td colspan="4"><u>¸</u></td>
-<td colspan="4">∧</td>
-<td colspan="4">☜</td>
+<td colspan="4"><u>ˇ</u></td>
+<td colspan="4"><u>˳</u></td>
 <td colspan="4"><u>˛</u></td>
-<td colspan="4"><u>¯</u></td>
-<td colspan="4">⁓</td>
-<td colspan="4">…</td>
+<td colspan="4"><u>‿</u></td>
 <td colspan="4">-</td>
+<td colspan="4">–</td>
+<td colspan="4">⁓</td>
 <td class="ON" colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = false">⇧</td>
 </tr>
 <tr>
@@ -1071,10 +899,11 @@ u.S::BEFORE{ Content: " ̲" }
 </tbody>
 <tbody lang="en-Runr-x-kibben" xml:lang="en-Runr-x-kibben">
 <tr>
-<td colspan="4">ᛥ</td>
 <td colspan="4">ᛝ</td>
-<td colspan="4">ᚩ</td>
 <td colspan="4">ᚢ</td>
+<td colspan="4">ᚩ</td>
+<td colspan="4">ᛠ</td>
+<td colspan="4">ᚦ</td>
 <td colspan="4">᛭</td>
 <td colspan="4">᛬</td>
 <td colspan="4">᛫</td>
@@ -1082,8 +911,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">(</td>
 <td colspan="4">)</td>
 <td colspan="4">]</td>
-<td colspan="4">ᛠ</td>
-<td colspan="4">ᚦ</td>
+<td colspan="4">ᛥ</td>
 <td colspan="6">⌫</td>
 </tr>
 <tr>
@@ -1145,10 +973,11 @@ u.S::BEFORE{ Content: " ̲" }
 </tbody>
 <tbody>
 <tr>
-<td colspan="4">ƒ</td>
 <td colspan="4">ŋ</td>
-<td colspan="4">ꜷ</td>
 <td colspan="4">ø</td>
+<td colspan="4">å</td>
+<td colspan="4">ð</td>
+<td colspan="4">þ</td>
 <td colspan="4">;</td>
 <td colspan="4">:</td>
 <td colspan="4">·</td>
@@ -1156,8 +985,7 @@ u.S::BEFORE{ Content: " ̲" }
 <td colspan="4">⟨</td>
 <td colspan="4">⟩</td>
 <td colspan="4">⸣</td>
-<td colspan="4">ð</td>
-<td colspan="4">þ</td>
+<td colspan="4">ƒ</td>
 <td colspan="6">⌫</td>
 </tr>
 <tr>
@@ -1420,10 +1248,10 @@ u.S::BEFORE{ Content: " ̲" }
 </tr>
 -->
 <tr>
-<td>Ꜷ</td>
-<td>Ɐ, Å</td>
-<td>ꜷ</td>
-<td>ɐ, å</td>
+<td>Å</td>
+<td>Ɐ, Ꜷ</td>
+<td>å</td>
+<td>ɐ, ꜷ</td>
 <td>ᚩ</td>
 <td></td>
 </tr>
@@ -1673,11 +1501,11 @@ u.S::BEFORE{ Content: " ̲" }
 		<p>Very broadly, spelling decisions are based more on British dialects than they are on American ones, but no attempt at rigidity to any particular variety is made.</p>
 		<section id="dialect.rhoticity">
 			<h1 aria-level="3">Rhoticity</h1>
-			<p>Kibben is based on non‐rhotic English with some R‐insertion—meaning that an <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">R</span> will never appear in the coda of a syllable, or after short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ꜷ</span>, where its presence is implied: <i class="DERIVATION">aria → <span lang="en-x-kibben" xml:lang="en-x-kibben">ꜷ̇ıȷr</span></i>. Certain other short vowels change their pronunciation when followed by an <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">R</span>; for more information, see the section on vowels below.</p>
+			<p>Kibben is based on non‐rhotic English with some R‐insertion—meaning that an <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">R</span> will never appear in the coda of a syllable. Instead, short vowels change their pronunciation when followed by an <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">R</span>; for more information, see the section on vowels below.</p>
 		</section>
 		<section id="dialect.merge">
 			<h1 aria-level="3">Merges and nonmerges</h1>
-			<p>Different dialects merge the vowels in <i class="SET">bath</i>, <i class="SET">palm</i>, <i class="SET">lot</i>, <i class="SET">cloth</i>, and <i class="SET">thought</i> differently. Kibben merges <i class="SET">bath</i> and <i class="SET">palm</i> to short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ꜷ</span> (<span lang="en-fonipa" xml:lang="en-fonipa">/ɑː/</span>), merges <i class="SET">lot</i> and <i class="SET">cloth</i> to short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">O</span> (<span lang="en-fonipa" xml:lang="en-fonipa">/ɒ/</span>), and conveys <i class="SET">thought</i> with short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">O + R</span> (<span lang="en-fonipa" xml:lang="en-fonipa">/ɔː/</span>).</p>
+			<p>Different dialects merge the vowels in <i class="SET">bath</i>, <i class="SET">palm</i>, <i class="SET">lot</i>, <i class="SET">cloth</i>, and <i class="SET">thought</i> differently. Kibben merges <i class="SET">bath</i> and <i class="SET">palm</i> to short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">A + R</span> (<span lang="en-fonipa" xml:lang="en-fonipa">/ɑː/</span>), merges <i class="SET">lot</i> and <i class="SET">cloth</i> to short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">O</span> (<span lang="en-fonipa" xml:lang="en-fonipa">/ɒ/</span>), and conveys <i class="SET">thought</i> with short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">O + R</span> (<span lang="en-fonipa" xml:lang="en-fonipa">/ɔː/</span>).</p>
 		</section>
 		<section id="dialect.wh">
 			<h1 aria-level="3">Devoiced W</h1>
@@ -1776,7 +1604,7 @@ u.S::BEFORE{ Content: " ̲" }
 	</section>
 	<section id="vowels">
 		<h1 aria-level="2">Vowels</h1>
-		<p>Vowels form the nucleus of Kibben syllables. Each vowel has a “long” and “short” pronunciation—although these terms do not quite correspond to phonological vowel length. By default, vowels in “closed” syllables—syllables with a coda—are short, and vowels in “open” syllables are long. But there are also numerous ways for changing the length of a vowel, via diacritics or additional letters.</p>
+		<p>Vowels form the nucleus of Kibben syllables. Every vowel other than <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Å</span> has a “long” and “short” pronunciation—although these terms do not quite correspond to phonological vowel length. By default, vowels in “closed” syllables—syllables with a coda—are short, and vowels in “open” syllables are long. But there are also numerous ways for changing the length of a vowel, via diacritics or additional letters.</p>
 		<p>Some vowels may be used in the onset, in addition to the nucleus, of a syllable; these are referred to as “semivowels”. Kibben has two semivowels: W, which represents <span lang="en-fonipa" xml:lang="en-fonipa">/w/</span> in the onset of a syllable; and Y, which represents <span lang="en-fonipa" xml:lang="en-fonipa">/j/</span>. Like ordinary vowels, they have both long and short pronunciations when they appear in the syllable nucleus.</p>
 		<figure>
 			<table style="Grid-Template-Columns: 2FR 3FR 5FR 5FR">
@@ -1796,9 +1624,9 @@ u.S::BEFORE{ Content: " ̲" }
 <td><strong><span lang="en-fonipa">/eɪ/</span>:</strong> <i class="SET">face</i></td>
 </tr>
 <tr>
-<th lang="en-x-kibben" xml:lang="en-x-kibben" scope="row" class="UPPER">Ꜷ</th>
-<td lang="en-x-kibben" xml:lang="en-x-kibben"><span lang="en" xml:lang="en">ouse</span> → ꜷse</td>
-<td><strong><span lang="en-fonipa">/ɑː/</span>:</strong> <i class="SET">bath</i>; <i class="SET">palm</i>; <i class="SET">start</i></td>
+<th lang="en-x-kibben" xml:lang="en-x-kibben" scope="row" class="UPPER">Å</th>
+<td lang="en-x-kibben" xml:lang="en-x-kibben"><span lang="en" xml:lang="en">ous</span> → ås</td>
+<td><small>[Always long]</small></td>
 <td><strong><span lang="en-fonipa">/aʊ/</span>:</strong> <i class="SET">mouth</i></td>
 </tr>
 <tr>
@@ -1838,6 +1666,7 @@ u.S::BEFORE{ Content: " ̲" }
 			<table>
 <thead>
 <tr>
+<th scope="col">ar</th>
 <th scope="col">or</th>
 <th scope="col">yr</th>
 <th scope="col">ır</th>
@@ -1847,6 +1676,7 @@ u.S::BEFORE{ Content: " ̲" }
 </thead>
 <tbody>
 <tr>
+<td><strong><span lang="en-fonipa">/ɑː/</span>:</strong> <i class="SET">bath</i>; <i class="SET">palm</i>; <i class="SET">start</i></td>
 <td><strong><span lang="en-fonipa">/ɔː/</span>:</strong> <i class="SET">north</i>;<br/><i class="SET">thought</i></td>
 <td><strong><span lang="en-fonipa">/ɪə/</span>:</strong> <i class="SET">near</i></td>
 <td><strong><span lang="en-fonipa">/ɛə/</span>:</strong> <i class="SET">square</i></td>
@@ -1855,12 +1685,11 @@ u.S::BEFORE{ Content: " ̲" }
 </tr>
 </tbody>
 </table></figure>
-		<p>Short <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">A</span> and <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ꜷ</span> never appear before vocalic R.</p>
 		<section id="vowels.notes">
 			<h1 aria-level="3">Notes</h1>
 			<p>The dot is a significant diacritic in Kibben. The letter <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">I</span> should be written dotless when a dot diacritic is not intentional.</p>
-			<p>The glyph <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ꜷ</span> is preferred over <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Å</span> primarily because of diacritics: <span lang="en-x-kibben" xml:lang="en-x-kibben">‹ å̈̇ ›</span> is very cumbersome to read. <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ꜷ</span> is also simpler to write in a cursive script. However, <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Å</span> typically has broader font support, and is an acceptable alternate in printed media.</p>
-			<p>Because <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">U</span> is not used in Kibben words, the digraph <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">AU</span> may also be used in place of the <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ꜷ</span> ligature. In this case, any diacritics should be placed over the <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">A</span>.</p>
+			<p>Because <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Å</span> is always long, it cannot take a dot diacritic. However, it <em>can</em> take a diæresis.</p>
+			<p>Because <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">U</span> is not used in Kibben words, the digraph <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">AU</span> may be used in place of <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Å</span>. In this case, any diacritics should be placed over the <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">A</span>.</p>
 		</section>
 	</section>
 	<section id="sonorants">
@@ -1920,7 +1749,7 @@ u.S::BEFORE{ Content: " ̲" }
 		</section>
 		<section id="modifiers.ȷ-ŋ">
 			<h1 aria-level="3"><span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span> and <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ŋ</span></h1>
-			<p>The letter <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span> <i class="DERIVATION">yew → <span lang="en-x-kibben" xml:lang="en-x-kibben">ywȷ</span></i> has no standalone pronunciation, and instead lengthens the preceding vowel. It takes the place of a lengthening Y or GH in traditional English orthography. <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span> is required in words which consist of only an irreducible long vowel; namely: <i class="DERIVATION">oi → <span lang="en-x-kibben" xml:lang="en-x-kibben">øȷ</span></i>, <i class="DERIVATION">ow → <span lang="en-x-kibben" xml:lang="en-x-kibben">ꜷȷ</span></i>, <i class="DERIVATION">ooh → <span lang="en-x-kibben" xml:lang="en-x-kibben">wȷ</span></i>, <i class="DERIVATION">I → <span lang="en-x-kibben" xml:lang="en-x-kibben">yȷ</span></i>, <i class="DERIVATION">oh → <span lang="en-x-kibben" xml:lang="en-x-kibben">oȷ</span></i>, and <i class="DERIVATION">eh → <span lang="en-x-kibben" xml:lang="en-x-kibben">aȷ</span></i>.</p>
+			<p>The letter <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span> <i class="DERIVATION">yew → <span lang="en-x-kibben" xml:lang="en-x-kibben">ywȷ</span></i> has no standalone pronunciation, and instead lengthens the preceding vowel. It takes the place of a lengthening Y or GH in traditional English orthography. <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span> is required in words which consist of only an irreducible long vowel; namely: <i class="DERIVATION">oi → <span lang="en-x-kibben" xml:lang="en-x-kibben">øȷ</span></i>, <i class="DERIVATION">ow → <span lang="en-x-kibben" xml:lang="en-x-kibben">åȷ</span></i>, <i class="DERIVATION">ooh → <span lang="en-x-kibben" xml:lang="en-x-kibben">wȷ</span></i>, <i class="DERIVATION">I → <span lang="en-x-kibben" xml:lang="en-x-kibben">yȷ</span></i>, <i class="DERIVATION">oh → <span lang="en-x-kibben" xml:lang="en-x-kibben">oȷ</span></i>, and <i class="DERIVATION">eh → <span lang="en-x-kibben" xml:lang="en-x-kibben">aȷ</span></i>.</p>
 			<p>Although a dot diacritic is not valid over <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span> (it is a vowel modifier, not a vowel), it is always written dotless to avoid confusion.</p>
 			<p>The letter <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">Ŋ</span> <i class="DERIVATION">Inguine → <span lang="en-x-kibben" xml:lang="en-x-kibben"><span class="UPPER">Y</span>ŋgwyne</span></i> can only appear in syllable codas, and has a pronunciation of <span lang="en-fonipa" xml:lang="en-fonipa">/ŋ/</span>. Orthographically, the preceding vowel is always short (unless lengthened by <span lang="en-x-kibben" xml:lang="en-x-kibben" class="UPPER">J</span>). However, some dialects may give it a longer pronunciation.</p>
 		</section>
@@ -1958,7 +1787,7 @@ u.S::BEFORE{ Content: " ̲" }
 			<p>The first letter of sentences of paragraph content <em>should not</em> be capitalized, but rather indicated through increased spacing and, optionally, an underline set below and to the left of the first letter. In plaintext environments, it is recommended that the increased spacing be encoded as <span class="UNICODE">⟨U+202F <mark> </mark> <u>NARROW NO-BREAK SPACE</u>, U+00A0 <mark> </mark> <u>SPACE</u>⟩</span>.</p>
 			<p>Family names of individuals should be set in all capitals whenever they appear, to distinguish them from other names, for which only the first letter should be capitalized. Allcaps may also be used for other sorts of embedded names, for example ‹ COMPANY, Inc. › or ‹ Project CODENAME ›. However, outside of an embeddeded context, these names should typically be given ordinary capitalization.</p>
 			<p>Titles of longer works should be either italicized or given a wavy underline, and titles of shorter works set in double quotation marks, according to usual English tradition. The capitalization of these works should be left to the author’s discretion.</p>
-			<p>Names of countries and languages should be capitalized when used nominally <i class="DERIVATION">I travel to England → <span lang="en-x-kibben" xml:lang="en-x-kibben">yȷ travl tw <span class="UPPER">Y</span>ŋgland</span>; I speak English → <span lang="en-x-kibben" xml:lang="en-x-kibben">yȷ spıke <span class="UPPER">Y</span>ŋglysc</span></i>, but not adjectivally <i class="DERIVATION">the English language → <span lang="en-x-kibben" xml:lang="en-x-kibben">ðı yŋglysc laŋgwygc</span></i> or when referring to certain groups of people <i class="DERIVATION">they are English → <span lang="en-x-kibben" xml:lang="en-x-kibben">ðaȷ ꜷ yŋglysc</span></i>. When written out as words, months, days of the week, and days of the month should be capitalized, as in ‹ Monday, the Twentyfirst of December, Two Thousand Twenty ›. Other common nouns are capitalized when personified or referring abstractly to a broad class of things.</p>
+			<p>Names of countries and languages should be capitalized when used nominally <i class="DERIVATION">I travel to England → <span lang="en-x-kibben" xml:lang="en-x-kibben">yȷ travl tw <span class="UPPER">Y</span>ŋgland</span>; I speak English → <span lang="en-x-kibben" xml:lang="en-x-kibben">yȷ spıke <span class="UPPER">Y</span>ŋglysc</span></i>, but not adjectivally <i class="DERIVATION">the English language → <span lang="en-x-kibben" xml:lang="en-x-kibben">ðı yŋglysc laŋgwygc</span></i> or when referring to certain groups of people <i class="DERIVATION">they are English → <span lang="en-x-kibben" xml:lang="en-x-kibben">ðaȷ ar yŋglysc</span></i>. When written out as words, months, days of the week, and days of the month should be capitalized, as in ‹ Monday, the Twentyfirst of December, Two Thousand Twenty ›. Other common nouns are capitalized when personified or referring abstractly to a broad class of things.</p>
 			<p>Abbreviations and initialisms should be set in small capitals and otherwise have the same capitalization properties as any other word. No periods are required within or after abbreviated words.</p>
 			<p>In Runic text, which has no lettercase, proper nouns may instead be indicated with a cross punctuation mark ‹ ᛭ › preceding the word. When capitalization extends across multiple words, as in a full name or title of a work, another cross punctuation mark should be placed at the end.</p>
 		</section>
@@ -1974,7 +1803,7 @@ u.S::BEFORE{ Content: " ̲" }
 		</section>
 		<section id="format.emphasis">
 			<h1 aria-level="3">Emphasis</h1>
-			<p>Emphasized text in Kibben should be wrapped in rice, like ※⁠this⁠※. Letterspacing may optionally be increased within emphasized text.</p>
+			<p>Emphasized text in Kibben should be wrapped in dotted crosses, like ⁜⁠this⁠⁜. Letterspacing may optionally be increased within emphasized text.</p>
 		</section>
 		<section id="format.quotes">
 			<h1 aria-level="3">Bracketing and Quotations</h1>
@@ -1990,14 +1819,14 @@ u.S::BEFORE{ Content: " ̲" }
 		<section id="reference.udhr">
 			<h1 aria-level="3">Preamble to <cite>Universal Declaration of Human Rights</cite></h1>
 			<div lang="en-x-kibben" xml:lang="en-x-kibben">
-				<p><strong>hwıräz</strong> rı̇kognyscn øv ðı ynhırnt dygnytı̈ and øv ðı ıkwal and ẏnalyȷnable ryȷts øv orl mımbrz øv ðı hcwman famÿlı̈ yz ðı fꜷȷndascne øv frıdom, gcøƒÿs, and pıse yn ðı world,</p>
-				<p><strong>hwıräz</strong> dysrıgꜷd and cntımpt for hcwman ryȷts hav rızøltyd yn bꜷbꜷos akts hwykc hav ꜷȷtragced ðı conscıns øv mankynd, and ðı advınt øv a world yn hwych hcwman bıȝıŋz scꜷl ıngcøȷ frıdom øv spıkc and bılıfe and frıdom frøm fıȷr and wont haz bıne proclamed az ðı hyȷıst aspÿrascn øv ðı komn pıple,</p>
+				<p><strong>hwıräz</strong> rı̇kognyscn øv ðı ynhırnt dygnytı̈ and øv ðı ıkwal and ẏnalyȷnable ryȷts øv orl mımbrz øv ðı hcwman famÿlı̈ yz ðı fåndascne øv frıdom, gcøƒÿs, and pıse yn ðı world,</p>
+				<p><strong>hwıräz</strong> dysrıgard and cntımpt for hcwman ryȷts hav rızøltyd yn barbaros akts hwykc hav åtragced ðı conscıns øv mankynd, and ðı advınt øv a world yn hwych hcwman bıȝıŋz scal ıngcøȷ frıdom øv spıkc and bılıfe and frıdom frøm fıȷr and wont haz bıne proclamed az ðı hyȷıst aspÿrascn øv ðı komn pıple,</p>
 				<p><strong>hwıräz</strong> yt yz ısınkcl, yf man yz not tw bı cmpıld tw hav rıkors, az a laƒ rızort, tw rıbılÿn agaȷnƒ tyranı and oprıscn, ðat hcwman ryȷts scwd bı protıctyd by ðı rwle øv lor,</p>
 				<p><strong>hwıräz</strong> yt yz ısınkcl tw promote ðı dıvılrpmınt øv frındlı rılascnez bıtwıne naȷscnz,</p>
-				<p><strong>hwıräz</strong> ðı pıplez øv ðı <span class="UPPER">Y</span>wnytÿd <span class="UPPER">N</span>aȷscnz hav yn ðe <span class="UPPER">K</span>cꜷtr rıaførmd ðaȷr faȷþ yn føndamıntl hcwman ryȷts, yn ðı dygnytı̈ and wørþ øv ðı hcwman pørsn and yn ðı ıkwal ryȷts øv mın and wẏmın and hav dıtørmynd tw promote soscle progrıs and bıtr ƒandrdz øv lyfe yn lꜷgcr frıdom,</p>
+				<p><strong>hwıräz</strong> ðı pıplez øv ðı <span class="UPPER">Y</span>wnytÿd <span class="UPPER">N</span>aȷscnz hav yn ðe <span class="UPPER">K</span>cartr rıaførmd ðaȷr faȷþ yn føndamıntl hcwman ryȷts, yn ðı dygnytı̈ and wørþ øv ðı hcwman pørsn and yn ðı ıkwal ryȷts øv mın and wẏmın and hav dıtørmynd tw promote soscle progrıs and bıtr ƒandrdz øv lyfe yn largcr frıdom,</p>
 				<p><strong>hwıräz</strong> <span class="UPPER">M</span>ımbr <span class="UPPER">Ƒ</span>ates hav plıgcd ðımsılvz tw akcıve, yn coopräscne wyþ ðı <span class="UPPER">Y</span>wnytÿd <span class="UPPER">N</span>aȷscnz, ðı promoscne øv ywnyvrsl rıspıkt for and obzørvns øv hcwman ryȷts and føndamıntl frıdomz,</p>
 				<p><strong>hwıräz</strong> a komn øndrƒandyŋ øv ðıze ryȷts and frıdømz yz øv ðı gratyƒ ymportns før ðı føl rılyzascne øv ðys plıgc,</p>
-				<p><strong>nꜷ, ðırfor,</strong> <em>ðı <span class="UPPER">G</span>cınrl <span class="UPPER">A</span>sımblı</em><br/><em>proclames</em> ðys <span class="UPPER">Y</span>wnyvrsl <span class="UPPER">D</span>ıklırascne øv <span class="UPPER">H</span>cwman <span class="UPPER">R</span>yȷts az a komn ƒandrd øv akcıvemınt for orl pıplez and orl naȷscnz, tw ðı ınd ðat ıvry yndyvÿgcwl and ıvry organ øv sosyȷytı, kıpyŋ ðys <span class="UPPER">D</span>ıklırascne konƒantlı yn mynd, scꜷl ƒryve by tıkcyŋ and ıgcwkascne tw promote rıspıkt for ðız ryȷts and frıdoms and by progrısÿv mı̇zcwrz, nascnl and yntrnascnl, tw sıkywr ðaȷr ywnyvrsl and ıfıktyv rı̇kognyscn and obsørvns, boþe amøŋ ðı pıplez øv <span class="UPPER">M</span>ımbr <span class="UPPER">Ƒ</span>ates ðımsılvz and amøŋ ðı pıplez øv tırytörıze øndr ðaȷr gcwrysdykscn.</p>
+				<p><strong>nå, ðırfor,</strong> <em>ðı <span class="UPPER">G</span>cınrl <span class="UPPER">A</span>sımblı</em><br/><em>proclames</em> ðys <span class="UPPER">Y</span>wnyvrsl <span class="UPPER">D</span>ıklırascne øv <span class="UPPER">H</span>cwman <span class="UPPER">R</span>yȷts az a komn ƒandrd øv akcıvemınt for orl pıplez and orl naȷscnz, tw ðı ınd ðat ıvry yndyvÿgcwl and ıvry organ øv sosyȷytı, kıpyŋ ðys <span class="UPPER">D</span>ıklırascne konƒantlı yn mynd, scal ƒryve by tıkcyŋ and ıgcwkascne tw promote rıspıkt for ðız ryȷts and frıdoms and by progrısÿv mı̇zcwrz, nascnl and yntrnascnl, tw sıkywr ðaȷr ywnyvrsl and ıfıktyv rı̇kognyscn and obsørvns, boþe amøŋ ðı pıplez øv <span class="UPPER">M</span>ımbr <span class="UPPER">Ƒ</span>ates ðımsılvz and amøŋ ðı pıplez øv tırytörıze øndr ðaȷr gcwrysdykscn.</p>
 			</div>
 		</section>
 	</section>
