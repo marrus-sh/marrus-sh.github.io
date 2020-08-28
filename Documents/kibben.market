@@ -1118,7 +1118,7 @@ Note that Caps Lock switches the layout into Runic, and Caps Lock + Option gives
 			<td colspan="4">\</td>
 		</tr>
 		<tr>
-			<td class="ON" colspan="7" onclick="this.closest(`figure`).querySelector(`input.CAPSLOCK`).checked = true">⇪</td>
+			<td class="ON" colspan="7" onclick="this.closest(`figure`).querySelector(`input.CAPSLOCK`).checked = false">⇪</td>
 			<td colspan="4">a</td>
 			<td colspan="4">s</td>
 			<td colspan="4">d</td>
