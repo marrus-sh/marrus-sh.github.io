@@ -446,8 +446,8 @@ A hypothetical character set containing all the characters required to compose a
 		<td>9</td>
 		<td>↊</td>
 		<td>↋</td>
+		<td>℥</td>
 		<td>%</td>
-		<td>∅</td>
 		<td>⦰</td>
 		<td>θ</td>
 	</tr>
@@ -728,7 +728,7 @@ Note that Caps Lock switches the layout into Runic, and Caps Lock + Option gives
 			<td colspan="4">{</td>
 			<td colspan="4">}</td>
 			<td colspan="4">⸡</td>
-			<td colspan="4">\</td>
+			<td colspan="4">_</td>
 			<td colspan="6">⌫</td>
 		</tr>
 		<tr>
@@ -802,7 +802,7 @@ Note that Caps Lock switches the layout into Runic, and Caps Lock + Option gives
 			<td colspan="4">(</td>
 			<td colspan="4">)</td>
 			<td colspan="4">]</td>
-			<td colspan="4">∅</td>
+			<td colspan="4">⦰</td>
 			<td colspan="6">⌦</td>
 		</tr>
 		<tr>
@@ -876,7 +876,7 @@ Note that Caps Lock switches the layout into Runic, and Caps Lock + Option gives
 			<td colspan="4">⟨</td>
 			<td colspan="4">⟩</td>
 			<td colspan="4">⸣</td>
-			<td colspan="4">⦰</td>
+			<td colspan="4">\</td>
 			<td colspan="6">⌦</td>
 		</tr>
 		<tr>
@@ -912,7 +912,7 @@ Note that Caps Lock switches the layout into Runic, and Caps Lock + Option gives
 		</tr>
 		<tr>
 			<td class="ON" colspan="9" onclick="this.closest(`figure`).querySelector(`input.SHIFT`).checked = false">⇧</td>
-			<td colspan="4">_</td>
+			<td colspan="4">℥</td>
 			<td colspan="4"><u>ˌ</u></td>
 			<td colspan="4"><u>¸</u></td>
 			<td colspan="4"><u>ˇ</u></td>
