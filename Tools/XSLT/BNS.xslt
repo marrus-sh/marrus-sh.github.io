@@ -304,6 +304,7 @@ body{ Margin: 0; Padding: 0 }
 #BNS>header>h1>a:Hover{ Color: Var(--Attn) }
 #BNS>header>nav{ Font-Size: Medium; Margin-Block: .5REM 1REM; Color: Var(--Text); Font-Family: Sans-Serif; Text-Align: Justify; Text-Align-Last: Center }
 #BNS>header>nav>ol,#BNS>header>nav>ol>li{ Display: Inline; Margin: 0; Padding: 0 }
+#BNS>header>nav>ol>li::after{ Content: "\200B" }
 #BNS>header>nav>ol>li+li::before{ Margin-Inline-Start: .5EM; Border-Inline-Start: Thin Solid; Padding-Inline-Start: .5EM; Content: "" }
 #BNS>header>nav a{ Color: Var(--Text); Text-Decoration: None }
 #BNS>header>nav a:Focus,#BNS>header>nav a:Hover{ Text-Decoration: Underline }
