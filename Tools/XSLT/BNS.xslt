@@ -414,7 +414,7 @@ const i = ( { target: e } ) => {
 		e.parentNode.replaceChild(s, e)
 		a.dataset.expanded = "" }, ( ) => e.parentNode.removeChild(e))
 	else {
-		let n = document.getElementById(a.hash.substring(1))?.querySelector?.(`h1`)
+		let n = document.getElementById(decodeURIComponent(a.hash.substring(1)))?.querySelector?.(`h1`)
 		if ( n ) {
 			const c = document.createElementNS(`http://www.w3.org/1999/xhtml`, `cite`)
 			const s = document.createElementNS(`http://www.w3.org/1999/xhtml`, `small`)
@@ -427,7 +427,7 @@ const i = ( { target: e } ) => {
 window.addEventListener(`load`, ( ) => {
 	const d = document.querySelector `#BNS>div`
 	d.removeChild(d.firstElementChild)
-	let e = document.getElementById(location.hash.substring(1))
+	let e = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.substring(1))) : null
 	if ( !e || !e.matches `#BNS>div>*` ) e = document.querySelector `#BNS>div>*`
 	for ( const p of document.querySelectorAll `#BNS>div>*` ) {
 		p.hidden = p != e
