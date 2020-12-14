@@ -9,9 +9,7 @@ Branching Notational System XSL Transformation (BNS.xslt)
 
 § Usage:
 
-Requires both XSLT 1.0 and EXSLT Common support.
-CSS features require at least Firefox 76.
-Stick the following at the beginning of your XML file:
+Requires both XSLT 1.0 and EXSLT Common support.  CSS features require at least Firefox 76.  Stick the following at the beginning of your XML file:
 
 ```
 <?xml-stylesheet type="text/xsl" href="/path/to/BNS.xslt"?>
@@ -19,31 +17,31 @@ Stick the following at the beginning of your XML file:
 
 §§ Configuration (in the file which links to this stylesheet):
 
-⁜ The first ‹ <html:link rel="alternate" type="application/rdf+xml"> › element with an @href attribute is used to source the RDF for the corpus.
-⁜ The @lang attribute on the document element is used to prioritize titles from fetched resources.
-⁜ The @prefix attribute on the <html:html> element (with the RDFa syntax) is used for shortening of displayed links (and branch IDs).
-⁜ Exactly one ‹ <article id="BNS"> › must be supplied; the corpus will be placed in here!
-⁜ Feel free to add your own <style> elements or other content.
+☞ The first ‹ <html:link rel="alternate" type="application/rdf+xml"> › element with an @href attribute is used to source the RDF for the corpus.
+☞ The @lang attribute on the document element is used to prioritize titles from fetched resources.
+☞ The @prefix attribute on the <html:html> element (with the RDFa syntax) is used for shortening of displayed links (and branch IDs).
+☞ Exactly one ‹ <article id="BNS"> › must be supplied; the corpus will be placed in here!
+☞ Feel free to add your own <html:style> elements or other content.
 
 §§ Things to be sure to define:
 
-⁜ ‹ bns:fullTitle › is used for titles of branches.  ‹ bns:abbreviatedTitle › takes preference in limited situations (navigational lists).
-⁜ ‹ dc:abstract › is used for branch summaries.  Note that this is an object property; it should point to a thing.
-⁜ ‹ bns:contents › gives the contents of a thing, most importantly the thing pointed by ‹ dc:abstract ›.  XML contents are supported with ‹ rdf:parseType='Literal' ›.
-⁜ ‹ xml:lang › or ‹ rdf:datatype › every time you specify a literal.
+☞ ‹ bns:fullTitle › is used for titles of branches.  ‹ bns:abbreviatedTitle › takes preference in limited situations (navigational lists).
+☞ ‹ dc:abstract › is used for branch summaries.  Note that this is an object property; it should point to a thing.
+☞ ‹ bns:contents › gives the contents of a thing, most importantly the thing pointed by ‹ dc:abstract ›.  XML contents are supported with ‹ rdf:parseType='Literal' ›.
+☞ ‹ xml:lang › or ‹ rdf:datatype › every time you specify a literal.
 
 §§ Things which are supported:
 
-⁜ Defining a ‹ dc:FileFormat › once and then linking to it elsewhere with ‹ dc:format`.  Use ‹ dc:identifier › to give the MIME type for the file format in its defining instance.
-⁜ ‹ rdf:parseType="Resource" › and ‹ rdf:parseType="Literal" › in ※most※ of the places where they would make sense.
-⁜ ‹ <html:a><html:code></html:code></html:a> › is a special syntax which will generate a button that will attempt to fetched the title of the linked resource when clicked.  You can use the ‹ resource › property to specify a name for the resource, if it differs from the ‹ href › (which should point to its data).  The script will automatically convert ‹ http: › to ‹ https: ›, and handles Wikidata links as a special case.
-⁜ The RDFa Core Initial Context (so you needn’t provide those prefixes).
+☞ Defining a ‹ dc:FileFormat › once and then linking to it elsewhere with ‹ dc:format`.  Use ‹ dc:identifier › to give the MIME type for the file format in its defining instance.
+☞ ‹ rdf:parseType="Resource" › and ‹ rdf:parseType="Literal" › in ※most※ of the places where they would make sense.
+☞ ‹ <html:a><html:code></html:code></html:a> › is a special syntax which will generate a button that will attempt to fetched the title of the linked resource when clicked.  You can use the ‹ resource › property to specify a name for the resource, if it differs from the ‹ href › (which should point to its data).  The script will automatically convert ‹ http: › to ‹ https: ›, and handles Wikidata links as a special case.
+☞ The RDFa Core Initial Context (so you needn’t provide those prefixes).
 
 §§ Things notably not supported:
 
-⁜ Relative values for ‹ rdf:about › on branches, or, similarly, any use of ‹ rdf:ID › (as in either case this requires IRI processing).
-⁜ Relative values ※in general※ unless the base URIs of this stylesheet and the document it is being linked from are the same (or equivalent).
-⁜ A non‐nested structure for branches:  This stylesheet does not attempt to resolve ‹ rdf:resource › in ※most※ cases.
+☞ Relative values for ‹ rdf:about › on branches, or, similarly, any use of ‹ rdf:ID › (as in either case this requires IRI processing).
+☞ Relative values ⁜in general⁜ unless the base URIs of this stylesheet and the document it is being linked from are the same (or equivalent).
+☞ A non‐nested structure for branches:  This stylesheet does not attempt to resolve ‹ rdf:resource › in ⁜most⁜ cases.
 
 § Disclaimer:
 
@@ -442,7 +440,7 @@ window.addEventListener(`load`, ( ) => {
 window.addEventListener(`hashchange`, v => {
 	if ( 1 >= location.hash.length ) return
 	let m = false
-	let n = location.hash.substring(1)
+	let n = decodeURIComponent(location.hash.substring(1))
 	let c = document.querySelector `#BNS>div>*:Not([hidden])`
 	let e = document.getElementById(n)
 	if ( !e.matches `#BNS>div>*` ) return
