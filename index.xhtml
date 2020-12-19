@@ -51,26 +51,28 @@ strong{ Font-Weight: 600 }
 header p{ Margin: 0; Text-Align: Inherit; Text-Align-Last: Inherit }
 h3+p{ Display: Inline; Margin: 0 }
 h3+p::after{ Display: Block; Content: "" }
-@keyframes slidein {
-	from { Top: 1.25EM }
-	to { Top: 0 } }
-@keyframes slideout {
-	from { Top: 0 }
-	to { Top: -1.25EM } }
-@keyframes scroll {
-	from { Left: 100% }
-	to { Left: -100% } }
-@keyframes revscroll {
-	from { Right: 100% }
-	to { Right: -100% } }
-#alt-name-box { Display: Inline-Block; Padding: .25EM 0; Max-Width: 80%; Height: 1EM; Vertical-Align: Top; White-Space: NoWrap; Contain: Paint }
-#alt-name-box span { Display: Block; Margin: 0 0 -1EM; Width: 100%; Height: 1EM; Overflow: Hidden; Line-Height: 1; Text-Overflow: Ellipsis }
-#alt-name { Display: Block; Overflow: Hidden }
-#alt-name span { Position: Relative; Animation: 1.2S .4S Ease-In Both slidein }
-#alt-name span:Not(:Last-Child) { Animation: 1.2S .4S Ease-Out Both slideout }
-#alt-names { Display: Block; Height: 0; Overflow: Hidden; Visibility: Hidden }
-*.SCROLL { Position: Absolute; Box-Sizing: Border-Box; Left: 0; Right: 0; Border-Style: Solid None; Border-Color: Var(--Crayon-Colour); Border-Width: Thin; Height: 1.5REM; Overflow: Hidden; Color: Var(--Charcoal-Colour); Background: Var(--Parchment-Colour); Font: 500 1REM / 1 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif; Contain: Strict }
-*.SCROLL:Empty { Display: None }
+@keyframes slidein{
+	from{ Top: 1.25EM }
+	to{ Top: 0 } }
+@keyframes slideout{
+	from{ Top: 0 }
+	to{ Top: -1.25EM } }
+@keyframes scroll{
+	from{ Left: 100% }
+	to{ Left: -100% } }
+@keyframes revscroll{
+	from{ Right: 100% }
+	to{ Right: -100% } }
+#aka{ Display: Grid; Grid-Template: Auto / Max-Content 1FR; Text-Align: Left }
+#aka>strong{ Color: Var(--Pitch-Colour) }
+#alt-name-box{ Padding: .25EM 0; Height: 1EM; Contain: Paint; White-Space: NoWrap; Text-Align: Right }
+#alt-name-box span{ Display: Block; Margin: 0 0 -1EM; Width: 100%; Height: 1EM; Overflow: Hidden; Line-Height: 1; Text-Overflow: Ellipsis }
+#alt-name{ Display: Block; Overflow: Hidden }
+#alt-name span{ Position: Relative; Animation: 1.2S .4S Ease-In Both slidein }
+#alt-name span:Not(:Last-Child){ Animation: 1.2S .4S Ease-Out Both slideout }
+#alt-names{ Display: Block; Height: 0; Overflow: Hidden; Visibility: Hidden }
+*.SCROLL{ Position: Absolute; Box-Sizing: Border-Box; Left: 0; Right: 0; Border-Style: Solid None; Border-Color: Var(--Crayon-Colour); Border-Width: Thin; Height: 1.5REM; Overflow: Hidden; Color: Var(--Charcoal-Colour); Background: Var(--Parchment-Colour); Font: 500 1REM / 1 "M+ 2p", "Source Sans Pro", "Noto Sans", Sans-Serif; Contain: Strict }
+*.SCROLL:Empty{ Display: None }
 *.SCROLL>*{ Display: Block; Position: Absolute; Bottom: Calc(.25REM - 1PX); Max-Width: 100%; Overflow: Hidden; White-Space: NoWrap; Text-Transform: Uppercase; Text-Overflow: Ellipsis; Animation: 24S Linear Both scroll }
 *.SCROLL~*.SCROLL>*{ Animation-Name: revscroll }
 *.SCROLL>*+*::before,*.SCROLL~*.SCROLL>*::before{ Content: " / " }
@@ -116,13 +118,10 @@ fortuneëlt.hidden = false
 			<div style="Margin: -3REM 0">
 				<p id="gender-top" class="SCROLL" style="Margin-Top: -3REM"></p>
 				<h1>
-					<svg xmlns="http://www.w3.org/2000/svg" style="Height: 1EM" fill="currentColor" viewBox="0 0 84 32">
+					<svg xmlns="http://www.w3.org/2000/svg" style="Display: Block; Height: 1EM" fill="currentColor" viewBox="0 0 84 32" aria-label="KIBIGO">
 						<use href="Images/Logotype/image.svg#svg"/>
 					</svg>
 				</h1>
-				<p>KIBI Gô</p>
-				<p lang="en-Runr-x-kibben">ᛣᛟᛒᛟ ᚷᚪᛇ</p><!-- Kibben Runic spelling -->
-				<p>１０２４×Ｇｏ</p><!-- this was invented for Twitter and other places with extreme username scarcity -->
 				<p id="aka" hidden="">
 					<strong><abbr title="Also Known As">AKA:</abbr></strong>
 					<span id="alt-name-box">
@@ -136,6 +135,9 @@ but, if you want to call me by the name of my RuneScape account in 2006—be my 
 
 the ordering here is wholly insignificant.
 -->
+							<span>KIBI Gô</span><!-- boring ordinary spelling -->
+							<span lang="en-Runr-x-kibben">ᛣᛟᛒᛟ ᚷᚪᛇ</span><!-- Kibben Runic spelling -->
+							<span>１０２４×Ｇｏ</span><!-- this was invented for Twitter and other places with extreme username scarcity -->
 							<span>kibimon</span><!-- monster AU -->
 							<span>Ｇｏ！！！</span><!-- Chihayafuru -->
 							<span>gosh!</span><!-- this is a clipping of my name -->
