@@ -1,0 +1,15 @@
+<rdf:RDF
+	xml:base="../../"
+	xml:lang="en"
+	xmlns="http://xmlns.com/foaf/0.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
+>
+	<Image rdf:about="Images/Favicon/">
+		<rdfs:comment>A bold red heart.</rdfs:comment>
+		<xhv:alternate rdf:resource="Images/Favicon/image.png"/>
+	</Image>
+</rdf:RDF>

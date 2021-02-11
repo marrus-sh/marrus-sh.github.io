@@ -1,0 +1,445 @@
+<rdf:RDF
+	xml:base="../"
+	xml:lang="en"
+	xmlns="http://xmlns.com/foaf/0.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:schema.org="https://schema.org/"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
+>
+	<!-- § about this ‘about’ -->
+	<Document rdf:about="About/">
+		<name>†kibi gô†</name>
+		<xhv:icon rdfs:isDefinedBy="Images/Favicon/@.rdf"/>
+		<xhv:alternate>
+			<foaf:PersonalProfileDocument rdf:about="About/@.rdf">
+				<maker rdf:resource="About/#me"/>
+				<primaryTopic rdf:resource="About/#me"/>
+			</foaf:PersonalProfileDocument>
+		</xhv:alternate>
+	</Document>
+	<Person rdf:about="About/#me">
+		<rdfs:label>me</rdfs:label>
+		<title>mx</title>
+		<givenName>gô</givenName>
+		<surname>kibi</surname>
+		<!-- see below for a great deal more names -->
+		<nick>kibigo!</nick>
+		<img rdfs:isDefinedBy="Images/Portrait/@.rdf"/>
+		<logo rdfs:isDefinedBy="Images/Logotype/@.rdf"/>
+		<homepage rdf:resource="https://go.KIBI.family/"/>
+		<tipjar rdf:resource="https://patreon.com/kibigo"/>
+
+		<!-- § names
+
+		i have a lot of these.  this is approximately ⁜every⁜ name i’ve ever gone by—which is not to say that all of these names are “current” in any practical sense.  but, if you want to call me by the name of my ‘runescape’ account in 2006—be my guest, i guess. -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:surname>kibi</tei:surname>
+				<tei:forename>gô</tei:forename>
+			</tei:persName>
+		</name><!-- boring ordinary spelling -->
+		<name rdf:parseType="Literal">
+			<tei:persName xml:lang="en-Runr-x-kibben">
+				<tei:surname>ᛣᛟᛒᛟ</tei:surname>
+				<tei:forename>ᚷᚪᛇ</tei:forename>
+			</tei:persName>
+		</name><!-- kibben runic spelling -->
+		<name>kibigo!</name><!-- how i sign my code and such -->
+		<name>１０２４×Ｇｏ</name><!-- this was invented for places with extreme username scarcity -->
+		<name>kibimon</name><!-- monster AU -->
+		<name>Ｇｏ！！！</name><!-- ‘chihayafuru’ -->
+		<name>gosh!</name><!-- this is a clipping of my name -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>lady</tei:roleName>
+				<tei:forename full="init">m</tei:forename>
+			</tei:persName>
+		</name><!-- in memory of †shauna (see below) -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>lady</tei:roleName>
+				<tei:surname>kibi</tei:surname>
+			</tei:persName>
+		</name><!-- in memory of gentle.town -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>our lady</tei:roleName>
+				<tei:forename>margaret</tei:forename>
+			</tei:persName>
+		</name><!-- yea i’m m·l·m: my lady margaret -->
+		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">m</tei:forename>·<tei:forename full="init" type="middle">r</tei:forename>·<tei:surname full="init">s</tei:surname></tei:persName></name><!-- i never use this in plaintext, but it is my monogram -->
+		<name>em</name><!-- rare -->
+		<name>emmy</name><!-- but not †emma -->
+		<name>em⸺</name><!-- this is an omission dash (two‐em, per ‘chicago’) -->
+		<name>margo</name><!-- these days i prefer the version without the ‹ t › -->
+		<name>margot</name><!-- if you write this, i might pronounce it “mar GOT”; if i write this, you’re welcome to -->
+		<name>margaret</name><!-- my actual given name -->
+		<name>mags</name><!-- friendly -->
+		<name>mogs</name><!-- feline -->
+		<name>60W</name><!-- this is just ‹ MOG › upside‐down, for clarity -->
+		<name>moggy</name><!-- in memory of that one meowth -->
+		<name>emogee</name><!-- say it “EM oh gee” not “emoji” -->
+		<name>emoji girl</name><!-- i’m actually the ⁜†unicode⁜ girl but nobody cares about anything but emoji these days -->
+		<name>wend</name><!-- this is a pun on ‹ †go › -->
+		<name>wendy</name><!-- †wendy is a good name which doesn’t get enough recognition -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename type="first">margaret</tei:forename>
+				<tei:forename type="middle">russel</tei:forename>
+			</tei:persName>
+		</name><!-- these are both given names; ‹ †russel › is not a family name -->
+		<name>marrus</name><!-- clipping of the above -->
+		<name>marrus_sh</name><!-- as a username, a dash can replace the underscore, but this is considered a character set limitation -->
+		<name>marrus.sh</name><!-- variant of the underscore that i used initially -->
+		<name>jellyfish_link</name><!-- this is a pun on ‹ marrus › and also ‘zelda’ -->
+		<name>j’li</name><!-- this is a shortening of ‹ jellyfish_link › -->
+		<name>jelli</name><!-- this is a phonetic pronunciation of the above and also a game engine i wrote one time -->
+		<name>tracer mom</name><!-- this is a reference to †tracer from ‘overwatch’ and a fanfiction i once wrote -->
+		<name>leaf</name><!-- the default girl’s name in ‘pokémon firered and leafgreen versions’, which i have used for every pokémon trainer since -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename type="first">autumn</tei:forename>
+				<tei:forename type="middle">leaf</tei:forename>
+			</tei:persName>
+		</name><!-- ⁜technically⁜ ‹ †leaf › is a middle name but I never go by just ‹ †autumn › -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>lady</tei:roleName>
+				<tei:forename full="init">l</tei:forename>
+			</tei:persName>
+		</name><!-- my nickname in ‘pokémon y’; after †shauna calls you ‹ †lady l† › once you never go back -->
+		<name>[leaf]</name><!-- this is how i signed some of my early playlists -->
+		<name>leaf_adventure</name><!-- this was the name of my website and †github user for a while -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>ms</tei:roleName>
+				<tei:forename>leaf</tei:forename>
+				<tei:surname>adventure</tei:surname>
+			</tei:persName>
+		</name><!-- this looks like “microsoft leaf adventure” but i promise it’s the title ‹ †ms › instead -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>ms</tei:roleName>
+				<tei:forename>raven</tei:forename>
+				<tei:surname>blackheart</tei:surname>
+			</tei:persName>
+		</name><!-- this was an ironic joke signature i used when i posted angsty things to the pseudonymous forum at my college -->
+		<name>ｒａｖｅｎ</name><!-- i got tired of writing the whole thing though -->
+		<name>\u2764</name><!-- the †unicode name for this character is ‹ HEAVY BLACK HEART › and it’s a reference to ‹ †raven blackheart† › above -->
+		<name>ｕ２７６４</name><!-- somehow it became my brand after this -->
+		<name>❤</name><!-- this is a secret but it’s not even my favourite unicode character -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename>allie</tei:forename>
+				<tei:surname>hart</tei:surname>
+			</tei:persName>
+		</name><!-- this is the less-ironic version of ‹ †raven blackheart† › that became my alias for doing journalism, also associated with U+2764; ‹ †allie › is officially short for ‹ †adeline › although i may have ironically referred to myself as ‹ †alice › once or twice -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename type="first">allie</tei:forename>
+				<tei:forename type="middle">fcking</tei:forename>
+				<tei:surname>hart</tei:surname>
+			</tei:persName>
+		</name><!-- officially, this is a joke -->
+		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">a</tei:forename>·<tei:forename full="init" type="middle">f</tei:forename>·<tei:surname full="init">h</tei:surname></tei:persName></name><!-- officially, the ‹ f › doesn’t stand for anything -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>mx</tei:roleName>
+				<tei:surname>hart</tei:surname>
+			</tei:persName>
+		</name><!-- †allie HART† is the most femme of my personæ but i still use ‹ †mx › with it -->
+		<name>adeline</name><!-- this is shortened to ‹ †allie › (see above); i will not respond to ‹ †aline › even though i love that name -->
+		<name>r*v⸺</name><!-- this stands in for any number of fictitious names with ‹ r › as the first letter and ‹ v › as the third and these are all plays on ‹ †raven › -->
+		<name>kirby</name><!-- i was literally †kirby to some of my friends for a time, zero joke -->
+		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init">t</tei:forename><tei:surname full="init">f</tei:surname></tei:persName></name><!-- all of the art i made in high school was signed with this -->
+		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">t</tei:forename>·<tei:forename full="init" type="middle">m</tei:forename>·<tei:surname full="init">f</tei:surname></tei:persName></name><!-- variant of ‹ †t·f › -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename>tyler</tei:forename>
+				<tei:surname>fengat</tei:surname>
+			</tei:persName>
+		</name><!-- i wrote stories under this alias in middle school -->
+		<name>trevor</name><!-- i’m not explaining this one but it’s †top tier† -->
+		<name>minieli</name><!-- very highschool -->
+		<name>be’jamin</name><!-- also very highschool -->
+		<name>benjam!</name><!-- this is what my thesis advisors in college knew me as -->
+		<name>bjmns</name><!-- this has a pronunciation and it is “⁜bih⁜ djih muh nus”—not of my making -->
+		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">b</tei:forename><tei:forename full="init" type="middle">r</tei:forename><tei:surname full="init">s</tei:surname></tei:persName></name><!-- burrs -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename full="init">w</tei:forename><tei:surname full="init">t</tei:surname>
+				<tei:genName>II</tei:genName>
+			</tei:persName>
+		</name><!-- the aforementioned ‘runescape’ username -->
+		<name>bunny</name><!-- i was called this in like sixth grade -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>young</tei:roleName>
+				<tei:forename>samus</tei:forename>
+			</tei:persName>
+		</name><!-- i have never actually been ⁜called⁜ “†samus” but the young †samus from ‘metroid: other m’ is frequently used as a visual alias -->
+		<name>lady</name><!-- ‹ lady › is Samus’s nickname but it’s also a †pokémon trainer class -->
+		<name>shizuku</name><!-- this is actually a reference to ‘whisper of the heart’ but the protagonist of ‘my little monster’ is also named †shizuku -->
+		<name>雫</name><!-- see above -->
+		<name>🙇🏻‍♀️</name><!-- i use this emoji a lot -->
+		<name>alien_dude</name><!-- this is what people called me in ‘minecraft’ and also was a †mii that i used for a time -->
+		<name>alien</name><!-- shortform of the above -->
+		<name>meowth</name><!-- this is a reference to the †pokémon fanfiction ‘the long walk’ by way of ‹ †moggy › -->
+		<name>kitty</name><!-- this is ⁜not⁜ a furry name -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename>kitty</tei:forename>
+				<tei:surname>mogs</tei:surname>
+			</tei:persName>
+		</name><!-- this is also not a furry name but it was chosen by my followers, many of whom are furries -->
+		<name>daisy</name><!-- would you believe that this is ⁜also⁜ a variant form of ‹ †maragaret › -->
+		<name>linden</name><!-- if i had a tree name this would be my tree name -->
+		<name>tilia</name><!-- †tilia is the genus of lindens -->
+		<name>hedge</name><!-- hog -->
+
+		<!-- § plan
+
+		i use these for short “fortunes”, many of which are just random mojibake or strings that I have collected from various places. -->
+		<plan xml:lang="zxx">⬲䑺昸⼴偉䄳奐丸䤭</plan>
+		<plan xml:lang="zxx">蠲淢ẩꟹ뚬괗</plan>
+		<plan xml:lang="zxx">潇匠潨浥歡</plan>
+		<plan>01. GIRLS BE CRUEL ☠️💖</plan>
+		<plan xml:lang="zxx">瀼䰍㻣羊薭賯ꝩ訡뽷</plan>
+		<plan>How Many Meme Do Teen ?</plan>
+		<plan xml:lang="zxx">((ò_óˇ) => {})</plan>
+		<plan>with no time to waste</plan>
+		<plan>void function</plan>
+		<plan>sup toops. im a Bad Girl now.</plan>
+		<plan>beep boop</plan>
+		<plan>tabular defenestration</plan>
+		<plan>everybody is sad as shit</plan>
+		<plan>i will never take a break,</plan>
+		<plan>@.rdf</plan>
+
+		<!-- § genders
+
+		i have a lot of these also.  †f·o·a·f defines gender as functional, which is not really suitable for my purposes.  my gender is very nonfunctional.
+
+		so instead i use †schema.org’s definition of gender, even though i generally dislike †schema.org and would much rather not. -->
+		<schema.org:gender foaf:name="the trust of her ancient anatomy"/>
+		<schema.org:gender foaf:name="korrastyle airbending"/>
+		<schema.org:gender foaf:name="dæmon"/>
+		<schema.org:gender foaf:name="vampires"/>
+		<schema.org:gender foaf:name="sleepy + snuggly + a little revolutionary"/>
+		<schema.org:gender foaf:name="girl"/>
+		<schema.org:gender foaf:name="lady"/>
+		<schema.org:gender foaf:name="nonbinary"/>
+		<schema.org:gender foaf:name="woman"/>
+		<schema.org:gender foaf:name="bite"/>
+		<schema.org:gender foaf:name="unknown"/>
+		<schema.org:gender foaf:name="copycat"/>
+		<schema.org:gender foaf:name="fantasy"/>
+		<schema.org:gender foaf:name="magical realism"/>
+		<schema.org:gender foaf:name="ash"/>
+		<schema.org:gender foaf:name="stone"/>
+		<schema.org:gender foaf:name="sagebrush"/>
+		<schema.org:gender foaf:name="fluid"/>
+		<schema.org:gender foaf:name="geologists now believe that there were 40 or more separate floods . . .  the peak flow of the floods is estimated to be 40–60km³/hr . . .  up to 1.9×10¹⁹ joules of potential energy were released by each . . .  the equivalent of 4,500 megatons of t·n·t"/>
+		<schema.org:gender foaf:name="wolfgirl"/>
+		<schema.org:gender foaf:name="😘"/>
+		<schema.org:gender foaf:name="🌊"/>
+		<schema.org:gender foaf:name="🎐"/>
+		<schema.org:gender foaf:name="[clean]"/>
+		<schema.org:gender foaf:name="vanilla"/>
+		<schema.org:gender foaf:name="any objections, †adam?"/>
+		<schema.org:gender foaf:name="there isn’t one"/>
+		<schema.org:gender foaf:name="no·one"/>
+		<schema.org:gender foaf:name="queer"/>
+		<schema.org:gender foaf:name="writer"/>
+		<schema.org:gender foaf:name="†zelda fangirl"/>
+		<schema.org:gender foaf:name="‘my love is cool’"/>
+		<schema.org:gender foaf:name="trauma‐informed pop"/>
+		<schema.org:gender foaf:name="pop punk"/>
+		<schema.org:gender foaf:name="punk"/>
+		<schema.org:gender foaf:name="mojibake"/>
+		<schema.org:gender foaf:name="trans girl dæmon code"/>
+		<schema.org:gender foaf:name="hedgehog"/>
+		<schema.org:gender foaf:name="dyke"/>
+		<schema.org:gender foaf:name="lesbian"/>
+		<schema.org:gender foaf:name="grrrl"/>
+		<schema.org:gender foaf:name="zine"/>
+		<schema.org:gender foaf:name="varia"/>
+		<schema.org:gender foaf:name="tired"/>
+		<schema.org:gender foaf:name="chimecho"/>
+		<schema.org:gender foaf:name="leafeon"/>
+		<schema.org:gender foaf:name="normal"/>
+		<schema.org:gender foaf:name="dark"/>
+		<schema.org:gender foaf:name="ghost"/>
+		<schema.org:gender foaf:name="fire"/>
+		<schema.org:gender foaf:name="grass"/>
+		<schema.org:gender foaf:name="🍂"/>
+		<schema.org:gender foaf:name="ice princess"/>
+		<schema.org:gender foaf:name="☠️💖"/>
+
+		<!-- § accounts -->
+		<account>
+			<OnlineAccount rdf:about="https://donphan.social/@Leaf">
+				<name>@Leaf@donphan.social</name>
+				<accountName>@Leaf@donphan.social</accountName>
+				<accountServiceHomepage>
+					<Document rdf:about="https://donphan.social">
+						<name>donphan.social</name>
+					</Document>
+				</accountServiceHomepage>
+			</OnlineAccount>
+		</account>
+		<account>
+			<OnlineAccount rdf:about="https://github.com/marrus-sh">
+				<name>github:marrus-sh</name>
+				<accountName>marrus-sh</accountName>
+				<accountServiceHomepage>
+					<Document rdf:about="https://github.com">
+						<name>GitHub</name>
+					</Document>
+				</accountServiceHomepage>
+			</OnlineAccount>
+		</account>
+		<account>
+			<OnlineAccount rdf:about="https://8tracks.com/kibigo">
+				<name>8tracks.com/kibigo</name>
+				<accountName>kibigo</accountName>
+				<accountServiceHomepage>
+					<Document rdf:about="https://8tracks.com">
+						<name>8tracks</name>
+					</Document>
+				</accountServiceHomepage>
+			</OnlineAccount>
+		</account>
+
+		<!-- § interests -->
+		<topic_interest foaf:name="cute things"/>
+		<topic_interest foaf:name="you"/>
+		<topic_interest foaf:name="refreshing this page"/>
+		<topic_interest foaf:name="†nintendo dsi†"/>
+		<topic_interest foaf:name="languages"/>
+		<topic_interest foaf:name="text"/>
+		<topic_interest foaf:name="orthography"/>
+		<topic_interest foaf:name="the english language"/>
+		<topic_interest foaf:name="ice creams"/>
+		<topic_interest foaf:name="mangas"/>
+		<topic_interest foaf:name="fanfiction"/>
+		<topic_interest foaf:name="playlists"/>
+		<topic_interest foaf:name="mixtapes"/>
+		<topic_interest foaf:name="this website"/>
+		<topic_interest foaf:name="x·m·l"/>
+		<topic_interest foaf:name="grid‐based layouts"/>
+		<topic_interest foaf:name="change"/>
+		<topic_interest foaf:name="growth"/>
+		<topic_interest foaf:name="growlithe"/>
+		<topic_interest foaf:name="the †world wide web†"/>
+		<topic_interest foaf:name="🎶"/>
+		<topic_interest foaf:name="unicode"/>
+		<topic_interest foaf:name="resource‐based design"/>
+		<topic_interest foaf:name="r·d·f"/>
+		<topic_interest foaf:name="codices"/>
+		<topic_interest foaf:name="worldbuilding"/>
+		<topic_interest foaf:name="†putting things on the internet†"/>
+		<topic_interest foaf:name="†building"/>
+		<topic_interest foaf:name="colours"/>
+		<topic_interest foaf:name="deer bois"/>
+		<topic_interest foaf:name="goat gals"/>
+		<topic_interest foaf:name="zines"/>
+		<topic_interest foaf:name="music"/>
+		<topic_interest foaf:name="†alternative"/>
+		<topic_interest foaf:name="t·e·i"/>
+		<topic_interest foaf:name="x·s·l·t"/>
+		<topic_interest foaf:name="†hil·zel"/>
+
+		<!-- § projects -->
+		<currentProject>
+			<Document>
+				<name>giving people the means to express themselves</name>
+				<rdf:value rdf:parseType="Literal">
+					<p xmlns="http://www.w3.org/1999/xhtml">i am a writer at heart, and i got into web design because <strong>i wanted to publish the stories i wrote as webpages.</strong>  but it turns out that knowing †<abbr>h·t·m·l</abbr> is just the tip of the iceberg when it comes to creating and distributing resources online.  i am interested in building tools for <strong>helping people to (re)present themselves</strong> over the internet, in ways that <strong>stay true to who they are, rather than what some platform thinks they should be.</strong></p>
+				</rdf:value>
+				<topic>
+					<Project>
+						<name>market commons</name>
+						<homepage rdf:resource="https://github.com/marrus-sh/MarketCommons-Racket"/>
+						<rdfs:comment rdf:parseType="Literal">
+							<p xmlns="http://www.w3.org/1999/xhtml">†markdown is a good and easy‐to‐use markup language, but if you’re writing documents with complex internal structure, or which have particular accessibility requirements, its limitations can overcome its strengths.  <a href="https://github.com/marrus-sh/MarketCommons-Racket">†market commons†</a> is a quick‐and‐dirty markup language for writing †<abbr>h·t·m·l</abbr> documents in fewer characters than †<abbr>h·t·m·l</abbr> documents typically take.  it’s implemented in, and requires, †racket, and may still have a few bugs here or there.</p>
+						</rdfs:comment>
+					</Project>
+				</topic>
+			</Document>
+		</currentProject>
+		<currentProject>
+			<Document>
+				<name>advancing the artform of literature</name>
+				<rdf:value rdf:parseType="Literal">
+					<p xmlns="http://www.w3.org/1999/xhtml">i’m a longstanding critic of the state of english literature, by which i mean <strong>i find it boring.</strong>  yet, i don’t believe in criticizing an artform if you aren’t about to participate in it as well.  so i write <strong>weird stories with weird little poems and narrative structures</strong> to help explore what i think english lit should <em>look</em> like, after all.</p>
+				</rdf:value>
+				<topic>
+					<Project>
+						<name>fanfiction by j’li</name>
+						<homepage rdf:resource="https://archiveofourown.org/users/kibigo/pseuds/J%CA%BCLi"/>
+						<rdfs:comment rdf:parseType="Literal">
+							<p xmlns="http://www.w3.org/1999/xhtml">i keep a number of fanfiction projects going, primarily for †nintendo properties, which I <a href="https://archiveofourown.org/users/kibigo/pseuds/J%CA%BCLi/works">publish to †archive of our own†</a>.  they tend to be highly experimental, esoteric, and unpopular.  <b><strong>note:</strong></b>  these stories are not intended for children.</p>
+						</rdfs:comment>
+					</Project>
+				</topic>
+			</Document>
+		</currentProject>
+		<currentProject>
+			<Document>
+				<name>making internet zines</name>
+				<rdf:value rdf:parseType="Literal">
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>i have a strong interest in creating internet resources which are:</p>
+						<ul>
+							<li>
+								<p><b><strong>handcrafted.</strong></b>  i don’t believe form and content are properly separable, and it frustrates me to see potentially revolutionary content presented in a lackluster, cookiecutter form which only upholds the normative expectations of the day.  <strong>all templates are normativizing.</strong>  the only way to break free is to <strong>put your heart and soul into every piece.</strong></p>
+							</li>
+							<li>
+								<p><b><strong>remixable.</strong></b>  when i open up the page source of a document, <strong>i should get something which i can read.</strong>  ideally, i should get something which i can learn from, edit, and make my own.  i figured out how to make webpages by studying the †<abbr>h·t·m·l</abbr> code of websites i saw and liked in the †00s.  <strong>kids in the †20s should be able to do the same.</strong></p>
+							</li>
+							<li>
+								<p><b><strong>selfcontained.</strong></b>  it <strong>should be easy for someone to save your webpage.</strong>  it should be a single file that someone can download and stick in an email to their friends, or reference 10 years later after you stopped paying for that domain name.  all important content should still render when opened from the desktop on a computer without an internet connection.</p>
+							</li>
+						</ul>
+						<p>the three principles above are things which are <strong>completely untenable for corporations</strong> to manage under capitalism.  but <strong>you can †do it yourself†</strong> with just a little effort and time.  let’s respect and uplift the independent internet, and the efforts of everyone who contributes to keeping it rad.</p>
+					</div>
+				</rdf:value>
+				<topic>
+					<Project>
+						<name>the †ezine💀💖egirl† webring</name>
+						<homepage rdf:resource="https://go.KIBI.family/WebRings/💀💖/"/>
+						<rdfs:comment rdf:parseType="Literal">
+							<p xmlns="http://www.w3.org/1999/xhtml">a webring for websites which follow the principles above, by/for girls.  <strong>Contact me to join!</strong></p>
+						</rdfs:comment>
+					</Project>
+				</topic>
+				<topic>
+					<Project>
+						<name>journal: \u2764</name>
+						<homepage rdf:resource="https://www.u2764.com/"/>
+						<rdfs:comment rdf:parseType="Literal">
+							<p xmlns="http://www.w3.org/1999/xhtml">the goal of this journal is to reimagine internet publishing as <strong>a union of style and content</strong>, with each page standing on its own with a unique design and character.  it’s also something of a storage space for my thoughts that is <strong>a little more permanent that what one might find on social media</strong>.  many of the articles on here are a few years old, so the usual caveats apply.</p>
+						</rdfs:comment>
+					</Project>
+				</topic>
+			</Document>
+		</currentProject>
+
+		<!-- § additional documents -->
+		<made>
+			<Document rdf:about="Documents/palettes.xhtml">
+				<name>Palettes</name>
+			</Document>
+		</made>
+		<made>
+			<Document rdf:about="Documents/softrecs.xhtml">
+				<name>Software Recommendations</name>
+			</Document>
+		</made>
+	</Person>
+</rdf:RDF>
