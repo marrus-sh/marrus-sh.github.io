@@ -12,7 +12,7 @@
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
 	<!-- @ about me -->
-	<Person rdf:ID="#me">
+	<Person rdf:ID="me">
 		<rdfs:label>me</rdfs:label>
 		<title>mx</title>
 		<givenName>gô</givenName>
