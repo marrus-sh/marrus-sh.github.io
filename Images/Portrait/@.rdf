@@ -1,5 +1,4 @@
 <rdf:RDF
-	xml:base="../../"
 	xml:lang="en"
 	xmlns="http://xmlns.com/foaf/0.1/"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -8,8 +7,8 @@
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
-	<Image rdf:about="Images/Portrait/">
+	<Image rdf:about="">
 		<rdfs:comment>A doodle of a cute girl, standing.  She is wearing a black shirt with a triforce on it, and a jean jacket.  She has glasses.</rdfs:comment>
-		<xhv:alternate rdf:resource="Images/Portrait/image.png"/>
+		<xhv:alternate rdf:resource="image.png"/>
 	</Image>
 </rdf:RDF>

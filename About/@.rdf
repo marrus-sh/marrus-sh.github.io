@@ -1,5 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="#transform"?>
+<!DOCTYPE rdf:RDF [ <!ATTLIST stylesheet id ID #REQUIRED> ]>
 <rdf:RDF
-	xml:base="../"
 	xml:lang="en"
 	xmlns="http://xmlns.com/foaf/0.1/"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -10,26 +11,16 @@
 	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
-	<!-- § about this ‘about’ -->
-	<Document rdf:about="About/">
-		<name>†kibi gô†</name>
-		<xhv:icon rdfs:isDefinedBy="Images/Favicon/@.rdf"/>
-		<xhv:alternate>
-			<foaf:PersonalProfileDocument rdf:about="About/@.rdf">
-				<maker rdf:resource="About/#me"/>
-				<primaryTopic rdf:resource="About/#me"/>
-			</foaf:PersonalProfileDocument>
-		</xhv:alternate>
-	</Document>
-	<Person rdf:about="About/#me">
+	<!-- @ about me -->
+	<Person rdf:ID="#me">
 		<rdfs:label>me</rdfs:label>
 		<title>mx</title>
 		<givenName>gô</givenName>
 		<surname>kibi</surname>
 		<!-- see below for a great deal more names -->
 		<nick>kibigo!</nick>
-		<img rdfs:isDefinedBy="Images/Portrait/@.rdf"/>
-		<logo rdfs:isDefinedBy="Images/Logotype/@.rdf"/>
+		<img rdfs:isDefinedBy="https://go.KIBI.family/Images/Portrait/@.rdf"/>
+		<logo rdfs:isDefinedBy="https://go.KIBI.family/Images/Logotype/@.rdf"/>
 		<homepage rdf:resource="https://go.KIBI.family/"/>
 		<tipjar rdf:resource="https://patreon.com/kibigo"/>
 
@@ -286,9 +277,7 @@
 				<name>@Leaf@donphan.social</name>
 				<accountName>@Leaf@donphan.social</accountName>
 				<accountServiceHomepage>
-					<Document rdf:about="https://donphan.social">
-						<name>donphan.social</name>
-					</Document>
+					<Document rdf:about="https://donphan.social" foaf:name="donphan.social"/>
 				</accountServiceHomepage>
 			</OnlineAccount>
 		</account>
@@ -297,9 +286,7 @@
 				<name>github:marrus-sh</name>
 				<accountName>marrus-sh</accountName>
 				<accountServiceHomepage>
-					<Document rdf:about="https://github.com">
-						<name>GitHub</name>
-					</Document>
+					<Document rdf:about="https://github.com" foaf:name="GitHub"/>
 				</accountServiceHomepage>
 			</OnlineAccount>
 		</account>
@@ -308,9 +295,7 @@
 				<name>8tracks.com/kibigo</name>
 				<accountName>kibigo</accountName>
 				<accountServiceHomepage>
-					<Document rdf:about="https://8tracks.com">
-						<name>8tracks</name>
-					</Document>
+					<Document rdf:about="https://8tracks.com" foaf:name="8tracks"/>
 				</accountServiceHomepage>
 			</OnlineAccount>
 		</account>
@@ -432,14 +417,311 @@
 
 		<!-- § additional documents -->
 		<made>
-			<Document rdf:about="Documents/palettes.xhtml">
-				<name>Palettes</name>
-			</Document>
+			<Document rdf:about="https://go.KIBI.family/Documents/palettes.xhtml" foaf:name="palettes"/>
 		</made>
 		<made>
-			<Document rdf:about="Documents/softrecs.xhtml">
-				<name>Software Recommendations</name>
-			</Document>
+			<Document rdf:about="https://go.KIBI.family/Documents/softrecs.xhtml" foaf:name="software recommendations"/>
 		</made>
 	</Person>
+
+	<!-- @ about this ‘about’ -->
+	<PersonalProfileDocument rdf:about="">
+		<name>†kibi gô†</name>
+		<maker rdf:resource="#me"/>
+		<primaryTopic rdf:resource="#me"/>
+		<xhv:icon rdfs:isDefinedBy="https://go.KIBI.family/Images/Favicon/@.rdf"/>
+		<xhv:stylesheet>
+			<Document>
+				<rdf:value rdf:parseType="Literal">
+<stylesheet id="transform" version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
+	<template match="@*|node()" mode="clone">
+		<copy>
+			<apply-templates select="@*|node()" mode="clone"/>
+		</copy>
+	</template>
+	<template match="*" mode="lang">
+		<attribute name="lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+		<attribute name="xml:lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+	</template>
+	<template match="*">
+		<copy>
+			<apply-templates select="@*" mode="clone"/>
+			<apply-templates/>
+		</copy>
+	</template>
+	<template match="rdf:RDF">
+<html:html>
+		<apply-templates select="." mode="lang"/>
+	<html:head>
+		<for-each select="foaf:PersonalProfileDocument[@rdf:about = '']">
+			<if test="foaf:name">
+		<html:title>
+				<value-of select="foaf:name"/>
+		</html:title>
+			</if>
+			<if test="xhv:icon">
+		<html:link rel="icon" href="{concat(xhv:icon/@rdfs:isDefinedBy, '/../', document(xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)}"/>
+			</if>
+		</for-each>
+		<html:style>
+@namespace "http://www.w3.org/1999/xhtml";
+
+@font-face { Font-Family: Elstob; Src: Local(Elstob), Url("../Fonts/Elstob/webfiles/Elstob[GRAD,opsz,wght].woff2"); Font-Style: Normal; Font-Weight: 200 800 }
+@font-face { Font-Family: Elstob; Src: Local(Elstob-Italic), Url("../Fonts/Elstob/webfiles/Elstob-Italic[GRAD,opsz,wght].woff2"); Font-Style: Italic; Font-Weight: 200 800 }
+
+@keyframes SlideIn{
+	from{ Top: 1.5EM }
+	to{ Top: 0 } }
+@keyframes SlideOut{
+	from{ Top: 0 }
+	to{ Top: -1.5EM } }
+
+html{ Color: #000000; Background: #F0F0F0; Font: Small-Caps Medium / 1.5 Elstob, "Gentium Plus", JuniusX, Junicode, Serif; Font-Variant-Numeric: Proportional-Nums Oldstyle-Nums }
+
+#content>header{ Display: Grid; Box-Sizing: Border-Box; Margin: Auto; Border-Style: Solid Double Double Solid; Border-Width: Thin Medium Medium Thin; Border-Radius: 1REM; Padding: 1REM 1.5REM .5REM; Width: 31REM; Max-Width: 100%; Grid: Auto 1FR Max-Content / MinMax(3REM, 1FR) 4FR; Gap: 1.5EM; Color: #000000; Background: #FFFFFF; Box-Shadow: 3PX 3PX 0 2PX CurrentColor; Counter-Reset: Project }
+#content>header h1{ Grid-Area: 1 / 2; Margin: 0; Border-Bottom: Thin Solid; Font-Size: 3REM; Font-Style: Italic; Font-Weight: 500; Font-Variant-Caps: Titling-Caps; Letter-Spacing: Calc(1EM / 24); Text-Align: Right; Text-Transform: Uppercase }
+#content>header img{ Grid-Area: 1 / 1 / Span 2; Align-Self: Center; Justify-Self: Center; Width: 100%; Height: Auto }
+#content>header dl{ Display: Grid; Margin: 0 0 Auto; Max-Width: 100%; Grid: Auto-Flow / Max-Content 1FR; Gap: 0 1.5REM; Overflow: Auto }
+#content>header dl>div:Not([hidden]){ Display: Contents }
+#content>header dt{ All: Unset; Display: Block; Grid-Column: 1; Font-Weight: 700; Text-Align: Right; }
+#content>header dd{ All: Unset; Display: Block; Grid-Column: 2; Font-Weight: 300 }
+#content>header dd ul{ Margin: 0; Padding: 0; List-Style-Type: None }
+#content>header dl>div.CYCLE>dd{ Position: Relative; Height: 1.5EM; Overflow: Hidden; Contain: Paint }
+#content>header dl>div.CYCLE>dd>span{ Display: Block; Position: Absolute; Left: 0; Right: 0; Overflow: Hidden; White-Space: NoWrap; Text-Overflow: Ellipsis; Animation: 1.2S .8S Ease-In Both SlideIn }
+#content>header dl>div.CYCLE>dd>span:Only-Of-Type{ Animation: None }
+#content>header dl>div.CYCLE>dd>span:Not(:Last-Child){ Animation: 1.2S .8S Ease-Out Both SlideOut }
+#content>header footer{ Grid-Area: 3 / 1 / Span 1 / Span 2; Border-Top: Thin Solid; Padding-Top: .5EM; Font-Size: .75EM; Font-Weight: 300; Font-Variant-Caps: Normal }
+#content>header footer p{ Margin: 0; Text-Indent: 0 }
+#content>header *:Any-Link{ Color: Inherit }
+
+#content>section{ Box-Sizing: Border-Box; Position: Relative; Margin: 3REM Auto; Border: Thin Solid; Padding: 1REM 1.5REM 1.5REM; Width: 31REM; Max-Width: 100%; Box-Shadow: 3PX 3PX 0 1PX CurrentColor; Font-Style: Italic; Font-Weight: 300; Text-Align: Justify; Counter-Increment: Project }
+#content>section::before{ Display: Block; Position: Absolute; Top: -.75EM; Left: -.5EM; Border-Style: Solid None; Border-Color: #000000; Padding: 0 .5REM; Color: #CD2C00; Background: #FFFFFF; Text-Transform: Lowercase; Rotate: -15DEG; Content: "Project " Counter(Project, Decimal-Leading-Zero) }
+#content>section>h2{ Margin: 0 0 1.5REM; Border-Bottom: Thin Solid; Padding-Bottom: .75REM; Font-Size: 2.25REM; Font-Style: Normal; Font-Weight: 400; Text-Align: Center; Line-Height: 1; Letter-Spacing: Calc(1EM / 36) }
+#content>section>section{ Margin: 1.5REM 0 0; Border-Style: Dashed Solid Solid Dotted; Border-Width: Thin; Padding: 1.5REM 2.25REM; Color: #000000; Background: #F0F0F0; Hyphens: Auto }
+#content>section>section>h3{ Margin: 0 0 .75REM -.75REM; Font-Style: Normal; Font-Variant-Caps: Titling-Caps; Letter-Spacing: Calc(1EM / 24); Text-Align: Left; Text-Transform: Uppercase; Hyphens: None }
+#content>section>section>h3 *:Any-Link{ Color: Inherit }
+#content>section em{ Font-Style: Normal; Font-Weight: 400 }
+
+#content>footer{ Box-Sizing: Border-Box; Margin: -1.5REM Auto 1.5REM; Border-Style: Solid None; Padding: 0 1REM; Width: 31REM; Max-Width: 100%; Text-Align: Center }
+#content>footer>h2{ Margin: .75EM 0 0; Font-Size: Inherit; Font-Weight: 700; Text-Decoration: Wavy Underline }
+#content>footer>ul{ Margin: 0 0 .75EM; Padding: 0; Font-Weight: 300 }
+#content>footer>ul>li{ Display: Inline List-Item; List-Style-Position: Inside }
+#content>footer>ul>li:Not(:Last-Child)::after{ Content: "    "  }
+
+footer{ Text-Align: Right }
+
+p{ Margin: 0 }
+p+p{ Text-Indent: 1.5EM }
+ol,
+ul{ Margin: .75EM 0 }
+
+*:Any-Link{ Color: #004599; Text-Decoration: Dashed Underline }
+*:Any-Link:Hover{ Text-Decoration: Underline }
+*:Any-Link:Active{ Color: #CD2C00 }
+b{ Box-Decoration-Break: Clone; Border: Thin Solid; Box-Shadow: 1PX 1PX CurrentColor; Font: Inherit }
+em{ Font-Style: Inherit; Font-Weight: 400 }
+em::before,
+em::after{ Content: "#" }
+strong{ Background: #EEAE007F; Font-Weight: 500 }
+		</html:style>
+	</html:head>
+	<html:body>
+		<html:article id="content">
+		<for-each select="foaf:Person">
+			<html:header id="{@rdf:ID}">
+				<html:h1>
+			<apply-templates select="foaf:nick[1]" mode="lang"/>
+			<value-of select="foaf:nick[1]"/>
+				</html:h1>
+				<html:img src="{concat(foaf:img/@rdfs:isDefinedBy, '/../', document(foaf:img/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)}"/>
+				<html:dl>
+					<html:div class="CYCLE">
+						<html:dt lang="en">name</html:dt>
+						<html:dd>
+							<html:div hidden="">
+			<for-each select="foaf:name">
+								<html:span>
+				<apply-templates select="." mode="lang"/>
+				<apply-templates/>
+								</html:span>
+			</for-each>
+							</html:div>
+						</html:dd>
+					</html:div>
+					<html:div class="CYCLE">
+						<html:dt lang="en">gender</html:dt>
+						<html:dd>
+							<html:div hidden="">
+			<for-each select="schema.org:gender">
+				<choose>
+					<when test="foaf:name">
+								<html:span>
+						<apply-templates select="foaf:name[1]" mode="lang"/>
+						<apply-templates select="foaf:name[1]/node()"/>
+								</html:span>
+					</when>
+					<when test="@foaf:name">
+								<html:span>
+						<apply-templates select="." mode="lang"/>
+						<value-of select="@foaf:name"/>
+								</html:span>
+					</when>
+				</choose>
+			</for-each>
+							</html:div>
+						</html:dd>
+					</html:div>
+					<html:div class="CYCLE">
+						<html:dt lang="en">interests</html:dt>
+						<html:dd>
+							<html:div hidden="">
+			<for-each select="foaf:topic_interest">
+				<choose>
+					<when test="foaf:name">
+								<html:span>
+						<apply-templates select="foaf:name[1]" mode="lang"/>
+						<apply-templates select="foaf:name[1]/node()"/>
+								</html:span>
+					</when>
+					<when test="@foaf:name">
+								<html:span>
+						<apply-templates select="." mode="lang"/>
+						<value-of select="@foaf:name"/>
+								</html:span>
+					</when>
+				</choose>
+			</for-each>
+							</html:div>
+						</html:dd>
+					</html:div>
+					<html:div>
+						<html:dt lang="en">online</html:dt>
+						<html:dd>
+							<html:ul>
+			<for-each select="foaf:account/foaf:OnlineAccount">
+								<html:li>
+									<html:a href="{@rdf:about}">
+				<apply-templates select="foaf:name[1]" mode="lang"/>
+				<apply-templates select="foaf:name[1]/node()"/>
+									</html:a>
+								</html:li>
+			</for-each>
+							</html:ul>
+						</html:dd>
+					</html:div>
+				</html:dl>
+				<html:script>
+Array.prototype.forEach.call(document.body.querySelectorAll("#content>header dl>div.CYCLE"), cycle => {
+	const dd = cycle.children[1]
+	const hid = dd.querySelector("div[hidden]")
+	Array.prototype.forEach.call(hid.children, span =>
+		span.addEventListener("animationend", evt => {
+			if ( evt.animationName == "SlideOut" )
+				hid.appendChild(span)
+			else if ( evt.animationName == "SlideIn" )
+				dd.appendChild(
+					hid.children[Math.floor(Math.random() * hid.children.length)]) }))
+	dd.appendChild(
+		hid.children[Math.floor(Math.random() * hid.children.length)])
+	dd.appendChild(
+		hid.children[Math.floor(Math.random() * hid.children.length)]) })
+				</html:script>
+				<html:footer id="plan">
+			<for-each select="foaf:plan">
+					<html:p hidden="">
+				<apply-templates select="." mode="lang"/>
+				<apply-templates/>
+					</html:p>
+			</for-each>
+					<html:script>
+const fortuneëlt = document.getElementById("plan")
+const selectFortune = ( ) => {
+	const
+		$fortunes = fortuneëlt.querySelectorAll("p")
+		, fortune = $fortunes[Math.floor(Math.random() * $fortunes.length)]
+	Array.prototype.forEach.call(fortuneëlt.children, elt =>
+		elt.hidden = !(elt.localName != "p" || elt == fortune)) }
+document.addEventListener("visibilitychange", selectFortune)
+selectFortune()
+fortuneëlt.hidden = false
+					</html:script>
+				</html:footer>
+			</html:header>
+			<for-each select="foaf:currentProject/foaf:Document">
+			<html:section>
+				<html:h2>
+				<apply-templates select="foaf:name[1]" mode="lang"/>
+				<apply-templates select="foaf:name[1]/node()"/>
+				</html:h2>
+				<apply-templates select="rdf:value/node()"/>
+				<for-each select="foaf:topic/foaf:Project">
+				<html:section>
+					<html:h3>
+					<apply-templates select="foaf:name[1]" mode="lang"/>
+					<choose>
+						<when test="foaf:homepage">
+						<html:a href="{foaf:homepage[1]/@rdf:resource}">
+							<apply-templates select="foaf:name[1]/node()"/>
+						</html:a>
+						</when>
+						<otherwise>
+							<apply-templates select="foaf:name[1]/node()"/>
+						</otherwise>
+					</choose>
+					</html:h3>
+					<apply-templates select="rdfs:comment/node()"/>
+				</html:section>
+				</for-each>
+			</html:section>
+			</for-each>
+			<if test="foaf:made/foaf:Document/@rdf:about">
+			<html:footer>
+				<html:h2>Additional Documents</html:h2>
+				<html:ul>
+				<for-each select="foaf:made/foaf:Document[@rdf:about]">
+					<html:li>
+					<choose>
+						<when test="foaf:name">
+							<apply-templates select="foaf:name[1]" mode="lang"/>
+						<html:a href="{@rdf:about}">
+							<html:cite>
+							<apply-templates select="foaf:name[1]/node()"/>
+							</html:cite>
+						</html:a>
+						</when>
+						<when test="@foaf:name">
+							<apply-templates select="." mode="lang"/>
+						<html:a href="{@rdf:about}">
+							<html:cite>
+							<value-of select="@foaf:name"/>
+							</html:cite>
+						</html:a>
+						</when>
+						<otherwise>
+						<html:a href="{@rdf:about}">
+							<html:cite>
+							<value-of select="@rdf:about"/>
+							</html:cite>
+						</html:a>
+						</otherwise>
+					</choose>
+					</html:li>
+				</for-each>
+				</html:ul>
+			</html:footer>
+			</if>
+		</for-each>
+		</html:article>
+	</html:body>
+</html:html>
+	</template>
+</stylesheet>
+				</rdf:value>
+			</Document>
+		</xhv:stylesheet>
+	</PersonalProfileDocument>
 </rdf:RDF>
