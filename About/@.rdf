@@ -279,6 +279,9 @@
 				<accountServiceHomepage>
 					<Document rdf:about="https://donphan.social" foaf:name="donphan.social"/>
 				</accountServiceHomepage>
+				<rdfs:comment rdf:parseType="Literal">
+					<a rel="me" href="https://donphan.social/@Leaf" xmlns="http://www.w3.org/1999/xhtml">Mastodon</a>
+				</rdfs:comment>
 			</OnlineAccount>
 		</account>
 		<account>
@@ -288,6 +291,9 @@
 				<accountServiceHomepage>
 					<Document rdf:about="https://github.com" foaf:name="GitHub"/>
 				</accountServiceHomepage>
+				<rdfs:comment rdf:parseType="Literal">
+					<a rel="me" href="https://github.com/marrus-sh" xmlns="http://www.w3.org/1999/xhtml">GitHub</a>
+				</rdfs:comment>
 			</OnlineAccount>
 		</account>
 		<account>
@@ -297,6 +303,21 @@
 				<accountServiceHomepage>
 					<Document rdf:about="https://8tracks.com" foaf:name="8tracks"/>
 				</accountServiceHomepage>
+				<rdfs:comment rdf:parseType="Literal">
+					<a rel="me" href="https://8tracks.com/kibigo" xmlns="http://www.w3.org/1999/xhtml">8tracks</a>
+				</rdfs:comment>
+			</OnlineAccount>
+		</account>
+		<account>
+			<OnlineAccount rdf:about="https://archiveofourown.org/users/kibigo">
+				<name>kibigo @ AO3</name>
+				<accountName>kibigo</accountName>
+				<accountServiceHomepage>
+					<Document rdf:about="https://archiveofourown.org" foaf:name="Archive of Our Own"/>
+				</accountServiceHomepage>
+				<rdfs:comment rdf:parseType="Literal">
+					<a rel="me" href="https://archiveofourown.org/users/kibigo" xmlns="http://www.w3.org/1999/xhtml">AO3</a>
+				</rdfs:comment>
 			</OnlineAccount>
 		</account>
 
