@@ -19,8 +19,8 @@
 		<surname>kibi</surname>
 		<!-- see below for a great deal more names -->
 		<nick>kibigo!</nick>
-		<img rdfs:isDefinedBy="https://go.KIBI.family/Images/Portrait/@.rdf"/>
-		<logo rdfs:isDefinedBy="https://go.KIBI.family/Images/Logotype/@.rdf"/>
+		<img rdfs:isDefinedBy="//go.KIBI.family/Images/Portrait/@.rdf"/>
+		<logo rdfs:isDefinedBy="//go.KIBI.family/Images/Logotype/@.rdf"/>
 		<homepage rdf:resource="https://go.KIBI.family/"/>
 		<tipjar rdf:resource="https://patreon.com/kibigo"/>
 
@@ -280,7 +280,7 @@
 					<Document rdf:about="https://donphan.social" foaf:name="donphan.social"/>
 				</accountServiceHomepage>
 				<rdfs:comment rdf:parseType="Literal">
-					<a rel="me" href="https://donphan.social/@Leaf" xmlns="http://www.w3.org/1999/xhtml">Mastodon</a>
+					<a rel="me" href="https://donphan.social/@Leaf" xmlns="http://www.w3.org/1999/xhtml">mastodon</a>
 				</rdfs:comment>
 			</OnlineAccount>
 		</account>
@@ -292,7 +292,7 @@
 					<Document rdf:about="https://github.com" foaf:name="GitHub"/>
 				</accountServiceHomepage>
 				<rdfs:comment rdf:parseType="Literal">
-					<a rel="me" href="https://github.com/marrus-sh" xmlns="http://www.w3.org/1999/xhtml">GitHub</a>
+					<a rel="me" href="https://github.com/marrus-sh" xmlns="http://www.w3.org/1999/xhtml">git·hub</a>
 				</rdfs:comment>
 			</OnlineAccount>
 		</account>
@@ -310,13 +310,13 @@
 		</account>
 		<account>
 			<OnlineAccount rdf:about="https://archiveofourown.org/users/kibigo">
-				<name>kibigo @ AO3</name>
+				<name>kibigo @ a·o·3</name>
 				<accountName>kibigo</accountName>
 				<accountServiceHomepage>
 					<Document rdf:about="https://archiveofourown.org" foaf:name="Archive of Our Own"/>
 				</accountServiceHomepage>
 				<rdfs:comment rdf:parseType="Literal">
-					<a rel="me" href="https://archiveofourown.org/users/kibigo" xmlns="http://www.w3.org/1999/xhtml">AO3</a>
+					<a rel="me" href="https://archiveofourown.org/users/kibigo" xmlns="http://www.w3.org/1999/xhtml">a·o·3</a>
 				</rdfs:comment>
 			</OnlineAccount>
 		</account>
@@ -450,7 +450,7 @@
 		<name>†kibi gô†</name>
 		<maker rdf:resource="#me"/>
 		<primaryTopic rdf:resource="#me"/>
-		<xhv:icon rdfs:isDefinedBy="https://go.KIBI.family/Images/Favicon/@.rdf"/>
+		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
 		<xhv:stylesheet>
 			<Document>
 				<rdf:value rdf:parseType="Literal">
