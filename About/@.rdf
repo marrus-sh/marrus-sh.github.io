@@ -519,7 +519,7 @@ html{ Color: #000000; Background: #F0F0F0; Font: Small-Caps Medium / 1.5 Elstob,
 #content>header footer p{ Margin: 0; Text-Indent: 0 }
 #content>header *:Any-Link{ Color: Inherit }
 
-#content>section{ Box-Sizing: Border-Box; Position: Relative; Margin: 3REM Auto; Border: Thin Solid; Padding: 1REM 1.5REM 1.5REM; Width: 31REM; Max-Width: 100%; Box-Shadow: 3PX 3PX 0 1PX CurrentColor; Font-Style: Italic; Font-Weight: 300; Text-Align: Justify; Counter-Increment: Project }
+#content>section{ Box-Sizing: Border-Box; Position: Relative; Margin: 3REM Auto; Border: Thin Solid; Padding: 1REM 1.5REM 1.5REM; Width: 31REM; Max-Width: 100%; Color: #000000; Background: #FFFFFF; Box-Shadow: 3PX 3PX 0 1PX CurrentColor; Font-Style: Italic; Font-Weight: 300; Text-Align: Justify; Counter-Increment: Project }
 #content>section::before{ Display: Block; Position: Absolute; Top: -.75EM; Left: -.5EM; Border-Style: Solid None; Border-Color: #000000; Padding: 0 .5REM; Color: #CD2C00; Background: #FFFFFF; Text-Transform: Lowercase; Rotate: -15DEG; Content: "Project " Counter(Project, Decimal-Leading-Zero) }
 #content>section>h2{ Margin: 0 0 1.5REM; Border-Bottom: Thin Solid; Padding-Bottom: .75REM; Font-Size: 2.25REM; Font-Style: Normal; Font-Weight: 400; Text-Align: Center; Line-Height: 1; Letter-Spacing: Calc(1EM / 36) }
 #content>section>section{ Margin: 1.5REM 0 0; Border-Style: Dashed Solid Solid Dotted; Border-Width: Thin; Padding: 1.5REM 2.25REM; Color: #000000; Background: #F0F0F0; Hyphens: Auto }
