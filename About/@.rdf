@@ -3,6 +3,7 @@
 <rdf:RDF
 	xml:lang="en"
 	xmlns="http://xmlns.com/foaf/0.1/"
+	xmlns:about="https://go.KIBI.family/Ontologies/About/#"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -22,7 +23,48 @@
 		<img rdfs:isDefinedBy="//go.KIBI.family/Images/Portrait/@.rdf"/>
 		<logo rdfs:isDefinedBy="//go.KIBI.family/Images/Logotype/@.rdf"/>
 		<homepage rdf:resource="https://go.KIBI.family/"/>
-		<tipjar rdf:resource="https://patreon.com/kibigo"/>
+		<tipjar rdf:resource="https://patreon.com/kibigo" rdfs:label="patreon"/>
+
+		<!-- § things i know -->
+		<about:isFamiliarWith>
+			<Document rdf:about="https://html.spec.whatwg.org" rdfs:label="h·t·m·l" foaf:name="h·t·m·l standard"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/css/" rdfs:label="c·s·s" foaf:name="c·s·s snapshot"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://tc39.es/ecma262/" rdfs:label="e·s" foaf:name="e·c·m·a·script language specification"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/xml11/" rdfs:label="x·m·l" foaf:name="extensible markup language (x·m·l) 1·1"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://tei-c.org/guidelines/p5/" rdfs:label="t·e·i" foaf:name="t·e·i p·5: guidelines for electronic text encoding and interchange"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/xpath/" rdfs:label="x·path" foaf:name="x·m·l path language (x·path)"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/xslt/" rdfs:label="x·s·l·t" foaf:name="x·s·l transformations (x·s·l·t)"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://docs.swift.org/swift-book/" rdfs:label="swift" foaf:name="the swift programming language"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://tools.ietf.org/html/rfc3987" rdfs:label="r·f·c 3987" foaf:name="internationalized resource identifiers"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://tools.ietf.org/html/bcp47" rdfs:label="b·c·p 47" foaf:name="tags for identifying languages"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/rdf11-concepts/" rdfs:label="r·d·f" foaf:name="r·d·f 1·1 concepts and abstract syntax"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/skos-reference/" rdfs:label="s·k·o·s" foaf:name="s·k·o·s simple knowledge organization system reference"/>
+		</about:isFamiliarWith>
+		<about:isFamiliarWith>
+			<Document rdf:about="https://www.w3.org/TR/owl2-overview/" rdfs:label="o·w·l" foaf:name="o·w·l 2 web ontology language document overview"/>
+		</about:isFamiliarWith>
 
 		<!-- § names
 
@@ -484,6 +526,7 @@
 				<value-of select="foaf:name"/>
 		</html:title>
 			</if>
+		<html:meta name="viewport" content="width=device-width"/>
 			<if test="xhv:icon">
 		<html:link rel="icon" href="{concat(xhv:icon/@rdfs:isDefinedBy, '/../', document(xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)}"/>
 			</if>
@@ -620,12 +663,41 @@ strong{ Background: #EEAE007F; Font-Weight: 500 }
 						</html:dd>
 					</html:div>
 					<html:div>
+						<html:dt lang="en">familiar with</html:dt>
+						<html:dd>
+			<for-each select="about:isFamiliarWith/*">
+							<html:a href="{@rdf:about}" title="{@foaf:name}">
+				<apply-templates select="." mode="lang"/>
+				<value-of select="@rdfs:label"/>
+							</html:a>
+							<if test="../following-sibling::*">
+								<text>, </text>
+							</if>
+			</for-each>
+						</html:dd>
+					</html:div>
+					<html:div>
+						<html:dt lang="en">tipjar</html:dt>
+						<html:dd>
+							<html:ul>
+			<for-each select="foaf:tipjar">
+								<html:li>
+									<html:a href="{@rdf:resource}">
+				<apply-templates select="." mode="lang"/>
+				<value-of select="@rdfs:label"/>
+									</html:a>
+								</html:li>
+			</for-each>
+							</html:ul>
+						</html:dd>
+					</html:div>
+					<html:div>
 						<html:dt lang="en">online</html:dt>
 						<html:dd>
 							<html:ul>
 			<for-each select="foaf:account/foaf:OnlineAccount">
 								<html:li>
-									<html:a href="{@rdf:about}">
+									<html:a href="{@rdf:about}" title="{foaf:accountName} @ {foaf:accountServiceHomepage/*/@foaf:name}">
 				<apply-templates select="foaf:name[1]" mode="lang"/>
 				<apply-templates select="foaf:name[1]/node()"/>
 									</html:a>
