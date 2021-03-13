@@ -231,13 +231,15 @@ span.DAGGER{ Font-Weight: 300 }
 	</html:header>
 		<if test="rdfs:comment">
 	<html:details>
-		<if test="$level = 1">
-			<attribute name="open"/>
-		</if>
+			<if test="number($level) = 1">
+				<attribute name="open"/>
+			</if>
 		<html:summary>project info</html:summary>
 			<for-each select="rdfs:comment">
+		<html:div>
 				<apply-templates select="." mode="lang"/>
 				<apply-templates select="node()"/>
+		</html:div>
 			</for-each>
 	</html:details>
 		</if>
@@ -252,9 +254,6 @@ span.DAGGER{ Font-Weight: 300 }
 		</html:progress>
 			<choose>
 				<when test="about:taskProgress">
-					<attribute name="value">
-						<value-of select="about:taskProgress"/>
-					</attribute>
 					<value-of select="about:taskProgress"/>
 					<text> / </text>
 					<value-of select="about:taskCount"/>
