@@ -35,8 +35,63 @@
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
         <rdfs:comment xml:lang="en">A Document describing something (typically a formal subject matter, as in a specification) which a given Agent has familiarity (experience, understanding) with.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://go.KIBI.family/Ontologies/About/#"/>
         <rdfs:label xml:lang="en">is familiar with</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://go.KIBI.family/Ontologies/About/#taskCount -->
+
+    <owl:DatatypeProperty rdf:about="https://go.KIBI.family/Ontologies/About/#taskCount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">The number of tasks which need to be completed for this Project.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://go.KIBI.family/Ontologies/About/#"/>
+        <rdfs:label xml:lang="en">task count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://go.KIBI.family/Ontologies/About/#taskProgress -->
+
+    <owl:DatatypeProperty rdf:about="https://go.KIBI.family/Ontologies/About/#taskProgress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">The number of tasks which have been completed for this Project.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://go.KIBI.family/Ontologies/About/#"/>
+        <rdfs:label xml:lang="en">task progress</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://go.KIBI.family/Ontologies/About/# -->
+
+    <owl:NamedIndividual rdf:about="https://go.KIBI.family/Ontologies/About/#"/>
 </rdf:RDF>
 
 

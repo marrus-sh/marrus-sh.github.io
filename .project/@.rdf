@@ -1,0 +1,282 @@
+<?xml-stylesheet type="text/xsl" href="#transform"?>
+<!DOCTYPE rdf:RDF [
+	<!ATTLIST stylesheet id ID #REQUIRED>
+	<!ENTITY dagger '<span class="DAGGER" xmlns="http://www.w3.org/1999/xhtml">†</span>'>
+	<!ENTITY Dagger '<span class="DAGGER" xmlns="http://www.w3.org/1999/xhtml">‡</span>'>
+]>
+<rdf:RDF
+	xml:lang="en"
+	xmlns="http://xmlns.com/foaf/0.1/"
+	xmlns:about="https://go.KIBI.family/Ontologies/About/#"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:schema.org="https://schema.org/"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
+>
+	<Project rdf:ID="KiUnicase">
+		<dc:identifier xml:lang="zxx">KiUnicase</dc:identifier>
+		<name>ki·unicase</name>
+		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p>a unicase font built using &dagger;g·n·u unifont&dagger; technologies, based on my current script</p>
+			</div>
+		</rdfs:comment>
+		<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">223</about:taskCount>
+		<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">53</about:taskProgress>
+	</Project>
+
+	<Project rdf:ID="Nib">
+		<dc:identifier xml:lang="zxx">Nib</dc:identifier>
+		<name>nib</name>
+		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+		<homepage rdf:resource="https://github.com/marrus-sh/Nib"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p>an implementation of &dagger;x·m·l and related specifications into &dagger;swift.</p>
+			</div>
+		</rdfs:comment>
+		<dc:hasPart>
+			<Project rdf:ID="Nib:v0:d2">
+				<dc:identifier xml:lang="zxx">Nib:v0:d2</dc:identifier>
+				<name>nib 0·2</name>
+				<rdfs:comment rdf:parseType="Literal">
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>better grammar processing; &dagger;a·b·n·f and &dagger;l·e·i·r·i support.</p>
+						<p>things to do include:</p>
+						<ul>
+							<li><label><input type="checkbox" checked="" disabled=""/>
+								actual regular expression processing</label></li>
+							<li><label><input type="checkbox" disabled=""/>
+								efficient contextfree grammars</label></li>
+							<li><label><input type="checkbox" disabled=""/>
+								exclusions</label></li>
+							<li><label><input type="checkbox" disabled=""/>
+								<code>A·B·N·F</code> module as an application of contextfree grammars</label></li>
+							<li><label><input type="checkbox" disabled=""/>
+								<code>L·E·I·R·I</code> module as a practical application of <code>A·B·N·F</code></label></li>
+							<li><label><input type="checkbox" disabled=""/>
+								<code>E·B·N·F</code> module as an application of exclusion grammars</label></li>
+							<li><label><input type="checkbox" disabled=""/>
+								finish splitting off various modules and recasting the core <code>Nib</code> repo as a learning hub</label></li>
+						</ul>
+						<p><strong>see also:</strong> 
+							<a href="https://github.com/marrus-sh/Nib/discussions/5">https://github.com/marrus-sh/Nib/discussions/5</a>.</p>
+					</div>
+				</rdfs:comment>
+				<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</about:taskCount>
+				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</about:taskProgress>
+			</Project>
+		</dc:hasPart>
+	</Project>
+
+	<Project rdf:ID="wildflower">
+		<dc:identifier xml:lang="zxx">wildflower</dc:identifier>
+		<name>wildflower</name>
+		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p xmlns="http://www.w3.org/1999/xhtml">a <cite>legend of zelda: breath of the wild</cite> fanfiction published to &dagger;a·o·3 (<strong>note:</strong> contains explicit sexual content).</p>
+			</div>
+		</rdfs:comment>
+		<dc:hasPart>
+			<Project rdf:ID="wildflower:Α:c2:I">
+				<dc:identifier xml:lang="zxx">wildflower:Α:c2:I</dc:identifier>
+				<name>breath of farore ~ winds of change</name>
+				<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+				<rdfs:comment rdf:parseType="Literal">
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p xmlns="http://www.w3.org/1999/xhtml"><cite>wildflower</cite> book 1</p>
+					</div>
+				</rdfs:comment>
+				<homepage rdf:resource="https://archiveofourown.org/works/28883058"/>
+				<!--
+the tasks are 5‐per‐chapter as follows:
+
+01. first draft of section 1
+02. first draft of section 2
+03. review and edits
+04. typesetting
+05. publishing
+
+there are an anticipated 24 total chapters for a total number or steps of 120.
+-->
+				<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">120</about:taskCount>
+				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">12</about:taskProgress>
+			</Project>
+		</dc:hasPart>
+	</Project>
+
+	<!-- @ about this document -->
+	<Document rdf:about="">
+		<name rdf:parseType="Literal">
+			<span xmlns="http://www.w3.org/1999/xhtml">&dagger;margaret &Dagger;kibi&dagger;: <b>.project</b></span>
+		</name>
+		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
+		<xhv:stylesheet>
+			<Document>
+				<rdf:value rdf:parseType="Literal">
+<stylesheet id="transform" version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
+	<template match="@*|node()" mode="clone">
+		<copy>
+			<apply-templates select="@*|node()" mode="clone"/>
+		</copy>
+	</template>
+	<template match="node()" mode="text">
+		<for-each select="descendant-or-self::text()">
+			<copy/>
+		</for-each>
+	</template>
+	<template match="*" mode="lang">
+		<attribute name="lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+		<attribute name="xml:lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+	</template>
+	<template match="*">
+		<copy>
+			<apply-templates select="@*" mode="clone"/>
+			<apply-templates/>
+		</copy>
+	</template>
+	<template match="html:li[html:label and count(node()) = 1]">
+		<copy>
+			<attribute name="class">CHECKBOX</attribute>
+			<apply-templates/>
+		</copy>
+	</template>
+	<template match="rdf:RDF">
+<html:html>
+		<apply-templates select="." mode="lang"/>
+	<html:head>
+		<for-each select="foaf:Document[@rdf:about = '']">
+			<if test="foaf:name">
+		<html:title>
+				<apply-templates select="foaf:name" mode="text"/>
+		</html:title>
+			</if>
+		<html:meta name="viewport" content="width=device-width"/>
+			<if test="xhv:icon">
+		<html:link rel="icon" href="{concat(xhv:icon/@rdfs:isDefinedBy, '/../', document(xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)}"/>
+			</if>
+		</for-each>
+		<html:style>
+@namespace "http://www.w3.org/1999/xhtml";
+@font-face{ Font-Family: "M+ 2c"; Font-Weight: 300; Src: URL("../Fonts/Mplus-Fonts/fonts/mplus-2c-light.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2c"; Font-Weight: 400; Src: URL("../Fonts/Mplus-Fonts/fonts/mplus-2c-regular.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 2c"; Font-Weight: 700; Src: URL("../Fonts/Mplus-Fonts/fonts/mplus-2c-bold.ttf") Format("truetype") }
+@font-face{ Font-Family: "M+ 1mn"; Font-Weight: 400; Src: URL("../Fonts/Mplus-Fonts/fonts/mplus-1mn-regular.ttf") Format("truetype") }
+html{ Padding: 1EM 2EM 3EM; Color: #000000; Background: #F0F0F0; Font: Medium / 1.25 "M+ 2c", Sans-Serif }
+body{ Margin: Auto; Max-Width: 31EM }
+section{ Margin: 2REM 0; Border: Thin Solid; Padding: 1REM; Color: #000000; Background: #FFFFFF }
+footer,
+summary{ Font: .8REM / 1.25 "M+ 1mn", Monospace; Text-Align: Right; Text-Transform: Uppercase }
+details{ Padding: 0 1EM }
+summary{ Margin: 0 -1REM; Padding: 0 0 .25REM; Color: #8A1C00 }
+details[open]>summary{ Border-Bottom: Thin Dashed }
+ol,
+ul{ Padding: 0 0 0 2REM }
+li.CHECKBOX{ List-Style-Type: None; Margin-Left: -2REM }
+h1{ Font-Weight: Inherit; Text-Align: Center; Text-Transform: Uppercase }
+h2{ Margin: 0; Font-Size: 1.25REM; Line-Height: 1; Text-Align: Center; Text-Transform: Uppercase }
+h3{ Margin: 0; Font: Inherit; Letter-Spacing: Calc(1REM / 18); Text-Decoration: Double Underline; Text-Transform: Uppercase }
+progress{ Display: Block; Margin: Auto; Width: 100% }
+a.HOMEPAGE{ Display: Block; Margin: .25REM 0 .75REM; Overflow: Hidden; White-Space: NoWrap; Text-Align: Center; Text-Overflow: Ellipsis }
+a.HOMEPAGE::before{ Content: "‹ " }
+a.HOMEPAGE::after{ Content: " ›" }
+code{ Font: .8REM / 1.25 "M+ 1mn", Monospace }
+cite{ Font: Inherit; Text-Decoration: #EEAE00 Wavy Underline }
+span.DAGGER{ Font-Weight: 300 }
+*:Any-Link{ Color: #004599 }
+*:Any-Link:Active{ Color: #CD2C00 }
+		</html:style>
+	</html:head>
+	<html:body>
+		<html:article id="content">
+			<html:header>
+				<html:h1>
+			<apply-templates select="foaf:Document[@rdf:about = '']/foaf:name[1]" mode="lang"/>
+			<apply-templates select="foaf:Document[@rdf:about = '']/foaf:name[1]"/>
+				</html:h1>
+			</html:header>
+		<for-each select="foaf:Project">
+			<apply-templates select="."/>
+		</for-each>
+		</html:article>
+	</html:body>
+</html:html>
+	</template>
+	<template match="foaf:Project">
+		<param name="level" select="1"/>
+<html:section id="{@rdf:ID}">
+	<html:header>
+		<element name="h{$level + 1}" namespace="http://www.w3.org/1999/xhtml">
+			<apply-templates select="foaf:name[1]" mode="lang"/>
+			<apply-templates select="foaf:name[1]/node()"/>
+		</element>
+		<if test="foaf:homepage/@rdf:resource">
+			<html:a class="HOMEPAGE" href="foaf:homepage/@rdf:resource[1]">
+				<html:code xml:lang="zxx">
+			<value-of select="foaf:homepage/@rdf:resource[1]"/>
+				</html:code>
+			</html:a>
+		</if>
+	</html:header>
+		<if test="rdfs:comment">
+	<html:details>
+		<if test="$level = 1">
+			<attribute name="open"/>
+		</if>
+		<html:summary>project info</html:summary>
+			<for-each select="rdfs:comment">
+				<apply-templates select="." mode="lang"/>
+				<apply-templates select="node()"/>
+			</for-each>
+	</html:details>
+		</if>
+		<if test="about:taskCount">
+	<html:footer>
+		<html:progress max="{about:taskCount}">
+			<if test="about:taskProgress">
+				<attribute name="value">
+					<value-of select="about:taskProgress"/>
+				</attribute>
+			</if>
+		</html:progress>
+			<choose>
+				<when test="about:taskProgress">
+					<attribute name="value">
+						<value-of select="about:taskProgress"/>
+					</attribute>
+					<value-of select="about:taskProgress"/>
+					<text> / </text>
+					<value-of select="about:taskCount"/>
+					<text> tasks completed</text>
+				</when>
+				<otherwise>
+					<value-of select="about:taskCount"/>
+					<text> tasks</text>
+				</otherwise>
+			</choose>
+	</html:footer>
+		</if>
+		<for-each select="dc:hasPart/foaf:Project">
+			<apply-templates select=".">
+				<with-param name="level" select="$level + 1"/>
+			</apply-templates>
+		</for-each>
+</html:section>
+	</template>
+</stylesheet>
+				</rdf:value>
+			</Document>
+		</xhv:stylesheet>
+	</Document>
+</rdf:RDF>

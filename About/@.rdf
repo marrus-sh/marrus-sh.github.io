@@ -15,8 +15,8 @@
 	<!-- @ about me -->
 	<Person rdf:ID="me">
 		<rdfs:label>me</rdfs:label>
-		<title>mx</title>
-		<givenName>gô</givenName>
+		<title>lady</title>
+		<givenName>margaret</givenName>
 		<surname>kibi</surname>
 		<!-- see below for a great deal more names -->
 		<nick>kibigo!</nick>
@@ -75,6 +75,12 @@
 				<tei:forename>gô</tei:forename>
 			</tei:persName>
 		</name><!-- boring ordinary spelling -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename>margaret</tei:forename>
+				<tei:surname>kibi</tei:surname>
+			</tei:persName>
+		</name><!-- even more boring ordinary spelling -->
 		<name rdf:parseType="Literal">
 			<tei:persName xml:lang="en-Runr-x-kibben">
 				<tei:surname>ᛣᛟᛒᛟ</tei:surname>
@@ -422,23 +428,6 @@
 		</currentProject>
 		<currentProject>
 			<Document>
-				<name>advancing the artform of literature</name>
-				<rdf:value rdf:parseType="Literal">
-					<p xmlns="http://www.w3.org/1999/xhtml">i’m a longstanding critic of the state of english literature, by which i mean <strong>i find it boring.</strong>  yet, i don’t believe in criticizing an artform if you aren’t about to participate in it as well.  so i write <strong>weird stories with weird little poems and narrative structures</strong> to help explore what i think english lit should <em>look</em> like, after all.</p>
-				</rdf:value>
-				<topic>
-					<Project>
-						<name>fanfiction by j’li</name>
-						<homepage rdf:resource="https://archiveofourown.org/users/kibigo/pseuds/J%CA%BCLi"/>
-						<rdfs:comment rdf:parseType="Literal">
-							<p xmlns="http://www.w3.org/1999/xhtml">i keep a number of fanfiction projects going, primarily for †nintendo properties, which I <a href="https://archiveofourown.org/users/kibigo/pseuds/J%CA%BCLi/works">publish to †archive of our own†</a>.  they tend to be highly experimental, esoteric, and unpopular.  <b><strong>note:</strong></b>  these stories are not intended for children.</p>
-						</rdfs:comment>
-					</Project>
-				</topic>
-			</Document>
-		</currentProject>
-		<currentProject>
-			<Document>
 				<name>making internet zines</name>
 				<rdf:value rdf:parseType="Literal">
 					<div xmlns="http://www.w3.org/1999/xhtml">
@@ -489,7 +478,7 @@
 
 	<!-- @ about this ‘about’ -->
 	<PersonalProfileDocument rdf:about="">
-		<name>†kibi gô†</name>
+		<name>kibigo!</name>
 		<maker rdf:resource="#me"/>
 		<primaryTopic rdf:resource="#me"/>
 		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
