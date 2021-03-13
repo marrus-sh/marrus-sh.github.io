@@ -231,7 +231,7 @@ span.DAGGER{ Font-Weight: 300 }
 	</html:header>
 		<if test="rdfs:comment">
 	<html:details>
-			<if test="number($level) = 1">
+			<if test="$level = 1">
 				<attribute name="open"/>
 			</if>
 		<html:summary>project info</html:summary>

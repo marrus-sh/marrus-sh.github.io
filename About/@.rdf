@@ -469,6 +469,9 @@
 
 		<!-- § additional documents -->
 		<made>
+			<Document rdf:about="https://go.KIBI.family/.project/" foaf:name=".project"/>
+		</made>
+		<made>
 			<Document rdf:about="https://go.KIBI.family/Documents/palettes.xhtml" foaf:name="palettes"/>
 		</made>
 		<made>
