@@ -176,6 +176,8 @@ there are an anticipated 24 total chapters for a total number or steps of 120.
 html{ Padding: 1EM 2EM 3EM; Color: #000000; Background: #F0F0F0; Font: Medium / 1.25 "M+ 2c", Sans-Serif }
 body{ Margin: Auto; Max-Width: 31EM }
 section{ Margin: 2REM 0; Border: Thin Solid; Padding: 1REM; Color: #000000; Background: #FFFFFF }
+body>footer{ Border-Top: Thin Dashed; Padding: .25REM 0 0; Color: #8A1C00; Text-Align: Center }
+body>footer *:Any-Link{ Color: Inherit }
 footer,
 summary{ Font: .8REM / 1.25 "M+ 1mn", Monospace; Text-Align: Right; Text-Transform: Uppercase }
 details{ Padding: 0 1EM }
@@ -210,6 +212,9 @@ span.DAGGER{ Font-Weight: 300 }
 			<apply-templates select="."/>
 		</for-each>
 		</html:article>
+		<html:footer>
+			<html:a href="/">take me home.</html:a>
+		</html:footer>
 	</html:body>
 </html:html>
 	</template>
