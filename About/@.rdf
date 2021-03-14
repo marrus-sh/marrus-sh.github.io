@@ -76,12 +76,6 @@
 			</tei:persName>
 		</name><!-- boring ordinary spelling -->
 		<name rdf:parseType="Literal">
-			<tei:persName>
-				<tei:forename>margaret</tei:forename>
-				<tei:surname>kibi</tei:surname>
-			</tei:persName>
-		</name><!-- even more boring ordinary spelling -->
-		<name rdf:parseType="Literal">
 			<tei:persName xml:lang="en-Runr-x-kibben">
 				<tei:surname>ᛣᛟᛒᛟ</tei:surname>
 				<tei:forename>ᚷᚪᛇ</tei:forename>
@@ -117,6 +111,12 @@
 		<name>margo</name><!-- these days i prefer the version without the ‹ t › -->
 		<name>margot</name><!-- if you write this, i might pronounce it “mar GOT”; if i write this, you’re welcome to -->
 		<name>margaret</name><!-- my actual given name -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:forename>margaret</tei:forename>
+				<tei:surname>kibi</tei:surname>
+			</tei:persName>
+		</name><!-- even more boring ordinary spelling -->
 		<name>mags</name><!-- friendly -->
 		<name>mogs</name><!-- feline -->
 		<name>60W</name><!-- this is just ‹ MOG › upside‐down, for clarity -->
@@ -125,6 +125,8 @@
 		<name>emoji girl</name><!-- i’m actually the ⁜†unicode⁜ girl but nobody cares about anything but emoji these days -->
 		<name>wend</name><!-- this is a pun on ‹ †go › -->
 		<name>wendy</name><!-- †wendy is a good name which doesn’t get enough recognition -->
+		<name>vend</name><!-- this is a pun on ‹ †wend › -->
+		<name>ꝩ</name><!-- this is a letter -->
 		<name rdf:parseType="Literal">
 			<tei:persName>
 				<tei:forename type="first">margaret</tei:forename>
