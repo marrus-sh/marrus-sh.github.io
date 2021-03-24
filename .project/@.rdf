@@ -106,7 +106,7 @@ the tasks are 5‐per‐chapter as follows:
 there are an anticipated 24 total chapters for a total number or steps of 120.
 -->
 				<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">120</about:taskCount>
-				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">12</about:taskProgress>
+				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">16</about:taskProgress>
 			</Project>
 		</dc:hasPart>
 	</Project>
