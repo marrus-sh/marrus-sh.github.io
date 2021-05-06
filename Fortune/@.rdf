@@ -13,15 +13,17 @@
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
 
-	<!-- [2011-10-04] Chihayafuru -->
-	<Document rdf:about="https://www.crunchyroll.com/chihayafuru">
+	<!-- [2011-10-04/2020-03-24] Chihayafuru -->
+	<Document rdf:about="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=12991">
 		<name>Chihayafuru</name>
 		<dc:publisher>
 			<Organization foaf:name="Madhouse"/>
 		</dc:publisher>
+		<schema.org:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-10-04</schema.org:startDate>
+		<schema.org:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-03-27</schema.org:endDate>
 	</Document>
 	<schema.org:Quotation>
-		<schema.org:isBasedOn rdf:resource="https://www.crunchyroll.com/chihayafuru"/>
+		<schema.org:isBasedOn rdf:resource="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=12991"/>
 		<maker>
 			<Person>
 				<name xml:lang="ja">駒野 勉</name>
@@ -77,7 +79,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2018-06-25] https://archiveofourown.org/works/15049127 -->
+	<!-- [2018-06-25/2019-12-31] The Princess Who Carries the Blood of the Goddess -->
 	<Document rdf:about="https://archiveofourown.org/works/15049127">
 		<maker>
 			<Person rdf:about="https://archiveofourown.org/users/TheLoudGuy" foaf:name="TheLoudGuy"/>
@@ -86,7 +88,8 @@
 		<dc:publisher>
 			<Organization rdf:about="https://archiveofourown.org" foaf:name="Archive of Our Own"/>
 		</dc:publisher>
-		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-25</dc:date>
+		<schema.org:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-25</schema.org:startDate>
+		<schema.org:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-12-31</schema.org:endDate>
 	</Document>
 	<schema.org:Quotation>
 		<schema.org:isBasedOn rdf:resource="https://archiveofourown.org/works/15049127"/>
@@ -301,23 +304,37 @@
 				<apply-templates select="foaf:maker[1]/node()" mode="normalize"/>
 </html:span>
 			</if>
-			<if test="dc:publisher or dc:date">
+			<if test="dc:publisher or dc:date or schema.org:startDate or schema.org:endDate">
 				<text> (</text>
 				<if test="dc:publisher">
 <html:span>
 					<apply-templates select="dc:publisher[1]" mode="lang"/>
 					<apply-templates select="dc:publisher[1]/node()" mode="normalize"/>
 </html:span>
+					<if test="dc:date or schema.org:startDate or schema.org:endDate">
+						<text>, </text>
+					</if>
 				</if>
-				<if test="dc:publisher and dc:date">
-					<text>, </text>
-				</if>
-				<if test="dc:date">
+				<choose>
+					<when test="schema.org:startDate or schema.org:endDate">
+						<if test="schema.org:startDate">
 <html:time>
-					<apply-templates select="dc:date[1]" mode="lang"/>
-					<apply-templates select="dc:date[1]/node()" mode="normalize"/>
+							<value-of select="schema.org:startDate[1]"/>
 </html:time>
-				</if>
+						</if>
+						<text>/</text>
+						<if test="schema.org:endDate">
+<html:time>
+							<value-of select="schema.org:endDate[1]"/>
+</html:time>
+						</if>
+					</when>
+					<when test="dc:date">
+<html:time>
+						<value-of select="dc:date[1]"/>
+</html:time>
+					</when>
+				</choose>
 				<text>)</text>
 			</if>
 			<text>.</text>
