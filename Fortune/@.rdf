@@ -13,60 +13,135 @@
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
 
-	<!-- Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor | AIGA Eye on Design -->
-	<Document rdf:about="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/">
-		<maker>Ksenya Samarskaya</maker>
-		<name>Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor</name>
-		<dc:publisher>AIGA Eye on Design</dc:publisher>
-		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-14</dc:date>
-	</Document>
-	<schema.org:Quotation>
-		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
-		<maker>J. Dakota Brown</maker>
-		<rdf:value rdf:parseType="Literal">
-<html:p>When these writers did address the constraints of the workplace, it tended to be this thing about how The Man was going to put you in a Helvetica straitjacket and take away your personality. It seemed to me, on the contrary, that designers were increasingly expected to mine their souls for marketable new expressions.</html:p>
-		</rdf:value>
-	</schema.org:Quotation>
-	<schema.org:Quotation>
-		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
-		<maker>J. Dakota Brown</maker>
-		<rdf:value rdf:parseType="Literal">
-<html:p>And students are understandably focused on the kind of professional training that will make the immense cost of college worth it. Then, as they enter the field, they face unprecedented expectations of flexibility and versatility. They are coached to ceaselessly adjust and retrain, but they aren’t offered a lot of space to question where those compulsions come from or why they exist. The emphasis is always on transforming yourself to meet social demands which defers the question of transforming society to meet human needs.</html:p>
-		</rdf:value>
-	</schema.org:Quotation>
-
-	<!-- Chihayafuru -->
+	<!-- [2011-10-04] Chihayafuru -->
 	<Document rdf:about="https://www.crunchyroll.com/chihayafuru">
 		<name>Chihayafuru</name>
-		<dc:publisher>Madhouse</dc:publisher>
+		<dc:publisher>
+			<Organization foaf:name="Madhouse"/>
+		</dc:publisher>
 	</Document>
 	<schema.org:Quotation>
 		<schema.org:isBasedOn rdf:resource="https://www.crunchyroll.com/chihayafuru"/>
-		<maker><html:span xml:lang="ja">駒野 勉</html:span> Tsutomu Komano</maker>
+		<maker>
+			<Person>
+				<name xml:lang="ja">駒野 勉</name>
+				<name>Tsutomu Komano</name>
+			</Person>
+		</maker>
 		<rdf:value rdf:parseType="Literal">
-<html:p>When you find yourself wishing that a certain person was also here, that person is like family to you. Regardless of how long or how well you know them.</html:p>
+<html:p>When you find yourself wishing that a certain person was also here, that person is like family to you. 
+	Regardless of how long or how well you know them.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- Productive Misunderstandings: an Interview with Sandy Kaltenborn -->
+	<!-- [2015-11-05] Halsey interview: "I don't believe people who say they're themselves all the time" -->
+	<Document rdf:about="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/">
+		<maker>
+			<Person foaf:name="Peter Robinson"/>
+		</maker>
+		<name>Halsey interview: "I don't believe people who say they're themselves all the time"</name>
+		<dc:publisher>
+			<Organization rdf:about="https://www.popjustice.com" foaf:name="Popjustice"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-11-05</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/"/>
+		<maker>
+			<Person foaf:name="Halsey"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>For me as an artist, I think it’s more important to be believable than relatable. 
+	I’ve a lot of fans who have never been in a relationship that involved drugs, or watched someone die, or been in a relationship that was emotionally or physically abusive or any of the positions that I’ve been in and write about, but they believe me. 
+	I think that is more important than them relating to me. 
+	They understand and that makes me a real person to them. 
+	I think that is when the authenticity becomes important for me.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/"/>
+		<maker>
+			<Person foaf:name="Halsey"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Calculation for me means I’m gonna tell this girl she looks really nice at her sister’s wedding because I fucking care about her and I want these kids to know that I care about them. 
+	So I’m calculating how I’m going to express that I care about them. 
+	The calculation is not malicious. 
+	‘Let me calculate this situation, how can I make these kids know that I’m thinking about them right now and that I really fucking care about them?’ 
+	So I’m going to calculate this response and I’m going to say, ‘hey you, random fan, you looked fucking beautiful in that dress at your sister’s wedding—I just stalked your Twitter account’. 
+	And what that does is it says to everyone, ‘she fucking cares about us’, and it’s not fake.</html:p>
+<html:p>It’s calculated and it’s not fabricated. 
+	The calculation is that I’ve got five hundred thousand people here and I need to calculate the most organic way that I can present myself to them. 
+	Do you know what I mean? 
+	My biggest fear is being miscommunicated, I think that’s why I talk so much.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2021-04-04] Productive Misunderstandings: an Interview with Sandy Kaltenborn -->
 	<Document rdf:about="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn">
-		<maker>Kevin Yuen Kit Lo</maker>
+		<maker>
+			<Person foaf:name="Kevin Yuen Kit Lo"/>
+		</maker>
 		<name>Productive Misunderstandings: an Interview with Sandy Kaltenborn</name>
-		<dc:publisher>LOKI</dc:publisher>
+		<dc:publisher>
+			<Organization rdf:about="https://www.lokidesign.net" foaf:name="LOKI"/>
+		</dc:publisher>
 		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021</dc:date>
 	</Document>
 	<schema.org:Quotation>
 		<schema.org:isBasedOn rdf:resource="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn"/>
-		<maker>Sandy Kaltenborn</maker>
+		<maker>
+			<Person foaf:name="Sandy Kaltenborn"/>
+		</maker>
 		<rdf:value rdf:parseType="Literal">
 <html:p>From my perspective, these are not real bodies because there’s no problems attached to them, and of course bodies have problems attached to them as life bears a lot of problems.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
 	<schema.org:Quotation>
 		<schema.org:isBasedOn rdf:resource="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn"/>
-		<maker>Kevin Yuen Kit Lo</maker>
+		<maker>
+			<Person foaf:name="Kevin Yuen Kit Lo"/>
+		</maker>
 		<rdf:value rdf:parseType="Literal">
-<html:p>Like there’s a big tension in many ways between the racialized immigrant communities that we’re working with and the white anarcho hardcore organizers, where it’s like, no… we want to actually <html:em>live</html:em> together. And through that living will be the engagement and the activism and the organizing and everything. We’re not just going to come to your six-hour meeting and agenda, we want to be able to eat, socialize, we want to be able to dance. It’s such a clear difference between the organizing I do with the more militant white activists versus the kind of community building initiatives we’re doing with racialized folks. I wish we could find ways to bridge them, but it’s so hard.</html:p>
+<html:p>Like there’s a big tension in many ways between the racialized immigrant communities that we’re working with and the white anarcho hardcore organizers, where it’s like, no . . . we want to actually <html:em>live</html:em> together. 
+	And through that living will be the engagement and the activism and the organizing and everything. 
+	We’re not just going to come to your six‐hour meeting and agenda, we want to be able to eat, socialize, we want to be able to dance. 
+	It’s such a clear difference between the organizing I do with the more militant white activists versus the kind of community building initiatives we’re doing with racialized folks. 
+	I wish we could find ways to bridge them, but it’s so hard.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2021-04-14] Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor | AIGA Eye on Design -->
+	<Document rdf:about="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/">
+		<maker>
+			<Person foaf:name="Ksenya Samarskaya"/>
+		</maker>
+		<name>Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor</name>
+		<dc:publisher>
+			<Organization rdf:about="https://eyeondesign.aiga.org" foaf:name="AIGA Eye on Design"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-14</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
+		<maker>
+			<Person foaf:name="J. Dakota Brown"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>When these writers did address the constraints of the workplace, it tended to be this thing about how The Man was going to put you in a Helvetica straitjacket and take away your personality. 
+	It seemed to me, on the contrary, that designers were increasingly expected to mine their souls for marketable new expressions.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
+		<maker>
+			<Person foaf:name="J. Dakota Brown"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>And students are understandably focused on the kind of professional training that will make the immense cost of college worth it. 
+	Then, as they enter the field, they face unprecedented expectations of flexibility and versatility. 
+	They are coached to ceaselessly adjust and retrain, but they aren’t offered a lot of space to question where those compulsions come from or why they exist. 
+	The emphasis is always on transforming yourself to meet social demands which defers the question of transforming society to meet human needs.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
 
@@ -84,6 +159,14 @@
 			<apply-templates select="@*|node()" mode="clone"/>
 		</copy>
 	</template>
+	<template match="text()" mode="normalize">
+		<value-of select="normalize-space()"/>
+	</template>
+	<template match="@*|*" mode="normalize">
+		<copy>
+			<apply-templates select="@*|node()" mode="normalize"/>
+		</copy>
+	</template>
 	<template match="*" mode="lang">
 		<attribute name="lang">
 			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
@@ -98,19 +181,52 @@
 			<apply-templates/>
 		</copy>
 	</template>
+	<template match="foaf:Person|foaf:Organization" mode="normalize">
+		<variable name="elt">
+			<choose>
+				<when test="@rdf:about">a</when>
+				<otherwise>span</otherwise>
+			</choose>
+		</variable>
+		<element name="html:{$elt}">
+			<if test="@rdf:about">
+				<attribute name="href">
+					<value-of select="@rdf:about"/>
+				</attribute>
+			</if>
+			<if test="@foaf:name">
+<html:span>
+				<apply-templates select="." mode="lang"/>
+				<value-of select="@foaf:name"/>
+</html:span>
+				<if test="foaf:name">
+					<text> </text>
+				</if>
+			</if>
+			<for-each select="foaf:name">
+<html:span>
+				<apply-templates select="." mode="lang"/>
+				<apply-templates mode="normalize"/>
+</html:span>
+				<if test="following-sibling::foaf:name">
+					<text> </text>
+				</if>
+			</for-each>
+		</element>
+	</template>
 	<template match="foaf:Document">
 		<if test="foaf:name">
 <html:a href="{@rdf:about}">
 	<html:cite>
 			<apply-templates select="foaf:name[1]" mode="lang"/>
-			<apply-templates select="foaf:name[1]/node()"/>
+			<apply-templates select="foaf:name[1]/node()" mode="normalize"/>
 	</html:cite>
 </html:a>
 			<if test="foaf:maker">
 				<text> | </text>
 <html:span>
 				<apply-templates select="foaf:maker[1]" mode="lang"/>
-				<apply-templates select="foaf:maker[1]/node()"/>
+				<apply-templates select="foaf:maker[1]/node()" mode="normalize"/>
 </html:span>
 			</if>
 			<if test="dc:publisher or dc:date">
@@ -118,7 +234,7 @@
 				<if test="dc:publisher">
 <html:span>
 					<apply-templates select="dc:publisher[1]" mode="lang"/>
-					<apply-templates select="dc:publisher[1]/node()"/>
+					<apply-templates select="dc:publisher[1]/node()" mode="normalize"/>
 </html:span>
 				</if>
 				<if test="dc:publisher and dc:date">
@@ -127,7 +243,7 @@
 				<if test="dc:date">
 <html:time>
 					<apply-templates select="dc:date[1]" mode="lang"/>
-					<apply-templates select="dc:date[1]/node()"/>
+					<apply-templates select="dc:date[1]/node()" mode="normalize"/>
 </html:time>
 				</if>
 				<text>)</text>
@@ -184,7 +300,7 @@ html:Target a[href]{ Color: #B01C1C }
 			<if test="foaf:maker">
 				<html:strong>
 				<apply-templates select="foaf:maker[1]" mode="lang"/>
-				<apply-templates select="foaf:maker[1]/node()"/>
+				<apply-templates select="foaf:maker[1]/node()" mode="normalize"/>
 				<if test="//foaf:Document[string(@rdf:about) = string(current()/schema.org:isBasedOn/@rdf:resource)]">
 					<text>: </text>
 				</if>
