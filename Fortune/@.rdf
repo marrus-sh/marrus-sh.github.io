@@ -77,6 +77,33 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
+	<!-- [2018-06-25] https://archiveofourown.org/works/15049127 -->
+	<Document rdf:about="https://archiveofourown.org/works/15049127">
+		<maker>
+			<Person rdf:about="https://archiveofourown.org/users/TheLoudGuy" foaf:name="TheLoudGuy"/>
+		</maker>
+		<name>The Princess Who Carries the Blood of the Goddess</name>
+		<dc:publisher>
+			<Organization rdf:about="https://archiveofourown.org" foaf:name="Archive of Our Own"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-25</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://archiveofourown.org/works/15049127"/>
+		<maker>
+			<Person foaf:name="Impa"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>You have gathered already that the Calamity is the result of apocalypse deferred by generations that could not deal with it in their own time. 
+	My generation is guilty of the same. 
+	But that does not make you more responsible for the world; it only means that you are the last ones who have a chance. 
+	Our failures weigh on you, but that does not change who you are. 
+	All of you who are preparing to fight, all of you who <html:em>have</html:em> fought—you and the princess and the Zora prince and the Chief of the Gerudo and all the others—are still children. 
+	You are still growing. 
+	When you stop this end, when you keep the world from breaking, you will continue to grow.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
 	<!-- [2021-03-29] Mark Rudd’s Lessons From SDS and the Weather Underground for Today’s Radicals -->
 	<Document rdf:about="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground">
 		<maker>
@@ -315,7 +342,7 @@
 @namespace "http://www.w3.org/1999/xhtml";
 @font-face { Font-Family: Elstob; Src: Local(Elstob), Url("../Fonts/Elstob/webfiles/Elstob[GRAD,opsz,wght].woff2"); Font-Style: Normal; Font-Weight: 200 800 }
 @font-face { Font-Family: Elstob; Src: Local(Elstob-Italic), Url("../Fonts/Elstob/webfiles/Elstob-Italic[GRAD,opsz,wght].woff2"); Font-Style: Italic; Font-Weight: 200 800 }
-html{ Overflow: Hidden; Font: 500 Medium / 1.5 Elstob, "Gentium Plus", JuniusX, Junicode, Serif; Color: #B8B3B0; Background: #1F1A14 }
+html{ Color: #B8B3B0; Background: #1F1A14; Scrollbar-Color: #B8B3B0 #302F2B; Font: 500 Medium / 1.5 Elstob, "Gentium Plus", JuniusX, Junicode, Serif }
 html:Target{ Color: #57534C; Background: #DEDBD9 }
 body{ Margin: Auto; Max-Width: 31REM }
 figure{ Display: Flex; Flex-Direction: Column; Margin: 2REM; Padding: 0 1REM; Height: Calc(100VH - 4REM); Overflow: Auto }
