@@ -67,13 +67,58 @@
 <html:p>Calculation for me means I’m gonna tell this girl she looks really nice at her sister’s wedding because I fucking care about her and I want these kids to know that I care about them. 
 	So I’m calculating how I’m going to express that I care about them. 
 	The calculation is not malicious. 
-	‘Let me calculate this situation, how can I make these kids know that I’m thinking about them right now and that I really fucking care about them?’ 
-	So I’m going to calculate this response and I’m going to say, ‘hey you, random fan, you looked fucking beautiful in that dress at your sister’s wedding—I just stalked your Twitter account’. 
-	And what that does is it says to everyone, ‘she fucking cares about us’, and it’s not fake.</html:p>
+	“Let me calculate this situation, how can I make these kids know that I’m thinking about them right now and that I really fucking care about them?” 
+	So I’m going to calculate this response and I’m going to say, “hey you, random fan, you looked fucking beautiful in that dress at your sister’s wedding—I just stalked your Twitter account”. 
+	And what that does is it says to everyone, “she fucking cares about us”, and it’s not fake.</html:p>
 <html:p>It’s calculated and it’s not fabricated. 
 	The calculation is that I’ve got five hundred thousand people here and I need to calculate the most organic way that I can present myself to them. 
 	Do you know what I mean? 
 	My biggest fear is being miscommunicated, I think that’s why I talk so much.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2021-03-29] Mark Rudd’s Lessons From SDS and the Weather Underground for Today’s Radicals -->
+	<Document rdf:about="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground">
+		<maker>
+			<Person foaf:name="Micah Uetricht"/>
+		</maker>
+		<name>Mark Rudd’s Lessons From SDS and the Weather Underground for Today’s Radicals</name>
+		<dc:publisher>
+			<Organization rdf:about="https://jacobinmag.com" foaf:name="Jacobin"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021-03-29</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground"/>
+		<maker>
+			<Person foaf:name="Mark Rudd"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>We made a fundamental mistake in understanding what had happened. 
+	We fell into the trap of thinking we were so important—that Mark Rudd was the leader of the Columbia strike. 
+	It was like we accepted the media image of white people as the protagonists. 
+	We saw ourselves as that important.</html:p>
+<html:p>But another big mistake that I was directly responsible for was eliminating organizing we had done so much of and substituting it with militancy. 
+	The last few months of Columbia <html:abbr title="Students for a Democratic Society">SDS</html:abbr>, a new faction that I led, the Action Faction, took over the chapter from the Praxis Axis, who were the old red diaper babies who taught us to build the base. 
+	But we said, “No, it’s action that’s important.”</html:p>
+<html:p>We forgot that it took years to get people to the point where they would join SDS. 
+	It doesn’t happen suddenly—it happens through building relationships.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground"/>
+		<maker>
+			<Person foaf:name="Mark Rudd"/>
+		</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>There’s a wonderful book that came out in the early ’70s, by Todd Gitlin, the sociologist and one of the original founders of <html:abbr title="Students for a Democratic Society">SDS</html:abbr>, called <html:cite>The Whole World Is Watching</html:cite>. 
+	He shows that over time, the experience at Columbia and Weathermen was a good example of substituting the media as our base for our original base. 
+	Our original base was students at Columbia University. 
+	That’s the base! 
+	Those are the people we’re trying to move. 
+	They’re the people we’re trying to mobilize and politicize. 
+	That’s the base. 
+	But we abandoned them.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
 
