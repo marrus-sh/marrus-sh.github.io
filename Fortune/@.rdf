@@ -1,0 +1,214 @@
+<?xml-stylesheet type="text/xsl" href="#transform"?>
+<!DOCTYPE rdf:RDF [ <!ATTLIST stylesheet id ID #REQUIRED> ]>
+<rdf:RDF
+	xml:lang="en"
+	xmlns="http://xmlns.com/foaf/0.1/"
+	xmlns:about="https://go.KIBI.family/Ontologies/About/#"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:schema.org="https://schema.org/"
+	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
+>
+
+	<!-- Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor | AIGA Eye on Design -->
+	<Document rdf:about="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/">
+		<maker>Ksenya Samarskaya</maker>
+		<name>Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor</name>
+		<dc:publisher>AIGA Eye on Design</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-14</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
+		<maker>J. Dakota Brown</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>When these writers did address the constraints of the workplace, it tended to be this thing about how The Man was going to put you in a Helvetica straitjacket and take away your personality. It seemed to me, on the contrary, that designers were increasingly expected to mine their souls for marketable new expressions.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
+		<maker>J. Dakota Brown</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>And students are understandably focused on the kind of professional training that will make the immense cost of college worth it. Then, as they enter the field, they face unprecedented expectations of flexibility and versatility. They are coached to ceaselessly adjust and retrain, but they aren’t offered a lot of space to question where those compulsions come from or why they exist. The emphasis is always on transforming yourself to meet social demands which defers the question of transforming society to meet human needs.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- Chihayafuru -->
+	<Document rdf:about="https://www.crunchyroll.com/chihayafuru">
+		<name>Chihayafuru</name>
+		<dc:publisher>Madhouse</dc:publisher>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://www.crunchyroll.com/chihayafuru"/>
+		<maker><html:span xml:lang="ja">駒野 勉</html:span> Tsutomu Komano</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>When you find yourself wishing that a certain person was also here, that person is like family to you. Regardless of how long or how well you know them.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- Productive Misunderstandings: an Interview with Sandy Kaltenborn -->
+	<Document rdf:about="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn">
+		<maker>Kevin Yuen Kit Lo</maker>
+		<name>Productive Misunderstandings: an Interview with Sandy Kaltenborn</name>
+		<dc:publisher>LOKI</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn"/>
+		<maker>Sandy Kaltenborn</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>From my perspective, these are not real bodies because there’s no problems attached to them, and of course bodies have problems attached to them as life bears a lot of problems.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn"/>
+		<maker>Kevin Yuen Kit Lo</maker>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Like there’s a big tension in many ways between the racialized immigrant communities that we’re working with and the white anarcho hardcore organizers, where it’s like, no… we want to actually <html:em>live</html:em> together. And through that living will be the engagement and the activism and the organizing and everything. We’re not just going to come to your six-hour meeting and agenda, we want to be able to eat, socialize, we want to be able to dance. It’s such a clear difference between the organizing I do with the more militant white activists versus the kind of community building initiatives we’re doing with racialized folks. I wish we could find ways to bridge them, but it’s so hard.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- About this document -->
+	<Document rdf:about="">
+		<name>✨ Fortune ✨</name>
+		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
+		<xhv:stylesheet>
+			<Document>
+				<rdf:value rdf:parseType="Literal">
+<stylesheet id="transform" version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
+	<template match="@*|node()" mode="clone">
+		<copy>
+			<apply-templates select="@*|node()" mode="clone"/>
+		</copy>
+	</template>
+	<template match="*" mode="lang">
+		<attribute name="lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+		<attribute name="xml:lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+	</template>
+	<template match="*">
+		<copy>
+			<apply-templates select="@*" mode="clone"/>
+			<apply-templates/>
+		</copy>
+	</template>
+	<template match="foaf:Document">
+		<if test="foaf:name">
+<html:a href="{@rdf:about}">
+	<html:cite>
+			<apply-templates select="foaf:name[1]" mode="lang"/>
+			<apply-templates select="foaf:name[1]/node()"/>
+	</html:cite>
+</html:a>
+			<if test="foaf:maker">
+				<text> | </text>
+<html:span>
+				<apply-templates select="foaf:maker[1]" mode="lang"/>
+				<apply-templates select="foaf:maker[1]/node()"/>
+</html:span>
+			</if>
+			<if test="dc:publisher or dc:date">
+				<text> (</text>
+				<if test="dc:publisher">
+<html:span>
+					<apply-templates select="dc:publisher[1]" mode="lang"/>
+					<apply-templates select="dc:publisher[1]/node()"/>
+</html:span>
+				</if>
+				<if test="dc:publisher and dc:date">
+					<text>, </text>
+				</if>
+				<if test="dc:date">
+<html:time>
+					<apply-templates select="dc:date[1]" mode="lang"/>
+					<apply-templates select="dc:date[1]/node()"/>
+</html:time>
+				</if>
+				<text>)</text>
+			</if>
+			<text>.</text>
+		</if>
+	</template>
+	<template match="rdf:RDF">
+<html:html id="light-theme">
+		<apply-templates select="." mode="lang"/>
+	<html:head>
+		<for-each select="foaf:Document[@rdf:about = '']">
+			<if test="foaf:name">
+		<html:title>
+				<value-of select="foaf:name"/>
+		</html:title>
+			</if>
+		<html:meta name="viewport" content="width=device-width"/>
+			<if test="xhv:icon">
+		<html:link rel="icon" href="{concat(xhv:icon/@rdfs:isDefinedBy, '/../', document(xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)}"/>
+			</if>
+		</for-each>
+		<html:style>
+@namespace "http://www.w3.org/1999/xhtml";
+@font-face { Font-Family: Elstob; Src: Local(Elstob), Url("../Fonts/Elstob/webfiles/Elstob[GRAD,opsz,wght].woff2"); Font-Style: Normal; Font-Weight: 200 800 }
+@font-face { Font-Family: Elstob; Src: Local(Elstob-Italic), Url("../Fonts/Elstob/webfiles/Elstob-Italic[GRAD,opsz,wght].woff2"); Font-Style: Italic; Font-Weight: 200 800 }
+html{ Overflow: Hidden; Font: 500 Medium / 1.5 Elstob, "Gentium Plus", JuniusX, Junicode, Serif; Color: #B8B3B0; Background: #1F1A14 }
+html:Target{ Color: #57534C; Background: #DEDBD9 }
+body{ Margin: Auto; Max-Width: 31REM }
+figure{ Display: Flex; Flex-Direction: Column; Margin: 2REM; Padding: 0 1REM; Height: Calc(100VH - 4REM); Overflow: Auto }
+figure[hidden]{ Display: None }
+figcaption{ Margin: 1.5REM 0 Auto; Font: .8REM / 1.25 Sans-Serif }
+figcaption>strong{ Color: #DEDBD9 }
+html:Target figcaption>strong{ Color: #302F2B }
+blockquote{ Position: Relative; Margin: Auto 1REM 0; Color: #FAF8F7; Text-Align: Justify }
+blockquote::before,
+blockquote::after{ Position: Absolute; Width: 2REM; Opacity: .6; Font-Size: 2REM; Font-Weight: 300; Line-Height: 1; Text-Align: Center }
+blockquote::before{ Top: .25REM; Left: -2REM; Content: "“" }
+blockquote::after{ Bottom: .25REM; Right: -2REM; Content: "„" }
+html:Target blockquote{ Color: #1F1A14 }
+p{ Margin: 0; Text-Indent: 1.5EM }
+a[href]{ Color: #EB9100 }
+html:Target a[href]{ Color: #B01C1C }
+		</html:style>
+	</html:head>
+	<html:body>
+		<for-each select="schema.org:Quotation">
+		<html:figure>
+			<html:blockquote>
+				<apply-templates select="rdf:value[1]" mode="lang"/>
+				<apply-templates select="rdf:value[1]/node()"/>
+			</html:blockquote>
+			<html:figcaption>
+			<if test="foaf:maker">
+				<html:strong>
+				<apply-templates select="foaf:maker[1]" mode="lang"/>
+				<apply-templates select="foaf:maker[1]/node()"/>
+				<if test="//foaf:Document[string(@rdf:about) = string(current()/schema.org:isBasedOn/@rdf:resource)]">
+					<text>: </text>
+				</if>
+				</html:strong>
+			</if>
+			<apply-templates select="//foaf:Document[string(@rdf:about) = string(current()/schema.org:isBasedOn/@rdf:resource)][1]"/>
+			</html:figcaption>
+		</html:figure>
+		</for-each>
+		<html:script>
+(( ) => {
+	const
+		$quotations = document.body.querySelectorAll(":root>body>figure"),
+		quotation = $quotations[Math.floor(Math.random() * $quotations.length)]
+		Array.prototype.forEach.call(document.body.children, elt =>
+			elt.hidden = !(elt.localName != "figure" || elt == quotation)) })()
+		</html:script>
+	</html:body>
+</html:html>
+	</template>
+</stylesheet>
+				</rdf:value>
+			</Document>
+		</xhv:stylesheet>
+	</Document>
+
+</rdf:RDF>
