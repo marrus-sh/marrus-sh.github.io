@@ -19,9 +19,6 @@
 [submodule "Fonts/Junicode-New"]
 	path = Fonts/Junicode-New
 	url = https://github.com/psb1558/Junicode-New.git
-[submodule "Apps/Writer"]
-	path = Apps/Writer
-	url = https://github.com/marrus-sh/writer.git
 [submodule "Tools/Kijch"]
 	path = Tools/Kijch
 	url = https://github.com/marrus-sh/Kijch.git

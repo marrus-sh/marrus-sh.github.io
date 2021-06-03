@@ -1,0 +1,832 @@
+<!dOcTyPe hTmL>
+<HTML Lang=en>
+
+<TITLE>KibiWriter</TITLE>
+<META Charset=utf-8>
+<META Name=viewport Content=width&equals;device-width,initial-scale&equals;1>
+<!--
+@ KibiWriter
+Version 1·0 / revision 0
+
+
+§ Changelog
+
+§§ Version 1
+
+
+§§§ Version 1·0 / revision 0
+
+New
+	• New music:
+		• Odyssey @ ‹ https://archive.org/details/Home-Odyssey › [CC BY-NC 3.0]
+		• When The Headline Hit Home @ ‹ https://archive.org/details/OurCeasingVoice-WhenTheHeadlineHitHome › [CC BY-NC-ND 3.0 Austria]
+		• Musical Landscapes I @ ‹ https://archive.org/details/jamendo-002808 › [CC BY-NC-ND 2.5]
+		• Between Two Worlds @ ‹ https://archive.org/details/jamendo-029279 › [CC BY-NC-ND 3.0]
+	• You can now use query parameters to specify initial state. For example: ‹ ?font=monospace&theme=digital&audio=future&24hour=true ›
+		• You will need to allow autoplay for this to work with audio.
+	• The footer now displays the currently playing track with a link to the album which is playing.
+	• A button has been added to skip the currently playing track.
+	• Safari support (more or less).
+	• @aria-label in addition to @title for naming controls.
+	• This changelog (which used to be in a separate file).
+
+Changed
+	• Basically a rewrite; massive code style adjustments as well as modifications.
+	• Now uses a grid‐based layout instead of relying on ‹ inline-block ›.
+	• Built using CSS logical properties.
+
+Removed
+	• Electron support (nobody used this).
+	• Support for older browsers.
+	• Input methods (outdated and never helped anyone except for me anyway).
+
+
+§§ Version 0
+
+
+§§§ Version 0·5 / revision 0
+
+New
+	• Input methods added, which map ASCII characters to new codepoints for inputting LANGDEV texts:
+		• ‹ Latn › (default)
+		• ‹ Bkde › (Bencode)
+		• ‹ Sevr › (Runic Sevensi)
+		• ‹ Sevi › (Sevensi)
+		• ‹ osv-Latn › (Latin with additions for Sevensi romanization)
+
+Changed
+	• The text in the bottom "meta" bar is no longer selectable.
+	• Fixed an issue where the Electron app would sometimes have unnecessary scrollbars.
+
+
+§§§ Version 0·4 / revision 0
+
+New
+	• Music added (hosted via ‹ https://archive.org/ ›):
+		• MAAP Excursion One @ ‹ https://archive.org/details/LUXXAr051402-01 › [CC BY-NC-ND 3.0]
+		• Ghosts I @ ‹ https://archive.org/details/nineinchnails_ghosts_I_IV › [CC BY-NC-SA 3.0]
+		• Future, and It Doesn't Work @ ‹ https://archive.org/details/Future_and_It_Doesnt_Work-4777 › [CC BY-NC-ND 3.0]
+		• rain.mp3 (Own work; from public domain sources) [CC0]
+	• New themes:
+		• Old Vampire (minimal black + red)
+		• Digital (see ‹ http://scoutshonour.com/digital/ ›)
+		• Modern (minimalist white)
+	• Can now be run as an Electron app via ‹ npm start ›.
+
+Changed
+	• Changes to code style.
+
+Removed
+	• The old footer has been removed.
+
+
+§§§ Version 0·3 / revision 1
+
+Changed
+	• Fixed ‹ white-space › on theme selector.
+
+
+§§§ Version 0·3 / revision 0
+
+New
+	• “Clear document” button.
+	• @accesskey·s added (these only work when the text·area is not focused).
+
+Changed
+	• HTML has been cleaned up slightly and buttons are now better‐defined.
+	• Time is now 12‐hour by default, but can be clicked to switch to 24‐hour.
+	• Wrapping is disabled on the topbar.
+
+
+§§§ Version 0·2 / revision 0
+
+New
+	• Theming support has been added! The following themes are supported:
+		• Basic (blue)
+		• Wine
+		• Orange
+		• Pink
+		• Legendary (blue + tan)
+		• New legendary (green + tan)
+		• Vampire (black + red)
+
+
+§§§ Version 0·1 / revision 1
+
+New
+	• A <meta> element with viewport information has been added to support mobile devices.
+	• Footer links now visually respond to hover.
+
+Changed
+	• Default filename for files is now capped at 40 characters (plus the 4‐character .txt extension) rather than 18.
+	• The upload button now has a @tabindex attribute to make it accessible via keyboard navigation.
+	• The internal code style has changed.
+	• A missing ‹ g › flag leading to an improper wordcount has been added.
+
+Removed
+	• The default browser outline on focused topbar elements has been removed, since they are visually distinguished by other means.
+	• However, this appears to have no effect for <button> elements on Firefox, probably because of button shadow DOM.
+
+
+§§§ Version 0·1 / revision 0
+
+Initial release.
+-->
+<STYLE>
+html{ Color: Black; Background: White }
+body{ Position: Absolute; Inset: 0; Margin: 0; Border: None; Padding: 0; Overflow: Hidden }
+#writer{ Display: Grid; Grid: 1.35REM Auto 1.35REM / Auto-Flow; Position: Absolute; Box-Sizing: Border-Box; Inset-Block: .675REM; Inset-Inline: .5REM; Margin: Auto; Block-Size: Max-Content; Max-Block-Size: 100%; Inline-Size: Max-Content; Max-Inline-Size: 100%; Color: CurrentColor; Background: White; Background-Clip: Content-Box; Font-Size: 1REM /*  prevents changes in fontsize due to monospace  */; Font-Synthesis: None; Line-Height: 1.35 }
+#menu{ Display: Grid; Grid: 1.35REM / Auto-Flow; Margin-Inline-End: Auto; Font-Weight: Bold; White-Space: NoWrap }
+#menu *[role=group]{ Display: Contents }
+#menu *.ITEM{ All: Unset; Position: Relative; Block-Size: 100%; Min-Inline-Size: 2REM; Color: White; Background: Black; Text-Align: Center; Text-Overflow: Clip; Cursor: Pointer }
+#menu *.ITEM[aria-checked=true]{ Color: Black; Background: White }
+#menu>*.ITEM:First-Child,
+#menu>*[role=group]:First-Child>*.ITEM:First-Child{ Border-Start-Start-Radius: 1EX }
+#menu>*.ITEM:Last-Child,
+#menu>*[role=group]:Last-Child>*.ITEM:Last-Child{ Border-Start-End-Radius: 1EX }
+#menu *.ITEM+*.ITEM{ Border-Inline-Start: Thin CurrentColor Solid }
+#menu hr{ Box-Sizing: Content-Box; Margin: 0; Border-Inline-Width: Thin; Border-Color: CurrentColor; Border-Block-Style: None; Border-Inline-Style: Solid; Padding: 0; Color: Inherit; Background: None; Block-Size: 100%; Min-Inline-Size: 2PX }
+#menu *.POPUP{ Display: Grid; Grid: Repeat(7, 1.35REM) / Auto-Flow 1FR; Position: Absolute; Inset-Block-Start: 100%; Inset-Inline: -5CH; Margin-Inline: Auto; Inline-Size: Max-Content; Justify-Content: Center; Pointer-Events: None; Z-Index: 99 }
+#menu *.POPUP:Hover{ Z-Index: 100 }
+#menu *.POPUP[hidden]{ Display: None }
+#menu *.POPUP *.ITEM{ Display: Flex; Overflow: Hidden; Justify-Content: Center; Pointer-Events: Auto }
+#menu *.POPUP *.ITEM+*.ITEM{ Border: None }
+#menu *.POPUP *.ITEM::before,
+#menu *.POPUP *.ITEM::after{ Visibility: Hidden; Content: " · " }
+#menu *.POPUP *.ITEM[Aria-Checked="true"]::before,
+#menu *.POPUP *.ITEM[Aria-Checked="true"]::after{ Visibility: Visible }
+#menu\.fonts *.ITEM::after{ Content: "A" }
+#menu\.themes::after{ Font-Style: Italic; Content: "T" }
+#menu\.audio::after{ Content: "♫" }
+#menu\.io\.clear::after{ Content: "✘" }
+LABEL[For="menu.io.upload"]::after{ Content: "⬆" }
+#menu\.io\.download::after{ Content: "⬇" }
+#menu #menu\.themes *[value=go]{ Color: #F0F0F0; Background: #004599 }
+#menu #menu\.themes *[value=go]:Focus,
+#menu #menu\.themes *[value=go]:Hover{ Color: #021335; Background: #ECAFA2; Outline: None }
+#menu #menu\.themes *[value=basic]{ Color: AliceBlue; Background: SteelBlue }
+#menu #menu\.themes *[value=basic]:Focus,
+#menu #menu\.themes *[value=basic]:Hover{ Color: MidnightBlue; Background: LightSteelBlue; Outline: None }
+#menu #menu\.themes *[value=wine]{ Color: #F3DEE3; Background: #700020 }
+#menu #menu\.themes *[value=wine]:Focus,
+#menu #menu\.themes *[value=wine]:Hover{ Color: #97596B; Background: #F3DEE3; Outline: None }
+#menu #menu\.themes *[value=orange]{ Color: PapayaWhip; Background: DarkOrange }
+#menu #menu\.themes *[value=orange]:Focus,
+#menu #menu\.themes *[value=orange]:Hover{ Color: Orange; Background: PapayaWhip; Outline: None }
+#menu #menu\.themes *[value=pink]{ Color: LavenderBlush; Background: DeepPink }
+#menu #menu\.themes *[value=pink]:Focus,
+#menu #menu\.themes *[value=pink]:Hover { Color: HotPink; Background: LavenderBlush; Outline: None }
+#menu #menu\.themes *[value=legendary]{ Color: Black; Background: #777899; }
+#menu #menu\.themes *[value=legendary]:Focus,
+#menu #menu\.themes *[value=legendary]:Hover{ Color: #001155; Background: #AAABBC; Outline: None }
+#menu #menu\.themes *[value=nLeg]{ Color: #FFF8E3; Background: #336633 }
+#menu #menu\.themes *[value=nLeg]:Focus,
+#menu #menu\.themes *[value=nLeg]:Hover{ Color: #FFF8E3; Background: #776335; Outline: None }
+#menu #menu\.themes *[value=vampire]{ Color: #EEEEEE; Background: #000000 }
+#menu #menu\.themes *[value=vampire]:Focus,
+#menu #menu\.themes *[value=vampire]:Hover{ Color: #220000; Background: #DEDEDE; Outline: None }
+#menu #menu\.themes *[value=O]{ Color: #BB0033; Background: #000000 }
+#menu #menu\.themes *[value=O]:Focus,
+#menu #menu\.themes *[value=O]:Hover{ Color: #FF0000; Background: #000000; Outline: None }
+#menu #menu\.themes *[value=digital]{ Color: #FFFFFF; Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #275D9B; Font-Family: Monospace; Font-Weight: Bold }
+#menu #menu\.themes *[value=digital]:Focus,
+#menu #menu\.themes *[value=digital]:Hover { Color: #929292; Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #275D9B; Outline: None }
+#menu #menu\.themes *[value=digital]::before,
+#menu #menu\.themes *[value=digital]::after{ Content: "·" }
+#menu #menu\.themes *[value=modern]{ Color: #4D4D4D; Background: #FAFAFA; Font-Family: Sans-Serif; Font-Weight: 300 }
+#menu #menu\.themes *[value=modern]:Focus,
+#menu #menu\.themes *[value=modern]:Hover{ Color: #333333; Background: #FFFFFF; Outline: None }
+#content{ Box-Sizing: Border-Box; Margin: 0; Border: None; Padding: .675EM 0; Block-Size: 29.7REM; Max-Block-Size: Calc(100VH - 4.05REM); Inline-Size: 27REM; Min-Inline-Size: 100%; Max-Inline-Size: Calc(100VW - 1REM); Color: Inherit; Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, CurrentColor 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White; Font: Inherit; White-Space: Pre-Wrap; Overflow-X: Hidden; Overflow-Y: Scroll; Resize: Both }
+#content:Focus{ Outline: None }
+#meta{ Display: Grid; Grid: 1.35REM / Auto-Flow Max-Content; Border-End-Start-Radius: 1EX; Border-End-End-Radius: 1EX; Padding-Inline: .35REM; Color: White; Background: Black; White-Space: NoWrap; Overflow: Hidden; Text-Overflow: Ellipsis; Cursor: Default; User-Select: None }
+#meta #meta\.nowplaying\.skip{ All: Unset }
+#meta #meta\.nowplaying\.skip[hidden]{ Display: None }
+#meta hr{ Display: Inline-Block; Margin-Block: 0; Margin-Inline: .35REM; Border-Block-Start-Style: Solid; Border-Width: Thin; Padding: 0; Width: 0; Height: 100%; Color: Inherit; Background: None; Vertical-Align: Top }
+#meta a[href]{ Color: CurrentColor }
+#meta cite{ Font-Style: Inherit }
+#meta cite::before{ Content: "“" }
+#meta cite::after{ Content: "”" }
+</STYLE>
+<STYLE Id=style.selected Title=Selected&#x20;Style>
+html,
+#writer{ Background: #F0F0F0 }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #F0F0F0; Background: #004599 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #021335; Background: #ECAFA2; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: #FFFFFF; Background: #8A1C00 }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #F0F0F0 }
+#content{ Padding-Inline: .5EM; Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, #D58072 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White }
+</STYLE>
+<STYLE Id=style.go Title=GO!>
+html,
+#writer{ Background: #F0F0F0 }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #F0F0F0; Background: #004599 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #021335; Background: #ECAFA2; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: #FFFFFF; Background: #8A1C00 }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #F0F0F0 }
+#content{ Padding-Inline: .5EM; Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, #D58072 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White }
+</STYLE>
+<STYLE Id=style.basic Title=Basic>
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: AliceBlue; Background: SteelBlue }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: MidnightBlue; Background: LightSteelBlue; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: MidnightBlue; Background: AliceBlue }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: AliceBlue }
+#content{ Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, SteelBlue 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White }
+</STYLE>
+<STYLE Id=style.wine Title=Wine>
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #F3DEE3; Background: #700020 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #97596B; Background: #F3DEE3; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: #700020; Background: #F3DEE3 }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #D6C6C9 }
+#content{ Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, #992244 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White }
+</STYLE>
+<STYLE Id=style.orange Title=Orange>
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: PapayaWhip; Background: DarkOrange }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: Orange; Background: PapayaWhip; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: DarkOrange; Background: PapayaWhip }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: PapayaWhip }
+#content{ Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, Orange 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White }
+</STYLE>
+<STYLE Id=style.pink Title=Pink>
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: LavenderBlush; Background: DeepPink }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: HotPink; Background: LavenderBlush; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: DeepPink; Background: LavenderBlush }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: LavenderBlush }
+#content{ Background: Repeating-Linear-Gradient(To Right, White, White .075EM, Transparent .075EM, Transparent .225EM, White .225EM, White .3EM), Content-Box Repeat Linear-Gradient(To Top, HotPink 1PX, Transparent 1PX) Top Left / Auto 1.35EM, White }
+</STYLE>
+<STYLE Id=style.legendary Title=Legendary>
+html,
+#writer{ Background: #999ABC }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: Black; Background: #777899 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #001155; Background: #AAABBC; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: Black; Background: #EEE8DD }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #001155 }
+#content{ Border: 1PX #220000 Solid; Padding-Block: Calc(.675EM - 1PX); Padding-Inline: Calc(1EM - 1PX); Color: #334566; Background: Repeating-Linear-Gradient(To Right, #EEEEEE, #EEEEEE .075EM, Transparent .075EM, Transparent .225EM, #EEEEEE .225EM, #EEEEEE .3EM), Content-Box Repeat Linear-Gradient(To Top, #334566 1PX, Transparent 1PX) Top Left / Auto 1.35EM, #EEEEEE }
+</STYLE>
+<STYLE Id=style.nLeg Title=New&#x20;Legendary>
+html,
+#writer{ Background: #FFF8E3 }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #FFF8E3; Background: #336633 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #FFF8E3; Background: #776335; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: #776335; Background: #EEDDBF }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #FFF8E3 }
+#content{ Border: 1PX #220000 Solid; Padding-Block: Calc(.675EM - 1PX); Padding-Inline: Calc(1EM - 1PX); Color: #332714; Background: Repeating-Linear-Gradient(To Right, #EEDDBF, #EEDDBF .075EM, Transparent .075EM, Transparent .225EM, #EEDDBF .225EM, #EEDDBF .3EM), Content-Box Repeat Linear-Gradient(To Top, #887256 1PX, Transparent 1PX) Top Left / Auto 1.35EM, #EEDDBF }
+</STYLE>
+<STYLE Id=style.vampire Title=Vampire>
+html,
+#writer{ Background: #222222 }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #EEEEEE; Background: #000000 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #220000; Background: #DEDEDE; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: #DEDEDE; Background: #550022 }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #DEDEDE }
+#content{ Border: 1PX #220000 Solid; Padding-Block: Calc(.675EM - 1PX); Padding-Inline: Calc(1EM - 1PX); Color: #BB99AA; Background: Repeating-Linear-Gradient(To Right, #131313, #131313 .075EM, Transparent .075EM, Transparent .225EM, #131313 .225EM, #131313 .3EM), Content-Box Repeat Linear-Gradient(To Top, #550022 1PX, Transparent 1PX) Top Left / Auto 1.35EM, #131313 }
+</STYLE>
+<STYLE Id=style.O Title=Old&#x20;Vampire>
+html,
+#writer{ Background: #000000 }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #000000; Background: #BB0033 }
+#menu>*.ITEM:First-Child,
+#menu>*[Role="group"]:First-Child > *.ITEM:First-Child,
+#menu>*.ITEM:Last-Child,
+#menu>*[Role="group"]:Last-Child > *.ITEM:Last-Child,
+#meta{ Border-Radius: 0 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #000000; Background: #FF0000; Outline: None }
+#menu *.ITEM[aria-checked=true]{ Color: #FF0000; Background: #000000 }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #000000 }
+#content{ Border: 1PX CurrentColor Solid; Padding-Block: Calc(.675EM - 1PX); Padding-Inline: Calc(1EM - 1PX); Color: #BB0033; Background: #000000 }
+</STYLE>
+<STYLE Id=style.digital Title=Digital>
+html { Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #1D487A }
+#writer{ Background: Transparent; Font-Family: Monospace; Font-Weight: Bold }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[aria-checked=true],
+#menu HR,
+#meta{ Color: #275D9B; Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #FFFFFF }
+#menu>*.ITEM:First-Child,
+#menu>*[Role="group"]:First-Child > *.ITEM:First-Child,
+#menu>*.ITEM:Last-Child,
+#menu>*[Role="group"]:Last-Child > *.ITEM:Last-Child,
+#meta{ Border-Radius: 0 }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover,
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #275D9B; Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #929292; Outline: None }
+#menu *.POPUP *.ITEM::before,
+#menu *.POPUP *.ITEM::after{ Visibility: Hidden; Content: "·" }
+#menu *.ITEM[aria-checked=true]{ Color: #FFFFFF; Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #275D9B }
+#menu *.ITEM + *.ITEM,
+#menu HR{ Border-Color: #275D9B }
+#content{ Border: 3PX #FFFFFF Solid; Padding-Block: Calc(.675EM - 3PX); Padding-Inline: Calc(1EM - 3PX); Color: #FFFFFF; Background: Repeat Fixed Linear-Gradient(To Bottom, RGBA(0, 0, 0, .15) 1PX, RGBA(0, 0, 0, 0) 1PX, RGBA(0, 0, 0, 0) 3PX, RGBA(0, 0, 0, .15) 3PX) Top Left / Auto 4PX, #275D9B }
+</STYLE>
+<STYLE Id=style.modern Title=Modern>
+html{ Background: #FAFAFA; Color: #000000 }
+#writer{ Block-Size: Auto; Inline-Size: Auto; Padding: 0; Background: Transparent; Font-Family: Sans-Serif; Font-Weight: 300 }
+#menu{ Margin-Inline: Auto; Inline-Size: 100%; Max-Inline-Size: 64REM; Background: RGBA(255, 255, 255, .95); Box-Shadow: 0 0 0 1PX #D6D6D6 }
+#meta{ Color: #888; Background: Transparent; Justify-Content: Center }
+#menu *.ITEM,
+#menu *.POPUP *.ITEM[Aria-Checked="true"],
+#menu hr{ Color: #888; Background: Transparent }
+#menu>*.ITEM:First-Child,
+#menu>*[Role="group"]:First-Child > *.ITEM:First-Child,
+#menu>*.ITEM:Last-Child,
+#menu>*[Role="group"]:Last-Child > *.ITEM:Last-Child,
+#meta{ Border-Radius: 0 }
+#menu *.POPUP{ Inline-Size: Auto }
+#menu *.POPUP *.ITEM{ Background: RGBA(255, 255, 255, .95) }
+#menu *.ITEM:Focus,
+#menu *.ITEM:Hover{ Color: #4D4D4D; Background: Transparent; Outline: None }
+#menu *.POPUP *.ITEM[aria-checked=true]:Focus,
+#menu *.POPUP *.ITEM[aria-checked=true]:Hover{ Color: #4D4D4D; Background: #FAFAFA; Outline: None }
+#menu *.ITEM[aria-checked=true] { Color: #333; Background: #FAFAFA }
+#menu *.ITEM+*.ITEM,
+#menu hr{ Border-Color: #D6D6D6 }
+#menu hr{ Color: #D6D6D6; Background: CurrentColor }
+#content{ Border: 1PX #D6D6D6 Dashed; Padding: 0; Max-Block-Size: Calc(100VH - 5.4REM); Min-Inline-Size: 0; Align-Self: Center; Justify-Self: Center; Background: Transparent }
+</STYLE>
+
+<DIV Id=writer Role=application>
+	<DIV Id=menu Role=menubar>
+		<DIV Id=menu.fonts Role=group Title=Fonts Aria-Label=Fonts>
+			<BUTTON Class=ITEM Type=button Name=font Value=sans Role=menuitemradio Title=Sans·serif Aria-Checked=true Aria-Label=Sans·serif Style="Font-Family: Sans-Serif, &quot;Unifont LANGDEV&quot;" AccessKey=1></BUTTON>
+			<BUTTON Class=ITEM Type=button Name=font Value=serif Role=menuitemradio Title=Serif Aria-Checked=false Aria-Label=Serif Style=Font-Family:"Serif, &quot;Unifont LANGDEV&quot;" AccessKey=2></BUTTON>
+			<BUTTON Class=ITEM Type=button Name=font Value=cursive Role=menuitemradio Title=Cursive Aria-Checked=false Aria-Label=Cursive Style="Font-Family: Cursive, &quot;Unifont LANGDEV&quot;" AccessKey=3></BUTTON>
+			<BUTTON Class=ITEM Type=button Name=font Value=monospace Role=menuitemradio Title=Monospace Aria-Checked=false Aria-Label=Monospace Style="Font-Family: Monospace, &quot;Unifont LANGDEV&quot;" AccessKey=4></BUTTON>
+			<BUTTON Class=ITEM Type=button Name=font Value=fantasy Role=menuitemradio Title=Fantasy Aria-Checked=false Aria-Label=Fantasy Style="Font-Family: Fantasy, &quot;Unifont LANGDEV&quot;" AccessKey=5></BUTTON>
+		</DIV>
+		<HR>
+		<DIV Id=menu.themes Class=ITEM Role=menuitemcheckbox Title="Show themes" TabIndex=0 Aria-Checked=false Aria-HasPopup=true Aria-Label="Show themes">
+			<DIV Id=menu.themes.popup Class=POPUP Role=menu Hidden>
+				<BUTTON Class=ITEM Type=button Name=theme Value=go Role=menuitemradio Title="GO! theme" Aria-Checked=true Aria-Label="GO! theme"><B>!</B></BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=basic Role=menuitemradio Title="Basic theme" Aria-Checked=true Aria-Label="Basic theme">1</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=wine Role=menuitemradio Title="Wine theme" Aria-Checked=false Aria-Label="Wine theme">2</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=orange Role=menuitemradio Title="Orange theme" Aria-Checked=false Aria-Label="Orange theme">3</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=pink Role=menuitemradio Title="Pink theme" Aria-Checked=false Aria-Label="Pink theme">4</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=legendary Role=menuitemradio Title="Legendary theme" Aria-Checked=false Aria-Label="Legendary theme">5</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=nLeg Role=menuitemradio Title="New Legendary theme" Aria-Checked=false Aria-Label="New Legendary theme">6</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=vampire Role=menuitemradio Title="Vampire theme" Aria-Checked=false Aria-Label="Vampire theme">7</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=O Role=menuitemradio Title="Old Vampire theme" Aria-Checked=false Aria-Label="Old Vampire theme">8</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=digital Role=menuitemradio Title="Digital theme" Aria-Checked=false Aria-Label="Digital theme">9</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=theme Value=modern Role=menuitemradio Title="Modern theme" Aria-Checked=false Aria-Label="Modern theme">X</BUTTON>
+			</DIV>
+		</DIV>
+		<HR>
+		<DIV Id=menu.audio Class=ITEM Role=menuitemcheckbox Title="Select audio track" TabIndex=0 Aria-Checked=false Aria-HasPopup=true Aria-Label="Select audio track">
+			<DIV Id=menu.audio.popup Class=POPUP Role=menu Hidden>
+				<BUTTON Class=ITEM Type=button Name=audio Value=none Role=menuitemradio Title="No audio" Aria-Checked=true Aria-Label="No audio">⦰</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=maap Role=menuitemradio Title="MAAP Excursion One&#x0A;The Lights Galaxia [CC BY-NC-ND 3.0]" Aria-Checked=true Aria-Label="MAAP Excursion One, by The Lights Galaxia [CC BY-NC-ND 3.0]">A</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=ghosts Role=menuitemradio Title="Ghosts I&#x0A;Nine Inch Nails [CC BY-NC-SA 3.0]" Aria-Checked=true Aria-Label="Ghosts I, by Nine Inch Nails [CC BY-NC-SA 3.0]">B</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=future Role=menuitemradio Title="Future, and It Doesn't Work&#x0A;Starscream [CC BY-NC-ND 3.0]" Aria-Checked=true Aria-Label="Future, and It Doesn't Work, by Starscream [CC BY-NC-ND 3.0]">C</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=rain Role=menuitemradio Title="rain.mp3&#x0A;[Public domain]" Aria-Checked=true Aria-Label="rain.mp3 [Public domain]">D</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=odyssey Role=menuitemradio Title="Odyssey&#x0A;HOME [CC BY-NC-ND 3.0]" Aria-Checked=true Aria-Label="Odyssey, by HOME [CC BY-NC 3.0]">E</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=headline Role=menuitemradio Title="When The Headline Hit Home&#x0A;Our Ceasing Voice [CC BY-NC-ND 3.0 Austria]" Aria-Checked=true Aria-Label="When The Headline Hit Home, by Our Ceasing Voice [CC BY-NC-ND 3.0 Austria]">F</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=landscapes Role=menuitemradio Title="Musical Landscapes I&#x0A;Galdson [CC BY-NC-ND 2.5]" Aria-Checked=true Aria-Label="Musical Landscapes I, by Galdson [CC BY-NC-ND 2.5]">G</BUTTON>
+				<BUTTON Class=ITEM Type=button Name=audio Value=worlds Role=menuitemradio Title="Between Two Worlds&#x0A;Maya Filipič [CC BY-NC-ND 3.0]" Aria-Checked=true Aria-Label="Between Two Worlds, by Maya Filipič [CC BY-NC-ND 3.0]">H</BUTTON>
+			</DIV>
+		</DIV>
+		<HR>
+		<DIV Id=menu.io Role=group>
+			<BUTTON Id=menu.io.clear Class=ITEM Type=button Title="Clear document" AccessKey=w Aria-Label="Clear document"></BUTTON>
+			<LABEL Class=ITEM For=menu.io.upload Title=Upload TabIndex=0 AccessKey=o Aria-Label=Upload><INPUT Id=menu.io.upload Type=file Style=Display:None></LABEL>
+			<A Id=menu.io.download Class=ITEM Role=menuitem Title=Download Download=My&#x20;Document.txt AccessKey=s Aria-Label=Download></A>
+		</DIV>
+	</DIV>
+	<TEXTAREA Id=content AutoFocus Style="Font-Family: Sans-Serif"></TEXTAREA>
+	<ASIDE Id=meta Role=note>
+		<TIME Id=meta.datetime Title="Time unknown" DateTime=00:00><SPAN Id=meta.datetime.hours>??</SPAN><SPAN Id=meta.datetime.separator Style=Opacity:1>:</SPAN><SPAN Id=meta.datetime.minutes>??</SPAN><SPAN Id=meta.datetime.suffix Hidden></SPAN></TIME>
+		<HR>
+		<SPAN Id=meta.wordcount>??? characters, ??? words</SPAN>
+		<HR>
+		<SPAN Id=meta.nowplaying><SPAN Id=meta.nowplaying.trackno>♪</SPAN> <SPAN Id=meta.nowplaying.track>[Nothing playing]</SPAN> <BUTTON ID=meta.nowplaying.skip Type=button Title="Skip to next track" Aria-Label="Skip to next track" Hidden>⏭</BUTTON></SPAN>
+	</ASIDE>
+</DIV>
+<SCRIPT>
+	void function ( ) {
+		"use strict"
+		const
+			audio = typeof Audio == "function" ? new Audio : null
+			, audio_menu = document.getElementById("menu.audio")
+			, content = document.getElementById("content")
+			, datetime = document.getElementById("meta.datetime")
+			, datetime_suffix = document.getElementById("meta.datetime.suffix")
+			, download = document.getElementById("menu.io.download")
+			, fonts = document.getElementById("menu.fonts")
+			, input = document.getElementById("meta.input")
+			, play = ( ) => {
+				const playlist = playlists[audio_menu.querySelector("button[aria-checked=true]").value]
+				if ( playlist == null ) {
+					track = -1
+					audio.pause()
+					document.getElementById("meta.nowplaying.trackno").textContent = "♪"
+					trackinfo.textContent = "[Nothing playing]"
+					skip.hidden = true }
+				else {
+					const next = playlist.tracks[track = (track + 1) % playlist.tracks.length]
+						, link = document.createElement("a")
+						, citation = document.createElement("cite")
+					audio.src = playlist.prefix + next.path
+					audio.play()
+					citation.textContent = next.title
+					link.appendChild(citation)
+					link.href = playlist.album
+					document.getElementById("meta.nowplaying.trackno").textContent = `♪ ${ track < 9 ? "0" + (track + 1) : track }`
+					trackinfo.textContent = ""
+					trackinfo.appendChild(link)
+					skip.hidden = false } }
+			, playlists =
+				{ future:
+					{ album: "https://archive.org/details/Future_and_It_Doesnt_Work-4777"
+					, prefix: "https://archive.org/download/Future_and_It_Doesnt_Work-4777/"
+					, tracks:
+						[
+							{ path: "Starscream_-_01_-_Rise_of_Space.mp3"
+							, title: "Rise of Space" }
+						,
+							{ path: "Starscream_-_02_-_Space_Party_Anthem.mp3"
+							, title: "Space Party Anthem" }
+						,
+							{ path: "Starscream_-_03_-_Gravity_in_Terms_of_Space-Time.mp3"
+							, title: "Gravity in Terms of Space-Time" }
+						,
+							{ path: "Starscream_-_04_-_Keplers_Star_Catalog.mp3"
+							, title: "Kepler's Star Catalog" }
+						,
+							{ path: "Starscream_-_05_-_Future_and_It_Doesnt_Work.mp3"
+							, title: "Future, and It Doesn't Work" } ] }
+				, ghosts:
+					{ album: "https://archive.org/details/nineinchnails_ghosts_I_IV"
+					, prefix: "https://archive.org/download/nineinchnails_ghosts_I_IV/"
+					, tracks:
+						[
+							{ path: "01_Ghosts_I.mp3"
+							, title: "01 Ghosts I" }
+						,
+							{ path: "02_Ghosts_I.mp3"
+							, title: "02 Ghosts I" }
+						,
+							{ path: "03_Ghosts_I.mp3"
+							, title: "03 Ghosts I" }
+						,
+							{ path: "04_Ghosts_I.mp3"
+							, title: "04 Ghosts I" }
+						,
+							{ path: "05_Ghosts_I.mp3"
+							, title: "05 Ghosts I" }
+						,
+							{ path: "06_Ghosts_I.mp3"
+							, title: "06 Ghosts I" }
+						,
+							{ path: "07_Ghosts_I.mp3"
+							, title: "07 Ghosts I" }
+						,
+							{ path: "08_Ghosts_I.mp3"
+							, title: "08 Ghosts I" }
+						,
+							{ path: "09_Ghosts_I.mp3"
+							, title: "09 Ghosts I" } ] }
+				, headline:
+					{ album: "https://archive.org/details/OurCeasingVoice-WhenTheHeadlineHitHome"
+					, prefix: "https://archive.org/download/OurCeasingVoice-WhenTheHeadlineHitHome/"
+					, tracks:
+						[
+							{ path: "01PassengerKilledInHitAndRun.mp3"
+							, title: "Passenger Killed In Hit And Run" }
+						,
+							{ path: "02WithoutEvenBreathing.mp3"
+							, title: "Without Even Breathing" }
+						,
+							{ path: "03HighwayLights.mp3"
+							, title: "Highway Lights" }
+						,
+							{ path: "04TheOnlyOnesDeadareThoseWho.mp3"
+							, title: "The Only Ones Dead (Are Those Who Are Forgotten)" }
+						,
+							{ path: "05HopesOfYore.mp3"
+							, title: "Hopes Of Yore" }
+						,
+							{ path: "06SummersOrangeHaze.mp3"
+							, title: "Summer's Orange Haze" }
+						,
+							{ path: "07PolaroidsAndChineseWhispers.mp3"
+							, title: "Polaroids And Chinese Whispers" }
+						,
+							{ path: "08WithinTheNickOfTime.mp3"
+							, title: "Within The Nick Of Time" } ] }
+				, landscapes:
+					{ album: "https://archive.org/details/jamendo-002808"
+					, prefix: "https://archive.org/download/jamendo-002808/"
+					, tracks:
+						[
+							{ path: "01.mp3"
+							, title: "Merlaska" }
+						,
+							{ path: "02.mp3"
+							, title: "Denilio" }
+						,
+							{ path: "03.mp3"
+							, title: "Exariam" }
+						,
+							{ path: "04.mp3"
+							, title: "Sindomine" }
+						,
+							{ path: "05.mp3"
+							, title: "Arneia" }
+						,
+							{ path: "06.mp3"
+							, title: "Farlem" }
+						,
+							{ path: "07.mp3"
+							, title: "Randoma" }
+						,
+							{ path: "08.mp3"
+							, title: "Nuevia" }
+						,
+							{ path: "09.mp3"
+							, title: "Isundo" } ] }
+				, maap:
+					{ album: "https://archive.org/details/LUXXAr051402-01"
+					, prefix: "https://archive.org/download/LUXXAr051402-01/"
+					, tracks:
+						[
+							{ path: "01_-_The_Lights_Galaxia_-_E1_T4.mp3"
+							, title: "E1-T4" }
+						,
+							{ path: "02_-_The_Lights_Galaxia_-_E1_T1.mp3"
+							, title: "E1-T1" }
+						,
+							{ path: "03_-_The_Lights_Galaxia_-_E1_T2.mp3"
+							, title: "E1-T2" }
+						,
+							{ path: "04_-_The_Lights_Galaxia_-_E1_T5.mp3"
+							, title: "E1-T5" }
+						,
+							{ path: "05_-_The_Lights_Galaxia_-_E1_T3.mp3"
+							, title: "E1-T3" } ] }
+				, none: null
+				, odyssey:
+					{ album: "https://archive.org/details/Home-Odyssey"
+					, prefix: "https://archive.org/download/Home-Odyssey/"
+					, tracks:
+						[
+							{ path: "Home-Odyssey-01Intro.mp3"
+							, title: "Intro" }
+						,
+							{ path: "Home-Odyssey-02Native.mp3"
+							, title: "Native" }
+						,
+							{ path: "Home-Odyssey-03Decay.mp3"
+							, title: "Decay" }
+						,
+							{ path: "Home-Odyssey-04OortCloud.mp3"
+							, title: "Oort Cloud" }
+						,
+							{ path: "Home-Odyssey-05Tides.mp3"
+							, title: "Tides" }
+						,
+							{ path: "Home-Odyssey-06NightsiWishICouldBeThere.mp3"
+							, title: "Nights (I Wish I Could Be There)" }
+						,
+							{ path: "Home-Odyssey-07Odyssey.mp3"
+							, title: "Odyssey" }
+						,
+							{ path: "Home-Odyssey-08NewMachines.mp3"
+							, title: "New Machines" }
+						,
+							{ path: "Home-Odyssey-09Resonance.mp3"
+							, title: "Resonance" }
+						,
+							{ path: "Home-Odyssey-10ComeBackDown.mp3"
+							, title: "Come Back Down" }
+						,
+							{ path: "Home-Odyssey-11HalfMoon.mp3"
+							, title: "Half Moon" }
+						,
+							{ path: "Home-Odyssey-12OnTheWayOut.mp3"
+							, title: "On The Way Out" } ] }
+				, rain:
+					{ album: "https://go.KIBI.family/Apps/Writer/rain.mp3"
+					, prefix: "./"
+					, tracks:
+						[
+							{ path: "rain.mp3"
+							, title: "rain.mp3" } ] }
+				, worlds:
+					{ album: "https://archive.org/details/jamendo-029279"
+					, prefix: "https://archive.org/download/jamendo-029279/"
+					, tracks:
+						[
+							{ path: "01.mp3"
+							, title: "Stories from Emona I" }
+						,
+							{ path: "02.mp3"
+							, title: "Stories from Emona II" }
+						,
+							{ path: "03.mp3"
+							, title: "Stories from Emona III" }
+						,
+							{ path: "04.mp3"
+							, title: "Stories from Emona IV" }
+						,
+							{ path: "05.mp3"
+							, title: "Stories from Emona V" }
+						,
+							{ path: "06.mp3"
+							, title: "Stories from Emona VI" }
+						,
+							{ path: "07.mp3"
+							, title: "Fantasia" }
+						,
+							{ path: "08.mp3"
+							, title: "Prelude in E major" }
+						,
+							{ path: "09.mp3"
+							, title: "Prelude in C♯ minor" }
+						,
+							{ path: "10.mp3"
+							, title: "Prelude in G major" }
+						,
+							{ path: "11.mp3"
+							, title: "Prelude in E♭ major" } ] } }
+			, queryParse = location.search.substring(1).split("&").reduce(( result, item ) => {
+				const keyval = item.split("=")
+				result[keyval.shift()] = keyval.join("=")
+				return result }, { })
+			, reader = typeof FileReader == "function" ? new FileReader : null
+			, replay = ( ) => {
+				const
+					time = audio.currentTime
+					, seekTo = ( ) => {
+						this.removeEventListener("play", seekTo)
+						if ( time > audio.currentTime ) audio.currentTime = time
+						if ( time <= audio.currentTime ) this.removeEventListener("playing", seekTo) }
+				audio.load()
+				audio.play()
+				audio.addEventListener("play", seekTo)
+				audio.addEventListener("playing", seekTo) }
+			, skip = document.getElementById("meta.nowplaying.skip")
+			, theme_menu = document.getElementById("menu.themes")
+			, theme_styler = document.getElementById("style.selected")
+			, themes = [ "basic", "wine", "orange", "pink", "legendary", "nLeg", "vampire", "O", "digital", "modern" ]
+			, toggle24Hour = function ( ) {
+				const value = typeof this == "boolean" ? this : !datetime.classList.contains("H24")
+				datetime.classList[value ? "add" : "remove"]("H24")
+				updateTime() }
+			, toggleAudioMenu = function ( ) {
+				const value = typeof this == "boolean" ? this : audio_menu.getAttribute("aria-checked") == "false"
+				audio_menu.setAttribute("aria-checked", value)
+				document.getElementById("menu.audio.popup").hidden = !value }
+			, toggleThemeMenu = function ( ) {
+				const value = typeof this == "boolean" ? this : theme_menu.getAttribute("aria-checked") == "false"
+				theme_menu.setAttribute("aria-checked", value)
+				document.getElementById("menu.themes.popup").hidden = !value }
+			, trackinfo = document.getElementById("meta.nowplaying.track")
+			, updateAudio = function ( ) {
+				track = -1
+				Array.prototype.forEach.call(audio_menu.querySelectorAll("button"), $ => $.setAttribute("aria-checked", $ === this))
+				if ( audio ) play() }
+			, updateBackground = ( ) => { content.style.backgroundPositionY = "-" + content.scrollTop + "PX" }
+			, updateFont = function ( ) {
+				content.style.fontFamily = this.style.fontFamily
+				updateBackground()
+				Array.prototype.forEach.call(fonts.querySelectorAll("button"), $ => $.setAttribute("aria-checked", $ === this)) }
+			, updateMeta = ( ) => {
+				let characters, words
+					, text = content.value
+				download.href = `data:text/plain;charset=utf-8,${ window.encodeURIComponent(text) }`
+				text = text.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g , "_")
+				download.download = `${ (text.match(/[^\n]*/)[0].substring(0, 40) || "My Document") }.txt`
+				characters = text.length
+				words = text.replace(/[\u0021-\u0040\u005B-\u0060\u007B-\u007E\u0080-\u00BF\u00D7\u00F7\u2000-\u2BFF\u2E00-\u2E7F]/g , "").replace(/\u2014/g, " ").match(/\S(?:\s+|$)/g)?.length ?? 0
+				document.getElementById("meta.wordcount").textContent = `${ characters } character${ characters == 1 ? "" : "s" }, ${ words } word${ words == 1 ? "" : "s" }` }
+			, updateTheme = function ( ) {
+				theme_styler.textContent = document.getElementById(`style.${ this.value }`).textContent
+				Array.prototype.forEach.call(theme_menu.querySelectorAll("button"), $ => $.setAttribute("aria-checked", $ === this)) }
+			, updateTime = ( ) => {
+				const now = new Date
+					, hour24 = datetime.classList.contains("H24")
+					, hours = now.getHours()
+					, minutes = now.getMinutes()
+				document.getElementById("meta.datetime.hours").textContent = hour24 ? hours < 10 ? "0" + hours : hours
+					: hours % 12 || "12"
+				document.getElementById("meta.datetime.separator").style.opacity = now.getSeconds() % 2
+				document.getElementById("meta.datetime.minutes").textContent = minutes < 10 ? "0" + minutes : minutes
+				if ( !hour24 ) datetime_suffix.textContent = hours < 12 ? " AM" : " PM"
+				datetime_suffix.hidden = hour24 }
+			, upload = document.getElementById("menu.io.upload")
+			, writer = document.getElementById("writer")
+		let input_waiting = false
+			, scroll_waiting = false
+			, track = -1
+		updateFont.call((queryParse.hasOwnProperty("font") ? fonts.querySelector(`button[value=${ queryParse.font }]`) : null) ?? fonts.querySelector("button[aria-checked=true]"))
+		updateTheme.call((queryParse.hasOwnProperty("theme") ? theme_menu.querySelector(`button[value=${ queryParse.theme }]`) : null) ?? theme_menu.querySelector("button[aria-checked=true]"))
+		updateMeta()
+		toggle24Hour.call(queryParse.hasOwnProperty("24hour"))
+		window.setInterval(requestAnimationFrame.bind(window, updateTime), 1000)
+		content.addEventListener("scroll", ( ) => {
+			if ( !scroll_waiting ) {
+				scroll_waiting = true
+				window.requestAnimationFrame(( ) => {
+					updateBackground()
+					scroll_waiting = false }) } })
+		Array.prototype.forEach.call(fonts.querySelectorAll("button"), $ => $.addEventListener("click", updateFont))
+		audio_menu.addEventListener("click", toggleAudioMenu)
+		theme_menu.addEventListener("click", toggleThemeMenu)
+		datetime.addEventListener("click", toggle24Hour)
+		document.getElementById("menu.io.clear").addEventListener("click", ( ) => {
+			content.value = ""
+			updateMeta() })
+		Array.prototype.forEach.call(theme_menu.querySelectorAll("button"), $ => $.addEventListener("click", updateTheme))
+		if ( audio ) {
+			updateAudio.call((queryParse.hasOwnProperty("audio") ? audio_menu.querySelector(`button[value=${ queryParse.audio }]`) : null) ?? audio_menu.querySelector("button[aria-checked=true]"))
+			Array.prototype.forEach.call(audio_menu.querySelectorAll("button"), $ => $.addEventListener("click", updateAudio))
+			audio.addEventListener("stalled", replay)
+			audio.addEventListener("error", play)
+			audio.addEventListener("ended", play)
+			skip.addEventListener("click", play) }
+		else audio_menu.hidden = true
+		content.addEventListener("input", ( ) => {
+			if ( !input_waiting ) {
+				input_waiting = true
+				window.requestAnimationFrame(( ) => {
+					updateMeta()
+					input_waiting = false }) } })
+		content.addEventListener("focus", ( ) => {
+			toggleAudioMenu.call(false)
+			toggleThemeMenu.call(false) })
+		if ( reader ) upload.addEventListener("change", ( ) => {
+			const file = upload.files?.[0]
+			if ( file != null && reader.readyState !== FileReader.LOADING ) {
+				reader.addEventListener("loadend", ( ) => {
+					content.value = reader.result
+					updateMeta() })
+				reader.readAsText(file) } })
+		else upload.hidden = true }.call(this)
+</SCRIPT>
