@@ -13,6 +13,36 @@
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
 
+	<!-- [1993] Tendencies -->
+	<Document rdf:about="http://id.loc.gov/resources/works/2049719">
+		<maker>
+			<Person>
+				<name>Eve Kosofsky Sedgwick</name>
+			</Person>
+		</maker>
+		<name>Tendencies</name>
+		<dc:publisher>
+			<Organization foaf:name="Duke University Press"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1993</dc:date>
+	</Document>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>A thousand things make it impossible to mistake the verdict on queer lives and on women’s lives, as on the lives of those who are poor or are not white. 
+	The hecatombs of queer youth; a decade squandered in a killing inaction on AIDS; the rapacious seizure from women of our defense against forced childbirth; tens of millions of adults and children excluded from the health care economy; treatment of homeless people as unsanitary refuse to be dealt with by periodic “sweeps”; refusal of condoms in prisons, persecution of needle exchange programs; denial and trivialization of histories of racism; or merely the pivot of a disavowing pronoun in a newspaper editorial: such things as these are facts, but at the same time they are piercing or murmuring voices in the heads of those of us struggling to marshal “our” resources against illness, dread, and devaluation. 
+	They speak to us.
+	They have an amazing clarity.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation>
+		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Rightists today like to invoke the threatening specter of a propaganda‐ridden socialist realism, but both they and the anti‐intellectuals of the left might meditate on why the Nazis’ campaign against “degenerate art” (Jewish, gay, modernist) was couched, as their own arguments are, in terms of assuring the instant, unmediated, and universal accessibility of all the sign systems of art (Goebbels even banning all art criticism in 1936, on the grounds that art is self‐explanatory). 
+	It’s hard to tell which assumption is more insultingly wrong: that the People (always considered, of course, as a monolithic unit) have no need and no faculty for engaging with work that is untransparent; or that the work most genuinely expressive of the People would be so univocal and so limpidly vacant as quite to obviate the labors and pleasures of interpretation.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
 	<!-- [2011-10-04/2020-03-24] Chihayafuru -->
 	<Document rdf:about="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=12991">
 		<name>Chihayafuru</name>
@@ -344,6 +374,7 @@
 <html:html id="light-theme">
 		<apply-templates select="." mode="lang"/>
 	<html:head>
+		<html:base target="_top"/>
 		<for-each select="foaf:Document[@rdf:about = '']">
 			<if test="foaf:name">
 		<html:title>
@@ -362,10 +393,11 @@
 html{ Color: #B8B3B0; Background: #1F1A14; Scrollbar-Color: #B8B3B0 #302F2B; Font: 500 Medium / 1.5 Elstob, "Gentium Plus", JuniusX, Junicode, Serif }
 html:Target{ Color: #57534C; Background: #DEDBD9 }
 body{ Margin: Auto; Max-Width: 31REM }
-figure{ Display: Flex; Flex-Direction: Column; Margin: 2REM; Padding: 0 1REM; Height: Calc(100VH - 4REM); Overflow: Auto }
+figure{ Display: Flex; Flex-Direction: Column; Margin: 2REM; Padding: 0 1REM; Height: Calc(100VH - 6REM); Overflow: Auto }
 figure[hidden]{ Display: None }
 figcaption{ Margin: 1.5REM 0 Auto; Font: .8REM / 1.25 Sans-Serif }
 figcaption>strong{ Color: #DEDBD9 }
+footer{ Margin: .5REM 3REM; Text-Align: Center; }
 html:Target figcaption>strong{ Color: #302F2B }
 blockquote{ Position: Relative; Margin: Auto 1REM 0; Color: #FAF8F7; Text-Align: Justify }
 blockquote::before,
@@ -399,13 +431,18 @@ html:Target a[href]{ Color: #B01C1C }
 			</html:figcaption>
 		</html:figure>
 		</for-each>
+		<html:footer><html:a href="" target="_self">Refresh.</html:a></html:footer>
 		<html:script>
-(( ) => {
+const pickFortune = ( ) => {
 	const
 		$quotations = document.body.querySelectorAll(":root>body>figure"),
 		quotation = $quotations[Math.floor(Math.random() * $quotations.length)]
 		Array.prototype.forEach.call(document.body.children, elt =>
-			elt.hidden = !(elt.localName != "figure" || elt == quotation)) })()
+			elt.hidden = !(elt.localName != "figure" || elt == quotation)) }
+document.body.querySelector(`a[href=""][target="_self"]`).addEventListener("click", event => {
+	pickFortune()
+	event.preventDefault() })
+pickFortune()
 		</html:script>
 	</html:body>
 </html:html>

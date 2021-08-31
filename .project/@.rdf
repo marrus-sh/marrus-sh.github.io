@@ -1,9 +1,5 @@
 <?xml-stylesheet type="text/xsl" href="#transform"?>
-<!DOCTYPE rdf:RDF [
-	<!ATTLIST stylesheet id ID #REQUIRED>
-	<!ENTITY dagger '<span class="DAGGER" xmlns="http://www.w3.org/1999/xhtml">†</span>'>
-	<!ENTITY Dagger '<span class="DAGGER" xmlns="http://www.w3.org/1999/xhtml">‡</span>'>
-]>
+<!DOCTYPE rdf:RDF [ <!ATTLIST stylesheet id ID #REQUIRED> ]>
 <rdf:RDF
 	xml:lang="en"
 	xmlns="http://xmlns.com/foaf/0.1/"
@@ -17,96 +13,60 @@
 	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
-	<Project rdf:ID="KiUnicase">
-		<dc:identifier xml:lang="zxx">KiUnicase</dc:identifier>
-		<name>ki·unicase</name>
+	<Project rdf:ID="MarketCommons2-Ecmascript">
+		<dc:identifier xml:lang="zxx">🏪2️⃣🟠</dc:identifier>
+		<name>market commons ⅰⅰ – ecmascript</name>
 		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
+		<homepage rdf:resource="https://github.com/marrus-sh/MarketCommons2-Ecmascript"/>
 		<rdfs:comment rdf:parseType="Literal">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p>a unicase font built using &dagger;g·n·u unifont&dagger; technologies, based on my current script</p>
+				<p>A new <u class="MULTIWORD">market commons</u>; implemented in <u>ecmascript</u> for <u>deno</u>.</p>
+				<ul>
+					<li><label><input type="checkbox" checked="" disabled=""/>
+						Default (<u><abbr>h·t·m·l</abbr></u>) <u class="MULTIWORD">declaration <small>of</small> jargon</u></label></li>
+					<li><label><input type="checkbox" checked="" disabled=""/>
+						<u class="MULTIWORD">Declaration <small>of</small> jargon</u> processing</label></li>
+					<li><label><input type="checkbox" disabled=""/>
+						<u class="MULTIWORD">Market commons</u> document parsing</label></li>
+					<li><label><input type="checkbox" disabled=""/>
+						Serialization of parsed documents</label></li>
+				</ul>
 			</div>
 		</rdfs:comment>
-		<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">223</about:taskCount>
-		<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">53</about:taskProgress>
+		<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</about:taskCount>
+		<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</about:taskProgress>
 	</Project>
 
 	<Project rdf:ID="Nib">
-		<dc:identifier xml:lang="zxx">Nib</dc:identifier>
+		<dc:identifier xml:lang="zxx">🖋</dc:identifier>
 		<name>nib</name>
 		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
 		<homepage rdf:resource="https://github.com/marrus-sh/Nib"/>
 		<rdfs:comment rdf:parseType="Literal">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p>an implementation of &dagger;x·m·l and related specifications into &dagger;swift.</p>
+				<p>An implementation of <u><abbr>x·m·l</abbr></u> and related specifications into <u>swift</u>.</p>
 			</div>
 		</rdfs:comment>
 		<dc:hasPart>
-			<Project rdf:ID="Nib:v0:d2">
-				<dc:identifier xml:lang="zxx">Nib:v0:d2</dc:identifier>
-				<name>nib 0·2</name>
+			<Project rdf:ID="Nib-Core">
+				<dc:identifier xml:lang="zxx">🖋🥑</dc:identifier>
+				<name>nib core</name>
+				<homepage rdf:resource="https://github.com/marrus-sh/Nib-Core"/>
 				<rdfs:comment rdf:parseType="Literal">
 					<div xmlns="http://www.w3.org/1999/xhtml">
-						<p>better grammar processing; &dagger;a·b·n·f and &dagger;l·e·i·r·i support.</p>
-						<p>things to do include:</p>
+						<p>Core types and behaviours for the <u>nib</u> family of packages.</p>
 						<ul>
 							<li><label><input type="checkbox" checked="" disabled=""/>
-								actual regular expression processing</label></li>
+								Actual regular expression processing</label></li>
+							<li><label><input type="checkbox" checked="" disabled=""/>
+								“Efficient” contextfree grammars</label></li>
 							<li><label><input type="checkbox" disabled=""/>
-								efficient contextfree grammars</label></li>
-							<li><label><input type="checkbox" disabled=""/>
-								exclusions</label></li>
-							<li><label><input type="checkbox" disabled=""/>
-								<code>A·B·N·F</code> module as an application of contextfree grammars</label></li>
-							<li><label><input type="checkbox" disabled=""/>
-								<code>L·E·I·R·I</code> module as a practical application of <code>A·B·N·F</code></label></li>
-							<li><label><input type="checkbox" disabled=""/>
-								<code>E·B·N·F</code> module as an application of exclusion grammars</label></li>
-							<li><label><input type="checkbox" disabled=""/>
-								finish splitting off various modules and recasting the core <code>Nib</code> repo as a learning hub</label></li>
+								Exclusions</label></li>
 						</ul>
-						<p><strong>see also:</strong> 
-							<a href="https://github.com/marrus-sh/Nib/discussions/5">https://github.com/marrus-sh/Nib/discussions/5</a>.</p>
 					</div>
 				</rdfs:comment>
-				<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</about:taskCount>
-				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</about:taskProgress>
-			</Project>
-		</dc:hasPart>
-	</Project>
-
-	<Project rdf:ID="wildflower">
-		<dc:identifier xml:lang="zxx">wildflower</dc:identifier>
-		<name>wildflower</name>
-		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
-		<rdfs:comment rdf:parseType="Literal">
-			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p xmlns="http://www.w3.org/1999/xhtml">a <cite>legend of zelda: breath of the wild</cite> fanfiction published to &dagger;a·o·3 (<strong>note:</strong> contains explicit sexual content).</p>
-			</div>
-		</rdfs:comment>
-		<dc:hasPart>
-			<Project rdf:ID="wildflower:Α:c2:I">
-				<dc:identifier xml:lang="zxx">wildflower:Α:c2:I</dc:identifier>
-				<name>breath of farore ~ winds of change</name>
-				<maker rdf:resource="https://go.KIBI.family/About/#me"/>
-				<rdfs:comment rdf:parseType="Literal">
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<p xmlns="http://www.w3.org/1999/xhtml"><cite>wildflower</cite> book 1</p>
-					</div>
-				</rdfs:comment>
-				<homepage rdf:resource="https://archiveofourown.org/works/28883058"/>
-				<!--
-the tasks are 5‐per‐chapter as follows:
-
-01. first draft of section 1
-02. first draft of section 2
-03. review and edits
-04. typesetting
-05. publishing
-
-there are an anticipated 24 total chapters for a total number or steps of 120.
--->
-				<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">120</about:taskCount>
-				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">16</about:taskProgress>
+				<about:taskCount rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</about:taskCount>
+				<about:taskProgress rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</about:taskProgress>
 			</Project>
 		</dc:hasPart>
 	</Project>
@@ -114,7 +74,7 @@ there are an anticipated 24 total chapters for a total number or steps of 120.
 	<!-- @ about this document -->
 	<Document rdf:about="">
 		<name rdf:parseType="Literal">
-			<span xmlns="http://www.w3.org/1999/xhtml">&dagger;margaret &Dagger;kibi&dagger;: <b>.project</b></span>
+			<span xmlns="http://www.w3.org/1999/xhtml"><u class="MULTIWORD">margaret <u>kibi</u></u>: <b>.project</b></span>
 		</name>
 		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
 		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
@@ -140,7 +100,7 @@ there are an anticipated 24 total chapters for a total number or steps of 120.
 			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
 		</attribute>
 	</template>
-	<template match="*">
+	<template match="html:*">
 		<copy>
 			<apply-templates select="@*" mode="clone"/>
 			<apply-templates/>
@@ -175,7 +135,8 @@ there are an anticipated 24 total chapters for a total number or steps of 120.
 @font-face{ Font-Family: "M+ 1mn"; Font-Weight: 400; Src: URL("../Fonts/Mplus-Fonts/fonts/mplus-1mn-regular.ttf") Format("truetype") }
 html{ Padding: 1EM 2EM 3EM; Color: #000000; Background: #F0F0F0; Font: Medium / 1.25 "M+ 2c", Sans-Serif }
 body{ Margin: Auto; Max-Width: 31EM }
-section{ Margin: 2REM 0; Border: Thin Solid; Padding: 1REM; Color: #000000; Background: #FFFFFF }
+section{ Position: Relative; Margin: 2REM 0; Border: Thin Solid; Padding: 1REM; Color: #000000; Background: #FFFFFF }
+section[data-identifier]:Not([data-identifier=""])::after{ Display: Block; Position: Absolute; Bottom: .5REM; Left: .75REM; Font-Family: Monospace; Content: Attr(data-identifier) }
 body>footer{ Border-Top: Thin Dashed; Padding: 1.25REM 0 0; Color: #8A1C00; Text-Align: Center }
 footer,
 summary{ Font: .8REM / 1.25 "M+ 1mn", Monospace; Text-Align: Right; Text-Transform: Uppercase }
@@ -189,12 +150,22 @@ h1{ Font-Weight: Inherit; Text-Align: Center; Text-Transform: Uppercase }
 h2{ Margin: 0; Font-Size: 1.25REM; Line-Height: 1; Text-Align: Center; Text-Transform: Uppercase }
 h3{ Margin: 0; Font: Inherit; Letter-Spacing: Calc(1REM / 18); Text-Decoration: Double Underline; Text-Transform: Uppercase }
 progress{ Display: Block; Margin: Auto; Width: 100% }
-a.HOMEPAGE{ Display: Block; Margin: .25REM 0 .75REM; Overflow: Hidden; White-Space: NoWrap; Text-Align: Center; Text-Overflow: Ellipsis }
+a.HOMEPAGE{ Display: Block; Margin: .25REM 0 .75REM; Overflow: Hidden; White-Space: NoWrap; Text-Overflow: Ellipsis }
+h2~a.HOMEPAGE{ Text-Align: Center }
 a.HOMEPAGE::before{ Content: "‹ " }
 a.HOMEPAGE::after{ Content: " ›" }
+u abbr{ Text-Transform: Uppercase }
 code{ Font: .8REM / 1.25 "M+ 1mn", Monospace }
 cite{ Font: Inherit; Text-Decoration: #EEAE00 Wavy Underline }
-span.DAGGER{ Font-Weight: 300 }
+span.S::first-letter{ Text-Transform: Capitalize }
+u{ Text-Decoration: None; Text-Transform: Capitalize }
+u u{ Text‐Transform: Uppercase }
+u small{ Font-Size: Inherit; Text-Transform: None }
+h1 u{ Text-Transform: Inherit }
+h1 u::before,
+h1 u.MULTIWORD::after{ Content: "†" }
+h1 u u::before,
+h1 u u.MULTIWORD::after{ Content: "‡" }
 *:Any-Link{ Color: #004599 }
 *:Any-Link:Active{ Color: #CD2C00 }
 		</html:style>
@@ -212,14 +183,14 @@ span.DAGGER{ Font-Weight: 300 }
 		</for-each>
 		</html:article>
 		<html:footer>
-			<html:a href="/">take me home.</html:a>
+			<html:a href="../">take me home.</html:a>
 		</html:footer>
 	</html:body>
 </html:html>
 	</template>
 	<template match="foaf:Project">
 		<param name="level" select="1"/>
-<html:section id="{@rdf:ID}">
+<html:section id="{@rdf:ID}" data-identifier="{dc:identifier}">
 	<html:header>
 		<element name="h{$level + 1}" namespace="http://www.w3.org/1999/xhtml">
 			<apply-templates select="foaf:name[1]" mode="lang"/>

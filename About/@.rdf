@@ -33,7 +33,7 @@
 			<Document rdf:about="https://www.w3.org/TR/css/" rdfs:label="c·s·s" foaf:name="c·s·s snapshot"/>
 		</about:isFamiliarWith>
 		<about:isFamiliarWith>
-			<Document rdf:about="https://tc39.es/ecma262/" rdfs:label="e·s" foaf:name="e·c·m·a·script language specification"/>
+			<Document rdf:about="https://tc39.es/ecma262/" rdfs:label="ecmascript" foaf:name="ecmascript language specification"/>
 		</about:isFamiliarWith>
 		<about:isFamiliarWith>
 			<Document rdf:about="https://www.w3.org/TR/xml11/" rdfs:label="x·m·l" foaf:name="extensible markup language (x·m·l) 1·1"/>
@@ -68,20 +68,18 @@
 
 		<!-- § names
 
-		i have a lot of these.  this is approximately ⁜every⁜ name i’ve ever gone by—which is not to say that all of these names are “current” in any practical sense.  but, if you want to call me by the name of my ‘runescape’ account in 2006—be my guest, i guess. -->
+		i have a lot of these.  this is approximately ⁜every⁜ name i’ve ever gone by—which is not to say that all of these names are “current” in any practical sense.  but, if you want to call me by the name of my ‘runescape’ account in 2006—be my guest, i guess.
+
+		☞ update: ☜  i have so many of these that i now feel comfortable deprecating a few.  i’ve just commented them out below. -->
 		<name rdf:parseType="Literal">
 			<tei:persName>
 				<tei:surname>kibi</tei:surname>
 				<tei:forename>gô</tei:forename>
 			</tei:persName>
 		</name><!-- boring ordinary spelling -->
-		<name rdf:parseType="Literal">
-			<tei:persName xml:lang="en-Runr-x-kibben">
-				<tei:surname>ᛣᛟᛒᛟ</tei:surname>
-				<tei:forename>ᚷᚪᛇ</tei:forename>
-			</tei:persName>
-		</name><!-- kibben runic spelling -->
+		<name>gô</name><!-- at †starbucks -->
 		<name>kibigo!</name><!-- how i sign my code and such -->
+		<name>kyebego</name><!-- how i actually pronounce it -->
 		<name>１０２４×Ｇｏ</name><!-- this was invented for places with extreme username scarcity -->
 		<name>kibimon</name><!-- monster AU -->
 		<name>Ｇｏ！！！</name><!-- ‘chihayafuru’ -->
@@ -104,11 +102,18 @@
 				<tei:forename>margaret</tei:forename>
 			</tei:persName>
 		</name><!-- yea i’m m·l·m: my lady margaret -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>lady</tei:roleName>
+				<tei:forename>margaret</tei:forename>
+			</tei:persName>
+		</name><!-- you don’t actually have to say the “our” -->
 		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">m</tei:forename>·<tei:forename full="init" type="middle">r</tei:forename>·<tei:surname full="init">s</tei:surname></tei:persName></name><!-- i never use this in plaintext, but it is my monogram -->
 		<name>em</name><!-- rare -->
 		<name>emmy</name><!-- but not †emma -->
 		<name>em⸺</name><!-- this is an omission dash (two‐em, per ‘chicago’) -->
 		<name>margo</name><!-- these days i prefer the version without the ‹ t › -->
+		<name>margô</name><!-- a friend started writing it this way and i can’t complain -->
 		<name>margot</name><!-- if you write this, i might pronounce it “mar GOT”; if i write this, you’re welcome to -->
 		<name>margaret</name><!-- my actual given name -->
 		<name rdf:parseType="Literal">
@@ -132,14 +137,16 @@
 				<tei:forename type="first">margaret</tei:forename>
 				<tei:forename type="middle">russel</tei:forename>
 			</tei:persName>
-		</name><!-- these are both given names; ‹ †russel › is not a family name -->
+		</name><!-- these are both given names; ‹ †russel › is not a family name (i don’t use this one much anymore) -->
 		<name>marrus</name><!-- clipping of the above -->
 		<name>marrus_sh</name><!-- as a username, a dash can replace the underscore, but this is considered a character set limitation -->
+		<name>marrus-sh</name><!-- well, it was, but github is the only place i use this anymore, and this is what it looks like there -->
 		<name>marrus.sh</name><!-- variant of the underscore that i used initially -->
 		<name>jellyfish_link</name><!-- this is a pun on ‹ marrus › and also ‘zelda’ -->
 		<name>j’li</name><!-- this is a shortening of ‹ jellyfish_link › -->
 		<name>jelli</name><!-- this is a phonetic pronunciation of the above and also a game engine i wrote one time -->
 		<name>tracer mom</name><!-- this is a reference to †tracer from ‘overwatch’ and a fanfiction i once wrote -->
+		<name>pokémom</name><!-- this is a reference to me liking pokémon -->
 		<name>leaf</name><!-- the default girl’s name in ‘pokémon firered and leafgreen versions’, which i have used for every pokémon trainer since -->
 		<name rdf:parseType="Literal">
 			<tei:persName>
@@ -165,6 +172,14 @@
 		<name rdf:parseType="Literal">
 			<tei:persName>
 				<tei:roleName>ms</tei:roleName>
+				<tei:forename type="first">autumn</tei:forename>
+				<tei:forename type="middle">leaf</tei:forename>
+				<tei:surname>adventure</tei:surname>
+			</tei:persName>
+		</name><!-- it’s a little clearer if you put the first name in there -->
+		<name rdf:parseType="Literal">
+			<tei:persName>
+				<tei:roleName>ms</tei:roleName>
 				<tei:forename>raven</tei:forename>
 				<tei:surname>blackheart</tei:surname>
 			</tei:persName>
@@ -173,6 +188,7 @@
 		<name>\u2764</name><!-- the †unicode name for this character is ‹ HEAVY BLACK HEART › and it’s a reference to ‹ †raven blackheart† › above -->
 		<name>ｕ２７６４</name><!-- somehow it became my brand after this -->
 		<name>❤</name><!-- this is a secret but it’s not even my favourite unicode character -->
+		<name>❤️</name><!-- as an emoji it’s not even black anymore -->
 		<name rdf:parseType="Literal">
 			<tei:persName>
 				<tei:forename>allie</tei:forename>
@@ -192,22 +208,23 @@
 				<tei:roleName>mx</tei:roleName>
 				<tei:surname>hart</tei:surname>
 			</tei:persName>
-		</name><!-- †allie HART† is the most femme of my personæ but i still use ‹ †mx › with it -->
-		<name>adeline</name><!-- this is shortened to ‹ †allie › (see above); i will not respond to ‹ †aline › even though i love that name -->
+		</name><!-- †allie HART† is the most femme of my personæ but i use ‹ †mx › with it -->
+		<name>adeline</name><!-- this is usually shortened to ‹ †allie › (see above) -->
+		<name>aline</name><!-- i have always liked this shortening but i used to disavow it; i think i used it as a pseudonym on some anonymous study though once so now it’s †on the list† -->
 		<name>r*v⸺</name><!-- this stands in for any number of fictitious names with ‹ r › as the first letter and ‹ v › as the third and these are all plays on ‹ †raven › -->
 		<name>kirby</name><!-- i was literally †kirby to some of my friends for a time, zero joke -->
 		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init">t</tei:forename><tei:surname full="init">f</tei:surname></tei:persName></name><!-- all of the art i made in high school was signed with this -->
 		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">t</tei:forename>·<tei:forename full="init" type="middle">m</tei:forename>·<tei:surname full="init">f</tei:surname></tei:persName></name><!-- variant of ‹ †t·f › -->
-		<name rdf:parseType="Literal">
+		<!--<name rdf:parseType="Literal">
 			<tei:persName>
 				<tei:forename>tyler</tei:forename>
 				<tei:surname>fengat</tei:surname>
 			</tei:persName>
-		</name><!-- i wrote stories under this alias in middle school -->
+		</name>--><!-- i wrote stories under this alias in middle school -->
 		<name>trevor</name><!-- i’m not explaining this one but it’s †top tier† -->
 		<name>minieli</name><!-- very highschool -->
-		<name>be’jamin</name><!-- also very highschool -->
-		<name>benjam!</name><!-- this is what my thesis advisors in college knew me as -->
+		<!--<name>be’jamin</name>--><!-- also very highschool -->
+		<!--<name>benjam!</name>--><!-- this is what my thesis advisors in college knew me as -->
 		<name>bjmns</name><!-- this has a pronunciation and it is “⁜bih⁜ djih muh nus”—not of my making -->
 		<name rdf:parseType="Literal"><tei:persName><tei:forename full="init" type="first">b</tei:forename><tei:forename full="init" type="middle">r</tei:forename><tei:surname full="init">s</tei:surname></tei:persName></name><!-- burrs -->
 		<name rdf:parseType="Literal">
@@ -217,18 +234,19 @@
 			</tei:persName>
 		</name><!-- the aforementioned ‘runescape’ username -->
 		<name>bunny</name><!-- i was called this in like sixth grade -->
+		<name>lucás</name><!-- this was my name in spanish class -->
 		<name rdf:parseType="Literal">
 			<tei:persName>
 				<tei:roleName>young</tei:roleName>
 				<tei:forename>samus</tei:forename>
 			</tei:persName>
 		</name><!-- i have never actually been ⁜called⁜ “†samus” but the young †samus from ‘metroid: other m’ is frequently used as a visual alias -->
-		<name>lady</name><!-- ‹ lady › is Samus’s nickname but it’s also a †pokémon trainer class -->
+		<name>lady</name><!-- ‹ †lady › is Samus’s nickname but it’s also a pokémon trainer class (although ⁜my⁜ trainer class is †delinquent) -->
 		<name>shizuku</name><!-- this is actually a reference to ‘whisper of the heart’ but the protagonist of ‘my little monster’ is also named †shizuku -->
-		<name>雫</name><!-- see above -->
 		<name>🙇🏻‍♀️</name><!-- i use this emoji a lot -->
-		<name>alien_dude</name><!-- this is what people called me in ‘minecraft’ and also was a †mii that i used for a time -->
+		<!--<name>alien_dude</name>--><!-- this is what people called me in ‘minecraft’ and also was a †mii that i used for a time -->
 		<name>alien</name><!-- shortform of the above -->
+		<name>alyaunte</name><!-- †wiktionary tries to tell me that this is how they once spelled “alien” but i’m not sure i believe them -->
 		<name>meowth</name><!-- this is a reference to the †pokémon fanfiction ‘the long walk’ by way of ‹ †moggy › -->
 		<name>kitty</name><!-- this is ⁜not⁜ a furry name -->
 		<name rdf:parseType="Literal">
@@ -260,7 +278,11 @@
 		<plan>everybody is sad as shit</plan>
 		<plan>i will never take a break,</plan>
 		<plan>@.rdf</plan>
-		<plan>ϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿ</plan>
+		<plan xml:lang="zxx">ϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿϿ</plan>
+		<plan>sticky</plan>
+		<plan>note to future historians: dogs lived at this time</plan>
+		<plan>i’m very interesting</plan>
+		<plan>always use barrier methods to prevent unwanted pregnancy</plan>
 
 		<!-- § genders
 
@@ -305,6 +327,10 @@
 		<schema.org:gender foaf:name="mojibake"/>
 		<schema.org:gender foaf:name="trans girl dæmon code"/>
 		<schema.org:gender foaf:name="hedgehog"/>
+		<schema.org:gender foaf:name="goat"/>
+		<schema.org:gender foaf:name="monkey"/>
+		<schema.org:gender foaf:name="puppy"/>
+		<schema.org:gender foaf:name="catty"/>
 		<schema.org:gender foaf:name="dyke"/>
 		<schema.org:gender foaf:name="lesbian"/>
 		<schema.org:gender foaf:name="grrrl"/>
@@ -321,6 +347,7 @@
 		<schema.org:gender foaf:name="🍂"/>
 		<schema.org:gender foaf:name="ice princess"/>
 		<schema.org:gender foaf:name="☠️💖"/>
+		<schema.org:gender foaf:name="delinquent"/>
 
 		<!-- § accounts -->
 		<account>
@@ -382,6 +409,7 @@
 		<topic_interest foaf:name="orthography"/>
 		<topic_interest foaf:name="the english language"/>
 		<topic_interest foaf:name="ice creams"/>
+		<topic_interest foaf:name="comix"/>
 		<topic_interest foaf:name="mangas"/>
 		<topic_interest foaf:name="fanfiction"/>
 		<topic_interest foaf:name="playlists"/>
@@ -392,6 +420,7 @@
 		<topic_interest foaf:name="change"/>
 		<topic_interest foaf:name="growth"/>
 		<topic_interest foaf:name="growlithe"/>
+		<topic_interest foaf:name="⁜hisuian⁜ growlithe"/>
 		<topic_interest foaf:name="the †world wide web†"/>
 		<topic_interest foaf:name="🎶"/>
 		<topic_interest foaf:name="unicode"/>
@@ -404,12 +433,14 @@
 		<topic_interest foaf:name="colours"/>
 		<topic_interest foaf:name="deer bois"/>
 		<topic_interest foaf:name="goat gals"/>
+		<topic_interest foaf:name="even‐toed ungulates"/>
 		<topic_interest foaf:name="zines"/>
 		<topic_interest foaf:name="music"/>
 		<topic_interest foaf:name="†alternative"/>
 		<topic_interest foaf:name="t·e·i"/>
 		<topic_interest foaf:name="x·s·l·t"/>
 		<topic_interest foaf:name="†hil·zel"/>
+		<topic_interest foaf:name="prrgrrmmng"/>
 
 		<!-- § projects -->
 		<currentProject>
@@ -424,6 +455,17 @@
 						<homepage rdf:resource="https://github.com/marrus-sh/MarketCommons-Racket"/>
 						<rdfs:comment rdf:parseType="Literal">
 							<p xmlns="http://www.w3.org/1999/xhtml">†markdown is a good and easy‐to‐use markup language, but if you’re writing documents with complex internal structure, or which have particular accessibility requirements, its limitations can overcome its strengths.  <a href="https://github.com/marrus-sh/MarketCommons-Racket">†market commons†</a> is a quick‐and‐dirty markup language for writing †<abbr>h·t·m·l</abbr> documents in fewer characters than †<abbr>h·t·m·l</abbr> documents typically take.  it’s implemented in, and requires, †racket, and may still have a few bugs here or there.</p>
+							<p xmlns="http://www.w3.org/1999/xhtml">i’m currently in the process of developing a new, extensible version of †market commons†, aptly titled <a href="https://github.com/marrus-sh/MarketCommons2-Ecmascript">†market commons ⅠⅠ†</a>.  the initial implementation is happening in †ecmascript and targets †deno.</p>
+						</rdfs:comment>
+					</Project>
+				</topic>
+				<topic>
+					<Project>
+						<name>nib</name>
+						<homepage rdf:resource="https://github.com/marrus-sh/Nib"/>
+						<rdfs:comment rdf:parseType="Literal">
+							<p xmlns="http://www.w3.org/1999/xhtml">much of the work i do travels at some point through †x·m·l, so i’m (slowly) working on building up a library of tools for working with †x·m·l and related technologies in †swift.  i’m calling this library <a href="https://github.com/marrus-sh/Nib">†nib</a>.</p>
+							<p xmlns="http://www.w3.org/1999/xhtml">most of the work thus far has taken place on <a href="https://github.com/marrus-sh/Nib-Core">†nib core†</a>, which implements many of the basic types and protocols needed for future technologies.</p>
 						</rdfs:comment>
 					</Project>
 				</topic>
@@ -578,8 +620,8 @@ p+p{ Text-Indent: 1.5EM }
 ol,
 ul{ Margin: .75EM 0 }
 
-*:Any-Link{ Color: #004599; Text-Decoration: Dashed Underline }
-*:Any-Link:Hover{ Text-Decoration: Underline }
+*:Any-Link{ Color: #004599; Text-Decoration: Underline }
+*:Any-Link:Hover{ Text-Decoration: Double Underline }
 *:Any-Link:Active{ Color: #CD2C00 }
 b{ Box-Decoration-Break: Clone; Border: Thin Solid; Box-Shadow: 1PX 1PX CurrentColor; Font: Inherit }
 em{ Font-Style: Inherit; Font-Weight: 400 }
@@ -665,7 +707,7 @@ strong{ Background: #EEAE007F; Font-Weight: 500 }
 				<apply-templates select="." mode="lang"/>
 				<value-of select="@rdfs:label"/>
 							</html:a>
-							<if test="../following-sibling::*">
+							<if test="../following-sibling::about:isFamiliarWith">
 								<text>, </text>
 							</if>
 			</for-each>
