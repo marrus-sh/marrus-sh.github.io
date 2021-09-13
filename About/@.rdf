@@ -351,14 +351,14 @@
 
 		<!-- § accounts -->
 		<account>
-			<OnlineAccount rdf:about="https://donphan.social/@Leaf">
-				<name>@Leaf@donphan.social</name>
-				<accountName>@Leaf@donphan.social</accountName>
+			<OnlineAccount rdf:about="https://glitch.cat.family/@Lady">
+				<name>@Lady@cat.family</name>
+				<accountName>@Lady@cat.family</accountName>
 				<accountServiceHomepage>
-					<Document rdf:about="https://donphan.social" foaf:name="donphan.social"/>
+					<Document rdf:about="https://glitch.cat.family" foaf:name="📟🐱 GlitchCat"/>
 				</accountServiceHomepage>
 				<rdfs:comment rdf:parseType="Literal">
-					<a rel="me" href="https://donphan.social/@Leaf" xmlns="http://www.w3.org/1999/xhtml">mastodon</a>
+					<a rel="me" href="https://glitch.cat.family/@Lady" xmlns="http://www.w3.org/1999/xhtml">mastodon</a>
 				</rdfs:comment>
 			</OnlineAccount>
 		</account>
