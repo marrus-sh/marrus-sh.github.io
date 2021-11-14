@@ -13,7 +13,7 @@
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
 
-	<!-- [1993] Tendencies -->
+	<!-- [1993 Tendencies] Tendencies -->
 	<Document rdf:about="http://id.loc.gov/resources/works/2049719">
 		<maker>
 			<Person>
@@ -26,7 +26,7 @@
 		</dc:publisher>
 		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1993</dc:date>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Tendencies/this_history_makes_its_mark">
 		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
 		<rdf:value rdf:parseType="Literal">
 <html:p>This history makes its mark on what, individually, we are and do. 
@@ -35,7 +35,7 @@
 	Survivors’ guilt, survivors’ glee, even survivors’ responsibility: powerfully as these are experienced, they are also more than complicated by how permeable the identity “survivor” must be to the undiminishing currents of risk, illness, mourning, and defiance.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Tendencies/vividly_remembered_promises">
 		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
 		<rdf:value rdf:parseType="Literal">
 <html:p>I think many adults (and I am among them) are trying, in our work, to keep faith with vividly remembered promises made to ourselves in childhood: promises to make invisible possibilities and desires visible; to make the tacit things explicit; to smuggle queer representation in where it must be smuggled and, with the relative freedom of adulthood, to challenge queer‐eradicating impulses frontally where they are to be so challenged. 
@@ -44,7 +44,7 @@
 	This can’t help coloring the adult relation to cultural texts and objects; in fact, it’s almost hard for me to imagine another way of coming to care enough about literature to give a lifetime to it.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Tendencies/strong_formalist_investment">
 		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
 		<rdf:value rdf:parseType="Literal">
 <html:p>For me, this strong formalist investment didn’t imply (as formalism is generally taken to imply) an evacuation of interest from the passional, the imagistic, the ethical dimensions of the texts, but quite the contrary: the need I brought to books and poems was hardly to be circumscribed, and I felt I knew I would have to struggle to wrest from them sustaining news of the world, ideas, myself, and (in various senses) my kind. 
@@ -53,7 +53,7 @@
 	And this doesn’t seem an unusual way for ardent reading to function in relation to queer experience.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Tendencies/an_amazing_clarity">
 		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
 		<rdf:value rdf:parseType="Literal">
 <html:p>A thousand things make it impossible to mistake the verdict on queer lives and on women’s lives, as on the lives of those who are poor or are not white. 
@@ -62,7 +62,7 @@
 	They have an amazing clarity.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Tendencies/the_labors_and_pleasures_of_interpretation">
 		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
 		<rdf:value rdf:parseType="Literal">
 <html:p>Rightists today like to invoke the threatening specter of a propaganda‐ridden socialist realism, but both they and the anti‐intellectuals of the left might meditate on why the Nazis’ campaign against “degenerate art” (Jewish, gay, modernist) was couched, as their own arguments are, in terms of assuring the instant, unmediated, and universal accessibility of all the sign systems of art (Goebbels even banning all art criticism in 1936, on the grounds that art is self‐explanatory). 
@@ -70,7 +70,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2011-10-04/2020-03-24] Chihayafuru -->
+	<!-- [2011-10-04/2020-03-24 Chihayafuru] Chihayafuru -->
 	<Document rdf:about="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=12991">
 		<name>Chihayafuru</name>
 		<dc:publisher>
@@ -79,7 +79,7 @@
 		<schema.org:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-10-04</schema.org:startDate>
 		<schema.org:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-03-27</schema.org:endDate>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Chihayafuru/family_to_you">
 		<schema.org:isBasedOn rdf:resource="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=12991"/>
 		<maker>
 			<Person>
@@ -93,7 +93,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2015-11-05] Halsey interview: "I don't believe people who say they're themselves all the time" -->
+	<!-- [2015-11-05 Halsey] Halsey interview: "I don't believe people who say they're themselves all the time" -->
 	<Document rdf:about="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/">
 		<maker>
 			<Person foaf:name="Peter Robinson"/>
@@ -104,7 +104,7 @@
 		</dc:publisher>
 		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-11-05</dc:date>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Halsey/believable">
 		<schema.org:isBasedOn rdf:resource="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/"/>
 		<maker>
 			<Person foaf:name="Halsey"/>
@@ -117,7 +117,7 @@
 	I think that is when the authenticity becomes important for me.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Halsey/calculation">
 		<schema.org:isBasedOn rdf:resource="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/"/>
 		<maker>
 			<Person foaf:name="Halsey"/>
@@ -136,7 +136,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2018-06-25/2019-12-31] The Princess Who Carries the Blood of the Goddess -->
+	<!-- [2018-06-25/2019-12-31 TPWCtBotG] The Princess Who Carries the Blood of the Goddess -->
 	<Document rdf:about="https://archiveofourown.org/works/15049127">
 		<maker>
 			<Person rdf:about="https://archiveofourown.org/users/TheLoudGuy" foaf:name="TheLoudGuy"/>
@@ -148,7 +148,7 @@
 		<schema.org:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-25</schema.org:startDate>
 		<schema.org:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-12-31</schema.org:endDate>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/TPWCtBotG/apocalypse_deferred">
 		<schema.org:isBasedOn rdf:resource="https://archiveofourown.org/works/15049127"/>
 		<maker>
 			<Person foaf:name="Impa"/>
@@ -164,7 +164,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2021-03-29] Mark Rudd’s Lessons From SDS and the Weather Underground for Today’s Radicals -->
+	<!-- [2021-03-29 SDS] Mark Rudd’s Lessons From SDS and the Weather Underground for Today’s Radicals -->
 	<Document rdf:about="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground">
 		<maker>
 			<Person foaf:name="Micah Uetricht"/>
@@ -175,7 +175,7 @@
 		</dc:publisher>
 		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021-03-29</dc:date>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/SDS/building_relationships">
 		<schema.org:isBasedOn rdf:resource="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground"/>
 		<maker>
 			<Person foaf:name="Mark Rudd"/>
@@ -192,7 +192,7 @@
 	It doesn’t happen suddenly—it happens through building relationships.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/SDS/the_base">
 		<schema.org:isBasedOn rdf:resource="https://jacobinmag.com/2021/03/mark-rudd-interview-lessons-sds-weather-underground"/>
 		<maker>
 			<Person foaf:name="Mark Rudd"/>
@@ -209,7 +209,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2021-04-04] Productive Misunderstandings: an Interview with Sandy Kaltenborn -->
+	<!-- [2021-04-04 S.Kaltenborn] Productive Misunderstandings: an Interview with Sandy Kaltenborn -->
 	<Document rdf:about="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn">
 		<maker>
 			<Person foaf:name="Kevin Yuen Kit Lo"/>
@@ -220,7 +220,7 @@
 		</dc:publisher>
 		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2021</dc:date>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/S.Kaltenborn/real_bodies">
 		<schema.org:isBasedOn rdf:resource="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn"/>
 		<maker>
 			<Person foaf:name="Sandy Kaltenborn"/>
@@ -229,7 +229,7 @@
 <html:p>From my perspective, these are not real bodies because there’s no problems attached to them, and of course bodies have problems attached to them as life bears a lot of problems.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/S.Kaltenborn/we_want_to_actually_live_together">
 		<schema.org:isBasedOn rdf:resource="https://www.lokidesign.net/en/texts/productive-misunderstandings-an-interview-with-sandy-kaltenborn"/>
 		<maker>
 			<Person foaf:name="Kevin Yuen Kit Lo"/>
@@ -243,7 +243,7 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
-	<!-- [2021-04-14] Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor | AIGA Eye on Design -->
+	<!-- [2021-04-14 J.D.Brown] Designer + Educator J. Dakota Brown Is Untangling the Relationship Between Design and Labor | AIGA Eye on Design -->
 	<Document rdf:about="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/">
 		<maker>
 			<Person foaf:name="Ksenya Samarskaya"/>
@@ -254,7 +254,7 @@
 		</dc:publisher>
 		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-14</dc:date>
 	</Document>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/J.D.Brown/mine_their_souls">
 		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
 		<maker>
 			<Person foaf:name="J. Dakota Brown"/>
@@ -264,7 +264,7 @@
 	It seemed to me, on the contrary, that designers were increasingly expected to mine their souls for marketable new expressions.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
-	<schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/J.D.Brown/defers_the_question">
 		<schema.org:isBasedOn rdf:resource="https://eyeondesign.aiga.org/designer-educator-j-dakota-brown-is-untangling-the-relationship-between-design-and-labor/"/>
 		<maker>
 			<Person foaf:name="J. Dakota Brown"/>
@@ -410,7 +410,13 @@
 			</if>
 		<html:meta name="viewport" content="width=device-width"/>
 			<if test="xhv:icon">
-		<html:link rel="icon" href="{concat(xhv:icon/@rdfs:isDefinedBy, '/../', document(xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)}"/>
+				<!-- Browsers may try to fetch this prior to processing if it is written as a literal <html:link> element. -->
+				<element name="html:link">
+					<attribute name="rel">icon</attribute>
+					<attribute name="href">
+						<value-of select="concat(xhv:icon/@rdfs:isDefinedBy, '/../', document(xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)"/>
+					</attribute>
+				</element>
 			</if>
 		</for-each>
 		<html:style>
@@ -439,7 +445,7 @@ html:Target a[href]{ Color: #B01C1C }
 	</html:head>
 	<html:body>
 		<for-each select="schema.org:Quotation">
-		<html:figure>
+		<html:figure data-search="{@rdf:about}">
 			<html:blockquote>
 				<apply-templates select="rdf:value[1]" mode="lang"/>
 				<apply-templates select="rdf:value[1]/node()"/>
@@ -458,17 +464,22 @@ html:Target a[href]{ Color: #B01C1C }
 			</html:figcaption>
 		</html:figure>
 		</for-each>
-		<html:footer><html:a href="" target="_self">Refresh.</html:a></html:footer>
+		<html:footer lang="en" xml:lang="en"><html:a href="?/" target="_self" style="Text-Decoration: None">🔄</html:a></html:footer>
 		<html:script>
-const pickFortune = ( ) => {
+const pickFortune = ( $ = location.search ) => {
 	const
 		$quotations = document.body.querySelectorAll(":root>body>figure"),
-		quotation = $quotations[Math.floor(Math.random() * $quotations.length)]
-		Array.prototype.forEach.call(document.body.children, elt =>
-			elt.hidden = !(elt.localName != "figure" || elt == quotation)) }
-document.body.querySelector(`a[href=""][target="_self"]`).addEventListener("click", event => {
-	pickFortune()
+		quotation = ($ == null ? null : document.body.querySelector(`:root>body>figure[data-search="${$}"]`)) ?? $quotations[Math.floor(Math.random() * $quotations.length)],
+		_search = quotation.dataset.search ?? "?/"
+	Array.prototype.forEach.call(document.body.children, elt => elt.hidden = !(elt.localName != "figure" || elt == quotation))
+	if ( location.search != _search ) {
+		const updatedURL = new URL (location)
+		updatedURL.search = _search
+		history.pushState(null, "", updatedURL) } }
+document.body.querySelector(`a[href="?/"][target="_self"]`).addEventListener("click", ( ) => {
+	pickFortune(null)
 	event.preventDefault() })
+window.addEventListener("popstate", pickFortune.bind(null, undefined))
 pickFortune()
 		</html:script>
 	</html:body>
