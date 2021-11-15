@@ -38,8 +38,8 @@
 	<schema.org:Quotation rdf:about="?/Tendencies/vividly_remembered_promises">
 		<schema.org:isBasedOn rdf:resource="http://id.loc.gov/resources/works/2049719"/>
 		<rdf:value rdf:parseType="Literal">
-<html:p>I think many adults (and I am among them) are trying, in our work, to keep faith with vividly remembered promises made to ourselves in childhood: promises to make invisible possibilities and desires visible; to make the tacit things explicit; to smuggle queer representation in where it must be smuggled and, with the relative freedom of adulthood, to challenge queer‐eradicating impulses frontally where they are to be so challenged. 
-	I think that for many of us in childhood the ability to attach intently to a few cultural objects, objects of high or popular culture or both, objects whose meaning seemed mysterious, excessive, or oblique in relation to the codes most readily available to us, became a prime resource for survival. 
+<html:p>I think many adults (and I am among them) are trying, in our work, to keep faith with vividly remembered promises made to ourselves in childhood: promises to make invisible possibilities and desires visible; to make the tacit things explicit; to smuggle queer representation in where it must be smuggled and, with the relative freedom of adulthood, to challenge queer‐eradicating impulses frontally where they are to be so challenged.</html:p>
+<html:p>I think that for many of us in childhood the ability to attach intently to a few cultural objects, objects of high or popular culture or both, objects whose meaning seemed mysterious, excessive, or oblique in relation to the codes most readily available to us, became a prime resource for survival. 
 	We needed for there to be sites where the meanings didn’t line up tidily with each other, and we learned to invest those sites with fascination and love. 
 	This can’t help coloring the adult relation to cultural texts and objects; in fact, it’s almost hard for me to imagine another way of coming to care enough about literature to give a lifetime to it.</html:p>
 		</rdf:value>
