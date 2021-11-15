@@ -277,6 +277,45 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
+	<!-- [2021-11-12 continuous] continuous partial mythologies | this is aaronland -->
+	<Document rdf:about="https://www.aaronland.info/weblog/2021/11/12/continuous/">
+		<maker>
+			<Person rdf:about="https://www.aaronstraupcope.com" foaf:name="Aaron Straup Cope"/>
+		</maker>
+		<name>continuous partial mythologies</name>
+		<dc:publisher>
+			<Organization rdf:about="https://www.aaronland.info" foaf:name="this is aaronland"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-11-12</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/continuous/a_living_breathing_garden">
+		<schema.org:isBasedOn rdf:resource="https://www.aaronland.info/weblog/2021/11/12/continuous/"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Exascerbating this problem is the belief that digital infrastructure is more like a book than, say, a garden. 
+	That, within the limits of aging, it can simply sit unattended on a shelf and be revisited only by brushing off any accumulated dust. 
+	Just to be clear about something: 
+	I love books. 
+	Books are amazing. 
+	But a field guide of plants is not the same thing as a living, breathing garden and no one pretends that a garden left unattended will flourish.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/continuous/only_a_few_enterprises">
+		<schema.org:isBasedOn rdf:resource="https://www.aaronland.info/weblog/2021/11/12/continuous/"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>When we talk about virtual worlds we are not only talking about walled gardens governed by the whim and folly of <html:a href="http://www.aaronland.info/weblog/2014/10/06/interpretation/#brick">shareholder value</html:a>. 
+	We are also talking about infrastructures that only a few enterprises are in a position to operate.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/continuous/failure_scenario">
+		<schema.org:isBasedOn rdf:resource="https://www.aaronland.info/weblog/2021/11/12/continuous/"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>No one can pretend that web browsers are “simple” anymore, but that's not really my point. 
+	Neither is it that we should do away with all the complex and sophisticated interactivity we've developed over the years. I am not suggesting that we return to the web of the mid‐1990s with its grey backgrounds and blue and purple links. 
+	I am suggesting however that we ensure that web is our guaranteed <html:em>failure scenario</html:em>, should it ever be necessary, and that we layer everything on top of it.</html:p>
+<html:p>This is as much about safe‐guarding against other people’s browser decisions as it is giving the cultural heritage sector the freedom to engage with the walled gardens of platform vendors, without that participation turning in to a black hole from which it is impossible to escape.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
 	<!-- About this document -->
 	<Document rdf:about="">
 		<name>✨ Fortune ✨</name>
