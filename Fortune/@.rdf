@@ -13,6 +13,73 @@
 	xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
 >
 
+	<!-- [1986 Intimate_Machine] Computational Reticence: Why Women Fear the Intimate Machine -->
+	<Document rdf:about="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf">
+		<maker>
+			<Person>
+				<name>Sherry Turkle</name>
+			</Person>
+		</maker>
+		<name>Computational Reticence: Why Women Fear the Intimate Machine</name>
+		<dc:publisher>
+			<Organization foaf:name="Pergamon Press"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1986</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/Intimate_Machine/a_completely_different_thing">
+		<schema.org:isBasedOn rdf:resource="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>I ask Robin to talk to me about her relationship with her piano, a machine, but she insists that it was a completely different thing. 
+	The piano took her away from people, but then it brought her closer to them. 
+	The involvements of her male peers with the computer only shut people out.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Intimate_Machine/what_they_really_prefer">
+		<schema.org:isBasedOn rdf:resource="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>To take an analogy from the world of the computer’s second cousins, the video games: it is almost impossible to learn to play a video game if you try to understand first and play second. 
+	Girls are often perceived as preferring the ‘easier’ video games. 
+	When I have looked more closely at what they really prefer, it is games where they can understand ‘the rules’ before play begins. 
+	Both Lisa and Robin crave transparent understanding of the computer. 
+	For example, although both apologize for their behavior as ‘silly,’ both like to program the computer to do everything they need to build their larger programs, even when these smaller, ‘building-block’ procedures are in program libraries at their disposal. 
+	It makes their job harder, but both say that it gives them a more satisfying understanding. 
+	They don’t like taking risks at the machine. 
+	What they most want to avoid is error messages.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Intimate_Machine/what_they_really_prefer">
+		<schema.org:isBasedOn rdf:resource="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>First, insisting that the computer is just a tool is a defense against the experience of the computer as the opposite, as an intimate machine. 
+	It is a way to say that it is not appropriate to have a close relationship with a machine. 
+	Computers with their plasticity and malleability are compelling media. 
+	They have a psychological ‘holding power.’ 
+	Women use their rejection of computer holding power to assert something about themselves as women. 
+	Being a woman is opposed to a compelling relationship with a thing that shuts people out.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Intimate_Machine/if_only_it_were_a_language">
+		<schema.org:isBasedOn rdf:resource="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Lisa reacted with irritation when her high school teachers tried to get her interested in mathematics by calling it a language. 
+	‘People were always yakking at me about how math is a language—it’s got punctuation marks and all that stuff. 
+	I thought they were fools and I told them so. 
+	I told them that if only it were a language, if only it had some nuance, then perhaps I could relate to it.’</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/Intimate_Machine/artistic_and_personal">
+		<schema.org:isBasedOn rdf:resource="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>We know that pencils, oil paints and brushes are ‘just tools.’ 
+	And yet, we appreciate that the artist’s encounter with his or her tools is close and relational. 
+	It may shut people out, temporarily, but the work itself can bring one closer to oneself, and ultimately to others. 
+	In the right settings, people develop relationships with computers that feel artistic and personal. 
+	And yet, for most people, and certainly for the women I studied, this was rare. 
+	When they began to approach the computer in their own style, they got their wrists slapped, and were told that they were not doing things ‘right.’</html:p>
+<html:p>When this happens, many people drop out.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
 	<!-- [1993 Tendencies] Tendencies -->
 	<Document rdf:about="http://id.loc.gov/resources/works/2049719">
 		<maker>
@@ -464,6 +531,13 @@
 	Neither is it that we should do away with all the complex and sophisticated interactivity we've developed over the years. I am not suggesting that we return to the web of the mid‐1990s with its grey backgrounds and blue and purple links. 
 	I am suggesting however that we ensure that web is our guaranteed <html:em>failure scenario</html:em>, should it ever be necessary, and that we layer everything on top of it.</html:p>
 <html:p>This is as much about safe‐guarding against other people’s browser decisions as it is giving the cultural heritage sector the freedom to engage with the walled gardens of platform vendors, without that participation turning in to a black hole from which it is impossible to escape.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/continuous/what_separates_the_web">
+		<schema.org:isBasedOn rdf:resource="https://www.aaronland.info/weblog/2021/11/12/continuous/"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Weeks or months, years even, may pass before someone else finds what you’ve written but it’s important to understand: 
+	This is what separates the web from what came before it.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
 
