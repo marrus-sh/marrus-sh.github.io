@@ -93,6 +93,142 @@
 		</rdf:value>
 	</schema.org:Quotation>
 
+	<!-- [2012-12-30 FM-XVIII.1-4291] “Free as in sexist?” Free culture and the gender gap -->
+	<Document rdf:about="https://doi.org/10.5210/fm.v18i1.4291">
+		<maker>
+			<Person foaf:name="Joseph Reagle"/>
+		</maker>
+		<name>“Free as in sexist?” Free culture and the gender gap</name>
+		<dc:publisher>
+			<Organization rdf:about="https://firstmonday.org" foaf:name="First Monday"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-30</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/FM-XVIII.1-4291/bound_together_by_voluntary_ties">
+		<schema.org:isBasedOn rdf:resource="https://doi.org/10.5210/fm.v18i1.4291"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>While FLOSS is often likened to a gift culture through which exchange creates ties and obligations, in reality code is readily given away without concern of what people do with it; it is a way of cutting ties. 
+	Other communication with users of the code, such as in producing manuals, is seen as women’s work.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2014-02-24 MVC-Language] Gendered Language: Feature or Bug in Software Documentation? -->
+	<Document rdf:about="https://modelviewculture.com/pieces/gendered-language-feature-or-bug-in-software-documentation">
+		<maker>
+			<Person foaf:name="Tim Chevalier"/>
+		</maker>
+		<name>Gendered Language: Feature or Bug in Software Documentation?</name>
+		<dc:publisher>
+			<Organization rdf:about="https://modelviewculture.com" foaf:name="Model View Culture"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-24</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/MVC-Language/bound_together_by_voluntary_ties">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/gendered-language-feature-or-bug-in-software-documentation"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Surely, though, the claim that gender isn’t relevant to the project is an aspirational one. 
+	If gender was not relevant to the project, then 227 comments wouldn’t have been posted on the Github pull request that Gaynor submitted. 
+	In fact, race, gender, religion, and politics <html:em>are</html:em> relevant to open‐source projects. 
+	Community issues are not off‐topic; they are central to any project that is bound together by voluntary ties rather than (as in projects that are part of traditional companies) economic coercion.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/MVC-Language/fewer_well-intentioned_essays">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/gendered-language-feature-or-bug-in-software-documentation"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>We need fewer well‐intentioned essays addressed to bros with good intentions about why sexist language might seem good but is bad. 
+	In the tech feminism community, we’ve been writing these essays for most of a decade. 
+	The <html:em>systematic</html:em> use of abuser tactics to control conversations and shut down criticism continues. 
+	These conversations go on and on, and happen over and over, each one seemingly unencumbered by the lessons of the previous one—<html:em>what’s happening isn’t a conversation at all, but rather, a power struggle</html:em>.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2014-03-17 MVC-Hashtags] Hashtags as Decolonial Projects with Radical Origins -->
+	<Document rdf:about="https://modelviewculture.com/pieces/hashtags-as-decolonial-projects-with-radical-origins">
+		<maker>
+			<Person foaf:name="Sue Park"/>
+		</maker>
+		<maker>
+			<Person foaf:name="Eunsong Kim"/>
+		</maker>
+		<name>Hashtags as Decolonial Projects with Radical Origins</name>
+		<dc:publisher>
+			<Organization rdf:about="https://modelviewculture.com" foaf:name="Model View Culture"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-03-17</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/MVC-Hashtags/separate_spectacles">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/hashtags-as-decolonial-projects-with-radical-origins"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>As separate spectacles, we are less threatening.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2014-11-18 MVC-Rules] Learning the Rules: Empathy and Enforcement -->
+	<Document rdf:about="https://modelviewculture.com/pieces/learning-the-rules-empathy-and-enforcement">
+		<maker>
+			<Person foaf:name="Amelia Abreu"/>
+		</maker>
+		<name>Learning the Rules: Empathy and Enforcement</name>
+		<dc:publisher>
+			<Organization rdf:about="https://modelviewculture.com" foaf:name="Model View Culture"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-03-17</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/MVC-Rules/those_who_get_to_choose">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/learning-the-rules-empathy-and-enforcement"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>If I’ve noticed a pattern in all this, talking generally about empathy and compassion, or “service”, is a privilege reserved for those who get to chose when to use these tools.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2015-03-19 MVC-Trending] The Politics of Trending -->
+	<Document rdf:about="https://modelviewculture.com/pieces/the-politics-of-trending">
+		<maker>
+			<Person foaf:name="Eunsong Kim"/>
+		</maker>
+		<name>The Politics of Trending</name>
+		<dc:publisher>
+			<Organization rdf:about="https://modelviewculture.com" foaf:name="Model View Culture"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-03-19</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/MVC-Trending/misdirected_mis-use">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/the-politics-of-trending"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Criticism of tags like #solidarityisforwhitewomen situated the trending of such conversations as an exceptional and at the same time misdirected, mis‐use of digital energy by racialized and gendered users. 
+	However, hashtags like #happybirthdaytaylorswift and #happybirthdaydemilevato have yet to receive “critical” scholarship, essays, exposes and op‐eds. 
+	This is because their themes fit into the dynamic and expectations of what is expectedly visible, what a trend might constitute, and what cyborgs are supposed to be interested in.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+	<schema.org:Quotation rdf:about="?/MVC-Trending/isolated_explosions">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/the-politics-of-trending"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>The exceptional attention given to hashtag discourse by critics, news platforms and journalists—to what they perceive to be evidence of visibility—takes the focus away from the spaces created by gendered and racialized users, and rewrites it as a singular confrontation racialized/gendered users are having with white audiences within a white space. 
+	This rewriting positions trending tags to be isolated explosions. 
+	It does not labor through the possibility of communal, ongoing engagement and sustainment, for better or for worse. 
+	Though this is clearly their fixation, this fixation should not prevent us from thinking through and recentering the persistent and ongoing labors involving disobedience, disturbance and cyborg mutations: alternative discourses.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2015-04-28 MVC-Imposters] The Trouble with Imposters -->
+	<Document rdf:about="https://modelviewculture.com/pieces/the-trouble-with-imposters">
+		<maker>
+			<Person foaf:name="Cate Huston"/>
+		</maker>
+		<name>The Trouble with Imposters</name>
+		<dc:publisher>
+			<Organization rdf:about="https://modelviewculture.com" foaf:name="Model View Culture"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-04-28</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/MVC-Imposters/the_reality_of_an_environment">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/the-trouble-with-imposters"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>What we call imposter syndrome often reflects the reality of an environment that tells marginalized groups that we <html:em>shouldn’t</html:em> be confident, that our skills aren’t enough, that we won’t succeed—and when we do, our accomplishments won’t even be attributed to us. 
+	Yet imposter syndrome is treated as a personal problem to be overcome, a <html:em>distortion</html:em> in processing rather than a realistic reflection of the hostility, discrimination, and stereotyping that pervades tech culture.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
 	<!-- [2015-11-05 Halsey] Halsey interview: "I don't believe people who say they're themselves all the time" -->
 	<Document rdf:about="https://www.popjustice.com/articles/halsey-interview-i-dont-believe-people-who-say-theyre-themselves-all-the-time/">
 		<maker>
@@ -133,6 +269,21 @@
 	The calculation is that I’ve got five hundred thousand people here and I need to calculate the most organic way that I can present myself to them. 
 	Do you know what I mean? 
 	My biggest fear is being miscommunicated, I think that’s why I talk so much.</html:p>
+		</rdf:value>
+	</schema.org:Quotation>
+
+	<!-- [2015-11-17 MVC-Violence] Without Scars: Domestic Violence, Abuse and the Tech Pipeline -->
+	<Document rdf:about="https://modelviewculture.com/pieces/without-scars-domestic-violence-abuse-and-the-tech-pipeline">
+		<name>Without Scars: Domestic Violence, Abuse and the Tech Pipeline</name>
+		<dc:publisher>
+			<Organization rdf:about="https://modelviewculture.com" foaf:name="Model View Culture"/>
+		</dc:publisher>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-04-28</dc:date>
+	</Document>
+	<schema.org:Quotation rdf:about="?/MVC-Violence/completely_oblivious">
+		<schema.org:isBasedOn rdf:resource="https://modelviewculture.com/pieces/without-scars-domestic-violence-abuse-and-the-tech-pipeline"/>
+		<rdf:value rdf:parseType="Literal">
+<html:p>Around me, I saw people “killing it” and “crushing it” and “disrupting,” completely oblivious to the world around them which they were killing and crushing and disrupting and suffocating.</html:p>
 		</rdf:value>
 	</schema.org:Quotation>
 
@@ -395,10 +546,20 @@
 </html:a>
 			<if test="foaf:maker">
 				<text> | </text>
+				<for-each select="foaf:maker">
 <html:span>
-				<apply-templates select="foaf:maker[1]" mode="lang"/>
-				<apply-templates select="foaf:maker[1]/node()" mode="normalize"/>
+					<apply-templates select="." mode="lang"/>
+					<apply-templates select="./node()" mode="normalize"/>
 </html:span>
+					<choose>
+						<when test="following-sibling::foaf:maker/following-sibling::foaf:maker">
+							<text>, </text>
+						</when>
+						<when test="following-sibling::foaf:maker">
+							<text> &amp; </text>
+						</when>
+					</choose>
+				</for-each>
 			</if>
 			<if test="dc:publisher or dc:date or schema.org:startDate or schema.org:endDate">
 				<text> (</text>
@@ -494,10 +655,12 @@ html:Target a[href]{ Color: #B01C1C }
 				<html:strong>
 				<apply-templates select="foaf:maker[1]" mode="lang"/>
 				<apply-templates select="foaf:maker[1]/node()" mode="normalize"/>
-				<if test="//foaf:Document[string(@rdf:about) = string(current()/schema.org:isBasedOn/@rdf:resource)]">
-					<text>: </text>
-				</if>
 				</html:strong>
+				<if test="//foaf:Document[string(@rdf:about) = string(current()/schema.org:isBasedOn/@rdf:resource)]">
+					<html:span lang="en" xml:lang="en">
+						<text>, as quoted in </text>
+					</html:span>
+				</if>
 			</if>
 			<apply-templates select="//foaf:Document[string(@rdf:about) = string(current()/schema.org:isBasedOn/@rdf:resource)][1]"/>
 			</html:figcaption>
