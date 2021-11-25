@@ -8,16 +8,103 @@
 <STYLE>
 @font-face{ Font-Family: "M+ 2c"; Font-Weight: 400; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2c-regular.ttf") Format("truetype") }
 @font-face{ Font-Family: "M+ 2c"; Font-Weight: 700; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2c-bold.ttf") Format("truetype") }
-html{ Padding: 1EM 2EM 3EM; Color: #000000; Background: #F0F0F0; Font: Medium / 1.25 "M+ 2c", Sans-Serif }
+html{ Padding: 1EM 2EM 3EM; Background: #F0F0F0; Color: #000000; Font: Medium / 1.25 "M+ 2c", Sans-Serif }
 body{ Margin: Auto; Max-Width: 31EM }
 iframe{ Display: Block; Box-Sizing: Border-Box; Margin: 1EM 0; Border: Groove; Width: 100% }
-*:Any-Link{ Color: #004599 }
-*:Any-Link:Active{ Color: #CD2C00 }
+*:Any-Link,
+button.LINK.LINK{ Color: #004599 }
+*:Any-Link:Active,
+button.LINK.LINK:Active{ Color: #CD2C00 }
+button.LINK{ All: Unset; Cursor: Pointer; Text-Decoration: Underline }
+aside#Fortune{ Border: Thin Solid; Padding: 1REM; Font: 1REM / 1.5 Serif; Text-Align: Justify; }
+aside#Fortune>h2{ Margin: -1.75REM 0 .75REM; Border: Thin Solid; Padding: 0 .5REM; Max-Width: Max-Content; Background: #F0F0F0; Color: #000000; Font-Size: Inherit; Font-Style: Italic; Font-Weight: Bold; }
+aside#Fortune>blockquote{ Margin: 0 }
+aside#Fortune p{ Margin: 0 }
+aside#Fortune p+p{ Text-Indent: 2EM }
+aside#Fortune>footer{ Margin: 1REM -.5REM 0; Padding: 1EM .5REM 0; Border-Top: Thin Solid; Font-Size: Smaller; Text-Align: Right }
+aside#Fortune>footer>nav{ Margin: 1EM 0 -1.75REM Auto; Border: Thin Solid; Border-Top: Thin Dashed; Padding: 0 .5EM 0 2.5EM; Max-Width: Max-Content; Background: #F0F0F0; Color: #000000; Line-Height: 1.5REM; Word-Spacing: .5CH }
 </STYLE>
 <H1>kibigo!’s web portal</H1>
 <P>hi!  welcome to my website!
 <IFRAME Src=https://go.KIBI.family/WebRings/💀💖/embed/#/kibigo Sandbox="allow-scripts allow-same-origin allow-top-navigation"></IFRAME>
-<IFRAME Src=Fortune/#light-theme Style="Height: 50VH" Sandbox="allow-scripts allow-same-origin allow-top-navigation"></IFRAME>
+
+<ASIDE ID=Fortune>
+	<H2>✨ Fortune ✨</H2>
+	<BLOCKQUOTE></BLOCKQUOTE>
+	<FOOTER>
+		<P>
+		<NAV Hidden>
+			<A Class=PERMALINK>Permalink.</A>
+			<BUTTON Type=Button Class="REFRESH LINK">Refresh.</BUTTON>
+		</NAV>
+	</FOOTER>
+	<SCRIPT Type=module>
+let
+	fortuneDocument = null
+	, quotations = [ ]
+const refreshFortune = ( ) => {
+	console.log(quotations)
+	const quotation = quotations[Math.floor(Math.random() * quotations.length)]
+	document.querySelector("aside#Fortune>blockquote").replaceChildren(...Array.from(Array.from(quotation.children).find($ => $.localName == "value" && $.namespaceURI == "http://www.w3.org/1999/02/22-rdf-syntax-ns#").children).map($ => document.importNode($, true)))
+	; {
+		const
+			citation = Array.from(fortuneDocument.documentElement.children).find($ => $.localName == "Document" && $.namespaceURI == "http://xmlns.com/foaf/0.1/" && $.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about") == Array.from(quotation.children).find($ => $.localName == "isBasedOn" && $.namespaceURI == "https://schema.org/").getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "resource"))
+			, citeElement = document.querySelector("aside#Fortune>footer p")
+		citeElement.textContent = ""
+		; {
+			const speaker = Array.from(quotation.children).find($ => $.localName == "maker" && $.namespaceURI == "http://xmlns.com/foaf/0.1/")
+			if ( speaker != null ) {
+				const
+					speakerURI = speaker.children[0]?.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about")
+					, speakerElement = document.createElement(speakerURI == null ? "span" : "a")
+				if ( speakerURI != null ) speakerElement.href = speakerURI
+				speakerElement.textContent = speaker.textContent.trim() || speaker.children[0]?.getAttributeNS("http://xmlns.com/foaf/0.1/", "name") || "Anonymous"
+				citeElement.appendChild(speakerElement)
+				citeElement.appendChild(document.createTextNode(", as quoted in: ")) } }
+		; {
+			const
+				sourceLinkElement = document.createElement("a")
+				, sourceElement = document.createElement("cite")
+			sourceLinkElement.href = citation.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about")
+			sourceElement.textContent = Array.from(citation.children).find($ => $.localName == "name" && $.namespaceURI == "http://xmlns.com/foaf/0.1/")?.textContent ?? "Untitled"
+			sourceLinkElement.appendChild(sourceElement)
+			citeElement.appendChild(sourceLinkElement) }
+		Array.from(citation.children).filter($ => $.localName == "maker" && $.namespaceURI == "http://xmlns.com/foaf/0.1/").forEach((author, index, { length }) => {
+			const
+				authorURI = author.children[0]?.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about")
+				, authorElement = document.createElement(authorURI == null ? "span" : "a")
+			if ( authorURI != null ) authorElement.href = authorURI
+			authorElement.textContent = author.textContent.trim() || author.children[0]?.getAttributeNS("http://xmlns.com/foaf/0.1/", "name") || "Anonymous"
+			if ( index == 0 ) citeElement.appendChild(document.createTextNode(" | "))
+			citeElement.appendChild(authorElement)
+			if ( length - index > 2 ) citeElement.appendChild(document.createTextNode(", "))
+			else if (length - index == 2) citeElement.appendChild(document.createTextNode(" & ")) })
+		; {
+			const
+				publisher = Array.from(citation.children).find($ => $.localName == "publisher" && $.namespaceURI == "http://purl.org/dc/terms/")
+				, date = Array.from(citation.children).find($ => $.localName == "date" && $.namespaceURI == "http://purl.org/dc/terms/")
+			if ( publisher == null && date == null ) citeElement.appendChild(document.createTextNode("."))
+			else {
+				citeElement.appendChild(document.createTextNode(" ("))
+				if ( publisher != null ) {
+					const
+						publisherURI = publisher.children[0]?.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about")
+						, publisherElement = document.createElement(publisherURI == null ? "span" : "a")
+					if ( publisherURI != null ) publisherElement.href = publisherURI
+					publisherElement.textContent = publisher.textContent.trim() || publisher.children[0]?.getAttributeNS("http://xmlns.com/foaf/0.1/", "name") || "Unknown"
+					citeElement.appendChild(publisherElement)
+					if ( date != null ) citeElement.appendChild(document.createTextNode(`, ${ date.textContent }).`))
+					else citeElement.appendChild(document.createTextNode(").")) }
+				else citeElement.appendChild(document.createTextNode(`${ date.textContent }).`)) } } }
+	document.querySelector("aside#Fortune>footer a.PERMALINK").href = `/Fortune/${ quotation.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about") }`
+	document.querySelector("aside#Fortune>footer>nav").hidden = false }
+fetch(new Request ("Fortune/@.rdf")).then(response => response.text()).then(text => {
+	fortuneDocument = (new DOMParser).parseFromString(text, "application/xml")
+	quotations = Array.from(fortuneDocument.documentElement.children).filter($ => $.localName == "Quotation" && $.namespaceURI == "https://schema.org/")
+	document.querySelector("aside#Fortune>footer button.REFRESH").addEventListener("click", refreshFortune)
+	refreshFortune() })
+	</SCRIPT>
+</ASIDE>
 <NAV>
 	<H2>links :—</H2>
 	<SECTION Id=general>
