@@ -9,18 +9,18 @@
 @font-face{ Font-Family: "M+ 2c"; Font-Weight: 400; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2c-regular.ttf") Format("truetype") }
 @font-face{ Font-Family: "M+ 2c"; Font-Weight: 700; Src: URL("./Fonts/Mplus-Fonts/fonts/mplus-2c-bold.ttf") Format("truetype") }
 html{ Padding: 1EM 2EM 3EM; Background: #F0F0F0; Color: #000000; Font: Medium / 1.25 "M+ 2c", Sans-Serif }
-body{ Display: Grid; Margin: Auto; Width: 100%; Grid-Auto-Flow: Dense Row; Gap: 3REM }
+body{ Display: Grid; Margin: Auto; Width: 100%; Grid-Auto-Flow: Dense Row; Gap: 2REM }
 body>*{ Display: Block; Box-Sizing: Border-Box; Margin: 0 Auto; Width: 100%; Max-Width: 31REM }
 body>header,
 body>footer{ Grid-Column: 1 / -1; Text-Align: Center }
 @media ( Min-Width: 48REM ) {
-	body{ Grid-Template-Columns: 1FR 1FR; Gap: 2REM } }
+	body{ Grid-Template-Columns: 1FR 1FR } }
 aside#search p{ Margin: 0 }
 aside#search dl{ Margin: 0; Line-Height: 1.5 }
 aside#search dl>div{ Margin: .75EM 0 0 1REM }
 aside#search dt{ Margin: 0 0 0 -1REM; Font-Weight: Bold; Line-Height: 1.25 }
 aside#search dd{ Display: Inline; Margin: 0; Padding: 0 }
-aside#Fortune{ Border: Thin Solid; Padding: 1REM; Align-Self: Start; Background: #FAF8F7; Color: #57534C; Font: 1REM / 1.5 Serif; Text-Align: Justify }
+aside#Fortune{ Margin: 1.75REM 0; Border: Thin Solid; Padding: 1REM; Background: #FAF8F7; Color: #57534C; Font: 1REM / 1.5 Serif; Text-Align: Justify }
 aside#Fortune>h2{ Margin: -1.75REM 0 .75REM; Border: Thin Solid; Padding: 0 .5REM; Max-Width: Max-Content; Background: #FAF8F7; Font-Size: Inherit; Font-Style: Italic; Font-Weight: Bold }
 aside#Fortune>blockquote{ Margin: 0 }
 aside#Fortune p{ Margin: 0 }
@@ -37,24 +37,29 @@ button.LINK{ Color: #004599 }
 *:Any-Link:Active,
 button.LINK:Active{ Color: #CD2C00 }
 button{ All: Unset; Border: Thin Solid; Border-Radius: .25EM; Padding: 0 .25EM; Background: #FFFFFF; Cursor: Default; Font-Size: Smaller }
+button:Disabled{ Background: None; Text-Decoration: Line-Through }
 button:Hover{ Background: None }
 button:Focus,
 button:Active{ Outline: Thin Dashed }
 button.LINK{ Border: None; Background: None; Cursor: Pointer; Font-Size: Inherit; Text-Decoration: Underline }
 label{ Font-Weight: Bold }
 </STYLE>
-<SCRIPT Type=module>window.addEventListener("load", ( ) => window.scrollTo(0, 0))</SCRIPT>
 
 <HEADER>
 	<H1>kibigo!’s web portal</H1>
 	<P>hi!  welcome to my website!
 	<ASIDE>
 		<IFRAME ID=WebRing/💀💖 Src=https://go.KIBI.family/WebRings/💀💖/embed/#/kibigo Sandbox="allow-scripts allow-same-origin allow-top-navigation"></IFRAME>
+		<SCRIPT Type=module>
+//  Safari scrolls the page to the IFRAME on load, presumably due to the hash in its @src.
+//  The following event listener (hopefully) undoes this.
+document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => window.scrollTo(0, 0))
+		</SCRIPT>
 	</ASIDE>
 </HEADER>
 
 <ASIDE ID=search>
-	<P><LABEL For=query>Quick Search:</LABEL> <INPUT Type=text Name=query Id=query Autofocus Placeholder=Query…>
+	<P><LABEL For=query>Quick Search:</LABEL> <INPUT Type=text Name=query Id=query Autofocus Placeholder=Query…> <BUTTON Type=button Disabled>Visit U·R·L</BUTTON>
 	<DL>
 		<DIV>
 			<DT>Search Engines
@@ -74,39 +79,50 @@ label{ Font-Weight: Bold }
 		</DIV>
 		<DIV>
 			<DT>Technology
-			<DD><BUTTON Type=button Data-Search=https://developer.mozilla.org/en-US/search?q=%s>The M·D·N</BUTTON>
+			<DD><BUTTON Type=button Data-Search=https://developer.mozilla.org/en-US/search?q=%s>MDN Web Docs</BUTTON>
 			<DD><BUTTON Type=button Data-Search=https://developer.apple.com/search/?q=%s&amp;type=Reference>Apple Reference</BUTTON>
 			<DD><BUTTON Type=button Data-Search=https://www.git-scm.com/search/results?search=%s>Git Reference</BUTTON>
 		</DIV>
 		<DIV>
 			<DT>Other Resources
+			<DD><BUTTON Type=button Data-Search=https://web.archive.org/web/*/%s>Wayback Machine</BUTTON>
 			<DD><BUTTON Type=button Data-Search=https://translate.google.com/#auto/en/%s>Google Translate</BUTTON>
+			<DD><BUTTON Type=button Data-Search=https://www.behindthename.com/names/search.php?terms=%s>Behind the Name</BUTTON>
 			<DD><BUTTON Type=button Data-Search=https://www.etymonline.com/index.php?allowed_in_frame=0&amp;search=%s&amp;searchmode=none>Etymonline</BUTTON>
-			<DD><BUTTON Type=button Data-Search=https://r12a.github.io/uniview/?charlist=%s>Uniview</BUTTON>
+			<DD><BUTTON Type=button Data-Search=https://r12a.github.io/uniview/?charlist=%s>UniView</BUTTON>
 			<DD><BUTTON Type=button Data-Search=https://r12a.github.io/app-analysestring/?chars=%s>Analyse String</BUTTON>
 			<DD><BUTTON Type=button Data-Search=https://emojipedia.org/search/?q=%s>Emojipedia</BUTTON>
 		</DIV>
 	</DL>
 	<SCRIPT Type=module>
-for ( const button of document.getElementById("search").querySelectorAll("button") ) {
-button.addEventListener("click", ( ) => location.href = button.dataset.search.replace("%s", document.getElementById("query").value)) }
+const
+	queryElement = document.getElementById("query")
+	, navigationButton = document.querySelector("aside#search>p button")
+queryElement.addEventListener("input", ( ) => { navigationButton.disabled = !(/^[A-Za-z0-9\u{2D}_.~!#$&'()*+,\u{2F}:;=?@\u{5B}\u{5D}\u{A0}-\uD7FF\u{F900}-\u{FDCF}\u{10000}-\u{1FFFD}\u{20000}-\u{2FFFD}\u{30000}-\u{3FFFD}\u{40000}-\u{4FFFD}\u{50000}-\u{5FFFD}\u{60000}-\u{6FFFD}\u{70000}-\u{7FFFD}\u{80000}-\u{8FFFD}\u{90000}-\u{9FFFD}\u{A0000}-\u{AFFFD}\u{B0000}-\u{BFFFD}\u{C0000}-\u{CFFFD}\u{D0000}-\u{DFFFD}\u{E0000}-\u{EFFFD}]+$/u.test(queryElement.value) && /\./u.test(queryElement.value)) })
+queryElement.addEventListener("keydown", ({ key }) => {
+	if ( key == "Enter" && !navigationButton.disabled ) navigationButton.click() })
+navigationButton.addEventListener("click", ( ) => {
+	if ( !navigationButton.disabled ) location.href = /^[A-Za-z][A-Za-z0-9+\u{2D}.]*:/u.test(queryElement.value) ? queryElement.value : `http://${ queryElement.value }` })
+for ( const button of document.querySelectorAll("aside#search>dl button") ) {
+button.addEventListener("click", ( ) => location.href = button.dataset.search.replace("%s", queryElement.value)) }
 	</SCRIPT>
 </ASIDE>
 
-<ASIDE ID=Fortune Style="Grid-Row-End: Span 2">
-	<H2>✨ Fortune ✨</H2>
-	<BLOCKQUOTE></BLOCKQUOTE>
-	<FOOTER>
-		<P>
-		<NAV Hidden>
-			<A Class=PERMALINK>Permalink.</A>
-			<BUTTON Type=Button Class="REFRESH LINK">Refresh.</BUTTON>
-		</NAV>
-	</FOOTER>
-	<SCRIPT Type=module>
+<DIV Style="Grid-Row-End: Span 2">
+	<ASIDE ID=Fortune>
+		<H2>✨ Fortune ✨</H2>
+		<BLOCKQUOTE></BLOCKQUOTE>
+		<FOOTER>
+			<P>
+			<NAV Hidden>
+				<A Class=PERMALINK>Permalink.</A>
+				<BUTTON Type=Button Class="REFRESH LINK">Refresh.</BUTTON>
+			</NAV>
+		</FOOTER>
+		<SCRIPT Type=module>
 let
-fortuneDocument = null
-, quotations = [ ]
+	fortuneDocument = null
+	, quotations = [ ]
 const refreshFortune = ( ) => {
 const quotation = quotations[Math.floor(Math.random() * quotations.length)]
 document.querySelector("aside#Fortune>blockquote").replaceChildren(...Array.from(Array.from(quotation.children).find($ => $.localName == "value" && $.namespaceURI == "http://www.w3.org/1999/02/22-rdf-syntax-ns#").children).map($ => document.importNode($, true)))
@@ -163,12 +179,13 @@ document.querySelector("aside#Fortune>blockquote").replaceChildren(...Array.from
 document.querySelector("aside#Fortune>footer a.PERMALINK").href = `/Fortune/${ quotation.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "about") }`
 document.querySelector("aside#Fortune>footer>nav").hidden = false }
 fetch(new Request ("Fortune/@.rdf")).then(response => response.text()).then(text => {
-fortuneDocument = (new DOMParser).parseFromString(text, "application/xml")
-quotations = Array.from(fortuneDocument.documentElement.children).filter($ => $.localName == "Quotation" && $.namespaceURI == "https://schema.org/")
-document.querySelector("aside#Fortune>footer button.REFRESH").addEventListener("click", refreshFortune)
-refreshFortune() })
-	</SCRIPT>
-</ASIDE>
+	fortuneDocument = (new DOMParser).parseFromString(text, "application/xml")
+	quotations = Array.from(fortuneDocument.documentElement.children).filter($ => $.localName == "Quotation" && $.namespaceURI == "https://schema.org/")
+	document.querySelector("aside#Fortune>footer button.REFRESH").addEventListener("click", refreshFortune)
+	refreshFortune() })
+		</SCRIPT>
+	</ASIDE>
+</DIV>
 
 <NAV>
 	<H2>My Links</H2>
