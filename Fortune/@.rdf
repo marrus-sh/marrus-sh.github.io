@@ -16,9 +16,7 @@
 	<!-- [1986 Intimate_Machine] Computational Reticence: Why Women Fear the Intimate Machine -->
 	<Document rdf:about="https://sherryturkle.mit.edu/sites/default/files/images/ST_Compu%20Reticence.pdf">
 		<maker>
-			<Person>
-				<name>Sherry Turkle</name>
-			</Person>
+			<Person rdf:about="https://sherryturkle.mit.edu" foaf:name="Sherry Turkle"/>
 		</maker>
 		<name>Computational Reticence: Why Women Fear the Intimate Machine</name>
 		<dc:publisher>
@@ -83,9 +81,7 @@
 	<!-- [1993 Tendencies] Tendencies -->
 	<Document rdf:about="http://id.loc.gov/resources/works/2049719">
 		<maker>
-			<Person>
-				<name>Eve Kosofsky Sedgwick</name>
-			</Person>
+			<Person foaf:name="Eve Kosofsky Sedgwick"/>
 		</maker>
 		<name>Tendencies</name>
 		<dc:publisher>
@@ -543,7 +539,7 @@
 
 	<!-- About this document -->
 	<Document rdf:about="">
-		<name>✨ Fortune ✨</name>
+		<name>✨ Fortune ✨</name>
 		<maker rdf:resource="https://go.KIBI.family/About/#me"/>
 		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
 		<xhv:stylesheet>
