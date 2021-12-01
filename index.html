@@ -13,28 +13,52 @@ body{ Display: Grid; Margin: Auto; Width: 100%; Grid-Auto-Flow: Dense Row; Gap: 
 body>*{ Display: Block; Box-Sizing: Border-Box; Margin: 0 Auto; Width: 100%; Max-Width: 31REM }
 body>header,
 body>footer{ Grid-Column: 1 / -1; Text-Align: Center }
-nav{ Columns: 2 12REM }
+body>div{ Display: Grid; Gap: 2REM; Align-Self: Start }
 @media ( Min-Width: 48REM ) {
 	body{ Grid-Template-Columns: 1FR 1FR } }
+aside#search{ Margin: 0 -.5REM; Border-Style: Double Dashed; Border-Width: Medium Thin; Border-Radius: .5REM; Padding: 1REM .5REM }
 aside#search p{ Margin: 0 }
 aside#search dl{ Margin: 0; Line-Height: 1.5 }
 aside#search dl>div{ Margin: .75EM 0 0 1REM }
 aside#search dt{ Margin: 0 0 0 -1REM; Font-Weight: Bold; Line-Height: 1.25 }
 aside#search dd{ Display: Inline; Margin: 0; Padding: 0 }
-aside#Fortune{ Margin: 1.75REM 0; Border: Thin Solid; Padding: 1REM; Background: #FAF8F7; Color: #57534C; Font: 1REM / 1.5 Serif; Text-Align: Justify }
+aside#Fortune{ Margin: 0; Border: Thin Solid; Padding: 1REM; Background: #FAF8F7; Color: #57534C; Font: 1REM / 1.5 Serif; Text-Align: Justify }
 aside#Fortune>h2{ Margin: -1.75REM 0 .75REM; Border: Thin Solid; Padding: 0 .5REM; Max-Width: Max-Content; Background: #FAF8F7; Font-Size: Inherit; Font-Style: Italic; Font-Weight: Bold }
 aside#Fortune>blockquote{ Margin: 0 }
 aside#Fortune p{ Margin: 0 }
 aside#Fortune p+p{ Text-Indent: 2EM }
 aside#Fortune>footer{ Margin: 1REM -.5REM 0; Padding: 1EM .5REM 0; Border-Top: Thin Solid; Font-Size: Smaller; Text-Align: Right }
-aside#Fortune>footer>nav{ Margin: 1EM 0 -1.75REM Auto; Border: Thin Solid; Border-Top: Thin Dashed; Padding: 0 .5EM 0 2.5EM; Max-Width: Max-Content; Background: #FAF8F7; Line-Height: 1.5REM; Word-Spacing: .5CH }
+aside#Fortune>footer>nav{ Margin: 1EM 0 -1.75REM Auto; Border: Thin Solid; Border-Top: Thin Dashed; Padding: 0 .5EM 0 2.5EM; Max-Width: Max-Content; Columns: Auto; Background: #FAF8F7; Line-Height: 1.5REM; Word-Spacing: .5CH }
 aside#Fortune *:Any-Link,
 aside#Fortune button.LINK{ Color: #1F1A14 }
-h2{ Column-Span: All; Margin: 1EM 0; Border-Bottom: Thin Solid; Font-Weight: Inherit }
-h3{ Margin: 1EM 0; Border: Thin Solid; Padding: .25EM 1EM; Max-Width: Max-Content; Background: #FFFFFF; Font-Size : Inherit }
+aside#Calendar{ --SeasonColor: DarkGrey }
+aside#Calendar[data-season="1"]{ --SeasonColor: ForestGreen }
+aside#Calendar[data-season="2"]{ --SeasonColor: PaleVioletRed }
+aside#Calendar[data-season="3"]{ --SeasonColor: Goldenrod }
+aside#Calendar[data-season="4"]{ --SeasonColor: Crimson }
+aside#Calendar[data-season="5"]{ --SeasonColor: LightSeaGreen }
+aside#Calendar[data-season="6"]{ --SeasonColor: Sienna }
+aside#Calendar[data-season="7"]{ --SeasonColor: RoyalBlue }
+aside#Calendar[data-season="8"]{ --SeasonColor: DarkOrange }
+aside#Calendar[data-season="9"]{ --SeasonColor: DimGrey }
+aside#Calendar[data-season="10"]{ --SeasonColor: MediumOrchid }
+aside#Calendar{ Display: Grid; Border: Thin Solid; Padding: 1REM; Grid: Auto 1FR / Auto 1FR; Gap: 1REM 2REM; Background: WhiteSmoke; Color: Black; Box-Shadow: 3PX 2PX Var(--SeasonColor) }
+aside#Calendar>p{ Grid-Area: 1 / 2; Margin: -1REM -1REM 0; Border-Bottom: Thin Solid; Padding: .25REM 1REM; Background: White }
+aside#Calendar>h2{ Display: Flex; Flex-Direction: Column; Grid-Area: 1 / 1 / Span 2; Margin: -1REM; Border: Double; Padding: 1REM; Justify-Content: Center; Background: Var(--SeasonColor); Color: White; Box-Shadow: 1PX 0 Var(--SeasonColor); Font: Inherit; Text-Align: Center; Text-Shadow: 1PX 1PX 1PX Black }
+aside#Calendar>h2>b{ Display: Block; Font-Size: 4EM }
+aside#Calendar section#today h3{ Margin: 0; Border: None; Padding: 0; Background: None; Color: Var(--SeasonColor); Letter-Spacing: Calc(1EM / 18); Text-Transform: Uppercase }
+aside#Calendar section#today p{ Margin: .75EM 0 0; Text-Align: Justify; Hyphens: Auto }
+aside#Calendar *:Any-Link{ Color: MediumBlue }
+aside#Calendar strong{ Color: Var(--SeasonColor) }
+nav{ Columns: 2 12REM }
+iframe{ Display: Block; Box-Sizing: Border-Box; Margin: 0 Auto; Border: #948D87 Groove; Height: 6REM; Width: 100%; Background: #DEDBD9; Color: #57534C }
+h1{ Margin: 0 }
+h2{ Column-Span: All; Margin: 0 0 1EM; Border-Bottom: Thin Solid; Font-Size: X-Large; Font-Weight: Inherit }
+h3{ Margin: 1EM 0; Border: Thin Solid; Padding: .25EM 1EM; Max-Width: Max-Content; Background: #FFFFFF; Font-Size: Inherit; Text-Decoration: Underline }
 h2+section>h3{ Margin-Top: 0 }
-iframe{ Display: Block; Box-Sizing: Border-Box; Margin: 0; Border: #948D87 Groove; Width: 100%; Background: #DEDBD9; Color: #57534C }
+p{ Margin: .75EM 0 }
 ul{ Margin: .75EM 0; Padding: 0 0 0 2REM }
+nav>ul:Only-Of-Type{ Margin: 0 }
 li>a:Only-Child{ Display: Block; Margin: 0 0 0 -1REM; Text-Indent: 1REM }
 *:Any-Link,
 button.LINK{ Color: #004599 }
@@ -64,6 +88,35 @@ document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => wind
 </HEADER>
 
 <DIV>
+	<NAV ID=other_links>
+		<H2>Webpages I Visit</H2>
+		<SECTION ID=friends>
+			<H3>Friends</H3>
+			<UL>
+				<LI><A HRef=https://æscling.cat.family><CITE>æscling</CITE></A>
+			</UL>
+		</SECTION>
+		<SECTION ID=webcomics>
+			<H3>webcomics</H3>
+			<UL>
+				<LI><A HRef=https://www.questionablecontent.net><CITE>Questionable Content</CITE></A>
+				<LI><A HRef=https://www.dumbingofage.com><CITE>D⸺ing of Age</CITE></A>
+			</UL>
+		</SECTION>
+		<SECTION ID=fandom>
+			<H3>fandom</H3>
+			<UL>
+				<LI><A HRef=https://archiveofourown.org>Archive of Our Own</A>
+				<LI><A HRef=https://forums.thousandroads.net>Thousand Roads Forums</A>
+			</UL>
+		</SECTION>
+		<SECTION ID=other>
+			<H3>other</H3>
+			<UL>
+				<LI><A HRef=https://www.unicode.org/L2/L-curdoc.htm>U·T·C Document Register</A>
+			</UL>
+		</SECTION>
+	</NAV>
 	<ASIDE ID=search>
 		<P><LABEL For=query>Quick Search:</LABEL> <SPAN Style="White-Space: NoWrap"><INPUT Type=text Name=query Id=query Autofocus Placeholder=Query…> <BUTTON Type=button Disabled>Visit U·R·L</BUTTON></SPAN>
 		<DL TabIndex=0>
@@ -80,6 +133,7 @@ document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => wind
 				<DT>Wikis
 				<DD><BUTTON AccessKey=w Type=button Data-Search=https://en.wikipedia.org/wiki/Special:Search/%s><U>W</U>ikipedia</BUTTON>
 				<DD><BUTTON AccessKey=t Type=button Data-Search=https://en.wiktionary.org/wiki/Special:Search/%s>Wik<U>t</U>ionary</BUTTON>
+				<DD><BUTTON AccessKey=s Type=button Data-Search=https://en.wiktionary.org/wiki/Special:Search/%s?ns110=1&fulltext=Search+Thesaurus>Wiktionary The<U>s</U>aurus</BUTTON>
 				<DD><BUTTON AccessKey=d Type=button Data-Search=https://www.wikidata.org/wiki/Special:Search/%s>Wiki<U>d</U>ata</BUTTON>
 				<DD><BUTTON AccessKey=p Type=button Data-Search=https://bulbapedia.bulbagarden.net/wiki/Special:Search/%s>Bulba<U>p</U>edia</BUTTON>
 			</DIV>
@@ -96,7 +150,6 @@ document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => wind
 				<DD><BUTTON AccessKey=n Type=button Data-Search=https://www.behindthename.com/names/search.php?terms=%s>Behind the <U>N</U>ame</BUTTON>
 				<DD><BUTTON AccessKey=e Type=button Data-Search=https://www.etymonline.com/index.php?allowed_in_frame=0&amp;search=%s&amp;searchmode=none><U>E</U>tymonline</BUTTON>
 				<DD><BUTTON AccessKey=u Type=button Data-Search=https://r12a.github.io/uniview/?charlist=%s><U>U</U>niView</BUTTON>
-				<DD><BUTTON AccessKey=s Type=button Data-Search=https://r12a.github.io/app-analysestring/?chars=%s>Analyse <U>S</U>tring</BUTTON>
 				<DD><BUTTON AccessKey=j Type=button Data-Search=https://emojipedia.org/search/?q=%s>Emo<U>j</U>ipedia</BUTTON>
 			</DIV>
 		</DL>
@@ -116,9 +169,9 @@ for ( const button of document.querySelectorAll("aside#search>dl button") ) {
 button.addEventListener("click", ( ) => location.href = button.dataset.search.replace("%s", queryElement.value)) }
 		</SCRIPT>
 	</ASIDE>
-	<NAV>
+	<NAV ID=my_links>
 		<H2>My Links</H2>
-		<SECTION Id=general>
+		<SECTION ID=general>
 			<H3>general</H3>
 			<UL>
 				<LI><A HRef=About/>about me</A>
@@ -129,14 +182,14 @@ button.addEventListener("click", ( ) => location.href = button.dataset.search.re
 				<LI><A HRef=Sitemap/><B>full sitemap</B></A>
 			</UL>
 		</SECTION>
-		<SECTION Id=apps>
+		<SECTION ID=apps>
 			<H3>apps</H3>
 			<UL>
 				<LI><A HRef=Apps/Writer/>KibiWriter</A>
 				<LI><A HRef=Apps/NCName/>NCName validator</A>
 			</UL>
 		</SECTION>
-		<SECTION Id=elsewhere>
+		<SECTION ID=elsewhere>
 			<H3>elsewhere</H3>
 			<UL>
 				<LI><A HRef=https://www.u2764.com>www.u2764.com</A>
@@ -147,6 +200,88 @@ button.addEventListener("click", ( ) => location.href = button.dataset.search.re
 </DIV>
 
 <DIV>
+	<ASIDE ID=Calendar>
+		<P>
+		<H2>Calendar</H2>
+		<SECTION ID=today>
+			<H3>Today</H3>
+			<P Hidden>
+				<STRONG>Observance:</STRONG> 
+				<SPAN>Summary.</SPAN>
+				<A HRef=Calendar/#>Click here for more information.</A>
+			</P>
+		</SECTION>
+		<SCRIPT Type=module>
+fetch(new Request ("Calendar/@.rdf")).then(response => response.text()).then(text => {
+	const
+		calendarDocument = (new DOMParser).parseFromString(text, "application/xml")
+		, now = new Date
+		, currentYear = now.getFullYear()
+		, currentMonth = now.getMonth() + 1
+		, currentDay = now.getDate()
+		, seasons = Array.from(calendarDocument.querySelectorAll("ProperInterval")).sort((a, b) => a.querySelector("hasBeginning month").textContent.substring(2) - b.querySelector("hasBeginning month").textContent.substring(2) || a.querySelector("hasBeginning day").textContent.substring(3) - b.querySelector("hasBeginning day").textContent.substring(3))
+		, season = seasons.find(( _, index ) => {
+			if ( index + 1 == seasons.length ) return true
+			else {
+				const
+					firstSeason = seasons[0]
+					, firstMonth = +firstSeason.querySelector("hasBeginning month").textContent.substring(2)
+					, firstDay = +firstSeason.querySelector("hasBeginning day").textContent.substring(3)
+				if ( firstMonth == currentMonth && firstDay > currentDay ) return false
+				else {
+					const
+						$ = seasons[index + 1]
+						, month = +$.querySelector("hasBeginning month").textContent.substring(2)
+						, day = +$.querySelector("hasBeginning day").textContent.substring(3)
+					return index != 0 && month > currentMonth || month == currentMonth && day > currentDay } } })
+		, seasonElement = document.createElement("strong")
+		, todayElement = document.querySelector("aside#Calendar>h2")
+		, observance = Array.from(calendarDocument.querySelectorAll("DateTimeInterval")).find($ => {
+			const
+				year = +($.querySelector("year")?.textContent ?? NaN)
+				, month = +$.querySelector("month").textContent.substring(2)
+				, day = +$.querySelector("day").textContent.substring(3)
+			return (isNaN(year) || year == currentYear) && month == currentMonth && day == currentDay })
+	document.querySelector("aside#Calendar").dataset.season = seasons.indexOf(season) + 1
+	seasonElement.textContent = `${ season.getAttributeNS("http://www.w3.org/2000/01/rdf-schema#", "label") }`
+	document.querySelector("aside#Calendar>p:First-Of-Type").replaceChildren(...
+		[ "The season of "
+		, seasonElement
+		, "." ])
+	todayElement.textContent = ""
+	todayElement.appendChild(document.createTextNode(
+		[ "Sunday, "
+		, "Monday, "
+		, "Tuesday, "
+		, "Wednesday, "
+		, "Thursday, "
+		, "Friday, "
+		, "Saturday, " ][now.getDay()]))
+	todayElement.appendChild(document.createElement("b")).textContent = now.getDate() < 10 ? `0${ now.getDate() }` : now.getDate()
+	todayElement.appendChild(document.createTextNode(`${
+		[ " January "
+		, " February "
+		, " March "
+		, " April "
+		, " May "
+		, " June "
+		, " July "
+		, " August "
+		, " September "
+		, " October "
+		, " November "
+		, " December " ][now.getMonth()] } ${ now.getFullYear() }`))
+	if ( observance != null ) {
+		document.querySelector("section#today>p>strong").textContent = `${ observance.getAttributeNS("https://go.KIBI.family/Ontologies/About/#", "sigil") } ${ observance.getAttributeNS("http://www.w3.org/2000/01/rdf-schema#", "label") }:`
+		document.querySelector("section#today>p>span").textContent = Array.from(observance.children).find($ => $.localName == "comment" && $.namespaceURI == "http://www.w3.org/2000/01/rdf-schema#")?.firstElementChild?.firstElementChild?.textContent ?? ""
+		document.querySelector("section#today>p>a").href = `/Calendar/#${ observance.getAttributeNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "ID") }` }
+	else {
+		const noObservanceElement = document.createElement("i")
+		noObservanceElement.textContent = "No observance today."
+		document.querySelector("section#today>p").replaceChildren(noObservanceElement) }
+	document.querySelector("section#today>p").hidden = false })
+		</SCRIPT>
+	</ASIDE>
 	<ASIDE ID=Fortune>
 		<H2>✨ Fortune ✨</H2>
 		<BLOCKQUOTE></BLOCKQUOTE>

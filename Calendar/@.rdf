@@ -1,0 +1,935 @@
+<?xml-stylesheet type="text/xsl" href="#transform"?>
+<!DOCTYPE rdf:RDF [
+	<!ATTLIST stylesheet id ID #REQUIRED>
+	<!ENTITY T0H0M0S '<hour rdf:datatype="&xsd;nonNegativeInteger">0</hour><minute rdf:datatype="&xsd;nonNegativeInteger">0</minute><second rdf:datatype="&xsd;decimal">0</second><unitType rdf:resource="time:unitSecond"/>'>
+	<!ENTITY html 'http://www.w3.org/1999/xhtml'>
+	<!ENTITY makeElement 'document.createElementNS'>
+	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+]>
+<rdf:RDF
+	xml:lang="en"
+	xmlns="http://www.w3.org/2006/time#"
+	xmlns:about="https://go.KIBI.family/Ontologies/About/#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:greg="http://www.w3.org/ns/time/gregorian#"
+	xmlns:html="&html;"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:time="http://www.w3.org/2006/time#"
+	xmlns:xhv="&html;/vocab#"
+>
+
+	<!-- Seasons -->
+	<ProperInterval rdf:ID="Hearthtide" rdfs:label="Hearthtide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--01</month>
+						<day rdf:datatype="&xsd;gDay">---11</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Wrethtide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Wrethtide" rdfs:label="Wrethtide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--02</month>
+						<day rdf:datatype="&xsd;gDay">---17</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Eastertide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Eastertide" rdfs:label="Eastertide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--03</month>
+						<day rdf:datatype="&xsd;gDay">---25</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Labourtide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Labourtide" rdfs:label="Labourtide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--05</month>
+						<day rdf:datatype="&xsd;gDay">---01</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Lithetide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Lithetide" rdfs:label="Lithetide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--06</month>
+						<day rdf:datatype="&xsd;gDay">---06</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Lammastide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Lammastide" rdfs:label="Lammastide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--07</month>
+						<day rdf:datatype="&xsd;gDay">---13</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Augusttide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Augusttide" rdfs:label="Augusttide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--08</month>
+						<day rdf:datatype="&xsd;gDay">---18</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Harvesttide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Harvesttide" rdfs:label="Harvesttide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--09</month>
+						<day rdf:datatype="&xsd;gDay">---24</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Hallowtide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Hallowtide" rdfs:label="Hallowtide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--10</month>
+						<day rdf:datatype="&xsd;gDay">---30</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Yuletide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>Set at the end of autumn, <b><dfn>Hallowtide</dfn></b> is the season for acknowledging strife and remembering the dead.  Although this is mostly a somber season, it also contains a few days of spooky celebration, such as <a href="#Halloween">Halloween</a>.</p>
+				<p>A major theme of the Hallowtide season is that of <b><dfn id="death_and_debility">death and debility</dfn></b>.  Although debility is not death, it is necessarily the loss of a certain kind of life (an abled one, and, in some cases, subsequently one which is visible, social, or political in such·&amp;·such a manner).  At the same time, debility leaves open the possibility for other kinds of life and the construction of new networks of solidarity.  It is the opinion of this Calendar that mourning the former should be seen as a prerequisite, rather than a barrier, to accessing the latter.  For more on the relationship between debility and death, see <a href="http://jasbirkpuar.com/the-right-to-maim/"><cite>The Right to Maim</cite></a> by Jasbir K Puar.</p>
+				<p>The colour associated with Hallowtide is <b>white</b>; individual observances may feature additional colours.  The colour red is commonly associated with remembrance and features prominently in several observances.  The period from <a href="#White_Ribbon_Day">White Ribbon Day</a> through <a href="#Cathemas">Cathemas</a> is known as <b><dfn id="Orange_Week">Orange Week</dfn></b>, and emphasizes those lost or harmed by genderbased violence.  (For more information, see <a href="#White_Ribbon_Day">White Ribbon Day</a>.)</p>
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+	<ProperInterval rdf:ID="Yuletide" rdfs:label="Yuletide">
+		<hasBeginning>
+			<Instant>
+				<inDateTime>
+					<DateTimeDescription>
+						<month rdf:datatype="&xsd;gMonth">--12</month>
+						<day rdf:datatype="&xsd;gDay">---06</day>
+						&T0H0M0S;
+					</DateTimeDescription>
+				</inDateTime>
+			</Instant>
+		</hasBeginning>
+		<intervalMeets rdf:resource="#Hearthtide"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+			</div>
+		</rdfs:comment>
+	</ProperInterval>
+
+	<!-- Observed Days: Hallowtide -->
+	<DateTimeInterval rdf:ID="Goosenight" rdfs:label="Goosenight" about:sigil="🦢">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--10</month>
+				<day rdf:datatype="&xsd;gDay">---30</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of pranks and mischief.</p>
+				<h5>Praxis</h5>
+				<p>Cause trouble!  Rid yourself of any leftover, rotting produce.</p>
+				<h5>Origin</h5>
+				<p>Goosenight, also known as <b>Mischief Night</b> and a variety of other names, was originally considered a part of <a href="#May_Day">May Day</a> celebrations in England, but it was moved to the end of the year for an unknown reason—perhaps because the rural agricultural context of May Day celebrations were not relatable to urban youths.  In places which celebrate <b>Bonfire Night</b>, it is often celebrated the night before (04 November); otherwise, as in this Calendar, it is observed on the night preceding <a href="#Halloween">Halloween</a>.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Halloween" rdfs:label="Halloween" about:sigil="🎃">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--10</month>
+				<day rdf:datatype="&xsd;gDay">---31</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of role‐reversal and fantasy, in which the dead are said to walk amongst the living.  Halloween offers an occasion for exploring ideas of death and violence in a safe, lighthearted, and casual manner, prior to the more serious observances which form the remainder of Hallowtide.</p>
+				<p>The emphasis of Halloween is on death, ghosts, and spirits.  For other supernatural beings, see <a href="#Witchnight">Witchnight</a>.  For a more lighthearted day of costuming, see <a href="#Barbiemas">Barbiemas</a>.</p>
+				<h5>Praxis</h5>
+				<p>Light fires, wear costumes, and attend friendly gatherings.  On this day, children are given power over adults, horrifying appearances are appreciated over mundane ones, and everyone eats a lot of candy.  There are a <em>great many</em> local and regional traditions for celebrating Halloween, and far be it from this Calendar to attempt to list them all.  Celebrate in a manner appropriate to your community!</p>
+				<h5>Origin</h5>
+				<p>The name <i>Halloween</i> is derived from <i><b>All Hallows’ Evening</b></i>, as it takes place the evening before All Hallows’ Day (<a href="#Hallowmas">Hallowmas</a>), an (originally) Christian holiday.  Many of the traditions of Halloween, however, are of Celtic origin, drawing particularly from the Gaelic festival of <b>Samhain</b>.  These were brought to North America by Irish and Scottish migrants, and the (now Americanized) customs subsequently became an important part of North American English culture.  The holiday is now extremely popular in the United States and Canada, and has spread from these locations around the world.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Hallowmas" rdfs:label="Hallowmas" about:sigil="🙏">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---01</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for important figures in your community’s history who have since passed away.</p>
+				<p>For personal relations and close friends, <a href="#Soulmas">Soulmas</a> is set aside instead.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on the history of your community, and on the persons who helped it grow into that which it is today.  Remember those who have since died, and help to ensure that they continue to be recognized for their contributions.</p>
+				<h5>Origin</h5>
+				<p><i>Hallowmas</i> is another name for <i><b>All Hallows’ Day</b></i> or <i><b>All Saints’ Day</b></i>, which is used in the Catholic tradition as a general day for commemorating saints (those who have made it to Heaven).  Sainthood is not necessarily a formal concept in other Christian traditions, which celebrate this day in a manner similar to that above.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Soulmas" rdfs:label="Soulmas" about:sigil="👻">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---02</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for personal relations and close friends.  While those commemorated on <a href="#Hallowmas">Hallowmas</a> are typically welknown in one’s community, Soulmas is set aside for remembering and sharing the virtues of those who aren’t, celebrating past loved ones with those who they never got to know.</p>
+				<h5>Praxis</h5>
+				<p>Speak with others about those close to you who have passed away, and listen in turn.  This is an intimate holiday for better getting to know the people around you and those who have shaped them.</p>
+				<h5>Origin</h5>
+				<p><i>Soulmas</i> is another name for <i><b>All Souls’ Day</b></i>, which is used in the Catholic tradition as a general day for commemorating the faithful departed (those who have died, but perhaps have not made it to Heaven yet).  In other Christian traditions, it is sometimes celebrated in a manner similar to that described above.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Velaroja" rdfs:label="Velaroja" about:sigil="🕯">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---03</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for loved ones who have lost their lives to violence or suicide.</p>
+				<h5>Praxis</h5>
+				<p>Light a red candle, or post one on social media.  The phrase <a href="http://www.gnuterrypratchett.com"><i>G·N·U</i></a>, followed by the names of those lost, is oft repeated.</p>
+				<h5>Origin</h5>
+				<p>The date of November 03 recalls Natalie Nguyen, a beloved member of the queer Mastodon community who lost her life to suicide on this day in 2017.  A red candle emoji was developed as part of the <a href="https://mutant.tech">Mutant Standard</a> emoji set and quickly spread across the Mastodon‐compatible fediverse as a way of demonstrating grief and remembrance.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Poppy_Day" rdfs:label="Poppy Day" about:sigil="🌺">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---11</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for those <a href="#death_and_debility">dead or debilitated</a> as a result of global warfare, regardless of nationality or military enlistment.</p>
+				<p>For remembering those harmed by globalism more generally, see <a href="#N30">N·30</a>.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on the human and environmental costs of global warfare.  Reaffirm your commitments to ending global conflict, and to opposing colonialist and militaristic endeavours.  A white (not red) poppy is recommended for those who choose to wear one.</p>
+				<h5>Origin</h5>
+				<p>The date of 11 November commemorates the signing of the <b>Armistice of Compiègne</b> to end the fighting of World War I; it has become known variously as <b>Remembrance Day</b> (in the British Commonwealth) and <b>Veterans’ Day</b> (in the United States) after World War II extended its scope beyond simply recalling this single event.</p>
+				<p>The methods of warfare deployed in World War I were ecologically hazardous and severely disturbed the topsoil of the places where fighting occurred, leaving the poppy as one of the few plants which could still flourish there.  The poppy thus came to symbolize the massive damage and loss of life which resulted from contemporary methods of warfare, and in fact had been growing in association as such since the Napoleonic Wars.</p>
+				<p>The patriotic poem “In Flanders Fields”, written near the beginning of the war when patriotism and morale were still high, was used after its conclusion to popularize the red Remembrance Poppy as a patriotic symbol, particularly via the following stanza :—</p>
+				<blockquote><p>Take up our quarrel with the foe:<br/>To you from failing hands we throw<br/>The torch; be yours to hold it high.<br/>If ye break faith with us who die<br/>We shall not sleep, though poppies grow<br/>In Flanders fields.</p></blockquote>
+				<p>Such patriotism, of course, completely misses the point.  Organizations such as the <a href="https://www.ppu.org.uk">Peace Pledge Union</a> have subsequently introduced the <em>white</em> poppy as an explicitly antiwar symbol, and this Calendar follows in that tradition.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="White_Ribbon_Day" rdfs:label="White Ribbon Day" about:sigil="🤍">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---19</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day for recognizing the cost of genderbased violence in terms of human lives, and mourning those <a href="death_and_debility">dead or debilitated</a>.  (This Calendar includes lives lost to suicide, as well as those lost or debilitated due to unsafe or unhealthy working or living conditions, among this number.)</p>
+				<p>Begins <a href="#Orange_Week">Orange Week</a>, which extends through <a href="#Cathemas">Cathemas</a>.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on issues of genderbased violence and antiviolence work.  Understand how genderbased oppression intersects with other factors, such as other systemic violences, disability, and mental health.  Wear a white ribbon and/or the colour orange to show solidarity with the day, and denim to protest the idea that attire can justify mistreatment.  Maintain these practices through <a href="#Cathemas">Cathemas</a> as part of Orange Week.</p>
+				<h5>Origin</h5>
+				<h6>Orange Week</h6>
+				<p>The colour orange is used to symbolize the spectrum of antiviolence work, from 🟥 emergency response to 🟨 education &amp; advocacy.  It has been used in this manner by a number of intimate partner violence and genderbased violence organizations, and is the official colour for <a href="https://www.unwomen.org/en/what-we-do/ending-violence-against-women/take-action/unite">the United Nations UNiTE campaign</a> to end violence against women.</p>
+				<h6>White Ribbon Day</h6>
+				<p>Building on the work of the United Nations, the White Ribbon Campaign was formed by a group of profeminist men in London, Ontario in response to the <a href="https://en.wikipedia.org/wiki/École_Polytechnique_massacre">École Polytechnique massacre</a> on 06 December 1989.  In 2018, White Ribbon Australia moved <b>White Ribbon Day</b> from <a href="#Cathemas">Cathemas</a> to the Friday before.  This Calendar celebrates White Ribbon Day on 19 November, six days prior to <a href="#Cathemas">Cathemas</a>, thus dedicating a full week to the issue of genderbased violence.</p>
+				<p>It so happens that 19 November is celebrated in some locations as <b>International Men’s Day</b>.  It also so happens that men are disproportionately the instigators of genderbased violence, so this observance could be seen as a counter·observance of sorts.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Transmas" rdfs:label="Transmas" about:sigil="⚧&#xFE0F;">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---20</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for trans people <a href="#death_and_debility">dead or debilitated</a> due to genderbased violence.</p>
+				<p>Part of <a href="#Orange_Week">Orange Week</a>.</p>
+				<h5>Praxis</h5>
+				<p>Learn about, and remember, those trans people lost to violence over the past year.  Engage in suicide education and prevention.  Affirm the value of trans lives as something worthy of mourning.</p>
+				<h5>Origin</h5>
+				<p><b>Transgender Day of Remembrance</b> was begun in 1999 to memorialize Rita Hester, a transgender woman, who was murdered on <time datetime="1998-11-28">28 November</time> the previous year in Allston, Massachusetts.  Although the original organizers solely emphasized remembering those trans people lost to murder, this Calendar also recognizes those dead or debilitated from other violences, such as systemic violence and suicide, on this day.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Day_of_the_Red_Dress" rdfs:label="Day of Red Dress" about:sigil="👗">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---21</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for indigenous people <a href="#death_and_debility">dead or debilitated</a> due to genderbased violence.</p>
+				<p>For remembering harm done to indigenous people by colonialism more generally, see <a href="#Thingstaken">Thingstaken</a>.  Part of <a href="#White_Ribbon_Day">Orange Week</a>.</p>
+				<h5>Praxis</h5>
+				<p>Wear red, and/or hang an article of red clothing as a visual reminder of absence.  Educate yourself on <a href="https://en.wikipedia.org/wiki/Missing_and_murdered_Indigenous_women">the crisis of missing/murdered indigenous women</a> and push for redress.</p>
+				<h5>Origin</h5>
+				<p>The name <i>Day of Red Dress</i> comes from the notable <a href="https://www.jaimeblackartist.com/exhibitions/">REDress Project</a> by Jaime Black, aimed at drawing attention to the large number of missing and murdered indigenous women in Canada.  The success of this project has lead the colour red, and red clothing in particular, to be widely recognized as a symbol of genderbased violence against indigenous people, especially women and girls.</p>
+				<p>The first <b>Red Dress Day</b> was held on 05 May, although it has been recognized on other dates since.  This Calendar has moved it to 21 November as a part of <a href="#Orange_Week">Orange Week</a>.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Umbrella_Day" rdfs:label="Umbrella Day" about:sigil="☂️">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---22</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for those who have experienced intimate partner violence and who are now <a href="#death_and_debility">dead or debilitated</a> due to (the same, or subsequent) genderbased violence.</p>
+				<p>Part of <a href="#Orange_Week">Orange Week</a>.</p>
+				<h5>Praxis</h5>
+				<p>Wear purple and/or carry an umbrella.  Educate yourself on the needs of survivors, and advocate for their increased agency.  Understand how structural and cultural factors work to silence and endanger survivors, and recognize this as part of a larger trend of debilitation.</p>
+				<h5>Origin</h5>
+				<p>Although not all intimate partner violence is genderbased (i·e not all power inequities in an intimate partner situation are due to gender), genderbased issues profoundly compound intimate partner violence and make the lives of survivors more difficult.  Umbrella Day is observed to recognize this dynamic.</p>
+				<p>The umbrella connotates simultaneous meanings of shelter, unity, and selfdefence.  It has been used in an antiviolence context by, for example, the <a href="https://en.unesco.org/commemorations/eliminationofviolenceagainstwomenday/orangetheworld">U·N·E·S·C·O “Orange the World” campaign</a>, which states: « Under an umbrella, we stand united to fight physical, verbal and emotional violence, both online and offline and SAY NO TO VIOLENCE AGAINST WOMEN. »  Because intimate partner violence often occurs in private settings, it requires strong cultural and community unity to eliminate.</p>
+				<p>A similar observance, the <b>Day of Unity</b>, was historically (since 1981) recognized by <a href="https://ncadv.org">the National Coalition Against Domestic Violence</a> on the first Monday of October.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Flissmas" rdfs:label="Flissmas" about:sigil="🚼">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---23</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for reproductive labourers, including care workers, <a href="#death_and_debility">dead or debilitated</a> due to genderbased violence.</p>
+				<p>For (non‐re‐)productive labourers, see the following day, <a href="#Rosiemas">Rosiemas</a>.  Part of <a href="#Orange_Week">Orange Week</a>.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on the nature of reproductive labour, care labour, and related topics, and understand the gendered dynamics which often characterize these positions.</p>
+				<h5>Origin</h5>
+				<p>In the Catholic tradition, 23 November is the <b>Feast of St Felicity</b>.  Aside from the fact that she was (probably) buried on this day, virtually nothing is known about her actual life.  However, according to (improbable) tradition, she was the mother of seven sons, all of whom are celebrated as Christian martyrs on 10 July.  St Felicity asked for, and was granted, the boon that she not be killed before her children, such that she could comfort them through their torture and death.</p>
+				<p>Reproductive labour, including but not limited to household/domestic labour, has a long history of being forced upon women with poor working conditions and little or no compensation.  It is, thus, a frequent site of genderbased violence.  Rather than romanticize this state of affairs (as with, e·g, <b>Mothers Day</b>), this Calendar dedicates Flissmas as a period of critical examination and remembrance for the sacrifices that this work often entails.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Rosiemas" rdfs:label="Rosiemas" about:sigil="💪">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---24</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for productive labourers <a href="#death_and_debility">dead or debilitated</a> due to genderbased violence.</p>
+				<p>Part of <a href="#Orange_Week">Orange Week</a>.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on the history of women and gender minorities in labour and how economic forces work to position them in sites of increased precarity through to the present day.</p>
+				<h5>Origin</h5>
+				<p>The shortage of male labourers during World War I and World War II led to the employment of a large number of women—popularly known as “Rosies”—in jobs which had traditionally been seen as mens work, such as manufacturing.  These jobs were frequently hazardous, underpaid, offered little security, and after the wars ended, the women who held them were quickly forced back into lower‐paying work or the home.  See, for example, the <a href="https://en.wikipedia.org/wiki/Canary_Girls">Canary Girls</a> of World War I; for similar abuses during the Interwar Period, the <a href="https://en.wikipedia.org/wiki/Radium_Girls">Radium Girls</a> of the 1920s.</p>
+				<p>Instead of romanticizing these labour abuses—as the 21 March <b>Rosie the Riveter Day</b> designated by the United States Congress does, for example—this Calendar situates Rosiemas in the midst of <a href="#Orange_Week">Orange Week</a> as a time of critical mourning and reflection for those harmed through genderbased violence in the workplace.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Cathemas" rdfs:label="Cathemas" about:sigil="🗣">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---25</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for political activists <a href="#death_and_debility">dead or debilitated</a> due to genderbased violence.</p>
+				<p>Part of <a href="#Orange_Week">Orange Week</a>.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on the history and involvement of women and gender minorities in important political movements, who are often not recognized, and especially those who were made to suffer for their work.  Ensure that their lives and contributions are not erased.</p>
+				<h5>Origin</h5>
+				<p>Cathemas is formed from the union of two observances, which happen to share a date of 25 November.  The first of these is the <b>Feast of St Catherine of Alexandria</b>, who was probably not a real person, but has been nonetheless popularly venerated on this day since mediæval times.  According to tradition, she was an educated woman who spoke out against Emperor Maxentius and was subsequently put to death, perhaps after refusing his hand in marriage.</p>
+				<p>The second observance is the <b>International Day for the Elimination of Violence Against Women</b>, established by the United Nations General Assembly in memory of the assassination of the very real <a href="https://en.wikipedia.org/wiki/Mirabal_sisters">Mirabal sisters</a>, activists in the Dominican Republic who organized against Rafael Trujillo, the man in control of the government at that time.</p>
+				<p>Although the United Nations celebrates this day as <b>Orange Day</b>, this Calendar celebrates Orange Day as <a href="#White_Ribbon_Day">White Ribbon Day</a> six days prior.  Cathemas is the culmination of a week of remembrance and reckoning regarding genderbased violence.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Thingstaken" rdfs:label="Thingstaken" about:sigil="🪨">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---28</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for indigenous peoples <a href="#death_and_debility">dead or debilitated</a> as a consequence of colonialism.</p>
+				<h5>Praxis</h5>
+				<p>Understand the presentday struggles of contemporary indigenous movements, educate yourself on their historical situation, and work for justice.</p>
+				<h5>Origin</h5>
+				<p>The fourth Thursday in November is celebrated in the United States as <b>Thanksgiving</b>, and also hosts a variety of counter·observances such as <b>Unthanksgiving</b> and the <b>National Day of Mourning</b>.  In addition, the following day is recognized in some places as <b>Native American Heritage Day</b>.  As a fixed observance, Thingstaken is intended as a substitute for these days.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Witchnight" rdfs:label="Witchnight" about:sigil="👿">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---29</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day marking the beginning of the darkest season of the year, in which demons, vampires, &amp;·c are said to thrive.</p>
+				<h5>Praxis</h5>
+				<p>Decorate the house and yard with lights, to remain up until <a href="#Candlemas">Candlemas</a>.  Tell scary stories and have a night of merriment.</p>
+				<h5>Origin</h5>
+				<p>In the Catholic tradition, 29 November is <b>Saint Andrew’s Eve</b>.  It begins the darkest part of the year and can be seen as the start of wintry celebrations.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="N30" rdfs:label="N·30" about:sigil="🌐">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--11</month>
+				<day rdf:datatype="&xsd;gDay">---30</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for those <a href="#death_and_debility">dead or debilitated</a> as a consequence of globalist economic policy.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on the consequences of globalism and on the harm perpetuated by <a href="https://en.wikipedia.org/wiki/Global_North_and_Global_South">the Global North onto the Global South</a>.  Reflect, mourn, and protest the harm caused.</p>
+				<h5>Origin</h5>
+				<p>30 November is the anniversary of the <a href="https://en.wikipedia.org/wiki/1999_Seattle_WTO_protests"><b>Battle of Seattle</b></a>, a 1999 protest against the World Trade Organization in Seattle, Washington and a precursor to many later United States protest movements.</p>
+				<h5>Resources</h5>
+				<ul>
+					<li style="List-Style-Type: &quot;🎼 &quot;">Blue Scholars, <a href="https://bluescholars.bandcamp.com/track/50-thousand-deep">“50 Thousand Deep”</a>, in <cite>Bayani (ReDux)</cite> (2009).</li>
+					<li style="List-Style-Type: &quot;📖 &quot;">Kit Oldham, “WTO Meeting and Protests in Seattle (1999)” <a href="https://www.historylink.org/File/9183">Part Ⅰ</a> &amp; <a href="https://www.historylink.org/File/9213">Part ⅠⅠ</a>, in <cite>HistoryLink.org</cite> (2009).</li>
+					<li style="List-Style-Type: &quot;📖 &quot;">Matthew Hipolito, <a href="https://www.dailyuw.com/news/article_eea1376c-0f35-11ea-b043-4f9f9862c614.html">“On its 20th anniversary, what the WTO protests taught us about capitalism, civil disobedience, and the SPD”</a>, in <cite>The Daily of the University of Washington</cite> (2019).</li>
+				</ul>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Aidsmas" rdfs:label="Aidsmas" about:sigil="🩸">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--12</month>
+				<day rdf:datatype="&xsd;gDay">---01</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of remembrance for those <a href="#death_and_debility">dead or debilitated</a> as a result of the aids pandemic.</p>
+				<h5>Praxis</h5>
+				<p>Educate yourself on H·I·V/aids, its historical impact, and contemporary issues pertaining to the disease.  Push for broader access to medication and healthcare for those affected, and promote preventative measures.</p>
+				<h5>Origin</h5>
+				<p><b>World Aids Day</b> was begun on 01 December 1988 to help destigmatize the disease and increase public awareness.  <b>Day Without Art</b> began the following year, on the same day, to recognize the impact that aids has had on the artistic community.  The name was changed to <b>Day With(out) Art</b> ten years later, after it became clear that interventions were more effective than closures when it came to increasing awareness through cultural heritage sectors.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Barbiemas" rdfs:label="Barbiemas" about:sigil="⛓">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--12</month>
+				<day rdf:datatype="&xsd;gDay">---04</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of disguise and truth, in which identities are hidden and secrets are revealed.</p>
+				<h5>Praxis</h5>
+				<p>Dress up in costume and/or play roleplaying games.  Free yourself of any secrets you might be harbouring prior to <a href="#Yuletide">Yuletide</a>.</p>
+				<h5>Origin</h5>
+				<p>In the Catholic tradition, 04 December is the <b>Feast of St Barbara</b>, who was probably not a real person.  According to tradition, she was pursued by her father for being a Christian, saved through a long sequence of miracles, and finally beheaded by him.  Middle Eastern Christians celebrate this day as <b>Eid il‐Burbura</b>, where people dress up in costume and travel house‐to‐house, similar to <a href="#Halloween">Halloween</a> celebrations elsewhere.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Clauseen" rdfs:label="Clauseen" about:sigil="🥾">
+		<intervalIn rdf:resource="#Hallowtide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--12</month>
+				<day rdf:datatype="&xsd;gDay">---05</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day of preparation for <a href="#Yuletide">Yuletide</a>.</p>
+				<h5>Praxis</h5>
+				<p>Set out boots for Santa Claus.  Bake cookies and other sweets!</p>
+				<h5>Origin</h5>
+				<p>05 November is <b>Sinterklaasavond</b>, or <b>Saint Nicholas’s Eve</b>.  Traditions vary by region, but this Calendar celebrates Sinterklaas festivities and the start of the Yuletide season on the following day, <a href="#Clausmas">Clausmas</a> (see there for more), reserving Clauseen as a day of preparation and the final day of Hallowtide.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+
+	<!-- About This Calendar -->
+	<foaf:Document rdf:about="">
+		<foaf:name>The KIBI Calendar</foaf:name>
+		<foaf:maker rdf:resource="https://go.KIBI.family/#me"/>
+		<xhv:icon rdfs:isDefinedBy="//go.KIBI.family/Images/Favicon/@.rdf"/>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p><b><dfn>The KIBI Calendar</dfn></b> is a formal collection of observances with fixed dates in the Gregorian calendar system, organized into ten broad seasons with alternating lengths of 36 or 37 days.  It is intended for use in an English, Northern Hemisphere context, and may not be applicable in other situations.  Readers are encouraged to extend this calendar with their own dates, as well as drop those which do not work for them.</p>
+				<p>The inspirations for this calendar are primarily events rooted in English culture, including English Catholicism, and more contemporary occurences of varying global import.  While recognizing the import of Christianity on English celebratory culture, this is not a Christian calendar:  It avoids observing major Christian events (such as Christmas), and the suffix <i>‐mas</i> is used without implication of any actual Christian mass.  Some saints days and other observances with Catholic origins have been preserved, when there is a strong non‐religious argument for doing so—particularly in cases where the saints, themselves, are fictional.</p>
+				<p>The KIBI Calendar does not observe events which do not have a fixed Gregorian date.  Some observances may be moved to different dates than they are widely recognized on.  Others may be inventions.  The hope is simply for this calendar to be a starting point for discussions, remembrances, and celebrations on the dates recorded within.</p>
+				<p>Feedback regarding the KIBI calendar should be sent to <a href="https://go.KIBI.family/About/#me">its author</a>.  This calendar is a living document, and dates may be added, deleted, or moved at any time.</p>
+			</div>
+		</rdfs:comment>
+		<xhv:stylesheet>
+			<foaf:Document>
+				<rdf:value rdf:parseType="Literal">
+<stylesheet id="transform" version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
+	<template match="@*|node()" mode="clone">
+		<copy>
+			<apply-templates select="@*|node()" mode="clone"/>
+		</copy>
+	</template>
+	<template match="*" mode="lang">
+		<attribute name="lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+		<attribute name="xml:lang">
+			<value-of select="ancestor-or-self::*[@xml:lang][1]/@xml:lang"/>
+		</attribute>
+	</template>
+	<template match="*">
+		<copy>
+			<apply-templates select="@*" mode="clone"/>
+			<apply-templates/>
+		</copy>
+	</template>
+	<template match="rdf:RDF">
+<html:html>
+		<apply-templates select="." mode="lang"/>
+	<html:head>
+		<html:title>
+		<value-of select="foaf:Document[@rdf:about = '']/foaf:name"/>
+		</html:title>
+		<html:meta name="viewport" content="width=640"/>
+		<if test="foaf:Document[@rdf:about = '']/xhv:icon">
+			<!-- Browsers may try to fetch this prior to processing if it is written as a literal <html:link> element. -->
+			<element name="html:link">
+				<attribute name="rel">icon</attribute>
+				<attribute name="href">
+					<value-of select="concat(foaf:Document[@rdf:about = '']/xhv:icon/@rdfs:isDefinedBy, '/../', document(foaf:Document[@rdf:about = '']/xhv:icon/@rdfs:isDefinedBy)//foaf:Image/xhv:alternate/@rdf:resource)"/>
+				</attribute>
+			</element>
+		</if>
+		<html:style>
+@namespace "&html;";
+
+html{ --SeasonColor: DarkGrey; Font: Medium / 1.5 Serif }
+body{ Display: Grid; Box-Sizing: Border-Box; Margin: 0; Padding: .5REM; Min-Width: 38REM; Grid-Template-Rows: Min-Content; Grid-Template-Columns: Min-Content 1FR; Gap: 1REM; Background: Gainsboro; Color: Black }
+body::before{ Display: Block; Grid-Area: 1 / 1 / 1 / Span 2; Margin: -.5REM; Background: DarkGrey; Z-Index: -1; Box-Shadow: 0 0 .25REM Black; Content: "" }
+body>div.CALENDARBOX{ Display: Grid; Grid-Area: 1 / 1; Margin: -.5REM Auto 0; Grid-Template-Rows: 1.5REM; Grid-Template-Columns: 1FR 1FR; Align-Items: Center; Width: 18REM }
+div.CALENDARBOX>a[href]{ Color: Inherit; Font-Size: Smaller; Text-Decoration-Color: Inherit }
+div.CALENDARBOX>a[href]+a[href]{ Text-Align: Right }
+div.CALENDARBOX>table{ Box-Sizing: Border-Box; Position: Relative; Grid-Area: 2 / 1 / Span 1 / Span 2; Border-Style: None Solid Solid; Border-Width: Thin; Border-Spacing: .5CH; Width: 18REM; Table-Layout: Fixed; Background: WhiteSmoke; Color: Black; Box-Shadow: -1PX 1PX CurrentColor; Text-Align: Center; Z‐Index: 0 }
+div.CALENDARBOX>table caption{ Position: Relative; Border-Style: Solid Solid Double; Border-Width: Thin Thin Medium; Padding: .5CH; Background: White; Color: Black; Box-Shadow: -1PX 1PX CurrentColor; Font-Style: Italic; Z-Index: -1 }
+div.CALENDARBOX>table td{ Position: Relative; Border: Thin Var(--SeasonColor) Solid; Background: White; Color: Black; Overflow: Hidden }
+div.CALENDARBOX>table td[data-season="1"]{ --SeasonColor: ForestGreen }
+div.CALENDARBOX>table td[data-season="2"]{ --SeasonColor: PaleVioletRed }
+div.CALENDARBOX>table td[data-season="3"]{ --SeasonColor: Goldenrod }
+div.CALENDARBOX>table td[data-season="4"]{ --SeasonColor: Crimson }
+div.CALENDARBOX>table td[data-season="5"]{ --SeasonColor: LightSeaGreen }
+div.CALENDARBOX>table td[data-season="6"]{ --SeasonColor: Sienna }
+div.CALENDARBOX>table td[data-season="7"]{ --SeasonColor: RoyalBlue }
+div.CALENDARBOX>table td[data-season="8"]{ --SeasonColor: DarkOrange }
+div.CALENDARBOX>table td[data-season="9"]{ --SeasonColor: DimGrey }
+div.CALENDARBOX>table td[data-season="10"]{ --SeasonColor: MediumOrchid }
+div.CALENDARBOX>table td.OBSERVED{ Font-Style: Italic }
+div.CALENDARBOX>table td.TODAY{ Border-Color: CurrentColor; Box-Shadow: 1PX 1PX Var(--SeasonColor); Font-Weight: Bold; Text-Decoration: Underline; Text-Decoration-Color: Var(--SeasonColor); Text-Decoration-Thickness: 1PX }
+div.CALENDARBOX>table td[data-sigil]::after{ Position: Absolute; Top: 0; Right: 0; Font: .5EM / 1.5 Emoji, Sans-Serif; Content: Attr(data-sigil) }
+div.CALENDARBOX>table>thead td{ Border-Color: Transparent; Padding-Top: .5EM; Background: Transparent; Font-Weight: Bold; Line-Height: 1; Width: Calc(100% / 7) }
+body>dl{ Display: Grid; Grid-Area: 1 / 2; Margin: 1REM 0 0; Border-Style: Double Dotted Dotted Solid; Border-Width: Medium Thin Thin; Padding: .5EM 1EM; Grid-Template-Rows: Repeat(Auto-Fill, 3EM); Grid-Auto-Columns: 12EM; Grid-Auto-Flow: Column; Gap: .5EM 1EM; Align-Content: Center; Overflow: Auto; Background: White; Color: Black; Box-Shadow: 1PX 1PX CurrentColor; Font-Size: Smaller; White-Space: NoWrap }
+body>dl dd,
+body>dl dt{ Overflow: Hidden; Text-Overflow: Ellipsis }
+body>dl dt{ Border-Bottom: Thin Solid; Font-Weight: Bold; Line-Height: 1 }
+body>dl dd{ Margin: 0; Padding: 0 1EM }
+body>dl div.TODAY{ Margin: -3PX; Border: 1PX Dashed; Padding: 2PX; Box-Shadow: -1PX 1PX CurrentColor; Font-Style: Italic }
+body>dl a[href]{ Color: Inherit; Text-Decoration-Color: Inherit }
+body>article{ Grid-Area: 2 / 1 / Span 1 / Span 2; Justify-Self: Center }
+article{ Border: Thin DarkGrey Solid; Padding: Calc(1REM + 11PX) Calc(2REM + 11PX); Max-Width: 35REM; Overflow: Hidden; Background: White; Color: Black; Box-Shadow: Inset 0 0 0 1PX White, Inset 0 0 0 3PX Gainsboro, Inset 0 0 0 6PX White, Inset 0 0 0 11PX WhiteSmoke; Font-Size: 1REM }
+section{ Margin: 1.5REM 0 0 }
+article>section{ Margin: 1.5REM -1.5REM 0; Padding: .5REM 1.5REM; Box-Shadow: Calc(2PX + .5REM) 0 3PX Calc(-2PX - .5REM) Black, Calc(-2PX - .5REM) 0 3PX Calc(-2PX - .5REM) Black, 0 Calc(2PX + .5REM) 3PX Calc(-2PX - .5REM) Black, 0 Calc(-2PX - .5REM) 3PX Calc(-2PX - .5REM) Black, 0 0 1REM -.5REM Black }
+article>section>section{ Margin: 1.5REM -1REM 0; Padding: 1REM; Box-Shadow: 0 0 1PX 1PX Var(--SeasonColor), 3PX 3PX 3PX LightGrey, -2PX -2PX 1PX DarkGrey }
+article>section#observances>section#Hearthtide{ --SeasonColor: ForestGreen }
+article>section#observances>section#Loverstide{ --SeasonColor: PaleVioletRed }
+article>section#observances>section#Eastertide{ --SeasonColor: Goldenrod }
+article>section#observances>section#Workerstide{ --SeasonColor: Crimson }
+article>section#observances>section#Lithetide{ --SeasonColor: LightSeaGreen }
+article>section#observances>section#Lammastide{ --SeasonColor: Sienna }
+article>section#observances>section#Autumntide{ --SeasonColor: RoyalBlue }
+article>section#observances>section#Thankstide{ --SeasonColor: DarkOrange }
+article>section#observances>section#Hallowtide{ --SeasonColor: DimGrey }
+article>section#observances>section#Yuletide{ --SeasonColor: MediumOrchid }
+article>section>section>section{ Position: Relative; Margin: 1.5REM -1CH; Border: Thin Var(--SeasonColor) Solid; Padding: 0 1CH; Overflow: Hidden; Background: White; Color: Black; Box-Shadow: 0 0 2CH -1CH Var(--SeasonColor); Font-Size: 1REM }
+article>section>section>section>a[href="#"]{ Position: Absolute; Top: 0; Right: 1CH }
+article>section>section>section h6,
+article>section>section>section ul,
+article>section>section>section p{ Margin: 0 -1CH .25EM; Padding: .5EM 1CH 0; Font-Size: 1REM }
+article>section>section>section h6{ Text-Decoration: Underline; Text-Decoration-Thickness: 1PX; Text-Decoration-Skip-Ink: None }
+article>section>section>section li{ Margin: 0 4CH }
+article>section>section>section h6+p,
+article>section>section>section ul+p,
+article>section>section>section p+p{ Margin-Top: -.25EM; Padding-Top: 0 }
+article>section>section>section h5+h6,
+article>section>section>section h5+ul,
+article>section>section>section h5+p{ Padding-Top: .25EM; Box-Shadow: 0 -1PX 0 0 Var(--SeasonColor), 0 1.8EM 0 1.8EM White, 0 0 1.8EM Var(--SeasonColor) }
+blockquote{ Margin: 0 3CH }
+h1{ Margin: 0 Auto; Padding: 0 1CH; Border-Bottom: Thin Solid; Max-Width: Max-Content; Font-Size: XX-Large; Font-Style: Italic }
+h2{ Margin: 0 -1REM; Border: Medium Double; Padding: 0 1CH; Max-Width: Max-Content; Font-Size: X-Large }
+h3{ Margin: 0 Auto .75REM; Padding: 0 1CH; Border-Style: Dotted; Border-Color: Var(--SeasonColor) Transparent Transparent; Border-Width: Thin; Max-Width: Max-Content; Box-Shadow: 1PX 1PX Var(--SeasonColor), -1PX 1PX Var(--SeasonColor); Font-Size: X-Large; Font-Style: Italic; Font-Weight: Normal }
+h4{ Margin: 0; Border-Bottom: Thin Var(--SeasonColor) Solid; Font-Size: Large }
+h5{ Position: Relative; Margin: .75EM 0 0; Border-Style: Solid; Border-Color: Var(--SeasonColor) Var(--SeasonColor) White; Border-Width: Thin; Border-Radius: .5CH .5CH 0 0; Padding: 0 1CH; Max-Width: Max-Content; Background: White; Color: Black; Font-Size: 1REM; Z-Index: 1 }
+p{ Margin: .75EM 0 0; Text-Align: Justify }
+p+p{ Margin-Top: 0; Text-Indent: 3CH }
+a:Any-Link{ Color: MediumBlue }
+a:Any-Link:Active{ Color: DarkRed }
+span.SIGIL{ Font-Family: Emoji, Sans-Serif }
+small{ Color: Var(--SeasonColor); Font-Size: Smaller; Font-Style: Normal; Font-Weight: Normal }
+		</html:style>
+	</html:head>
+	<html:body>
+		<html:article>
+			<html:h1>
+			<value-of select="foaf:Document[@rdf:about = '']/foaf:name"/>
+			</html:h1>
+			<apply-templates select="foaf:Document[@rdf:about = '']/rdfs:comment/*"/>
+			<html:section id="observances">
+				<html:h2 lang="en" xml:lang="en">Seasonal Observances</html:h2>
+		<for-each select="/rdf:RDF/time:ProperInterval">
+			<sort lang="zxx" select="concat(time:hasBeginning//time:month, '-', substring-after(time:hasBeginning//time:day, '---'))"/>
+			<if test="/rdf:RDF/time:DateTimeInterval[time:intervalIn/@rdf:resource=concat('#', current()/@rdf:ID)]">
+				<html:section id="{@rdf:ID}">
+				<apply-templates select="." mode="lang"/>
+					<html:h3>
+				<value-of select="@rdfs:label"/>
+				<text> </text>
+						<html:small>
+				<text>[</text>
+				<value-of select="concat(substring-after(time:hasBeginning//time:month, '--'), '.', substring-after(time:hasBeginning//time:day, '---'))"/>
+				<text>–</text>
+				<variable name="endMonth" select="number(substring-after(/rdf:RDF/time:ProperInterval[concat('#', @rdf:ID)=current()/time:intervalMeets/@rdf:resource]/time:hasBeginning//time:month, '--'))"/>
+				<variable name="endDay" select="number(substring-after(/rdf:RDF/time:ProperInterval[concat('#', @rdf:ID)=current()/time:intervalMeets/@rdf:resource]/time:hasBeginning//time:day, '---'))"/>
+				<choose>
+					<when test="$endDay>1">
+						<if test="10>$endMonth">0</if>
+						<value-of select="$endMonth"/>
+						<text>.</text>
+						<if test="11>$endDay">0</if>
+						<value-of select="$endDay - 1"/>
+					</when>
+					<otherwise>
+						<choose>
+							<when test="$endMonth=5 or $endMonth=7 or $endMonth=10 or $endMonth=12">
+								<if test="11>$endMonth">0</if>
+								<value-of select="$endMonth - 1"/>
+								<text>.30</text>
+							</when>
+							<when test="$endMonth=3">2.29</when>
+							<when test="$endMonth=1">12.31</when>
+							<otherwise>
+								<if test="11>$endMonth">0</if>
+								<value-of select="$endMonth - 1"/>
+								<text>.31</text>
+							</otherwise>
+						</choose>
+					</otherwise>
+				</choose>
+				<text>]</text>
+						</html:small>
+					</html:h3>
+				<apply-templates select="rdfs:comment/*"/>
+				<for-each select="/rdf:RDF/time:DateTimeInterval[time:intervalIn/@rdf:resource=concat('#', current()/@rdf:ID)]">
+					<html:section id="{@rdf:ID}">
+					<apply-templates select="." mode="lang"/>
+						<html:h4>
+					<if test="@about:sigil">
+							<html:span class="SIGIL">
+						<value-of select="@about:sigil"/>
+							</html:span>
+						<text> </text>
+					</if>
+					<value-of select="@rdfs:label"/>
+					<text> </text>
+							<html:small>
+					<text>[</text>
+					<value-of select="concat(substring-after(.//time:month, '--'), '.', substring-after(.//time:day, '---'))"/>
+					<text>]</text>
+							</html:small>
+						</html:h4>
+						<html:a href="#">Top ⤴︎</html:a>
+					<apply-templates select="rdfs:comment/*"/>
+					</html:section>
+				</for-each>
+				</html:section>
+			</if>
+		</for-each>
+			</html:section>
+		</html:article>
+		<html:script>
+const
+	formatMonthDay = ( month, day ) => `--${ 10 > month ? `0${ month }` : month }-${ 10 > day ? `0${ day }` : day }`
+	, seasons = new Map ([
+		<for-each select="time:ProperInterval">
+			<sort lang="zxx" select="concat(time:hasBeginning//time:month, '-', substring-after(time:hasBeginning//time:day, '---'))"/>
+			<text>[ </text>
+			<value-of select="concat('&quot;', time:hasBeginning//time:month, '-', substring-after(time:hasBeginning//time:day, '---'), '&quot;, ')"/>
+			<text>{ startMonth: </text>
+			<value-of select="substring-after(time:hasBeginning//time:month, '--')"/>
+			<text>, startDay: </text>
+			<value-of select="substring-after(time:hasBeginning//time:day, '---')"/>
+			<text>, label: </text>
+			<value-of select="concat('&quot;', @rdfs:label, '&quot;')"/>
+			<text>, id: </text>
+			<value-of select="concat('&quot;', @rdf:ID, '&quot;')"/>
+			<text> } ], </text>
+		</for-each>
+	])
+	, observedDays = new Map ([
+		<for-each select="time:DateTimeInterval">
+			<sort lang="zxx" select="concat(.//time:month, '-', substring-after(.//time:day, '---'))"/>
+			<text>[ </text>
+			<value-of select="concat('&quot;', .//time:month, '-', substring-after(.//time:day, '---'), '&quot;, ')"/>
+			<text>{ year: </text>
+			<choose>
+				<when test=".//time:year">
+					<value-of select=".//time:year"/>
+				</when>
+				<otherwise>null</otherwise>
+			</choose>
+			<text>, month: </text>
+			<value-of select="substring-after(.//time:month, '--')"/>
+			<text>, day: </text>
+			<value-of select="substring-after(.//time:day, '---')"/>
+			<text>, label: </text>
+			<value-of select="concat('&quot;', @rdfs:label, '&quot;')"/>
+			<text>, id: </text>
+			<value-of select="concat('&quot;', @rdf:ID, '&quot;')"/>
+			<text>, sigil: </text>
+			<value-of select="concat('&quot;', @about:sigil, '&quot;')"/>
+			<text>} ], </text>
+		</for-each>
+	])
+	, now = new Date
+	, [ searchYear, searchMonth ] = location.search.substring(1).split("-", 2).map($ => +($ || NaN))
+	, backLink = &makeElement;("&html;", "a")
+	, foreLink = &makeElement;("&html;", "a")
+	, calendarBox = &makeElement;("&html;", "div")
+	, calendar = &makeElement;("&html;", "table")
+	, daysOfWeek = calendar.createTHead().insertRow()
+	, calendarBody = calendar.createTBody()
+	, dateList = &makeElement;("&html;", "dl")
+	, monthFormat = new Intl.DateTimeFormat("en", { month: "long" })
+	, dayFormat = new Intl.DateTimeFormat("en", { day: "2-digit" })
+	, displayCalendar = (year, month) => {
+		const
+			firstDateInMonth = new Date (year, month - 1, 1),
+			daysInThisMonth = [4, 6, 9, 11].includes(month) ? 30
+				: month == 2 ? year % 4 != 0 || !(year % 100 != 0 || year % 400 == 0) ? 28
+					: 29
+				: 31
+		firstDateInMonth.setFullYear(year)  //  Y2K fix
+		calendar.createCaption().textContent = `${ monthFormat.format(new Date(1972, month - 1)) } ${ year }`
+		calendarBody.textContent = dateList.textContent = ""
+		backLink.href = `?${ month == 1 ? year - 1 : year }-${ month - 1 || 12 }`
+		backLink.textContent = `← ${ monthFormat.format(new Date (1972, month - 2)) } ${ year }`
+		foreLink.href = `?${ month == 12 ? year + 1 : year }-${ (month + 1) % 12 || 12 }`
+		foreLink.textContent = `${ monthFormat.format(new Date (1972, month)) } ${ year } →`
+		for (
+			let
+				dayInMonth = 1 - (firstDateInMonth.getDay() + 6) % 7
+				, dayInWeek = 1
+				, week = calendarBody.insertRow()
+				, seasonIndex =
+					//  <![CDATA[
+					+Object.entries(Array.from(seasons.values())).find(( _, nº, $s ) => {
+						if ( nº + 1 == $s.length ) return true
+						else {
+							const [ _, $0 ] = $s[0]
+							if ( $0.startMonth == month && $0.startDay > dayInMonth ) return false
+							else {
+								const [ _, $$ ] = $s[nº + 1]
+								return $$.startMonth > month || $$.startMonth == month && $$.startDay > dayInMonth } } })[0]
+					//  ]]>
+				, nextSeason = Array.from(seasons.values())[(seasonIndex + 1) % seasons.size]
+			; daysInThisMonth >= dayInMonth || dayInWeek % 7 != 1
+			;
+				dayInMonth++
+				, dayInWeek = (dayInWeek + 1) % 7
+				, week = dayInWeek == 1 ? calendarBody.insertRow() : week
+				, !(nextSeason.startMonth != month || nextSeason.startDay > dayInMonth) ? (
+					seasonIndex = (seasonIndex + 1) % seasons.size
+					, nextSeason = Array.from(seasons.values())[(seasonIndex + 1) % seasons.size]
+				) : void null ) {
+			const cell = week.insertCell()
+			if ( !(0 >= dayInMonth || dayInMonth > daysInThisMonth) ) {
+				const observedDay = observedDays.get(formatMonthDay(month, dayInMonth))
+				cell.textContent = dayInMonth
+				cell.dataset.season = seasonIndex + 1
+				if ( !(year != now.getFullYear() || month != now.getMonth() + 1 || dayInMonth != now.getDate()) ) cell.classList.add("TODAY")
+				if ( observedDay != null ) {
+					cell.classList.add("OBSERVED")
+					if ( observedDay.sigil ) cell.dataset.sigil = observedDay.sigil } } }
+		if ( calendar.rows[calendar.rows.length - 1].children.length == 0 ) calendar.deleteRow(-1)
+		for (const dateInfo of Array.from(observedDays.values()).filter($ => !(($.year ?? year) != year || $.month != month))) {
+			const
+				date1972 = new Date (1972, dateInfo.month - 1, dateInfo.day)
+				, box = &makeElement;("&html;", "div")
+				, title = &makeElement;("&html;", "dt")
+				, label = &makeElement;("&html;", "dd")
+				, link = &makeElement;("&html;", "a")
+			title.textContent = `${ dayFormat.format(date1972) } ${ monthFormat.format(date1972) }`
+			box.appendChild(title)
+			link.href = `#${ dateInfo.id }`
+			link.title = dateInfo.label
+			link.textContent = dateInfo.sigil ? `${ dateInfo.sigil } ${ dateInfo.label }` : dateInfo.label
+			label.appendChild(link)
+			box.appendChild(label)
+			if ( !(year != now.getFullYear() || month - 1 != now.getMonth() || dateInfo.day != now.getDate()) ) box.classList.add("TODAY")
+			dateList.appendChild(box) } }
+calendarBox.classList.add("CALENDARBOX")
+backLink.href = foreLink.href = "#"
+backLink.textContent = "←"
+foreLink.textContent = "→"
+daysOfWeek.insertCell().textContent = "Mon"
+daysOfWeek.insertCell().textContent = "Tue"
+daysOfWeek.insertCell().textContent = "Wed"
+daysOfWeek.insertCell().textContent = "Thu"
+daysOfWeek.insertCell().textContent = "Fri"
+daysOfWeek.insertCell().textContent = "Sat"
+daysOfWeek.insertCell().textContent = "Sun"
+calendarBox.appendChild(backLink, foreLink)
+calendarBox.appendChild(foreLink, calendar)
+calendarBox.appendChild(calendar)
+document.body.insertBefore(dateList, document.body.firstChild)
+document.body.insertBefore(calendarBox, dateList)
+displayCalendar(isNaN(searchYear) ? now.getFullYear() : searchYear, isNaN(searchMonth) ? now.getMonth() + 1 : searchMonth)
+		</html:script>
+	</html:body>
+</html:html>
+	</template>
+</stylesheet>
+				</rdf:value>
+			</foaf:Document>
+		</xhv:stylesheet>
+	</foaf:Document>
+</rdf:RDF>
