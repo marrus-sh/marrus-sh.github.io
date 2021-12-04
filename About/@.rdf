@@ -23,7 +23,6 @@
 		<img rdfs:isDefinedBy="//go.KIBI.family/Images/Portrait/@.rdf"/>
 		<logo rdfs:isDefinedBy="//go.KIBI.family/Images/Logotype/@.rdf"/>
 		<homepage rdf:resource="https://go.KIBI.family/"/>
-		<tipjar rdf:resource="https://patreon.com/kibigo" rdfs:label="patreon"/>
 
 		<!-- § things i know -->
 		<about:isFamiliarWith>
@@ -359,6 +358,18 @@
 				</accountServiceHomepage>
 				<rdfs:comment rdf:parseType="Literal">
 					<a rel="me" href="https://glitch.cat.family/@Lady" xmlns="http://www.w3.org/1999/xhtml">mastodon</a>
+				</rdfs:comment>
+			</OnlineAccount>
+		</account>
+		<account>
+			<OnlineAccount rdf:about="https://gitlab.com/kibigo">
+				<name>gitlab:kibigo</name>
+				<accountName>kibigo</accountName>
+				<accountServiceHomepage>
+					<Document rdf:about="https://gitlab.com" foaf:name="GitLab"/>
+				</accountServiceHomepage>
+				<rdfs:comment rdf:parseType="Literal">
+					<a rel="me" href="https://github.com/marrus-sh" xmlns="http://www.w3.org/1999/xhtml">git·lab</a>
 				</rdfs:comment>
 			</OnlineAccount>
 		</account>
