@@ -13,9 +13,13 @@ body{ Display: Grid; Margin: Auto; Width: 100%; Grid-Auto-Flow: Dense Row; Gap: 
 body>*{ Display: Block; Box-Sizing: Border-Box; Margin: 0 Auto; Width: 100%; Max-Width: 31REM }
 body>header,
 body>footer{ Grid-Column: 1 / -1; Text-Align: Center }
+body>header{ Border-Bottom: Thin Solid }
 body>div{ Display: Grid; Gap: 2REM; Align-Self: Start }
+body>div>*:Nth-Child(n){ Margin-Top: 0; Margin-Bottom: 0 }
 @media ( Min-Width: 48REM ) {
 	body{ Grid-Template-Columns: 1FR 1FR } }
+*:Not(h2)+aside,*:Not(h2)+nav,*:Not(h2)+section{ Margin-Top: 1REM }
+aside:Not(:Last-Child),nav:Not(:Last-Child),section:Not(:Last-Child){ Margin-Bottom: 1REM }
 aside#search{ Margin: 0 -.5REM; Border-Style: Double Dashed; Border-Width: Medium Thin; Border-Radius: .5REM; Padding: 1REM .5REM }
 aside#search p{ Margin: 0 }
 aside#search dl{ Margin: 0; Line-Height: 1.5 }
@@ -50,7 +54,7 @@ aside#Calendar section#today h3{ Margin: 0; Border: None; Padding: 0; Background
 aside#Calendar section#today p{ Margin: .75EM 0 0; Text-Align: Justify; Hyphens: Auto }
 aside#Calendar *:Any-Link{ Color: MediumBlue }
 aside#Calendar strong{ Color: Var(--SeasonColor) }
-nav{ Columns: 2 12REM }
+nav{ Columns: 2 12REM; Text-Align: Left }
 iframe{ Display: Block; Box-Sizing: Border-Box; Margin: 0 Auto; Border: #948D87 Groove; Height: 6REM; Width: 100%; Background: #DEDBD9; Color: #57534C }
 h1{ Margin: 0 }
 h2{ Column-Span: All; Margin: 0 0 1EM; Border-Bottom: Thin Solid; Font-Size: X-Large; Font-Weight: Inherit }
@@ -77,23 +81,32 @@ u{ Text-Decoration-Thickness: 1PX; Text-Decoration-Skip-Ink: None }
 <HEADER>
 	<H1>kibigo!’s web portal</H1>
 	<P>hi!  welcome to my website!
-	<ASIDE>
-		<IFRAME ID=WebRing/💀💖 Src=https://go.KIBI.family/WebRings/💀💖/embed/#/kibigo Sandbox="allow-scripts allow-same-origin allow-top-navigation"></IFRAME>
-		<SCRIPT Type=module>
-//  Safari scrolls the page to the IFRAME on load, presumably due to the hash in its @src.
-//  The following event listener (hopefully) undoes this.
-document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => window.scrollTo(0, 0))
-		</SCRIPT>
-	</ASIDE>
+	<P>wondering who i am?  you can learn more at <a href="About/#me">this link</a>.
 </HEADER>
 
 <DIV>
-	<NAV ID=other_links>
-		<H2>Webpages I Visit</H2>
-		<SECTION ID=friends>
-			<H3>Friends</H3>
+	<NAV ID=links>
+		<H2>Links</H2>
+		<SECTION ID=myself>
+			<H3>my accounts</H3>
 			<UL>
-				<LI><A HRef=https://æscling.cat.family><CITE>æscling</CITE></A>
+				<LI><A HRef=https://gitlab.com/kibigo>gitlab:kibigo</A>
+				<LI><A HRef=https://github.com/marrus-sh>github:marrus-sh</A>
+			</UL>
+		</SECTION>
+		<SECTION ID=friends>
+			<H3>friends</H3>
+			<UL>
+				<LI><A HRef=https://æscling.cat.family>æscling</A>
+			</UL>
+		</SECTION>
+		<SECTION ID=texts>
+			<H3>texts</H3>
+			<UL>
+				<LI><A HRef=https://archiveofourown.org>Archive of Our Own</A>
+				<LI><A HRef=http://lunastationquarterly.com><CITE>Luna Station Quarterly</CITE></A>
+				<LI><A HRef=https://forums.thousandroads.net>Thousand Roads Forums</A>
+				<LI><A HRef=https://www.u2764.com><CITE>www.u2764.com</CITE></A>
 			</UL>
 		</SECTION>
 		<SECTION ID=webcomics>
@@ -101,13 +114,6 @@ document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => wind
 			<UL>
 				<LI><A HRef=https://www.questionablecontent.net><CITE>Questionable Content</CITE></A>
 				<LI><A HRef=https://www.dumbingofage.com><CITE>D⸺ing of Age</CITE></A>
-			</UL>
-		</SECTION>
-		<SECTION ID=fandom>
-			<H3>fandom</H3>
-			<UL>
-				<LI><A HRef=https://archiveofourown.org>Archive of Our Own</A>
-				<LI><A HRef=https://forums.thousandroads.net>Thousand Roads Forums</A>
 			</UL>
 		</SECTION>
 		<SECTION ID=other>
@@ -169,34 +175,6 @@ for ( const button of document.querySelectorAll("aside#search>dl button") ) {
 button.addEventListener("click", ( ) => location.href = button.dataset.search.replace("%s", queryElement.value)) }
 		</SCRIPT>
 	</ASIDE>
-	<NAV ID=my_links>
-		<H2>My Links</H2>
-		<SECTION ID=general>
-			<H3>general</H3>
-			<UL>
-				<LI><A HRef=About/>about me</A>
-				<LI><A HRef=.project/>.project</A>
-				<LI><A HRef=Documents/palettes.xhtml>palettes</A>
-				<LI><A HRef=Documents/softrecs.xhtml>software recommendations</A>
-				<LI><A HRef=Documents/fediguide.xhtml>guide to fediverse drama</A>
-				<LI><A HRef=Sitemap/><B>full sitemap</B></A>
-			</UL>
-		</SECTION>
-		<SECTION ID=apps>
-			<H3>apps</H3>
-			<UL>
-				<LI><A HRef=Apps/Writer/>KibiWriter</A>
-				<LI><A HRef=Apps/NCName/>NCName validator</A>
-			</UL>
-		</SECTION>
-		<SECTION ID=elsewhere>
-			<H3>elsewhere</H3>
-			<UL>
-				<LI><A HRef=https://www.u2764.com>www.u2764.com</A>
-				<LI><A HRef=https://github.com/marrus-sh>GitHub</A>
-			</UL>
-		</SECTION>
-	</NAV>
 </DIV>
 
 <DIV>
@@ -361,7 +339,16 @@ fetch(new Request ("Fortune/@.rdf")).then(response => response.text()).then(text
 </DIV>
 
 <FOOTER>
+	<ASIDE>
+		<IFRAME ID=WebRing/💀💖 Src=https://go.KIBI.family/WebRings/💀💖/embed/#/kibigo Sandbox="allow-scripts allow-same-origin allow-top-navigation"></IFRAME>
+		<SCRIPT Type=module>
+//  Safari scrolls the page to the IFRAME on load, presumably due to the hash in its @src.
+//  The following event listener (hopefully) undoes this.
+document.getElementById("WebRing/💀💖").addEventListener("load", ( ) => window.scrollTo(0, 0))
+		</SCRIPT>
+	</ASIDE>
 	<SVG Style="Display: Block; Margin: 0 Auto; Border: 3PX #2E0500 Solid; Padding: 2PX; Height: 3EM; Color: #8A1C00; Background: #FFFFFF; Box-Shadow: -2PX -2PX #EEAE00, 2PX 2PX #CD2C00, 0 0 4PX 2PX #05285C" Fill=currentColor ViewBox="0 0 84 32" Aria-Label=KIBIGO>
 		<USE HRef=Images/Logotype/image.svg#svg>
 	</SVG>
+	<P><A HRef=Sitemap/><B>full sitemap</B></A>
 </FOOTER>
