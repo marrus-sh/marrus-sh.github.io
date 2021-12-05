@@ -6,17 +6,18 @@
 	<!ENTITY makeElement 'document.createElementNS'>
 	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
 ]>
+<!-- There appears to be a bug in Safari which renders the ordering of namespace declarations on the root element significant for X·S·L·T processing.  In casual observation, foaf: or rdf: must be declared before about:, rdfs:, or time:. -->
 <rdf:RDF
 	xml:lang="en"
 	xmlns="http://www.w3.org/2006/time#"
-	xmlns:about="https://go.KIBI.family/Ontologies/About/#"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:greg="http://www.w3.org/ns/time/gregorian#"
 	xmlns:html="&html;"
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xhv="&html;/vocab#"
+	xmlns:about="https://go.KIBI.family/Ontologies/About/#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:time="http://www.w3.org/2006/time#"
-	xmlns:xhv="&html;/vocab#"
 >
 
 	<!-- Seasons -->
