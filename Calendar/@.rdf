@@ -200,6 +200,8 @@
 		<intervalMeets rdf:resource="#Hearthtide"/>
 		<rdfs:comment rdf:parseType="Literal">
 			<div xmlns="&html;">
+				<p>Commonly referred to as “the holiday season”, <b><dfn>Yuletide</dfn></b> is the time of greatest merriment in the KIBI Calendar.  Encompassing <a href="#New_Years_Day">New Years Day</a>, it is a time for charity, rejoining with family, and festive celebration during the darkest time of the year.  The winter lights of <a href="#Witchnight">Witchnight</a> remain up for the duration of Yuletide (and beyond), lending them an association of “Yule lights” or “holiday lights”.</p>
+				<p>The colour associated with Yuletide is <b>violet</b>; traditional celebrations have also lent it an association with the colours of red and green.</p>
 			</div>
 		</rdfs:comment>
 	</ProperInterval>
@@ -572,9 +574,48 @@
 			<div xmlns="&html;">
 				<p>A day of preparation for <a href="#Yuletide">Yuletide</a>.</p>
 				<h5>Praxis</h5>
-				<p>Set out boots for Santa Claus.  Bake cookies and other sweets!</p>
+				<p>Set out boots for Santa Claus, to be filled with gifts.  Bake cookies and other sweets!</p>
 				<h5>Origin</h5>
-				<p>05 November is <b>Sinterklaasavond</b>, or <b>Saint Nicholas’s Eve</b>.  Traditions vary by region, but this Calendar celebrates Sinterklaas festivities and the start of the Yuletide season on the following day, <a href="#Clausmas">Clausmas</a> (see there for more), reserving Clauseen as a day of preparation and the final day of Hallowtide.</p>
+				<p>05 November is <b>Sinterklaasavond</b>, or (in the Catholic tradition) <b>Saint Nicholas’s Eve</b>.  Traditions vary by region, but this Calendar celebrates Sinterklaas festivities and the start of the Yuletide season on the following day, <a href="#Clausmas">Clausmas</a> (see there for more), reserving Clauseen as a day of preparation and the final day of Hallowtide.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+
+	<!-- Observed Days: Yuletide -->
+	<DateTimeInterval rdf:ID="Clausmas" rdfs:label="Clausmas" about:sigil="🧑‍🎄">
+		<intervalIn rdf:resource="#Yuletide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--12</month>
+				<day rdf:datatype="&xsd;gDay">---06</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A festive day of gift‐giving and family gathering, and the first day of Yuletide festivities!</p>
+				<h5>Praxis</h5>
+				<p>Open presents left by Santa Claus.  Celebrate the start of the Yuletide season.</p>
+				<h5>Origin</h5>
+				<p>06 November is <b>Sinterklaas Day</b>, or (in the Catholic tradition) the <b>Feast of St Nicholas</b>.  Many of the traditions of this day are appropriated from Anglophonic traditions of Santa Claus, which were themselves originally inspired by the Dutch Sinterklaas and English Father Christmas.</p>
+			</div>
+		</rdfs:comment>
+	</DateTimeInterval>
+	<DateTimeInterval rdf:ID="Nobelmas" rdfs:label="Nobelmas" about:sigil="🕊">
+		<intervalIn rdf:resource="#Yuletide"/>
+		<hasDateTimeDescription>
+			<DateTimeDescription>
+				<month rdf:datatype="&xsd;gMonth">--12</month>
+				<day rdf:datatype="&xsd;gDay">---10</day>
+			</DateTimeDescription>
+		</hasDateTimeDescription>
+		<rdfs:comment rdf:parseType="Literal">
+			<div xmlns="&html;">
+				<p>A day for recognizing the importance of peace, goodwil, and human rights.</p>
+				<h5>Praxis</h5>
+				<p>Read the <cite>Universal Declaration of Human Rights</cite> and discussion there·of.  Recognize those in your community who have furthered the cause of human rights or welbeing.</p>
+				<h5>Origin</h5>
+				<p>In Sweden, 10 December is known as <b>Alfred Nobel Day</b>, and is the day on which Nobel Prizes are awarded.  Alfred Nobel was a Swedish inventor whose will dedicated the vast majority of his fortune to establishing the Nobel Prize after his death on 10 December 1896, for the purpose of annually recognizing « those who, during the preceding year, have conferred the greatest benefit to humankind ».</p>
+				<p>10 December also is the anniversary of the signing of the <cite>Universal Declaration of Human Rights</cite>, and is subsequently recognized by the United Nations as <b>Human Rights Day</b>.</p>
 			</div>
 		</rdfs:comment>
 	</DateTimeInterval>
