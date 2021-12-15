@@ -18,8 +18,8 @@ body>div{ Display: Grid; Gap: 2REM; Align-Self: Start }
 body>div>*:Nth-Child(n){ Margin-Top: 0; Margin-Bottom: 0 }
 @media ( Min-Width: 48REM ) {
 	body{ Grid-Template-Columns: 1FR 1FR } }
-*:Not(h2)+aside,*:Not(h2)+nav,*:Not(h2)+section{ Margin-Top: 1REM }
-aside:Not(:Last-Child),nav:Not(:Last-Child),section:Not(:Last-Child){ Margin-Bottom: 1REM }
+*:Not(summary):Not(h2)+aside,*:Not(summary):Not(h2)+details,*:Not(summary):Not(h2)+nav,*:Not(summary):Not(h2)+section{ Margin-Top: 1REM }
+aside:Not(:Last-Child),details:Not(:Last-Child),nav:Not(:Last-Child),section:Not(:Last-Child){ Margin-Bottom: 1REM }
 aside#search{ Margin: 0 -.5REM; Border-Style: Double Dashed; Border-Width: Medium Thin; Border-Radius: .5REM; Padding: 1REM .5REM }
 aside#search p{ Margin: 0 }
 aside#search dl{ Margin: 0; Line-Height: 1.5 }
@@ -54,14 +54,21 @@ aside#Calendar section#today h3{ Margin: 0; Border: None; Padding: 0; Background
 aside#Calendar section#today p{ Margin: .75EM 0 0; Text-Align: Justify; Hyphens: Auto }
 aside#Calendar *:Any-Link{ Color: MediumBlue }
 aside#Calendar strong{ Color: Var(--SeasonColor) }
+details{ Column-Span: All; Border: Thin Solid; Padding: .25EM 1EM; Columns: 2 12REM; Background: #FFFFFF; Font-Size: Inherit }
+details:Not([open]){ Columns: Auto; Border-Bottom: Medium Double; Max-Width: Max-Content }
+summary{ Column-Span: All; Margin: 0 0 1EM; Border-Bottom: Thin Solid; Font-Weight: Bold }
+details:Not([open])>summary{ Margin: 0; Border: None }
 nav{ Columns: 2 12REM; Text-Align: Left }
 iframe{ Display: Block; Box-Sizing: Border-Box; Margin: 0 Auto; Border: #948D87 Groove; Height: 6REM; Width: 100%; Background: #DEDBD9; Color: #57534C }
 h1{ Margin: 0 }
 h2{ Column-Span: All; Margin: 0 0 1EM; Border-Bottom: Thin Solid; Font-Size: X-Large; Font-Weight: Inherit }
 h3{ Margin: 1EM 0; Border: Thin Solid; Padding: .25EM 1EM; Max-Width: Max-Content; Background: #FFFFFF; Font-Size: Inherit; Text-Decoration: Underline }
+summary+section>h3,
 h2+section>h3{ Margin-Top: 0 }
+hr{ Column-Span: All; Margin: .75EM 0; Border-Style: None None Dashed; Border-Color: CurrentColor; Border-Width: Thin; Padding: 0; Height: 0; Width: 100% }
 p{ Margin: .75EM 0 }
 ul{ Margin: .75EM 0; Padding: 0 0 0 2REM }
+details>ul:Only-Of-Type,
 nav>ul:Only-Of-Type{ Margin: 0 }
 li>a:Only-Child{ Display: Block; Margin: 0 0 0 -1REM; Text-Indent: 1REM }
 *:Any-Link,
@@ -122,6 +129,67 @@ u{ Text-Decoration-Thickness: 1PX; Text-Decoration-Skip-Ink: None }
 				<LI><A HRef=https://www.unicode.org/L2/L-curdoc.htm>U·T·C Document Register</A>
 			</UL>
 		</SECTION>
+		<HR>
+		<DETAILS ID=specs>
+			<SUMMARY>Specifications</SUMMARY>
+			<SECTION ID=w3c>
+				<H3>W·3·C</H3>
+				<UL>
+					<LI><A HRef=https://www.w3.org/TR/xml11/>X·M·L</A>
+					<LI><A HRef=https://www.w3.org/TR/xml-names11/>X·M·L Names</A>
+					<LI><A HRef=https://www.w3.org/TR/1999/REC-xpath-19991116/>X·Path</A>
+					<LI><A HRef=https://www.w3.org/TR/1999/REC-xslt-19991116/>X·S·L·T</A>
+					<LI><A HRef=https://www.w3.org/TR/xmlschema11-2/>X·S·D Datatypes</A>
+					<LI><A HRef=https://www.w3.org/TR/rdf11-concepts/>R·D·F Concepts</A>
+					<LI><A HRef=https://www.w3.org/TR/rdf11-mt/>R·D·F Semantics</A>
+					<LI><A HRef=https://www.w3.org/TR/rdf-schema/>R·D·F Schema</A>
+					<LI><A HRef=https://www.w3.org/TR/turtle/>R·D·F∕Turtle</A>
+					<LI><A HRef=https://www.w3.org/TR/rdf-syntax-grammar/>R·D·F∕X·M·L</A>
+					<LI><A HRef=https://www.w3.org/TR/rdfa-core/>R·D·F∕A</A>
+					<LI><A HRef=https://www.w3.org/2011/rdfa-context/rdfa-1.1>R·D·F∕A Core Initial Context</A>
+					<LI><A HRef=https://www.w3.org/TR/skos-reference/>S·K·O·S</A>
+					<LI><A HRef=https://www.w3.org/TR/owl2-syntax/>O·W·L</A>
+					<LI><A HRef=https://www.w3.org/TR/json-ld11/>J·S·O·N‐L·D</A>
+					<LI><A HRef=https://www.w3.org/TR/css/>C·S·S</A>
+				</UL>
+			</SECTION>
+			<SECTION ID=whatwg>
+				<H3>W·H·A·T·W·G</H3>
+				<UL>
+					<LI><A HRef=https://html.spec.whatwg.org/multipage/>H·T·M·L</A>
+					<LI><A HRef=https://dom.spec.whatwg.org/>D·O·M</A>
+				</UL>
+			</SECTION>
+			<SECTION ID=ietf>
+				<H3>I·E·T·F</H3>
+				<UL>
+					<LI><A HRef=https://www.rfc-editor.org/rfc/rfc3986.html>R·F·C 3986</A>
+					<LI><A HRef=https://www.rfc-editor.org/rfc/rfc3987.html>R·F·C 3987</A>
+					<LI><A HRef=https://www.rfc-editor.org/rfc/rfc5646.html>R·F·C 5646</A>
+				</UL>
+			</SECTION>
+			<SECTION ID=ecma>
+				<H3>Ecma</H3>
+				<UL>
+					<LI><A HRef=https://tc39.es/ecma262/multipage/>Ecma 262</A>
+					<LI><A HRef=https://tc39.es/ecma402/>Ecma 402</A>
+				</UL>
+			</SECTION>
+			<SECTION ID=unicode>
+				<H3>Unicode</H3>
+				<UL>
+					<LI><A HRef=https://unicode.org/versions/latest/>Unicode Standard</A>
+					<LI><A HRef=https://www.unicode.org/reports/>Unicode Technical Reports</A>
+				</UL>
+			</SECTION>
+			<SECTION ID=other_specs>
+				<H3>Other</H3>
+				<UL>
+					<LI><A HRef=http://xmlns.com/foaf/spec/>F·O·A·F</A>
+					<LI><A HRef=https://www.dublincore.org/specifications/dublin-core/dcmi-terms/>D·C·M·I Metadata Terms</A>
+				</UL>
+			</SECTION>
+		</DETAILS>
 	</NAV>
 	<ASIDE ID=search>
 		<P><LABEL For=query>Quick Search:</LABEL> <SPAN Style="White-Space: NoWrap"><INPUT Type=text Name=query Id=query Autofocus Placeholder=Query…> <BUTTON Type=button Disabled>Visit U·R·L</BUTTON></SPAN>
@@ -163,7 +231,7 @@ u{ Text-Decoration-Thickness: 1PX; Text-Decoration-Skip-Ink: None }
 const
 	queryElement = document.getElementById("query")
 	, navigationButton = document.querySelector("aside#search>p button")
-queryElement.addEventListener("input", ( ) => { navigationButton.disabled = !(/^(?:[A-Za-z0-9\u{2D}_.~!#$&'()*+,\u{2F}:;=?@\u{5B}\u{5D}\u{A0}-\uD7FF\u{F900}-\u{FDCF}\u{10000}-\u{1FFFD}\u{20000}-\u{2FFFD}\u{30000}-\u{3FFFD}\u{40000}-\u{4FFFD}\u{50000}-\u{5FFFD}\u{60000}-\u{6FFFD}\u{70000}-\u{7FFFD}\u{80000}-\u{8FFFD}\u{90000}-\u{9FFFD}\u{A0000}-\u{AFFFD}\u{B0000}-\u{BFFFD}\u{C0000}-\u{CFFFD}\u{D0000}-\u{DFFFD}\u{E0000}-\u{EFFFD}]|%[0-9]{2})+$/u.test(queryElement.value) && /\./u.test(queryElement.value)) })
+queryElement.addEventListener("input", ( ) => { navigationButton.disabled = !(/^(?:[A-Za-z0-9\u{2D}_.~!#$&'()*+,\u{2F}:;=?@\u{5B}\u{5D}\u{A0}-\uD7FF\u{F900}-\u{FDCF}\u{10000}-\u{1FFFD}\u{20000}-\u{2FFFD}\u{30000}-\u{3FFFD}\u{40000}-\u{4FFFD}\u{50000}-\u{5FFFD}\u{60000}-\u{6FFFD}\u{70000}-\u{7FFFD}\u{80000}-\u{8FFFD}\u{90000}-\u{9FFFD}\u{A0000}-\u{AFFFD}\u{B0000}-\u{BFFFD}\u{C0000}-\u{CFFFD}\u{D0000}-\u{DFFFD}\u{E0000}-\u{EFFFD}]|%[0-9]{2})+$/u.test(queryElement.value) && (/^(?:http:\/\/)?localhost(?::[0-9]*)?(?:\/|$)/u.test(queryElement.value) || /\./u.test(queryElement.value))) })
 queryElement.addEventListener("keydown", ({ key }) => {
 	if ( key == "Enter" ) {
 		queryElement.blur()
