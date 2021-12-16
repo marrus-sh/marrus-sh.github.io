@@ -237,7 +237,7 @@ queryElement.addEventListener("keydown", ({ key }) => {
 		queryElement.blur()
 		if ( !navigationButton.disabled ) navigationButton.click() } })
 navigationButton.addEventListener("click", ( ) => {
-	if ( !navigationButton.disabled ) location.href = /^[A-Za-z][A-Za-z0-9+\u{2D}.]*:/u.test(queryElement.value) ? queryElement.value : `http://${ queryElement.value }` })
+	if ( !navigationButton.disabled ) location.href = /^(?!localhost:)[A-Za-z][A-Za-z0-9+\u{2D}.]*:/u.test(queryElement.value) ? queryElement.value : `http://${ queryElement.value }` })
 document.querySelector("aside#search>dl").addEventListener("keydown", ({ key }) => Array.from(document.querySelectorAll("aside#search>dl button")).find($ => $.accessKey == key).click())
 for ( const button of document.querySelectorAll("aside#search>dl button") ) {
 button.addEventListener("click", ( ) => location.href = button.dataset.search.replace("%s", queryElement.value)) }
